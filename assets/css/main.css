@@ -475,15 +475,84 @@ a.card:hover, .card.linked:hover {
 .section-head { max-width: 60ch; margin-bottom: var(--sp-12); }
 @media (min-width: 768px) { .section-head { margin-bottom: var(--sp-16); } }
 .section-head .h2 { margin-top: var(--sp-3); }
+.section-head h2 {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-snug);
+}
 .section-head .lead { margin-top: var(--sp-4); }
+/* Em pillar pages, eyebrow do section-head usa a cor do pilar */
+.pillar-page .section-head .eyebrow { color: var(--pp-color); }
 
-/* ============ PILARES (overview) ============ */
-.pillars-grid {
+/* Section-head que contém ação à direita (link "Ver todo o blog" etc) — vira flex row */
+.section-head:has(.blog-link) {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  max-width: none;
+}
+.section-head .blog-link {
+  font-size: var(--fs-14);
+  color: var(--pp-color, var(--color-accent));
+  font-weight: var(--fw-medium);
+}
+.section-head .blog-link::after { content: " →"; }
+
+/* ============ STATS STRIP ============
+ * Grid de números-âncora (estatísticas declaradas).
+ * Usado em /#confianca (home) e .pp-stats (pillar pages).
+ */
+.stats-strip {
+  display: grid; gap: var(--sp-6);
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 768px) { .stats-strip { grid-template-columns: repeat(4, 1fr); gap: var(--sp-8); } }
+.stat .num {
+  font-size: clamp(2rem, 1.5rem + 1.5vw, 2.5rem);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-tighter);
+  line-height: 1;
+}
+.stat .lbl {
+  margin-top: 6px;
+  font-size: var(--fs-14);
+  color: var(--color-fg-muted);
+  line-height: 1.3;
+}
+.section.dark .stat .num,
+.pp-stats .stat .num { color: #fff; }
+.section.dark .stat .lbl,
+.pp-stats .stat .lbl { color: rgba(255,255,255,0.75); }
+
+/* ============ GRID CARDS ============
+ * Grid responsivo de cartões. Padrão único pra substituir as classes
+ * específicas (.pillars-grid, .cm-modes, .blog-list, .cases-grid etc).
+ *
+ * Variantes:
+ *   .grid-cards.cols-2   → 1 col mobile, 2 cols desktop
+ *   .grid-cards.cols-3   → 1 col mobile, 3 cols desktop
+ *   .grid-cards.cols-2-3 → 1 → 2 → 3 (3 breakpoints)
+ */
+.grid-cards {
   display: grid;
   gap: var(--sp-4);
   grid-template-columns: 1fr;
 }
-@media (min-width: 768px) { .pillars-grid { grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); } }
+@media (min-width: 768px) { .grid-cards { gap: var(--sp-6); } }
+@media (min-width: 768px) {
+  .grid-cards.cols-2   { grid-template-columns: repeat(2, 1fr); }
+  .grid-cards.cols-3   { grid-template-columns: repeat(3, 1fr); }
+  .grid-cards.cols-2-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1100px) {
+  .grid-cards.cols-2-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ============ PILARES (overview) ============ */
 
 /* .pillar-card herda base de .card; só seu delta (cor por pilar, lista) fica aqui. */
 .pillar-card { /* visual base no .card */ }
@@ -642,7 +711,8 @@ a.card:hover, .card.linked:hover {
 .trilha-step .num {
   font-family: var(--font-mono);
   font-size: var(--fs-12);
-  color: var(--color-fg-muted);
+  color: var(--c-pillar, var(--color-accent));
+  font-weight: var(--fw-semibold);
   margin-bottom: var(--sp-3);
 }
 .trilha-step .verb {
@@ -651,7 +721,6 @@ a.card:hover, .card.linked:hover {
   letter-spacing: var(--ls-tight);
   margin-bottom: var(--sp-2);
 }
-.trilha-step .verb::first-letter { color: var(--color-accent); }
 .trilha-step .desc {
   font-size: var(--fs-14);
   color: var(--color-fg-muted);
@@ -659,8 +728,6 @@ a.card:hover, .card.linked:hover {
 }
 
 /* ============ CASES ============ */
-.cases-grid { display: grid; gap: var(--sp-4); grid-template-columns: 1fr; }
-@media (min-width: 768px) { .cases-grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); } }
 
 /* .case-card herda base de .card; só seu delta (min-height, client, metric) fica aqui. */
 .case-card { min-height: 240px; }
@@ -706,30 +773,11 @@ a.card:hover, .card.linked:hover {
 .case-card[data-status="placeholder"] { border-style: dashed; opacity: 0.95; }
 
 /* ============ CONFIANÇA ============ */
-.trust-strip {
-  display: grid; gap: var(--sp-8);
-  grid-template-columns: 1fr;
-  align-items: center;
-}
-@media (min-width: 768px) { .trust-strip { grid-template-columns: repeat(4, 1fr); } }
 
-.trust-item .num {
-  font-size: var(--fs-h2);
-  font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-tighter);
-  line-height: 1;
-}
 .section.dark .trust-item .num { color: #fff; }
-.trust-item .lbl {
-  margin-top: var(--sp-2);
-  font-size: var(--fs-14);
-  color: var(--color-fg-muted);
-}
 .section.dark .trust-item .lbl { color: var(--ink-300); }
 
 /* ============ BLOG ============ */
-.blog-grid { display: grid; gap: var(--sp-4); grid-template-columns: 1fr; }
-@media (min-width: 768px) { .blog-grid { grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); } }
 
 /* .post-card herda base de .card; só seu delta (min-height, post-meta, read) fica aqui. */
 .post-card { min-height: 220px; }
@@ -812,9 +860,6 @@ a.card:hover, .card.linked:hover {
 .blog-filter button[data-filter="data"][aria-pressed="true"] { background: var(--c-data); border-color: var(--c-data); color: #1d1d1f; }
 .blog-filter button[data-filter="ai"][aria-pressed="true"]   { background: var(--c-ai); border-color: var(--c-ai); }
 
-.blog-list { display: grid; gap: var(--sp-6); grid-template-columns: 1fr; }
-@media (min-width: 768px) { .blog-list { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1100px) { .blog-list { grid-template-columns: repeat(3, 1fr); } }
 
 .post-card[data-hidden="true"] { display: none; }
 
@@ -1134,24 +1179,7 @@ a.card:hover, .card.linked:hover {
   color: #fff;
   padding-block: var(--sp-8);
 }
-.pp-stats .container {
-  display: grid; gap: var(--sp-6);
-  grid-template-columns: repeat(2, 1fr);
-}
 @media (min-width: 768px) { .pp-stats .container { grid-template-columns: repeat(4, 1fr); gap: var(--sp-8); } }
-.pp-stat .num {
-  font-size: clamp(2rem, 1.5rem + 1.5vw, 2.5rem);
-  font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-tighter);
-  line-height: 1;
-}
-.pp-stat .lbl {
-  margin-top: 6px;
-  font-size: var(--fs-14);
-  color: rgba(255,255,255,0.75);
-  line-height: 1.3;
-}
-
 /* Manifesto editorial */
 .pp-manifesto {
   padding-block: var(--sp-20) var(--sp-16);
@@ -1190,17 +1218,7 @@ a.card:hover, .card.linked:hover {
 }
 @media (min-width: 768px)  { .pp-offers { padding-block: var(--sp-24); } }
 @media (min-width: 1024px) { .pp-offers { padding-block: var(--sp-32); } }
-.pp-offers .head { max-width: 60ch; margin-bottom: var(--sp-12); }
 @media (min-width: 768px) { .pp-offers .head { margin-bottom: var(--sp-16); } }
-.pp-offers .head .eyebrow { color: var(--pp-color); }
-.pp-offers .head h2 {
-  margin-top: var(--sp-3);
-  font-size: var(--fs-h3);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-tight);
-  line-height: var(--lh-snug);
-  max-width: 18ch;
-}
 .pp-offers .grid {
   display: grid; gap: var(--sp-4);
   grid-template-columns: 1fr;
@@ -1241,55 +1259,7 @@ a.card:hover, .card.linked:hover {
 }
 @media (min-width: 768px)  { .pp-trilha { padding-block: var(--sp-24); } }
 @media (min-width: 1024px) { .pp-trilha { padding-block: var(--sp-32); } }
-.pp-trilha .head { max-width: 60ch; margin-bottom: var(--sp-12); }
 @media (min-width: 768px) { .pp-trilha .head { margin-bottom: var(--sp-16); } }
-.pp-trilha .head .eyebrow { color: var(--pp-color); }
-.pp-trilha .head h2 {
-  margin-top: var(--sp-3);
-  font-size: var(--fs-h3);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-tight);
-  line-height: var(--lh-snug);
-}
-.pp-trilha .head p {
-  margin-top: var(--sp-4);
-  font-size: var(--fs-18);
-  color: var(--color-fg-muted);
-  max-width: 60ch;
-}
-.pp-trilha-grid {
-  display: grid; gap: var(--sp-4);
-  grid-template-columns: 1fr;
-}
-@media (min-width: 768px) { .pp-trilha-grid { grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--color-line); border-radius: var(--r-lg); overflow: hidden; } }
-.pp-trilha-step {
-  padding: var(--sp-6);
-  border-bottom: 1px solid var(--color-line);
-}
-.pp-trilha-step:last-child { border-bottom: 0; }
-@media (min-width: 768px) {
-  .pp-trilha-step { border-bottom: 0; border-right: 1px solid var(--color-line); }
-  .pp-trilha-step:last-child { border-right: 0; }
-}
-.pp-trilha-step .num {
-  font-family: var(--font-mono);
-  font-size: var(--fs-12);
-  color: var(--pp-color);
-  font-weight: var(--fw-semibold);
-  margin-bottom: var(--sp-3);
-}
-.pp-trilha-step .verb {
-  font-size: var(--fs-24);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-tight);
-  margin-bottom: var(--sp-2);
-}
-.pp-trilha-step .desc {
-  font-size: var(--fs-14);
-  color: var(--color-fg-muted);
-  line-height: var(--lh-snug);
-}
-
 /* Posts do pilar */
 .pp-posts {
   padding-block: var(--sp-16);
@@ -1297,25 +1267,7 @@ a.card:hover, .card.linked:hover {
 }
 @media (min-width: 768px)  { .pp-posts { padding-block: var(--sp-24); } }
 @media (min-width: 1024px) { .pp-posts { padding-block: var(--sp-32); } }
-.pp-posts .head { margin-bottom: var(--sp-12); display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: var(--sp-4); }
 @media (min-width: 768px) { .pp-posts .head { margin-bottom: var(--sp-16); } }
-.pp-posts .head h2 {
-  font-size: var(--fs-h3);
-  font-weight: var(--fw-semibold);
-  letter-spacing: var(--ls-tight);
-  line-height: var(--lh-snug);
-}
-.pp-posts .head .eyebrow { color: var(--pp-color); }
-.pp-posts .head .blog-link {
-  font-size: var(--fs-14);
-  color: var(--pp-color);
-  font-weight: var(--fw-medium);
-}
-.pp-posts .head .blog-link::after { content: " →"; }
-.pp-posts-grid {
-  display: grid; gap: var(--sp-4);
-  grid-template-columns: 1fr;
-}
 @media (min-width: 768px) { .pp-posts-grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); } }
 @media (min-width: 1100px) { .pp-posts-grid { grid-template-columns: repeat(3, 1fr); } }
 
@@ -1425,10 +1377,6 @@ a.card:hover, .card.linked:hover {
  * H2 dentro do section-head pega .h3 quando definido no HTML. */
 
 /* Modos de engajamento */
-.cm-modes {
-  display: grid; gap: var(--sp-4);
-  grid-template-columns: 1fr;
-}
 @media (min-width: 768px) { .cm-modes { grid-template-columns: repeat(3, 1fr); gap: var(--sp-6); } }
 /* .cm-mode herda base de .card; conteúdo específico abaixo. */
 .cm-mode .num { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--color-fg-muted); margin-bottom: var(--sp-3); }
@@ -1457,10 +1405,6 @@ a.card:hover, .card.linked:hover {
 @media (min-width: 768px) { .cm-invest-item .range { text-align: right; } }
 
 /* O que esperamos do cliente */
-.cm-expect {
-  display: grid; gap: var(--sp-6);
-  grid-template-columns: 1fr;
-}
 @media (min-width: 768px) { .cm-expect { grid-template-columns: repeat(3, 1fr); } }
 /* .cm-expect-item herda base de .card.accent-side; conteúdo específico abaixo. */
 .cm-expect-item h3 { font-size: var(--fs-18); font-weight: var(--fw-semibold); margin-bottom: var(--sp-2); }

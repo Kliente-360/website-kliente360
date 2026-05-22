@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Churn analysis: the mistake of defining &quot;loss&quot; before strategy | Kliente 360</title>
+  <meta name="description" content="Team runs a churn model with 85% precision. In production, nobody uses it because &quot;loss&quot; was defined without aligning with what the business considers loss. Definition comes before model." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/en/analise-de-churn.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/analise-de-churn.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/analise-de-churn.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/analise-de-churn.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/analise-de-churn.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Churn analysis: the mistake of defining &quot;loss&quot; before strategy | Kliente 360" />
+  <meta property="og:description" content="Team runs a churn model with 85% precision. In production, nobody uses it because &quot;loss&quot; was defined without aligning with what the business considers loss. Definition comes before model." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-05-05" />
+  <meta property="article:section" content="Data &amp; Analytics" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Churn analysis: the mistake of defining &quot;loss&quot; before strategy | Kliente 360" />
+  <meta name="twitter:description" content="Team runs a churn model with 85% precision. In production, nobody uses it because &quot;loss&quot; was defined without aligning with what the business considers loss. Definition comes before model." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=4402f75dfd" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=4402f75dfd" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=4402f75dfd" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Churn analysis: the mistake of defining \"loss\" before strategy",
+  "description": "Team runs a churn model with 85% precision. In production, nobody uses it because \"loss\" was defined without aligning with what the business considers loss. Definition comes before model.",
+  "datePublished": "2026-05-05",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Data & Analytics",
+  "keywords": [
+    "churn analysis",
+    "retention",
+    "machine learning",
+    "SaaS",
+    "product metrics"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="data">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Practice 02 · Data</span>
+            <a class="post-back" href="/blog/en/">Blog</a>
+          </div>
+          <h1>Churn analysis: the mistake of defining &quot;loss&quot; before strategy</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-05-05">5 May 2026</time>
+            <span class="sep">·</span>
+            <span>6 min read</span>
+            <span class="sep">·</span>
+            <span>By Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Churn analysis fails more from imprecise definition than from bad model. &quot;Customer we lost&quot; means different things in SaaS, B2B, retail, finance. Without aligning definition with retention strategy, any model delivers a prediction nobody acts on. Five questions that unblock.</p>
+          </aside>
+
+          <p class="post-intro">The meeting that repeats in every churn project I see: data team presents model with 85% precision, nice chart, list of 200 customers with high probability of churning. Leadership asks &quot;what do we do with this?&quot;. And then silence. No playbook. No owner. No decision. The list goes to CS Slack, which says &quot;wow, that&#39;s a lot&quot;, and nothing happens. In three months, nobody looks at the model. In six, it degrades. In twelve, it becomes a &quot;we tried churn prediction and it didn&#39;t work&quot; slide.</p>
+<p>The failure isn&#39;t the model. It&#39;s before: nobody defined what &quot;loss&quot; was in the company&#39;s context and what would be done with the prediction. This text is about avoiding this trap — starting from definition, not model.</p>
+<h2>Why &quot;churn&quot; means different things</h2>
+<p>The word &quot;churn&quot; looks self-explanatory: customer who leaves. But in practice, each business model defines loss differently:</p>
+<p><strong>B2B subscription SaaS.</strong> Churn = contract cancellation OR non-renewal. Does it include significant downgrade? Does it include tier change? Each decision changes the model.</p>
+<p><strong>B2C subscription SaaS.</strong> Churn = explicit cancellation OR 90 days without login. The second variant captures passive churn the user hasn&#39;t declared yet.</p>
+<p><strong>Retail with recurring transactions.</strong> Churn = no purchase in N days, where N varies by category (60 days for groceries, 180 for footwear, 365 for electronics). Without segmenting by category, aggregate model is useless.</p>
+<p><strong>B2B with recurring non-contractual revenue.</strong> Churn = sharp drop in order volume OR behavior change (frequency, average ticket). Harder to define, requires proxy.</p>
+<p><strong>Financial services (bank, brokerage).</strong> Churn = portfolio movement to competitor OR account closure OR prolonged inactivity. Each one triggers a different response.</p>
+<p>Without naming the definition, there&#39;s no useful model. A team that skips this step delivers a churn model for &quot;something like leaving&quot; — and finds nobody acts because nobody recognizes it as a problem.</p>
+<blockquote>
+<p>Churn analysis starts with definition, not model. The question &quot;who is a customer we lost&quot; has 4–7 possible answers depending on the business. Without choosing one, any model works for the wrong answer.</p>
+</blockquote>
+<h2>Five questions before the model</h2>
+<p>The rule we apply before any churn analytics project. Without answering these five, the model is a technical exercise that doesn&#39;t become retention.</p>
+<ol>
+<li><strong>What&#39;s &quot;loss&quot; in our context?</strong> Specific and operational answer. Not &quot;customer who leaves&quot; — &quot;customer who doesn&#39;t renew within 30 days after contract expiration&quot;. Testable and auditable definition.</li>
+<li><strong>What will we do with the prediction?</strong> Named action list. &quot;Rep calls&quot;, &quot;CS offers discount&quot;, &quot;retention email campaign&quot;, &quot;invite to trial of new feature&quot;. Without a playbook, <a href="/blog/en/tableau-linguagem-executiva.html">prediction is data that doesn&#39;t become decision</a>.</li>
+<li><strong>What&#39;s the useful advance window?</strong> 30 days? 60 days? Team needs time to react. If the rep needs 45 days to reverse, a model predicting 15 days in advance is useless. Calibrate before modeling.</li>
+<li><strong>What&#39;s the cost of false positive vs. false negative?</strong> False positive (alarm on someone not leaving) costs CS time. False negative (didn&#39;t predict who left) costs lost revenue. Calibrating model threshold depends on this ratio — which depends on retention strategy.</li>
+<li><strong>Who owns execution of retention actions?</strong> <a href="/blog/en/metricas-de-produto-north-dust.html">Without a named owner</a>, the list goes to Slack and dies. The owner is a specific person with a mandate to trigger the playbook.</li>
+</ol>
+<p>Whoever answers the five before the project starts has a chance churn analytics pays back. Whoever answers during or after invests in a pretty model nobody uses.</p>
+<h2>The relationship between retention strategy and model</h2>
+<p>A churn model only makes sense if there&#39;s a retention strategy to trigger. Three maturity levels:</p>
+<p><strong>Level 0: no retention strategy.</strong> The company never prioritized operational retention. No playbook, no owner, no tested actions. Churn model here is academic exercise — no arm to execute. The right investment is to build strategy first, model later.</p>
+<p><strong>Level 1: reactive retention actions.</strong> CS team reacts when customer complains or signals exit. Works for part of the problem, fails to capture silent churn (customer who leaves without complaining). Churn model at this level helps — <em>if</em> the team has capacity to act proactively, <em>not just react</em>.</p>
+<p><strong>Level 2: structured proactive strategy.</strong> Company has segmented playbooks, defined owners, retention success metrics. Churn model becomes a powerful tool — feeds prioritization of an already mature process. Here ROI is clear.</p>
+<p>Most Brazilian mid-market companies sit at Level 0 or 1 — and invest in churn model before building Level 2. That&#39;s the number-one reason for &quot;churn project that didn&#39;t pay back&quot;.</p>
+<h2>Where a churn model really pays off</h2>
+<p>Four contexts where the model delivers clear ROI:</p>
+<p><strong>SaaS with annual contracts and concentrated renewals.</strong> High volume of contracts maturing in the same quarter, CS team with reactive capacity exhausted. Model prioritizes where to invest. Typical retention lift: 5–15%.</p>
+<p><strong>B2C with high subscriber volume.</strong> Telecom, streaming, fintech. Volume makes manual impossible, model + campaign automation becomes the only path. Lift: 3–10%.</p>
+<p><strong>B2B with critical product and long sales cycle.</strong> Where losing a customer means 12–24 months to recover revenue via new customer. Justifies high investment in prevention. Lift: 10–20%.</p>
+<p><strong>Financial services with rich behavior data.</strong> Bank, brokerage have rich behavior signals (login, transaction, app usage). Model captures early signal, team acts with the right customer. Lift: 15–25%.</p>
+<p>Outside these four, churn model tends to be overshoot — and investment in strategy/playbook delivers more outcome per cost.</p>
+<h2>The &quot;let&#39;s run churn to see&quot; trap</h2>
+<p>The phrase that kills the project: &quot;let&#39;s run churn analysis to see what we get&quot;. Sounds pragmatic, but it&#39;s the mistake of starting from tool without defining problem.</p>
+<p>Team runs model, generates list, distributes. Nobody knows what to do because nobody thought before. Model degrades (behavior drift over time), team loses interest, project dies silently.</p>
+<p>The right version: start from strategy, write playbook, define owner, <em>then</em> run model to feed the playbook. Order inversion costs between 3 and 9 months of rework.</p>
+<h2>The decision for 2026</h2>
+<p>If your company is about to run churn analysis (or has a model running without paying back), three honest moves:</p>
+<p><strong>Answer the five questions in writing.</strong> Operational definition of churn, post-prediction actions, useful window, cost calibration, named owner. 2-page document. Without it, any model delivers noise.</p>
+<p><strong>Build segmented retention playbook.</strong> High-value customer + high churn probability = senior rep calls within 48h. Medium value + high probability = email automation + monitoring. Without segmentation, CS team drowns in 200 alerts.</p>
+<p><strong>Calibrate the model by cost, not accuracy.</strong> A model with 70% accuracy well-calibrated for false negative can pay more than a model with 90% well-calibrated for false positive — depends on the cost of each error to the business.</p>
+<p><a href="/blog/en/dado-limpo-e-um-mito.html">As in any 2026 data project</a>, the problem rarely is the technique. It&#39;s what was asked of the technique before applying it. Churn analysis follows this rule: a team that defines loss in alignment with retention strategy delivers a model that reduces cancellation. A team that skips this step delivers an ML exercise that becomes a &quot;lessons learned&quot; slide.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Keep the conversation going</div>
+            <h3>Want to discuss this topic with a partner?</h3>
+            <p>Initial diagnostic with no commitment. We assess your scenario in a week and send back a report.</p>
+            <a class="btn-link" href="/#contato">Talk to a partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Further reading</h2>
+          <div class="grid-cards cols-2-3">
+            <a class="card post-card" data-pillar="data" href="/blog/en/tableau-linguagem-executiva.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">13 May 2026</span>
+              </div>
+              <h3>Tableau as an executive language: killing the vanity dashboard</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/en/modelagem-dimensional-2026.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">22 Apr 2026</span>
+              </div>
+              <h3>Does dimensional modeling still matter in 2026? Yes — a defense against lakehouse-for-everything</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/en/prompts-pra-analytics.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">8 Apr 2026</span>
+              </div>
+              <h3>Prompt engineering for analytics: the forgotten pipeline between data and report</h3>
+              <div class="read">Read →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
+            <li><a href="/glossario/">Glossário</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=4402f75dfd"></script>
+  <script src="/assets/js/main.js?v=4402f75dfd" type="module"></script>
+</body>
+</html>

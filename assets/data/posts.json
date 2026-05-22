@@ -66,6 +66,72 @@
     }
   },
   {
+    "slug": "salesforce-partner-program",
+    "pillar": "sf",
+    "date": "2026-05-12",
+    "translations": {
+      "pt": {
+        "title": "Salesforce Partner Program: o que o cliente nunca te conta",
+        "url": "/blog/salesforce-partner-program.html",
+        "date": "12 mai 2026"
+      },
+      "en": {
+        "title": "Salesforce Partner Program: what the client never tells you",
+        "url": "/blog/en/salesforce-partner-program.html",
+        "date": "12 May 2026"
+      },
+      "es": {
+        "title": "Salesforce Partner Program: lo que el cliente nunca te cuenta",
+        "url": "/blog/es/salesforce-partner-program.html",
+        "date": "12 may 2026"
+      }
+    }
+  },
+  {
+    "slug": "ia-para-rh",
+    "pillar": "ai",
+    "date": "2026-05-06",
+    "translations": {
+      "pt": {
+        "title": "IA para RH: caso prático do agente de triagem interna",
+        "url": "/blog/ia-para-rh.html",
+        "date": "6 mai 2026"
+      },
+      "en": {
+        "title": "AI for HR: a practical case of the internal triage agent",
+        "url": "/blog/en/ia-para-rh.html",
+        "date": "6 May 2026"
+      },
+      "es": {
+        "title": "IA para RH: caso práctico del agente de triage interno",
+        "url": "/blog/es/ia-para-rh.html",
+        "date": "6 may 2026"
+      }
+    }
+  },
+  {
+    "slug": "analise-de-churn",
+    "pillar": "data",
+    "date": "2026-05-05",
+    "translations": {
+      "pt": {
+        "title": "Análise de churn: o erro de definir \"perda\" antes da estratégia",
+        "url": "/blog/analise-de-churn.html",
+        "date": "5 mai 2026"
+      },
+      "en": {
+        "title": "Churn analysis: the mistake of defining \"loss\" before strategy",
+        "url": "/blog/en/analise-de-churn.html",
+        "date": "5 May 2026"
+      },
+      "es": {
+        "title": "Análisis de churn: el error de definir \"pérdida\" antes de la estrategia",
+        "url": "/blog/es/analise-de-churn.html",
+        "date": "5 may 2026"
+      }
+    }
+  },
+  {
     "slug": "salesforce-industries-vlocity",
     "pillar": "sf",
     "date": "2026-04-29",

@@ -117,20 +117,20 @@
 
       <!-- Stats strip -->
       <section class="pp-stats">
-        <div class="container">
-          <div class="pp-stat">
+        <div class="container stats-strip">
+          <div class="stat">
             <div class="num">Partner</div>
             <div class="lbl">Salesforce desde 2026</div>
           </div>
-          <div class="pp-stat">
+          <div class="stat">
             <div class="num">4</div>
             <div class="lbl">Clouds em entrega ativa</div>
           </div>
-          <div class="pp-stat">
+          <div class="stat">
             <div class="num">100%</div>
             <div class="lbl">Contas lideradas por sócio</div>
           </div>
-          <div class="pp-stat">
+          <div class="stat">
             <div class="num">Trilha 360</div>
             <div class="lbl">Mesmo método em todos os pilares</div>
           </div>
@@ -151,12 +151,12 @@
       <!-- Ofertas -->
       <section class="pp-offers">
         <div class="container">
-          <div class="head">
+          <header class="section-head">
             <span class="eyebrow">O que entregamos</span>
             <h2>Três frentes que cobrem do core ao agente.</h2>
           </div>
 
-          <div class="grid">
+          <div class="grid-cards cols-3">
             <article class="card pp-offer-card accent-top">
               <div class="num">01</div>
               <h3>Sales &amp; Service Cloud</h3>
@@ -199,37 +199,39 @@
       <!-- Trilha aplicada -->
       <section class="pp-trilha">
         <div class="container">
-          <div class="head">
+          <header class="section-head">
             <span class="eyebrow">Como entregamos</span>
             <h2>Trilha 360 aplicada a Salesforce.</h2>
             <p>Cinco verbos. O mesmo método disciplina implementação, ativação de Data Cloud e deploy de Agentforce.</p>
-          </div>
+          </header>
 
-          <div class="pp-trilha-grid">
-            <div class="pp-trilha-step">
-              <div class="num">01</div>
-              <div class="verb">Mapear</div>
-              <div class="desc">Processos de vendas, atendimento e dados existentes. Onde a fricção mora.</div>
-            </div>
-            <div class="pp-trilha-step">
-              <div class="num">02</div>
-              <div class="verb">Prototipar</div>
-              <div class="desc">Primeiro fluxo configurado, primeiro agente respondendo, primeira jornada ativada.</div>
-            </div>
-            <div class="pp-trilha-step">
-              <div class="num">03</div>
-              <div class="verb">Validar</div>
-              <div class="desc">KPI operacional: tempo médio, taxa de conversão, NPS. Mata ou avança.</div>
-            </div>
-            <div class="pp-trilha-step">
-              <div class="num">04</div>
-              <div class="verb">Implantar</div>
-              <div class="desc">Rollout completo, integrações em produção, adoção pelo time.</div>
-            </div>
-            <div class="pp-trilha-step">
-              <div class="num">05</div>
-              <div class="verb">Sustentar</div>
-              <div class="desc">AMS, evolução contínua, agentes vivos respondendo ao negócio que muda.</div>
+          <div class="trilha-wrap">
+            <div class="trilha">
+              <div class="trilha-step">
+                <div class="num">01</div>
+                <div class="verb">Mapear</div>
+                <div class="desc">Processos de vendas, atendimento e dados existentes. Onde a fricção mora.</div>
+              </div>
+              <div class="trilha-step">
+                <div class="num">02</div>
+                <div class="verb">Prototipar</div>
+                <div class="desc">Primeiro fluxo configurado, primeiro agente respondendo, primeira jornada ativada.</div>
+              </div>
+              <div class="trilha-step">
+                <div class="num">03</div>
+                <div class="verb">Validar</div>
+                <div class="desc">KPI operacional: tempo médio, taxa de conversão, NPS. Mata ou avança.</div>
+              </div>
+              <div class="trilha-step">
+                <div class="num">04</div>
+                <div class="verb">Implantar</div>
+                <div class="desc">Rollout completo, integrações em produção, adoção pelo time.</div>
+              </div>
+              <div class="trilha-step">
+                <div class="num">05</div>
+                <div class="verb">Sustentar</div>
+                <div class="desc">AMS, evolução contínua, agentes vivos respondendo ao negócio que muda.</div>
+              </div>
             </div>
           </div>
         </div>
@@ -238,14 +240,14 @@
       <!-- Posts do pilar (auto-popular) -->
       <section class="pp-posts">
         <div class="container">
-          <div class="head">
+          <header class="section-head">
             <div>
               <span class="eyebrow">Conteúdo</span>
               <h2>Nossa biblioteca sobre Salesforce.</h2>
             </div>
             <a class="blog-link" href="/blog/">Ver todo o blog</a>
-          </div>
-          <div class="pp-posts-grid" id="pp-posts-grid" data-pillar-filter="sf"></div>
+          </header>
+          <div class="grid-cards cols-2-3" id="pp-posts-grid" data-pillar-filter="sf"></div>
         </div>
       </section>
 

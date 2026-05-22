@@ -2,18 +2,108 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Kliente 360 — Brand Guide v0.1" />
-  <title>Kliente 360</title>
-  <meta http-equiv="refresh" content="0; url=/styleguide.html" />
-  <link rel="canonical" href="/styleguide.html" />
-  <script>window.location.replace('/styleguide.html');</script>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; padding: 40px; color: #0a0a0a; }
-    a { color: #009900; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Kliente 360 — Boutique de CRM, dados e IA. Salesforce Partner. Conhecimento aplicado, como serviço." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>Kliente 360 — Conhecimento aplicado, como serviço.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/reset.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 <body>
-  <p>Redirecionando para o <a href="/styleguide.html">brand guide v0.1</a>…</p>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <!-- ==================== NAV ==================== -->
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="#" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#pilares">Pilares</a>
+        <a href="#trilha">Trilha 360</a>
+        <a href="#cases">Cases</a>
+        <a href="#blog">Blog</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" aria-current="true">PT</button>
+          <button type="button">EN</button>
+          <button type="button">ES</button>
+        </div>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <a href="#pilares">Pilares</a>
+      <a href="#salesforce">Salesforce</a>
+      <a href="#data">Data &amp; Analytics</a>
+      <a href="#ia">IA &amp; Aplicações</a>
+      <a href="#trilha">Trilha 360</a>
+      <a href="#cases">Cases</a>
+      <a href="#blog">Blog</a>
+      <a href="#contato">Contato</a>
+      <div class="lang-mobile">
+        <button type="button" aria-current="true">PT</button>
+        <button type="button">EN</button>
+        <button type="button">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+      <svg class="hero-mark mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+        <circle cx="40" cy="22" r="11"/>
+        <circle cx="58" cy="40" r="11"/>
+        <circle cx="40" cy="58" r="11"/>
+        <circle cx="22" cy="40" r="11"/>
+      </svg>
+
+      <div class="container">
+        <div class="badges">
+          <span class="pill pill-line">Salesforce Partner</span>
+          <span class="pill pill-accent pill-dot">Agentforce ready</span>
+        </div>
+
+        <h1>Conhecimento aplicado, <em>como serviço</em>.</h1>
+
+        <p class="sub">
+          Boutique de CRM, dados e IA — três pilares costurados como um sistema só.
+          Poucos clientes estratégicos, atendidos por quem entrega.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contato">Falar com um sócio</a>
+          <a class="btn btn-ghost" href="#trilha">Conhecer a Trilha 360</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- (próximas seções nas ondas 2 e 3) -->
+
+  </main>
+
+  <script src="/assets/js/main.js" type="module"></script>
 </body>
 </html>

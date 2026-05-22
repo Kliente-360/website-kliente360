@@ -127,6 +127,10 @@ Referências: **Apple**, **Google**, **Salesforce**. Síntese aplicada:
 - Blog usará build Markdown→HTML (script Node minimal, sem dependências pesadas — definir na fase 7).
 - **Workflow Git (decidido 2026-05-22)**: trabalhamos direto em `main`. Sem feature branches. Netlify deploya de `main`. Mudança aceita por se tratar de site institucional pequeno, com um único decisor.
 
+## 7.1. Parking lot — pendências a resolver
+
+- **WhatsApp**: número atual `5511961875594` (link `http://wa.me/5511961875594`) é provisório — trocar pelo número oficial da Kliente 360 quando definido. Aparece em `index.html` (seção Contato + footer) e em `scripts/build-blog.mjs` (footer das páginas geradas).
+
 ## 8. Histórico de sessões
 
 - **2026-05-21** — Scaffold criado. Levantamento Figma feito. Direção visual macro acordada. Portfólio entrou em revisão (competitive-brief). Documento PLAN.md criado em main.

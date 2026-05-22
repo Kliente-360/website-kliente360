@@ -75,6 +75,7 @@ const DICT = {
       submit: 'Enviar mensagem', sent: 'Enviado — em breve respondemos',
       reply: 'Respondemos pessoalmente em até 1 dia útil.',
       linkedin: 'LinkedIn — Kliente 360',
+      whatsapp: 'WhatsApp — Kliente 360',
     },
     footer: {
       tagline: 'Boutique de CRM, dados e IA. Conhecimento aplicado, como serviço.',
@@ -151,6 +152,7 @@ const DICT = {
       submit: 'Send message', sent: 'Sent — we will reply shortly',
       reply: 'We reply personally within 1 business day.',
       linkedin: 'LinkedIn — Kliente 360',
+      whatsapp: 'WhatsApp — Kliente 360',
     },
     footer: {
       tagline: 'Boutique in CRM, data and AI. Applied knowledge, as a service.',
@@ -227,6 +229,7 @@ const DICT = {
       submit: 'Enviar mensaje', sent: 'Enviado — pronto respondemos',
       reply: 'Respondemos personalmente en hasta 1 día hábil.',
       linkedin: 'LinkedIn — Kliente 360',
+      whatsapp: 'WhatsApp — Kliente 360',
     },
     footer: {
       tagline: 'Boutique de CRM, datos e IA. Conocimiento aplicado, como servicio.',

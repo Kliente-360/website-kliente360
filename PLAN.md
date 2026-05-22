@@ -6,6 +6,22 @@ Documento mantido em main. Registra contexto, decisões tomadas e próximos pass
 
 ---
 
+## 0. Convenções de manutenção deste documento
+
+**Formato de "roadmap" / report de status** (use sempre que pedirem snapshot):
+
+```
+✅ Entregue (passado)          — agrupado por área (Brand, Site, Blog, Infra…)
+🔄 Em andamento (automático)   — routines/processos rodando sozinhos
+🎯 Próximas prioridades        — tabela ordenada por impacto × dependência
+                                  colunas: # · Item · Esforço · Impacto · Notas
+📋 Backlog                     — conhecido, sem urgência. Tabela: Item · Esforço · Impacto
+🅿 Parking                     — bloqueado por externo. Tabela: Item · Bloqueio · Onde aparece
+Resumo executivo               — 3–5 bullets de leitura rápida
+```
+
+**Por que essa estrutura**: separa "feito" de "fazendo" de "vou fazer" de "queria mas não posso", evita confundir aspiração com compromisso. Use a mesma estrutura em qualquer report ad-hoc.
+
 ## 1. Contexto
 
 Site institucional novo da **Kliente 360** — consultoria especializada em CRM, Data & Analytics e IA Aplicada, parceira Salesforce. Single-page em HTML/CSS/JS puro + blog estático (Markdown→HTML).

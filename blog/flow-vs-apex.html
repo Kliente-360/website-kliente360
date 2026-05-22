@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Salesforce Flow vs Apex: quando código vale mais que clique | Kliente 360</title>
+  <meta name="description" content="Salesforce diz pra usar Flow sempre que possível. A regra é boa — até virar dogma e o time configurar Flow gigante onde 30 linhas de Apex resolveriam em metade do tempo." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/flow-vs-apex.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/flow-vs-apex.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/flow-vs-apex.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/flow-vs-apex.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/flow-vs-apex.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Salesforce Flow vs Apex: quando código vale mais que clique | Kliente 360" />
+  <meta property="og:description" content="Salesforce diz pra usar Flow sempre que possível. A regra é boa — até virar dogma e o time configurar Flow gigante onde 30 linhas de Apex resolveriam em metade do tempo." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-03-04" />
+  <meta property="article:section" content="Salesforce" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Salesforce Flow vs Apex: quando código vale mais que clique | Kliente 360" />
+  <meta name="twitter:description" content="Salesforce diz pra usar Flow sempre que possível. A regra é boa — até virar dogma e o time configurar Flow gigante onde 30 linhas de Apex resolveriam em metade do tempo." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=b57e079d95" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=b57e079d95" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=b57e079d95" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Salesforce Flow vs Apex: quando código vale mais que clique",
+  "description": "Salesforce diz pra usar Flow sempre que possível. A regra é boa — até virar dogma e o time configurar Flow gigante onde 30 linhas de Apex resolveriam em metade do tempo.",
+  "datePublished": "2026-03-04",
+  "inLanguage": "pt-BR",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Salesforce",
+  "keywords": [
+    "Salesforce",
+    "Flow",
+    "Apex",
+    "automação",
+    "low-code"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="sf">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Pilar 01 · Salesforce</span>
+            <a class="post-back" href="/blog/">Blog</a>
+          </div>
+          <h1>Salesforce Flow vs Apex: quando código vale mais que clique</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-03-04">4 mar 2026</time>
+            <span class="sep">·</span>
+            <span>6 min de leitura</span>
+            <span class="sep">·</span>
+            <span>Por Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Flow venceu como ferramenta padrão de automação em Salesforce, e tem motivo. Mas &quot;low-code primeiro&quot; virou dogma que custa caro em casos específicos. Quatro padrões onde Apex ainda é a escolha certa, três armadilhas de Flow gigante que ninguém te conta no pitch.</p>
+          </aside>
+
+          <p class="post-intro">A diretriz oficial da Salesforce desde 2022 é simples: use Flow sempre que possível, Apex só quando não tiver jeito. Em tese, faz sentido — Flow é declarativo, mais fácil de manter, sobrevive a upgrade, qualquer admin entende. Mas em 2026, em quase todo cliente Salesforce maduro, vejo o mesmo padrão repetir: Flow gigante de 40 elementos tentando resolver problema que 30 linhas de Apex bem escritas resolveriam em metade do tempo, com metade da complexidade visual, e com governança melhor.</p>
+<p>A diretriz &quot;Flow primeiro&quot; virou dogma. E dogma em arquitetura de Salesforce custa caro. Esse texto é sobre quando ela funciona, e os quatro padrões onde Apex continua sendo a escolha certa em 2026.</p>
+<h2>Por que Flow venceu (e o ganho é real)</h2>
+<p>A vantagem que Flow trouxe é estrutural. Quatro coisas concretas:</p>
+<ul>
+<li><strong>Manutenção sem dependência de dev.</strong> Admin sênior consegue ler, alterar e debugar Flow. Apex exige consultor com licença de developer ou contratação de fora.</li>
+<li><strong>Sobrevive a release.</strong> Flow é declarativo, Salesforce migra automaticamente em upgrade. Apex precisa ser revalidado a cada major release, especialmente API version.</li>
+<li><strong>Test coverage automático.</strong> Flow não exige 75% de coverage manual como Apex. Em projetos pequenos, isso economiza semanas.</li>
+<li><strong>Auditável visualmente.</strong> Olhar Flow e entender o que faz é mais rápido que ler 200 linhas de Apex bem escrito (e infinitamente mais rápido que ler Apex mal escrito).</li>
+</ul>
+<p>Esses quatro são reais. Em 60–70% dos casos de automação típica — atualizar campo quando outro muda, criar registro relacionado, enviar e-mail, validar dado — Flow é a escolha certa. Sem polêmica.</p>
+<p>O problema começa nos outros 30–40%.</p>
+<h2>Quatro padrões onde Apex ainda vence</h2>
+<p>Os contextos onde insistir em Flow custa mais do que admite o pitch.</p>
+<ol>
+<li><strong>Lógica complexa com muitos caminhos condicionais.</strong> Quando o processo tem 8–15 ramificações, cada uma com 3–5 ações condicionais, o Flow vira árvore visual gigante. 40+ elementos numa tela que ninguém entende. A mesma lógica em Apex cabe em 80–150 linhas legíveis. Manutenção fica mais fácil em código que em árvore visual além de certo tamanho.</li>
+<li><strong>Operação em massa com performance crítica.</strong> Flow é otimizado pra registros únicos ou poucos. Quando precisa processar 10k+ registros num batch, Apex com SOQL otimizado é 10–50× mais rápido — e cabe nos limites de governor sem hack. Tentar fazer batch grande em Flow é fonte número um de &quot;Too many SOQL queries&quot; no log.</li>
+<li><strong>Integração com sistema externo via callout.</strong> Flow tem HTTP callout, mas a interface é primitiva pra tratamento de erro, retry, parsing complexo, autenticação não-trivial. Apex com classes well-designed encapsula bem. Tentar fazer integração séria via Flow gera código não-código difícil de testar.</li>
+<li><strong>Lógica que outros sistemas vão consumir.</strong> Quando a lógica vai ser chamada por Sales Cloud, Service Cloud, Marketing Cloud e API externa — Apex com Invocable Methods é mais limpo. Cada chamador invoca o mesmo método, sem duplicação. Em Flow, a lógica acaba copiada em 3 fluxos diferentes que divergem com o tempo.</li>
+</ol>
+<p>Esses quatro padrões cobrem maioria dos casos onde times caem na armadilha do &quot;vamos fazer em Flow porque é a diretriz&quot;.</p>
+<h2>Três armadilhas de Flow gigante</h2>
+<p>Quando Flow extrapola seu escopo natural, três problemas aparecem. Vale catalogar.</p>
+<p><strong>Limites de governor invisíveis.</strong> Flow conta SOQL, DML, CPU exatamente como Apex. Mas o cálculo não é transparente — você não sabe quantas queries seu Flow está fazendo até o erro chegar em produção. Apex te força a ser explícito; Flow esconde até quebrar.</p>
+<p><strong>Performance que degrada silenciosamente.</strong> Flow é interpretado, não compilado. Em loop com 1.000 iterações, cada elemento adiciona overhead que em Apex seria zero. Operação que rodava em 2s vira 12s, e ninguém entende por quê. Diagnóstico exige Flow Debug, que não dá métricas comparáveis.</p>
+<p><strong>Manutenção que vira labirinto.</strong> Flow visual em 5 elementos é melhor que Apex em 50 linhas. Flow visual em 40 elementos é pior que Apex em 200 linhas. O ponto de virada está entre 15 e 20 elementos. Quando o Flow cresce além disso, manter vira pesadelo — e a tentação de copiar Flow inteiro pra fazer pequena variação acelera o caos.</p>
+<blockquote>
+<p>Flow é excelente em escala pequena e média. Em escala grande, Apex é mais legível, mais performático e mais auditável. A diretriz &quot;Flow primeiro&quot; não deveria ser &quot;Flow sempre&quot;.</p>
+</blockquote>
+<h2>Como decidir, caso a caso</h2>
+<p>A régua que aplicamos antes de implementar automação:</p>
+<ol>
+<li><strong>Quantos elementos o Flow vai ter?</strong> Estimativa rápida. Se passa de 20, considerar Apex. Se passa de 35, quase sempre Apex.</li>
+<li><strong>Vai processar quantos registros por execução?</strong> Até ~200, Flow ok. Mais que isso, avaliar bulkificação séria — frequentemente Apex.</li>
+<li><strong>Precisa de integração com sistema externo?</strong> Callout simples, Flow. Callout com retry, OAuth complexo, parsing pesado, Apex.</li>
+<li><strong>Qual a velocidade esperada de mudança?</strong> Se é regra que vai mudar toda semana, Flow (admin altera). Se é regra estável de longo prazo, Apex bem escrito ganha em legibilidade.</li>
+<li><strong>Quem vai manter em 12 meses?</strong> Admin = Flow. Dev = Apex. Se a empresa tem ambos, escolher pelo critério técnico, não pelo cargo.</li>
+</ol>
+<p>Quem responde os cinco sem hesitar sabe escolher. Quem segue regra única (sempre Flow / sempre Apex) está otimizando pra ideologia, não pra resultado.</p>
+<h2>A armadilha do &quot;vamos refatorar depois&quot;</h2>
+<p>A frase que parece pragmática: &quot;começamos com Flow simples, se ficar grande migramos pra Apex&quot;. Migrar Flow já em produção pra Apex é projeto sério — reescrever lógica, atualizar todos os pontos de invocação, testar paridade, congelar mudanças durante transição. Tipicamente 4–8 semanas pra Flow de complexidade média.</p>
+<p>A versão menos cara: escolher na arquitetura inicial, com base nos 5 critérios acima. Refatorar Flow pra Apex depois é caro; escolher Apex desde o início custa apenas o trabalho de desenvolver, sem o passivo de migração.</p>
+<p><a href="/blog/sales-cloud-cinco-antipadroes.html">Como argumentei nos antipadrões de Sales Cloud</a>, a tentação de fazer &quot;o básico&quot; e ajustar depois é fonte recorrente de retrabalho. Vale igual em Flow vs Apex.</p>
+<h2>A decisão pra 2026</h2>
+<p>Salesforce Architect maduro escolhe pela necessidade, não pela diretriz. Flow ganhou seu espaço — em 60–70% dos casos é a escolha certa. Mas tratar &quot;Flow primeiro&quot; como dogma é o jeito mais lento de descobrir que aqueles outros 30–40% pediam Apex desde o começo.</p>
+<p>A pergunta certa não é &quot;Flow ou Apex&quot;. É: <em>qual é a lógica, qual o volume, qual o ciclo de mudança, quem mantém</em>. Respondidas essas, a escolha aparece. Sem responder, a escolha vira religião — e religião em Salesforce vira projeto eterno.</p>
+<p><a href="/blog/mapear-processos-antes-do-salesforce.html">Como em qualquer rollout sério</a>, o discovery vale mais que a escolha técnica. Time que faz discovery direito raramente erra em Flow vs Apex. Time que pula pra implementação descobre o erro no terceiro mês de produção.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Continuar a conversa</div>
+            <h3>Quer discutir esse tema com um sócio?</h3>
+            <p>Diagnóstico inicial sem compromisso. Levamos uma primeira leitura do seu cenário em uma semana e devolvemos um relatório.</p>
+            <a class="btn-link" href="/#contato">Conversar com um sócio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Próximas leituras</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="sf" href="/blog/data-cloud-nervo-central.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">19 mai 2026</span>
+              </div>
+              <h3>Data Cloud não é mais CDP — é o nervo central do Salesforce</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="post-card" data-pillar="sf" href="/blog/agentforce-atendimento-humano.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">24 fev 2026</span>
+              </div>
+              <h3>Agentforce em atendimento humano: o que automatizar e o que NÃO</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="post-card" data-pillar="sf" href="/blog/customer-360-vs-cdp.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">4 fev 2026</span>
+              </div>
+              <h3>Customer 360 vs CDP: diferenças que mudam o roadmap de dados</h3>
+              <div class="read">Ler →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
+            <li><a href="/glossario/">Glossário</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=b57e079d95"></script>
+  <script src="/assets/js/main.js?v=b57e079d95" type="module"></script>
+</body>
+</html>

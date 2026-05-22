@@ -224,6 +224,8 @@ const footerHtml = `
             <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
             <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
             <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
+            <li><a href="/glossario/">Glossário</a></li>
             <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
           </ul>
         </div>

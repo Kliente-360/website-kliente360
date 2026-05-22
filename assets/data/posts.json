@@ -66,6 +66,50 @@
     }
   },
   {
+    "slug": "metricas-de-produto-north-dust",
+    "pillar": "data",
+    "date": "2026-03-10",
+    "translations": {
+      "pt": {
+        "title": "Métricas de produto: por que north star vira \"north dust\" em 6 meses",
+        "url": "/blog/metricas-de-produto-north-dust.html",
+        "date": "10 mar 2026"
+      },
+      "en": {
+        "title": "Product metrics: why north star becomes \"north dust\" in 6 months",
+        "url": "/blog/en/metricas-de-produto-north-dust.html",
+        "date": "10 Mar 2026"
+      },
+      "es": {
+        "title": "Métricas de producto: por qué la north star se vuelve \"north dust\" en 6 meses",
+        "url": "/blog/es/metricas-de-produto-north-dust.html",
+        "date": "10 mar 2026"
+      }
+    }
+  },
+  {
+    "slug": "flow-vs-apex",
+    "pillar": "sf",
+    "date": "2026-03-04",
+    "translations": {
+      "pt": {
+        "title": "Salesforce Flow vs Apex: quando código vale mais que clique",
+        "url": "/blog/flow-vs-apex.html",
+        "date": "4 mar 2026"
+      },
+      "en": {
+        "title": "Salesforce Flow vs Apex: when code is worth more than clicks",
+        "url": "/blog/en/flow-vs-apex.html",
+        "date": "4 Mar 2026"
+      },
+      "es": {
+        "title": "Salesforce Flow vs Apex: cuándo el código vale más que el clic",
+        "url": "/blog/es/flow-vs-apex.html",
+        "date": "4 mar 2026"
+      }
+    }
+  },
+  {
     "slug": "vector-databases-comparados",
     "pillar": "ai",
     "date": "2026-03-03",

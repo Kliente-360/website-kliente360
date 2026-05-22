@@ -2,17 +2,17 @@
 
 Documento mantido em main. Registra contexto, decisões tomadas e próximos passos. Atualizar a cada sessão.
 
-Última atualização: 2026-05-22 (terceira passada — lote de 10 posts + audit SEO).
+Última atualização: 2026-05-22 (quarta passada — validação e reorganização).
 
 ---
 
 ## 1. Contexto
 
-Site institucional novo da **Kliente 360** — consultoria CRM/BI, parceira Salesforce. Single-page em HTML/CSS/JS puro + blog estático (Markdown→HTML).
+Site institucional novo da **Kliente 360** — consultoria especializada em CRM, Data & Analytics e IA Aplicada, parceira Salesforce. Single-page em HTML/CSS/JS puro + blog estático (Markdown→HTML).
 
 Decisor: Felipe Silva (felipe@kliente360.com).
 
-Repositório: `novo-site-kliente360`. Branch: `main`. Scaffold inicial já criado (commit `165f314`).
+Repositório: `novo-site-kliente360`. Branch: `main`. Scaffold inicial criado em `165f314`.
 
 ## 2. Direção definida
 
@@ -20,13 +20,13 @@ Repositório: `novo-site-kliente360`. Branch: `main`. Scaffold inicial já criad
 |---|---|
 | Público-alvo | Misto — decisor C-level + executor (head de ops/atendimento) |
 | Tom visual | Moderno-tech com alma corporativa premium. Sem paleta digital saturada. |
-| Blog | Gerador estático leve: Markdown → HTML. Entrega final 100% estática. |
-| Logo | Mantido (wordmark "kliente 360" verde + 4 círculos). PNG fornecido pelo Felipe. |
+| Blog | Gerador estático leve: Markdown → HTML. Entrega 100% estática. |
+| Logo | Mantido (wordmark "kliente 360" verde + 4 círculos). |
 | Verde do logo | Tratar como **acento** sobre base neutra/escura — não como tema dominante. |
 
 ## 3. Identidade antiga (referência histórica, não destino)
 
-Levantado do arquivo Figma "Kliente 360" (autora Bruna Slongo, 2022).
+Levantada do arquivo Figma "Kliente 360" (autora Bruna Slongo, 2022).
 
 **Paleta antiga** (Lato Regular/Medium/Bold):
 - Neutral: `#000000` / `#7D8185` / `#E6E6E6` / `#F1F2F0` / `#FFFFFF`
@@ -39,155 +39,177 @@ Levantado do arquivo Figma "Kliente 360" (autora Bruna Slongo, 2022).
 
 **Arquitetura antiga**: Home / Sobre / Serviços CRM / Serviços BI / Blog / Contato. Header com badge "Salesforce partner". Copy de prova técnica ("dados reais", "profissionais certificados").
 
-## 3.1. Três pilares do novo portfólio (definidos 2026-05-22)
+### 3.1. Três pilares do novo portfólio
 
 1. **Salesforce — core CRM.** Sales Cloud, Service Cloud, Data Cloud, Agentforce. Reforça a herança/parceria.
-2. **Data & Analytics — agnóstico de marca.** Engenharia de dados + analytics avançado / data science. **Expertise interna em Tableau (não declarada como viés ao mercado — decisão 2026-05-22).**
-3. **IA Aplicada — pilar novo.** Aplicações práticas de IA em empresas de segmentos diversos. Pegada de **software house / produtos SaaS**. Vocabulário: "agentes de IA" (não "copilots").
+2. **Data & Analytics — agnóstico de marca.** Engenharia de dados + analytics avançado / data science. Expertise interna em Tableau (não declarada como viés ao mercado — decisão 2026-05-22).
+3. **IA Aplicada — pilar novo.** Aplicações práticas de IA em empresas. Pegada de software house / produtos SaaS. Vocabulário: "agentes de IA" (não "copilots").
 
-## 3.2. Shortlist competitiva (para o brief)
+### 3.2. Shortlist competitiva
 
-Dois concorrentes por pilar, mistura de boutique + mid/enterprise:
+Dois concorrentes por pilar — especializada (espelho) + mid/enterprise (teto aspiracional):
 
-| Pilar | Especializada (espelho) | Mid/Enterprise (teto aspiracional) |
+| Pilar | Especializada | Mid/Enterprise |
 |---|---|---|
 | Salesforce | Sottelli | Everymind |
 | Data & Analytics | Somativa | Indicium |
 | IA Aplicada | Mind Group | CI&T |
 
-Referências secundárias mapeadas, fora do recorte: WeUse, Valtech, Capgemini, beAnalytic, Active BI, BDA Solutions, Aquarela, Zup, Slalom Build, Thoughtworks.
+Referências secundárias mapeadas: WeUse, Valtech, Capgemini, beAnalytic, Active BI, BDA Solutions, Aquarela, Zup, Slalom Build, Thoughtworks. Brief completo em `research/competitive-brief.md`.
 
-## 3.4. Sistema de cor (definido 2026-05-22)
+### 3.3. Marca e posicionamento
 
-- **Logo green `#009900`**: sagrado. Só no wordmark/dots. Não usar em UI.
-- **UI green `#007A3D`**: verde editorial. Usado em CTAs, eyebrows, links, hover e ícones de pilar. Estratégia "logo ≠ UI" (Starbucks, Spotify).
-- **Cores secundárias por pilar** (aparecem só dentro da seção do respectivo pilar):
+- **Posicionamento**: **consultoria especializada premium**. Altíssima expertise, alta personalização, time enxuto, poucos clientes estratégicos. Os 3 pilares costurados como diferencial único no mercado local. *Decisão de copy 2026-05-22: a palavra "boutique" não é usada externamente; externamente usa-se "consultoria especializada".*
+- **Tagline**: **"Conhecimento aplicado, como serviço."**
+- **Metodologia**: **Trilha 360** — Mapear → Prototipar → Validar → Implantar → Sustentar.
+- **Cases-âncora** (placeholders no HTML, métricas a aprovar): Sem Parar · Bodytech.
+- **Produtos SaaS de IA** (placeholders, ideia em revisão): Agente de atendimento interno (RH) · Analytics contábil para PME.
+
+### 3.4. Sistema de cor
+
+- **Logo green `#009900`**: sagrado, só no wordmark/dots. Não usar em UI.
+- **UI green `#007A3D`**: verde editorial. CTAs, eyebrows, links, hover, ícones de pilar. Estratégia "logo ≠ UI".
+- **Cores secundárias por pilar** (aparecem só na seção do respectivo pilar):
   - Salesforce → azul profundo `#0B5394`
   - Data & Analytics → âmbar `#C9A227`
   - IA Aplicada → violeta `#6D28D9`
-- **Navy `#06073E`** reaproveitado da paleta antiga como `--bg-deep` — fundo escuro alternativo opcional para hero/seção de IA. Não usar como acento.
-- **Yellow `#F8DF61` e Cyan `#0093FA` da paleta antiga**: descartados. Não combinam com o posicionamento de consultoria especializada premium.
+- **Navy `#06073E`** resgatado como `--bg-deep` (fundo escuro alternativo).
+- **Yellow e Cyan da paleta antiga**: descartados.
 
-## 3.5. Atributo de marca — sócios na operação (2026-05-22)
+### 3.5. Atributo de marca — sócios na operação
 
-Decidido **não fazer propaganda explícita** ("sócios na linha de frente" como manchete) nem mostrar fotos/nomes — soaria autoelogiosos. A credibilidade entra de forma **incorporada ao tom**, não como bullet de venda:
+Decidido **não fazer propaganda explícita** ("sócios na linha de frente" como manchete) nem mostrar fotos/nomes. A credibilidade entra incorporada ao tom:
 
-- Frases-ancora no copy: *"atendidos por quem entrega"*, *"conversa direta com quem decide"*, *"sem camadas de account manager"*.
-- CTA padrão pode ser **"Falar com um sócio"** em contextos específicos (rodapé, contato), não como botão dominante.
+- Frases-âncora: *"atendidos por quem entrega"*, *"conversa direta com quem decide"*, *"sem camadas de account manager"*.
+- CTA padrão: **"Falar com um sócio"** em contextos específicos (rodapé, contato).
 - Sem seção "Quem somos" com fotos.
 
-## 3.3. Marca e posicionamento (definidos 2026-05-22)
+### 3.6. Inspirações de design
 
-- **Posicionamento**: consultoria especializada premium. Altíssima expertise, alta personalização, time enxuto, poucos clientes estratégicos. Os 3 pilares costurados como diferencial único no mercado local. **Decisão de copy 2026-05-22**: a palavra "boutique" não é usada externamente (interna ou competitivamente pode ser categoria); externamente usa-se "consultoria especializada".
-- **Tagline**: **"Conhecimento aplicado, como serviço."** *(evolução sutil de "Conhecimento como serviço")*
-- **Metodologia própria**: **Trilha 360** — narrativa de jornada do cliente ao longo dos pilares. Detalhamento das etapas a definir.
-- **Cases para o site** (conteúdo a alimentar depois — placeholders no HTML):
-  - Sem Parar
-  - Bodytech
-- **Produtos SaaS de IA** (pilar 3 — placeholders, ideia ainda em revisão):
-  - Agente autônomo de atendimento interno (RH)
-  - Analytics contábil para PME
+Referências: **Apple**, **Google**, **Salesforce**.
 
-## 3.4. Inspirações de design (definidas 2026-05-22)
+- **Base ← Apple**: neutro escuro/off-white dominante, tipografia grande como protagonista, hero respirando, paleta restrita.
+- **Acento ← Google**: o verde entra pontual e com intenção (CTAs, palavra-chave do título, linha decorativa) — nunca em blocos inteiros.
+- **Confiança ← Salesforce**: bloco de parceria/certificações, cases nomeados com números, copy explicativa sem rebuscar.
+- **Tipografia**: **Inter** como sans humanista única, 2–3 pesos. *Serif editorial descartado.*
 
-Referências: **Apple**, **Google**, **Salesforce**. Síntese aplicada:
+## 4. Entregas
 
-- **Base visual ← Apple**: neutro escuro ou off-white dominante, tipografia grande como protagonista, hero respirando, paleta restrita.
-- **Acento de cor ← Google**: o verde do logo entra pontual e com intenção (CTAs, palavra-chave do título, linha decorativa) — nunca em blocos inteiros.
-- **Camada de confiança ← Salesforce**: bloco de parceria/certificações, cases nomeados com números, copy explicativa sem rebuscar.
-- **Tipografia**: sans humanista única, 2 pesos. Candidatos: **Inter**, **Söhne**, **GT America**. Reverte a sugestão anterior de serif editorial — não combina com o trio.
-
-## 4. Sequência de trabalho — entregue
+### 4.1. Sequência inicial — concluída
 
 | # | Etapa | Status |
 |---|---|---|
 | 1 | Levantamento da marca antiga (Figma) | ✅ |
-| 2 | Direção visual macro (consultoria especializada premium, verde como acento) | ✅ |
-| 3 | Portfólio repensado — três pilares + competitive-brief (`research/competitive-brief.md`) | ✅ |
-| 4 | Arquitetura do site (single-page, 10 seções, pilares com cor secundária) | ✅ |
-| 5 | Sistema visual definitivo — tokens, paleta, tipografia (§3.4) | ✅ |
-| 6 | Implementação `index.html` + tokens.css + reset.css + main.css | ✅ |
+| 2 | Direção visual macro (consultoria premium, verde como acento) | ✅ |
+| 3 | Portfólio repensado — três pilares + competitive-brief | ✅ |
+| 4 | Arquitetura do site (single-page, 10 seções) | ✅ |
+| 5 | Sistema visual definitivo (tokens, paleta, tipografia) | ✅ |
+| 6 | Implementação `index.html` + `tokens.css` + `reset.css` + `main.css` | ✅ |
 | 7 | Build do blog Markdown→HTML (`scripts/build-blog.mjs`) | ✅ |
 
-### Entregas adicionais (além da sequência inicial)
+### 4.2. Site institucional — entregue
 
-- **Mark "Aperture"** — 4 pontos em losango compacto, escolhido em §3.4.
-- **Styleguide** publicado em `/styleguide.html`.
-- **Blog multilíngue PT/EN/ES** com 3 posts iniciais publicados (`/blog/`, `/blog/en/`, `/blog/es/`).
-- **i18n real** — dicionário + redirect entre variantes nas páginas do blog.
-- **SEO + GEO**: JSON-LD `Article`, OG, canonical, sitemap auto, robots, favicon SVG, og-image.png renderizado no build.
-- **Home teaser de blog** auto-popular (3 mais recentes a partir de `assets/data/posts.json`).
-- **34 temas de back-catálogo 2026** mapeados, datas Tue/Wed válidas atribuídas.
-- **Routine de publicação** ativada com prompt completo (cadência, pilares rotacionados, SEO/GEO, idiomas).
-- **Cache invalidation** robusto no Netlify (`_headers` + `netlify.toml` + meta + querystring).
-- **Cadência editorial documentada**: 1 post Tue + 1 Wed, pulando feriados nacionais e Aniversário de SP.
+- Nav sticky com blur (Apple-like), mobile menu fullscreen, language switcher PT/EN/ES.
+- Hero com mark Aperture (4 pontos em losango) — `#009900`.
+- 3 pilares overview + 3 seções deep com cor secundária por pilar.
+- Trilha 360 (5 etapas horizontais no desktop, verticais no mobile).
+- Cases, Confiança (com 4 trust-numbers), Blog teaser (auto-popular), Contato (form + email + LinkedIn + WhatsApp), Footer.
+- Styleguide v0.1 publicado em `/styleguide.html`.
+- Tipografia editorial calibrada (H2 24–30px, H3 19–22px, body 19px, drop-cap em negrito colorido).
+- Mobile-first em todas as seções, CTAs com altura uniforme.
+
+### 4.3. Blog multilíngue PT/EN/ES — entregue
+
+- Build MD→HTML em `scripts/build-blog.mjs` gera `/blog/`, `/blog/en/`, `/blog/es/` + listings + manifest JSON.
+- i18n real: dicionário em `assets/js/i18n.js`, redirect inteligente entre variantes no toggle.
+- **13 posts publicados** com cadência Tue/Wed (13–20 mai + lote retroativo):
+  - sf: mapear-processos-antes-do-salesforce, data-cloud-nervo-central, sales-cloud-cinco-antipadroes, service-cloud-sla-nao-e-decoracao, customer-360-vs-cdp
+  - data: tableau-linguagem-executiva, dado-limpo-e-um-mito, dbt-na-pratica, elt-vs-etl
+  - ai: quando-agente-e-resposta, rag-na-pratica, llm-como-agente-interno, avaliacao-de-agentes
+- Backlinks contextuais entre posts (estratégia documentada em `blog/posts/README.md`).
+- Audit SEO/GEO rodado — quick wins aplicados (títulos #02 e #07 encurtados, links internos balanceados).
+- Routine de publicação ativada (prompt em GitHub MCP, cadência Tue/Wed pulando feriados, rotação de pilares).
+- 34 temas de back-catálogo mapeados (em `EDITORIAL.md`).
+
+### 4.4. Infraestrutura — entregue
+
+- Favicon SVG + `og-image.png` renderizada por `@resvg/resvg-js` no build.
+- `sitemap.xml` + `robots.txt` + JSON-LD `Article` por post + `inLanguage` por variante.
+- Headers de segurança em `_headers` (CSP, Referrer-Policy, X-Content-Type-Options, Permissions-Policy, HSTS).
+- Cache: assets imutáveis com hash em querystring, HTML sempre revalidado.
+- Build executado por Netlify a cada push em `main`.
 
 ## 5. Próximos passos imediatos
 
-- ⏳ Observar a routine rodar pelas próximas semanas e ajustar prompt se necessário.
-- ⏳ Quando aprovados pelos clientes: alimentar métricas reais dos cases Sem Parar e Bodytech.
-- ⏳ Conectar o form de contato a um endpoint real (Formspree / Netlify Forms / API própria) — hoje só faz feedback visual.
-- ⏳ Trocar WhatsApp e badge Salesforce (ver §7.1).
+- ⏳ Acompanhar a routine de blog rodar e ajustar prompt se necessário (1ª publicação automática esperada: Tue 26/05).
+- ⏳ Executar o roadmap SEO/Conteúdo (§6).
+- ⏳ Resolver itens do parking lot (§8.1) conforme bloqueios destravarem.
 
-## 6. Decisões fechadas
+## 6. Roadmap SEO/Conteúdo
 
-| Tema | Decisão |
-|---|---|
-| Tagline | "Conhecimento aplicado, como serviço." |
-| Tipografia | **Inter** como sans humanista única, 2–3 pesos. *Serif editorial descartado.* |
-| Badge "Salesforce Partner" | Mantido no hero. Atualizar pra badge oficial recomendado pelo branding Salesforce (ver §7.1). |
-| Cases públicos vs depoimentos | Cases nomeados (Sem Parar, Bodytech) com métricas a alimentar quando aprovadas. |
-| Cores antigas | Yellow e Cyan descartados. Navy reaproveitado como `--bg-deep`. |
-| Workflow Git | Direto em `main`, sem feature branches. |
-| Cadência do blog | Tue + Wed, pulando feriados nacionais BR + Aniversário SP. Rotação dos 3 pilares. |
+Derivado do audit pós-#10. Quick wins do Bloco A já aplicados. Pendências organizadas por dono.
 
-## 7. Notas técnicas
-
-- Stack: HTML5 + CSS (com `tokens.css`, `reset.css`, `main.css`) + JS módulo. Sem frameworks.
-- Estrutura de pastas já criada: `assets/{css,js,img,fonts}/`, `blog/posts/`.
-- Blog usará build Markdown→HTML (script Node minimal, sem dependências pesadas — definir na fase 7).
-- **Workflow Git (decidido 2026-05-22)**: trabalhamos direto em `main`. Sem feature branches. Netlify deploya de `main`. Mudança aceita por se tratar de site institucional pequeno, com um único decisor.
-
-## 7.1. Parking lot — pendências a resolver
-
-- **WhatsApp**: número atual `5511961875594` (link `http://wa.me/5511961875594`) é provisório — trocar pelo número oficial da Kliente 360 quando definido. Aparece em `index.html` (seção Contato + footer) e em `scripts/build-blog.mjs` (footer das páginas geradas).
-- **Badge "Salesforce Partner"**: hoje é uma pílula `pill-line` textual no hero (`index.html` §"Hero"). Trocar pelo badge oficial recomendado pelo branding Salesforce assim que tivermos acesso ao kit oficial — pode exigir SVG/PNG fornecido pela Salesforce + manter requisitos de uso da marca.
-- **Cases com métricas reais**: Sem Parar e Bodytech estão como placeholders dashed em `index.html` §"Cases". Trocar `—` pela métrica e o `lbl` pelo dado quando aprovados pelos clientes.
-- **Endpoint do form de contato**: hoje só faz feedback visual no submit (em `assets/js/main.js`). Integrar com Formspree / Netlify Forms / API própria quando definirmos.
-- **OG image PNG via build**: hoje funciona via `@resvg/resvg-js`. Se quisermos imagens OG dinâmicas por post (com título do post), virar tarefa futura.
-
-## 9. Roadmap SEO/Conteúdo (derivado do audit pós-#10)
-
-Auditoria SEO/GEO completa rodada com 13 posts publicados (3 back-catálogo + #01–#10). Quick wins do Bloco A já aplicados (títulos encurtados, links internos balanceados, backlinks). Pendências organizadas por dono.
-
-### 9.1. Conteúdo a escrever (eu, em sessões dedicadas)
+### 6.1. Conteúdo a escrever (sessões dedicadas com agente)
 
 | Item | Esforço | Impacto | Notas |
 |---|---|---|---|
-| **3 pillar pages** (Salesforce, Data, IA Aplicada) | 1 sessão por pillar | Alto | Agregador temático linkando todos os posts do cluster + manifesto curto da prática Kliente 360. PT/EN/ES. |
-| **Glossário Kliente 360** | 1 sessão | Alto | 20–30 termos (Agentforce, Data Cloud, RAG, dbt, ELT, embedding, MRR, recall@k, etc.), 1 parágrafo cada + link pro post canônico. GEO-friendly. PT/EN/ES. |
-| **Cases-âncora** (Sem Parar, Bodytech) | 2 sessões | Alto | Bloqueado por input do Felipe sobre escopo, números aprovados e o que pode ser dito publicamente. |
+| **3 pillar pages** (Salesforce, Data, IA Aplicada) | 1 sessão por pillar | Alto | Agregador temático linkando todos os posts do cluster + manifesto curto da prática. PT/EN/ES. |
+| **Glossário Kliente 360** | 1 sessão | Alto | 20–30 termos (Agentforce, Data Cloud, RAG, dbt, ELT, embedding, MRR, recall@k, etc.), 1 parágrafo + link pro post canônico. GEO-friendly. PT/EN/ES. |
+| **Cases-âncora** (Sem Parar, Bodytech) | 2 sessões | Alto | **Bloqueado** por input do Felipe sobre escopo, números aprovados e o que pode ser dito publicamente. |
 | **Página comercial** ("Como contratar consultoria especializada de CRM/Data/IA") | 1 sessão | Alto | Captura query comercial direta. Liga pillar pages. |
-| **Pass de backlinks dedicado** após cada lote de 5 posts novos | 0,5 sessão/lote | Médio | Revisar posts antigos pra linkar novos onde fizer sentido. Hoje feito ad-hoc. |
+| **Pass de backlinks dedicado** após cada lote de 5 posts | 0,5 sessão/lote | Médio | Revisar posts antigos pra linkar novos onde fizer sentido. |
 
-### 9.2. Mudanças no build/infra (Felipe ou outro mantenedor — fora do escopo do agente de blog)
+### 6.2. Build/Infra (Felipe ou outro mantenedor — fora do escopo do agente de blog)
 
 | Item | Esforço | Impacto | Onde |
 |---|---|---|---|
 | **Confirmar hreflang** entre PT/EN/ES + `x-default` | 30 min | Médio | `scripts/build-blog.mjs` — injetar `<link rel="alternate" hreflang="...">` no `<head>` de cada variante |
 | **Verificar robots.txt** permite `/blog/*`, `/blog/en/*`, `/blog/es/*` e o sitemap | 5 min | Crítico se errado | raiz |
-| **FAQ schema** auto-injetado | 0,5 dia | Alto | `scripts/build-blog.mjs` — detectar H2 terminados em `?` (ou flag `faq: true` no frontmatter) → emitir `FAQPage` JSON-LD. Posts-alvo: quando-agente-e-resposta, mapear-processos, rag-na-pratica, avaliacao-de-agentes |
+| **FAQ schema** auto-injetado | 0,5 dia | Alto | `scripts/build-blog.mjs` — detectar H2 terminados em `?` (ou flag `faq: true` no frontmatter) → emitir `FAQPage` JSON-LD |
 | **BreadcrumbList schema** | 0,5 dia | Médio | `scripts/build-blog.mjs` — `Blog › Pilar › Post` |
-| **OG image dinâmica por post** | 1 dia | Médio | Hoje usa `og-image.png` genérica. Virar template SVG → PNG por post no build (título + pilar + cor secundária). Já listado em §7.1. |
+| **OG image dinâmica por post** | 1 dia | Médio | Hoje usa `og-image.png` genérica. Virar template SVG → PNG por post no build (título + pilar + cor secundária). |
 | **Rodar PageSpeed Insights** em 2–3 posts típicos | 15 min | Médio | Calibrar Core Web Vitals reais |
 
-### 9.3. Competitive SEO (futuro, quando houver capacidade)
+### 6.3. Competitive SEO (futuro)
 
-Rodar `marketing:competitive-brief` específico de SEO contra Indicium, Everymind e Sottelli (os 3 da shortlist competitiva §3.2 que mantêm blog ativo). Identificar keyword overlap e gaps.
+Rodar competitive-brief específico de SEO contra Indicium, Everymind e Sottelli (shortlist §3.2 que mantêm blog ativo). Identificar keyword overlap e gaps.
 
-## 8. Histórico de sessões
+## 7. Decisões fechadas
 
-- **2026-05-21** — Scaffold criado. Levantamento Figma feito. Direção visual macro acordada. Portfólio entrou em revisão (competitive-brief). Documento PLAN.md criado em main.
-- **2026-05-22** — Três pilares do portfólio definidos (Salesforce / Data & Analytics / IA Aplicada — pilar 3 renomeado de "IA & Aplicações" em 2026-05-22). Shortlist de 6 concorrentes consolidada. Brief competitivo rodado — resultados em `research/competitive-brief.md`. Marca consolidada: tagline "Conhecimento aplicado, como serviço.", metodologia "Trilha 360", posicionamento de **consultoria especializada premium** (decisão 2026-05-22: descartar "boutique" como label externa). Cases-âncora: Sem Parar, Bodytech (métricas a alimentar). Produtos SaaS placeholders: agente RH, analytics contábil PME. Inspirações de design definidas: Apple (base), Google (acento), Salesforce (confiança). Arquitetura da home decidida (single-page, 10 seções, pilares na home). Idiomas: PT/EN/ES. Trilha 360 definida: Mapear → Prototipar → Validar → Implantar → Sustentar. Styleguide v0.1 publicado em `styleguide.html` para validação antes do site grande.
-- **2026-05-22 (segunda passada)** — Site grande implementado e refinado: nav sticky com blur, hero com mark Aperture, 3 pilares + 3 seções deep, Trilha 360 horizontal, cases, confiança, blog teaser, contato, footer. Sistema de cor refinado (logo green sagrado vs UI green editorial; secundárias por pilar; navy resgatado como `--bg-deep`). i18n real PT/EN/ES com redirect inteligente. Build MD→HTML multilíngue (`scripts/build-blog.mjs`) — 3 posts publicados em PT/EN/ES com cadência Tue/Wed (13, 19, 20 mai). 34 temas mapeados para back-catálogo 2026. Routine de blog ativada. Favicon SVG + og-image.png gerado por `@resvg/resvg-js`. Sitemap + robots + JSON-LD `Article`. Cache invalidation robusto no Netlify. Tipografia do post editorial (escala suave, sem barra colorida, padrão bold-lead-in para subseções curtas). LinkedIn oficial + WhatsApp provisório adicionados (parking).
-- **2026-05-22 (terceira passada)** — Lote de blog posts #01–#10 publicado direto via skill `marketing:draft-content` + routine manual: mapear-processos-antes-do-salesforce (sf), dado-limpo-e-um-mito (data), rag-na-pratica (ai), sales-cloud-cinco-antipadroes (sf), dbt-na-pratica (data), llm-como-agente-interno (ai), service-cloud-sla-nao-e-decoracao (sf), elt-vs-etl (data), avaliacao-de-agentes (ai), customer-360-vs-cdp (sf). Todos PT/EN/ES com forward links contextuais entre posts. EDITORIAL.md atualizado por commit. Diretriz de links internos formalizada no `blog/posts/README.md` (§"Estratégia de links internos"). Audit SEO/GEO completo rodado — quick wins aplicados (títulos de #02 e #07 encurtados, +1 link interno em 3 posts subconectados, backlinks dedicados). Roadmap §9 criado com itens de conteúdo restantes (pillar pages, glossário, cases, página comercial) e itens de build (hreflang, FAQ schema, BreadcrumbList, OG dinâmica).
+| Tema | Decisão |
+|---|---|
+| Posicionamento | "Consultoria especializada premium". *Não usar "boutique" externamente.* |
+| Tagline | "Conhecimento aplicado, como serviço." |
+| Tipografia | **Inter**, 2–3 pesos. Serif editorial descartado. |
+| Pilar 3 | "IA Aplicada" (renomeado de "IA & Aplicações"). Vocabulário: "agentes de IA" (não "copilots"). |
+| Tableau | Expertise interna não declarada externamente como viés. |
+| Badge "Salesforce Partner" | Mantido no hero. Atualizar pra badge oficial Salesforce (parking §8.1). |
+| Cases | Nomeados (Sem Parar, Bodytech), métricas a alimentar quando aprovadas. |
+| Cores antigas | Yellow e Cyan descartados. Navy reaproveitado como `--bg-deep`. |
+| Workflow Git | Direto em `main`, sem feature branches. |
+| Cadência do blog | Tue + Wed, pulando feriados nacionais BR + Aniversário SP. Rotação dos 3 pilares. |
+
+## 8. Notas técnicas
+
+- Stack: HTML5 + CSS (`tokens.css`, `reset.css`, `main.css`) + JS módulo. Sem frameworks.
+- Estrutura: `assets/{css,js,img,fonts,data}/`, `blog/posts/`, `scripts/`.
+- Dependências do build: `gray-matter`, `marked`, `@resvg/resvg-js` (`package.json`).
+- Asset versioning: hash-based (querystring nos links CSS/JS, calculado no build).
+- Netlify roda `npm run build` em cada push em `main`.
+
+### 8.1. Parking lot — pendências a resolver
+
+- **WhatsApp**: número `5511961875594` é provisório. Trocar pelo número oficial quando definido. Aparece em `index.html` (Contato + footer) e `scripts/build-blog.mjs` (footer das páginas geradas).
+- **Badge "Salesforce Partner"**: pílula textual hoje. Trocar pelo badge oficial recomendado pelo branding Salesforce (SVG/PNG oficial + requisitos de uso da marca).
+- **Cases com métricas reais**: Sem Parar e Bodytech como placeholders dashed em `index.html`. Trocar `—` pela métrica e o `lbl` pelo dado quando aprovados.
+- **Endpoint do form de contato**: hoje só feedback visual no submit (`assets/js/main.js`). Integrar com Formspree / Netlify Forms / API própria.
+- **OG image PNG dinâmica por post**: hoje usa imagem genérica (também listado em §6.2).
+- **EN/ES de novos posts**: routine deve produzir as 3 variantes simultaneamente. Validar lote de #11+ quando publicar.
+
+## 9. Histórico de sessões
+
+- **2026-05-21** — Scaffold criado. Levantamento Figma feito. Direção visual macro acordada. Portfólio entrou em revisão. PLAN.md criado.
+- **2026-05-22** — Três pilares definidos. Shortlist competitiva consolidada. Brief rodado. Marca, tagline, Trilha 360 e posicionamento de consultoria especializada premium fechados. Cases-âncora e produtos SaaS placeholders. Inspirações Apple/Google/Salesforce. Arquitetura da home (single-page, 10 seções). Idiomas PT/EN/ES. Styleguide v0.1 publicado.
+- **2026-05-22 (segunda passada)** — Site grande implementado: nav, hero com mark Aperture, 3 pilares + 3 seções deep, Trilha, cases, confiança, blog teaser, contato, footer. Sistema de cor refinado (logo green sagrado vs UI green editorial; secundárias por pilar; navy resgatado). i18n real. Build MD→HTML multilíngue — 3 posts publicados. 34 temas mapeados. Routine ativada. Favicon + og-image.png + sitemap + robots + JSON-LD. Tipografia editorial calibrada. LinkedIn + WhatsApp adicionados.
+- **2026-05-22 (terceira passada)** — Lote de blog posts #01–#10 publicado (sf/data/ai em rotação). Todos PT/EN/ES com forward links. EDITORIAL.md criado. Diretriz de links internos formalizada. Audit SEO/GEO completo — quick wins aplicados. Roadmap §6 (era §9) criado. Vocabulário rebrand: descartar "boutique", "IA Aplicada", "agentes de IA". Headers de segurança endurecidos. Asset versioning hash-based.
+- **2026-05-22 (quarta passada)** — Validação geral do PLAN. Reorganização: §3 ganhou subseções coerentes 3.1–3.6 (corrigido §3.4 duplicado); §4 consolidado em 4.1–4.4 (sequência inicial + site + blog + infra); §6 movido pra antes do histórico; §7 decisões fechadas com 10 itens; §8 técnicas + parking expandido; histórico no fim. Snapshot do estado real: 13 posts publicados, audit SEO concluído, routine rodando, próximo passo é executar §6.1.

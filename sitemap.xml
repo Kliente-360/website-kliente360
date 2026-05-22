@@ -73,6 +73,42 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>/blog/dado-limpo-e-um-mito.html</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/blog/en/dado-limpo-e-um-mito.html</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/blog/es/dado-limpo-e-um-mito.html</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/blog/mapear-processos-antes-do-salesforce.html</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/blog/en/mapear-processos-antes-do-salesforce.html</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>/blog/es/mapear-processos-antes-do-salesforce.html</loc>
+    <lastmod>2026-01-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>/blog/en/</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>

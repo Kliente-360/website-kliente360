@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Mapear procesos antes de Salesforce: el checklist que ahorra meses | Kliente 360</title>
+  <meta name="description" content="Implementar Salesforce sin mapear el proceso es pagar dos veces: una a la consultora y otra en retrabajo. El checklist que separa un rollout caro de uno que rinde." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/es/mapear-processos-antes-do-salesforce.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/mapear-processos-antes-do-salesforce.html" />
+  <link rel="alternate" hreflang="en" href="/blog/en/mapear-processos-antes-do-salesforce.html" />
+  <link rel="alternate" hreflang="es" href="/blog/es/mapear-processos-antes-do-salesforce.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/mapear-processos-antes-do-salesforce.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Mapear procesos antes de Salesforce: el checklist que ahorra meses | Kliente 360" />
+  <meta property="og:description" content="Implementar Salesforce sin mapear el proceso es pagar dos veces: una a la consultora y otra en retrabajo. El checklist que separa un rollout caro de uno que rinde." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-01-06" />
+  <meta property="article:section" content="Salesforce" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mapear procesos antes de Salesforce: el checklist que ahorra meses | Kliente 360" />
+  <meta name="twitter:description" content="Implementar Salesforce sin mapear el proceso es pagar dos veces: una a la consultora y otra en retrabajo. El checklist que separa un rollout caro de uno que rinde." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=c580683d28" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=c580683d28" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=c580683d28" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Mapear procesos antes de Salesforce: el checklist que ahorra meses",
+  "description": "Implementar Salesforce sin mapear el proceso es pagar dos veces: una a la consultora y otra en retrabajo. El checklist que separa un rollout caro de uno que rinde.",
+  "datePublished": "2026-01-06",
+  "inLanguage": "es-ES",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Salesforce",
+  "keywords": [
+    "Salesforce",
+    "implementación Salesforce",
+    "mapeo de procesos",
+    "discovery",
+    "CRM"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/#salesforce" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/#data" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/#ia" data-i18n="nav.mobile.ai">IA &amp; Aplicações</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="sf">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Pilar 01 · Salesforce</span>
+            <a class="post-back" href="/blog/es/">Blog</a>
+          </div>
+          <h1>Mapear procesos antes de Salesforce: el checklist que ahorra meses</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-01-06">6 ene 2026</time>
+            <span class="sep">·</span>
+            <span>6 min de lectura</span>
+            <span class="sep">·</span>
+            <span>Por Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>La mayoría de los proyectos de Salesforce se traban en el mes 4 — no por un bug, sino por un proceso que nadie escribió. Mapear antes de configurar es el trabajo más barato de todo el proyecto. Siete preguntas, tres artefactos, una regla para saber cuándo se puede empezar a tocar el Setup.</p>
+          </aside>
+
+          <p class="post-intro">La pregunta que define si un proyecto de Salesforce va a cumplir plazo no es &quot;cuántas licencias vamos a comprar&quot;. Es &quot;quién diseñó el proceso que esas licencias van a automatizar&quot;. En siete de cada diez kickoffs que llegan acá ya atrasados, el diagnóstico es el mismo: empezaron a configurar antes de entender. En algún momento alguien abrió el Setup con la sensación de que mapear era <em>paja</em> — y tres meses después el equipo entero paga ese apuro en retrabajo.</p>
+<p>Este texto es el checklist que usamos antes de tocar cualquier org. No es metodología propietaria, no es framework con nombre. Es el mínimo de discovery que separa un rollout que rinde de uno que se convierte en &quot;proyecto vivo&quot; durante los próximos dos años.</p>
+<h2>Por qué el proceso suele estar implícito</h2>
+<p>En casi toda empresa de tamaño medio, el proceso de venta, atención o post-venta <strong>vive en la cabeza de tres personas</strong>. Un vendedor sénior sabe cuándo dar descuento, el gerente sabe cuándo aprobar excepción, el equipo de operaciones sabe qué lead es &quot;basura&quot; sin necesidad de abrirlo. Nada de eso está escrito en ningún lado — funciona porque esas tres personas llevan años en la misma sala (o en el mismo WhatsApp).</p>
+<p>Salesforce no tiene cabeza. Tiene objeto, campo, regla de validación, flow. Para que decida, alguien tiene que escribir la decisión. Y ahí es donde el proyecto se traba: no en lo técnico, sino en lo <em>no escrito</em>. El consultor pregunta &quot;¿cuándo el lead se vuelve oportunidad?&quot; y recibe tres respuestas distintas. Cada una se vuelve un camino en el flow. El flow se vuelve laberinto. El usuario abandona.</p>
+<blockquote>
+<p>Salesforce no automatiza el proceso: automatiza la versión escrita del proceso. Si la versión escrita no existe, el proyecto está inventando proceso, no implementando CRM.</p>
+</blockquote>
+<p>La diferencia entre un proyecto barato y uno caro vive justamente acá. Mapear antes cuesta dos a cuatro semanas. Mapear después — cuando el usuario ya se quejó, el sponsor ya cobró, el consultor ya configuró — cuesta tres a seis meses.</p>
+<h2>Siete preguntas antes de abrir el Setup</h2>
+<p>La regla que aplicamos en todo kickoff. Si la respuesta a tres o más es &quot;no lo tenemos documentado&quot;, <strong>paramos</strong> — discovery se vuelve sprint dedicada antes de cualquier configuración.</p>
+<ol>
+<li><strong>¿Cuál es el camino feliz, en pasos numerados?</strong> El lead llega, califica, se vuelve oportunidad, cierra, se vuelve cuenta. Escribí los pasos. No los subprocesos — los pasos. Si pasa de 12, estás describiendo dos procesos mezclados.</li>
+<li><strong>¿Cuáles son los tres caminos no felices más comunes?</strong> Lead reclama, oportunidad se traba en aprobación, cuenta vuelve a renegociación. Esos caminos cubren 60–70% del volumen real. Si nadie sabe cuáles son, nadie miró el histórico.</li>
+<li><strong>¿Quién decide qué, en cada paso?</strong> Quién aprueba descuento por encima de X. Quién reabre oportunidad cerrada-perdida. Quién cambia el owner de una cuenta estratégica. Cargo, no nombre.</li>
+<li><strong>¿Cuál es el SLA real (no el prometido) en cada etapa?</strong> Tiempo medio que un lead pasa en Calificación hoy. Tiempo medio de aprobación de propuesta. Si nadie lo mide, Salesforce va a exponerlo en el primer mes — generalmente en reunión de board.</li>
+<li><strong>¿Qué dato tiene que estar cargado para que un registro avance?</strong> No todo campo importa en toda etapa. Pero al menos 3–5 campos por etapa son obligatorios para que el proceso tenga sentido. ¿Cuáles?</li>
+<li><strong>¿Qué sistemas alimentan o consumen ese proceso?</strong> ERP, billing, marketing automation, la planilla del área financiera. La integración mal mapeada es la causa #1 de atraso en el go-live. En arquitecturas Salesforce modernas, <a href="/blog/es/data-cloud-nervo-central.html">Data Cloud entra como capa de contexto que unifica parte de esos sistemas</a> — pero solo funciona si el proceso por debajo está diseñado.</li>
+<li><strong>¿Quién va a usar esto en el día a día, y qué hace esa persona en 5 minutos?</strong> El proceso tiene que caber en el flujo real del usuario, no en el ideal del consultor. Si la vendedora abre Salesforce 20 veces por día, cada pantalla tiene que servir a esos 20 momentos — no a las 20 etapas.</li>
+</ol>
+<p>Quien responde las siete sin dudar está listo para configurar. Quien duda en tres o más sigue en discovery, aunque el cronograma diga lo contrario.</p>
+<h2>Los tres artefactos que vale la pena producir</h2>
+<p>Discovery no tiene que volverse un libro. Tres artefactos resuelven el 90% de lo que el equipo de configuración va a necesitar.</p>
+<p><strong>Mapa de proceso en una página.</strong> Diagrama lineal (no flujograma con mil decisiones) de las etapas del camino feliz, con SLA esperado en cada una y los tres caminos alternativos saliendo de los puntos de decisión. En una página. Si no entra, está demasiado detallado — va a convertirse en manual que nadie lee. La regla: si la vendedora sénior lo mira y reconoce su trabajo, está listo. Si dice &quot;esto no es como funciona&quot;, el mapa todavía es fantasía.</p>
+<p><strong>Matriz de campos por etapa.</strong> Tabla simple: filas son los campos del objeto, columnas son las etapas, celdas indican <em>obligatorio</em>, <em>opcional</em>, <em>solo lectura</em> u <em>oculto</em>. Ese documento se vuelve input directo para page layouts, validation rules y reglas de transición. Es el artefacto que más tiempo ahorra en la configuración — y el más frecuentemente saltado.</p>
+<p><strong>Lista de integraciones con responsable y SLA.</strong> Cada sistema que intercambia datos con Salesforce, en qué dirección (entrada, salida, bidireccional), con qué frecuencia (real-time, cada hora, diario), quién es dueño del lado externo, y qué pasa cuando la integración se rompe. Sin esa lista, la integración se vuelve proyecto-dentro-del-proyecto y retrasa a todos.</p>
+<p>Esos tres artefactos entran en dos a tres semanas de trabajo enfocado con 4–6 personas. Es la inversión más barata del proyecto entero, y casi siempre la primera que se recorta cuando el sponsor quiere &quot;arrancar ya&quot;.</p>
+<h2>La trampa del &quot;después ajustamos&quot;</h2>
+<p>El argumento contra mapeo serio suele ser: <em>&quot;pongamos lo básico en el aire y después ajustamos con el uso real&quot;</em>. En teoría, ágil. En la práctica, tres trampas se repiten:</p>
+<ul>
+<li><strong>Lo básico se vuelve definitivo.</strong> El usuario aprende el flujo equivocado, el proceso se cristaliza, rehacerlo cuesta cambio de comportamiento — mucho más caro que cambio de configuración.</li>
+<li><strong>Las métricas salen distorsionadas desde el día 1.</strong> Si la etapa &quot;Calificación&quot; significa cosas distintas para cada vendedor, el funnel reportado es ficción. La dirección toma decisiones sobre ficción durante seis meses.</li>
+<li><strong>La primera integración rompe la confianza.</strong> Cuando el pedido no cuadra en el ERP porque nadie mapeó la regla de tax exemption, el equipo cuestiona el proyecto entero — no la integración específica.</li>
+</ul>
+<p>El ajuste continuo es saludable. Saltar discovery no es ajuste continuo, es deuda técnica naciendo capitalizada.</p>
+<h2>Cómo presentar el checklist al sponsor</h2>
+<p>El sponsor ejecutivo suele ver discovery como costo, no como inversión. La conversación que funciona es mostrar el trade-off en números concretos: cada semana de mapeo bien hecho evita unas cuatro a seis semanas de retrabajo post go-live. La cuenta sale positiva ya en el primer camino alternativo que el equipo evitó descubrir en producción.</p>
+<p>Otra forma de enmarcarlo: discovery no es fase del proyecto Salesforce, es el proyecto de <strong>definir el proceso que Salesforce va a sostener</strong>. Si la empresa decide que no vale hacerlo, la pregunta siguiente no es &quot;¿cómo reducimos discovery?&quot;, es &quot;¿por qué estamos comprando licencias para un proceso que nadie quiere escribir?&quot;. Generalmente esa pregunta sola destraba el presupuesto.</p>
+<p>El mejor proyecto de Salesforce es el que parece aburrido en el mes 1 — porque el equipo está escribiendo, dibujando, validando — y impresiona en el mes 4, cuando el go-live ocurre sin el circo de incidentes que se volvió normal en el mercado. Discovery no es la parte glamorosa. Es la parte que hace la configuración predecible, y la predictibilidad es lo que el sponsor está comprando cuando contrata Salesforce.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Continuar la conversación</div>
+            <h3>¿Quieres discutir este tema con un socio?</h3>
+            <p>Diagnóstico inicial sin compromiso. Hacemos una primera lectura de tu escenario en una semana y devolvemos un informe.</p>
+            <a class="btn-link" href="/#contato">Hablar con un socio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Próximas lecturas</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="sf" href="/blog/es/data-cloud-nervo-central.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">19 may 2026</span>
+              </div>
+              <h3>Data Cloud ya no es CDP — es el nervio central de Salesforce</h3>
+              <div class="read">Leer →</div>
+            </a>
+            <a class="post-card" data-pillar="ai" href="/blog/es/quando-agente-e-resposta.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 03 · IA</span>
+                <span class="post-date">20 may 2026</span>
+              </div>
+              <h3>Cuándo un agente es la respuesta — y cuándo es huida de un problema mal modelado</h3>
+              <div class="read">Leer →</div>
+            </a>
+            <a class="post-card" data-pillar="data" href="/blog/es/tableau-linguagem-executiva.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 02 · Data</span>
+                <span class="post-date">13 may 2026</span>
+              </div>
+              <h3>Tableau como lenguaje ejecutivo: matando el dashboard de vanidad</h3>
+              <div class="read">Leer →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Boutique de CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/#salesforce" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/#data" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/#ia" data-i18n="nav.mobile.ai">IA &amp; Aplicações</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · boutique CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=c580683d28"></script>
+  <script src="/assets/js/main.js?v=c580683d28" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Clean data is a myth: how to live with imperfect quality without freezing the roadmap | Kliente 360</title>
+  <meta name="description" content="Waiting for 100% clean data before starting is the most elegant way to never ship. What separates companies that move from companies stuck in eternal quality projects." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/en/dado-limpo-e-um-mito.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/dado-limpo-e-um-mito.html" />
+  <link rel="alternate" hreflang="en" href="/blog/en/dado-limpo-e-um-mito.html" />
+  <link rel="alternate" hreflang="es" href="/blog/es/dado-limpo-e-um-mito.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/dado-limpo-e-um-mito.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Clean data is a myth: how to live with imperfect quality without freezing the roadmap | Kliente 360" />
+  <meta property="og:description" content="Waiting for 100% clean data before starting is the most elegant way to never ship. What separates companies that move from companies stuck in eternal quality projects." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-01-07" />
+  <meta property="article:section" content="Data &amp; Analytics" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Clean data is a myth: how to live with imperfect quality without freezing the roadmap | Kliente 360" />
+  <meta name="twitter:description" content="Waiting for 100% clean data before starting is the most elegant way to never ship. What separates companies that move from companies stuck in eternal quality projects." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=c580683d28" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=c580683d28" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=c580683d28" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Clean data is a myth: how to live with imperfect quality without freezing the roadmap",
+  "description": "Waiting for 100% clean data before starting is the most elegant way to never ship. What separates companies that move from companies stuck in eternal quality projects.",
+  "datePublished": "2026-01-07",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Data & Analytics",
+  "keywords": [
+    "data quality",
+    "data governance",
+    "data roadmap",
+    "MDM",
+    "master data"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/#salesforce" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/#data" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/#ia" data-i18n="nav.mobile.ai">IA &amp; Aplicações</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="data">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Practice 02 · Data</span>
+            <a class="post-back" href="/blog/en/">Blog</a>
+          </div>
+          <h1>Clean data is a myth: how to live with imperfect quality without freezing the roadmap</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-01-07">7 Jan 2026</time>
+            <span class="sep">·</span>
+            <span>6 min read</span>
+            <span class="sep">·</span>
+            <span>By Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Clean data, in the absolute sense, doesn&#39;t exist in a company that operates. What exists is data *good enough for decision X*. Companies that understand this move the roadmap; the ones waiting for universal cleanliness stay in eternal quality projects. Three practical rules to stop stalling.</p>
+          </aside>
+
+          <p class="post-intro">The most expensive sentence in a data meeting is &quot;we need to clean the base first&quot;. It sounds responsible. It sounds mature. And it is, more often than not, the argument that kills the analytics project, <a href="/blog/en/mapear-processos-antes-do-salesforce.html">the Salesforce project</a>, the AI project — without anyone noticing it killed it. Because the base never finishes getting cleaned. There&#39;s always one more field, one more duplicate, one more legacy system. And the company that decided to wait keeps making decisions in the parallel spreadsheet while the &quot;quality project&quot; enters its third year.</p>
+<p>This text is against the myth that data has to be clean to be useful. It isn&#39;t against quality — quality matters, a lot. It&#39;s against the <em>way of pursuing quality</em> that paralyzes the rest of the operation.</p>
+<h2>The myth and why it survives</h2>
+<p>The myth has three pillars. Worth naming each one, because as long as they stay implicit, the argument doesn&#39;t change.</p>
+<p>The first is the <strong>myth of absolute cleanliness</strong>. The idea that there&#39;s a final state of correct data — no duplicates, no empty fields, no inconsistency between systems. That state doesn&#39;t exist in any company that still operates. Every operation generates entropy: a customer changes address, a rep types it wrong, an external system sends junk. Cleansing is continuous work, not a phase with an end.</p>
+<p>The second is the <strong>myth of universality</strong>. The idea that if customer data is dirty, then every project that touches customers has to wait. False. A churn dashboard needs high quality on the &quot;cancellation date&quot; field and tolerates noise in &quot;secondary phone&quot;. A collections agent needs high quality on &quot;open amount&quot; and tolerates noise in &quot;market segment&quot;. <em>Quality is always relative to use.</em></p>
+<p>The third is the <strong>myth of sequence</strong>. The idea that first you clean, then you use. In practice, it&#39;s use that reveals which dirt actually matters. A company that cleans before using cleans what the technical team thinks matters — and discovers, six months later, that it cleaned the wrong things. The company that uses first sees what hurts and attacks what hurts.</p>
+<blockquote>
+<p>Clean data in absolute terms doesn&#39;t exist. What exists is data good enough for decision X. Everything else is an endless project disguised as governance.</p>
+</blockquote>
+<p>The myth survives because it&#39;s comfortable. It postpones hard decisions, outsources responsibility to &quot;the base&quot;, and gives the team a sense of rigor. The cost shows up quietly: opportunities not taken, projects cancelled, decisions made on a parallel spreadsheet with worse data than the official system.</p>
+<h2>Three rules for living with imperfection</h2>
+<p>A decent data boutique works like this. No magic, no new tool.</p>
+<ol>
+<li><strong>Define &quot;good enough&quot; for each use case.</strong> Before any project, write down: for this decision, which fields need to be correct in what percentage of records? For <a href="/blog/en/tableau-linguagem-executiva.html">an executive dashboard that drives decisions</a>, 98% on <code>amount</code> and <code>close date</code> solves it. For an email campaign, 90% on <code>primary email</code> solves it. For a churn model, it depends — but you need the number before starting.</li>
+<li><strong>Use real, dirty data in parallel with cleansing.</strong> Don&#39;t block the use case waiting for cleanliness. Run the report, build the agent, launch the campaign — with what exists. The first run will show exactly where the noise hurts. <em>Then</em> clean. That&#39;s ten times cheaper than cleaning in the dark.</li>
+<li><strong>Make observability the permanent piece, not the cleansing.</strong> Cleansing is an event. Observability is a process. Set up alerts for &quot;% of records without tax ID on the Account object went from 5% to 12%&quot;, &quot;average value of the Proposal stage dropped 30% without funnel variation&quot;. Those alerts tell you what to clean, when, and the real business impact.</li>
+</ol>
+<p>Companies that apply those three rules start treating quality as operational practice, not as project. And the classic quality project — six-month, with consultancy, with &quot;initial cleansing&quot; package — becomes what it always should have been: an exception for specific problems, not the general rule.</p>
+<h2>Where serious cleansing still makes sense</h2>
+<p>Don&#39;t confuse the argument. There are cases where upfront cleansing is necessary and worth the cost.</p>
+<p><strong>System migration.</strong> Switching CRMs, consolidating two ERPs after a merger, moving from spreadsheet to warehouse. Here cleansing is part of the migration — you don&#39;t want to carry historical junk into the new system and resurrect dead problems. But even here, &quot;clean&quot; means <em>clean for this use</em> — records that will operate from now on, not the 15 years of history nobody will open.</p>
+<p><strong>Customer identity.</strong> When the problem is genuinely identity — &quot;is this customer the same one from the other system?&quot; — a serious master data project with matching rules, dedup, golden record pays off. Without it, every downstream use case suffers, from dashboard to agent. But this is an exception, not the rule. Most companies don&#39;t need full MDM; they need good matching rules across 3–5 critical entities.</p>
+<p><strong>Regulatory.</strong> Financial services, healthcare, sensitive personal data. Here there&#39;s no choice — quality is compliance, and compliance doesn&#39;t negotiate. But the scope is narrow: the fields the regulator looks at. The rest of the base follows the &quot;good enough&quot; rule.</p>
+<p>Outside those three contexts, a universal cleansing project is almost always an escape from the decision to ship.</p>
+<h2>The invisible cost of waiting</h2>
+<p>The math nobody runs in the governance meeting: while the cleansing project runs, <em>decisions keep getting made</em>. They don&#39;t stop because data is dirty. They just migrate to the manager&#39;s parallel Excel, to the report the intern builds by hand, to the gut of the director with 20 years in the company.</p>
+<p>That invisible cost has three components. Senior time reinventing analyses the system should deliver — easily 10–20% of a middle manager&#39;s week. Decisions made on worse data than the official system, because the parallel version never has the same history or the same rules. And loss of credibility for the data team, which becomes &quot;the team that takes forever to deliver&quot; while the rest of the company improvises.</p>
+<p>When you add those three over six months of &quot;let&#39;s clean first&quot;, you reach a number that is usually larger than the cost of the use-case project that was waiting.</p>
+<h2>What to change in the next conversation</h2>
+<p>In the next meeting where someone says &quot;we need to clean the base first&quot;, the question that unblocks is simple: <em>clean for what</em>. If the answer is vague (&quot;to have a reliable base&quot;, &quot;to ensure quality&quot;), the project isn&#39;t ready — cleansing isn&#39;t missing, the use case is. If the answer is specific (&quot;to run that dashboard with confidence on <code>contract value</code>&quot;), then the cleansing scope is specific too: that field, in those records, with that threshold.</p>
+<p>Good data isn&#39;t clean data. It&#39;s data fit for use. Companies that understand the difference move the roadmap. Those still chasing universal cleanliness will deliver their third governance plan in 2027 — and keep making decisions in a spreadsheet.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Keep the conversation going</div>
+            <h3>Want to discuss this topic with a partner?</h3>
+            <p>Initial diagnostic with no commitment. We assess your scenario in a week and send back a report.</p>
+            <a class="btn-link" href="/#contato">Talk to a partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Further reading</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="data" href="/blog/en/tableau-linguagem-executiva.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">13 May 2026</span>
+              </div>
+              <h3>Tableau as an executive language: killing the vanity dashboard</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="ai" href="/blog/en/quando-agente-e-resposta.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 03 · AI</span>
+                <span class="post-date">20 May 2026</span>
+              </div>
+              <h3>When an agent is the answer — and when it&#39;s an escape from a poorly modeled problem</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="sf" href="/blog/en/data-cloud-nervo-central.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 01 · Salesforce</span>
+                <span class="post-date">19 May 2026</span>
+              </div>
+              <h3>Data Cloud is no longer a CDP — it&#39;s the central nervous system of Salesforce</h3>
+              <div class="read">Read →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Boutique de CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/#salesforce" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/#data" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/#ia" data-i18n="nav.mobile.ai">IA &amp; Aplicações</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · boutique CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=c580683d28"></script>
+  <script src="/assets/js/main.js?v=c580683d28" type="module"></script>
+</body>
+</html>

@@ -64,5 +64,49 @@
         "date": "13 may 2026"
       }
     }
+  },
+  {
+    "slug": "dado-limpo-e-um-mito",
+    "pillar": "data",
+    "date": "2026-01-07",
+    "translations": {
+      "pt": {
+        "title": "Dado limpo é um mito: como conviver com qualidade imperfeita sem travar o roadmap",
+        "url": "/blog/dado-limpo-e-um-mito.html",
+        "date": "7 jan 2026"
+      },
+      "en": {
+        "title": "Clean data is a myth: how to live with imperfect quality without freezing the roadmap",
+        "url": "/blog/en/dado-limpo-e-um-mito.html",
+        "date": "7 Jan 2026"
+      },
+      "es": {
+        "title": "Dato limpio es un mito: cómo convivir con calidad imperfecta sin trabar el roadmap",
+        "url": "/blog/es/dado-limpo-e-um-mito.html",
+        "date": "7 ene 2026"
+      }
+    }
+  },
+  {
+    "slug": "mapear-processos-antes-do-salesforce",
+    "pillar": "sf",
+    "date": "2026-01-06",
+    "translations": {
+      "pt": {
+        "title": "Mapear processos antes do Salesforce: o checklist que economiza meses",
+        "url": "/blog/mapear-processos-antes-do-salesforce.html",
+        "date": "6 jan 2026"
+      },
+      "en": {
+        "title": "Map the process before Salesforce: the checklist that saves months",
+        "url": "/blog/en/mapear-processos-antes-do-salesforce.html",
+        "date": "6 Jan 2026"
+      },
+      "es": {
+        "title": "Mapear procesos antes de Salesforce: el checklist que ahorra meses",
+        "url": "/blog/es/mapear-processos-antes-do-salesforce.html",
+        "date": "6 ene 2026"
+      }
+    }
   }
 ]

@@ -21,6 +21,7 @@
  */
 
 import { readFileSync, readdirSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
@@ -33,7 +34,24 @@ const ROOT       = join(__dirname, '..');
 const POSTS_DIR  = join(ROOT, 'blog', 'posts');
 const BLOG_DIR   = join(ROOT, 'blog');
 
-const ASSET_VERSION = new Date().toISOString().slice(0, 10).replaceAll('-', '');
+// Hash do conteúdo dos assets CSS/JS — muda só quando o arquivo muda,
+// preservando o cache do browser entre rebuilds sem mudança real.
+const hashAssets = () => {
+  const files = [
+    'assets/css/tokens.css',
+    'assets/css/reset.css',
+    'assets/css/main.css',
+    'assets/js/i18n.js',
+    'assets/js/main.js',
+  ];
+  const h = createHash('sha256');
+  for (const f of files) {
+    const p = join(ROOT, f);
+    if (existsSync(p)) h.update(readFileSync(p));
+  }
+  return h.digest('hex').slice(0, 10);
+};
+const ASSET_VERSION = hashAssets();
 
 const LANGS = ['pt', 'en', 'es'];
 const HTML_LANG = { pt: 'pt-BR', en: 'en-US', es: 'es-ES' };
@@ -225,7 +243,12 @@ const footerHtml = `
     </div>
   </footer>`;
 
-const headCommon = ({ title, description, canonical, ogType = 'article', pubDate, section, htmlLang = 'pt-BR' }) => `
+const hreflangCode = { pt: 'pt-BR', en: 'en', es: 'es', 'x-default': 'x-default' };
+const renderAlternates = (alternates = []) => alternates
+  .map(({ lang, href }) => `  <link rel="alternate" hreflang="${hreflangCode[lang]}" href="${href}" />`)
+  .join('\n');
+
+const headCommon = ({ title, description, canonical, ogType = 'article', pubDate, section, htmlLang = 'pt-BR', alternates = [] }) => `
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>${escapeHtml(title)}</title>
@@ -236,6 +259,7 @@ const headCommon = ({ title, description, canonical, ogType = 'article', pubDate
   <meta http-equiv="Expires" content="0" />
 
   <link rel="canonical" href="${canonical}" />
+${renderAlternates(alternates)}
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <meta property="og:type" content="${ogType}" />
@@ -275,6 +299,12 @@ const renderPost = (post, lang, allPosts) => {
   const canonical = postUrl(post.slug, lang);
   const blogHref = listingUrl(lang);
 
+  // hreflang alternates: uma entrada por idioma disponível + x-default (PT)
+  const alternates = [
+    ...LANGS.filter(l => post.translations[l]).map(l => ({ lang: l, href: postUrl(post.slug, l) })),
+    { lang: 'x-default', href: postUrl(post.slug, post.translations.pt ? 'pt' : Object.keys(post.translations)[0]) },
+  ];
+
   const ldJson = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -299,6 +329,7 @@ ${headCommon({
   pubDate: post.date,
   section: sectionLabel,
   htmlLang: HTML_LANG[lang],
+  alternates,
 })}
 
   <script type="application/ld+json">
@@ -392,6 +423,10 @@ ${headCommon({
   canonical: listingUrl(lang),
   ogType: 'website',
   htmlLang: HTML_LANG[lang],
+  alternates: [
+    ...LANGS.map(l => ({ lang: l, href: listingUrl(l) })),
+    { lang: 'x-default', href: listingUrl('pt') },
+  ],
 })}
 </head>
 <body>

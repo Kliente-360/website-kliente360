@@ -401,9 +401,18 @@ body {
 .pillar-deep .pillar-copy .actions { margin-top: var(--sp-8); display: flex; gap: var(--sp-6); flex-wrap: wrap; align-items: center; row-gap: var(--sp-4); }
 .pillar-deep .pillar-copy .actions .btn-link { padding-block: 6px; }
 
-/* No mobile (quando o link cai pra linha de baixo), ambos centralizam horizontalmente */
+/* No mobile: actions vira inline-grid no eixo do botão (não da tela).
+ * O botão define a largura da coluna (max-content). O link se alinha pelo CENTRO da coluna,
+ * ou seja, no eixo central horizontal do próprio botão. */
 @media (max-width: 640px) {
-  .pillar-deep .pillar-copy .actions { justify-content: center; }
+  .pillar-deep .pillar-copy .actions {
+    display: inline-grid;
+    grid-template-columns: max-content;
+    gap: var(--sp-4);
+  }
+  .pillar-deep .pillar-copy .actions .btn-link {
+    justify-self: center;
+  }
 }
 
 .offer-list {

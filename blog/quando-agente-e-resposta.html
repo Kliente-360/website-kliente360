@@ -168,14 +168,10 @@
 </ol>
 <h2>O caminho do MVP em quatro semanas</h2>
 <p>Passou nas cinco? Aqui é o que entregamos. Quatro semanas, custo controlado, KPI no final.</p>
-<h3>Semana 1 — Mapear</h3>
-<p>Sentamos com o operador sênior, modelamos o processo, identificamos os 3–5 caminhos mais frequentes (cobrem ~80% dos casos), e os pontos onde IA pode decidir versus onde precisa escalar.</p>
-<h3>Semana 2 — Prototipar</h3>
-<p>Construímos um agente que cobre só o caminho mais simples (1 de 5). Conectamos aos dados via API, instrumentamos métricas, rodamos com 10 casos reais offline.</p>
-<h3>Semana 3 — Validar</h3>
-<p>Soltamos o agente em produção com supervisão humana — toda resposta é revisada antes de sair. Coletamos taxa de acerto, tipos de erro, casos que escalaram. Comparamos com o baseline da operação.</p>
-<h3>Semana 4 — Decidir</h3>
-<p>Reunião de stop/go. Se o KPI bateu (geralmente: 80%+ de acerto no caminho mais simples, com tempo médio &lt;30% do atual), expandimos pros outros caminhos. Se não bateu, o problema raramente é o agente — é uma das cinco perguntas do começo.</p>
+<p><strong>Semana 1 — Mapear.</strong> Sentamos com o operador sênior, modelamos o processo, identificamos os 3–5 caminhos mais frequentes (cobrem ~80% dos casos), e os pontos onde IA pode decidir versus onde precisa escalar.</p>
+<p><strong>Semana 2 — Prototipar.</strong> Construímos um agente que cobre só o caminho mais simples (1 de 5). Conectamos aos dados via API, instrumentamos métricas, rodamos com 10 casos reais offline.</p>
+<p><strong>Semana 3 — Validar.</strong> Soltamos o agente em produção com supervisão humana — toda resposta é revisada antes de sair. Coletamos taxa de acerto, tipos de erro, casos que escalaram. Comparamos com o baseline da operação.</p>
+<p><strong>Semana 4 — Decidir.</strong> Reunião de stop/go. Se o KPI bateu (geralmente: 80%+ de acerto no caminho mais simples, com tempo médio &lt;30% do atual), expandimos pros outros caminhos. Se não bateu, o problema raramente é o agente — é uma das cinco perguntas do começo.</p>
 <h2>Por que IA sem governança vira passivo</h2>
 <p>Última observação. Mesmo quando o agente funciona, ele precisa de governança desde o dia 1 — não como projeto futuro. Logs de toda interação, auditoria de decisões, kill switch, definição clara de quando escalonar pra humano, política de retenção de dados, processo de incidente.</p>
 <p>Sem isso, o que parecia ganho de eficiência vira risco operacional silencioso. Os ganhos somem nos primeiros meses; o passivo aparece no primeiro incidente — geralmente público.</p>

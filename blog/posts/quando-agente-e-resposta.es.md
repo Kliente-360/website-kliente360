@@ -44,21 +44,13 @@ Antes de aprobar cualquier proyecto de agente, pasamos por cinco verificaciones.
 
 ¿Pasó las cinco? Aquí está lo que entregamos. Cuatro semanas, costo controlado, KPI al final.
 
-### Semana 1 — Mapear
+**Semana 1 — Mapear.** Nos sentamos con el operador sénior, modelamos el proceso, identificamos los 3–5 caminos más frecuentes (cubren ~80% de los casos), y los puntos donde la IA puede decidir versus dónde necesita escalar.
 
-Nos sentamos con el operador sénior, modelamos el proceso, identificamos los 3–5 caminos más frecuentes (cubren ~80% de los casos), y los puntos donde la IA puede decidir versus dónde necesita escalar.
+**Semana 2 — Prototipar.** Construimos un agente que cubre solo el camino más simple (1 de 5). Lo conectamos a los datos vía API, instrumentamos métricas, lo corremos con 10 casos reales offline.
 
-### Semana 2 — Prototipar
+**Semana 3 — Validar.** Soltamos el agente en producción con supervisión humana — toda respuesta es revisada antes de salir. Recopilamos tasa de acierto, tipos de error, casos escalados. Comparamos con el baseline de la operación.
 
-Construimos un agente que cubre solo el camino más simple (1 de 5). Lo conectamos a los datos vía API, instrumentamos métricas, lo corremos con 10 casos reales offline.
-
-### Semana 3 — Validar
-
-Soltamos el agente en producción con supervisión humana — toda respuesta es revisada antes de salir. Recopilamos tasa de acierto, tipos de error, casos escalados. Comparamos con el baseline de la operación.
-
-### Semana 4 — Decidir
-
-Reunión de stop/go. Si el KPI cumplió (generalmente: 80%+ de acierto en el camino más simple, con tiempo medio <30% del actual), expandimos a los otros caminos. Si no cumplió, el problema rara vez es el agente — es una de las cinco preguntas del inicio.
+**Semana 4 — Decidir.** Reunión de stop/go. Si el KPI cumplió (generalmente: 80%+ de acierto en el camino más simple, con tiempo medio <30% del actual), expandimos a los otros caminos. Si no cumplió, el problema rara vez es el agente — es una de las cinco preguntas del inicio.
 
 ## Por qué IA sin gobernanza se vuelve pasivo
 

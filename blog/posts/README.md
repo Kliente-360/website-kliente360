@@ -55,6 +55,31 @@ keywords:    ["termo1", "termo2", "termo3"]  # opcional
 
 ### 2. Corpo em Markdown
 
+#### Regra de hierarquia (importante)
+
+Para o post não virar "heading-soup", siga essa hierarquia visual:
+
+- **H2** (`##`) — seções principais. Use quando a seção tiver pelo menos 3–4 parágrafos. Espera-se 3–6 H2 num post de 5–8 min.
+- **H3** (`###`) — subseções **com pelo menos 2 parágrafos próprios**. Se a subseção tem só uma frase ou um parágrafo curto, **NÃO use H3** — use o padrão de **bold-lead-in**:
+
+```markdown
+<!-- Ruim — virou 4 H3s grudados visualmente -->
+### Semana 1 — Mapear
+Sentamos com o operador...
+
+### Semana 2 — Prototipar
+Construímos um agente...
+
+<!-- Bom — bold-lead-in mantém o ritmo do parágrafo -->
+**Semana 1 — Mapear.** Sentamos com o operador...
+
+**Semana 2 — Prototipar.** Construímos um agente...
+```
+
+Resultado: ritmo de leitura mais fluido, sem saltos visuais grandes entre tipografias.
+
+#### Markdown suportado
+
 Padrão CommonMark + GFM. Suportado e estilizado:
 
 - Headings `##` e `###` (cada `##` ganha barra colorida no tom do pilar)

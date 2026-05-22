@@ -44,21 +44,13 @@ Antes de aprovar qualquer projeto de agente, passamos por cinco verificações. 
 
 Passou nas cinco? Aqui é o que entregamos. Quatro semanas, custo controlado, KPI no final.
 
-### Semana 1 — Mapear
+**Semana 1 — Mapear.** Sentamos com o operador sênior, modelamos o processo, identificamos os 3–5 caminhos mais frequentes (cobrem ~80% dos casos), e os pontos onde IA pode decidir versus onde precisa escalar.
 
-Sentamos com o operador sênior, modelamos o processo, identificamos os 3–5 caminhos mais frequentes (cobrem ~80% dos casos), e os pontos onde IA pode decidir versus onde precisa escalar.
+**Semana 2 — Prototipar.** Construímos um agente que cobre só o caminho mais simples (1 de 5). Conectamos aos dados via API, instrumentamos métricas, rodamos com 10 casos reais offline.
 
-### Semana 2 — Prototipar
+**Semana 3 — Validar.** Soltamos o agente em produção com supervisão humana — toda resposta é revisada antes de sair. Coletamos taxa de acerto, tipos de erro, casos que escalaram. Comparamos com o baseline da operação.
 
-Construímos um agente que cobre só o caminho mais simples (1 de 5). Conectamos aos dados via API, instrumentamos métricas, rodamos com 10 casos reais offline.
-
-### Semana 3 — Validar
-
-Soltamos o agente em produção com supervisão humana — toda resposta é revisada antes de sair. Coletamos taxa de acerto, tipos de erro, casos que escalaram. Comparamos com o baseline da operação.
-
-### Semana 4 — Decidir
-
-Reunião de stop/go. Se o KPI bateu (geralmente: 80%+ de acerto no caminho mais simples, com tempo médio <30% do atual), expandimos pros outros caminhos. Se não bateu, o problema raramente é o agente — é uma das cinco perguntas do começo.
+**Semana 4 — Decidir.** Reunião de stop/go. Se o KPI bateu (geralmente: 80%+ de acerto no caminho mais simples, com tempo médio <30% do atual), expandimos pros outros caminhos. Se não bateu, o problema raramente é o agente — é uma das cinco perguntas do começo.
 
 ## Por que IA sem governança vira passivo
 

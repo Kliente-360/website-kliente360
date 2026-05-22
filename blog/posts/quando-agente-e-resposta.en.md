@@ -44,21 +44,13 @@ Before approving any agent project, we run five checks. If three or more fail, a
 
 Passed all five? Here's what we deliver. Four weeks, controlled cost, KPI at the end.
 
-### Week 1 — Map
+**Week 1 — Map.** We sit with the senior operator, model the process, identify the 3–5 most frequent paths (covering ~80% of cases), and the points where AI can decide versus where it needs to escalate.
 
-We sit with the senior operator, model the process, identify the 3–5 most frequent paths (covering ~80% of cases), and the points where AI can decide versus where it needs to escalate.
+**Week 2 — Prototype.** We build an agent that covers only the simplest path (1 of 5). We connect it to data via API, instrument metrics, run it on 10 real cases offline.
 
-### Week 2 — Prototype
+**Week 3 — Validate.** We release the agent into production with human supervision — every response is reviewed before going out. We collect accuracy rate, error types, escalated cases. We compare with the operation's baseline.
 
-We build an agent that covers only the simplest path (1 of 5). We connect it to data via API, instrument metrics, run it on 10 real cases offline.
-
-### Week 3 — Validate
-
-We release the agent into production with human supervision — every response is reviewed before going out. We collect accuracy rate, error types, escalated cases. We compare with the operation's baseline.
-
-### Week 4 — Decide
-
-Stop/go meeting. If the KPI hit (typically: 80%+ accuracy on the simplest path, with average time <30% of current), we expand to the other paths. If it didn't hit, the problem is rarely the agent — it's one of the five questions at the start.
+**Week 4 — Decide.** Stop/go meeting. If the KPI hit (typically: 80%+ accuracy on the simplest path, with average time <30% of current), we expand to the other paths. If it didn't hit, the problem is rarely the agent — it's one of the five questions at the start.
 
 ## Why AI without governance becomes liability
 

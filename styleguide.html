@@ -79,7 +79,7 @@
       font-size: var(--fs-20);
     }
     .logo .dots { display: inline-flex; gap: 3px; margin-left: 4px; transform: translateY(-2px); }
-    .logo .dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--color-accent); }
+    .logo .dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--logo-green); }
     .logo .dots span:nth-child(1) { opacity: 0.4; }
     .logo .dots span:nth-child(2) { opacity: 0.6; }
     .logo .dots span:nth-child(3) { opacity: 0.8; }
@@ -314,7 +314,7 @@
         <figure class="logo-cell">
           <div class="logo-stage">
             <svg viewBox="0 0 120 120" width="96" height="96" aria-label="Símbolo Kliente 360">
-              <g fill="var(--color-accent)">
+              <g fill="var(--logo-green)">
                 <circle cx="60" cy="18" r="8" opacity="0.4"/>
                 <circle cx="102" cy="60" r="8" opacity="0.6"/>
                 <circle cx="60" cy="102" r="8" opacity="0.8"/>
@@ -334,7 +334,7 @@
                 <span style="background:#0B5394"></span>
                 <span style="background:#C9A227"></span>
                 <span style="background:#6D28D9"></span>
-                <span style="background:var(--color-accent)"></span>
+                <span style="background:var(--logo-green)"></span>
               </span>
             </span>
           </div>
@@ -370,15 +370,56 @@
         <div class="swatch"><div class="chip" style="background:#1d1d1f"></div><div class="meta"><div class="name">BG dark</div><div class="hex">#1D1D1F</div></div></div>
       </div>
 
-      <h3 class="sg-h3">Verde Kliente — acento</h3>
+      <h3 class="sg-h3">Verde Kliente — duas funções</h3>
+      <p class="sg-lead" style="max-width: 70ch;">Estratégia adotada por marcas premium (Starbucks, Spotify, etc.): a cor do logo é sagrada, a cor da UI pode ser uma versão refinada. O <strong>#009900</strong> mora só no wordmark. A UI inteira (CTAs, eyebrows, links, hover) usa um verde editorial mais profundo — combina com o azul, para de vibrar contra o violeta.</p>
+      <div class="grid grid-2" style="margin-top: var(--sp-6);">
+        <div class="swatch" style="border: 2px solid var(--logo-green);">
+          <div class="chip" style="background:#009900; aspect-ratio: 16/9;"></div>
+          <div class="meta">
+            <div class="name">Logo green <span style="color: var(--color-fg-muted); font-weight: var(--fw-regular);">— só no wordmark</span></div>
+            <div class="hex">#009900</div>
+            <div class="sg-label" style="margin-top:6px;">Brand recognition. Não usar em UI.</div>
+          </div>
+        </div>
+        <div class="swatch" style="border: 2px solid var(--color-accent);">
+          <div class="chip" style="background:#007A3D; aspect-ratio: 16/9;"></div>
+          <div class="meta">
+            <div class="name">UI green <span style="color: var(--color-fg-muted); font-weight: var(--fw-regular);">— em tudo o resto</span></div>
+            <div class="hex">#007A3D</div>
+            <div class="sg-label" style="margin-top:6px;">CTAs, eyebrows, links, ícones de pilar. Versão editorial.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sg-h3">Escala completa do UI green</h3>
       <div class="grid grid-5">
         <div class="swatch"><div class="chip" style="background:#e8f5ec"></div><div class="meta"><div class="name">Green 50</div><div class="hex">#E8F5EC</div></div></div>
         <div class="swatch"><div class="chip" style="background:#c8e6d0"></div><div class="meta"><div class="name">Green 100</div><div class="hex">#C8E6D0</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#66c285"></div><div class="meta"><div class="name">Green 300</div><div class="hex">#66C285</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#009900"></div><div class="meta"><div class="name">Green 500 ★</div><div class="hex">#009900</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#006b3f"></div><div class="meta"><div class="name">Green 700</div><div class="hex">#006B3F</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#4f9e6b"></div><div class="meta"><div class="name">Green 300</div><div class="hex">#4F9E6B</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#007a3d"></div><div class="meta"><div class="name">Green 500 ★</div><div class="hex">#007A3D</div></div></div>
+        <div class="swatch"><div class="chip" style="background:#005c32"></div><div class="meta"><div class="name">Green 700</div><div class="hex">#005C32</div></div></div>
       </div>
-      <p class="sg-label" style="margin-top: var(--sp-3);">★ Verde canônico do logo. 700 = hover/emphasis. 50 = pílulas e fundos suaves.</p>
+      <p class="sg-label" style="margin-top: var(--sp-3);">★ UI canônico (editorial). 700 = hover/emphasis. 50 = pílulas e fundos suaves.</p>
+
+      <h3 class="sg-h3">Fundo escuro alternativo — navy resgatado</h3>
+      <div class="grid grid-3">
+        <div class="swatch">
+          <div class="chip" style="background:#0a0a0a"></div>
+          <div class="meta">
+            <div class="name">Ink 900 (default)</div>
+            <div class="hex">#0A0A0A</div>
+            <div class="sg-label" style="margin-top:6px;">Preto Apple. Default para fundos escuros.</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="chip" style="background:#06073E"></div>
+          <div class="meta">
+            <div class="name">BG deep (alternativo)</div>
+            <div class="hex">#06073E</div>
+            <div class="sg-label" style="margin-top:6px;">Navy resgatado da paleta antiga. Usar quando quisermos "alma corporativa" sem o gelado do preto puro — ex.: hero alternativo, seção de IA.</div>
+          </div>
+        </div>
+      </div>
 
       <h3 class="sg-h3" style="margin-top: var(--sp-12);">Cores secundárias — uma por pilar (proposta)</h3>
       <p class="sg-lead" style="max-width: 70ch;">Cada pilar ganha uma cor que só aparece dentro da sua seção (eyebrow, ícones, micro-acentos). No nível do site, dominam neutro + verde. É um sistema, não um arco-íris.</p>
@@ -388,33 +429,6 @@
         <div class="swatch"><div class="chip" style="background:#6D28D9"></div><div class="meta"><div class="name">AI violet</div><div class="hex">#6D28D9</div><div class="sg-label" style="margin-top:6px;">Pilar 03 · roxo é o código universal da IA hoje (OpenAI, Anthropic).</div></div></div>
       </div>
 
-      <h3 class="sg-h3" style="margin-top: var(--sp-12);">Sobre as cores antigas (cyan / amarelo / navy)</h3>
-      <div class="grid grid-3" style="margin-top: var(--sp-6);">
-        <div class="swatch" style="opacity: 0.7;">
-          <div class="chip" style="background:#F8DF61"></div>
-          <div class="meta">
-            <div class="name">Yellow #F8DF61</div>
-            <div class="hex">— não recomendado</div>
-            <div class="sg-label" style="margin-top:6px;">Sunny demais. Lê "startup amigável", rebaixa o premium. Pode ressuscitar em pílulas de alerta, no máximo.</div>
-          </div>
-        </div>
-        <div class="swatch" style="opacity: 0.7;">
-          <div class="chip" style="background:#0093FA"></div>
-          <div class="meta">
-            <div class="name">Cyan #0093FA</div>
-            <div class="hex">— não recomendado</div>
-            <div class="sg-label" style="margin-top:6px;">Briga com o verde, vira SaaS commodity. Substituí por Salesforce blue (#0B5394).</div>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="chip" style="background:#06073E"></div>
-          <div class="meta">
-            <div class="name">Navy #06073E</div>
-            <div class="hex">— reaproveitável</div>
-            <div class="sg-label" style="margin-top:6px;">Pode substituir o preto puro em hero/seções "alma corporativa". Não usar como acento, só como base alternativa ao Ink 900.</div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -543,7 +557,7 @@
       <div class="hero-mock" style="margin-top: var(--sp-12); padding-left: var(--sp-12); padding-right: var(--sp-12);">
         <div class="eyebrow">Boutique de CRM, dados e IA · Salesforce Partner</div>
         <h1>Conhecimento aplicado, <em>como serviço</em>.</h1>
-        <p class="sub">Costuramos CRM, dados e IA num só sistema. Time enxuto, expertise sênior, poucos clientes estratégicos.</p>
+        <p class="sub">Costuramos CRM, dados e IA num só sistema. Poucos clientes estratégicos, atendidos por quem entrega.</p>
         <div class="cta-row">
           <button class="btn btn-primary">Conversar com a gente</button>
           <button class="btn btn-ghost">Conhecer a Trilha 360</button>
@@ -620,8 +634,10 @@
           <ul>
             <li>"Costuramos CRM, dados e IA."</li>
             <li>"Agentes onde já existe dado."</li>
-            <li>"Time enxuto, poucos clientes."</li>
+            <li>"Time enxuto, poucos clientes estratégicos."</li>
             <li>"Da prova de valor à operação."</li>
+            <li>"Conversa direta com quem entrega."</li>
+            <li>"Sem camadas de account manager."</li>
             <li>Nomes próprios: Salesforce, Tableau, Agentforce.</li>
           </ul>
         </div>
@@ -632,6 +648,7 @@
             <li>"Jornada de sucesso do cliente"</li>
             <li>"Experiência fluida e omnichannel"</li>
             <li>"Soluções inovadoras"</li>
+            <li>Auto-elogio explícito ("nossos sócios incríveis").</li>
             <li>Adjetivos vazios em série.</li>
           </ul>
         </div>

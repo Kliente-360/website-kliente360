@@ -20,14 +20,25 @@
   --line: #e5e5e7;
   --line-strong: #d2d2d7;
 
-  /* Acento — verde Kliente (herda do logo, refinado) */
+  /* Acento — verde Kliente
+   * Distinção importante:
+   * - --logo-green = #009900 (sagrado, usado SOMENTE no logo / dots).
+   * - --color-accent = #007A3D (verde editorial, usado em toda a UI).
+   * Estratégia adotada por marcas premium: cor do logo ≠ cor de UI.
+   */
   --green-50:  #e8f5ec;
   --green-100: #c8e6d0;
-  --green-300: #66c285;
-  --green-500: #009900;  /* verde canônico do logo */
-  --green-600: #008000;
-  --green-700: #006b3f;  /* hover / emphasis */
+  --green-300: #4f9e6b;
+  --green-500: #007a3d;  /* verde UI canônico (editorial) */
+  --green-600: #006633;
+  --green-700: #005c32;  /* hover / emphasis */
   --green-900: #003d24;  /* fundos escuros com identidade */
+  --logo-green: #009900; /* só para o wordmark/dots originais */
+
+  /* Cores secundárias — uma por pilar (aparecem só dentro da seção do pilar) */
+  --c-salesforce: #0B5394;   /* azul profundo, evita cyan genérico */
+  --c-data:       #C9A227;   /* âmbar; "inteligência" sem virar amarelo startup */
+  --c-ai:         #6D28D9;   /* violeta; código universal de IA */
 
   /* Semânticos */
   --color-fg: var(--ink-900);
@@ -38,6 +49,10 @@
   --color-accent: var(--green-500);
   --color-accent-hover: var(--green-700);
   --color-accent-soft: var(--green-50);
+
+  /* Fundo escuro alternativo — "alma corporativa premium" sem o gelado do preto puro.
+   * Resgatado da paleta antiga (Navy #06073E). Uso opcional em hero ou seção de IA. */
+  --bg-deep: #06073E;
 
   /* --- Tipografia --- */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;

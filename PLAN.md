@@ -57,6 +57,25 @@ Dois concorrentes por pilar, mistura de boutique + mid/enterprise:
 
 Referências secundárias mapeadas, fora do recorte: WeUse, Valtech, Capgemini, beAnalytic, Active BI, BDA Solutions, Aquarela, Zup, Slalom Build, Thoughtworks.
 
+## 3.4. Sistema de cor (definido 2026-05-22)
+
+- **Logo green `#009900`**: sagrado. Só no wordmark/dots. Não usar em UI.
+- **UI green `#007A3D`**: verde editorial. Usado em CTAs, eyebrows, links, hover e ícones de pilar. Estratégia "logo ≠ UI" (Starbucks, Spotify).
+- **Cores secundárias por pilar** (aparecem só dentro da seção do respectivo pilar):
+  - Salesforce → azul profundo `#0B5394`
+  - Data & Analytics → âmbar `#C9A227`
+  - IA & Aplicações → violeta `#6D28D9`
+- **Navy `#06073E`** reaproveitado da paleta antiga como `--bg-deep` — fundo escuro alternativo opcional para hero/seção de IA. Não usar como acento.
+- **Yellow `#F8DF61` e Cyan `#0093FA` da paleta antiga**: descartados. Não combinam com o posicionamento boutique premium.
+
+## 3.5. Atributo de marca — sócios na operação (2026-05-22)
+
+Decidido **não fazer propaganda explícita** ("sócios na linha de frente" como manchete) nem mostrar fotos/nomes — soaria autoelogiosos. A credibilidade entra de forma **incorporada ao tom**, não como bullet de venda:
+
+- Frases-ancora no copy: *"atendidos por quem entrega"*, *"conversa direta com quem decide"*, *"sem camadas de account manager"*.
+- CTA padrão pode ser **"Falar com um sócio"** em contextos específicos (rodapé, contato), não como botão dominante.
+- Sem seção "Quem somos" com fotos.
+
 ## 3.3. Marca e posicionamento (definidos 2026-05-22)
 
 - **Posicionamento**: boutique premium. Altíssima expertise, alta personalização, time enxuto, poucos clientes estratégicos. Os 3 pilares costurados como diferencial único no mercado local.

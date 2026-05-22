@@ -201,7 +201,7 @@ Esses pontos saem de graça, o agente não precisa se preocupar:
 
 5. **Hierarquia de headings** — exatamente um `<h1>` (que vem do `title` automaticamente). H2 para seções principais, H3 para subseções. Não pule de H2 para H4.
 
-6. **Internal linking** — quando o tema cruzar com outro post publicado, **linke**. Use texto descritivo, nunca "clique aqui". Mínimo 1 link interno por post quando possível.
+6. **Internal linking** — ver seção dedicada "Estratégia de links internos" mais abaixo. Em resumo: 1–3 forward links por post, embutidos na prosa, com texto descritivo (nunca "clique aqui"). O build já gera "Próximas leituras" no rodapé — links manuais são *contextuais*, não related-reading.
 
 7. **Links externos** — para fontes autoritativas (documentação oficial, papers, dados de mercado). Reforça topical authority.
 
@@ -252,6 +252,37 @@ LLMs (ChatGPT, Claude, Perplexity, Gemini, AI Overviews do Google) **citam e res
 - Excerpt = primeira frase do post (duplica conteúdo; faça único)
 - Keywords só com termos genéricos ("dados", "tecnologia") sem especificidade
 
+## Estratégia de links internos
+
+O blog cresce em rede, não em lista. Cada post deve aumentar a densidade de ligações com o que já foi publicado — isso ajuda SEO (PageRank interno), GEO (LLMs entendem o contexto temático do site) e o leitor (descobre mais conteúdo).
+
+### Regras
+
+1. **Forward links (novo → antigo): obrigatório quando há cruzamento real.** Antes de finalizar um post novo, scaneie o `EDITORIAL.md` em busca de 2–3 candidatos a link. Alvo: 1–3 links contextuais por post, embutidos na prosa. Se nenhum candidato natural aparecer, o post pode estar isolado demais do resto do blog — vale revisar o ângulo.
+
+2. **Backward links (editar antigo → apontar pro novo): seletivo, não obrigatório.** Só vale editar um post antigo quando o novo se tornou *o tratamento canônico* de um conceito que o antigo só toca de passagem. Não editar mais de 2–3 posts antigos por novo lançamento — caso contrário, vira churn.
+
+3. **Texto do link: descritivo, integrado à frase.** Bom: *"como argumentei sobre [Data Cloud como nervo central do Salesforce](/blog/data-cloud-nervo-central.html)"*. Ruim: *"leia mais sobre Data Cloud [aqui](...)"* ou *"veja [este post](...)"*. O texto-âncora vira sinal pra Google e pra LLMs.
+
+4. **Formato técnico do link.** URL absoluta no path do idioma:
+   - PT: `/blog/<slug>.html`
+   - EN: `/blog/en/<slug>.html`
+   - ES: `/blog/es/<slug>.html`
+   
+   Em cada variante de idioma, linke para a variante do mesmo idioma. Se o post-alvo não tiver tradução no idioma da variante, linke o PT (fallback).
+
+5. **"Próximas leituras" do build não substitui links na prosa.** O bloco de 3 cards no rodapé é algorítmico (mesmo pilar, depois outros). Os links manuais são *contextuais* — aparecem onde o tema cruza, dentro da argumentação. Funções diferentes.
+
+6. **Commit de backlink: separado.** Backlinks em posts antigos vão em commit próprio, mensagem: `blog: backlink <slug-antigo> → <slug-novo>`. Não misturar com o commit do post novo — facilita reverter caso o link envelheça mal.
+
+### Pré-flight de links
+
+Antes de marcar `[x]` no EDITORIAL, confirmar:
+
+- [ ] O post novo tem 1–3 forward links pra posts publicados, com texto-âncora descritivo
+- [ ] Os links existem nas 3 variantes (PT/EN/ES) apontando pra variante de mesmo idioma quando houver
+- [ ] Se algum post antigo se beneficia de backlink, decidir agora — em commit separado
+
 ## Checklist antes de publicar
 
 - [ ] Frontmatter completo, com todos os campos obrigatórios.
@@ -266,7 +297,7 @@ LLMs (ChatGPT, Claude, Perplexity, Gemini, AI Overviews do Google) **citam e res
 - [ ] Sem palavras da lista de evitar.
 - [ ] 5–8 minutos de leitura, salvo justificativa.
 - [ ] Se for traduzir: arquivos `.en.md` / `.es.md` com mesmo `slug`.
-- [ ] **SEO**: palavra-chave primária no title, no slug, no primeiro parágrafo e em pelo menos 1 H2. Pelo menos 1 link interno se houver post relacionado.
+- [ ] **SEO**: palavra-chave primária no title, no slug, no primeiro parágrafo e em pelo menos 1 H2. **1–3 forward links pra posts publicados** (ver "Estratégia de links internos"), com texto-âncora descritivo.
 - [ ] **GEO**: TL;DR autoexplicativo (sem CTA), H2 em forma de pergunta/afirmação curta, pelo menos 1 blockquote citável, listas numeradas para passos/regras, números/dados concretos quando aplicável.
 
 ## Para agentes de redação

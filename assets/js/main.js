@@ -31,6 +31,21 @@
     });
   }
 
+  // -------- Blog filter (listagens /blog/, /blog/en/, /blog/es/) --------
+  const filterButtons = document.querySelectorAll('.blog-filter button');
+  if (filterButtons.length) {
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        filterButtons.forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+        document.querySelectorAll('.post-card').forEach(card => {
+          const show = filter === 'all' || card.dataset.pillar === filter;
+          card.dataset.hidden = show ? 'false' : 'true';
+        });
+      });
+    });
+  }
+
   // -------- Form (impede submit, mostra estado) --------
   const form = document.querySelector('form.form');
   if (form) {

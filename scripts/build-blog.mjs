@@ -243,7 +243,7 @@ const footerHtml = `
     </div>
   </footer>`;
 
-const hreflangCode = { pt: 'pt-BR', en: 'en', es: 'es', 'x-default': 'x-default' };
+const hreflangCode = { pt: 'pt-BR', en: 'en-US', es: 'es-ES', 'x-default': 'x-default' };
 const renderAlternates = (alternates = []) => alternates
   .map(({ lang, href }) => `  <link rel="alternate" hreflang="${hreflangCode[lang]}" href="${href}" />`)
   .join('\n');
@@ -299,10 +299,11 @@ const renderPost = (post, lang, allPosts) => {
   const canonical = postUrl(post.slug, lang);
   const blogHref = listingUrl(lang);
 
-  // hreflang alternates: uma entrada por idioma disponível + x-default (PT)
+  // hreflang alternates: uma entrada por idioma disponível + x-default (PT, fallback ordem LANGS)
+  const defaultLang = LANGS.find(l => post.translations[l]);
   const alternates = [
     ...LANGS.filter(l => post.translations[l]).map(l => ({ lang: l, href: postUrl(post.slug, l) })),
-    { lang: 'x-default', href: postUrl(post.slug, post.translations.pt ? 'pt' : Object.keys(post.translations)[0]) },
+    { lang: 'x-default', href: postUrl(post.slug, defaultLang) },
   ];
 
   const ldJson = {
@@ -469,18 +470,6 @@ ${footerHtml}
 
   <script src="/assets/js/i18n.js?v=${ASSET_VERSION}"></script>
   <script src="/assets/js/main.js?v=${ASSET_VERSION}" type="module"></script>
-  <script>
-    document.querySelectorAll('.blog-filter button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.blog-filter button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
-        document.querySelectorAll('.post-card').forEach(card => {
-          const show = filter === 'all' || card.dataset.pillar === filter;
-          card.dataset.hidden = show ? 'false' : 'true';
-        });
-      });
-    });
-  </script>
 </body>
 </html>`;
 };
@@ -543,6 +532,22 @@ const writeOut = (relPath, html) => {
   if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
   writeFileSync(target, html);
   console.log(`   ✓ ${relPath}`);
+};
+
+// Reescreve refs /assets/*.css|js em HTMLs estáticas pra carimbar ?v=<ASSET_VERSION>.
+// Mantém index.html/styleguide.html sincronizadas com o hash de conteúdo.
+const stampStaticAssetVersions = (files) => {
+  const re = /(["'])(\/assets\/[^"'?]+\.(?:css|js))(\?v=[^"'\s]*)?\1/g;
+  for (const rel of files) {
+    const target = join(ROOT, rel);
+    if (!existsSync(target)) continue;
+    const src = readFileSync(target, 'utf-8');
+    const out = src.replace(re, (_m, q, path) => `${q}${path}?v=${ASSET_VERSION}${q}`);
+    if (out !== src) {
+      writeFileSync(target, out);
+      console.log(`   ✓ ${rel} (asset version → ${ASSET_VERSION})`);
+    }
+  }
 };
 
 // ---------- build ----------
@@ -624,6 +629,9 @@ ${allUrls.map(u => `  <url>
     writeFileSync(join(ROOT, 'og-image.png'), pngData);
     console.log(`   ✓ og-image.png (1200x630)`);
   }
+
+  // Carimba ?v=<hash> em HTMLs estáticas (não geradas)
+  stampStaticAssetVersions(['index.html', 'styleguide.html']);
 
   console.log(`✅ Build concluído (asset version: ${ASSET_VERSION}).`);
 };

@@ -20,7 +20,7 @@ Cadência: terça **ou** quarta, pulando feriados (ver `blog/posts/README.md` §
 | 04 | 2026-01-14 | qua | sf | [Sales Cloud: cinco antipadrões que separam rollout caro de rollout que rende](blog/posts/sales-cloud-cinco-antipadroes.md) | O que separa rollout caro de rollout que rende | [x] |
 | 05 | 2026-01-20 | ter | data | [dbt na prática: o pulo do gato é a documentação, não o modelo](blog/posts/dbt-na-pratica.md) | O pulo do gato é a documentação, não o modelo | [x] |
 | 06 | 2026-01-21 | qua | ai | [LLM como agente interno: três casos onde funciona, dois onde fracassa](blog/posts/llm-como-agente-interno.md) | Três casos onde funciona, dois onde fracassa | [x] |
-| 07 | 2026-01-27 | ter | sf | Service Cloud: SLA não é decoração | Como medir capacidade real antes de prometer prazo | [ ] |
+| 07 | 2026-01-27 | ter | sf | [Service Cloud: SLA não é decoração — como medir capacidade real antes de prometer prazo](blog/posts/service-cloud-sla-nao-e-decoracao.md) | Como medir capacidade real antes de prometer prazo | [x] |
 | 08 | 2026-01-28 | qua | data | ELT vs ETL | Por que a moda mudou e o que importa de fato | [ ] |
 | 09 | 2026-02-03 | ter | ai | Avaliação de agentes | A métrica que ninguém quer publicar | [ ] |
 | 10 | 2026-02-04 | qua | sf | Customer 360 vs CDP | Diferenças que mudam o roadmap de dados | [ ] |

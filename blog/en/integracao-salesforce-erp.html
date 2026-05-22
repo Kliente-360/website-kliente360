@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Salesforce ↔ ERP integration: projects stall on the contract, not the architecture | Kliente 360</title>
+  <meta name="description" content="Almost every late Salesforce-ERP integration is late because of who owns the data — not the tech. The failure is organizational, dressed as architecture." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/en/integracao-salesforce-erp.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/integracao-salesforce-erp.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/integracao-salesforce-erp.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/integracao-salesforce-erp.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/integracao-salesforce-erp.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Salesforce ↔ ERP integration: projects stall on the contract, not the architecture | Kliente 360" />
+  <meta property="og:description" content="Almost every late Salesforce-ERP integration is late because of who owns the data — not the tech. The failure is organizational, dressed as architecture." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-03-17" />
+  <meta property="article:section" content="Salesforce" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Salesforce ↔ ERP integration: projects stall on the contract, not the architecture | Kliente 360" />
+  <meta name="twitter:description" content="Almost every late Salesforce-ERP integration is late because of who owns the data — not the tech. The failure is organizational, dressed as architecture." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=5271e69d98" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Salesforce ↔ ERP integration: projects stall on the contract, not the architecture",
+  "description": "Almost every late Salesforce-ERP integration is late because of who owns the data — not the tech. The failure is organizational, dressed as architecture.",
+  "datePublished": "2026-03-17",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Salesforce",
+  "keywords": [
+    "Salesforce",
+    "ERP",
+    "integration",
+    "MuleSoft",
+    "middleware"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="sf">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Practice 01 · Salesforce</span>
+            <a class="post-back" href="/blog/en/">Blog</a>
+          </div>
+          <h1>Salesforce ↔ ERP integration: projects stall on the contract, not the architecture</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-03-17">17 Mar 2026</time>
+            <span class="sep">·</span>
+            <span>6 min read</span>
+            <span class="sep">·</span>
+            <span>By Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Salesforce ↔ ERP integration rarely stalls on engineering. It stalls in the gray zone of ownership: who owns the customer, the order, inventory, calculation rules. Without that defined up front, any architecture (MuleSoft, middleware, native) delivers the same delay. Five questions that unblock.</p>
+          </aside>
+
+          <p class="post-intro">The status meeting of every late Salesforce-ERP integration has the same shape: tech team shows architecture, leadership asks &quot;why is it late&quot;, team shows field map and it looks complex. The implicit explanation is &quot;it&#39;s hard technically&quot;. In 90% of cases, that&#39;s a polite lie. The real delay comes from somewhere else — and until that place is named, the integration won&#39;t ship, whatever tool was picked.</p>
+<p>This text is about why Salesforce-ERP integration projects stall, and the honest rule to unblock — which has more to do with organizational governance than with technical architecture.</p>
+<h2>The real reason for delay</h2>
+<p>In almost every dragging Salesforce-ERP integration, the problem lies in a small set of specific gray zones:</p>
+<ul>
+<li><strong>Who owns the customer record?</strong> Salesforce says the customer is born in sales; the ERP says they&#39;re born in invoicing. Who controls address, email, tax status? Without an answer, synchronization becomes dispute.</li>
+<li><strong>Who decides the final price?</strong> Sales Cloud has the pricebook; ERP has a price catalog; CPQ has its own rules. When the three disagree, which wins?</li>
+<li><strong>Who owns the order?</strong> Sales closes the opportunity; ERP issues the invoice. How long does the order stay in Salesforce? And then?</li>
+<li><strong>How to handle conflicting data?</strong> Joao Silva in Salesforce, JOAO SILVA in ERP, João Silva somewhere else. Who&#39;s the source of truth?</li>
+<li><strong>Who responds when the integration breaks?</strong> Salesforce team or ERP team or integration team? Without a named owner, it becomes ping-pong.</li>
+</ul>
+<p>These five questions, in almost every project, get parked in a &quot;we&#39;ll align later&quot; — and the &quot;later&quot; becomes the boundary that delays the rest. Engineers can build a perfect API, middleware can run with no errors, mapping can be 100% correct. If these questions weren&#39;t answered first, the project stalls on a pending decision — not on code.</p>
+<blockquote>
+<p>The technical architecture of Salesforce-ERP integration is the fifth problem. The first four are who decides what — and that doesn&#39;t get resolved in Sprint Planning.</p>
+</blockquote>
+<h2>Why this becomes a repeated trap</h2>
+<p>Three reasons the problem persists at almost every customer.</p>
+<p><strong>Tech team has no organizational mandate.</strong> Salesforce engineer and ERP engineer rarely have authority to decide data governance across areas. They try, fail, become mediators. Without a sponsor with cross-functional authority, the decision doesn&#39;t happen.</p>
+<p><strong>The &quot;who owns&quot; question is political.</strong> Customer record is power. Sales wants to own it; finance wants to own it; CX wants to own it. The technical discussion hides the political one. Team will pretend it&#39;s &quot;master definition&quot; while it&#39;s really power negotiation.</p>
+<p><strong>Insufficient discovery becomes fact accomplished.</strong> <a href="/blog/en/mapear-processos-antes-do-salesforce.html">As in any serious Salesforce rollout</a>, skipping discovery is the #1 source of trouble. In integration, this manifests as &quot;we started building and discovered the pending decisions at test time&quot;.</p>
+<h2>Five questions to answer before anything</h2>
+<p>The rule we apply at every Salesforce-ERP integration kickoff, which unblocks 80% of cases.</p>
+<ol>
+<li><strong>Who&#39;s the system of record for customer?</strong> Not &quot;both&quot; — one. The other becomes a mirror. Executive decision, with authority across all areas.</li>
+<li><strong>Who&#39;s the system of record for order?</strong> Same rule. Sales in Salesforce up to X; then ERP. X needs to be defined with clear criteria (status, approval, event).</li>
+<li><strong>Who decides final price, and what&#39;s the override rule?</strong> Salesforce pricebook, ERP table, CPQ, manual exception. Explicit hierarchy, no ambiguity.</li>
+<li><strong>What&#39;s the acceptable sync frequency per entity?</strong> Customer in real time? Order every 15 min? Inventory hourly? Criterion: what the business case requires, not what the tool can do.</li>
+<li><strong>Who&#39;s the operational owner of the integration in production?</strong> When it breaks, who investigates first? Name in the flow, not &quot;the integration team&quot;. Without that, MTTR explodes on the first incident.</li>
+</ol>
+<p>Whoever answers the five before the sprint starts delivers on time. Whoever answers during construction is delayed 2–4 months. Whoever answers after go-live enters the eternal living project.</p>
+<h2>On architecture — only after the five questions</h2>
+<p>Once the five are answered, the technical architecture discussion gets trivial. Three patterns cover 90% of cases:</p>
+<p><strong>Native integration (MuleSoft Anypoint, Salesforce Connect, Data Cloud).</strong> Worth it when the company is invested in the Salesforce ecosystem. Higher license cost, lower implementation. <a href="/blog/en/data-cloud-nervo-central.html">Data Cloud in 2026 absorbs part of what MuleSoft used to do</a>, simplifying the architecture.</p>
+<p><strong>Generic middleware (Boomi, Workato, Tray).</strong> Worth it when integration needs to serve multiple systems beyond the Salesforce-ERP pair. Agnostic stack, recurring cost, shared maintenance.</p>
+<p><strong>Custom integration (Lambda, API Gateway, messaging).</strong> Worth it when volume is huge, latency critical, or logic exceeds what standard tools cover. High implementation cost, ongoing maintenance, but full control.</p>
+<p>Choice depends more on operational context (team skills, existing ecosystem, volume) than on feature comparison. That technical debate only makes sense after the five questions are resolved.</p>
+<h2>Signs the integration will fail</h2>
+<p>Before starting to build, three signs almost guarantee delay:</p>
+<p><strong>Sign 1: sponsor has no cross-functional authority.</strong> Sales director sponsoring an integration that touches finance = will stall. IT director sponsoring = will become technical project with no business decision. Ideal: sponsor with weight across sales + ops + finance.</p>
+<p><strong>Sign 2: discovery fits in two weeks.</strong> Serious discovery for Salesforce-ERP integration in a mid-market company requires 4–6 weeks. Whoever quotes two will deliver superficial and find the rest costing 10× more during implementation.</p>
+<p><strong>Sign 3: nobody wrote the five questions above.</strong> If at sprint planning the team has no documented answer to these five, any estimate is a guess. It will be delayed — just don&#39;t know by how many weeks.</p>
+<h2>The decision for 2026</h2>
+<p>If your company is about to start a Salesforce-ERP integration, three moves before architecture:</p>
+<p><strong>Sponsor with real authority.</strong> A director with weight to cross areas. Without it, stop and fix the sponsor before the project.</p>
+<p><strong>Dedicated 4–6 week discovery focused on the five questions.</strong> Not on architecture. Not on the field map. On the governance decisions that will cross every technical choice.</p>
+<p><strong>Architectural decision only after.</strong> Native, middleware, custom — choose based on context, not fashion. Volume, skills, ecosystem, latency tolerance. Each one weighs differently per company.</p>
+<p>Well-implemented Salesforce-ERP integration is one of the most valuable pieces of modern enterprise architecture — it unlocks commercial, accounting and operational predictability. Badly implemented, it&#39;s the integration that becomes a living project for two years. The difference rarely sits in the MuleSoft picked. It sits in who owned what from day 1.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Keep the conversation going</div>
+            <h3>Want to discuss this topic with a partner?</h3>
+            <p>Initial diagnostic with no commitment. We assess your scenario in a week and send back a report.</p>
+            <a class="btn-link" href="/#contato">Talk to a partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Further reading</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="sf" href="/blog/en/data-cloud-nervo-central.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 01 · Salesforce</span>
+                <span class="post-date">19 May 2026</span>
+              </div>
+              <h3>Data Cloud is no longer a CDP — it&#39;s the central nervous system of Salesforce</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="sf" href="/blog/en/sandbox-strategy.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 01 · Salesforce</span>
+                <span class="post-date">25 Mar 2026</span>
+              </div>
+              <h3>Sandbox strategy: how to avoid &quot;the last sandbox refresh was 4 months ago&quot;</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="sf" href="/blog/en/flow-vs-apex.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 01 · Salesforce</span>
+                <span class="post-date">4 Mar 2026</span>
+              </div>
+              <h3>Salesforce Flow vs Apex: when code is worth more than clicks</h3>
+              <div class="read">Read →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
+            <li><a href="/glossario/">Glossário</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=5271e69d98"></script>
+  <script src="/assets/js/main.js?v=5271e69d98" type="module"></script>
+</body>
+</html>

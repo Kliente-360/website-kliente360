@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Data privacy in LLMs: the governance checklist missing from the pilot | Kliente 360</title>
+  <meta name="description" content="Team pilots LLM with real customer data, without thinking about privacy law. In three months, it becomes a public incident. Seven items to answer before the first prompt." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/en/privacidade-dados-llms.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/privacidade-dados-llms.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/privacidade-dados-llms.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/privacidade-dados-llms.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/privacidade-dados-llms.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Data privacy in LLMs: the governance checklist missing from the pilot | Kliente 360" />
+  <meta property="og:description" content="Team pilots LLM with real customer data, without thinking about privacy law. In three months, it becomes a public incident. Seven items to answer before the first prompt." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-04-01" />
+  <meta property="article:section" content="Applied AI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Data privacy in LLMs: the governance checklist missing from the pilot | Kliente 360" />
+  <meta name="twitter:description" content="Team pilots LLM with real customer data, without thinking about privacy law. In three months, it becomes a public incident. Seven items to answer before the first prompt." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=5271e69d98" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Data privacy in LLMs: the governance checklist missing from the pilot",
+  "description": "Team pilots LLM with real customer data, without thinking about privacy law. In three months, it becomes a public incident. Seven items to answer before the first prompt.",
+  "datePublished": "2026-04-01",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Applied AI",
+  "keywords": [
+    "LGPD",
+    "GDPR",
+    "privacy",
+    "LLM",
+    "AI governance",
+    "compliance"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="ai">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Practice 03 · AI</span>
+            <a class="post-back" href="/blog/en/">Blog</a>
+          </div>
+          <h1>Data privacy in LLMs: the governance checklist missing from the pilot</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-04-01">1 Apr 2026</time>
+            <span class="sep">·</span>
+            <span>6 min read</span>
+            <span class="sep">·</span>
+            <span>By Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>LLM pilots with customer data are run without privacy governance because &quot;it&#39;s just a test&quot;. It isn&#39;t just a test for LGPD/GDPR or reputation. Seven checklist items that separate a responsible pilot from a legal liability being born. Applicable regardless of where the model runs.</p>
+          </aside>
+
+          <p class="post-intro">The typical AI incident story in 2026 follows the same arc. Internal team tests an LLM with real customer data — because &quot;we need realistic data for the POC&quot;, &quot;it&#39;ll stay internal anyway&quot;, &quot;governance comes later&quot;. The pilot becomes a project, the project becomes a product. At some point, someone notices that personal data for 15 thousand customers passed through an American vendor&#39;s API without explicit consent, without DPIA, without registry. That becomes an incident. Could become news. Could become a fine.</p>
+<p>This text is the governance checklist that needs to be resolved <em>before</em> the first prompt in any LLM project with real data. It isn&#39;t bureaucratic compliance — it&#39;s the minimum so the project doesn&#39;t become legal liability.</p>
+<h2>Why the problem scales silently</h2>
+<p>LLMs amplify privacy risk in three ways traditional systems didn&#39;t.</p>
+<p><strong>Data enters in free format.</strong> Unlike a form with fixed fields, a prompt accepts anything. The operator can paste a customer&#39;s email, a call transcript, a full contract. All of that leaves the company perimeter when it hits an external API.</p>
+<p><strong>Vendor logs can retain prompts.</strong> Policy varies by provider, by plan, by region. Without a specific check, sensitive data sits in a third party&#39;s log for 30 days — or indefinitely.</p>
+<p><strong>Reuse for training can happen.</strong> OpenAI, Anthropic, Google have policies that separate enterprise API from consumer product. But default config varies, and a company that doesn&#39;t verify may be feeding training without knowing.</p>
+<p>The three combined create a risk surface that didn&#39;t exist in traditional systems. Underestimating that generates incidents in short order.</p>
+<blockquote>
+<p>An LLM pilot with real data and no governance isn&#39;t &quot;agility&quot;. It&#39;s liability being born. And unlike other liabilities, this one shows up in headlines before it shows up in invoices.</p>
+</blockquote>
+<h2>The seven checklist items</h2>
+<p>The rule we apply before any AI project with real data. Missing two or more, the project shouldn&#39;t leave the drawing board.</p>
+<ol>
+<li><strong>Data map: what&#39;s going into the prompt?</strong> PII (name, ID, email), sensitive data (health, financial), confidential commercial data. Write explicitly. Without this list, judging risk is impossible.</li>
+<li><strong>Legal basis for each data category.</strong> Consent, contract execution, legitimate interest, or another. Each data category needs a mapped legal basis. Without it, regulators will come.</li>
+<li><strong>Vendor policy on retention and training.</strong> Written confirmation (not vendor slide) that prompts don&#39;t enter training, that retention is zero or X days, that data sits in a specific region. Without a document, it&#39;s assumption.</li>
+<li><strong>DPIA when applicable.</strong> Data Protection Impact Assessment for high-risk uses — AI making decisions about customers, profiling, predictive analysis. Authorities are actively inspecting this in 2026.</li>
+<li><strong>Pseudo-anonymization or redaction in the path.</strong> When possible, remove or mask PII before sending to the LLM. Libraries like Microsoft Presidio do this. Reduces risk surface and simplifies compliance.</li>
+<li><strong>Own log of what was sent.</strong> Local registry (not vendor&#39;s) of every prompt + response + user + timestamp. Needed for auditing, for incident investigation, for responding to a subject who requests info under privacy law.</li>
+<li><strong>Human bypass policy for automated decisions.</strong> Privacy laws guarantee the right to human review on relevant automated decisions. A serious system has an &quot;escalate to human&quot; button from day 1, and a defined process for review.</li>
+</ol>
+<p>These seven aren&#39;t theory — they&#39;re what shows up in the first audit. Companies that have them deliver fast. Companies that don&#39;t deliver fast too, but pay later.</p>
+<h2>What changes with internal LLMs</h2>
+<p>For companies running their own LLM (on-prem, self-hosted open model, dedicated instance), part of the checklist changes. Doesn&#39;t go away.</p>
+<p><strong>Vendor isn&#39;t in the path.</strong> Items 3 and part of 6 (vendor logs) go away. But new ones appear: internal model governance, server access control, hardening.</p>
+<p><strong>PII can be more tolerable.</strong> In well-governed internal models, data sensitivity is lower than in external API. But only &quot;lower&quot; — not zero. Internal leakage is still leakage.</p>
+<p><strong>Regulatory compliance continues.</strong> Privacy law doesn&#39;t differentiate where the model runs. Legal basis, DPIA, own log, right to review — all still apply.</p>
+<p><a href="/blog/en/llm-como-agente-interno.html">As I argued about LLM as internal agent</a>, running your own is more secure in one dimension (perimeter) but doesn&#39;t waive governance in the others.</p>
+<h2>The &quot;let&#39;s see what happens&quot; trap</h2>
+<p>The phrase that kills governance: &quot;it&#39;s just a pilot, we&#39;ll formalize later&quot;. In 2025 it still passed at some companies. In 2026 it doesn&#39;t. Three reasons:</p>
+<p><strong>Regulators started inspecting AI specifically.</strong> Not a hypothetical threat anymore. Companies have been fined for LLM use with personal data without legal basis. Public cases. The thing became real.</p>
+<p><strong>Customers started asking.</strong> In B2B contracts, explicit clauses about AI use, sub-processors, retention. Companies that don&#39;t answer lose business before getting fined.</p>
+<p><strong>Media pays attention.</strong> AI incidents with personal data leakage become news. Reputation costs more than fines in B2C companies.</p>
+<p>The three combined kill the &quot;let&#39;s see&quot; argument. Whoever still uses it in 2026 is measuring risk with 2022 calibration.</p>
+<h2>How to integrate with <a href="/blog/en/avaliacao-de-agentes.html">agent evaluation</a> and <a href="/blog/en/custos-reais-de-inferencia.html">costs</a></h2>
+<p>Governance isn&#39;t a silo. In mature AI architecture:</p>
+<p><strong>Eval set includes privacy cases.</strong> Questions trying to make the agent reveal sensitive data, leak the system instruction, misbehave. Failing here is as critical as failing accuracy.</p>
+<p><strong>Governance cost enters TCO calculation.</strong> Own log, redaction, monitoring — all costs. Forgetting that is budgeting the pilot with 20–30% invisible cost.</p>
+<p><strong>Periodic audit of what&#39;s being sent.</strong> Monthly sample of real prompts, reviewed by DPO or governance team. Without it, behavior drift (users start pasting data they shouldn&#39;t) goes unnoticed.</p>
+<h2>The decision for 2026</h2>
+<p>If your company is about to pilot an LLM with real data, three moves before the first prompt:</p>
+<p><strong>Checklist of the seven items, answered in writing.</strong> Not verbal in a meeting — 2–3 page document, approved by DPO and technical responsible. Becomes an audit artifact.</p>
+<p><strong>Minimum acceptable use policy.</strong> Who can send what to the LLM. Which data is forbidden. Brief team training. 1 hour of training prevents 80% of incidents.</p>
+<p><strong>Sponsor with mandate to pause the pilot if needed.</strong> When something goes wrong — and something will go wrong in some pilot — someone needs authority to pause before escalation. Without that sponsor, the team will hide the problem until it becomes an incident.</p>
+<p>Privacy governance in LLMs in 2026 is part of the project, not an extra phase. Companies that accept this logic deliver responsible AI and grow with confidence. Companies still treating it as optional bureaucracy will be in the headline before being in the business case. The difference isn&#39;t having compliance — it&#39;s having compliance <em>from the first prompt</em>.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Keep the conversation going</div>
+            <h3>Want to discuss this topic with a partner?</h3>
+            <p>Initial diagnostic with no commitment. We assess your scenario in a week and send back a report.</p>
+            <a class="btn-link" href="/#contato">Talk to a partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Further reading</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="ai" href="/blog/en/quando-agente-e-resposta.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 03 · AI</span>
+                <span class="post-date">20 May 2026</span>
+              </div>
+              <h3>When an agent is the answer — and when it&#39;s an escape from a poorly modeled problem</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="ai" href="/blog/en/custos-reais-de-inferencia.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 03 · AI</span>
+                <span class="post-date">24 Mar 2026</span>
+              </div>
+              <h3>Real inference cost: how to avoid the end-of-month USD surprise</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="ai" href="/blog/en/multi-agent-systems.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 03 · AI</span>
+                <span class="post-date">11 Mar 2026</span>
+              </div>
+              <h3>Multi-agent systems: when to orchestrate vs. consolidate into one agent</h3>
+              <div class="read">Read →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
+            <li><a href="/glossario/">Glossário</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=5271e69d98"></script>
+  <script src="/assets/js/main.js?v=5271e69d98" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Data Catalog nobody uses: a symptom of the real problem (not the tool) | Kliente 360</title>
+  <meta name="description" content="Company buys Alation/Collibra, pays consultancy, populates with 800 tables. In 6 months, the analyst goes back to asking on Slack. The problem isn&#39;t the tool — it&#39;s what was asked of it." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/en/data-catalog-ninguem-usa.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/data-catalog-ninguem-usa.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/data-catalog-ninguem-usa.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/data-catalog-ninguem-usa.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/data-catalog-ninguem-usa.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="The Data Catalog nobody uses: a symptom of the real problem (not the tool) | Kliente 360" />
+  <meta property="og:description" content="Company buys Alation/Collibra, pays consultancy, populates with 800 tables. In 6 months, the analyst goes back to asking on Slack. The problem isn&#39;t the tool — it&#39;s what was asked of it." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-03-31" />
+  <meta property="article:section" content="Data &amp; Analytics" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Data Catalog nobody uses: a symptom of the real problem (not the tool) | Kliente 360" />
+  <meta name="twitter:description" content="Company buys Alation/Collibra, pays consultancy, populates with 800 tables. In 6 months, the analyst goes back to asking on Slack. The problem isn&#39;t the tool — it&#39;s what was asked of it." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=5271e69d98" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Data Catalog nobody uses: a symptom of the real problem (not the tool)",
+  "description": "Company buys Alation/Collibra, pays consultancy, populates with 800 tables. In 6 months, the analyst goes back to asking on Slack. The problem isn't the tool — it's what was asked of it.",
+  "datePublished": "2026-03-31",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Data & Analytics",
+  "keywords": [
+    "Data Catalog",
+    "Alation",
+    "Collibra",
+    "data governance",
+    "data documentation"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="data">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Practice 02 · Data</span>
+            <a class="post-back" href="/blog/en/">Blog</a>
+          </div>
+          <h1>The Data Catalog nobody uses: a symptom of the real problem (not the tool)</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-03-31">31 Mar 2026</time>
+            <span class="sep">·</span>
+            <span>6 min read</span>
+            <span class="sep">·</span>
+            <span>By Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Data Catalog becomes ornament at most companies that adopt it because the tool tries to solve a problem that isn&#39;t its own: documentation culture. Without culture, any catalog becomes a list of empty tables. Five conditions that separate useful catalog from decorative one — and why dbt solves 80% of the problem without the fancy name.</p>
+          </aside>
+
+          <p class="post-intro">The question in every Data Catalog assessment meeting in 2026: <em>how many times did someone query the catalog last week?</em> Honest answer at most companies: &quot;about 12 hits, but most were the governance team verifying it&#39;s current&quot;. Practical translation: the company paid for Alation or Collibra or similar (USD 200k+/year), spent 6 months populating it, and nobody uses it. The analyst who needs to understand a table still asks on Slack.</p>
+<p>The fault isn&#39;t the tool. Catalog is a mature category with competent products. The fault is the wrong diagnosis: the company thought buying a catalog would solve a culture problem. It doesn&#39;t. This text is about the real problem, and why dbt alone solves 80% of the case without the fancy name.</p>
+<h2>Why catalog fails to produce real usage</h2>
+<p>The mental model selling catalog is: &quot;if we have one place with all documentation, everyone will check it&quot;. Library-shelf logic. Fails because three things have to be true to work — and rarely are.</p>
+<p><strong>Documentation has to exist.</strong> An empty catalog is just a pretty UI. Populating the catalog requires someone to write the description of each table, each column, each metric. Catalog doesn&#39;t write for you.</p>
+<p><strong>Documentation has to be current.</strong> Aging documentation is worse than missing — the user checks, acts, finds it was wrong, loses trust. Maintaining requires ongoing discipline, usually underestimated.</p>
+<p><strong>Documentation has to beat asking on Slack.</strong> Cost of using the catalog (open tool, navigate, read) has to be lower than asking on Slack. In a disorganized or stale catalog, Slack always wins.</p>
+<p>When all three fail simultaneously — which is the case for 80% of implementations I see — the catalog becomes a list of empty tables with a corporate name.</p>
+<h2>The problem catalog <em>seems</em> to solve but doesn&#39;t</h2>
+<p>The organizational frustration that motivates a catalog purchase has a name: <em>nobody knows what each table means</em>. The intuition is that having a place to document solves it. It doesn&#39;t. The root problem is cultural, not infrastructural.</p>
+<p>A company without a documentation culture will populate the catalog with generic descriptions (&quot;customer table&quot;), abandon maintenance in 3 months, and blame the tool in 6. A company with a documentation culture has it in Git, in dbt, in the wiki — the catalog is just visualization, not substitute.</p>
+<blockquote>
+<p>Data Catalog doesn&#39;t create documentation culture. It only amplifies the one that exists. A company with no prior culture buys a catalog and amplifies zero.</p>
+</blockquote>
+<h2>What catalog does well (when it does)</h2>
+<p>Don&#39;t confuse the argument. There are contexts where a premium catalog has real value:</p>
+<p><strong>Large company with 5+ independent data teams.</strong> When the catalog has to cross organizational boundaries (multiple business areas, subsidiaries, platforms), enterprise catalog offers cross-cutting governance that a single tool doesn&#39;t.</p>
+<p><strong>Explicit regulatory need.</strong> Company in a regulated sector (financial, healthcare) where auditors require centralized documentation with approval trail. Here catalog is compliance, not productivity.</p>
+<p><strong>Cross-stack lineage.</strong> When data flows across 5+ distinct systems (Salesforce, ERP, warehouse, ML platform, BI), enterprise catalog tracks lineage in a way dbt alone doesn&#39;t.</p>
+<p>Outside these three contexts, premium catalog tends to be overshoot — and real usage drops as the initial enthusiasm fades.</p>
+<h2>Why dbt solves 80% of the case</h2>
+<p>For most Brazilian mid-market companies, <a href="/blog/en/dbt-na-pratica.html">dbt with documentation discipline</a> solves the use case a catalog would try to. Five reasons:</p>
+<ul>
+<li><strong>Documentation lives next to code.</strong> Description of each model, each column, in the versioned .yml in Git. Whoever changes the model updates the doc in the same PR.</li>
+<li><strong><code>dbt docs</code> generates a navigable site.</strong> Visual lineage, descriptions, tests, source. What catalog promises to deliver, dbt delivers — for models in the warehouse.</li>
+<li><strong>Explicit owner in the <code>.yml</code>.</strong> Who owns each model. When something changes or breaks, there&#39;s a name.</li>
+<li><strong>Built-in source freshness.</strong> Catalog shows &quot;last update&quot;; dbt actively monitors and alerts.</li>
+<li><strong>Cost: zero.</strong> dbt is open source. Documentation is team work, but the infra is free.</li>
+</ul>
+<p>The honest limitation: dbt covers what&#39;s in the warehouse. For external sources (Salesforce, Mixpanel, spreadsheets), the catalog covers something dbt alone doesn&#39;t. But if 80% of used tables are in the warehouse, dbt solves 80% of the problem.</p>
+<h2>The rule before buying catalog</h2>
+<p>Five questions to answer before signing an annual USD 200k contract:</p>
+<ol>
+<li><strong>Does the documentation culture exist today?</strong> Quick look: are the 20 most-used tables documented? If not, buying a catalog amplifies absence.</li>
+<li><strong>Who&#39;ll populate the catalog initially?</strong> Which data team, under which sponsor, with which deadline? Without a named owner and deadline, population never finishes.</li>
+<li><strong>Who&#39;ll keep it current?</strong> Not &quot;the whole team&quot;. Name, process, tool. Without that, 6-month drift guaranteed.</li>
+<li><strong>What&#39;s the primary use case?</strong> Analyst looking for metadata? Auditor verifying governance? Lineage across systems? Each case calls for different config.</li>
+<li><strong>Would dbt cover this need?</strong> Honestly. If 80% of models are in the warehouse and the case is internal, <a href="/blog/en/dbt-na-pratica.html">dbt + description discipline is the cheaper answer</a>. Catalog becomes an upgrade when dbt is exhausted.</li>
+</ol>
+<p>Whoever answers the five clearly decides with conviction. Whoever answers &quot;it depends&quot; on three or more doesn&#39;t have a defined use case — and any purchase becomes ornament.</p>
+<h2>Relationship with data contracts and dbt</h2>
+<p><a href="/blog/en/data-contracts.html">Data contracts</a> and dbt complement catalog — they don&#39;t replace one another. In mature architecture:</p>
+<ul>
+<li><strong>dbt</strong> documents what&#39;s in the warehouse, describes models, tests.</li>
+<li><strong>Data contracts</strong> version agreements between data producer and consumer.</li>
+<li><strong>Enterprise catalog</strong>, if justified, is the cross-cutting governance layer above everything.</li>
+</ul>
+<p>Most Brazilian mid-market companies don&#39;t need the third layer. They need the first two done right. Skipping the first two to jump straight to catalog is building a building without foundation.</p>
+<h2>The decision for 2026</h2>
+<p>If your company is evaluating a premium data catalog, three honest moves before buying:</p>
+<p><strong>Try dbt with discipline for 6 months first.</strong> Enforced documentation in CI, named owner, active source freshness. In 6 months you know whether the problem is lack of culture or lack of tooling.</p>
+<p><strong>If you decide to buy, build the team first.</strong> You can&#39;t buy a catalog and expect &quot;the data team to populate&quot;. Named person, deadline, sponsor with authority to push teams to document.</p>
+<p><strong>Reassess at 12 months by usage, not coverage.</strong> Catalog with 100% of tables and 5 hits per week is dead catalog. Catalog with 60% of tables and 500 hits per week is live catalog. Success metric is use, not inventory.</p>
+<p>Data Catalog in 2026 is a legitimate tool — but it&#39;s the last rung of a documentation-culture ladder. Companies skipping rungs pay catalog price and keep asking on Slack. Companies climbing the ladder reach the top rung knowing whether it&#39;s worth it or not.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Keep the conversation going</div>
+            <h3>Want to discuss this topic with a partner?</h3>
+            <p>Initial diagnostic with no commitment. We assess your scenario in a week and send back a report.</p>
+            <a class="btn-link" href="/#contato">Talk to a partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Further reading</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="data" href="/blog/en/tableau-linguagem-executiva.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">13 May 2026</span>
+              </div>
+              <h3>Tableau as an executive language: killing the vanity dashboard</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="data" href="/blog/en/self-service-bi.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">18 Mar 2026</span>
+              </div>
+              <h3>Self-service BI: why every department has its own &quot;final draft&quot;</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="data" href="/blog/en/metricas-de-produto-north-dust.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">10 Mar 2026</span>
+              </div>
+              <h3>Product metrics: why north star becomes &quot;north dust&quot; in 6 months</h3>
+              <div class="read">Read →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
+            <li><a href="/glossario/">Glossário</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=5271e69d98"></script>
+  <script src="/assets/js/main.js?v=5271e69d98" type="module"></script>
+</body>
+</html>

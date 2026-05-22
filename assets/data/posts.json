@@ -66,6 +66,160 @@
     }
   },
   {
+    "slug": "privacidade-dados-llms",
+    "pillar": "ai",
+    "date": "2026-04-01",
+    "translations": {
+      "pt": {
+        "title": "Privacidade de dados em LLMs: a checklist de governança que falta no piloto",
+        "url": "/blog/privacidade-dados-llms.html",
+        "date": "1 abr 2026"
+      },
+      "en": {
+        "title": "Data privacy in LLMs: the governance checklist missing from the pilot",
+        "url": "/blog/en/privacidade-dados-llms.html",
+        "date": "1 Apr 2026"
+      },
+      "es": {
+        "title": "Privacidad de datos en LLMs: el checklist de gobernanza que falta en el piloto",
+        "url": "/blog/es/privacidade-dados-llms.html",
+        "date": "1 abr 2026"
+      }
+    }
+  },
+  {
+    "slug": "data-catalog-ninguem-usa",
+    "pillar": "data",
+    "date": "2026-03-31",
+    "translations": {
+      "pt": {
+        "title": "Data Catalog que ninguém usa: sintoma do problema real (não é a ferramenta)",
+        "url": "/blog/data-catalog-ninguem-usa.html",
+        "date": "31 mar 2026"
+      },
+      "en": {
+        "title": "The Data Catalog nobody uses: a symptom of the real problem (not the tool)",
+        "url": "/blog/en/data-catalog-ninguem-usa.html",
+        "date": "31 Mar 2026"
+      },
+      "es": {
+        "title": "Data Catalog que nadie usa: síntoma del problema real (no es la herramienta)",
+        "url": "/blog/es/data-catalog-ninguem-usa.html",
+        "date": "31 mar 2026"
+      }
+    }
+  },
+  {
+    "slug": "sandbox-strategy",
+    "pillar": "sf",
+    "date": "2026-03-25",
+    "translations": {
+      "pt": {
+        "title": "Sandbox strategy: como evitar \"a última sandbox foi há 4 meses\"",
+        "url": "/blog/sandbox-strategy.html",
+        "date": "25 mar 2026"
+      },
+      "en": {
+        "title": "Sandbox strategy: how to avoid \"the last sandbox refresh was 4 months ago\"",
+        "url": "/blog/en/sandbox-strategy.html",
+        "date": "25 Mar 2026"
+      },
+      "es": {
+        "title": "Sandbox strategy: cómo evitar \"el último refresh de sandbox fue hace 4 meses\"",
+        "url": "/blog/es/sandbox-strategy.html",
+        "date": "25 mar 2026"
+      }
+    }
+  },
+  {
+    "slug": "custos-reais-de-inferencia",
+    "pillar": "ai",
+    "date": "2026-03-24",
+    "translations": {
+      "pt": {
+        "title": "Custos reais de inferência: como evitar surpresa de US$ no fim do mês",
+        "url": "/blog/custos-reais-de-inferencia.html",
+        "date": "24 mar 2026"
+      },
+      "en": {
+        "title": "Real inference cost: how to avoid the end-of-month USD surprise",
+        "url": "/blog/en/custos-reais-de-inferencia.html",
+        "date": "24 Mar 2026"
+      },
+      "es": {
+        "title": "Costos reales de inferencia: cómo evitar sorpresa de USD a fin de mes",
+        "url": "/blog/es/custos-reais-de-inferencia.html",
+        "date": "24 mar 2026"
+      }
+    }
+  },
+  {
+    "slug": "self-service-bi",
+    "pillar": "data",
+    "date": "2026-03-18",
+    "translations": {
+      "pt": {
+        "title": "Self-service BI: por que cada departamento tem seu \"rascunho final\"",
+        "url": "/blog/self-service-bi.html",
+        "date": "18 mar 2026"
+      },
+      "en": {
+        "title": "Self-service BI: why every department has its own \"final draft\"",
+        "url": "/blog/en/self-service-bi.html",
+        "date": "18 Mar 2026"
+      },
+      "es": {
+        "title": "Self-service BI: por qué cada departamento tiene su \"borrador final\"",
+        "url": "/blog/es/self-service-bi.html",
+        "date": "18 mar 2026"
+      }
+    }
+  },
+  {
+    "slug": "integracao-salesforce-erp",
+    "pillar": "sf",
+    "date": "2026-03-17",
+    "translations": {
+      "pt": {
+        "title": "Integração Salesforce ↔ ERP: por que projetos travam no contrato, não na arquitetura",
+        "url": "/blog/integracao-salesforce-erp.html",
+        "date": "17 mar 2026"
+      },
+      "en": {
+        "title": "Salesforce ↔ ERP integration: projects stall on the contract, not the architecture",
+        "url": "/blog/en/integracao-salesforce-erp.html",
+        "date": "17 Mar 2026"
+      },
+      "es": {
+        "title": "Integración Salesforce ↔ ERP: los proyectos se traban en el contrato, no en la arquitectura",
+        "url": "/blog/es/integracao-salesforce-erp.html",
+        "date": "17 mar 2026"
+      }
+    }
+  },
+  {
+    "slug": "multi-agent-systems",
+    "pillar": "ai",
+    "date": "2026-03-11",
+    "translations": {
+      "pt": {
+        "title": "Multi-agent systems: quando vale orquestrar versus consolidar tudo num agente",
+        "url": "/blog/multi-agent-systems.html",
+        "date": "11 mar 2026"
+      },
+      "en": {
+        "title": "Multi-agent systems: when to orchestrate vs. consolidate into one agent",
+        "url": "/blog/en/multi-agent-systems.html",
+        "date": "11 Mar 2026"
+      },
+      "es": {
+        "title": "Multi-agent systems: cuándo orquestar vs. consolidar todo en un agente",
+        "url": "/blog/es/multi-agent-systems.html",
+        "date": "11 mar 2026"
+      }
+    }
+  },
+  {
     "slug": "metricas-de-produto-north-dust",
     "pillar": "data",
     "date": "2026-03-10",

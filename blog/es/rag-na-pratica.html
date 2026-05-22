@@ -35,9 +35,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=b57e079d95" />
-  <link rel="stylesheet" href="/assets/css/reset.css?v=b57e079d95" />
-  <link rel="stylesheet" href="/assets/css/main.css?v=b57e079d95" />
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=5271e69d98" />
 
   <script type="application/ld+json">
 {
@@ -176,7 +176,7 @@
 <h2>Anatomía de una pipeline que funciona</h2>
 <p>La consultoría decente arma RAG en capas, no como una llamada de API. El esqueleto que entregamos en proyecto serio tiene cinco pasos, cada uno instrumentado.</p>
 <p><strong>Chunking informado por la estructura.</strong> Cortar respetando headings, párrafos, bloques lógicos. Superposición del 10–20% entre chunks adyacentes para evitar pérdida de contexto en el borde. Metadatos embebidos: título de la sección, jerarquía, fuente, fecha.</p>
-<p><strong>Indexación híbrida.</strong> Vector (embedding) + texto (BM25 o similar). El vector capta semántica; el texto capta términos exactos (nombre de producto, código, número de cláusula). El top-k combinado cubre más que cada uno por separado.</p>
+<p><strong>Indexación híbrida.</strong> Vector (embedding) + texto (BM25 o similar). El vector capta semántica; el texto capta términos exactos (nombre de producto, código, número de cláusula). El top-k combinado cubre más que cada uno por separado. <a href="/blog/es/vector-databases-comparados.html">La elección del vector database — Pinecone, Weaviate o pgvector — depende más del contexto operativo que de la performance bruta</a>.</p>
 <p><strong>Query rewriting antes de la búsqueda.</strong> El mismo LLM que va a generar la respuesta — o un modelo más chico dedicado — reformula la pregunta del usuario en 2–3 variantes, expande términos, descompone preguntas compuestas. Cada variante busca; los resultados se combinan.</p>
 <p><strong>Reranking sobre el top-k expandido.</strong> Tomar top-30 de la búsqueda inicial y correr un reranker (cross-encoder o LLM con prompt de scoring) que reordena por los 5–10 más relevantes para esa pregunta específica. Ese paso sube el MRR de 0.3 a 0.6+ en la mayoría de los dominios. Es el mejor retorno por hora de ingeniería.</p>
 <p><strong>Generación con cita de fuente.</strong> El LLM responde <em>y cita el fragmento exacto</em> que sustenta cada afirmación. No es solo UX — es lo que permite medir faithfulness después. Sin cita, no hay auditoría.</p>
@@ -214,20 +214,20 @@
               <h3>Cuándo un agente es la respuesta — y cuándo es huida de un problema mal modelado</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="post-card" data-pillar="ai" href="/blog/es/vector-databases-comparados.html">
+            <a class="post-card" data-pillar="ai" href="/blog/es/privacidade-dados-llms.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">3 mar 2026</span>
+                <span class="post-date">1 abr 2026</span>
               </div>
-              <h3>Vector databases comparados: Pinecone, Weaviate, pgvector — cuándo sirve cada uno</h3>
+              <h3>Privacidad de datos en LLMs: el checklist de gobernanza que falta en el piloto</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="post-card" data-pillar="ai" href="/blog/es/fine-tuning-vs-rag-vs-prompt.html">
+            <a class="post-card" data-pillar="ai" href="/blog/es/custos-reais-de-inferencia.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">11 feb 2026</span>
+                <span class="post-date">24 mar 2026</span>
               </div>
-              <h3>Fine-tuning vs RAG vs prompt engineering: cómo decidir sin quemar caja</h3>
+              <h3>Costos reales de inferencia: cómo evitar sorpresa de USD a fin de mes</h3>
               <div class="read">Leer →</div>
             </a>
           </div>
@@ -288,7 +288,7 @@
     </div>
   </footer>
 
-  <script src="/assets/js/i18n.js?v=b57e079d95"></script>
-  <script src="/assets/js/main.js?v=b57e079d95" type="module"></script>
+  <script src="/assets/js/i18n.js?v=5271e69d98"></script>
+  <script src="/assets/js/main.js?v=5271e69d98" type="module"></script>
 </body>
 </html>

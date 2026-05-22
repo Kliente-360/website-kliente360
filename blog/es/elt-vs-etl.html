@@ -35,9 +35,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=b57e079d95" />
-  <link rel="stylesheet" href="/assets/css/reset.css?v=b57e079d95" />
-  <link rel="stylesheet" href="/assets/css/main.css?v=b57e079d95" />
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=5271e69d98" />
 
   <script type="application/ld+json">
 {
@@ -151,7 +151,7 @@
 <p>Este texto va sobre por qué ELT ganó, qué significa eso de verdad para un equipo de datos, y dónde copiar el patrón a ciegas todavía estorba.</p>
 <h2>Lo que cambió desde 2018</h2>
 <p>ETL nació en un mundo donde almacenar era barato y procesar era caro. Storage local + compute en servidor dedicado significaba que transformar dato antes de cargar tenía sentido — no querías cargar 100 GB para extraer 10 GB de KPI. La transformación era un filtro de costo.</p>
-<p>En 2026, la cuenta se invirtió. Warehouse cloud (Snowflake, BigQuery, Databricks) cobra storage muy barato y compute elástico bajo demanda. Cargar dato bruto cuesta casi nada; procesar cuando hace falta cuesta lo que cuesta el uso. Mantener dato bruto histórico se volvió económicamente trivial. Y ahí transformar antes de cargar dejó de tener sentido — estás pagando dos veces (compute en la transformación previa + carga), para ahorrar storage que ya no es caro.</p>
+<p>En 2026, la cuenta se invirtió. <a href="/blog/es/snowflake-bigquery-databricks.html">Warehouse cloud — Snowflake, BigQuery, Databricks</a> — cobra storage muy barato y compute elástico bajo demanda. Cargar dato bruto cuesta casi nada; procesar cuando hace falta cuesta lo que cuesta el uso. Mantener dato bruto histórico se volvió económicamente trivial. Y ahí transformar antes de cargar dejó de tener sentido — estás pagando dos veces (compute en la transformación previa + carga), para ahorrar storage que ya no es caro.</p>
 <p>Ese es el motivo técnico de fondo. No es &quot;ELT es más moderno&quot;. Es &quot;el cuello de botella de costo se movió&quot;.</p>
 <h2>La ganancia real: separar ingesta de modelación</h2>
 <p>La consecuencia más valiosa de ELT no está en el E-L-T versus E-T-L. Está en romper la operación en dos proyectos independientes.</p>
@@ -204,20 +204,20 @@
               <h3>Tableau como lenguaje ejecutivo: matando el dashboard de vanidad</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="post-card" data-pillar="data" href="/blog/es/metricas-de-produto-north-dust.html">
+            <a class="post-card" data-pillar="data" href="/blog/es/data-catalog-ninguem-usa.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">10 mar 2026</span>
+                <span class="post-date">31 mar 2026</span>
               </div>
-              <h3>Métricas de producto: por qué la north star se vuelve &quot;north dust&quot; en 6 meses</h3>
+              <h3>Data Catalog que nadie usa: síntoma del problema real (no es la herramienta)</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="post-card" data-pillar="data" href="/blog/es/data-contracts.html">
+            <a class="post-card" data-pillar="data" href="/blog/es/self-service-bi.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">25 feb 2026</span>
+                <span class="post-date">18 mar 2026</span>
               </div>
-              <h3>Data contracts: la forma menos dolorosa de no romper producción</h3>
+              <h3>Self-service BI: por qué cada departamento tiene su &quot;borrador final&quot;</h3>
               <div class="read">Leer →</div>
             </a>
           </div>
@@ -278,7 +278,7 @@
     </div>
   </footer>
 
-  <script src="/assets/js/i18n.js?v=b57e079d95"></script>
-  <script src="/assets/js/main.js?v=b57e079d95" type="module"></script>
+  <script src="/assets/js/i18n.js?v=5271e69d98"></script>
+  <script src="/assets/js/main.js?v=5271e69d98" type="module"></script>
 </body>
 </html>

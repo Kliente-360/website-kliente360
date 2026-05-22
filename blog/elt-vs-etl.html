@@ -35,9 +35,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=b57e079d95" />
-  <link rel="stylesheet" href="/assets/css/reset.css?v=b57e079d95" />
-  <link rel="stylesheet" href="/assets/css/main.css?v=b57e079d95" />
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=5271e69d98" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=5271e69d98" />
 
   <script type="application/ld+json">
 {
@@ -151,7 +151,7 @@
 <p>Esse texto é sobre por que ELT venceu, o que isso realmente significa pra um time de dados, e onde a copiagem cega do padrão ainda atrapalha.</p>
 <h2>O que mudou desde 2018</h2>
 <p>ETL nasceu num mundo em que armazenar era barato e processar era caro. Storage local + compute em servidor dedicado significava que transformar dado antes de carregar fazia sentido — você não queria carregar 100 GB pra extrair 10 GB de KPI. A transformação era um filtro de custo.</p>
-<p>Em 2026, o cálculo inverteu. Warehouse cloud (Snowflake, BigQuery, Databricks) cobra storage muito barato e compute elástico sob demanda. Carregar dado bruto custa quase nada; processar quando necessário custa o que custa o uso. Manter dado bruto histórico ficou economicamente trivial. E aí a transformação antes da carga deixou de fazer sentido — você está pagando duas vezes (compute na transformação prévia + carga), pra economizar storage que já não é caro.</p>
+<p>Em 2026, o cálculo inverteu. <a href="/blog/snowflake-bigquery-databricks.html">Warehouse cloud — Snowflake, BigQuery, Databricks</a> — cobra storage muito barato e compute elástico sob demanda. Carregar dado bruto custa quase nada; processar quando necessário custa o que custa o uso. Manter dado bruto histórico ficou economicamente trivial. E aí a transformação antes da carga deixou de fazer sentido — você está pagando duas vezes (compute na transformação prévia + carga), pra economizar storage que já não é caro.</p>
 <p>Esse é o motivo técnico de fundo. Não é &quot;ELT é mais moderno&quot;. É &quot;o gargalo de custo migrou&quot;.</p>
 <h2>O ganho real: separar ingestão de modelagem</h2>
 <p>A consequência mais valiosa de ELT não está no E-L-T versus E-T-L. Está em quebrar a operação em dois projetos independentes.</p>
@@ -204,20 +204,20 @@
               <h3>Tableau como linguagem executiva: matando o dashboard de vaidade</h3>
               <div class="read">Ler →</div>
             </a>
-            <a class="post-card" data-pillar="data" href="/blog/metricas-de-produto-north-dust.html">
+            <a class="post-card" data-pillar="data" href="/blog/data-catalog-ninguem-usa.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">10 mar 2026</span>
+                <span class="post-date">31 mar 2026</span>
               </div>
-              <h3>Métricas de produto: por que north star vira &quot;north dust&quot; em 6 meses</h3>
+              <h3>Data Catalog que ninguém usa: sintoma do problema real (não é a ferramenta)</h3>
               <div class="read">Ler →</div>
             </a>
-            <a class="post-card" data-pillar="data" href="/blog/data-contracts.html">
+            <a class="post-card" data-pillar="data" href="/blog/self-service-bi.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">25 fev 2026</span>
+                <span class="post-date">18 mar 2026</span>
               </div>
-              <h3>Data contracts: o jeito menos doloroso de não quebrar produção</h3>
+              <h3>Self-service BI: por que cada departamento tem seu &quot;rascunho final&quot;</h3>
               <div class="read">Ler →</div>
             </a>
           </div>
@@ -278,7 +278,7 @@
     </div>
   </footer>
 
-  <script src="/assets/js/i18n.js?v=b57e079d95"></script>
-  <script src="/assets/js/main.js?v=b57e079d95" type="module"></script>
+  <script src="/assets/js/i18n.js?v=5271e69d98"></script>
+  <script src="/assets/js/main.js?v=5271e69d98" type="module"></script>
 </body>
 </html>

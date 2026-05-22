@@ -30,6 +30,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
 import { marked } from 'marked';
+import { Resvg } from '@resvg/resvg-js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = dirname(__filename);
@@ -181,7 +182,7 @@ const headCommon = ({ title, description, canonical, ogType = 'article', pubDate
   <meta property="og:site_name" content="Kliente 360" />
   <meta property="og:title" content="${escapeHtml(title)}" />
   <meta property="og:description" content="${escapeHtml(description)}" />
-  <meta property="og:image" content="/og-image.svg" />
+  <meta property="og:image" content="/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   ${pubDate ? `<meta property="article:published_time" content="${pubDate}" />` : ''}
@@ -431,6 +432,20 @@ ${allUrls.map(u => `  <url>
 `;
   writeFileSync(join(ROOT, 'sitemap.xml'), sitemap);
   console.log(`   ✓ sitemap.xml (${allUrls.length} URLs)`);
+
+  // Converte og-image.svg → og-image.png para compatibilidade
+  // com WhatsApp, Facebook Messenger e Slack (que não renderizam SVG).
+  const ogSvgPath = join(ROOT, 'og-image.svg');
+  if (existsSync(ogSvgPath)) {
+    const svg = readFileSync(ogSvgPath, 'utf-8');
+    const resvg = new Resvg(svg, {
+      fitTo: { mode: 'width', value: 1200 },
+      font: { loadSystemFonts: true },
+    });
+    const pngData = resvg.render().asPng();
+    writeFileSync(join(ROOT, 'og-image.png'), pngData);
+    console.log(`   ✓ og-image.png (1200x630)`);
+  }
 
   console.log(`✅ Build concluído (asset version: ${ASSET_VERSION}).`);
 };

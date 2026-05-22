@@ -46,7 +46,7 @@ Cadência: terça **ou** quarta, pulando feriados (ver `blog/posts/README.md` §
 | 30 | 2026-04-28 | ter | ai | [Open source vs proprietary LLMs: critérios honestos pra escolher sem ideologia](blog/posts/open-source-vs-proprietary-llms.md) | Critérios honestos para escolher sem ideologia | [x] |
 | 31 | 2026-04-29 | qua | sf | [Salesforce Industries (Vlocity): vale a pena para empresas brasileiras de médio porte?](blog/posts/salesforce-industries-vlocity.md) | Vale a pena para empresas brasileiras de médio porte? | [x] |
 | 32 | 2026-05-05 | ter | data | [Análise de churn: o erro de definir "perda" antes da estratégia](blog/posts/analise-de-churn.md) | O erro de definir "perda" antes da estratégia | [x] |
-| 33 | 2026-05-06 | qua | ai | IA para RH | Caso prático do agente de triagem interna | [ ] |
+| 33 | 2026-05-06 | qua | ai | [IA para RH: caso prático do agente de triagem interna](blog/posts/ia-para-rh.md) | Caso prático do agente de triagem interna | [x] |
 | 34 | 2026-05-12 | ter | sf | Salesforce Partner Program | O que o cliente nunca te conta | [ ] |
 
 ## Como atualizar

@@ -43,7 +43,7 @@ Cadência: terça **ou** quarta, pulando feriados (ver `blog/posts/README.md` §
 | 27 | 2026-04-14 | ter | ai | [IA generativa para vendas: além do "ChatGPT de respostas" — onde gera receita](blog/posts/ia-generativa-vendas.md) | Além do "ChatGPT de respostas" — onde gera receita | [x] |
 | 28 | 2026-04-15 | qua | sf | [CPQ em SaaS B2B: a diferença entre cotação e proposta de fato](blog/posts/cpq-saas-b2b.md) | A diferença entre cotação e proposta de fato | [x] |
 | 29 | 2026-04-22 | qua | data | [Modelagem dimensional ainda vale em 2026? Sim — defesa contra o lakehouse-pra-tudo](blog/posts/modelagem-dimensional-2026.md) | Sim, e por isto — defesa contra o lakehouse-pra-tudo | [x] |
-| 30 | 2026-04-28 | ter | ai | Open source vs proprietary LLMs | Critérios honestos para escolher sem ideologia | [ ] |
+| 30 | 2026-04-28 | ter | ai | [Open source vs proprietary LLMs: critérios honestos pra escolher sem ideologia](blog/posts/open-source-vs-proprietary-llms.md) | Critérios honestos para escolher sem ideologia | [x] |
 | 31 | 2026-04-29 | qua | sf | Salesforce Industries (Vlocity) | Vale a pena para empresas brasileiras de médio porte? | [ ] |
 | 32 | 2026-05-05 | ter | data | Análise de churn | O erro de definir "perda" antes da estratégia | [ ] |
 | 33 | 2026-05-06 | qua | ai | IA para RH | Caso prático do agente de triagem interna | [ ] |

@@ -106,6 +106,7 @@ Referências: **Apple**, **Google**, **Salesforce**. Síntese aplicada:
 - Stack: HTML5 + CSS (com `tokens.css`, `reset.css`, `main.css`) + JS módulo. Sem frameworks.
 - Estrutura de pastas já criada: `assets/{css,js,img,fonts}/`, `blog/posts/`.
 - Blog usará build Markdown→HTML (script Node minimal, sem dependências pesadas — definir na fase 7).
+- **Workflow Git (decidido 2026-05-22)**: trabalhamos direto em `main`. Sem feature branches. Netlify deploya de `main`. Mudança aceita por se tratar de site institucional pequeno, com um único decisor.
 
 ## 8. Histórico de sessões
 

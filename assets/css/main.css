@@ -182,23 +182,25 @@ body {
   display: inline-flex; align-items: center; gap: var(--sp-2);
   padding: 13px 22px;
   border-radius: var(--r-pill);
+  border: 1px solid transparent;
   font-weight: var(--fw-medium);
   font-size: var(--fs-16);
   letter-spacing: var(--ls-tight);
   transition: background var(--dur-base) var(--ease-out),
               color var(--dur-base) var(--ease-out),
+              border-color var(--dur-base) var(--ease-out),
               transform var(--dur-fast) var(--ease-out),
               box-shadow var(--dur-base) var(--ease-out);
   white-space: nowrap;
 }
 .btn:hover { transform: translateY(-1px); }
-.btn-primary { background: var(--ink-900); color: #fff; }
-.btn-primary:hover { background: var(--ink-800); }
-.btn-accent { background: var(--color-accent); color: #fff; }
-.btn-accent:hover { background: var(--color-accent-hover); }
-.btn-ghost { background: transparent; color: var(--color-fg); border: 1px solid var(--line-strong); }
+.btn-primary { background: var(--ink-900); color: #fff; border-color: var(--ink-900); }
+.btn-primary:hover { background: var(--ink-800); border-color: var(--ink-800); }
+.btn-accent { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+.btn-accent:hover { background: var(--color-accent-hover); border-color: var(--color-accent-hover); }
+.btn-ghost { background: transparent; color: var(--color-fg); border-color: var(--line-strong); }
 .btn-ghost:hover { background: var(--bg-alt); }
-.btn-on-dark { background: #fff; color: var(--ink-900); }
+.btn-on-dark { background: #fff; color: var(--ink-900); border-color: #fff; }
 .btn-on-dark:hover { background: var(--bg-alt); }
 .btn-link { padding: 0; color: var(--color-accent); font-weight: var(--fw-medium); display: inline-flex; align-items: center; gap: 6px; }
 .btn-link::after { content: "→"; transition: transform var(--dur-base) var(--ease-out); display: inline-block; }
@@ -382,7 +384,7 @@ body {
 
 .pillar-deep .pillar-copy h2 { font-size: var(--fs-h3); letter-spacing: var(--ls-tight); line-height: var(--lh-snug); font-weight: var(--fw-semibold); }
 .pillar-deep .pillar-copy .lead { margin-top: var(--sp-4); }
-.pillar-deep .pillar-copy .actions { margin-top: var(--sp-8); display: flex; gap: var(--sp-3); flex-wrap: wrap; }
+.pillar-deep .pillar-copy .actions { margin-top: var(--sp-8); display: flex; gap: var(--sp-4); flex-wrap: wrap; align-items: center; }
 
 .offer-list {
   display: flex; flex-direction: column;

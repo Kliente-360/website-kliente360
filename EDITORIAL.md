@@ -22,7 +22,7 @@ Cadência: terça **ou** quarta, pulando feriados (ver `blog/posts/README.md` §
 | 06 | 2026-01-21 | qua | ai | [LLM como agente interno: três casos onde funciona, dois onde fracassa](blog/posts/llm-como-agente-interno.md) | Três casos onde funciona, dois onde fracassa | [x] |
 | 07 | 2026-01-27 | ter | sf | [Service Cloud: SLA não é decoração — como medir capacidade real antes de prometer prazo](blog/posts/service-cloud-sla-nao-e-decoracao.md) | Como medir capacidade real antes de prometer prazo | [x] |
 | 08 | 2026-01-28 | qua | data | [ELT vs ETL: por que a moda mudou e o que importa de fato](blog/posts/elt-vs-etl.md) | Por que a moda mudou e o que importa de fato | [x] |
-| 09 | 2026-02-03 | ter | ai | Avaliação de agentes | A métrica que ninguém quer publicar | [ ] |
+| 09 | 2026-02-03 | ter | ai | [Avaliação de agentes: a métrica que ninguém quer publicar](blog/posts/avaliacao-de-agentes.md) | A métrica que ninguém quer publicar | [x] |
 | 10 | 2026-02-04 | qua | sf | Customer 360 vs CDP | Diferenças que mudam o roadmap de dados | [ ] |
 | 11 | 2026-02-10 | ter | data | Snowflake vs BigQuery vs Databricks | Comparação honesta para empresa brasileira de médio porte | [ ] |
 | 12 | 2026-02-11 | qua | ai | Fine-tuning vs RAG vs prompt engineering | Como decidir sem queimar caixa | [ ] |

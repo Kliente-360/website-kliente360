@@ -28,7 +28,7 @@ Cadência: terça **ou** quarta, pulando feriados (ver `blog/posts/README.md` §
 | 12 | 2026-02-11 | qua | ai | [Fine-tuning vs RAG vs prompt engineering: como decidir sem queimar caixa](blog/posts/fine-tuning-vs-rag-vs-prompt.md) | Como decidir sem queimar caixa | [x] |
 | 13 | 2026-02-24 | ter | sf | [Agentforce em atendimento humano: o que automatizar e o que NÃO](blog/posts/agentforce-atendimento-humano.md) | O que automatizar e o que NÃO | [x] |
 | 14 | 2026-02-25 | qua | data | [Data contracts: o jeito menos doloroso de não quebrar produção](blog/posts/data-contracts.md) | O jeito menos doloroso de não quebrar produção | [x] |
-| 15 | 2026-03-03 | ter | ai | Vector databases comparados | Pinecone, Weaviate, pgvector — quando cada um faz sentido | [ ] |
+| 15 | 2026-03-03 | ter | ai | [Vector databases comparados: Pinecone, Weaviate, pgvector — quando cada um faz sentido](blog/posts/vector-databases-comparados.md) | Pinecone, Weaviate, pgvector — quando cada um faz sentido | [x] |
 | 16 | 2026-03-04 | qua | sf | Salesforce Flow vs Apex | Quando código vale mais que clique | [ ] |
 | 17 | 2026-03-10 | ter | data | Métricas de produto | Por que north star vira "north dust" em 6 meses | [ ] |
 | 18 | 2026-03-11 | qua | ai | Multi-agent systems | Quando vale orquestrar versus consolidar tudo num agente | [ ] |

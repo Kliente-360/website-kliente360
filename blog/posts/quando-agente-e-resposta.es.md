@@ -22,7 +22,7 @@ El síntoma suele ser *operación cara que no escala*. Atención con cola, flujo
 El diagnóstico real rara vez es "falta agente". Suele ser una combinación de:
 
 - **Proceso mal diseñado** — pasos no escritos, excepciones no catalogadas, reglas que viven en la cabeza de las personas.
-- **Datos sucios o fragmentados** — el agente necesita contexto, y el contexto está en silos que nadie integró.
+- **Datos sucios o fragmentados** — el agente necesita contexto, y el contexto está en silos que nadie integró. No confundir con perseguir [limpieza absoluta antes de cualquier proyecto](/blog/es/dado-limpo-e-um-mito.html): lo que traba al agente es fragmentación y calidad insuficiente *para el caso de uso*, no la imperfección en sí.
 - **SLA mal calibrado** — el equipo no tiene capacidad para atender en el plazo prometido. El agente se vuelve tampón y oculta el problema.
 - **Falta de feedback loop** — nadie mide lo que el equipo hace hoy. ¿Cómo medir lo que el agente hará mañana?
 

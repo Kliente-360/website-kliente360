@@ -22,7 +22,7 @@ The symptom is usually *expensive operations that don't scale*. Customer service
 The real diagnosis is rarely "we lack an agent". It tends to be a combination of:
 
 - **Poorly designed process** — unwritten steps, uncatalogued exceptions, rules that live in people's heads.
-- **Dirty or fragmented data** — the agent needs context, and context lives in silos no one has integrated.
+- **Dirty or fragmented data** — the agent needs context, and context lives in silos no one has integrated. Not to be confused with chasing [absolute cleanliness before any project](/blog/en/dado-limpo-e-um-mito.html): what stalls the agent is fragmentation and quality insufficient *for the use case*, not imperfection itself.
 - **Miscalibrated SLA** — the team doesn't have capacity to meet the promised deadline. The agent becomes a buffer and hides the problem.
 - **No feedback loop** — no one measures what the team does today. How do you measure what the agent will do tomorrow?
 

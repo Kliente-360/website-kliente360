@@ -22,7 +22,7 @@ O sintoma costuma ser *operação cara que não escala*. Atendimento com fila, f
 O diagnóstico real raramente é "falta agente". Costuma ser uma combinação de:
 
 - **Processo mal desenhado** — passos não escritos, exceções não catalogadas, regras que vivem na cabeça das pessoas.
-- **Dados sujos ou fragmentados** — o agente precisa de contexto, e o contexto está em silos que ninguém integrou.
+- **Dados sujos ou fragmentados** — o agente precisa de contexto, e o contexto está em silos que ninguém integrou. Não confundir com perseguir [limpeza absoluta antes de qualquer projeto](/blog/dado-limpo-e-um-mito.html): o que trava é fragmentação e qualidade insuficiente *pro caso de uso*, não imperfeição em si.
 - **SLA mal calibrado** — o time não tem capacidade pra atender no prazo prometido. O agente vira tampão e some o problema.
 - **Falta de feedback loop** — ninguém mede o que o time faz hoje. Como medir o que o agente vai fazer amanhã?
 

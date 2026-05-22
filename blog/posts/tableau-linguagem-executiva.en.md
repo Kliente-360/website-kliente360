@@ -63,7 +63,7 @@ It does not replace:
 - **Business conversation.** The view only helps if there was serious discovery with whoever will decide.
 - **Automated recommendation.** For that, ML/AI enters — Tableau visualizes, doesn't think.
 
-The combination that works: **clean warehouse + well-defined business model + Tableau as reading layer**. Each piece in its place.
+The combination that works: **clean warehouse + well-defined business model + Tableau as reading layer**. Each piece in its place. Worth remembering: ["clean" here means good enough for the use case, not absolutely clean](/blog/en/dado-limpo-e-um-mito.html) — waiting for perfection is the fastest way to never publish the dashboard.
 
 ## The final dashboard
 

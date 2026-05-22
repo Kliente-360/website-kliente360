@@ -63,7 +63,7 @@ No sustituye:
 - **Conversación de negocio.** La vista solo ayuda si hubo discovery serio con quien va a decidir.
 - **Recomendación automatizada.** Para eso entra ML/IA — Tableau visualiza, no piensa.
 
-La combinación que funciona: **warehouse limpio + modelo de negocio bien definido + Tableau como capa de lectura**. Cada pieza en su lugar.
+La combinación que funciona: **warehouse limpio + modelo de negocio bien definido + Tableau como capa de lectura**. Cada pieza en su lugar. Vale recordar: ["limpio" acá significa bueno suficiente para el caso de uso, no limpio en lo absoluto](/blog/es/dado-limpo-e-um-mito.html) — esperar perfección es la forma más rápida de nunca publicar el dashboard.
 
 ## El dashboard final
 

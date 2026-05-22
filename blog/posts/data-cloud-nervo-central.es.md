@@ -54,7 +54,7 @@ Data Cloud es poderoso, pero no es el lugar para historial de 10 años de transa
 
 Si estás evaluando Data Cloud, tres movimientos que separan proyectos que prosperan de los que se atascan:
 
-1. **Empieza por el caso de uso de activación, no por la ingesta.** Define dónde Data Cloud va a entregar valor (un agente, una jornada, una segmentación) y solo ingiere lo que ese caso de uso necesita. Crece a partir de ahí.
+1. **Empieza por el caso de uso de activación, no por la ingesta.** Define dónde Data Cloud va a entregar valor (un agente, una jornada, una segmentación) y solo ingiere lo que ese caso de uso necesita. Como en cualquier rollout Salesforce serio, [el discovery del proceso viene antes de la configuración](/blog/es/mapear-processos-antes-do-salesforce.html) — Data Cloud no escapa de la regla.
 2. **Trata identidad como proyecto separado.** El diseño de identity resolution merece su propio sprint, con QA dedicado. No lo intentes hacer junto.
 3. **Conecta a tu data stack existente, no la sustituyas.** Snowflake, BigQuery, Databricks continúan. Data Cloud es la capa de contexto operacional, no el sustituto del warehouse analítico.
 

@@ -399,7 +399,13 @@ body {
 .pillar-deep .pillar-copy h2 { font-size: var(--fs-h3); letter-spacing: var(--ls-tight); line-height: var(--lh-snug); font-weight: var(--fw-semibold); }
 .pillar-deep .pillar-copy .lead { margin-top: var(--sp-4); }
 .pillar-deep .pillar-copy .actions { margin-top: var(--sp-8); display: flex; gap: var(--sp-6); flex-wrap: wrap; align-items: center; row-gap: var(--sp-4); }
-.pillar-deep .pillar-copy .actions .btn-link { padding-block: 6px; }
+.pillar-deep .pillar-copy .actions .btn-link {
+  padding-block: 6px;
+  padding-inline-start: 22px;  /* alinha o início do texto do link com o texto do botão pill */
+}
+@media (min-width: 641px) {
+  .pillar-deep .pillar-copy .actions .btn-link { padding-inline-start: 0; }
+}
 
 .offer-list {
   display: flex; flex-direction: column;

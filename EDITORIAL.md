@@ -25,7 +25,7 @@ Cadência: terça **ou** quarta, pulando feriados (ver `blog/posts/README.md` §
 | 09 | 2026-02-03 | ter | ai | [Avaliação de agentes: a métrica que ninguém quer publicar](blog/posts/avaliacao-de-agentes.md) | A métrica que ninguém quer publicar | [x] |
 | 10 | 2026-02-04 | qua | sf | [Customer 360 vs CDP: diferenças que mudam o roadmap de dados](blog/posts/customer-360-vs-cdp.md) | Diferenças que mudam o roadmap de dados | [x] |
 | 11 | 2026-02-10 | ter | data | [Snowflake vs BigQuery vs Databricks: comparação honesta pra médio porte](blog/posts/snowflake-bigquery-databricks.md) | Comparação honesta para empresa brasileira de médio porte | [x] |
-| 12 | 2026-02-11 | qua | ai | Fine-tuning vs RAG vs prompt engineering | Como decidir sem queimar caixa | [ ] |
+| 12 | 2026-02-11 | qua | ai | [Fine-tuning vs RAG vs prompt engineering: como decidir sem queimar caixa](blog/posts/fine-tuning-vs-rag-vs-prompt.md) | Como decidir sem queimar caixa | [x] |
 | 13 | 2026-02-24 | ter | sf | Agentforce em atendimento humano | O que automatizar e o que NÃO | [ ] |
 | 14 | 2026-02-25 | qua | data | Data contracts | O jeito menos doloroso de não quebrar produção | [ ] |
 | 15 | 2026-03-03 | ter | ai | Vector databases comparados | Pinecone, Weaviate, pgvector — quando cada um faz sentido | [ ] |

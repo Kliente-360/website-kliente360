@@ -256,16 +256,14 @@ body {
 }
 @media (min-width: 768px) { .hero .cta-row { margin-top: var(--sp-12); } }
 
-/* No mobile, CTAs empilhados ganham largura uniforme. */
+/* No mobile, CTAs empilhados ficam com a mesma largura — igual à do botão maior, não a tela inteira. */
 @media (max-width: 640px) {
   .hero .cta-row,
   .pillar-deep .pillar-copy .actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .hero .cta-row > .btn,
-  .pillar-deep .pillar-copy .actions > .btn {
-    width: 100%;
+    display: inline-grid;
+    grid-template-columns: max-content;
+    gap: var(--sp-3);
+    align-self: flex-start;
   }
 }
 

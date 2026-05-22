@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>dbt in practice: documentation is the real win, not the model | Kliente 360</title>
+  <meta name="description" content="Teams adopt dbt for versioned SQL and tests — and discover six months later that the real value lives elsewhere: in the documentation that keeps the warehouse alive." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/en/dbt-na-pratica.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/dbt-na-pratica.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/dbt-na-pratica.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/dbt-na-pratica.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/dbt-na-pratica.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="dbt in practice: documentation is the real win, not the model | Kliente 360" />
+  <meta property="og:description" content="Teams adopt dbt for versioned SQL and tests — and discover six months later that the real value lives elsewhere: in the documentation that keeps the warehouse alive." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-01-20" />
+  <meta property="article:section" content="Data &amp; Analytics" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="dbt in practice: documentation is the real win, not the model | Kliente 360" />
+  <meta name="twitter:description" content="Teams adopt dbt for versioned SQL and tests — and discover six months later that the real value lives elsewhere: in the documentation that keeps the warehouse alive." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=d605879e2e" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "dbt in practice: documentation is the real win, not the model",
+  "description": "Teams adopt dbt for versioned SQL and tests — and discover six months later that the real value lives elsewhere: in the documentation that keeps the warehouse alive.",
+  "datePublished": "2026-01-20",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Data & Analytics",
+  "keywords": [
+    "dbt",
+    "data warehouse",
+    "data engineering",
+    "data documentation",
+    "data modeling"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="data">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Practice 02 · Data</span>
+            <a class="post-back" href="/blog/en/">Blog</a>
+          </div>
+          <h1>dbt in practice: documentation is the real win, not the model</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-01-20">20 Jan 2026</time>
+            <span class="sep">·</span>
+            <span>6 min read</span>
+            <span class="sep">·</span>
+            <span>By Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>dbt delivers versioning, tests and modularity in SQL. But the gain that separates amateur use from mature use lives in the discipline of documenting — descriptions, contracts, ownership. Without it, dbt is just ETL with new syntax. With it, it becomes the warehouse&#39;s operating system.</p>
+          </aside>
+
+          <p class="post-intro">The first reaction to adopting dbt is usually technical and fair: versioned SQL, tests running in CI, automatic lineage, modularity replacing that 800-line script. All of that is real and worth the migration. But six months later, the team looks back and notices the gain that changed the game was a different one — and almost no one sold dbt from that angle during adoption. The real win is <strong>documentation</strong>: the <code>description</code> column, the schema YAML, the cultural obligation to describe what a model means before it ships to production.</p>
+<p>This text is about why documentation in dbt is worth more than any other feature, and what to do to extract that value on purpose — not by accident.</p>
+<h2>What dbt delivers out of the box</h2>
+<p>Before going to documentation, worth acknowledging the technical package dbt delivers — it has real value. SQL in versioned files on Git replaces loose scripts in the warehouse editor. Declarative tests (<code>unique</code>, <code>not_null</code>, <code>accepted_values</code>, <code>relationships</code>) catch regressions before the dashboard breaks. Macros and Jinja allow reuse without copying SQL. <code>ref()</code> resolves dependencies automatically — no more <code>DROP TABLE</code> in the wrong place. CI builds the lineage and runs tests on every PR.</p>
+<p>All of that already justifies adoption. But it&#39;s the floor, not the ceiling. A team that stops at this package has a better version of the same ETL they had before. A team that goes further to documentation has something else.</p>
+<h2>Why documentation changes the game</h2>
+<p>Every mid-market company has the same warehouse problem: nobody knows what each table means. The <code>status</code> column on <code>orders</code> means what — logistical, financial, sales flow? It can have three meanings across three schemas, and the analyst picks one by intuition. Result: reports that look right but measure different things, metrics that diverge between teams, and six months a year spent on &quot;why is this number different in that dashboard&quot;.</p>
+<p>dbt doesn&#39;t solve this problem alone — it provides the <em>infrastructure</em> to solve it. Each model has a <code>.yml</code> file with model description, column descriptions, associated tests, owner. Each column can have <code>meta</code> with domain tags, sensitivity, source. <code>dbt docs</code> generates a navigable site with visual lineage + descriptions + tests + freshness. When filled out, this site becomes the <strong>canonical dictionary</strong> of the warehouse.</p>
+<blockquote>
+<p>dbt without documentation is ETL with new syntax. dbt with documentation is the warehouse&#39;s operating system — the place where the company agrees on what each number means.</p>
+</blockquote>
+<p>The operational difference shows up three months later: a new analyst joins, reads the <code>dbt docs</code>, understands what each model does. A seemingly divergent metric is resolved in 5 minutes in the lineage. The product team asks &quot;what counts as an active customer?&quot; and the answer is in the model&#39;s <code>description</code>, written by the owner. A conversation that used to take a meeting now takes 2 minutes.</p>
+<h2>Five rules to extract the real value</h2>
+<p>The difference between a team that gets value from dbt and a team that doesn&#39;t is discipline. Five rules we see work.</p>
+<ol>
+<li><strong>Description is a PR blocker.</strong> A model without a description doesn&#39;t pass CI. A column without a description in a <code>mart</code> model (the layer the business consumes) doesn&#39;t pass CI. Sounds rigid — it&#39;s rigid on purpose. Without this rule, description becomes a perpetual backlog.</li>
+<li><strong>Explicit owner in the <code>.yml</code>.</strong> Each model has a human responsible (tag <code>owner</code> in <code>meta</code>). When something breaks, it&#39;s clear who to call. Without owners, an orphan model becomes an abandoned model in 6 months.</li>
+<li><strong>Source freshness as a test.</strong> Set <code>freshness</code> on each <code>source</code> (Salesforce, Stripe, Segment, etc.) with an explicit SLA. When the source falls behind, the team knows before the dashboard goes wrong. This is one of dbt&#39;s most undervalued tests.</li>
+<li><strong>Explicit layers: staging / intermediate / marts.</strong> Staging is raw renamed and typed. Intermediate is reusable logic. Marts is what the business consumes. Mixing layers is the fastest way for the warehouse to become a mess. dbt makes separation easy — using it is discipline.</li>
+<li><strong>Documented exposures.</strong> The <code>exposure</code> tag points to the dashboard or app that consumes the model. When someone is about to change the model, they see what will break downstream. Combined with lineage, it closes the loop between warehouse and <a href="/blog/en/tableau-linguagem-executiva.html">BI that drives decisions</a>.</li>
+</ol>
+<p>Five simple rules — none requires a new plugin. They require culture. Without them, dbt becomes a repo with pretty SQL and an empty dictionary.</p>
+<h2>The argument against: &quot;let&#39;s document later&quot;</h2>
+<p>The predictable objection on every project: &quot;let&#39;s build the models first, then document&quot;. Sounds pragmatic. Three months in, nobody documented. Six months in, the team forgot why that model exists. Twelve months in, the new analyst recreates a parallel model because they don&#39;t trust the existing one.</p>
+<p>Documenting later doesn&#39;t work for the same reason <a href="/blog/en/dado-limpo-e-um-mito.html">waiting for clean data before using doesn&#39;t</a> — it&#39;s continuous work, not a phase with an end. The difference is that dbt already has the place to put the description. Not writing it when creating the model is letting debt be born capitalized. Five minutes on the PR save three months next quarter.</p>
+<h2>How to start well</h2>
+<p>If you&#39;re adopting dbt now, three practical moves that pay back more than picking the right <code>dbt-core</code> version:</p>
+<p><strong>Setup with mandatory schema YAML from day 1.</strong> Configure CI to fail when a <code>mart</code> model lacks a complete description. Fighting with the team once at the start is cheaper than recovering documentation six months later.</p>
+<p><strong>Start from marts, not staging.</strong> Define what the business needs to consume, write the description before creating the model, then build the layers feeding it. Disciplinarily backward is cheaper than technically forward.</p>
+<p><strong>Treat <code>dbt docs</code> as an internal product.</strong> Present it in team meetings, put the link on the intranet, train analysts to use it before the warehouse. Documentation no one opens is overhead. Documentation that becomes the first lookup pays six times the effort to keep.</p>
+<p>dbt without that discipline is just a better version of the old ETL — and better ETL is already something. With that discipline, it becomes the piece that stops the warehouse from being a black box. The difference between the two uses is a culture, not a feature.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Keep the conversation going</div>
+            <h3>Want to discuss this topic with a partner?</h3>
+            <p>Initial diagnostic with no commitment. We assess your scenario in a week and send back a report.</p>
+            <a class="btn-link" href="/#contato">Talk to a partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Further reading</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="data" href="/blog/en/tableau-linguagem-executiva.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">13 May 2026</span>
+              </div>
+              <h3>Tableau as an executive language: killing the vanity dashboard</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="data" href="/blog/en/elt-vs-etl.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">28 Jan 2026</span>
+              </div>
+              <h3>ELT vs ETL: why the fashion changed and what actually matters</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="data" href="/blog/en/dado-limpo-e-um-mito.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">7 Jan 2026</span>
+              </div>
+              <h3>Clean data is a myth: living with imperfect quality</h3>
+              <div class="read">Read →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=d605879e2e"></script>
+  <script src="/assets/js/main.js?v=d605879e2e" type="module"></script>
+</body>
+</html>

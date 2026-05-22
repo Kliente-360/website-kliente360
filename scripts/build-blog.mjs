@@ -178,9 +178,9 @@ const navHtml = (currentPath = '') => `
     <div class="nav-menu" id="nav-menu" data-open="false">
       <div class="group">
         <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
-        <a href="/#salesforce" data-i18n="nav.mobile.salesforce">Salesforce</a>
-        <a href="/#data" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
-        <a href="/#ia" data-i18n="nav.mobile.ai">IA Aplicada</a>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
       </div>
       <div class="group">
         <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
@@ -213,9 +213,9 @@ const footerHtml = `
         <div class="footer-col">
           <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
           <ul>
-            <li><a href="/#salesforce" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
-            <li><a href="/#data" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
-            <li><a href="/#ia" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
           </ul>
         </div>
         <div class="footer-col">

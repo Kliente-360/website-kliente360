@@ -4,32 +4,32 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Tableau como linguagem executiva: matando o dashboard de vaidade | Kliente 360</title>
-  <meta name="description" content="Dashboard executivo bom é o que vira decisão na sala. Pare de medir, comece a recomendar." />
+  <title>ELT vs ETL: por que a moda mudou e o que importa de fato | Kliente 360</title>
+  <meta name="description" content="ELT virou consenso em quase todo deck de arquitetura. Mas a troca de letras não é o ganho real — e copiar o padrão sem entender o motivo trava mais projetos do que destrava." />
   <meta name="theme-color" content="#0a0a0a" />
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 
-  <link rel="canonical" href="/blog/tableau-linguagem-executiva.html" />
-  <link rel="alternate" hreflang="pt-BR" href="/blog/tableau-linguagem-executiva.html" />
-  <link rel="alternate" hreflang="en-US" href="/blog/en/tableau-linguagem-executiva.html" />
-  <link rel="alternate" hreflang="es-ES" href="/blog/es/tableau-linguagem-executiva.html" />
-  <link rel="alternate" hreflang="x-default" href="/blog/tableau-linguagem-executiva.html" />
+  <link rel="canonical" href="/blog/elt-vs-etl.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/elt-vs-etl.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/elt-vs-etl.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/elt-vs-etl.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/elt-vs-etl.html" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Kliente 360" />
-  <meta property="og:title" content="Tableau como linguagem executiva: matando o dashboard de vaidade | Kliente 360" />
-  <meta property="og:description" content="Dashboard executivo bom é o que vira decisão na sala. Pare de medir, comece a recomendar." />
+  <meta property="og:title" content="ELT vs ETL: por que a moda mudou e o que importa de fato | Kliente 360" />
+  <meta property="og:description" content="ELT virou consenso em quase todo deck de arquitetura. Mas a troca de letras não é o ganho real — e copiar o padrão sem entender o motivo trava mais projetos do que destrava." />
   <meta property="og:image" content="/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="article:published_time" content="2026-05-13" />
+  <meta property="article:published_time" content="2026-01-28" />
   <meta property="article:section" content="Data &amp; Analytics" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Tableau como linguagem executiva: matando o dashboard de vaidade | Kliente 360" />
-  <meta name="twitter:description" content="Dashboard executivo bom é o que vira decisão na sala. Pare de medir, comece a recomendar." />
+  <meta name="twitter:title" content="ELT vs ETL: por que a moda mudou e o que importa de fato | Kliente 360" />
+  <meta name="twitter:description" content="ELT virou consenso em quase todo deck de arquitetura. Mas a troca de letras não é o ganho real — e copiar o padrão sem entender o motivo trava mais projetos do que destrava." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,9 +43,9 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Tableau como linguagem executiva: matando o dashboard de vaidade",
-  "description": "Dashboard executivo bom é o que vira decisão na sala. Pare de medir, comece a recomendar.",
-  "datePublished": "2026-05-13",
+  "headline": "ELT vs ETL: por que a moda mudou e o que importa de fato",
+  "description": "ELT virou consenso em quase todo deck de arquitetura. Mas a troca de letras não é o ganho real — e copiar o padrão sem entender o motivo trava mais projetos do que destrava.",
+  "datePublished": "2026-01-28",
   "inLanguage": "pt-BR",
   "author": {
     "@type": "Organization",
@@ -57,11 +57,11 @@
   },
   "articleSection": "Data & Analytics",
   "keywords": [
-    "Tableau",
-    "BI",
-    "dashboards",
-    "data-driven",
-    "decisão"
+    "ELT",
+    "ETL",
+    "data warehouse",
+    "engenharia de dados",
+    "Fivetran"
   ]
 }
   </script>
@@ -129,11 +129,11 @@
             <span class="pill-pillar">Pilar 02 · Data</span>
             <a class="post-back" href="/blog/">Blog</a>
           </div>
-          <h1>Tableau como linguagem executiva: matando o dashboard de vaidade</h1>
+          <h1>ELT vs ETL: por que a moda mudou e o que importa de fato</h1>
           <div class="post-meta-line">
-            <time datetime="2026-05-13">13 mai 2026</time>
+            <time datetime="2026-01-28">28 jan 2026</time>
             <span class="sep">·</span>
-            <span>5 min de leitura</span>
+            <span>6 min de leitura</span>
             <span class="sep">·</span>
             <span>Por Kliente 360</span>
           </div>
@@ -144,51 +144,39 @@
         <div class="post-body">
           <aside class="post-tldr">
             <div class="label">TL;DR</div>
-            <p>A maioria dos dashboards executivos não muda decisão alguma. Custam tempo de construção, atenção da diretoria, e dão a falsa sensação de gestão data-driven. Como sair desse padrão em três movimentos.</p>
+            <p>ELT venceu ETL porque warehouse cresceu em compute, não porque transformar depois é virtude. O ganho real é separar ingestão de modelagem — e isso pode ser feito em qualquer ordem. Time que adota ELT sem essa clareza só troca um silo por outro.</p>
           </aside>
 
-          <p class="post-intro">A pergunta que abre quase toda reunião de BI: &quot;qual dashboard você quer?&quot;. Errado. A pergunta certa é: &quot;qual decisão você precisa tomar?&quot;. Dashboard é meio — decisão é fim. Mas a indústria de BI passou 20 anos vendendo o meio como se fosse o fim, e o resultado está nas paredes de todo C-level: televisões com gráficos coloridos que ninguém mais olha.</p>
-<p>Esse texto é sobre como o Tableau (ou Power BI, ou Looker — a ferramenta é menos importante do que parece) pode virar <strong>linguagem de decisão executiva</strong>, não vitrine.</p>
-<h2>O custo invisível do dashboard de vaidade</h2>
-<p>Dashboard de vaidade tem três marcas registradas:</p>
-<ul>
-<li><strong>Mostra muita coisa.</strong> Quinze KPIs na mesma tela, três cores, quatro filtros, dois períodos. Tudo &quot;importante&quot;, nada acionável.</li>
-<li><strong>Não recomenda nada.</strong> Aponta números — vendas, churn, NPS. Não diz o que fazer.</li>
-<li><strong>Vive desatualizado.</strong> Foi criado pra uma pergunta de 2024. Em 2026 o negócio mudou, ninguém atualizou, todo mundo finge que ainda usa.</li>
-</ul>
-<p>O custo é triplo: hora de quem construiu (visível), atenção de quem deveria decidir (invisível) e — pior — falsa sensação de governança. Diretoria que olha dashboard se convence que está data-driven. Não está. Está performando data-driveness.</p>
-<h2>Três perguntas que todo dashboard deveria responder</h2>
-<p>A regra que a gente usa pra revisar BI antes de qualquer projeto. Se o dashboard não responde <strong>uma das três</strong>, ele provavelmente não justifica existir.</p>
-<ol>
-<li><strong>O que está acontecendo agora que eu precisa decidir essa semana?</strong> Foco em <em>acionável</em>. Não &quot;vendas YTD&quot;, mas &quot;quais 3 contas precisam de intervenção hoje&quot;.</li>
-<li><strong>Qual é a tendência que afeta o próximo trimestre?</strong> Foco em <em>direcional</em>. Não &quot;churn por mês&quot;, mas &quot;essa coorte está saindo no padrão X e exige resposta&quot;.</li>
-<li><strong>Onde minha intuição está errada?</strong> Foco em <em>contraintuitivo</em>. Não &quot;mostra meus números&quot;, mas &quot;mostra onde meu modelo mental falha&quot;.</li>
-</ol>
-<p>Dashboard que não responde nada disso é decoração.</p>
+          <p class="post-intro">A reunião de arquitetura de dados em 2026 quase sempre tem o mesmo slide: ELT em destaque, ETL marcado como legado. O argumento que vem junto é &quot;transforma depois, deixa o warehouse fazer o trabalho pesado&quot;. Soa moderno. E é, na maioria dos casos, a escolha certa. Mas a explicação que costuma acompanhar — &quot;ELT é melhor que ETL&quot; — é simplista e mascara o ponto real. O que mudou não foi a virtude de transformar antes ou depois. Foi o custo relativo do compute do warehouse, e o que isso permite organizar diferente.</p>
+<p>Esse texto é sobre por que ELT venceu, o que isso realmente significa pra um time de dados, e onde a copiagem cega do padrão ainda atrapalha.</p>
+<h2>O que mudou desde 2018</h2>
+<p>ETL nasceu num mundo em que armazenar era barato e processar era caro. Storage local + compute em servidor dedicado significava que transformar dado antes de carregar fazia sentido — você não queria carregar 100 GB pra extrair 10 GB de KPI. A transformação era um filtro de custo.</p>
+<p>Em 2026, o cálculo inverteu. Warehouse cloud (Snowflake, BigQuery, Databricks) cobra storage muito barato e compute elástico sob demanda. Carregar dado bruto custa quase nada; processar quando necessário custa o que custa o uso. Manter dado bruto histórico ficou economicamente trivial. E aí a transformação antes da carga deixou de fazer sentido — você está pagando duas vezes (compute na transformação prévia + carga), pra economizar storage que já não é caro.</p>
+<p>Esse é o motivo técnico de fundo. Não é &quot;ELT é mais moderno&quot;. É &quot;o gargalo de custo migrou&quot;.</p>
+<h2>O ganho real: separar ingestão de modelagem</h2>
+<p>A consequência mais valiosa de ELT não está no E-L-T versus E-T-L. Está em quebrar a operação em dois projetos independentes.</p>
+<p><strong>Ingestão (EL).</strong> Trazer dado de Salesforce, Stripe, Postgres, planilhas, APIs externas. Idealmente automatizado por ferramenta (Fivetran, Airbyte, Meltano). Schedule, schema, retry, monitoring. É commodity. Quem ainda escreve conector próprio em Python pra ingestão de SaaS está gastando dinheiro à toa.</p>
+<p><strong>Modelagem (T).</strong> Transformar dado bruto em modelo de negócio: staging → intermediate → marts. <a href="/blog/dbt-na-pratica.html">Aqui dbt vira a peça central</a>, com SQL versionado, testes, documentação, lineage.</p>
+<p>Time que organiza assim para de pagar consultoria pra reinventar conector de Salesforce e gasta o tempo onde o valor está — modelar o negócio. ELT virou consenso porque essa separação virou possível barata. Em ETL, ingestão e transformação ficavam acopladas no mesmo job — quebrar uma quebrava a outra.</p>
 <blockquote>
-<p>O melhor dashboard executivo é o que mata o próximo dashboard. Cada visão precisa ganhar seu espaço — não ocupar por inércia.</p>
+<p>ELT não venceu porque transformar depois é virtude. Venceu porque permite separar ingestão (commodity) de modelagem (valor) — e organizar cada uma como deve.</p>
 </blockquote>
-<h2>Anatomia de uma view que ativa decisão</h2>
-<p>Quando construímos analítica executiva, seguimos um padrão simples:</p>
-<h3>Headline numérico, não gráfico</h3>
-<p>A primeira coisa na tela é o número que importa — grande, sem decoração. Tipo: &quot;<strong>3 contas estratégicas em risco de churn nas próximas 4 semanas</strong>&quot;. Não um gráfico de barras. Não uma série temporal. O número, em palavras claras, com período.</p>
-<h3>Contexto comparativo de uma linha</h3>
-<p>Logo abaixo: &quot;vs. 1 conta no trimestre anterior; vs. média de 1,8 nos últimos 4 trimestres&quot;. Comparação é o que dá significado ao número. Sem comparação, número é trivia.</p>
-<h3>Drill que termina em ação</h3>
-<p>Cliques que abrem detalhes — <em>contas afetadas, motivo provável, próximo passo recomendado</em>. Não apenas dados. <strong>Próximos passos</strong>. Quem tem que falar com quem, até quando, com qual oferta.</p>
-<p>O Tableau (e similares) entrega esse padrão bem quando você o constrói. Mas a ferramenta sozinha não faz — esse é o ponto.</p>
-<h2>O que o Tableau faz bem (e o que ele não substitui)</h2>
-<p>Tableau é excelente em três coisas: exploração visual rápida sobre dados modelados, distribuição de visões pra organização, e personalização por persona/role.</p>
-<p>Não substitui:</p>
-<ul>
-<li><strong>Modelagem de dados.</strong> Modelo ruim faz Tableau bonito e impreciso. <a href="/blog/dbt-na-pratica.html">Invista no warehouse/dbt — onde a documentação é o pulo do gato</a> — antes do Tableau.</li>
-<li><strong>Conversa de negócio.</strong> A view só ajuda se houve discovery sério com quem vai decidir.</li>
-<li><strong>Recomendação automatizada.</strong> Para isso entra ML/IA — Tableau visualiza, não pensa.</li>
-</ul>
-<p>A combinação que funciona: <strong>warehouse limpo + modelo de negócio bem definido + Tableau como camada de leitura</strong>. Cada peça no lugar. Vale lembrar: <a href="/blog/dado-limpo-e-um-mito.html">&quot;limpo&quot; aqui significa bom o suficiente pro caso de uso, não limpo no absoluto</a> — esperar perfeição é o jeito mais rápido de nunca publicar o dashboard.</p>
-<h2>O dashboard final</h2>
-<p>A melhor métrica de qualidade pra um dashboard: <em>quantas decisões reais saíram dele no último trimestre</em>. Não acessos, não tempo de tela. Decisões. Se zero, mata e refaz.</p>
-<p>Empresas que adotam essa régua reduzem 60–80% do número de dashboards e — não por acaso — passam a confiar no que sobrou. Consultoria de dados decente entrega isso, não relatório.</p>
+<h2>Onde ELT cego ainda atrapalha</h2>
+<p>Adoção de ELT por cargo-culture, sem entender o porquê, gera três problemas comuns.</p>
+<p><strong>Carregar tudo &quot;porque storage é barato&quot;.</strong> Verdade, storage é barato, mas <em>encontrar</em> dado em meio a 800 tabelas brutas não é. Time carrega todos os schemas de todos os sistemas, e seis meses depois ninguém sabe qual tabela usar. Quantidade vira ruído. Princípio melhor: ingerir o que serve a caso de uso, expandir quando outro caso aparece.</p>
+<p><strong>Transformar dentro do warehouse sem dbt.</strong> Times migram de ETL pra ELT mas escrevem transformação como <code>CREATE TABLE AS SELECT</code> solto, sem versionamento, sem teste, sem documentação. É só ETL pior, agora rodando dentro do warehouse. ELT sem disciplina é ETL com mais bagunça.</p>
+<p><strong>Esquecer compliance.</strong> Em ETL clássico, dado sensível (CPF, e-mail, cartão) podia ser filtrado <em>antes</em> da carga. Em ELT, o dado bruto vai pro warehouse — incluindo o sensível. Sem masking, encryption-at-rest e tagging desde o dia 1, ELT pode criar passivo de LGPD que ETL evitava por design.</p>
+<p>Esses três casos não invalidam ELT. Invalidam ELT <em>mal feito</em>, do mesmo jeito que ETL bem feito ainda existe e funciona em alguns nichos.</p>
+<h2>Quando ETL ainda é a resposta certa</h2>
+<p>A discussão pública faz parecer que ETL morreu. Não morreu. Há três contextos onde ainda é a escolha certa.</p>
+<p><strong>Compliance restritivo onde o dado sensível não pode trafegar.</strong> Saúde, financeiro com regras específicas, dado pessoal sob jurisdição que proíbe certo tipo de armazenamento. Aqui filtrar antes da carga é design, não escolha técnica.</p>
+<p><strong>Volume tão grande que storage cloud bruto fica caro.</strong> IoT em escala, log de transação financeira em milhões de TPS, dados de sensor industrial. Em alguns desses, agregar antes de carregar muda a ordem de grandeza do custo. Não é regra; é exceção que vale calcular.</p>
+<p><strong>Sistema fonte velho com latência alta.</strong> Quando extrair dado já custa horas e o destino precisa de dado pronto, transformar no caminho economiza um passo. Comum em integração com legados mainframe.</p>
+<p>Fora desses contextos, ELT é o default razoável.</p>
+<h2>A pergunta certa, em vez de ELT vs ETL</h2>
+<p>A conversa que importa não é &quot;qual sigla&quot;. É: <strong>quem é dono da modelagem, e como ela é versionada</strong>. Isso vale tanto em ETL quanto em ELT. Time que tem dono claro, transformação no Git, testes automatizados e documentação viva entrega valor. Time que não tem isso vai entregar bagunça — independente da sigla na arquitetura.</p>
+<p><a href="/blog/dado-limpo-e-um-mito.html">O mito do dado limpo segue valendo em ambos</a> — qualidade é relativa ao uso, não absoluta. ELT facilita iterar (você pode remodelar sem refazer a ingestão), mas não muda a regra fundamental.</p>
+<p>Se a sua empresa está discutindo ELT vs ETL como decisão estratégica, provavelmente está na pergunta errada. A decisão estratégica é como organizar ingestão (compre, não construa) e modelagem (versionada, testada, documentada). A sigla é detalhe.</p>
 
         </div>
       </div>
@@ -208,12 +196,12 @@
         <div class="container">
           <h2>Próximas leituras</h2>
           <div class="blog-list">
-            <a class="post-card" data-pillar="data" href="/blog/elt-vs-etl.html">
+            <a class="post-card" data-pillar="data" href="/blog/tableau-linguagem-executiva.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">28 jan 2026</span>
+                <span class="post-date">13 mai 2026</span>
               </div>
-              <h3>ELT vs ETL: por que a moda mudou e o que importa de fato</h3>
+              <h3>Tableau como linguagem executiva: matando o dashboard de vaidade</h3>
               <div class="read">Ler →</div>
             </a>
             <a class="post-card" data-pillar="data" href="/blog/dbt-na-pratica.html">

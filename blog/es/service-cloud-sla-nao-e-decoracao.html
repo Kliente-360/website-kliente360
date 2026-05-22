@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Service Cloud: el SLA no es decoración — medir capacidad antes de prometer | Kliente 360</title>
+  <meta name="description" content="La empresa promete SLA de 4 horas y descubre que el equipo entrega en 14. La causa casi nunca es Service Cloud — es el número que nadie calculó antes." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/es/service-cloud-sla-nao-e-decoracao.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/service-cloud-sla-nao-e-decoracao.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/service-cloud-sla-nao-e-decoracao.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/service-cloud-sla-nao-e-decoracao.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/service-cloud-sla-nao-e-decoracao.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Service Cloud: el SLA no es decoración — medir capacidad antes de prometer | Kliente 360" />
+  <meta property="og:description" content="La empresa promete SLA de 4 horas y descubre que el equipo entrega en 14. La causa casi nunca es Service Cloud — es el número que nadie calculó antes." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-01-27" />
+  <meta property="article:section" content="Salesforce" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Service Cloud: el SLA no es decoración — medir capacidad antes de prometer | Kliente 360" />
+  <meta name="twitter:description" content="La empresa promete SLA de 4 horas y descubre que el equipo entrega en 14. La causa casi nunca es Service Cloud — es el número que nadie calculó antes." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=d605879e2e" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Service Cloud: el SLA no es decoración — medir capacidad antes de prometer",
+  "description": "La empresa promete SLA de 4 horas y descubre que el equipo entrega en 14. La causa casi nunca es Service Cloud — es el número que nadie calculó antes.",
+  "datePublished": "2026-01-27",
+  "inLanguage": "es-ES",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Salesforce",
+  "keywords": [
+    "Service Cloud",
+    "Salesforce",
+    "SLA",
+    "atención al cliente",
+    "capacidad operativa"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="sf">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Pilar 01 · Salesforce</span>
+            <a class="post-back" href="/blog/es/">Blog</a>
+          </div>
+          <h1>Service Cloud: el SLA no es decoración — medir capacidad antes de prometer</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-01-27">27 ene 2026</time>
+            <span class="sep">·</span>
+            <span>6 min de lectura</span>
+            <span class="sep">·</span>
+            <span>Por Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>SLA es promesa medida en capacidad. La mayoría de las empresas configura Service Cloud con el SLA pedido por el cliente, no el calculado por la operación. Resultado: violación crónica, fila olvidada, NPS en caída. Cómo calcular capacidad real, y cómo negociar SLA que encaja.</p>
+          </aside>
+
+          <p class="post-intro">La reunión de revisión de Service Cloud casi siempre tiene el mismo gráfico: SLA prometido en 4 horas, SLA realizado en 14, con pico de 28 los martes. La dirección pregunta &quot;¿por qué el sistema no está cumpliendo lo que prometimos?&quot;. El equipo de TI tiene la respuesta correcta, pero suele quedarse en silencio: el sistema cumple lo que se puede cumplir. El problema es que el número prometido nunca se calculó — se eligió en reunión comercial, antes de que la operación fuera medida.</p>
+<p>SLA no es decoración en el contrato. Es promesa medida en capacidad. Este texto va sobre el error más caro y más común en la implantación de Service Cloud: configurar reglas de SLA sin haber calculado la capacidad real del equipo que va a atender.</p>
+<h2>La genealogía del SLA ficticio</h2>
+<p>Casi todo SLA mal calibrado en Service Cloud nace del mismo lugar: comercial cerró un deal prometiendo &quot;atención en 4 horas&quot; porque el competidor prometía 6. Fue al contrato. El equipo de operación se enteró seis meses después. La configuración en Service Cloud refleja la promesa, no la realidad — Entitlements, Milestones, Escalation Rules todo apuntando a una meta que nadie probó contra la capacidad.</p>
+<p>La consecuencia tiene tres caras. Primera: violación crónica de SLA. El dashboard queda rojo permanente, todos aprenden a ignorarlo — y cuando ocurre una violación importante, se disuelve en el ruido. Segunda: equipo de atención bajo presión constante, con burnout previsible en 6–12 meses. Tercera: NPS que cae en el segundo trimestre, sin explicación clara — porque el cliente percibe el SLA no cumplido como ruptura de promesa, no como problema de configuración.</p>
+<blockquote>
+<p>Un SLA mal calibrado contamina al Service Cloud entero. Cuando todo case está en violación, ningún case está. El sistema se vuelve semáforo permanentemente roto.</p>
+</blockquote>
+<h2>El cálculo que nadie hace antes</h2>
+<p>La cuenta para calibrar SLA es razonablemente simple, y casi nadie la hace antes de la implementación. Cinco números bastan para tener el piso.</p>
+<ol>
+<li><strong>Volumen medio diario de casos.</strong> Histórico de 3–6 meses de tickets que entraron (cualquier canal). Distribuido por hora del día, día de la semana.</li>
+<li><strong>Tiempo medio de atención (TMA) por tipo.</strong> No el promedio general — promedio <em>por categoría</em>. Caso simple (10 min), caso medio (40 min), caso complejo (3h). Categorizar antes hace diferencia de dos veces en el cálculo final.</li>
+<li><strong>Tiempo productivo del atendente.</strong> No 8 horas. Descontar capacitación, reunión, intervalo, herramienta lenta, escalamiento que paraliza. Realista: 5–6 horas de trabajo efectivo por jornada.</li>
+<li><strong>Pico vs. promedio.</strong> Operación dimensionada por el promedio rompe en el pico. Calcular pico semanal/mensual y dimensionar para cubrir 80–90% de los picos, no el promedio.</li>
+<li><strong>% de casos que escalan.</strong> Casos que paran en la fila del nivel 2/3 cuentan distinto — el tiempo de atención explota, y la capacidad efectiva cae.</li>
+</ol>
+<p>Con esos cinco, se puede calcular <em>capacidad efectiva por hora</em> y <em>SLA alcanzable por categoría</em>. Típicamente el número que sale es más alto que el prometido, y a veces mucho más. Aceptar eso antes de implementar evita el resto.</p>
+<h2>Cómo configurar Service Cloud sobre capacidad real</h2>
+<p>Cuando el cálculo está hecho, Service Cloud entrega lo que debe. Cuatro decisiones de configuración que importan.</p>
+<p><strong>SLA por categoría, no SLA único.</strong> Caso simple tiene SLA de 2 horas. Caso medio, 8 horas. Caso complejo, 24 horas. Entitlements y Milestones lo soportan nativamente. Promesa única para todo es el camino más rápido para fallar.</p>
+<p><strong>Ruteo que respeta skill, no solo disponibilidad.</strong> Omni-Channel con queues por skill, no fila única. El atendente que sabe resolver el problema termina en 30 minutos; el que no sabe escala en 2 horas. SLA por skill es más realista que SLA por canal.</p>
+<p><strong>Escalation basada en tiempo <em>y</em> en síntoma.</strong> No solo &quot;pasó de X horas, escalá&quot;. También &quot;el cliente respondió dos veces sin resolución, escalá&quot;. Esa segunda regla captura el caso malo antes de que el SLA reviente — generalmente cuando el atendente ya entró en ciclo improductivo.</p>
+<p><strong>Dashboard de capacidad, no solo de SLA.</strong> Service Cloud entrega <a href="/blog/es/tableau-linguagem-executiva.html">dashboard ejecutivo de capacidad</a> en pocos clics: casos abiertos por atendente, edad media de la fila, proyección de SLA en la próxima hora. Ese tablero ayuda al gerente a redistribuir antes de la violación — no después.</p>
+<h2>La conversación difícil: renegociar SLA con el cliente</h2>
+<p>Cuando el cálculo muestra que el SLA prometido es imposible, el camino honesto es renegociar — no fingir que el sistema va a alcanzar. La conversación funciona mejor en tres pasos.</p>
+<p><strong>Mostrar el cálculo, no la excusa.</strong> El cliente respeta número, no justificación. Presentar: &quot;operamos con X atendentes, capacidad real de Y casos/día, pico semanal de Z, SLA alcanzable en 90% de los casos es de W horas, no 4&quot;. Argumento numérico es difícil de refutar.</p>
+<p><strong>Ofrecer SLA por categoría.</strong> El cliente rara vez necesita 4 horas en <em>todo</em>. Necesita 4 horas en casos críticos, y tolera 12 en rutinarios. SLA escalonado por severidad resuelve la tensión entre costo y expectativa.</p>
+<p><strong>Vincular SLA más agresivo a inversión.</strong> Si el cliente <em>realmente</em> necesita SLA agresivo general, eso cambia el dimensionamiento de la operación — más atendentes, herramienta especializada, automatización adicional. Ahí cambia el precio. SLA es costo, no promesa gratis.</p>
+<h2>Dónde Service Cloud no resuelve</h2>
+<p>Vale decir lo que el SLA bien configurado no arregla. No arregla proceso torcido — atendente sin autoridad para resolver sigue escalando, <a href="/blog/es/mapear-processos-antes-do-salesforce.html">como argumenté sobre proceso antes de la herramienta</a>. No arregla producto malo — si el cliente tiene 30% de tickets sobre el mismo bug, SLA más apretado no cambia la cantidad de tickets, solo los hace llegar más rápido. No reemplaza IA cuando el volumen lo justifica — en operación grande, agente automatizado en <a href="/blog/es/quando-agente-e-resposta.html">casos donde el dato alcanza</a> absorbe 30–50% del volumen y libera capacidad.</p>
+<p>Service Cloud bien implantado es una de las mejores plataformas de atención del mercado. Pero es plataforma — y plataforma exige número antes de promesa. Empresa que acepta esa lógica entrega SLA confiable y cliente confiado. Empresa que sigue eligiendo SLA en reunión comercial va a gastar los próximos dos años explicando dashboard rojo.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Continuar la conversación</div>
+            <h3>¿Quieres discutir este tema con un socio?</h3>
+            <p>Diagnóstico inicial sin compromiso. Hacemos una primera lectura de tu escenario en una semana y devolvemos un informe.</p>
+            <a class="btn-link" href="/#contato">Hablar con un socio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Próximas lecturas</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="sf" href="/blog/es/data-cloud-nervo-central.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">19 may 2026</span>
+              </div>
+              <h3>Data Cloud ya no es CDP — es el nervio central de Salesforce</h3>
+              <div class="read">Leer →</div>
+            </a>
+            <a class="post-card" data-pillar="sf" href="/blog/es/customer-360-vs-cdp.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">4 feb 2026</span>
+              </div>
+              <h3>Customer 360 vs CDP: diferencias que cambian el roadmap de datos</h3>
+              <div class="read">Leer →</div>
+            </a>
+            <a class="post-card" data-pillar="sf" href="/blog/es/sales-cloud-cinco-antipadroes.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">14 ene 2026</span>
+              </div>
+              <h3>Sales Cloud: cinco antipatrones que separan rollout caro de rollout que rinde</h3>
+              <div class="read">Leer →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=d605879e2e"></script>
+  <script src="/assets/js/main.js?v=d605879e2e" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Customer 360 vs CDP: diferenças que mudam o roadmap de dados | Kliente 360</title>
+  <meta name="description" content="Empresa compra um, descobre que precisa do outro. Quando Customer 360 substitui CDP, quando complementa, e quando os dois viraram o mesmo lugar." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/customer-360-vs-cdp.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/customer-360-vs-cdp.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/customer-360-vs-cdp.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/customer-360-vs-cdp.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/customer-360-vs-cdp.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Customer 360 vs CDP: diferenças que mudam o roadmap de dados | Kliente 360" />
+  <meta property="og:description" content="Empresa compra um, descobre que precisa do outro. Quando Customer 360 substitui CDP, quando complementa, e quando os dois viraram o mesmo lugar." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-02-04" />
+  <meta property="article:section" content="Salesforce" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Customer 360 vs CDP: diferenças que mudam o roadmap de dados | Kliente 360" />
+  <meta name="twitter:description" content="Empresa compra um, descobre que precisa do outro. Quando Customer 360 substitui CDP, quando complementa, e quando os dois viraram o mesmo lugar." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=d605879e2e" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Customer 360 vs CDP: diferenças que mudam o roadmap de dados",
+  "description": "Empresa compra um, descobre que precisa do outro. Quando Customer 360 substitui CDP, quando complementa, e quando os dois viraram o mesmo lugar.",
+  "datePublished": "2026-02-04",
+  "inLanguage": "pt-BR",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Salesforce",
+  "keywords": [
+    "Customer 360",
+    "CDP",
+    "Data Cloud",
+    "Salesforce",
+    "roadmap de dados"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="sf">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Pilar 01 · Salesforce</span>
+            <a class="post-back" href="/blog/">Blog</a>
+          </div>
+          <h1>Customer 360 vs CDP: diferenças que mudam o roadmap de dados</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-02-04">4 fev 2026</time>
+            <span class="sep">·</span>
+            <span>6 min de leitura</span>
+            <span class="sep">·</span>
+            <span>Por Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Customer 360 e CDP nasceram de problemas diferentes — visão unificada de cliente versus ativação para marketing. Em 2026, Salesforce uniu os dois sob Data Cloud, e o mercado ficou confuso. O que é decisão de roadmap real, o que é detalhe de vendor, e como não comprar duas vezes a mesma coisa.</p>
+          </aside>
+
+          <p class="post-intro">A pergunta que volta a cada quarter em empresa de médio porte: &quot;a gente precisa de CDP, ou o Customer 360 do Salesforce já resolve?&quot;. A pergunta é justa, e a maioria das respostas que circulam é vendor-driven — vem da consultoria que vende um ou outro. A resposta honesta exige separar três coisas que viraram quase sinônimas no marketing dos últimos cinco anos: visão unificada de cliente, plataforma de dados de marketing, e camada operacional de contexto. São três problemas diferentes que costumam ser embrulhados no mesmo nome.</p>
+<p>Esse texto desembrulha os três, mostra onde cada um vale, e onde a Salesforce mudou o jogo ao consolidá-los sob Data Cloud em 2026.</p>
+<h2>O problema original do Customer 360</h2>
+<p>Customer 360, como conceito, nasceu de um problema simples: a mesma pessoa é cliente em dois sistemas (Sales Cloud e Service Cloud, por exemplo) e os dois sistemas não sabem disso. Vendedor abre a conta e vê histórico de venda. Atendente abre a conta e vê histórico de chamado. Nenhum dos dois vê o outro lado.</p>
+<p>A solução é estrutural: identificar que é a mesma entidade, expor o histórico unificado, e disponibilizar isso onde cada operador trabalha. Customer 360 é a visão. Implementar isso pode envolver várias coisas — federação de identidade, replicação seletiva, query em runtime, indexação. Por anos, era um projeto de integração feito sob medida em cada empresa.</p>
+<p>O ponto: Customer 360 é um <em>objetivo</em> (cliente único, em todos os sistemas), não um produto. Quando a Salesforce começou a usar &quot;Customer 360&quot; como nome de plataforma, gerou confusão — virou simultaneamente um conceito e um SKU.</p>
+<h2>O problema original do CDP</h2>
+<p>CDP (Customer Data Platform) tem outro nascimento. Veio do marketing, lá pelos anos 2015–2018, pra resolver uma dor específica: ativar campanhas multi-canal com segmentação baseada em comportamento. Marketing tinha dado quente em ferramenta de e-mail, dado de navegação em web analytics, dado de venda em CRM, dado de impressão em DSP. Nenhuma dessas peças conversava na velocidade que campanha precisava.</p>
+<p>CDP juntou esses dados, normalizou identidade, e expôs APIs de segmentação. Casos de uso clássicos: cesta abandonada, look-alike, retargeting baseado em estágio do funil, jornada cross-channel. CDPs como Segment, mParticle, Tealium ganharam mercado nessa fronteira.</p>
+<p>O ponto: CDP nasceu <em>operacional pra marketing</em>, não pra atendimento ou pra venda. O foco é ativação rápida com latência baixa, e o cliente final do dado é uma ferramenta de campanha — não um relatório.</p>
+<h2>Onde os dois colidiram</h2>
+<p>Em 2020–2023, a fronteira começou a embaçar. CDPs viraram &quot;Customer Data Platform&quot; pra todas as áreas, não só marketing. Customer 360 ganhou ferramentas de ativação. Salesforce lançou Customer 360 Data Manager, depois CDP, depois renomeou pra Data Cloud, e em 2025 consolidou tudo sob a mesma marca. Adobe, Oracle, SAP fizeram movimentos similares. O mercado virou sopa.</p>
+<p>Em 2026, a fronteira útil pra decisão não é mais &quot;CDP vs Customer 360&quot;. É:</p>
+<ul>
+<li><strong>Camada de identidade e perfil unificado</strong> (o problema que Customer 360 resolveu primeiro)</li>
+<li><strong>Camada de ativação operacional</strong> (o problema que CDP resolveu primeiro)</li>
+<li><strong>Camada de contexto pra agentes e aplicações</strong> (o problema que Data Cloud está resolvendo agora)</li>
+</ul>
+<p>Empresa que toma decisão pensando em &quot;CDP ou não CDP&quot; está numa pergunta de 2020. A decisão de 2026 é qual dessas três camadas você precisa primeiro — e como elas se conectam.</p>
+<blockquote>
+<p>Em 2026, &quot;Customer 360 vs CDP&quot; virou uma pergunta de marketing de vendor. A pergunta de roadmap real é qual camada de dado de cliente sua operação precisa primeiro.</p>
+</blockquote>
+<h2>A consolidação sob Data Cloud</h2>
+<p>Salesforce fez um movimento explícito: tratou Customer 360 e CDP como dois lados do mesmo problema e os juntou sob Data Cloud. <a href="/blog/data-cloud-nervo-central.html">Não é mais CDP — é o nervo central do Salesforce</a>. Para empresa já investida em Salesforce, isso muda o cálculo. Antes, a escolha era &quot;compro CDP da Segment ou monto Customer 360 com integração?&quot;. Hoje, se você já paga Sales, Service e Marketing Cloud, Data Cloud entrega as três camadas como parte da plataforma — sem integração custom.</p>
+<p>A consequência prática: empresas que estavam pra comprar CDP externo em 2024–2025 e que já são clientes Salesforce têm que reavaliar. O cálculo não é &quot;Data Cloud é melhor que Segment&quot; (em features brutas, depende do caso). É: &quot;considerando que vou pagar a integração com Sales/Service Cloud de qualquer jeito, qual é o TCO real?&quot;. Costuma virar a balança pra Data Cloud quando o ecossistema já é Salesforce.</p>
+<p>Pra quem <em>não</em> é Salesforce-first — empresa que usa HubSpot, ou customizou em CRM próprio — a equação muda. Aí CDP externo continua fazendo sentido, ou Customer 360 vira projeto de integração mesmo.</p>
+<h2>O que decidir antes de qualquer compra</h2>
+<p>A régua que funciona pra empresas avaliando essas decisões:</p>
+<ol>
+<li><strong>Qual é o caso de uso primário?</strong> Ativação de marketing? Visão unificada pra atendimento? Contexto pra agente de IA? Cada um tem peso diferente em cada plataforma — e nenhum tem nota máxima em todas.</li>
+<li><strong>Qual stack já existe?</strong> Empresa Salesforce-first ganha com Data Cloud por integração. Empresa multi-stack ganha com CDP independente. Empresa em transição precisa calcular o TCO honestamente — não o folheto.</li>
+<li><strong>Qual o roadmap de IA?</strong> Se a próxima fronteira é Agentforce ou agente próprio, <a href="/blog/quando-agente-e-resposta.html">a camada de contexto vira crítica</a> — e Data Cloud é desenhado pra isso. CDPs tradicionais não foram, e estão correndo atrás.</li>
+<li><strong>Quem é dono do projeto?</strong> CDP nasceu marketing-led; tende a ser comprado e operado pelo CMO. Customer 360 é cross-functional; precisa de sponsor que tenha autoridade em vendas, atendimento e marketing simultaneamente. Sponsor errado é o motivo #1 de projetos travados.</li>
+<li><strong>Qual o nível de unificação de identidade necessário?</strong> Marketing tolera matching probabilístico (&quot;provavelmente é a mesma pessoa&quot;). Atendimento e venda exigem matching determinístico (&quot;essa pessoa é o cliente X&quot;). Se você precisa do segundo, <a href="/blog/mapear-processos-antes-do-salesforce.html">identidade vira projeto separado, independente de plataforma</a>.</li>
+</ol>
+<p>Quem responde os cinco com clareza tem decisão. Quem responde &quot;depende&quot; em três ou mais ainda não tem caso de uso definido — e qualquer plataforma vai virar projeto eterno.</p>
+<h2>O movimento honesto pra 2026</h2>
+<p>Se você está parado nessa decisão hoje, três movimentos práticos antes de qualquer assinatura de contrato:</p>
+<p><strong>Mapear caso de uso por caso de uso.</strong> Não &quot;queremos CDP&quot;. Mas &quot;queremos rodar segmentação de cesta abandonada com latência de 1h&quot;, &quot;queremos visão unificada no Service Cloud com histórico de marketing visível&quot;, &quot;queremos agente que sabe contexto do cliente sem ETL noturno&quot;. Cada um desses tem peso diferente em cada plataforma.</p>
+<p><strong>Pilotar com volume real, não com demo.</strong> Demo de CDP e demo de Data Cloud são igualmente impressionantes. Pilotar com 1–2 casos de uso reais, 30–60 dias, mede o que o folheto não mede — performance no seu volume, complexidade de operação, custo real.</p>
+<p><strong>Decidir com cabeça de TCO de 3 anos.</strong> Custo de licença + custo de integração + custo de operação + custo de migração. Esse cálculo costuma mudar a decisão em 30–40% das empresas que fazem antes da compra.</p>
+<p>A camada de cliente unificado é uma das peças mais importantes de stack moderno. Mas é peça — não estratégia. Comprar plataforma sem o resto do roadmap claro é o jeito mais caro de empurrar a decisão pra frente sem resolvê-la.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Continuar a conversa</div>
+            <h3>Quer discutir esse tema com um sócio?</h3>
+            <p>Diagnóstico inicial sem compromisso. Levamos uma primeira leitura do seu cenário em uma semana e devolvemos um relatório.</p>
+            <a class="btn-link" href="/#contato">Conversar com um sócio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Próximas leituras</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="sf" href="/blog/data-cloud-nervo-central.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">19 mai 2026</span>
+              </div>
+              <h3>Data Cloud não é mais CDP — é o nervo central do Salesforce</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="post-card" data-pillar="sf" href="/blog/service-cloud-sla-nao-e-decoracao.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">27 jan 2026</span>
+              </div>
+              <h3>Service Cloud: SLA não é decoração — medir capacidade antes de prometer</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="post-card" data-pillar="sf" href="/blog/sales-cloud-cinco-antipadroes.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">14 jan 2026</span>
+              </div>
+              <h3>Sales Cloud: cinco antipadrões que separam rollout caro de rollout que rende</h3>
+              <div class="read">Ler →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=d605879e2e"></script>
+  <script src="/assets/js/main.js?v=d605879e2e" type="module"></script>
+</body>
+</html>

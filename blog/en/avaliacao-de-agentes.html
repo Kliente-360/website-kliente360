@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Agent evaluation: the metric nobody wants to publish | Kliente 360</title>
+  <meta name="description" content="Agentic AI pilots die from lack of serious evaluation. They don&#39;t die from bugs — they die because nobody wanted to measure the real accuracy rate." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/en/avaliacao-de-agentes.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/avaliacao-de-agentes.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/avaliacao-de-agentes.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/avaliacao-de-agentes.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/avaliacao-de-agentes.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Agent evaluation: the metric nobody wants to publish | Kliente 360" />
+  <meta property="og:description" content="Agentic AI pilots die from lack of serious evaluation. They don&#39;t die from bugs — they die because nobody wanted to measure the real accuracy rate." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-02-03" />
+  <meta property="article:section" content="Applied AI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agent evaluation: the metric nobody wants to publish | Kliente 360" />
+  <meta name="twitter:description" content="Agentic AI pilots die from lack of serious evaluation. They don&#39;t die from bugs — they die because nobody wanted to measure the real accuracy rate." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=d605879e2e" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Agent evaluation: the metric nobody wants to publish",
+  "description": "Agentic AI pilots die from lack of serious evaluation. They don't die from bugs — they die because nobody wanted to measure the real accuracy rate.",
+  "datePublished": "2026-02-03",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Applied AI",
+  "keywords": [
+    "agent evaluation",
+    "evals",
+    "generative AI",
+    "agents",
+    "AI metrics"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="ai">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Practice 03 · AI</span>
+            <a class="post-back" href="/blog/en/">Blog</a>
+          </div>
+          <h1>Agent evaluation: the metric nobody wants to publish</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-02-03">3 Feb 2026</time>
+            <span class="sep">·</span>
+            <span>6 min read</span>
+            <span class="sep">·</span>
+            <span>By Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Most agent projects that fail in production failed at evaluation long before. Teams measure subjective satisfaction and channel CSAT — not the uncomfortable metric: percentage of correct responses on the defined use case. Three metrics, two protocols, one cultural rule to stop the eternal pilot.</p>
+          </aside>
+
+          <p class="post-intro">In almost every agent project I see stuck after the pilot, the story is the same: the team has high satisfaction scores in user surveys, good usage metrics, and no number on the real accuracy rate. I ask &quot;in what percentage of interactions did the agent answer correctly?&quot;, and the answer is silence, or a loose estimate — &quot;around 80%, I think&quot;. Then the project doesn&#39;t scale. Not because the tech can&#39;t handle it — because nobody knows whether it&#39;s handling it, and that prevents decisions on expansion, governance or pricing.</p>
+<p>The metric nobody wants to publish is the percentage of correct responses on real cases. This text is about why it disappears, how to build it, and how to live with the number it&#39;ll show.</p>
+<h2>Why nobody wants to publish</h2>
+<p>The reason is political, not technical. When an AI pilot is sold to leadership, the promise is usually implicit: &quot;it&#39;ll work&quot;. Publishing the real metric is admitting it might not — and that threatens the budget that took political capital to raise. Easier to show a usage chart (&quot;we grew 40% this month&quot;), user NPS (&quot;90% liked the experience&quot;), response time (&quot;3 seconds average&quot;). All of that is true and none of those numbers says whether the agent is answering correctly.</p>
+<p>The consequence: the pilot becomes eternal. The team can&#39;t defend expansion because there&#39;s no number, and they don&#39;t build the number because defending expansion becomes even harder when it appears. The vicious cycle has a name: <em>AI theater</em>.</p>
+<p>Breaking it requires a conscious decision: measure even knowing the initial number will be uncomfortable. The good news is that the uncomfortable number is a springboard — without it, there&#39;s no next step. With it, there&#39;s a path.</p>
+<h2>Three metrics that really matter</h2>
+<p>Agent metrics split into three families. Each answers a different question, and most projects only measure one.</p>
+<p><strong>Response accuracy (task success rate).</strong> Of N cases the agent answered, in how many was the answer correct according to a competent human judge? This is the metric nobody wants. It requires a judge who knows the domain, a review protocol, a statistically significant sample. All of that is work — and it&#39;s exactly the work that catalyzes the rest.</p>
+<p><strong>Coverage (resolution rate without escalation).</strong> Of N cases that reached the agent, in how many did it resolve without escalating to a human? This number is easier to get — it comes out of system logs. But isolated it lies: the agent might be &quot;resolving&quot; by answering wrong and the user giving up, which counts as high coverage with low accuracy.</p>
+<p><strong>Cost per resolved interaction.</strong> Total cost (inference + infra + governance) divided by interactions with confirmed accuracy. In high-volume projects, it&#39;s the number that defines whether unit economics close. <a href="/blog/en/quando-agente-e-resposta.html">Without this metric, you can scale a pilot that loses money on every call</a> — common when the team only watches coverage.</p>
+<p>Accuracy × coverage × cost = sustainable project. Miss one of the three and the project becomes an expensive hobby.</p>
+<blockquote>
+<p>Coverage without accuracy is the cheapest way to lie on an AI dashboard. The agent &quot;resolved&quot; every case — and answered wrong in half.</p>
+</blockquote>
+<h2>Two protocols that unblock</h2>
+<p>Measuring accuracy looks heavy, but it&#39;s doable with discipline. Two protocols cover 90% of cases.</p>
+<p><strong>Fixed eval set, run on every release.</strong> Curate 50–200 questions representative of the use case, with ground truth (correct answer) reviewed by a specialist. Every time the system changes — new prompt, new model, tuned RAG — run the eval set and compare against baseline. This protocol catches regressions. Cost: high to assemble (one to two weeks), trivial to run. It&#39;s the most profitable technical investment in any AI project.</p>
+<p><strong>Ad-hoc production sampling, human review.</strong> Randomly select 50–100 real interactions per week. A specialist reviews each and marks them as correct, partially correct or wrong. Accuracy by category is calculated. This protocol catches <em>drift</em> — when the system works in the lab and degrades in production (distribution of real questions different from the eval set, model behavior change, corpus decay in <a href="/blog/en/rag-na-pratica.html">RAG</a>).</p>
+<p>The two together cover test and operation. A team running only the eval set catches regressions at release but misses drift. A team running only production sampling catches drift but can&#39;t isolate cause. The two protocols together are the boring and necessary part of serious AI operations.</p>
+<h2>The cultural rule — the judge isn&#39;t the team that built</h2>
+<p>A detail that kills the metric: if the team that built the agent is the same that evaluates, the number gets biased. Not out of bad faith — out of predictable cognitive bias. The builder looks at a partially correct response and tends to mark it as correct (&quot;well, deep down it&#39;s right&quot;). The builder knows what they asked and mentally completes what the agent didn&#39;t say.</p>
+<p>The rule that works: evaluation is done by a third party with domain expertise, without access to the code or the prompt. In small projects, that&#39;s an operations analyst. In medium ones, it&#39;s a dedicated review pair (rotating if possible). In large ones, it&#39;s a separate cell, reporting outside the AI team.</p>
+<p>Without this separation, the number goes up — and the pilot stays eternal, because the metric isn&#39;t showing what it needs to show to force the next decision.</p>
+<h2>What to do with the uncomfortable number</h2>
+<p>Suppose you measured and got 65% accuracy. Not good; not terrible. Three practical paths.</p>
+<p><strong>Decompose the error.</strong> Knowing the global rate isn&#39;t enough. Categorize: which type of question has the highest error rate? Is it retrieval (corpus doesn&#39;t have it), generation (the LLM ignores the context), or prompt (the agent misinterpreted the question)? Each category requires different investment.</p>
+<p><strong>Define the acceptable floor by use case.</strong> Low-risk support, 70% can be enough with well-designed escalation. Regulated financial customer service, 95% is the minimum. That floor is a product decision, not engineering.</p>
+<p><strong>Invest in the layer that hurts most.</strong> If the error is in retrieval, improve reranking or expand the corpus. If it&#39;s in generation, tune the prompt or change the model. If it&#39;s in the prompt, refine the agent&#39;s instruction. 2–3 week iterations with measurement at the end show clear trends.</p>
+<p>The combination that works: rigorous measurement + focused iteration + transparency with leadership on the number and the path. That trio separates an AI project that ships from one that lands in the third governance plan in 2027.</p>
+<p>The uncomfortable metric isn&#39;t the problem. It&#39;s the only tool for getting out of it.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Keep the conversation going</div>
+            <h3>Want to discuss this topic with a partner?</h3>
+            <p>Initial diagnostic with no commitment. We assess your scenario in a week and send back a report.</p>
+            <a class="btn-link" href="/#contato">Talk to a partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Further reading</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="ai" href="/blog/en/quando-agente-e-resposta.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 03 · AI</span>
+                <span class="post-date">20 May 2026</span>
+              </div>
+              <h3>When an agent is the answer — and when it&#39;s an escape from a poorly modeled problem</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="ai" href="/blog/en/llm-como-agente-interno.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 03 · AI</span>
+                <span class="post-date">21 Jan 2026</span>
+              </div>
+              <h3>LLM as internal agent: three cases where it works, two where it fails</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="ai" href="/blog/en/rag-na-pratica.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 03 · AI</span>
+                <span class="post-date">13 Jan 2026</span>
+              </div>
+              <h3>RAG in practice: retrieval is the bottleneck, not the LLM</h3>
+              <div class="read">Read →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=d605879e2e"></script>
+  <script src="/assets/js/main.js?v=d605879e2e" type="module"></script>
+</body>
+</html>

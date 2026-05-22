@@ -66,6 +66,160 @@
     }
   },
   {
+    "slug": "customer-360-vs-cdp",
+    "pillar": "sf",
+    "date": "2026-02-04",
+    "translations": {
+      "pt": {
+        "title": "Customer 360 vs CDP: diferenças que mudam o roadmap de dados",
+        "url": "/blog/customer-360-vs-cdp.html",
+        "date": "4 fev 2026"
+      },
+      "en": {
+        "title": "Customer 360 vs CDP: differences that change the data roadmap",
+        "url": "/blog/en/customer-360-vs-cdp.html",
+        "date": "4 Feb 2026"
+      },
+      "es": {
+        "title": "Customer 360 vs CDP: diferencias que cambian el roadmap de datos",
+        "url": "/blog/es/customer-360-vs-cdp.html",
+        "date": "4 feb 2026"
+      }
+    }
+  },
+  {
+    "slug": "avaliacao-de-agentes",
+    "pillar": "ai",
+    "date": "2026-02-03",
+    "translations": {
+      "pt": {
+        "title": "Avaliação de agentes: a métrica que ninguém quer publicar",
+        "url": "/blog/avaliacao-de-agentes.html",
+        "date": "3 fev 2026"
+      },
+      "en": {
+        "title": "Agent evaluation: the metric nobody wants to publish",
+        "url": "/blog/en/avaliacao-de-agentes.html",
+        "date": "3 Feb 2026"
+      },
+      "es": {
+        "title": "Evaluación de agentes: la métrica que nadie quiere publicar",
+        "url": "/blog/es/avaliacao-de-agentes.html",
+        "date": "3 feb 2026"
+      }
+    }
+  },
+  {
+    "slug": "elt-vs-etl",
+    "pillar": "data",
+    "date": "2026-01-28",
+    "translations": {
+      "pt": {
+        "title": "ELT vs ETL: por que a moda mudou e o que importa de fato",
+        "url": "/blog/elt-vs-etl.html",
+        "date": "28 jan 2026"
+      },
+      "en": {
+        "title": "ELT vs ETL: why the fashion changed and what actually matters",
+        "url": "/blog/en/elt-vs-etl.html",
+        "date": "28 Jan 2026"
+      },
+      "es": {
+        "title": "ELT vs ETL: por qué cambió la moda y qué importa de verdad",
+        "url": "/blog/es/elt-vs-etl.html",
+        "date": "28 ene 2026"
+      }
+    }
+  },
+  {
+    "slug": "service-cloud-sla-nao-e-decoracao",
+    "pillar": "sf",
+    "date": "2026-01-27",
+    "translations": {
+      "pt": {
+        "title": "Service Cloud: SLA não é decoração — medir capacidade antes de prometer",
+        "url": "/blog/service-cloud-sla-nao-e-decoracao.html",
+        "date": "27 jan 2026"
+      },
+      "en": {
+        "title": "Service Cloud: SLA isn't decoration — measure capacity before promising",
+        "url": "/blog/en/service-cloud-sla-nao-e-decoracao.html",
+        "date": "27 Jan 2026"
+      },
+      "es": {
+        "title": "Service Cloud: el SLA no es decoración — medir capacidad antes de prometer",
+        "url": "/blog/es/service-cloud-sla-nao-e-decoracao.html",
+        "date": "27 ene 2026"
+      }
+    }
+  },
+  {
+    "slug": "llm-como-agente-interno",
+    "pillar": "ai",
+    "date": "2026-01-21",
+    "translations": {
+      "pt": {
+        "title": "LLM como agente interno: três casos onde funciona, dois onde fracassa",
+        "url": "/blog/llm-como-agente-interno.html",
+        "date": "21 jan 2026"
+      },
+      "en": {
+        "title": "LLM as internal agent: three cases where it works, two where it fails",
+        "url": "/blog/en/llm-como-agente-interno.html",
+        "date": "21 Jan 2026"
+      },
+      "es": {
+        "title": "LLM como agente interno: tres casos donde funciona, dos donde fracasa",
+        "url": "/blog/es/llm-como-agente-interno.html",
+        "date": "21 ene 2026"
+      }
+    }
+  },
+  {
+    "slug": "dbt-na-pratica",
+    "pillar": "data",
+    "date": "2026-01-20",
+    "translations": {
+      "pt": {
+        "title": "dbt na prática: o pulo do gato é a documentação, não o modelo",
+        "url": "/blog/dbt-na-pratica.html",
+        "date": "20 jan 2026"
+      },
+      "en": {
+        "title": "dbt in practice: documentation is the real win, not the model",
+        "url": "/blog/en/dbt-na-pratica.html",
+        "date": "20 Jan 2026"
+      },
+      "es": {
+        "title": "dbt en la práctica: el truco es la documentación, no el modelo",
+        "url": "/blog/es/dbt-na-pratica.html",
+        "date": "20 ene 2026"
+      }
+    }
+  },
+  {
+    "slug": "sales-cloud-cinco-antipadroes",
+    "pillar": "sf",
+    "date": "2026-01-14",
+    "translations": {
+      "pt": {
+        "title": "Sales Cloud: cinco antipadrões que separam rollout caro de rollout que rende",
+        "url": "/blog/sales-cloud-cinco-antipadroes.html",
+        "date": "14 jan 2026"
+      },
+      "en": {
+        "title": "Sales Cloud: five antipatterns that separate costly rollouts from rollouts that pay back",
+        "url": "/blog/en/sales-cloud-cinco-antipadroes.html",
+        "date": "14 Jan 2026"
+      },
+      "es": {
+        "title": "Sales Cloud: cinco antipatrones que separan rollout caro de rollout que rinde",
+        "url": "/blog/es/sales-cloud-cinco-antipadroes.html",
+        "date": "14 ene 2026"
+      }
+    }
+  },
+  {
     "slug": "rag-na-pratica",
     "pillar": "ai",
     "date": "2026-01-13",
@@ -93,17 +247,17 @@
     "date": "2026-01-07",
     "translations": {
       "pt": {
-        "title": "Dado limpo é um mito: como conviver com qualidade imperfeita sem travar o roadmap",
+        "title": "Dado limpo é um mito: convivendo com qualidade imperfeita",
         "url": "/blog/dado-limpo-e-um-mito.html",
         "date": "7 jan 2026"
       },
       "en": {
-        "title": "Clean data is a myth: how to live with imperfect quality without freezing the roadmap",
+        "title": "Clean data is a myth: living with imperfect quality",
         "url": "/blog/en/dado-limpo-e-um-mito.html",
         "date": "7 Jan 2026"
       },
       "es": {
-        "title": "Dato limpio es un mito: cómo convivir con calidad imperfecta sin trabar el roadmap",
+        "title": "Dato limpio es un mito: convivir con calidad imperfecta",
         "url": "/blog/es/dado-limpo-e-um-mito.html",
         "date": "7 ene 2026"
       }

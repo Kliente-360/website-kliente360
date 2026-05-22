@@ -15,7 +15,7 @@ Cadência: terça **ou** quarta, pulando feriados (ver `blog/posts/README.md` §
 | # | Data | Dia | Pilar | Tema | Ângulo | Status |
 |---|---|---|---|---|---|---|
 | 01 | 2026-01-06 | ter | sf | [Mapear processos antes do Salesforce: o checklist que economiza meses](blog/posts/mapear-processos-antes-do-salesforce.md) | O checklist que economiza meses no projeto | [x] |
-| 02 | 2026-01-07 | qua | data | Dado limpo é um mito | Como conviver com qualidade imperfeita sem travar o roadmap | [ ] |
+| 02 | 2026-01-07 | qua | data | [Dado limpo é um mito: como conviver com qualidade imperfeita sem travar o roadmap](blog/posts/dado-limpo-e-um-mito.md) | Como conviver com qualidade imperfeita sem travar o roadmap | [x] |
 | 03 | 2026-01-13 | ter | ai | RAG na prática | Por que recuperar é mais difícil que gerar | [ ] |
 | 04 | 2026-01-14 | qua | sf | Sales Cloud: 5 antipadrões de implementação | O que separa rollout caro de rollout que rende | [ ] |
 | 05 | 2026-01-20 | ter | data | dbt na prática | O pulo do gato é a documentação, não o modelo | [ ] |

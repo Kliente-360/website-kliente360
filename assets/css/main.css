@@ -651,6 +651,224 @@ body {
 
 .post-card[data-hidden="true"] { display: none; }
 
+/* ============ POST PAGE ============ */
+.post-article {
+  --c-pillar: var(--color-accent);
+}
+.post-article[data-pillar="sf"]   { --c-pillar: var(--c-salesforce); }
+.post-article[data-pillar="data"] { --c-pillar: var(--c-data); }
+.post-article[data-pillar="ai"]   { --c-pillar: var(--c-ai); }
+
+.post-header { padding-block: var(--sp-16) var(--sp-12); border-bottom: 1px solid var(--color-line); position: relative; }
+@media (min-width: 768px) { .post-header { padding-block: var(--sp-24) var(--sp-16); } }
+.post-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: var(--fs-14); color: var(--color-fg-muted);
+  margin-bottom: var(--sp-6);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.post-back:hover { color: var(--c-pillar); }
+.post-back::before { content: "←"; }
+
+.post-header .pill-pillar { font-size: var(--fs-14); padding: 6px 14px; }
+.post-header h1 {
+  margin-top: var(--sp-6);
+  font-size: clamp(2.25rem, 1.6rem + 3.5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: var(--ls-tighter);
+  font-weight: var(--fw-bold);
+  max-width: 22ch;
+}
+.post-meta-line {
+  margin-top: var(--sp-8);
+  display: flex; flex-wrap: wrap; gap: var(--sp-4);
+  font-size: var(--fs-14); color: var(--color-fg-muted);
+  font-family: var(--font-mono);
+}
+.post-meta-line .sep { opacity: 0.4; }
+
+/* Corpo do post */
+.post-body {
+  padding-block: var(--sp-12) var(--sp-16);
+  max-width: 720px; margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .post-body {
+    padding-block: var(--sp-16) var(--sp-24);
+    padding-left: var(--sp-8);
+    border-left: 2px solid var(--c-pillar);
+    margin-left: auto; margin-right: auto;
+  }
+}
+.post-body > * { margin-bottom: var(--sp-6); }
+
+.post-tldr {
+  margin-bottom: var(--sp-12);
+  padding: var(--sp-6) var(--sp-8);
+  border-radius: var(--r-lg);
+  background: color-mix(in srgb, var(--c-pillar) 8%, transparent);
+  border-left: 4px solid var(--c-pillar);
+}
+.post-tldr .label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-pillar);
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--sp-2);
+}
+.post-tldr p { font-size: var(--fs-18); line-height: var(--lh-snug); color: var(--ink-800); margin: 0; }
+
+.post-body p {
+  font-size: var(--fs-18);
+  line-height: 1.7;
+  color: var(--ink-800);
+}
+@media (min-width: 768px) {
+  .post-body p { font-size: 19px; line-height: 1.75; }
+}
+
+/* Drop cap criativo na primeira letra do primeiro parágrafo após o TL;DR */
+.post-body .post-intro::first-letter {
+  float: left;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 4.5em;
+  line-height: 0.85;
+  font-weight: 600;
+  padding: 8px 12px 0 0;
+  color: var(--c-pillar);
+}
+
+.post-body h2 {
+  margin-top: var(--sp-16);
+  margin-bottom: var(--sp-6);
+  font-size: var(--fs-h3);
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-snug);
+  font-weight: var(--fw-semibold);
+  position: relative;
+}
+.post-body h2::before {
+  content: "";
+  display: block;
+  width: 32px; height: 3px;
+  background: var(--c-pillar);
+  margin-bottom: var(--sp-3);
+  border-radius: 2px;
+}
+
+.post-body h3 {
+  margin-top: var(--sp-8);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-tight);
+}
+
+.post-body ul, .post-body ol {
+  padding-left: 0;
+  display: flex; flex-direction: column;
+  gap: var(--sp-3);
+}
+.post-body ul li {
+  padding-left: 28px;
+  position: relative;
+  font-size: var(--fs-18);
+  line-height: 1.6;
+  color: var(--ink-800);
+}
+.post-body ul li::before {
+  content: "";
+  position: absolute; left: 0; top: 10px;
+  width: 14px; height: 2px;
+  background: var(--c-pillar);
+}
+.post-body ol { counter-reset: postlist; }
+.post-body ol li {
+  padding-left: 36px;
+  position: relative;
+  font-size: var(--fs-18);
+  line-height: 1.6;
+  color: var(--ink-800);
+  counter-increment: postlist;
+}
+.post-body ol li::before {
+  content: counter(postlist, decimal-leading-zero);
+  position: absolute; left: 0; top: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  color: var(--c-pillar);
+  font-weight: var(--fw-semibold);
+}
+
+.post-body blockquote {
+  margin-block: var(--sp-12);
+  padding-left: var(--sp-6);
+  border-left: 3px solid var(--c-pillar);
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  line-height: 1.3;
+  font-weight: 500;
+  color: var(--ink-900);
+  letter-spacing: -0.01em;
+}
+
+.post-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 2px 6px;
+  background: var(--bg-alt);
+  border-radius: 4px;
+  color: var(--ink-900);
+}
+
+.post-body a {
+  color: var(--c-pillar);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Rodapé do post — CTA sutil e relacionados */
+.post-end {
+  padding-block: var(--sp-16);
+  border-top: 1px solid var(--color-line);
+}
+.post-end-cta {
+  max-width: 720px; margin: 0 auto;
+  padding: var(--sp-8); text-align: left;
+  border-radius: var(--r-lg);
+  background: var(--bg-alt);
+}
+.post-end-cta .label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-12);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-pillar);
+  font-weight: var(--fw-semibold);
+}
+.post-end-cta h3 {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-snug);
+}
+.post-end-cta p { margin-top: var(--sp-3); color: var(--color-fg-muted); }
+.post-end-cta .btn-link { margin-top: var(--sp-6); display: inline-flex; color: var(--c-pillar); }
+
+.post-related {
+  padding-block: var(--sp-16);
+  background: var(--bg-alt);
+}
+.post-related h2 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-tight);
+  margin-bottom: var(--sp-8);
+}
+
 /* ============ CONTATO ============ */
 .contact-grid {
   display: grid; gap: var(--sp-12);

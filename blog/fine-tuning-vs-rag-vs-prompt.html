@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Fine-tuning vs RAG vs prompt engineering: como decidir sem queimar caixa | Kliente 360</title>
+  <meta name="description" content="Três caminhos pra adaptar LLM ao seu negócio. Custos, prazos e riscos diferentes — e a escolha errada paga em três a seis meses de retrabalho." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/fine-tuning-vs-rag-vs-prompt.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/fine-tuning-vs-rag-vs-prompt.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/fine-tuning-vs-rag-vs-prompt.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/fine-tuning-vs-rag-vs-prompt.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/fine-tuning-vs-rag-vs-prompt.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Fine-tuning vs RAG vs prompt engineering: como decidir sem queimar caixa | Kliente 360" />
+  <meta property="og:description" content="Três caminhos pra adaptar LLM ao seu negócio. Custos, prazos e riscos diferentes — e a escolha errada paga em três a seis meses de retrabalho." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-02-11" />
+  <meta property="article:section" content="IA Aplicada" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fine-tuning vs RAG vs prompt engineering: como decidir sem queimar caixa | Kliente 360" />
+  <meta name="twitter:description" content="Três caminhos pra adaptar LLM ao seu negócio. Custos, prazos e riscos diferentes — e a escolha errada paga em três a seis meses de retrabalho." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=d605879e2e" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Fine-tuning vs RAG vs prompt engineering: como decidir sem queimar caixa",
+  "description": "Três caminhos pra adaptar LLM ao seu negócio. Custos, prazos e riscos diferentes — e a escolha errada paga em três a seis meses de retrabalho.",
+  "datePublished": "2026-02-11",
+  "inLanguage": "pt-BR",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "IA Aplicada",
+  "keywords": [
+    "fine-tuning",
+    "RAG",
+    "prompt engineering",
+    "LLM",
+    "adaptação de modelo"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="ai">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Pilar 03 · IA</span>
+            <a class="post-back" href="/blog/">Blog</a>
+          </div>
+          <h1>Fine-tuning vs RAG vs prompt engineering: como decidir sem queimar caixa</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-02-11">11 fev 2026</time>
+            <span class="sep">·</span>
+            <span>6 min de leitura</span>
+            <span class="sep">·</span>
+            <span>Por Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Prompt engineering resolve 60% dos casos, RAG resolve 30%, fine-tuning resolve 5–10% específicos. A maioria das empresas tenta fine-tuning antes de esgotar as duas anteriores e queima caixa. Critérios práticos pra escolher na ordem certa — e o sinal de quando subir o degrau.</p>
+          </aside>
+
+          <p class="post-intro">A pergunta que entra no comitê de IA toda terça: &quot;vamos treinar nosso modelo próprio?&quot;. A resposta honesta em quase todos os casos é &quot;ainda não — e talvez nunca&quot;. Não porque fine-tuning seja ruim. Porque é a opção mais cara, mais lenta e mais arriscada das três disponíveis pra adaptar LLM a um negócio específico — e quase sempre existe um caminho mais barato que resolve o problema antes de chegar lá.</p>
+<p>Esse texto é o framework de decisão entre <strong>prompt engineering</strong>, <strong>RAG</strong> e <strong>fine-tuning</strong>. Não é técnico — é gerencial. A decisão entre os três define se o projeto entrega valor em três semanas ou em nove meses.</p>
+<h2>O que cada um resolve, em uma frase</h2>
+<p>Antes da régua, é preciso ter clareza do que cada técnica faz.</p>
+<p><strong>Prompt engineering</strong> é mudar como você <em>fala</em> com o modelo. Instrução de sistema, exemplos few-shot, estrutura de resposta. Custo: hora de quem escreve o prompt. Prazo: dias. Risco: baixo.</p>
+<p><strong>RAG (Retrieval-Augmented Generation)</strong> é dar ao modelo <em>contexto</em> que ele não tinha — buscar trechos relevantes em uma base de documentos e injetar na hora da pergunta. <a href="/blog/rag-na-pratica.html">Como argumentei sobre RAG na prática</a>, a parte difícil não é gerar; é recuperar. Custo: infraestrutura + corpus + retrieval. Prazo: 4–8 semanas pra produção. Risco: médio.</p>
+<p><strong>Fine-tuning</strong> é mudar <em>o modelo</em> — re-treinar pesos com seus dados próprios. Custo: dados de treino curados + compute + iteração. Prazo: 2–6 meses. Risco: alto (modelo pode piorar em tarefas que antes acertava).</p>
+<p>A diferença não é apenas técnica. É <em>o que você está dispondo a investir antes de saber se vai funcionar</em>. Prompt eng falha barato. Fine-tuning falha caro.</p>
+<blockquote>
+<p>A pergunta certa nunca é &quot;qual técnica é melhor&quot;. É &quot;qual a técnica mais barata que resolve o caso a 80%&quot;. Sobe degrau só quando esgota o atual.</p>
+</blockquote>
+<h2>A ordem que funciona</h2>
+<p>A régua que aplicamos antes de qualquer projeto de IA com adaptação ao negócio. Sempre nessa ordem.</p>
+<ol>
+<li><strong>Esgotar prompt engineering primeiro.</strong> Antes de mexer em corpus ou em modelo, tente resolver com instrução melhor. Few-shot examples bem escolhidos sobem acurácia em 10–25% em quase todo caso. Estrutura de resposta forçada (JSON, lista numerada) elimina ambiguidade. Chain-of-thought explícito melhora raciocínio. Quem pula essa etapa investe em RAG/fine-tuning pra resolver problema que era de prompt.</li>
+<li><strong>Subir pra RAG quando o modelo precisa de conhecimento que não tem.</strong> Documento interno, política da empresa, base de produto, histórico de cliente. Se a pergunta exige fato que o LLM não sabe, RAG é o caminho. Não fine-tuning — fine-tuning ensina <em>padrão</em>, não <em>fato</em>.</li>
+<li><strong>Subir pra fine-tuning quando o problema é estilo, formato ou domínio muito específico.</strong> Quando o modelo precisa escrever no jargão da sua empresa, gerar código no seu padrão interno, ou responder em um formato estruturado raro. Fine-tuning muda comportamento; não muda conhecimento.</li>
+</ol>
+<p>O erro mais comum: usar fine-tuning pra resolver problema de RAG (&quot;o modelo não sabe nossas regras&quot;). Não vai funcionar. Modelo fine-tuned esquece da metade das regras na semana seguinte ou alucina respostas plausíveis sobre regras que mudaram.</p>
+<h2>Custos reais — a conta que ninguém faz</h2>
+<p>Os custos de cada técnica não são apenas dinheiro. São tempo do time, risco operacional e dificuldade de iterar. Vale catalogar.</p>
+<p><strong>Prompt engineering — custos.</strong> Hora de quem escreve (1–3 dias por iteração). Eval set pra medir antes/depois (1–2 semanas pra montar). Custo de inferência por token, contínuo mas pequeno em volume médio. Total típico: R$ 5–20 mil pra rodar um caso de uso decente em piloto.</p>
+<p><strong>RAG — custos.</strong> Infra de vetor + indexação + retrieval (R$ 500–5 mil/mês a depender do volume). Engenharia de pipeline (4–8 semanas de time sênior). Curadoria do corpus (subestimada, costuma ser metade do esforço). Manutenção do índice (drift do corpus, freshness). Total típico: R$ 80–250 mil até produção, mais R$ 10–30 mil/mês.</p>
+<p><strong>Fine-tuning — custos.</strong> Dados de treino curados (5–15 mil exemplos de qualidade, geralmente humanos rotulando: R$ 30–100 mil). Compute de treino (R$ 5–50 mil por iteração, e você vai precisar de 3–10 iterações). Eval rigoroso (essencial — sem ele, fine-tuning piora invisivelmente). Total típico: R$ 200 mil–1 milhão até modelo em produção, e o modelo precisa ser retreinado a cada 6–12 meses.</p>
+<p>O ratio que vejo na prática: fine-tuning custa entre 5× e 20× mais que RAG, que custa entre 5× e 15× mais que prompt engineering. Saltar etapas pula esse ratio na conta sem aviso.</p>
+<h2>Os sinais de que está na hora de subir o degrau</h2>
+<p>Saber quando <em>parar</em> em cada degrau é metade da decisão. Sinais práticos:</p>
+<p><strong>Quando subir de prompt pra RAG.</strong> Quando o modelo erra por <em>falta de informação específica</em> — não por estilo. Pergunta: &quot;o modelo erraria menos se eu colasse o documento certo no contexto?&quot;. Se sim, RAG. Se a resposta erra por estilo, formato ou raciocínio, prompt eng ainda dá conta.</p>
+<p><strong>Quando subir de RAG pra fine-tuning.</strong> Três sinais combinados: (a) você já tem RAG funcionando bem na recuperação (recall@k &gt; 80%); (b) o problema é de <em>como o modelo escreve</em> após receber o contexto; (c) você tem 5 mil+ exemplos rotulados de qualidade do output desejado. Se algum dos três falta, fine-tuning não vai resolver.</p>
+<p><strong>Quando <em>não</em> subir pra fine-tuning, mesmo com pressão.</strong> Quando o problema é de conhecimento (RAG resolve), quando o caso de uso muda de mês em mês (modelo fine-tuned vira dívida), quando você não tem <a href="/blog/avaliacao-de-agentes.html">protocolo de avaliação sério</a> (sem eval, fine-tuning é fé). Esses três contextos cobrem 80% dos pedidos de fine-tuning que recebemos.</p>
+<h2>O case típico que esclarece</h2>
+<p>A história que se repete em três de cada cinco projetos. Empresa quer &quot;treinar nosso ChatGPT&quot; pra responder dúvidas internas. Time técnico orça fine-tuning: R$ 400 mil + 5 meses. Sponsor aprova.</p>
+<p>Três meses depois, modelo treinado responde bem nas perguntas do eval set inicial — e mal em quase tudo o resto. Diagnóstico real: o problema era de conhecimento (modelo não tem acesso à política interna), não de estilo. RAG sobre os documentos teria resolvido em 6 semanas por R$ 80 mil, com qualidade superior. Fine-tuning agora vira passivo de manutenção.</p>
+<p>Esse case é evitável com a régua simples acima. Não é falta de competência técnica; é falta de ordem.</p>
+<h2>A decisão de quem decide</h2>
+<p>Se você está num comitê discutindo &quot;fine-tuning ou não&quot;, a pergunta certa pra fazer ao time técnico não é &quot;qual é melhor&quot;. É: <em>já esgotamos prompt engineering? já tentamos RAG?</em>. Em 80% dos casos, a resposta vai ser &quot;não na profundidade necessária&quot;. Aí volta um degrau, faz direito, e a maioria dos casos para ali — com 1/10 do custo e em 1/4 do tempo.</p>
+<p>Fine-tuning é a ferramenta certa pra casos específicos. Só não é o default — e tratar como default é o jeito mais caro de adiar a entrega de valor de IA na sua empresa.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Continuar a conversa</div>
+            <h3>Quer discutir esse tema com um sócio?</h3>
+            <p>Diagnóstico inicial sem compromisso. Levamos uma primeira leitura do seu cenário em uma semana e devolvemos um relatório.</p>
+            <a class="btn-link" href="/#contato">Conversar com um sócio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Próximas leituras</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="ai" href="/blog/quando-agente-e-resposta.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 03 · IA</span>
+                <span class="post-date">20 mai 2026</span>
+              </div>
+              <h3>Quando um agente é a resposta — e quando ele é fuga de problema mal modelado</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="post-card" data-pillar="ai" href="/blog/vector-databases-comparados.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 03 · IA</span>
+                <span class="post-date">3 mar 2026</span>
+              </div>
+              <h3>Vector databases comparados: Pinecone, Weaviate, pgvector — quando cada um faz sentido</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="post-card" data-pillar="ai" href="/blog/avaliacao-de-agentes.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 03 · IA</span>
+                <span class="post-date">3 fev 2026</span>
+              </div>
+              <h3>Avaliação de agentes: a métrica que ninguém quer publicar</h3>
+              <div class="read">Ler →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=d605879e2e"></script>
+  <script src="/assets/js/main.js?v=d605879e2e" type="module"></script>
+</body>
+</html>

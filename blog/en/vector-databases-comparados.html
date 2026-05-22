@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Vector databases compared: Pinecone, Weaviate, pgvector — when each one fits | Kliente 360</title>
+  <meta name="description" content="Every RAG discussion focuses on the LLM. But where the embeddings live decides latency, cost and scale. Honest comparison of the three popular paths in 2026." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/en/vector-databases-comparados.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/vector-databases-comparados.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/vector-databases-comparados.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/vector-databases-comparados.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/vector-databases-comparados.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Vector databases compared: Pinecone, Weaviate, pgvector — when each one fits | Kliente 360" />
+  <meta property="og:description" content="Every RAG discussion focuses on the LLM. But where the embeddings live decides latency, cost and scale. Honest comparison of the three popular paths in 2026." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-03-03" />
+  <meta property="article:section" content="Applied AI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vector databases compared: Pinecone, Weaviate, pgvector — when each one fits | Kliente 360" />
+  <meta name="twitter:description" content="Every RAG discussion focuses on the LLM. But where the embeddings live decides latency, cost and scale. Honest comparison of the three popular paths in 2026." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=d605879e2e" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Vector databases compared: Pinecone, Weaviate, pgvector — when each one fits",
+  "description": "Every RAG discussion focuses on the LLM. But where the embeddings live decides latency, cost and scale. Honest comparison of the three popular paths in 2026.",
+  "datePublished": "2026-03-03",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Applied AI",
+  "keywords": [
+    "vector database",
+    "Pinecone",
+    "Weaviate",
+    "pgvector",
+    "RAG"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="ai">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Practice 03 · AI</span>
+            <a class="post-back" href="/blog/en/">Blog</a>
+          </div>
+          <h1>Vector databases compared: Pinecone, Weaviate, pgvector — when each one fits</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-03-03">3 Mar 2026</time>
+            <span class="sep">·</span>
+            <span>6 min read</span>
+            <span class="sep">·</span>
+            <span>By Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Pinecone optimizes for large managed operations. Weaviate delivers open-source flexibility with native RAG features. pgvector is the option nobody wants to admit is enough in 70% of cases. Choice criteria depend more on operational context than on raw performance.</p>
+          </aside>
+
+          <p class="post-intro">The RAG architecture meeting almost always has the same skew: 80% of time discussing which LLM to use, 20% discussing which vector database. The ratio should be inverted. <a href="/blog/en/rag-na-pratica.html">In RAG, retrieval is the bottleneck</a>, and where the embeddings live decides latency, cost, scale and operability in production. Switching LLMs in 2026 is commodity; switching vector DBs after 50 million embeddings indexed isn&#39;t.</p>
+<p>This text compares the three popular options — <strong>Pinecone</strong>, <strong>Weaviate</strong> and <strong>pgvector</strong> — with the ruler that matters: operational context, not raw benchmark.</p>
+<h2>What three different paths really are</h2>
+<p>Before comparing, worth separating what each one represents in design.</p>
+<p><strong>Pinecone.</strong> Managed service, fully cloud, optimized for large operations without thinking about infra. Pay-as-you-go per stored vector and per query. Focus on operational stability, low consistent latency, automatic horizontal scaling. The option that sells to the CTO who doesn&#39;t want a dedicated infra team for vectors.</p>
+<p><strong>Weaviate.</strong> Open-source with a managed cloud version. More than a vector DB — delivers native RAG (embedded embedding, generation and reranking modules), hybrid filtering, schema-aware. Focus on architectural flexibility and on whoever wants to run their own (on-prem or private cloud). The option that pleases the engineer who likes to configure.</p>
+<p><strong>pgvector.</strong> PostgreSQL extension. Not a &quot;vector DB&quot; — it&#39;s Postgres with vector support. Doesn&#39;t scale like Pinecone, doesn&#39;t have native RAG features like Weaviate. But it&#39;s Postgres — which your company already runs, your team already knows, your backup already covers. The option nobody mentions at conferences but that solves more cases than admitted.</p>
+<p>Choice rarely is &quot;which is fastest&quot; (all are fast enough at mid-scale). It&#39;s &quot;which fits your operation&quot;.</p>
+<h2>When Pinecone makes sense</h2>
+<p>Three contexts where Pinecone is justified:</p>
+<p><strong>Operation at already-large or predictably-large scale.</strong> Above ~50M embeddings, or with consistent sub-50ms global latency requirement. Pinecone is architecturally optimized for that range.</p>
+<p><strong>Team with no appetite for operating vector infra.</strong> When the trade-off of paying 3× more to not handle cluster, sharding, scaling, vector index backup is worth the money. Small team focused on product, not platform.</p>
+<p><strong>Multi-region with aggressive SLA.</strong> If the application has to serve RAG with low latency in America, Europe, Asia, Pinecone has managed global replication that would be very expensive to replicate with Weaviate or pgvector.</p>
+<p>Outside these three, Pinecone tends to be overshoot. Team already has technical capacity and operations aren&#39;t huge? Worth considering the other two.</p>
+<h2>When Weaviate makes sense</h2>
+<p>Weaviate sits in the middle:</p>
+<p><strong>Need for native RAG in the database.</strong> Weaviate embeds embedding, generation and reranking modules. If your architecture wants a complete RAG pipeline inside the database — instead of orchestrating external Python — Weaviate delivers it. Pinecone requires an additional stack; pgvector too.</p>
+<p><strong>Heavy hybrid filtering.</strong> When queries need to combine vector search + complex structured filter (category + date + tenant + tag), Weaviate has strong optimization. Pinecone has filtering but with limits; pgvector depends on plain Postgres.</p>
+<p><strong>Data sovereignty / on-prem.</strong> Company needs to run the database in its own infra (compliance, cost, control). Open-source Weaviate runs on Kubernetes, Docker, dedicated machine. Pinecone is cloud-only.</p>
+<p>Weaviate suffers when the team has no expertise operating distributed databases. Configuring it well requires knowledge — different from Pinecone (no configuration) and from pgvector (known Postgres).</p>
+<h2>When pgvector makes sense (more often than admitted)</h2>
+<p>The least discussed and most underestimated case in 2026:</p>
+<p><strong>Medium volume (up to ~10M embeddings).</strong> Postgres with pgvector + ivfflat or HNSW resolves queries in &lt;100ms in that range. Above that, it starts to struggle. But most mid-market companies sit below that ceiling.</p>
+<p><strong>Company already has Postgres in production.</strong> Same team, same backup, same observability. Adding pgvector is configuring an extension, not adopting new tech. Incremental operational cost: near zero.</p>
+<p><strong>RAG over relational data.</strong> When embeddings need to be cross-referenced with structured data (customer, product, transaction tables), pgvector allows native JOIN. Pinecone and Weaviate require external orchestration.</p>
+<p>The common objection: &quot;but pgvector doesn&#39;t scale&quot;. True — it doesn&#39;t scale like Pinecone. For a company with 5M embeddings growing 10% a year, it&#39;ll work very well for 4–5 years. Why buy a Ferrari to go to the corner store?</p>
+<blockquote>
+<p>In 70% of mid-market cases, pgvector solves the use case. The other 30% justify Pinecone or Weaviate. Inverting that ratio is the most expensive RAG mistake in 2026.</p>
+</blockquote>
+<h2>The honest criteria to choose</h2>
+<p>The ruler we apply before any project:</p>
+<ol>
+<li><strong>Volume expected in 18 months, not today.</strong> Underestimating leads to migration; overestimating leads to overspend. Calculate: docs × chunks per doc × average embedding size × safety multiplier (1.5–2×).</li>
+<li><strong>Latency acceptable for the use case.</strong> Internal chatbot tolerates 500ms. Real-time research assistant requires &lt;100ms. Sub-50ms global costs a lot. Calibrate by use, not desire.</li>
+<li><strong>Query pattern.</strong> Pure vector search? Combined with filter? JOIN with relational data? The answer completely changes the choice.</li>
+<li><strong>Team operational capacity.</strong> Small team without distributed expertise = Pinecone or pgvector (if it fits). Strong Kubernetes/database team = Weaviate becomes viable. Forcing against that profile costs dearly.</li>
+<li><strong>Compliance and location.</strong> Sensitive data, geographic restriction, on-prem requirement. Pinecone (cloud-only) drops out automatically in restricted cases.</li>
+</ol>
+<p>Whoever answers the five without hesitating knows how to choose. Whoever hesitates doesn&#39;t have a defined use case — and the choice will be made by hype, not by need.</p>
+<h2>The &quot;let&#39;s start with X and migrate later&quot; trap</h2>
+<p>The phrase that looks pragmatic and costs dearly: &quot;let&#39;s start with Pinecone, and if it gets expensive we migrate to pgvector&quot;. Migrating a vector DB with productive volume is a serious project — reindexing 20M embeddings with new generation, validating parity, redirecting traffic without loss. Costs 6–12 weeks of senior engineering.</p>
+<p>The cheaper version: start simple (pgvector) and step up to Pinecone/Weaviate when it <em>actually</em> stops fitting. Migrating up is cheaper than migrating down (because the new requirements that justify the upgrade are already clear). Migrating down is cutting features and losing operationally.</p>
+<p>Whoever picks Pinecone &quot;for safety&quot; spends 5–10× more in the first year and rarely uses the capacity. Whoever picks pgvector and scales later pays progressively, as the use case proves value.</p>
+<h2>The decision for 2026</h2>
+<p>If you&#39;re stuck on this choice today, three honest moves before signing:</p>
+<p><strong>Calculate real volume in 18 months.</strong> If it fits in pgvector, start with pgvector. If it crosses 50M, jump to Pinecone. Between those, it depends on criteria 3–5.</p>
+<p><strong>Pilot with real data, not synthetic benchmark.</strong> The three deliver ~similar in benchmark. With real data, real queries, real filters, the differences show. A 2-week pilot with 1M real embeddings already shows which fits.</p>
+<p><strong>Remember vector DB is a piece, not a strategy.</strong> <a href="/blog/en/rag-na-pratica.html">Retrieval is the bottleneck</a>, but inside retrieval, the database choice is one layer. Without good chunking, suitable embedding and reranking, any database will deliver mediocre results.</p>
+<p>The worst decision is to spend three months choosing the perfect vector DB and three weeks implementing bad RAG. The best is to choose a &quot;good enough&quot; database and invest the saved time in pipeline quality.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Keep the conversation going</div>
+            <h3>Want to discuss this topic with a partner?</h3>
+            <p>Initial diagnostic with no commitment. We assess your scenario in a week and send back a report.</p>
+            <a class="btn-link" href="/#contato">Talk to a partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Further reading</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="ai" href="/blog/en/quando-agente-e-resposta.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 03 · AI</span>
+                <span class="post-date">20 May 2026</span>
+              </div>
+              <h3>When an agent is the answer — and when it&#39;s an escape from a poorly modeled problem</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="ai" href="/blog/en/fine-tuning-vs-rag-vs-prompt.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 03 · AI</span>
+                <span class="post-date">11 Feb 2026</span>
+              </div>
+              <h3>Fine-tuning vs RAG vs prompt engineering: how to choose without burning cash</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="post-card" data-pillar="ai" href="/blog/en/avaliacao-de-agentes.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 03 · AI</span>
+                <span class="post-date">3 Feb 2026</span>
+              </div>
+              <h3>Agent evaluation: the metric nobody wants to publish</h3>
+              <div class="read">Read →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=d605879e2e"></script>
+  <script src="/assets/js/main.js?v=d605879e2e" type="module"></script>
+</body>
+</html>

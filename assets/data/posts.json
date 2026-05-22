@@ -66,6 +66,116 @@
     }
   },
   {
+    "slug": "vector-databases-comparados",
+    "pillar": "ai",
+    "date": "2026-03-03",
+    "translations": {
+      "pt": {
+        "title": "Vector databases comparados: Pinecone, Weaviate, pgvector — quando cada um faz sentido",
+        "url": "/blog/vector-databases-comparados.html",
+        "date": "3 mar 2026"
+      },
+      "en": {
+        "title": "Vector databases compared: Pinecone, Weaviate, pgvector — when each one fits",
+        "url": "/blog/en/vector-databases-comparados.html",
+        "date": "3 Mar 2026"
+      },
+      "es": {
+        "title": "Vector databases comparados: Pinecone, Weaviate, pgvector — cuándo sirve cada uno",
+        "url": "/blog/es/vector-databases-comparados.html",
+        "date": "3 mar 2026"
+      }
+    }
+  },
+  {
+    "slug": "data-contracts",
+    "pillar": "data",
+    "date": "2026-02-25",
+    "translations": {
+      "pt": {
+        "title": "Data contracts: o jeito menos doloroso de não quebrar produção",
+        "url": "/blog/data-contracts.html",
+        "date": "25 fev 2026"
+      },
+      "en": {
+        "title": "Data contracts: the least painful way to not break production",
+        "url": "/blog/en/data-contracts.html",
+        "date": "25 Feb 2026"
+      },
+      "es": {
+        "title": "Data contracts: la forma menos dolorosa de no romper producción",
+        "url": "/blog/es/data-contracts.html",
+        "date": "25 feb 2026"
+      }
+    }
+  },
+  {
+    "slug": "agentforce-atendimento-humano",
+    "pillar": "sf",
+    "date": "2026-02-24",
+    "translations": {
+      "pt": {
+        "title": "Agentforce em atendimento humano: o que automatizar e o que NÃO",
+        "url": "/blog/agentforce-atendimento-humano.html",
+        "date": "24 fev 2026"
+      },
+      "en": {
+        "title": "Agentforce in customer service: what to automate and what NOT to",
+        "url": "/blog/en/agentforce-atendimento-humano.html",
+        "date": "24 Feb 2026"
+      },
+      "es": {
+        "title": "Agentforce en atención humana: qué automatizar y qué NO",
+        "url": "/blog/es/agentforce-atendimento-humano.html",
+        "date": "24 feb 2026"
+      }
+    }
+  },
+  {
+    "slug": "fine-tuning-vs-rag-vs-prompt",
+    "pillar": "ai",
+    "date": "2026-02-11",
+    "translations": {
+      "pt": {
+        "title": "Fine-tuning vs RAG vs prompt engineering: como decidir sem queimar caixa",
+        "url": "/blog/fine-tuning-vs-rag-vs-prompt.html",
+        "date": "11 fev 2026"
+      },
+      "en": {
+        "title": "Fine-tuning vs RAG vs prompt engineering: how to choose without burning cash",
+        "url": "/blog/en/fine-tuning-vs-rag-vs-prompt.html",
+        "date": "11 Feb 2026"
+      },
+      "es": {
+        "title": "Fine-tuning vs RAG vs prompt engineering: cómo decidir sin quemar caja",
+        "url": "/blog/es/fine-tuning-vs-rag-vs-prompt.html",
+        "date": "11 feb 2026"
+      }
+    }
+  },
+  {
+    "slug": "snowflake-bigquery-databricks",
+    "pillar": "data",
+    "date": "2026-02-10",
+    "translations": {
+      "pt": {
+        "title": "Snowflake vs BigQuery vs Databricks: comparação honesta pra médio porte",
+        "url": "/blog/snowflake-bigquery-databricks.html",
+        "date": "10 fev 2026"
+      },
+      "en": {
+        "title": "Snowflake vs BigQuery vs Databricks: an honest mid-market comparison",
+        "url": "/blog/en/snowflake-bigquery-databricks.html",
+        "date": "10 Feb 2026"
+      },
+      "es": {
+        "title": "Snowflake vs BigQuery vs Databricks: comparación honesta para tamaño medio",
+        "url": "/blog/es/snowflake-bigquery-databricks.html",
+        "date": "10 feb 2026"
+      }
+    }
+  },
+  {
     "slug": "customer-360-vs-cdp",
     "pillar": "sf",
     "date": "2026-02-04",

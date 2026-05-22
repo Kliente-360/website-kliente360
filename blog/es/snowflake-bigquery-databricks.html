@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Snowflake vs BigQuery vs Databricks: comparación honesta para tamaño medio | Kliente 360</title>
+  <meta name="description" content="Los tres warehouses del momento son buenos. La decisión depende más de lo que está alrededor — stack, equipo, casos de uso — que del benchmark de query." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="canonical" href="/blog/es/snowflake-bigquery-databricks.html" />
+  <link rel="alternate" hreflang="pt-BR" href="/blog/snowflake-bigquery-databricks.html" />
+  <link rel="alternate" hreflang="en-US" href="/blog/en/snowflake-bigquery-databricks.html" />
+  <link rel="alternate" hreflang="es-ES" href="/blog/es/snowflake-bigquery-databricks.html" />
+  <link rel="alternate" hreflang="x-default" href="/blog/snowflake-bigquery-databricks.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Snowflake vs BigQuery vs Databricks: comparación honesta para tamaño medio | Kliente 360" />
+  <meta property="og:description" content="Los tres warehouses del momento son buenos. La decisión depende más de lo que está alrededor — stack, equipo, casos de uso — que del benchmark de query." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-02-10" />
+  <meta property="article:section" content="Data &amp; Analytics" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Snowflake vs BigQuery vs Databricks: comparación honesta para tamaño medio | Kliente 360" />
+  <meta name="twitter:description" content="Los tres warehouses del momento son buenos. La decisión depende más de lo que está alrededor — stack, equipo, casos de uso — que del benchmark de query." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=d605879e2e" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=d605879e2e" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Snowflake vs BigQuery vs Databricks: comparación honesta para tamaño medio",
+  "description": "Los tres warehouses del momento son buenos. La decisión depende más de lo que está alrededor — stack, equipo, casos de uso — que del benchmark de query.",
+  "datePublished": "2026-02-10",
+  "inLanguage": "es-ES",
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Data & Analytics",
+  "keywords": [
+    "Snowflake",
+    "BigQuery",
+    "Databricks",
+    "data warehouse",
+    "comparación"
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="data">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Pilar 02 · Data</span>
+            <a class="post-back" href="/blog/es/">Blog</a>
+          </div>
+          <h1>Snowflake vs BigQuery vs Databricks: comparación honesta para tamaño medio</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-02-10">10 feb 2026</time>
+            <span class="sep">·</span>
+            <span>7 min de lectura</span>
+            <span class="sep">·</span>
+            <span>Por Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Snowflake, BigQuery y Databricks resuelven el 80% de los casos de tamaño medio con calidad equivalente. La elección real es sobre lo que está alrededor: stack existente, perfil del equipo, casos de uso de IA, costo de cambio. Cuatro criterios honestos que separan decisión por marketing de decisión por necesidad.</p>
+          </aside>
+
+          <p class="post-intro">La reunión que se repite cada fin de año en empresa de tamaño medio: &quot;vamos a cambiar de warehouse, ¿pero cuál?&quot;. Sale la consultoría con benchmark de query, el vendor con descuento, el deck con gráfico de TCO. En tres meses, la decisión normalmente se tomó — y en seis meses, la mitad de las empresas se arrepiente. No porque eligieron el equivocado, sino porque resolvieron el problema equivocado.</p>
+<p>Snowflake, BigQuery y Databricks son, en 2026, <strong>funcionalmente equivalentes para el 80% de los casos de empresa de tamaño medio</strong>. Performance, costo promedio, recursos básicos — todos pasan. La elección real no está en la herramienta aislada; está en lo que rodea a cada una. Este texto es el criterio honesto que usamos antes de firmar un contrato de tres años.</p>
+<h2>Lo que nadie te dice en el pitch</h2>
+<p>Los tres vienen con la misma promesa: SQL escalable, separación compute/storage, gobernanza, performance previsible. Y entregan. Podés correr una operación de tamaño medio (5–50 TB, 20–100 usuarios técnicos) en cualquiera de los tres y tener un warehouse que funciona.</p>
+<p>Las diferencias reales entre ellos existen — pero son marginales en ese alcance. Snowflake tiene la UX más pulida y la separación de compute más granular. BigQuery integra más fácil con el resto de Google Cloud (y cobra por query escaneada, no por compute reservado). Databricks tiene el mejor stack para ML/data science nativo y Delta Lake como formato abierto.</p>
+<blockquote>
+<p>En tamaño medio, elegir entre Snowflake, BigQuery y Databricks es como elegir entre Toyota, Honda y Mazda: todos te llevan a donde necesitás. El criterio no es la marca, es lo que vive alrededor — taller, repuestos, hábito de mantenimiento.</p>
+</blockquote>
+<p>Quien te llegue diciendo que uno de los tres es objetivamente mejor sin calificar por tu contexto está vendiendo, no comparando.</p>
+<h2>Cuatro criterios que deciden de verdad</h2>
+<p>Los criterios que importan separan empresas que eligen con claridad de las que quedan paralizadas.</p>
+<ol>
+<li><strong>Stack que ya existe.</strong> Si la empresa ya es Google Cloud-first (GA4, Looker, Vertex AI), BigQuery reduce fricción de integración un 80%. Si es AWS-first, Snowflake suele ser el default. Si ya invirtió en Spark/MLflow, Databricks cierra el ciclo. Empresa &quot;stack agnóstica&quot; no existe — siempre hay peso de algún lado. Identificarlo antes de decidir.</li>
+<li><strong>Perfil del equipo actual.</strong> Equipo fuerte en SQL y BI va a rendir más en Snowflake (UX optimizada para ese perfil). Equipo con background de ingeniería de datos y Python prospera en Databricks. Equipo que ya corre en GCP achata la curva en BigQuery. Intentar virar el perfil del equipo para encajar en la herramienta es el camino más caro de implementación.</li>
+<li><strong>Roadmap de IA/ML real.</strong> Si el plan es solo reporte + dashboard, cualquiera de los tres sirve. Si el plan involucra entrenar modelos propios, feature store, MLOps serio — Databricks tiene 18 meses de ventaja en integración nativa. Si es solo correr LLM vía API con <a href="/blog/es/rag-na-pratica.html">RAG sobre datos del warehouse</a>, cualquiera sirve con plugins externos.</li>
+<li><strong>Costo total honesto — no la tabla de precios.</strong> Los tres publican precios por crédito/hora/query. Ninguno de esos números refleja lo que tu empresa va a pagar de verdad. El número real depende del patrón de uso (picos vs. constante), madurez del equipo (queries optimizadas vs. queries sueltas), gobernanza (auto-suspend funcionando vs. cluster prendido domingo a la mañana). Empresa que no calcula costo histórico de uso antes firma contrato y descubre factura 2–3× mayor al tercer mes.</li>
+</ol>
+<p>Quien responde los cuatro con claridad sabe cuál elegir. Quien responde &quot;depende&quot; en tres o más todavía no tiene caso de uso definido — y cualquier warehouse va a volverse proyecto eterno.</p>
+<h2>Dónde brilla cada uno de verdad (y dónde duele)</h2>
+<p>Sin esquivar el compromiso, tres frases honestas sobre cada uno:</p>
+<p><strong>Snowflake.</strong> Brilla en operación SQL pura con equipo de BI/analytics maduro. UX, separación de warehouses por workload, time travel son best-in-class. Duele en workloads de ML/data science nativo (necesita integraciones externas para tener lo que Databricks da en casa) y en federation de queries pesados.</p>
+<p><strong>BigQuery.</strong> Brilla en ecosistema Google (integración GA4, Vertex, Looker) y en modelo serverless real — no dimensionás cluster. Duele en previsibilidad de costo (modelo por query escaneada castiga queries mal escritas) y en UX menos pulida que Snowflake para equipo que viene de SQL clásico.</p>
+<p><strong>Databricks.</strong> Brilla en ML/data science nativo, soporte a Delta/Iceberg, pipelines streaming, notebooks colaborativos. Duele en complejidad — exige equipo más técnico, y operaciones puramente analíticas (BI + dashboard) pueden ser overkill. Curva de aprendizaje es la más empinada de los tres.</p>
+<p>Ninguno de esos &quot;duele&quot; es deal-breaker si el resto de la ecuación encaja. Pero saber dónde duele antes de firmar es parte del trabajo de decisión.</p>
+<h2>La decisión que nadie quiere tomar — quedarse donde está</h2>
+<p>La pregunta menos hecha en la reunión de warehouse: <em>¿y si nos quedamos donde estamos?</em>. La migración de warehouse cuesta entre 6 y 18 meses de equipo sénior, dependiendo del volumen y complejidad. Ese costo rara vez entra en el business case del &quot;switch&quot;.</p>
+<p>Vale calcular lo que de hecho cambia con la migración. Si la respuesta es &quot;performance&quot; y la empresa actual entrega queries en segundos, la ganancia es marginal. Si es &quot;ML/IA&quot;, verificar si el cuello de botella real es el warehouse o el equipo. Si es &quot;costo&quot;, normalmente es problema de gobernanza — va a aparecer en el warehouse nuevo también.</p>
+<p>La empresa que decide cambiar sin entender esa cuenta migra dos veces en tres años.</p>
+<h2>Un movimiento honesto para 2026</h2>
+<p>Para una empresa de tamaño medio en decisión real sobre warehouse, tres movimientos prácticos antes de cualquier firma:</p>
+<p><strong>POC pago de 30 días con dato real.</strong> No la demo del vendor — POC interno, con 2–3 casos de uso tuyos, equipo tuyo, queries tuyas. Los tres vendors aceptan crédito promocional para eso. POC mide lo que el folleto no mide.</p>
+<p><strong>Cálculo de costo histórico simulado.</strong> Tomar uso real del último trimestre (volumen scaneado, número de queries, picos) y simular cada uno de los tres en el precio público. Las diferencias suelen ser de 30–50%, y rara vez el &quot;más caro&quot; del papel es el más caro en la práctica.</p>
+<p><strong>Conversación con 2 clientes de cada uno, del mismo tamaño que vos.</strong> El vendor te conecta. Si no conecta, pésima señal. Empresa de tamaño similar te dice en 30 minutos lo que el folleto esconde en 100 páginas.</p>
+<p>Los tres warehouses son producto maduro de empresa seria. La peor decisión es firmar por el mejor pitch. La segunda peor es no decidir por seis meses por miedo a equivocarse. La mejor es entender que <a href="/blog/es/dbt-na-pratica.html">la sigla del warehouse importa menos que cómo la modelación está versionada arriba</a> — independiente de la elección, esa es la ganancia real.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Continuar la conversación</div>
+            <h3>¿Quieres discutir este tema con un socio?</h3>
+            <p>Diagnóstico inicial sin compromiso. Hacemos una primera lectura de tu escenario en una semana y devolvemos un informe.</p>
+            <a class="btn-link" href="/#contato">Hablar con un socio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Próximas lecturas</h2>
+          <div class="blog-list">
+            <a class="post-card" data-pillar="data" href="/blog/es/tableau-linguagem-executiva.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 02 · Data</span>
+                <span class="post-date">13 may 2026</span>
+              </div>
+              <h3>Tableau como lenguaje ejecutivo: matando el dashboard de vanidad</h3>
+              <div class="read">Leer →</div>
+            </a>
+            <a class="post-card" data-pillar="data" href="/blog/es/data-contracts.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 02 · Data</span>
+                <span class="post-date">25 feb 2026</span>
+              </div>
+              <h3>Data contracts: la forma menos dolorosa de no romper producción</h3>
+              <div class="read">Leer →</div>
+            </a>
+            <a class="post-card" data-pillar="data" href="/blog/es/elt-vs-etl.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 02 · Data</span>
+                <span class="post-date">28 ene 2026</span>
+              </div>
+              <h3>ELT vs ETL: por qué cambió la moda y qué importa de verdad</h3>
+              <div class="read">Leer →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+        <div class="mono">v0.1 · CRM · dados · IA</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=d605879e2e"></script>
+  <script src="/assets/js/main.js?v=d605879e2e" type="module"></script>
+</body>
+</html>

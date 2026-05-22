@@ -105,6 +105,17 @@
     .swatch .name { font-weight: var(--fw-medium); }
     .swatch .hex { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--color-fg-muted); margin-top: 2px; }
 
+    /* Strip de paleta — estilo "tirinha de escolha de tinta" */
+    .palette-strip { display: flex; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--color-line); box-shadow: var(--shadow-xs); }
+    .palette-strip .chip { flex: 1; min-width: 0; padding: var(--sp-4) var(--sp-3); display: flex; flex-direction: column; justify-content: flex-end; min-height: 120px; gap: 2px; }
+    @media (max-width: 480px) { .palette-strip .chip { min-height: 88px; padding: var(--sp-3) var(--sp-2); } }
+    .palette-strip .chip .name { font-size: var(--fs-12); font-weight: var(--fw-medium); letter-spacing: var(--ls-tight); line-height: 1.15; }
+    .palette-strip .chip .hex { font-family: var(--font-mono); font-size: 10px; opacity: 0.75; letter-spacing: 0; }
+    .palette-strip .chip.light { color: #fff; }
+    .palette-strip .chip.dark { color: #0a0a0a; }
+    .palette-strip .chip.star::after { content: "★"; position: absolute; top: 6px; right: 8px; font-size: 11px; opacity: 0.7; }
+    .palette-strip .chip { position: relative; }
+
     /* ====== TIPOGRAFIA ====== */
     .type-row { display: grid; grid-template-columns: 110px 1fr; gap: var(--sp-6); padding: var(--sp-4) 0; border-bottom: 1px dashed var(--color-line); align-items: baseline; }
     .type-row:last-child { border-bottom: 0; }
@@ -353,81 +364,61 @@
       <p class="sg-lead">Base neutra (preto/branco/cinzas Apple). Verde como acento pontual — CTAs, palavra-chave do hero, linhas decorativas. Nunca cobrindo blocos inteiros.</p>
 
       <h3 class="sg-h3">Tinta &amp; neutros</h3>
-      <div class="grid grid-5">
-        <div class="swatch"><div class="chip" style="background:#0a0a0a"></div><div class="meta"><div class="name">Ink 900</div><div class="hex">#0A0A0A</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#1d1d1f"></div><div class="meta"><div class="name">Ink 800</div><div class="hex">#1D1D1F</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#424245"></div><div class="meta"><div class="name">Ink 600</div><div class="hex">#424245</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#6e6e73"></div><div class="meta"><div class="name">Ink 400</div><div class="hex">#6E6E73</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#86868b"></div><div class="meta"><div class="name">Ink 300</div><div class="hex">#86868B</div></div></div>
+      <div class="palette-strip">
+        <div class="chip light" style="background:#0a0a0a"><div class="name">Ink 900</div><div class="hex">#0A0A0A</div></div>
+        <div class="chip light" style="background:#1d1d1f"><div class="name">Ink 800</div><div class="hex">#1D1D1F</div></div>
+        <div class="chip light" style="background:#424245"><div class="name">Ink 600</div><div class="hex">#424245</div></div>
+        <div class="chip light" style="background:#6e6e73"><div class="name">Ink 400</div><div class="hex">#6E6E73</div></div>
+        <div class="chip light" style="background:#86868b"><div class="name">Ink 300</div><div class="hex">#86868B</div></div>
       </div>
 
       <h3 class="sg-h3">Fundos &amp; linhas</h3>
-      <div class="grid grid-5">
-        <div class="swatch"><div class="chip" style="background:#ffffff; border-bottom: 1px solid var(--color-line);"></div><div class="meta"><div class="name">BG</div><div class="hex">#FFFFFF</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#f5f5f7"></div><div class="meta"><div class="name">BG alt</div><div class="hex">#F5F5F7</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#e5e5e7"></div><div class="meta"><div class="name">Line</div><div class="hex">#E5E5E7</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#d2d2d7"></div><div class="meta"><div class="name">Line strong</div><div class="hex">#D2D2D7</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#1d1d1f"></div><div class="meta"><div class="name">BG dark</div><div class="hex">#1D1D1F</div></div></div>
+      <div class="palette-strip">
+        <div class="chip dark" style="background:#ffffff"><div class="name">BG</div><div class="hex">#FFFFFF</div></div>
+        <div class="chip dark" style="background:#f5f5f7"><div class="name">BG alt</div><div class="hex">#F5F5F7</div></div>
+        <div class="chip dark" style="background:#e5e5e7"><div class="name">Line</div><div class="hex">#E5E5E7</div></div>
+        <div class="chip dark" style="background:#d2d2d7"><div class="name">Line +</div><div class="hex">#D2D2D7</div></div>
+        <div class="chip light" style="background:#1d1d1f"><div class="name">BG dark</div><div class="hex">#1D1D1F</div></div>
       </div>
 
       <h3 class="sg-h3">Verde Kliente — duas funções</h3>
       <p class="sg-lead" style="max-width: 70ch;">Estratégia adotada por marcas premium (Starbucks, Spotify, etc.): a cor do logo é sagrada, a cor da UI pode ser uma versão refinada. O <strong>#009900</strong> mora só no wordmark. A UI inteira (CTAs, eyebrows, links, hover) usa um verde editorial mais profundo — combina com o azul, para de vibrar contra o violeta.</p>
-      <div class="grid grid-2" style="margin-top: var(--sp-6);">
-        <div class="swatch" style="border: 2px solid var(--logo-green);">
-          <div class="chip" style="background:#009900; aspect-ratio: 16/9;"></div>
-          <div class="meta">
-            <div class="name">Logo green <span style="color: var(--color-fg-muted); font-weight: var(--fw-regular);">— só no wordmark</span></div>
-            <div class="hex">#009900</div>
-            <div class="sg-label" style="margin-top:6px;">Brand recognition. Não usar em UI.</div>
-          </div>
+      <div class="palette-strip" style="margin-top: var(--sp-6);">
+        <div class="chip light" style="background:#009900; min-height: 140px;">
+          <div class="name">Logo green</div>
+          <div class="hex">#009900 · só no wordmark</div>
         </div>
-        <div class="swatch" style="border: 2px solid var(--color-accent);">
-          <div class="chip" style="background:#007A3D; aspect-ratio: 16/9;"></div>
-          <div class="meta">
-            <div class="name">UI green <span style="color: var(--color-fg-muted); font-weight: var(--fw-regular);">— em tudo o resto</span></div>
-            <div class="hex">#007A3D</div>
-            <div class="sg-label" style="margin-top:6px;">CTAs, eyebrows, links, ícones de pilar. Versão editorial.</div>
-          </div>
+        <div class="chip light" style="background:#007A3D; min-height: 140px;">
+          <div class="name">UI green</div>
+          <div class="hex">#007A3D · resto da UI</div>
         </div>
       </div>
 
       <h3 class="sg-h3">Escala completa do UI green</h3>
-      <div class="grid grid-5">
-        <div class="swatch"><div class="chip" style="background:#e8f5ec"></div><div class="meta"><div class="name">Green 50</div><div class="hex">#E8F5EC</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#c8e6d0"></div><div class="meta"><div class="name">Green 100</div><div class="hex">#C8E6D0</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#4f9e6b"></div><div class="meta"><div class="name">Green 300</div><div class="hex">#4F9E6B</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#007a3d"></div><div class="meta"><div class="name">Green 500 ★</div><div class="hex">#007A3D</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#005c32"></div><div class="meta"><div class="name">Green 700</div><div class="hex">#005C32</div></div></div>
+      <div class="palette-strip">
+        <div class="chip dark" style="background:#e8f5ec"><div class="name">50</div><div class="hex">#E8F5EC</div></div>
+        <div class="chip dark" style="background:#c8e6d0"><div class="name">100</div><div class="hex">#C8E6D0</div></div>
+        <div class="chip light" style="background:#4f9e6b"><div class="name">300</div><div class="hex">#4F9E6B</div></div>
+        <div class="chip light star" style="background:#007a3d"><div class="name">500</div><div class="hex">#007A3D</div></div>
+        <div class="chip light" style="background:#005c32"><div class="name">700</div><div class="hex">#005C32</div></div>
       </div>
       <p class="sg-label" style="margin-top: var(--sp-3);">★ UI canônico (editorial). 700 = hover/emphasis. 50 = pílulas e fundos suaves.</p>
 
       <h3 class="sg-h3">Fundo escuro alternativo — navy resgatado</h3>
-      <div class="grid grid-3">
-        <div class="swatch">
-          <div class="chip" style="background:#0a0a0a"></div>
-          <div class="meta">
-            <div class="name">Ink 900 (default)</div>
-            <div class="hex">#0A0A0A</div>
-            <div class="sg-label" style="margin-top:6px;">Preto Apple. Default para fundos escuros.</div>
-          </div>
-        </div>
-        <div class="swatch">
-          <div class="chip" style="background:#06073E"></div>
-          <div class="meta">
-            <div class="name">BG deep (alternativo)</div>
-            <div class="hex">#06073E</div>
-            <div class="sg-label" style="margin-top:6px;">Navy resgatado da paleta antiga. Usar quando quisermos "alma corporativa" sem o gelado do preto puro — ex.: hero alternativo, seção de IA.</div>
-          </div>
-        </div>
+      <div class="palette-strip">
+        <div class="chip light" style="background:#0a0a0a"><div class="name">Ink 900</div><div class="hex">#0A0A0A · default</div></div>
+        <div class="chip light" style="background:#06073E"><div class="name">BG deep</div><div class="hex">#06073E · alt</div></div>
       </div>
+      <p class="sg-label" style="margin-top: var(--sp-3);">Navy resgatado da paleta antiga. Usar quando quisermos "alma corporativa" sem o gelado do preto puro — ex.: hero alternativo, seção de IA.</p>
 
       <h3 class="sg-h3" style="margin-top: var(--sp-12);">Cores secundárias — uma por pilar (proposta)</h3>
       <p class="sg-lead" style="max-width: 70ch;">Cada pilar ganha uma cor que só aparece dentro da sua seção (eyebrow, ícones, micro-acentos). No nível do site, dominam neutro + verde. É um sistema, não um arco-íris.</p>
-      <div class="grid grid-3" style="margin-top: var(--sp-6);">
-        <div class="swatch"><div class="chip" style="background:#0B5394"></div><div class="meta"><div class="name">Salesforce blue</div><div class="hex">#0B5394</div><div class="sg-label" style="margin-top:6px;">Pilar 01 · associação natural com a marca SF, sem ser cyan genérico.</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#C9A227"></div><div class="meta"><div class="name">Data amber</div><div class="hex">#C9A227</div><div class="sg-label" style="margin-top:6px;">Pilar 02 · âmbar quente, lê "inteligência" sem virar amarelo startup.</div></div></div>
-        <div class="swatch"><div class="chip" style="background:#6D28D9"></div><div class="meta"><div class="name">AI violet</div><div class="hex">#6D28D9</div><div class="sg-label" style="margin-top:6px;">Pilar 03 · roxo é o código universal da IA hoje (OpenAI, Anthropic).</div></div></div>
+      <div class="palette-strip" style="margin-top: var(--sp-6);">
+        <div class="chip light" style="background:#0B5394"><div class="name">Salesforce</div><div class="hex">#0B5394</div></div>
+        <div class="chip dark" style="background:#C9A227"><div class="name">Data</div><div class="hex">#C9A227</div></div>
+        <div class="chip light" style="background:#6D28D9"><div class="name">IA</div><div class="hex">#6D28D9</div></div>
       </div>
+      <p class="sg-label" style="margin-top: var(--sp-3);">Salesforce → azul natural sem cair em cyan. Data → âmbar lê "inteligência" sem virar startup. IA → violeta universal (OpenAI, Anthropic).</p>
 
     </div>
   </section>

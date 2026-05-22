@@ -57,28 +57,49 @@ Dois concorrentes por pilar, mistura de boutique + mid/enterprise:
 
 Referências secundárias mapeadas, fora do recorte: WeUse, Valtech, Capgemini, beAnalytic, Active BI, BDA Solutions, Aquarela, Zup, Slalom Build, Thoughtworks.
 
+## 3.3. Marca e posicionamento (definidos 2026-05-22)
+
+- **Posicionamento**: boutique premium. Altíssima expertise, alta personalização, time enxuto, poucos clientes estratégicos. Os 3 pilares costurados como diferencial único no mercado local.
+- **Tagline**: **"Conhecimento aplicado, como serviço."** *(evolução sutil de "Conhecimento como serviço")*
+- **Metodologia própria**: **Trilha 360** — narrativa de jornada do cliente ao longo dos pilares. Detalhamento das etapas a definir.
+- **Cases para o site** (conteúdo a alimentar depois — placeholders no HTML):
+  - Sem Parar
+  - Bodytech
+- **Produtos SaaS de IA** (pilar 3 — placeholders, ideia ainda em revisão):
+  - Agente autônomo de atendimento interno (RH)
+  - Analytics contábil para PME
+
+## 3.4. Inspirações de design (definidas 2026-05-22)
+
+Referências: **Apple**, **Google**, **Salesforce**. Síntese aplicada:
+
+- **Base visual ← Apple**: neutro escuro ou off-white dominante, tipografia grande como protagonista, hero respirando, paleta restrita.
+- **Acento de cor ← Google**: o verde do logo entra pontual e com intenção (CTAs, palavra-chave do título, linha decorativa) — nunca em blocos inteiros.
+- **Camada de confiança ← Salesforce**: bloco de parceria/certificações, cases nomeados com números, copy explicativa sem rebuscar.
+- **Tipografia**: sans humanista única, 2 pesos. Candidatos: **Inter**, **Söhne**, **GT America**. Reverte a sugestão anterior de serif editorial — não combina com o trio.
+
 ## 4. Sequência de trabalho
 
 1. ✅ Levantamento da marca antiga (Figma).
 2. ✅ Direção visual macro definida (premium corporativo, verde como acento).
-3. 🔄 **Repensar o portfólio** — três pilares definidos (Salesforce / Data & Analytics / IA & Aplicações). Brief competitivo rodando sobre 6 referências (ver §3.2).
-4. ⏳ Redesenhar arquitetura de seções do site com base no novo portfólio.
+3. ✅ **Repensar o portfólio** — três pilares definidos, brief competitivo rodado (ver `research/competitive-brief.md`), marca consolidada (§3.3).
+4. 🔄 Redesenhar arquitetura de seções do site com base no novo portfólio. **Próximo passo.**
 5. ⏳ Definir sistema visual (tokens, tipografia, paleta refinada).
 6. ⏳ Implementar `index.html` + `assets/css/tokens.css` + páginas.
 7. ⏳ Build do blog Markdown→HTML.
 
 ## 5. Próximos passos imediatos
 
-- Felipe lista 2–4 concorrentes/referências para o competitive-brief (consultorias Salesforce no Brasil, boutiques CRM/BI, ou players globais admirados).
-- Rodar o brief; consolidar gaps de mercado e oportunidades de diferenciação.
-- A partir do brief, definir 3–5 ofertas-núcleo, tagline e diferenciais.
+- Desenhar arquitetura de seções do site (home + páginas de pilar). Estrutura proposta a validar.
+- Travar copy do hero, dos 3 pilares e da seção de metodologia (Trilha 360).
+- Definir sistema visual mínimo (tokens, tipografia, paleta refinada) suficiente pra começar a implementar.
 
 ## 6. Decisões em aberto
 
 - Tagline / posicionamento curto.
 - Manter badge "Salesforce partner" no hero ou só no rodapé?
 - Existem cases públicos para uma seção dedicada, ou usar depoimentos?
-- Tipografia nova — explorar serif editorial (Fraunces / GT Sectra) + sans (Inter / Söhne)?
+- Tipografia nova — sans humanista única (Inter / Söhne / GT America). *Serif editorial descartado em §3.4.*
 
 ## 7. Notas técnicas
 
@@ -89,4 +110,4 @@ Referências secundárias mapeadas, fora do recorte: WeUse, Valtech, Capgemini, 
 ## 8. Histórico de sessões
 
 - **2026-05-21** — Scaffold criado. Levantamento Figma feito. Direção visual macro acordada. Portfólio entrou em revisão (competitive-brief). Documento PLAN.md criado em main.
-- **2026-05-22** — Três pilares do portfólio definidos (Salesforce / Data & Analytics / IA & Aplicações). Shortlist de 6 concorrentes consolidada. Brief competitivo rodado — resultados em `research/competitive-brief.md`.
+- **2026-05-22** — Três pilares do portfólio definidos (Salesforce / Data & Analytics / IA & Aplicações). Shortlist de 6 concorrentes consolidada. Brief competitivo rodado — resultados em `research/competitive-brief.md`. Marca consolidada: tagline "Conhecimento aplicado, como serviço.", metodologia "Trilha 360", posicionamento boutique premium. Cases-âncora: Sem Parar, Bodytech (métricas a alimentar). Produtos SaaS placeholders: agente RH, analytics contábil PME. Inspirações de design definidas: Apple (base), Google (acento), Salesforce (confiança).

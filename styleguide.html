@@ -98,6 +98,20 @@
     .logo-cell .logo-stage { aspect-ratio: 4/3; background: var(--bg-alt); border: 1px solid var(--color-line); border-radius: var(--r-lg); display: flex; align-items: center; justify-content: center; padding: var(--sp-6); }
     .logo-cell figcaption { font-size: var(--fs-14); color: var(--color-fg-muted); }
 
+    /* === Icon-mark explorations === */
+    .icon-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-6); margin-top: var(--sp-12); }
+    @media (max-width: 640px) { .icon-grid { grid-template-columns: 1fr; } }
+    .icon-card { display: flex; flex-direction: column; gap: var(--sp-4); padding: var(--sp-6); border: 1px solid var(--color-line); border-radius: var(--r-lg); background: var(--bg); }
+    .icon-card h4 { font-size: var(--fs-18); font-weight: var(--fw-semibold); letter-spacing: var(--ls-tight); }
+    .icon-card p { font-size: var(--fs-14); color: var(--color-fg-muted); }
+    .icon-stage { aspect-ratio: 1; background: var(--bg-alt); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; min-height: 180px; }
+    .icon-stage.dark { background: var(--bg-dark); }
+    .icon-lockup { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: var(--bg-alt); border-radius: var(--r-md); }
+    .icon-lockup .wordmark { font-weight: var(--fw-bold); font-size: 22px; letter-spacing: var(--ls-tight); }
+    .icon-favicon-row { display: flex; align-items: center; gap: var(--sp-4); font-family: var(--font-mono); font-size: var(--fs-12); color: var(--color-fg-muted); }
+    .icon-favicon-row .bg-fake { background: #fff; border: 1px solid var(--color-line); border-radius: 6px; padding: 4px; display: flex; align-items: center; gap: 4px; }
+    .icon-favicon-row .bg-fake.dark { background: var(--bg-dark); border-color: var(--ink-800); color: #fff; }
+
     /* ====== PALETA ====== */
     .swatch { border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--color-line); background: var(--bg); }
     .swatch .chip { aspect-ratio: 4/3; }
@@ -229,6 +243,7 @@
       </div>
       <div class="sg-nav-links">
         <a href="#logo-vars">Logo</a>
+        <a href="#icon-marks">Mark</a>
         <a href="#cor">Cor</a>
         <a href="#tipo">Tipografia</a>
         <a href="#componentes">Componentes</a>
@@ -353,6 +368,169 @@
         </figure>
       </div>
       <p class="sg-label" style="margin-top: var(--sp-6);">Regra geral: o lockup canônico (01) é o padrão. Os demais resolvem contextos específicos.</p>
+    </div>
+  </section>
+
+  <!-- Ideias de ícone de marca -->
+  <section class="sg" id="icon-marks">
+    <div class="container">
+      <div class="sg-eyebrow" style="color: var(--color-fg-muted);">01c — Ícone de marca (exploração)</div>
+      <h2 class="sg-h2">Quatro ideias de mark</h2>
+      <p class="sg-lead">O wordmark "kliente 360" sempre presente. Ao lado, um ícone que precisa funcionar sozinho em favicon, app icon e avatar social — virar marca mesmo sem o texto. Cada ideia abaixo: ícone grande, lockup, e teste em escala minúscula.</p>
+
+      <div class="icon-grid">
+
+        <!-- A · Aperture (4 dots livres) -->
+        <div class="icon-card">
+          <h4>A · Aperture</h4>
+          <p>Quatro pontos nas posições cardeais — sem container. Forma pura. Lê "360°" como compasso/lente. Minimalismo Apple.</p>
+
+          <div class="icon-stage">
+            <svg viewBox="0 0 80 80" width="120" height="120" aria-label="Aperture mark">
+              <circle cx="40" cy="12" r="8" fill="#009900" opacity="0.4"/>
+              <circle cx="68" cy="40" r="8" fill="#009900" opacity="0.6"/>
+              <circle cx="40" cy="68" r="8" fill="#009900" opacity="0.8"/>
+              <circle cx="12" cy="40" r="8" fill="#009900"/>
+            </svg>
+          </div>
+
+          <div class="icon-lockup">
+            <svg viewBox="0 0 80 80" width="36" height="36">
+              <circle cx="40" cy="12" r="8" fill="#009900" opacity="0.4"/>
+              <circle cx="68" cy="40" r="8" fill="#009900" opacity="0.6"/>
+              <circle cx="40" cy="68" r="8" fill="#009900" opacity="0.8"/>
+              <circle cx="12" cy="40" r="8" fill="#009900"/>
+            </svg>
+            <span class="wordmark">kliente 360</span>
+          </div>
+
+          <div class="icon-favicon-row">
+            <div class="bg-fake">
+              <svg viewBox="0 0 80 80" width="16" height="16"><circle cx="40" cy="12" r="8" fill="#009900" opacity="0.4"/><circle cx="68" cy="40" r="8" fill="#009900" opacity="0.6"/><circle cx="40" cy="68" r="8" fill="#009900" opacity="0.8"/><circle cx="12" cy="40" r="8" fill="#009900"/></svg>
+              <span>kliente360.com</span>
+            </div>
+            <div class="bg-fake dark">
+              <svg viewBox="0 0 80 80" width="16" height="16"><circle cx="40" cy="12" r="8" fill="#00B300" opacity="0.4"/><circle cx="68" cy="40" r="8" fill="#00B300" opacity="0.6"/><circle cx="40" cy="68" r="8" fill="#00B300" opacity="0.8"/><circle cx="12" cy="40" r="8" fill="#00B300"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- B · Tile (squircle preenchido) -->
+        <div class="icon-card">
+          <h4>B · Tile</h4>
+          <p>Os quatro pontos empacotados num squircle preto — vibe app icon iOS. Versão sólida, com peso visual. Reconhecível mesmo a 16px.</p>
+
+          <div class="icon-stage">
+            <svg viewBox="0 0 80 80" width="120" height="120" aria-label="Tile mark">
+              <rect x="0" y="0" width="80" height="80" rx="18" fill="#0a0a0a"/>
+              <circle cx="40" cy="18" r="6" fill="#009900" opacity="0.45"/>
+              <circle cx="62" cy="40" r="6" fill="#009900" opacity="0.65"/>
+              <circle cx="40" cy="62" r="6" fill="#009900" opacity="0.85"/>
+              <circle cx="18" cy="40" r="6" fill="#009900"/>
+            </svg>
+          </div>
+
+          <div class="icon-lockup">
+            <svg viewBox="0 0 80 80" width="36" height="36">
+              <rect x="0" y="0" width="80" height="80" rx="18" fill="#0a0a0a"/>
+              <circle cx="40" cy="18" r="6" fill="#009900" opacity="0.45"/>
+              <circle cx="62" cy="40" r="6" fill="#009900" opacity="0.65"/>
+              <circle cx="40" cy="62" r="6" fill="#009900" opacity="0.85"/>
+              <circle cx="18" cy="40" r="6" fill="#009900"/>
+            </svg>
+            <span class="wordmark">kliente 360</span>
+          </div>
+
+          <div class="icon-favicon-row">
+            <div class="bg-fake">
+              <svg viewBox="0 0 80 80" width="16" height="16"><rect width="80" height="80" rx="18" fill="#0a0a0a"/><circle cx="40" cy="18" r="6" fill="#009900" opacity="0.45"/><circle cx="62" cy="40" r="6" fill="#009900" opacity="0.65"/><circle cx="40" cy="62" r="6" fill="#009900" opacity="0.85"/><circle cx="18" cy="40" r="6" fill="#009900"/></svg>
+              <span>kliente360.com</span>
+            </div>
+            <div class="bg-fake dark">
+              <svg viewBox="0 0 80 80" width="16" height="16"><rect width="80" height="80" rx="18" fill="#fff"/><circle cx="40" cy="18" r="6" fill="#009900" opacity="0.45"/><circle cx="62" cy="40" r="6" fill="#009900" opacity="0.65"/><circle cx="40" cy="62" r="6" fill="#009900" opacity="0.85"/><circle cx="18" cy="40" r="6" fill="#009900"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- C · Orbit -->
+        <div class="icon-card">
+          <h4>C · Orbit</h4>
+          <p>Cliente no centro, 360° ao redor. Conta uma história: "você no meio, e tudo o que precisa ao redor". Conceito mais narrativo.</p>
+
+          <div class="icon-stage">
+            <svg viewBox="0 0 80 80" width="120" height="120" aria-label="Orbit mark">
+              <circle cx="40" cy="40" r="38" fill="none" stroke="#009900" stroke-opacity="0.15" stroke-width="1"/>
+              <circle cx="40" cy="40" r="10" fill="#0a0a0a"/>
+              <circle cx="40" cy="8" r="5" fill="#009900" opacity="0.5"/>
+              <circle cx="72" cy="40" r="5" fill="#009900" opacity="0.7"/>
+              <circle cx="40" cy="72" r="5" fill="#009900" opacity="0.85"/>
+              <circle cx="8" cy="40" r="5" fill="#009900"/>
+            </svg>
+          </div>
+
+          <div class="icon-lockup">
+            <svg viewBox="0 0 80 80" width="36" height="36">
+              <circle cx="40" cy="40" r="38" fill="none" stroke="#009900" stroke-opacity="0.15" stroke-width="1"/>
+              <circle cx="40" cy="40" r="10" fill="#0a0a0a"/>
+              <circle cx="40" cy="8" r="5" fill="#009900" opacity="0.5"/>
+              <circle cx="72" cy="40" r="5" fill="#009900" opacity="0.7"/>
+              <circle cx="40" cy="72" r="5" fill="#009900" opacity="0.85"/>
+              <circle cx="8" cy="40" r="5" fill="#009900"/>
+            </svg>
+            <span class="wordmark">kliente 360</span>
+          </div>
+
+          <div class="icon-favicon-row">
+            <div class="bg-fake">
+              <svg viewBox="0 0 80 80" width="16" height="16"><circle cx="40" cy="40" r="10" fill="#0a0a0a"/><circle cx="40" cy="8" r="5" fill="#009900" opacity="0.5"/><circle cx="72" cy="40" r="5" fill="#009900" opacity="0.7"/><circle cx="40" cy="72" r="5" fill="#009900" opacity="0.85"/><circle cx="8" cy="40" r="5" fill="#009900"/></svg>
+              <span>kliente360.com</span>
+            </div>
+            <div class="bg-fake dark">
+              <svg viewBox="0 0 80 80" width="16" height="16"><circle cx="40" cy="40" r="10" fill="#fff"/><circle cx="40" cy="8" r="5" fill="#00B300" opacity="0.5"/><circle cx="72" cy="40" r="5" fill="#00B300" opacity="0.7"/><circle cx="40" cy="72" r="5" fill="#00B300" opacity="0.85"/><circle cx="8" cy="40" r="5" fill="#00B300"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- D · Ring 360 -->
+        <div class="icon-card">
+          <h4>D · Ring 360</h4>
+          <p>Os quatro pontos conectados por um anel sutil — torna o "360°" literal, sem ser desenho de bola. Forma rítmica, lê em qualquer tamanho.</p>
+
+          <div class="icon-stage">
+            <svg viewBox="0 0 80 80" width="120" height="120" aria-label="Ring 360 mark">
+              <circle cx="40" cy="40" r="28" fill="none" stroke="#0a0a0a" stroke-width="2"/>
+              <circle cx="40" cy="12" r="6" fill="#009900"/>
+              <circle cx="68" cy="40" r="6" fill="#009900"/>
+              <circle cx="40" cy="68" r="6" fill="#009900"/>
+              <circle cx="12" cy="40" r="6" fill="#009900"/>
+            </svg>
+          </div>
+
+          <div class="icon-lockup">
+            <svg viewBox="0 0 80 80" width="36" height="36">
+              <circle cx="40" cy="40" r="28" fill="none" stroke="#0a0a0a" stroke-width="2"/>
+              <circle cx="40" cy="12" r="6" fill="#009900"/>
+              <circle cx="68" cy="40" r="6" fill="#009900"/>
+              <circle cx="40" cy="68" r="6" fill="#009900"/>
+              <circle cx="12" cy="40" r="6" fill="#009900"/>
+            </svg>
+            <span class="wordmark">kliente 360</span>
+          </div>
+
+          <div class="icon-favicon-row">
+            <div class="bg-fake">
+              <svg viewBox="0 0 80 80" width="16" height="16"><circle cx="40" cy="40" r="28" fill="none" stroke="#0a0a0a" stroke-width="4"/><circle cx="40" cy="12" r="8" fill="#009900"/><circle cx="68" cy="40" r="8" fill="#009900"/><circle cx="40" cy="68" r="8" fill="#009900"/><circle cx="12" cy="40" r="8" fill="#009900"/></svg>
+              <span>kliente360.com</span>
+            </div>
+            <div class="bg-fake dark">
+              <svg viewBox="0 0 80 80" width="16" height="16"><circle cx="40" cy="40" r="28" fill="none" stroke="#fff" stroke-width="4"/><circle cx="40" cy="12" r="8" fill="#00B300"/><circle cx="68" cy="40" r="8" fill="#00B300"/><circle cx="40" cy="68" r="8" fill="#00B300"/><circle cx="12" cy="40" r="8" fill="#00B300"/></svg>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="sg-label" style="margin-top: var(--sp-8);">Todos preservam o motif dos 4 círculos do logo original. A escolha define se a marca quer ser <strong>pura</strong> (A), <strong>sólida e moderna</strong> (B), <strong>narrativa</strong> (C) ou <strong>literal-360</strong> (D).</p>
     </div>
   </section>
 

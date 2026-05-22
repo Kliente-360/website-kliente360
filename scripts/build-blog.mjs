@@ -313,8 +313,10 @@ ${navHtml('/blog/' + post.slug)}
 
       <header class="post-header">
         <div class="container container-narrow">
-          <a class="post-back" href="${blogHref}">${escapeHtml(S.blogBack)}</a>
-          <span class="pill-pillar">${escapeHtml(pillarLabel)}</span>
+          <div class="post-header-top">
+            <span class="pill-pillar">${escapeHtml(pillarLabel)}</span>
+            <a class="post-back" href="${blogHref}">${escapeHtml(S.blogBack)}</a>
+          </div>
           <h1>${escapeHtml(t.title)}</h1>
           <div class="post-meta-line">
             <time datetime="${post.date}">${formatDate(post.date, lang)}</time>

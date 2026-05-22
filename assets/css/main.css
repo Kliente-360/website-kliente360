@@ -674,14 +674,23 @@ body {
 
 .post-header { padding-block: var(--sp-16) var(--sp-12); border-bottom: 1px solid var(--color-line); position: relative; }
 @media (min-width: 768px) { .post-header { padding-block: var(--sp-24) var(--sp-16); } }
+
+/* Linha superior do header: pílula à esquerda, link "Blog" à direita */
+.post-header-top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
 .post-back {
   display: inline-flex; align-items: center; gap: 6px;
-  font-size: var(--fs-14); color: var(--color-fg-muted);
-  margin-bottom: var(--sp-6);
+  font-size: var(--fs-14);
+  font-weight: var(--fw-medium);
+  color: var(--color-accent);
   transition: color var(--dur-fast) var(--ease-out);
+  white-space: nowrap;
 }
-.post-back:hover { color: var(--c-pillar); }
 .post-back::before { content: "←"; }
+.post-back:hover { color: var(--color-accent-hover); }
 
 .post-header .pill-pillar { font-size: var(--fs-14); padding: 6px 14px; }
 .post-header h1 {

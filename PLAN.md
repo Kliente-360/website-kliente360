@@ -2,7 +2,7 @@
 
 Documento mantido em main. Registra contexto, decisões tomadas e próximos passos. Atualizar a cada sessão.
 
-Última atualização: 2026-05-22.
+Última atualização: 2026-05-22 (segunda passada).
 
 ---
 
@@ -97,28 +97,49 @@ Referências: **Apple**, **Google**, **Salesforce**. Síntese aplicada:
 - **Camada de confiança ← Salesforce**: bloco de parceria/certificações, cases nomeados com números, copy explicativa sem rebuscar.
 - **Tipografia**: sans humanista única, 2 pesos. Candidatos: **Inter**, **Söhne**, **GT America**. Reverte a sugestão anterior de serif editorial — não combina com o trio.
 
-## 4. Sequência de trabalho
+## 4. Sequência de trabalho — entregue
 
-1. ✅ Levantamento da marca antiga (Figma).
-2. ✅ Direção visual macro definida (premium corporativo, verde como acento).
-3. ✅ **Repensar o portfólio** — três pilares definidos, brief competitivo rodado (ver `research/competitive-brief.md`), marca consolidada (§3.3).
-4. 🔄 Redesenhar arquitetura de seções do site com base no novo portfólio. **Próximo passo.**
-5. ⏳ Definir sistema visual (tokens, tipografia, paleta refinada).
-6. ⏳ Implementar `index.html` + `assets/css/tokens.css` + páginas.
-7. ⏳ Build do blog Markdown→HTML.
+| # | Etapa | Status |
+|---|---|---|
+| 1 | Levantamento da marca antiga (Figma) | ✅ |
+| 2 | Direção visual macro (boutique premium, verde como acento) | ✅ |
+| 3 | Portfólio repensado — três pilares + competitive-brief (`research/competitive-brief.md`) | ✅ |
+| 4 | Arquitetura do site (single-page, 10 seções, pilares com cor secundária) | ✅ |
+| 5 | Sistema visual definitivo — tokens, paleta, tipografia (§3.4) | ✅ |
+| 6 | Implementação `index.html` + tokens.css + reset.css + main.css | ✅ |
+| 7 | Build do blog Markdown→HTML (`scripts/build-blog.mjs`) | ✅ |
+
+### Entregas adicionais (além da sequência inicial)
+
+- **Mark "Aperture"** — 4 pontos em losango compacto, escolhido em §3.4.
+- **Styleguide** publicado em `/styleguide.html`.
+- **Blog multilíngue PT/EN/ES** com 3 posts iniciais publicados (`/blog/`, `/blog/en/`, `/blog/es/`).
+- **i18n real** — dicionário + redirect entre variantes nas páginas do blog.
+- **SEO + GEO**: JSON-LD `Article`, OG, canonical, sitemap auto, robots, favicon SVG, og-image.png renderizado no build.
+- **Home teaser de blog** auto-popular (3 mais recentes a partir de `assets/data/posts.json`).
+- **34 temas de back-catálogo 2026** mapeados, datas Tue/Wed válidas atribuídas.
+- **Routine de publicação** ativada com prompt completo (cadência, pilares rotacionados, SEO/GEO, idiomas).
+- **Cache invalidation** robusto no Netlify (`_headers` + `netlify.toml` + meta + querystring).
+- **Cadência editorial documentada**: 1 post Tue + 1 Wed, pulando feriados nacionais e Aniversário de SP.
 
 ## 5. Próximos passos imediatos
 
-- ✅ Sistema visual v0.1 publicado em `styleguide.html` (tokens, paleta, tipografia, componentes, Trilha 360, hero mock light + dark, tom de voz).
-- 🔄 Validar styleguide com Felipe. Ajustes pontuais antes de evoluir para o site grande.
-- ⏳ Após validação: arquitetura final aplicada em `index.html`, copy travada, decisões de i18n (PT/EN/ES).
+- ⏳ Observar a routine rodar pelas próximas semanas e ajustar prompt se necessário.
+- ⏳ Quando aprovados pelos clientes: alimentar métricas reais dos cases Sem Parar e Bodytech.
+- ⏳ Conectar o form de contato a um endpoint real (Formspree / Netlify Forms / API própria) — hoje só faz feedback visual.
+- ⏳ Trocar WhatsApp e badge Salesforce (ver §7.1).
 
-## 6. Decisões em aberto
+## 6. Decisões fechadas
 
-- Tagline / posicionamento curto.
-- Manter badge "Salesforce partner" no hero ou só no rodapé?
-- Existem cases públicos para uma seção dedicada, ou usar depoimentos?
-- Tipografia nova — sans humanista única (Inter / Söhne / GT America). *Serif editorial descartado em §3.4.*
+| Tema | Decisão |
+|---|---|
+| Tagline | "Conhecimento aplicado, como serviço." |
+| Tipografia | **Inter** como sans humanista única, 2–3 pesos. *Serif editorial descartado.* |
+| Badge "Salesforce Partner" | Mantido no hero. Atualizar pra badge oficial recomendado pelo branding Salesforce (ver §7.1). |
+| Cases públicos vs depoimentos | Cases nomeados (Sem Parar, Bodytech) com métricas a alimentar quando aprovadas. |
+| Cores antigas | Yellow e Cyan descartados. Navy reaproveitado como `--bg-deep`. |
+| Workflow Git | Direto em `main`, sem feature branches. |
+| Cadência do blog | Tue + Wed, pulando feriados nacionais BR + Aniversário SP. Rotação dos 3 pilares. |
 
 ## 7. Notas técnicas
 
@@ -130,8 +151,13 @@ Referências: **Apple**, **Google**, **Salesforce**. Síntese aplicada:
 ## 7.1. Parking lot — pendências a resolver
 
 - **WhatsApp**: número atual `5511961875594` (link `http://wa.me/5511961875594`) é provisório — trocar pelo número oficial da Kliente 360 quando definido. Aparece em `index.html` (seção Contato + footer) e em `scripts/build-blog.mjs` (footer das páginas geradas).
+- **Badge "Salesforce Partner"**: hoje é uma pílula `pill-line` textual no hero (`index.html` §"Hero"). Trocar pelo badge oficial recomendado pelo branding Salesforce assim que tivermos acesso ao kit oficial — pode exigir SVG/PNG fornecido pela Salesforce + manter requisitos de uso da marca.
+- **Cases com métricas reais**: Sem Parar e Bodytech estão como placeholders dashed em `index.html` §"Cases". Trocar `—` pela métrica e o `lbl` pelo dado quando aprovados pelos clientes.
+- **Endpoint do form de contato**: hoje só faz feedback visual no submit (em `assets/js/main.js`). Integrar com Formspree / Netlify Forms / API própria quando definirmos.
+- **OG image PNG via build**: hoje funciona via `@resvg/resvg-js`. Se quisermos imagens OG dinâmicas por post (com título do post), virar tarefa futura.
 
 ## 8. Histórico de sessões
 
 - **2026-05-21** — Scaffold criado. Levantamento Figma feito. Direção visual macro acordada. Portfólio entrou em revisão (competitive-brief). Documento PLAN.md criado em main.
 - **2026-05-22** — Três pilares do portfólio definidos (Salesforce / Data & Analytics / IA & Aplicações). Shortlist de 6 concorrentes consolidada. Brief competitivo rodado — resultados em `research/competitive-brief.md`. Marca consolidada: tagline "Conhecimento aplicado, como serviço.", metodologia "Trilha 360", posicionamento boutique premium. Cases-âncora: Sem Parar, Bodytech (métricas a alimentar). Produtos SaaS placeholders: agente RH, analytics contábil PME. Inspirações de design definidas: Apple (base), Google (acento), Salesforce (confiança). Arquitetura da home decidida (single-page, 10 seções, pilares na home). Idiomas: PT/EN/ES. Trilha 360 definida: Mapear → Prototipar → Validar → Implantar → Sustentar. Styleguide v0.1 publicado em `styleguide.html` para validação antes do site grande.
+- **2026-05-22 (segunda passada)** — Site grande implementado e refinado: nav sticky com blur, hero com mark Aperture, 3 pilares + 3 seções deep, Trilha 360 horizontal, cases, confiança, blog teaser, contato, footer. Sistema de cor refinado (logo green sagrado vs UI green editorial; secundárias por pilar; navy resgatado como `--bg-deep`). i18n real PT/EN/ES com redirect inteligente. Build MD→HTML multilíngue (`scripts/build-blog.mjs`) — 3 posts publicados em PT/EN/ES com cadência Tue/Wed (13, 19, 20 mai). 34 temas mapeados para back-catálogo 2026. Routine de blog ativada. Favicon SVG + og-image.png gerado por `@resvg/resvg-js`. Sitemap + robots + JSON-LD `Article`. Cache invalidation robusto no Netlify. Tipografia do post editorial (escala suave, sem barra colorida, padrão bold-lead-in para subseções curtas). LinkedIn oficial + WhatsApp provisório adicionados (parking).

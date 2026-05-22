@@ -179,12 +179,14 @@ body {
 
 /* ============ BUTTONS ============ */
 .btn {
-  display: inline-flex; align-items: center; gap: var(--sp-2);
-  padding: 13px 22px;
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2);
+  min-height: 46px;
+  padding: 0 22px;
   border-radius: var(--r-pill);
   border: 1px solid transparent;
   font-weight: var(--fw-medium);
   font-size: var(--fs-16);
+  line-height: 1;
   letter-spacing: var(--ls-tight);
   transition: background var(--dur-base) var(--ease-out),
               color var(--dur-base) var(--ease-out),
@@ -202,6 +204,8 @@ body {
 .btn-ghost:hover { background: var(--bg-alt); }
 .btn-on-dark { background: #fff; color: var(--ink-900); border-color: #fff; }
 .btn-on-dark:hover { background: var(--bg-alt); }
+.btn-ghost-dark { background: transparent; color: #fff; border-color: rgba(255,255,255,0.25); }
+.btn-ghost-dark:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); }
 .btn-link { padding: 0; color: var(--color-accent); font-weight: var(--fw-medium); display: inline-flex; align-items: center; gap: 6px; }
 .btn-link::after { content: "→"; transition: transform var(--dur-base) var(--ease-out); display: inline-block; }
 .btn-link:hover { color: var(--color-accent-hover); }

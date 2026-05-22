@@ -2,7 +2,7 @@
 title: "Cuándo un agente es la respuesta — y cuándo es huida de un problema mal modelado"
 slug: "quando-agente-e-resposta"
 pillar: "ai"
-date: "2026-05-14"
+date: "2026-05-20"
 readMinutes: 6
 excerpt: "Un agente de IA no arregla un proceso torcido. Cinco preguntas para validar, y el camino del MVP en cuatro semanas."
 tldr: "Un agente de IA no arregla un proceso torcido — lo amplifica. Antes de implantar, valida cinco preguntas. Si pasas, monta un MVP en cuatro semanas con KPI claro. Si no pasas, arregla el proceso antes."

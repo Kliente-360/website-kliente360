@@ -2,7 +2,7 @@
 title: "Tableau como linguagem executiva: matando o dashboard de vaidade"
 slug: "tableau-linguagem-executiva"
 pillar: "data"
-date: "2026-05-08"
+date: "2026-05-13"
 readMinutes: 5
 excerpt: "Dashboard executivo bom é o que vira decisão na sala. Pare de medir, comece a recomendar."
 tldr: "A maioria dos dashboards executivos não muda decisão alguma. Custam tempo de construção, atenção da diretoria, e dão a falsa sensação de gestão data-driven. Como sair desse padrão em três movimentos."

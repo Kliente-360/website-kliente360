@@ -2,7 +2,7 @@
 title: "Quando um agente é a resposta — e quando ele é fuga de problema mal modelado"
 slug: "quando-agente-e-resposta"
 pillar: "ai"
-date: "2026-05-14"
+date: "2026-05-20"
 readMinutes: 6
 excerpt: "Agente de IA não conserta processo torto. Cinco perguntas para validar, e o caminho do MVP em quatro semanas."
 tldr: "Agente de IA não conserta processo torto — amplifica. Antes de implantar, valide cinco perguntas. Se passar, monte um MVP em quatro semanas com KPI claro. Se não passar, conserte o processo antes."

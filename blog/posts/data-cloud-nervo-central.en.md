@@ -2,7 +2,7 @@
 title: "Data Cloud is no longer a CDP — it's the central nervous system of Salesforce"
 slug: "data-cloud-nervo-central"
 pillar: "sf"
-date: "2026-05-12"
+date: "2026-05-19"
 readMinutes: 7
 excerpt: "Anyone still treating Data Cloud as a CDP misses the best of Agentforce and the new platform. The conceptual shift in three points."
 tldr: "Data Cloud has transcended the CDP concept. In 2026 it is the context layer on which Agentforce, Marketing Cloud and the rest of the platform operate. Treating it as 'just a CDP' leaves value on the table."

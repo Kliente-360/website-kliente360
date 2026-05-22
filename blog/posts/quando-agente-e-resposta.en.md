@@ -2,7 +2,7 @@
 title: "When an agent is the answer — and when it's an escape from a poorly modeled problem"
 slug: "quando-agente-e-resposta"
 pillar: "ai"
-date: "2026-05-14"
+date: "2026-05-20"
 readMinutes: 6
 excerpt: "An AI agent does not fix a broken process. Five questions to validate readiness, and the MVP path in four weeks."
 tldr: "An AI agent does not fix a broken process — it amplifies it. Before deploying, validate five questions. If you pass, build an MVP in four weeks with a clear KPI. If you don't, fix the process first."

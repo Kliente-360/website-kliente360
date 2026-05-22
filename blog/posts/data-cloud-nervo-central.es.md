@@ -2,7 +2,7 @@
 title: "Data Cloud ya no es CDP — es el nervio central de Salesforce"
 slug: "data-cloud-nervo-central"
 pillar: "sf"
-date: "2026-05-12"
+date: "2026-05-19"
 readMinutes: 7
 excerpt: "Quien aún trata Data Cloud como CDP pierde lo mejor de Agentforce y de la nueva plataforma. El salto conceptual en tres puntos."
 tldr: "Data Cloud trascendió el concepto de CDP. En 2026 es la capa de contexto sobre la que Agentforce, Marketing Cloud y el resto de la plataforma operan. Tratarlo como 'solo CDP' deja valor sobre la mesa."

@@ -2,7 +2,7 @@
 title: "Tableau as an executive language: killing the vanity dashboard"
 slug: "tableau-linguagem-executiva"
 pillar: "data"
-date: "2026-05-08"
+date: "2026-05-13"
 readMinutes: 5
 excerpt: "A good executive dashboard is the one that turns into a decision in the room. Stop measuring, start recommending."
 tldr: "Most executive dashboards don't change any decision. They cost build time, board attention, and create a false sense of data-driven management. How to leave that pattern in three moves."

@@ -2,66 +2,66 @@
   {
     "slug": "quando-agente-e-resposta",
     "pillar": "ai",
-    "date": "2026-05-14",
+    "date": "2026-05-20",
     "translations": {
       "pt": {
         "title": "Quando um agente é a resposta — e quando ele é fuga de problema mal modelado",
         "url": "/blog/quando-agente-e-resposta.html",
-        "date": "14 mai 2026"
+        "date": "20 mai 2026"
       },
       "en": {
         "title": "When an agent is the answer — and when it's an escape from a poorly modeled problem",
         "url": "/blog/en/quando-agente-e-resposta.html",
-        "date": "14 May 2026"
+        "date": "20 May 2026"
       },
       "es": {
         "title": "Cuándo un agente es la respuesta — y cuándo es huida de un problema mal modelado",
         "url": "/blog/es/quando-agente-e-resposta.html",
-        "date": "14 may 2026"
+        "date": "20 may 2026"
       }
     }
   },
   {
     "slug": "data-cloud-nervo-central",
     "pillar": "sf",
-    "date": "2026-05-12",
+    "date": "2026-05-19",
     "translations": {
       "pt": {
         "title": "Data Cloud não é mais CDP — é o nervo central do Salesforce",
         "url": "/blog/data-cloud-nervo-central.html",
-        "date": "12 mai 2026"
+        "date": "19 mai 2026"
       },
       "en": {
         "title": "Data Cloud is no longer a CDP — it's the central nervous system of Salesforce",
         "url": "/blog/en/data-cloud-nervo-central.html",
-        "date": "12 May 2026"
+        "date": "19 May 2026"
       },
       "es": {
         "title": "Data Cloud ya no es CDP — es el nervio central de Salesforce",
         "url": "/blog/es/data-cloud-nervo-central.html",
-        "date": "12 may 2026"
+        "date": "19 may 2026"
       }
     }
   },
   {
     "slug": "tableau-linguagem-executiva",
     "pillar": "data",
-    "date": "2026-05-08",
+    "date": "2026-05-13",
     "translations": {
       "pt": {
         "title": "Tableau como linguagem executiva: matando o dashboard de vaidade",
         "url": "/blog/tableau-linguagem-executiva.html",
-        "date": "8 mai 2026"
+        "date": "13 mai 2026"
       },
       "en": {
         "title": "Tableau as an executive language: killing the vanity dashboard",
         "url": "/blog/en/tableau-linguagem-executiva.html",
-        "date": "8 May 2026"
+        "date": "13 May 2026"
       },
       "es": {
         "title": "Tableau como lenguaje ejecutivo: matando el dashboard de vanidad",
         "url": "/blog/es/tableau-linguagem-executiva.html",
-        "date": "8 may 2026"
+        "date": "13 may 2026"
       }
     }
   }

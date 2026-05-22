@@ -103,6 +103,40 @@ A listagem `/blog/`, `/blog/en/` e `/blog/es/` mostra apenas posts com traduçã
 - `README.md` — esta documentação. Ignorada pelo build.
 - Qualquer arquivo iniciado por `_` é ignorado (use para rascunhos: `_draft-meu-post.md`).
 
+## Cadência de publicação
+
+O blog tem um ritmo definido — **1 post na terça + 1 post na quarta, toda semana**. O agente de publicação deve respeitar esse padrão ao escolher a `date:` do novo post.
+
+### Regras
+
+1. **Apenas terças ou quartas** — nunca segunda, quinta, sexta, fim de semana.
+2. **Pular feriados** nacionais brasileiros e municipais da cidade de São Paulo:
+   - **Nacionais fixos**: 01/01, 21/04, 01/05, 07/09, 12/10, 02/11, 15/11, 20/11, 25/12.
+   - **Nacionais móveis**: Carnaval (segunda + terça), Quarta-feira de Cinzas (meio expediente), Sexta-feira Santa, Corpus Christi (quinta, 60 dias após a Páscoa).
+   - **Município SP**: 25/01 (Aniversário de São Paulo).
+   - Se a terça ou quarta cair em feriado, **pula essa data** e publica só a outra do par naquela semana.
+3. **Alternar pilares** — não publicar 2 posts do mesmo pilar na mesma semana, salvo justificativa editorial.
+4. **Datas no passado** — ao backdate posts (criar back-catálogo), seguir essas mesmas regras. Datas plausíveis: 2–6 meses para trás. Não datar no futuro.
+
+### Próximas datas válidas (referência)
+
+Calcule a partir da última `date` publicada em `posts/`. Se já houver post nessa data, vá pro próximo slot Tue/Wed válido.
+
+```
+data mais recente em posts/  →  encontrar próxima Tue/Wed disponível
+                              →  checar feriados (acima)
+                              →  se válida, usar; senão pular pra próxima
+```
+
+### Estado atual
+
+Os 3 primeiros posts foram backdated para criar o início do back-catálogo:
+- Quarta 13/05/2026 — `tableau-linguagem-executiva` (Data)
+- Terça 19/05/2026 — `data-cloud-nervo-central` (Salesforce)
+- Quarta 20/05/2026 — `quando-agente-e-resposta` (IA)
+
+A próxima publicação esperada é **terça 26/05/2026** (próximo Tue), seguida de **quarta 27/05/2026**.
+
 ## Tom de voz
 
 Boutique informada falando com decisor informado. Direto, técnico, sem clichês.

@@ -620,6 +620,12 @@ body {
 [data-pillar="ai"]   .pill-pillar { background: color-mix(in srgb, var(--c-ai) 12%, transparent); color: var(--c-ai); }
 .section.dark [data-pillar="ai"] .pill-pillar { background: rgba(167,139,250,0.18); color: #A78BFA; }
 
+/* Override de maior especificidade: a pílula dentro de um post-card sempre segue
+ * o pilar do próprio card, nunca o do article/section ancestral. */
+.post-card[data-pillar="sf"]   .pill-pillar { background: color-mix(in srgb, var(--c-salesforce) 12%, transparent); color: var(--c-salesforce); }
+.post-card[data-pillar="data"] .pill-pillar { background: color-mix(in srgb, var(--c-data) 16%, transparent); color: #8a6f15; }
+.post-card[data-pillar="ai"]   .pill-pillar { background: color-mix(in srgb, var(--c-ai) 12%, transparent); color: var(--c-ai); }
+
 /* ============ BLOG LANDING ============ */
 .blog-hero { padding-block: var(--sp-16) var(--sp-12); }
 @media (min-width: 768px) { .blog-hero { padding-block: var(--sp-24) var(--sp-16); } }
@@ -700,12 +706,7 @@ body {
   max-width: var(--container-narrow); margin: 0 auto;
 }
 @media (min-width: 768px) {
-  .post-body {
-    padding-block: var(--sp-16) var(--sp-24);
-    padding-left: var(--sp-8);
-    border-left: 2px solid var(--c-pillar);
-    margin-left: auto; margin-right: auto;
-  }
+  .post-body { padding-block: var(--sp-16) var(--sp-24); }
 }
 .post-body > * { margin-bottom: var(--sp-6); }
 

@@ -87,6 +87,6 @@ Whoever complains about contracts without having felt the impact of a break usua
 
 If your company has a data team that fights fires often, and the root cause shows up in "change to source schema", data contracts are the path. Not as a 12-month project; as incremental adoption over 3 critical entities, with tooling [dbt already offers natively](/blog/en/dbt-na-pratica.html).
 
-If your company doesn't have a mature data team yet, contract is premature. Other disciplines need to come first — basic observability, clear model ownership, quality eval set. Implementing contract on top of chaos just formalizes the chaos.
+If your company doesn't have a mature data team yet, contract is premature. Other disciplines need to come first — [data observability](/blog/en/observabilidade-de-dados.html), clear model ownership, quality eval set. Implementing contract on top of chaos just formalizes the chaos.
 
 Contracts don't create a quality culture — they only crystallize the one that already exists or has started to. That's the real test before adopting.

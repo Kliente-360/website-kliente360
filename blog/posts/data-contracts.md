@@ -87,6 +87,6 @@ Quem reclama de contract sem ter sentido o impacto da quebra geralmente nunca fo
 
 Se sua empresa tem time de dados que apaga incêndio com frequência, e a causa raiz aparece em "mudança no schema fonte", data contracts são o caminho. Não como projeto de 12 meses; como adoção incremental sobre 3 entidades críticas, com ferramenta que [dbt já oferece nativamente](/blog/dbt-na-pratica.html).
 
-Se sua empresa não tem time de dados maduro ainda, contract é pré-maturo. Outras disciplinas precisam vir antes — observabilidade básica, ownership claro de modelo, eval set de qualidade. Implementar contract em cima de caos só formaliza o caos.
+Se sua empresa não tem time de dados maduro ainda, contract é pré-maturo. Outras disciplinas precisam vir antes — [observabilidade de dados](/blog/observabilidade-de-dados.html), ownership claro de modelo, eval set de qualidade. Implementar contract em cima de caos só formaliza o caos.
 
 Contract não cria cultura de qualidade — só cristaliza a que já existe ou começou a existir. Esse é o teste real antes de adotar.

@@ -259,7 +259,6 @@
           <p>Diagnóstico inicial sem compromisso. Em uma semana fazemos a primeira leitura do seu cenário e devolvemos um relatório.</p>
           <div class="cta-row">
             <a class="btn btn-pillar" href="/#contato">Falar com um sócio</a>
-            <a class="btn btn-ghost-dark" href="/blog/">Ler antes de contratar</a>
           </div>
         </div>
       </section>
@@ -336,7 +335,7 @@
           es: { sf: 'Pilar 01 · Salesforce', data: 'Pilar 02 · Data', ai: 'Pilar 03 · IA' },
         };
         const READ = { pt: 'Ler →', en: 'Read →', es: 'Leer →' };
-        const posts = manifest.filter(p => p.pillar === pillar);
+        const posts = manifest.filter(p => p.pillar === pillar).slice(0, 6);
         grid.innerHTML = posts.map(post => {
           const tr = post.translations[lang] || post.translations.pt;
           return `

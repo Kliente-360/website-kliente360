@@ -821,6 +821,12 @@ a.card:hover, .card.linked:hover {
   font-weight: var(--fw-medium);
 }
 
+/* Pillar page: rende 6 posts; no mobile mostra só 3 pra evitar scroll fatigue.
+ * Index do blog continua exaustivo. */
+@media (max-width: 767px) {
+  #pp-posts-grid > .post-card:nth-child(n+4) { display: none; }
+}
+
 /* Pill por pilar — reutilizável */
 .pill-pillar {
   display: inline-flex; align-items: center; gap: 6px;

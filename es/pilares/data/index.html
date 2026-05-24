@@ -203,7 +203,6 @@
           <p>Diagnóstico inicial sin compromiso. Hacemos una primera lectura de tu escenario en una semana y te enviamos un informe.</p>
           <div class="cta-row">
             <a class="btn btn-pillar" href="/#contato">Hablar con un socio</a>
-            <a class="btn btn-ghost-dark" href="/blog/es/">Leer antes de contratar</a>
           </div>
         </div>
       </section>
@@ -269,7 +268,7 @@
         const res = await fetch('/assets/data/posts.json');
         const manifest = await res.json();
         const PILLAR_LABELS = { sf: 'Pilar 01 · Salesforce', data: 'Pilar 02 · Data', ai: 'Pilar 03 · IA' };
-        const posts = manifest.filter(p => p.pillar === pillar);
+        const posts = manifest.filter(p => p.pillar === pillar).slice(0, 6);
         grid.innerHTML = posts.map(post => {
           const tr = post.translations.es || post.translations.pt;
           return `<a class="card post-card" data-pillar="${post.pillar}" href="${tr.url}">

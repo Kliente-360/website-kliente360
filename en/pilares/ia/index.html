@@ -202,7 +202,6 @@
           <p>Initial diagnostic with no commitment. We do a first read of your scenario in a week and send back a report.</p>
           <div class="cta-row">
             <a class="btn btn-pillar" href="/#contato">Talk to a partner</a>
-            <a class="btn btn-ghost-dark" href="/blog/en/">Read before hiring</a>
           </div>
         </div>
       </section>
@@ -268,7 +267,7 @@
         const res = await fetch('/assets/data/posts.json');
         const manifest = await res.json();
         const PILLAR_LABELS = { sf: 'Practice 01 · Salesforce', data: 'Practice 02 · Data', ai: 'Practice 03 · AI' };
-        const posts = manifest.filter(p => p.pillar === pillar);
+        const posts = manifest.filter(p => p.pillar === pillar).slice(0, 6);
         grid.innerHTML = posts.map(post => {
           const tr = post.translations.en || post.translations.pt;
           return `<a class="card post-card" data-pillar="${post.pillar}" href="${tr.url}">

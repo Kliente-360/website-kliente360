@@ -86,6 +86,8 @@ const STRINGS = {
     searchPlaceholder: 'Buscar no conteúdo',
     searchEmpty: 'Nenhum post corresponde à busca.',
     searchLoading: 'Buscando…',
+    loadMore: 'Carregar mais',
+    loadMoreOf: 'de',
   },
   en: {
     pillars: { sf: 'Practice 01 · Salesforce', data: 'Practice 02 · Data', ai: 'Practice 03 · AI' },
@@ -114,6 +116,8 @@ const STRINGS = {
     searchPlaceholder: 'Search content',
     searchEmpty: 'No post matches the search.',
     searchLoading: 'Searching…',
+    loadMore: 'Load more',
+    loadMoreOf: 'of',
   },
   es: {
     pillars: { sf: 'Pilar 01 · Salesforce', data: 'Pilar 02 · Data', ai: 'Pilar 03 · IA' },
@@ -142,6 +146,8 @@ const STRINGS = {
     searchPlaceholder: 'Buscar contenido',
     searchEmpty: 'Ningún post coincide con la búsqueda.',
     searchLoading: 'Buscando…',
+    loadMore: 'Cargar más',
+    loadMoreOf: 'de',
   },
 };
 
@@ -717,6 +723,10 @@ ${posts.map(p => `          <a class="card post-card" data-pillar="${p.pillar}" 
           <div class="blog-search-status" data-blog-search-status></div>
           <div class="grid-cards cols-2-3" data-blog-search-list></div>
         </div>
+        <div class="blog-more" data-blog-more hidden>
+          <div class="blog-more-count" data-blog-more-count aria-live="polite"></div>
+          <button type="button" class="btn btn-ghost" data-blog-more-btn>${escapeHtml(S.loadMore)}</button>
+        </div>
       </div>
     </section>
   </main>
@@ -726,14 +736,39 @@ ${footerHtml}
   <script src="/assets/js/i18n.js?v=${ASSET_VERSION}"></script>
   <script src="/assets/js/main.js?v=${ASSET_VERSION}" type="module"></script>
   <script type="module">
-    // Busca Pagefind no listing — full-text com filtro de pilar.
+    // Busca Pagefind no listing + load-more na navegação por chips.
     const input  = document.querySelector('[data-blog-search]');
     const grid   = document.querySelector('[data-blog-grid]');
     const wrap   = document.querySelector('[data-blog-search-results]');
     const list   = document.querySelector('[data-blog-search-list]');
     const status = document.querySelector('[data-blog-search-status]');
     const filterButtons = document.querySelectorAll('.blog-filter button');
-    const labels = { loading: ${JSON.stringify(S.searchLoading)}, empty: ${JSON.stringify(S.searchEmpty)}, read: ${JSON.stringify(S.readLink)} };
+    const more   = document.querySelector('[data-blog-more]');
+    const moreBtn = document.querySelector('[data-blog-more-btn]');
+    const moreCount = document.querySelector('[data-blog-more-count]');
+    const labels = { loading: ${JSON.stringify(S.searchLoading)}, empty: ${JSON.stringify(S.searchEmpty)}, read: ${JSON.stringify(S.readLink)}, of: ${JSON.stringify(S.loadMoreOf)} };
+
+    // ----- Load more (paginação no modo navegação) -----
+    const mq = window.matchMedia('(min-width: 768px)');
+    const sizes = () => mq.matches ? { initial: 12, step: 12 } : { initial: 6, step: 6 };
+    let limit = sizes().initial;
+    const cards = grid ? Array.from(grid.querySelectorAll('.post-card')) : [];
+    const paginate = () => {
+      if (!grid || grid.style.display === 'none') { if (more) more.hidden = true; return; }
+      const visible = cards.filter(c => c.dataset.hidden !== 'true');
+      visible.forEach((c, i) => { c.dataset.overflow = i < limit ? 'false' : 'true'; });
+      const shown = Math.min(limit, visible.length);
+      if (visible.length > limit) {
+        more.hidden = false;
+        moreCount.textContent = shown + ' ' + labels.of + ' ' + visible.length;
+      } else {
+        more.hidden = true;
+      }
+    };
+    if (moreBtn) moreBtn.addEventListener('click', () => { limit += sizes().step; paginate(); });
+    mq.addEventListener('change', () => { limit = sizes().initial; paginate(); });
+
+    // ----- Busca Pagefind (modo busca) -----
     let pagefind = null;
     let token = 0;
     const loadPagefind = async () => {
@@ -750,9 +785,10 @@ ${footerHtml}
     };
     const runSearch = async () => {
       const q = input.value.trim();
-      if (!q) { wrap.hidden = true; grid.style.display = ''; return; }
+      if (!q) { wrap.hidden = true; grid.style.display = ''; paginate(); return; }
       grid.style.display = 'none';
       wrap.hidden = false;
+      if (more) more.hidden = true;
       status.textContent = labels.loading;
       list.innerHTML = '';
       const my = ++token;
@@ -781,8 +817,14 @@ ${footerHtml}
     let timer;
     if (input) {
       input.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(runSearch, 120); });
-      filterButtons.forEach(b => b.addEventListener('click', () => { if (input.value.trim()) runSearch(); }));
     }
+    // Filter clicks: resetar paginação OU re-disparar busca, conforme modo.
+    filterButtons.forEach(b => b.addEventListener('click', () => {
+      if (input && input.value.trim()) { runSearch(); }
+      else { limit = sizes().initial; setTimeout(paginate, 0); }
+    }));
+    // Inicial: aplica paginação ao carregar.
+    paginate();
   </script>
 </body>
 </html>`;

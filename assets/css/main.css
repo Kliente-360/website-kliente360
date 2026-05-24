@@ -561,10 +561,13 @@ a.card:hover, .card.linked:hover {
 
 /* Reserva altura para grids populadas async (home blog teaser, pillar pages
  * post-grid). Evita CLS quando os cards entram via fetch+innerHTML depois
- * do paint inicial. Valores baseados em altura típica de .post-card. */
+ * do paint inicial. `align-content: start` impede que o grid estique as rows
+ * pra preencher o min-height — senão sobra "ar" entre cards quando o
+ * conteúdo natural é menor que a reserva. */
 #home-blog-grid,
 [data-pillar-filter] {
   min-height: 900px; /* 3 cards empilhados — mobile */
+  align-content: start;
 }
 @media (min-width: 768px) {
   #home-blog-grid,

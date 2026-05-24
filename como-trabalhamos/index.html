@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Como trabalhamos | Kliente 360</title>
-  <meta name="description" content="O modelo de engajamento da Kliente 360 — Sprint, Projeto e AMS — com ordem de grandeza de investimento, o que entregamos em cada pilar e o que esperamos do cliente." />
+  <meta name="description" content="Como a Kliente 360 trabalha: Trilha 360 (Mapear → Prototipar → Validar → Implantar → Sustentar), pilares Salesforce / Data / IA, pré-requisitos do cliente e FAQ." />
   <meta name="theme-color" content="#0a0a0a" />
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
 
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kliente 360" />
   <meta property="og:title" content="Como trabalhamos | Kliente 360" />
-  <meta property="og:description" content="Modelo de engajamento, ordem de grandeza de investimento, FAQ." />
+  <meta property="og:description" content="Trilha 360, pilares de entrega, pré-requisitos e FAQ." />
   <meta property="og:image" content="/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -34,14 +34,18 @@
     "@type": "FAQPage",
     "inLanguage": "pt-BR",
     "mainEntity": [
-      { "@type": "Question", "name": "Quanto tempo dura um projeto típico?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Depende do modelo. Sprint dura 4 semanas. Projeto entre 3 e 6 meses. AMS é contínuo, com renovação anual." } },
-      { "@type": "Question", "name": "Vocês trabalham com preço fechado?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Sprint sim, valor fechado por escopo definido. Projeto e AMS por hora/sprint com previsão de investimento por fase. Não publicamos tabela." } },
       { "@type": "Question", "name": "Que tamanho de empresa atende?",
         "acceptedAnswer": { "@type": "Answer", "text": "Mid-market e enterprise no Brasil. Cliente típico: 200 a 5000 colaboradores, com operação Salesforce existente ou dados em escala que justifiquem analytics maduro." } },
       { "@type": "Question", "name": "Como vocês decidem se vão pegar um projeto?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Conversa com sócio antes de qualquer proposta. Avaliamos fit técnico, escopo realista e disponibilidade do time do cliente. Recusamos projetos onde não conseguimos entregar bem." } }
+        "acceptedAnswer": { "@type": "Answer", "text": "Conversa com sócio antes de qualquer proposta. Avaliamos fit técnico, escopo realista e disponibilidade do time do cliente. Recusamos projetos onde não conseguimos entregar bem." } },
+      { "@type": "Question", "name": "Vocês alocam pessoas no nosso escritório?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Não. Trabalhamos remoto com sessões presenciais quando o cenário pede (kickoff, validação, handover). Body shop ou alocação dedicada de longo prazo não fazem parte do nosso modelo." } },
+      { "@type": "Question", "name": "Quem efetivamente executa o trabalho?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sócios lideram a estratégia, o discovery e a relação com seu time. Especialistas seniores executam a implementação. Não há júnior se passando por consultor — quem promete entrega, entrega." } },
+      { "@type": "Question", "name": "Vocês são parceiros Salesforce?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sim, parceiros ativos. Implementações e Agentforce são feitas com aceleradores próprios, sob orientação da metodologia oficial. No pilar Data, somos agnósticos de cloud — escolhemos a ferramenta certa para o problema, não para o portfólio." } },
+      { "@type": "Question", "name": "Como começo a conversa?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Mande uma linha sobre o problema pelo formulário de contato, e-mail ou WhatsApp. Respondemos pessoalmente em 1 dia útil. A primeira reunião é com sócio, sem qualificação por SDR." } }
     ]
   }
   </script>
@@ -104,58 +108,16 @@
       <div class="container">
         <span class="eyebrow">Como trabalhamos</span>
         <h1 style="margin-top: var(--sp-3);">O que esperar antes de chamar a gente.</h1>
-        <p class="lead">A Kliente 360 atende poucos clientes estratégicos por vez. Cada conta lidera-se por um sócio, do diagnóstico à sustentação. Aqui está o modelo de engajamento, ordem de grandeza de investimento e o que esperamos do seu lado.</p>
+        <p class="lead">A Kliente 360 atende poucos clientes estratégicos por vez. Cada conta lidera-se por um sócio, do diagnóstico à sustentação. Aqui está o método, o que entregamos em cada pilar e o que esperamos do seu lado.</p>
       </div>
     </section>
 
     <section class="cm-section alt">
       <div class="container">
         <header class="section-head">
-          <span class="eyebrow">Modelos de engajamento</span>
-          <h2>Três formas de contratar. A mesma <a class="heading-link" href="/#trilha">Trilha 360</a>.</h2>
-          <p class="lead">Sprint, Projeto e AMS são formas de contratar a Kliente 360 — cada uma com escopo e profundidade diferentes. Em todas, o método é o mesmo: a Trilha 360 (Mapear → Prototipar → Validar → Implantar → Sustentar), aplicada na escala adequada ao modo.</p>
-        </header>
-
-        <div class="grid-cards cols-3">
-          <article class="card cm-mode">
-            <div class="num">01 · Sprint</div>
-            <h3>Sprint de discovery</h3>
-            <div class="duration">4 semanas · escopo fechado</div>
-            <p>Entrada de baixo compromisso. Diagnóstico + protótipo + validação com KPI claro. Termina com relatório de stop/go.</p>
-            <div class="when">
-              <strong>Use quando</strong> ainda não sabe se vale o projeto longo, ou quer validar uma tese antes de comprometer time/orçamento maior.
-            </div>
-          </article>
-
-          <article class="card cm-mode">
-            <div class="num">02 · Projeto</div>
-            <h3>Projeto de implementação</h3>
-            <div class="duration">3 a 6 meses · escopo definido</div>
-            <p>Trilha 360 completa. Mapeamos, prototipamos, validamos, implantamos. Entrega com adoção e KPI operacional medido.</p>
-            <div class="when">
-              <strong>Use quando</strong> a tese já foi validada (por sprint ou por dor consolidada) e há decisão executiva pra investir em produção.
-            </div>
-          </article>
-
-          <article class="card cm-mode">
-            <div class="num">03 · AMS</div>
-            <h3>Sustentação e evolução</h3>
-            <div class="duration">Contínuo · renovação anual</div>
-            <p>Operação rodando. Evolução incremental, governança, atendimento a incidentes, expansão de uso. Não é body shop.</p>
-            <div class="when">
-              <strong>Use quando</strong> já tem Salesforce, dados ou agentes em produção e precisa de parceiro que entenda do todo, não execute ticket isolado.
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="cm-section">
-      <div class="container">
-        <header class="section-head">
           <span class="eyebrow">Metodologia</span>
           <h2>Trilha 360 — o que acontece em cada etapa.</h2>
-          <p class="lead">Cinco verbos aplicados em todos os modos de engajamento. Sprint comprime, Projeto roda completo, AMS sustenta. Muda a escala, não o método.</p>
+          <p class="lead">Cinco verbos. Híbrido entre consultoria estratégica, projeto de tecnologia e deploy rápido de IA. O mesmo método nos três pilares — muda a escala, não o passo.</p>
         </header>
 
         <div class="trilha-timeline">
@@ -199,40 +161,11 @@
             <div class="num">05</div>
             <div>
               <h3>Sustentar</h3>
-              <p>Operação contínua: AMS, evolução incremental conforme o negócio muda, governança (especialmente em IA), atendimento a incidentes. Não é body shop — é parceiro que entende do todo.</p>
-              <div class="output"><strong>Saída</strong>Contrato AMS ativo ou handover documentado para o time interno.</div>
+              <p>Operação contínua: evolução incremental conforme o negócio muda, governança (especialmente em IA), atendimento a incidentes. Não é body shop — é parceiro que entende do todo.</p>
+              <div class="output"><strong>Saída</strong>Sustentação ativa ou handover documentado para o time interno.</div>
             </div>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section class="cm-section alt">
-      <div class="container">
-        <header class="section-head">
-          <span class="eyebrow">Investimento</span>
-          <h2>Faixas honestas. Sem tabela de preço.</h2>
-          <p class="lead">Consultoria especializada não vende em catálogo. Mas dá pra dar ordem de grandeza para você se planejar antes da conversa.</p>
-        </header>
-
-        <div class="cm-invest-list">
-          <div class="cm-invest-item">
-            <div class="modo">Sprint</div>
-            <p>4 semanas, sócio + 2 a 3 especialistas dedicados. Discovery, protótipo e validação. Entrega relatório de stop/go.</p>
-            <div class="range">a partir de R$ 80 mil</div>
-          </div>
-          <div class="cm-invest-item">
-            <div class="modo">Projeto</div>
-            <p>3 a 6 meses, time variável por fase. Implementação completa de um caso de uso ou um pilar.</p>
-            <div class="range">R$ 250 a 900 mil</div>
-          </div>
-          <div class="cm-invest-item">
-            <div class="modo">AMS</div>
-            <p>Contínuo, time alocado conforme volume. Sustentação, evolução e governança.</p>
-            <div class="range">R$ 25 a 80 mil/mês</div>
-          </div>
-        </div>
-        <p class="muted" style="margin-top: var(--sp-6); font-size: var(--fs-14);">Faixas indicativas. Proposta final sai depois da conversa de discovery, com escopo e investimento detalhados.</p>
       </div>
     </section>
 
@@ -301,14 +234,6 @@
 
         <div class="cm-faq">
           <details>
-            <summary>Quanto tempo dura um projeto típico?</summary>
-            <p>Depende do modelo. Sprint dura 4 semanas. Projeto entre 3 e 6 meses. AMS é contínuo, com renovação anual.</p>
-          </details>
-          <details>
-            <summary>Vocês trabalham com preço fechado?</summary>
-            <p>Sprint sim — valor fechado por escopo definido. Projeto e AMS têm previsão de investimento por fase ou mês, ajustada conforme o escopo evolui. Não publicamos tabela porque consultoria especializada não cabe em catálogo.</p>
-          </details>
-          <details>
             <summary>Que tamanho de empresa atende?</summary>
             <p>Mid-market e enterprise no Brasil. Cliente típico tem entre 200 e 5000 colaboradores, com operação Salesforce existente ou volume de dados que justifique analytics maduro.</p>
           </details>
@@ -327,10 +252,6 @@
           <details>
             <summary>Vocês são parceiros Salesforce?</summary>
             <p>Sim, parceiros ativos. Implementações e Agentforce são feitas com aceleradores próprios, sob orientação da metodologia oficial. No pilar Data, somos agnósticos de cloud — escolhemos a ferramenta certa para o problema, não para o portfólio.</p>
-          </details>
-          <details>
-            <summary>O contrato tem fidelidade?</summary>
-            <p>Sprint termina em 4 semanas, sem renovação automática. Projeto tem escopo e prazo definidos. AMS tem termo anual com revisão trimestral — você pode interromper a qualquer momento dentro do ciclo, com aviso prévio de 30 dias.</p>
           </details>
           <details>
             <summary>Como começo a conversa?</summary>

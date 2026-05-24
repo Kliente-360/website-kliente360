@@ -180,7 +180,6 @@ CSS reduzido de 1651 → 1536 linhas. ~3000 caracteres de regras duplicadas elim
 
 - ✅ Design system fechado e documentado em `/DESIGN.md`. Nova página/componente segue o padrão sem revisita.
 - ⏳ Validar conteúdo de pillar pages, glossário e comercial em produção (tom, exemplos, calibração de copy).
-- ⏳ Calibrar faixas de investimento em `/como-trabalhamos/` (números atuais são proposta minha — ajustar ao real).
 - ⏳ Acompanhar a routine continuar publicando 2 posts/semana.
 - ⏳ Resolver itens do parking lot (§8.1) conforme bloqueios externos destravarem.
 - ⏳ Refator do `styleguide.html` para usar o design system real (em vez de CSS inline isolado) — não bloqueante, mas vira showcase mais útil.
@@ -238,6 +237,8 @@ Rodar competitive-brief específico de SEO contra Indicium, Everymind e Sottelli
 - Netlify roda `npm run build` em cada push em `main`.
 
 ### 8.1. Parking lot — pendências a resolver
+
+- **Faixas de preço / ordem de grandeza de investimento**: removidas do site (`/como-trabalhamos/` não fala mais sobre Sprint/Projeto/AMS nem números). Decisão 2026-05-22: não combinava com a mensagem de "consultoria especializada que não vende em catálogo". Reavaliar se em algum momento quisermos transparência comercial pública. Conteúdo removido pode ser recuperado via Git em commit `[antes desta passada]`.
 
 - **WhatsApp**: número `5511961875594` é provisório. Trocar pelo número oficial quando definido. Aparece em `index.html` (Contato + footer) e `scripts/build-blog.mjs` (footer das páginas geradas).
 - **Badge "Salesforce Partner"**: pílula textual hoje. Trocar pelo badge oficial recomendado pelo branding Salesforce (SVG/PNG oficial + requisitos de uso da marca).

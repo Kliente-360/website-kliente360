@@ -192,10 +192,10 @@ Derivado do audit pós-#10. Quick wins do Bloco A já aplicados. Pendências org
 
 | Item | Esforço | Impacto | Notas |
 |---|---|---|---|
-| **3 pillar pages** (Salesforce, Data, IA Aplicada) | 1 sessão por pillar | Alto | Agregador temático linkando todos os posts do cluster + manifesto curto da prática. PT/EN/ES. |
-| **Glossário Kliente 360** | 1 sessão | Alto | 20–30 termos (Agentforce, Data Cloud, RAG, dbt, ELT, embedding, MRR, recall@k, etc.), 1 parágrafo + link pro post canônico. GEO-friendly. PT/EN/ES. |
+| ~~3 pillar pages~~ (Salesforce, Data, IA Aplicada) | ✅ PT (quinta) + EN/ES (oitava) — `/pilares/<slug>/`, `/en/pilares/<slug>/`, `/es/pilares/<slug>/` |
+| ~~Glossário Kliente 360~~ | ✅ PT (quinta) + EN/ES (oitava) — 26+ termos com filtro por pilar |
 | **Cases-âncora** (Sem Parar, Bodytech) | 2 sessões | Alto | **Bloqueado** por input do Felipe sobre escopo, números aprovados e o que pode ser dito publicamente. |
-| **Página comercial** ("Como contratar consultoria especializada de CRM/Data/IA") | 1 sessão | Alto | Captura query comercial direta. Liga pillar pages. |
+| ~~Página comercial~~ (`/como-trabalhamos/`) | ✅ PT (quinta) + EN/ES (oitava) |
 | **Pass de backlinks dedicado** após cada lote de 5 posts | 0,5 sessão/lote | Médio | Revisar posts antigos pra linkar novos onde fizer sentido. |
 
 ### 6.2. Build/Infra (Felipe ou outro mantenedor — fora do escopo do agente de blog)
@@ -204,9 +204,9 @@ Derivado do audit pós-#10. Quick wins do Bloco A já aplicados. Pendências org
 |---|---|---|---|
 | **Confirmar hreflang** entre PT/EN/ES + `x-default` | 30 min | Médio | `scripts/build-blog.mjs` — injetar `<link rel="alternate" hreflang="...">` no `<head>` de cada variante |
 | **Verificar robots.txt** permite `/blog/*`, `/blog/en/*`, `/blog/es/*` e o sitemap | 5 min | Crítico se errado | raiz |
-| **FAQ schema** auto-injetado | 0,5 dia | Alto | `scripts/build-blog.mjs` — detectar H2 terminados em `?` (ou flag `faq: true` no frontmatter) → emitir `FAQPage` JSON-LD |
-| **BreadcrumbList schema** | 0,5 dia | Médio | `scripts/build-blog.mjs` — `Blog › Pilar › Post` |
-| **OG image dinâmica por post** | 1 dia | Médio | Hoje usa `og-image.png` genérica. Virar template SVG → PNG por post no build (título + pilar + cor secundária). |
+| ~~FAQ schema auto-injetado~~ | ✅ feito (oitava passada) — `extractFaqs()` em `scripts/build-blog.mjs` detecta H2 terminados em `?` e emite `FAQPage` JSON-LD (mín. 2 perguntas) |
+| ~~BreadcrumbList schema~~ | ✅ feito (oitava passada) — `breadcrumbSchema()` injetado em todo post (Blog › Pilar › Post) |
+| ~~OG image dinâmica por post~~ | ✅ feito (oitava passada) — template SVG variante A (título à esquerda, mark Aperture na cor do pilar, pílula de pilar). Gera `/assets/img/og/<slug>-<lang>.png` no build |
 | **Rodar PageSpeed Insights** em 2–3 posts típicos | 15 min | Médio | Calibrar Core Web Vitals reais |
 
 ### 6.3. Competitive SEO (futuro)
@@ -244,7 +244,7 @@ Rodar competitive-brief específico de SEO contra Indicium, Everymind e Sottelli
 - **Badge "Salesforce Partner"**: pílula textual hoje. Trocar pelo badge oficial recomendado pelo branding Salesforce (SVG/PNG oficial + requisitos de uso da marca).
 - **Cases com métricas reais**: Sem Parar e Bodytech como placeholders dashed em `index.html`. Trocar `—` pela métrica e o `lbl` pelo dado quando aprovados.
 - **Endpoint do form de contato**: hoje só feedback visual no submit (`assets/js/main.js`). Integrar com Formspree / Netlify Forms / API própria.
-- **OG image PNG dinâmica por post**: hoje usa imagem genérica (também listado em §6.2).
+- ~~OG image PNG dinâmica por post~~: feito (oitava passada). Atualizar template caso queira variante B/C no futuro.
 - **EN/ES de novos posts**: routine deve produzir as 3 variantes simultaneamente. Validar lote de #11+ quando publicar.
 
 ## 9. Histórico de sessões
@@ -256,4 +256,6 @@ Rodar competitive-brief específico de SEO contra Indicium, Everymind e Sottelli
 - **2026-05-22 (quarta passada)** — Validação geral do PLAN. Reorganização: §3 ganhou subseções coerentes 3.1–3.6 (corrigido §3.4 duplicado); §4 consolidado em 4.1–4.4 (sequência inicial + site + blog + infra); §6 movido pra antes do histórico; §7 decisões fechadas com 10 itens; §8 técnicas + parking expandido; histórico no fim. Snapshot do estado real: 13 posts publicados, audit SEO concluído, routine rodando, próximo passo é executar §6.1.
 - **2026-05-22 (quinta passada)** — 3 pillar pages (Salesforce/Data/IA) com design colorido por pilar + cores secundárias do âmbar Data ajustadas pra contraste. Glossário (`/glossario/`) com 26 termos filtraveis. Página comercial (`/como-trabalhamos/`) com 3 modos de engajamento, faixas de investimento, FAQ schema, CTA. Home com links de pilar migrados pras pillar pages.
 - **2026-05-22 (sexta passada)** — Trilha 360 detalhada na página comercial em timeline vertical (5 verbos + entregáveis); FAQ mobile com mais respiro; consistência conteúdo (Trilha amarrada aos 3 modos); rebrand vocabulário aplicado.
+- **2026-05-22 (sétima passada)** — Removidos "Modelos de engajamento" (Sprint/Projeto/AMS) e "Faixas de investimento" de `/como-trabalhamos/` — conflitavam com Trilha 360 e com mensagem de consultoria especializada. FAQ enxuto sem refs a Sprint/Projeto/AMS. Faixas no parking lot.
+- **2026-05-24 (oitava passada)** — Internacionalização estratégica + structured data + OG dinâmica.<br>**i18n**: 10 páginas EN/ES criadas (`/en/como-trabalhamos`, `/en/glossario`, 3 `/en/pilares/<slug>` + idem ES). `i18n.js` detecta `/en/` e `/es/`; lang-switch redireciona entre variantes. hreflang (pt-BR/en-US/es-ES/x-default) em todas as variantes.<br>**Build script**: `FAQPage` schema auto-injetado quando post tem ≥2 H2 terminados em `?`; `BreadcrumbList` (Blog › Pilar › Post) em todo post; **OG image dinâmica** variante A (título à esquerda + mark Aperture na cor do pilar + pílula de pilar + wordmark) gerada por post×lang em `/assets/img/og/<slug>-<lang>.png` (37 posts × 3 idiomas = 111 PNGs). Corrigido "Boutique" → "Consultoria especializada" no `og-image.svg` genérico.
 - **2026-05-22 (sétima passada)** — Design system fechado e documentado: 7 ondas de refator (eyebrow base + 3 modificadores; section-head global; padding-block 16/24/32 universal; `.card` base + accent-top/accent-side; trilha + stats consolidadas entre home e pillar; `.grid-cards` substitui 8 classes de grid; ~3000 chars de CSS deprecated removidos). **`DESIGN.md` na raiz** vira fonte única — catálogo de primitivos, modificadores, tokens, anti-padrões. `blog/posts/README.md` aponta pro DESIGN.md. CSS 1651 → 1536 linhas. Auditoria de classes órfãs em `research/css-audit-2026-05-22.md`. Dívida de design = zero.

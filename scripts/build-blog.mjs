@@ -117,6 +117,18 @@ const STRINGS = {
 
 const PILLARS_DATA = { sf: {}, data: {}, ai: {} };
 
+// Cor secundária por pilar (usada no card de OG image e no breadcrumb).
+const PILLAR_COLOR = { sf: '#0B5394', data: '#8a6f15', ai: '#6D28D9' };
+const PILLAR_NAME_PT = { sf: 'Salesforce', data: 'Data & Analytics', ai: 'IA Aplicada' };
+const PILLAR_NAME_EN = { sf: 'Salesforce', data: 'Data & Analytics', ai: 'Applied AI' };
+const PILLAR_NAME_ES = { sf: 'Salesforce', data: 'Data & Analytics', ai: 'IA Aplicada' };
+const PILLAR_URL_PT = { sf: '/pilares/salesforce/', data: '/pilares/data/', ai: '/pilares/ia/' };
+const PILLAR_URL_EN = { sf: '/en/pilares/salesforce/', data: '/en/pilares/data/', ai: '/en/pilares/ia/' };
+const PILLAR_URL_ES = { sf: '/es/pilares/salesforce/', data: '/es/pilares/data/', ai: '/es/pilares/ia/' };
+const PILLAR_NAME = { pt: PILLAR_NAME_PT, en: PILLAR_NAME_EN, es: PILLAR_NAME_ES };
+const PILLAR_URL  = { pt: PILLAR_URL_PT,  en: PILLAR_URL_EN,  es: PILLAR_URL_ES };
+const BLOG_LABEL = { pt: 'Blog', en: 'Blog', es: 'Blog' };
+
 // ---------- helpers ----------
 const formatDate = (iso, lang = 'pt') => {
   const d = new Date(iso + 'T00:00:00');
@@ -253,7 +265,7 @@ const renderAlternates = (alternates = []) => alternates
   .map(({ lang, href }) => `  <link rel="alternate" hreflang="${hreflangCode[lang]}" href="${href}" />`)
   .join('\n');
 
-const headCommon = ({ title, description, canonical, ogType = 'article', pubDate, section, htmlLang = 'pt-BR', alternates = [] }) => `
+const headCommon = ({ title, description, canonical, ogType = 'article', pubDate, section, htmlLang = 'pt-BR', alternates = [], ogImage = '/og-image.png' }) => `
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>${escapeHtml(title)}</title>
@@ -271,7 +283,7 @@ ${renderAlternates(alternates)}
   <meta property="og:site_name" content="Kliente 360" />
   <meta property="og:title" content="${escapeHtml(title)}" />
   <meta property="og:description" content="${escapeHtml(description)}" />
-  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image" content="${ogImage}" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   ${pubDate ? `<meta property="article:published_time" content="${pubDate}" />` : ''}
@@ -287,6 +299,162 @@ ${renderAlternates(alternates)}
   <link rel="stylesheet" href="/assets/css/tokens.css?v=${ASSET_VERSION}" />
   <link rel="stylesheet" href="/assets/css/reset.css?v=${ASSET_VERSION}" />
   <link rel="stylesheet" href="/assets/css/main.css?v=${ASSET_VERSION}" />`;
+
+// ---------- structured data helpers ----------
+
+// Extrai pares pergunta/resposta de H2 terminados em "?" no markdown.
+// A resposta é tudo do H2 até o próximo H2 (ou EOF), convertido pra texto puro.
+const extractFaqs = (md) => {
+  const lines = md.split('\n');
+  const faqs = [];
+  let current = null;
+
+  for (const line of lines) {
+    const h2 = line.match(/^##\s+(.+?)\s*$/);
+    if (h2) {
+      if (current) faqs.push(current);
+      const q = h2[1].trim();
+      current = q.endsWith('?') ? { q, body: [] } : null;
+      continue;
+    }
+    if (current) current.body.push(line);
+  }
+  if (current) faqs.push(current);
+
+  // Converte body MD em HTML mínimo (parágrafos + ênfase + links — sem código/listas/imagens).
+  return faqs.map(f => {
+    const html = marked.parseInline(f.body.join('\n').trim()).trim()
+      || marked.parse(f.body.join('\n').trim()).trim();
+    return { q: f.q, a: html };
+  });
+};
+
+const faqPageSchema = (faqs, lang) => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  inLanguage: HTML_LANG[lang],
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+});
+
+const breadcrumbSchema = (post, lang) => {
+  const blogHref = listingUrl(lang);
+  const pillarHref = PILLAR_URL[lang][post.pillar];
+  const postHref = postUrl(post.slug, lang);
+  const title = post.translations[lang].title;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: BLOG_LABEL[lang], item: blogHref },
+      { '@type': 'ListItem', position: 2, name: PILLAR_NAME[lang][post.pillar], item: pillarHref },
+      { '@type': 'ListItem', position: 3, name: title, item: postHref },
+    ],
+  };
+};
+
+// ---------- OG image dinâmica por post ----------
+// Template variante A: título à esquerda (Inter 56–64, peso 700), mark Aperture
+// grande à direita pintada na cor do pilar. Fundo branco. Pílula de pilar acima
+// do título. Wordmark no rodapé.
+//
+// Word-wrap simples: divide o título em palavras e quebra por largura
+// aproximada de caracteres (acomodando peso 700 + Inter @ ~58px).
+const wrapTitle = (title, maxCharsPerLine = 22) => {
+  const words = title.split(/\s+/);
+  const lines = [];
+  let line = '';
+  for (const w of words) {
+    if ((line + ' ' + w).trim().length <= maxCharsPerLine) {
+      line = (line ? line + ' ' : '') + w;
+    } else {
+      if (line) lines.push(line);
+      line = w;
+    }
+  }
+  if (line) lines.push(line);
+  // Cap em 4 linhas — se passar, condensa as duas últimas com ellipsis.
+  if (lines.length > 4) {
+    const head = lines.slice(0, 3);
+    const tail = lines.slice(3).join(' ');
+    head.push(tail.slice(0, maxCharsPerLine - 1).trim() + '…');
+    return head;
+  }
+  return lines;
+};
+
+const escapeSvg = (s) => String(s)
+  .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;').replaceAll("'", '&apos;');
+
+const renderOgSvg = ({ title, pillarLabel, pillarColor }) => {
+  const lines = wrapTitle(title, 22);
+  const fontSize = lines.length <= 2 ? 76 : lines.length === 3 ? 64 : 56;
+  const lineHeight = Math.round(fontSize * 1.08);
+  const blockHeight = lines.length * lineHeight;
+  // Posição vertical: bloco centralizado verticalmente na faixa 200..510 (ish)
+  const startY = 250 + (lines.length === 1 ? 30 : 0);
+
+  const titleTspans = lines.map((ln, i) =>
+    `<tspan x="80" dy="${i === 0 ? 0 : lineHeight}">${escapeSvg(ln)}</tspan>`
+  ).join('');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <!-- Mark Aperture à direita, na cor do pilar -->
+  <g transform="translate(840, 175)">
+    <circle cx="140" cy="77" r="38" fill="${pillarColor}" opacity="0.45"/>
+    <circle cx="203" cy="140" r="38" fill="${pillarColor}" opacity="0.65"/>
+    <circle cx="140" cy="203" r="38" fill="${pillarColor}" opacity="0.85"/>
+    <circle cx="77" cy="140" r="38" fill="${pillarColor}"/>
+  </g>
+
+  <!-- Pílula do pilar -->
+  <g transform="translate(80, 120)">
+    <rect x="0" y="0" rx="6" ry="6" width="${pillarLabel.length * 11 + 32}" height="36" fill="${pillarColor}"/>
+    <text x="16" y="24" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="600" fill="#ffffff" letter-spacing="0.04em">${escapeSvg(pillarLabel.toUpperCase())}</text>
+  </g>
+
+  <!-- Título -->
+  <text x="80" y="${startY}" font-family="Inter, -apple-system, sans-serif" font-size="${fontSize}" font-weight="700" fill="#0a0a0a" letter-spacing="-0.025em">${titleTspans}</text>
+
+  <!-- Wordmark no rodapé -->
+  <g transform="translate(80, 540)">
+    <g transform="scale(0.45)">
+      <circle cx="40" cy="22" r="11" fill="#009900" opacity="0.5"/>
+      <circle cx="58" cy="40" r="11" fill="#009900" opacity="0.7"/>
+      <circle cx="40" cy="58" r="11" fill="#009900" opacity="0.85"/>
+      <circle cx="22" cy="40" r="11" fill="#009900"/>
+    </g>
+    <text x="48" y="32" font-family="Inter, -apple-system, sans-serif" font-size="26" font-weight="700" fill="#0a0a0a" letter-spacing="-0.02em">kliente 360</text>
+  </g>
+</svg>`;
+};
+
+const ogImageRelPath = (slug, lang) => `assets/img/og/${slug}-${lang}.png`;
+
+const generateOgImage = (post, lang) => {
+  const t = post.translations[lang];
+  if (!t) return null;
+  const S = STRINGS[lang];
+  const svg = renderOgSvg({
+    title: t.title,
+    pillarLabel: S.pillars[post.pillar],
+    pillarColor: PILLAR_COLOR[post.pillar],
+  });
+  const resvg = new Resvg(svg, { fitTo: { mode: 'width', value: 1200 }, font: { loadSystemFonts: true } });
+  const pngData = resvg.render().asPng();
+  const rel = ogImageRelPath(post.slug, lang);
+  const target = join(ROOT, rel);
+  const dir = dirname(target);
+  if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
+  writeFileSync(target, pngData);
+  return '/' + rel;
+};
 
 // ---------- post template ----------
 const renderPost = (post, lang, allPosts) => {
@@ -311,6 +479,8 @@ const renderPost = (post, lang, allPosts) => {
     { lang: 'x-default', href: postUrl(post.slug, defaultLang) },
   ];
 
+  const ogImage = '/' + ogImageRelPath(post.slug, lang);
+
   const ldJson = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -318,11 +488,22 @@ const renderPost = (post, lang, allPosts) => {
     description: t.excerpt,
     datePublished: post.date,
     inLanguage: HTML_LANG[lang],
+    image: ogImage,
     author:    { '@type': 'Organization', name: 'Kliente 360' },
     publisher: { '@type': 'Organization', name: 'Kliente 360' },
     articleSection: sectionLabel,
     keywords: t.keywords || [],
   };
+
+  // FAQ schema: detecta H2 terminados em "?" no body (ou flag explícita).
+  const faqs = extractFaqs(t.body);
+  const hasFaq = faqs.length >= 2;
+  const faqScript = hasFaq
+    ? `\n  <script type="application/ld+json">\n${JSON.stringify(faqPageSchema(faqs, lang), null, 2)}\n  </script>`
+    : '';
+
+  // Breadcrumb: Blog › Pilar › Post
+  const breadcrumb = breadcrumbSchema(post, lang);
 
   return `<!DOCTYPE html>
 <html lang="${HTML_LANG[lang]}">
@@ -336,11 +517,15 @@ ${headCommon({
   section: sectionLabel,
   htmlLang: HTML_LANG[lang],
   alternates,
+  ogImage,
 })}
 
   <script type="application/ld+json">
 ${JSON.stringify(ldJson, null, 2)}
   </script>
+  <script type="application/ld+json">
+${JSON.stringify(breadcrumb, null, 2)}
+  </script>${faqScript}
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -559,6 +744,18 @@ const stampStaticAssetVersions = (files) => {
 const main = () => {
   const posts = collectPosts();
   console.log(`📚 ${posts.length} posts (base slug) coletados`);
+
+  // OG image PNG por post + idioma (precisa rodar antes do render — o caminho
+  // gerado vai no <meta property="og:image">).
+  let ogCount = 0;
+  for (const post of posts) {
+    for (const lang of LANGS) {
+      if (!post.translations[lang]) continue;
+      generateOgImage(post, lang);
+      ogCount++;
+    }
+  }
+  console.log(`   ✓ ${ogCount} OG images geradas em /assets/img/og/`);
 
   // Posts por idioma
   for (const post of posts) {

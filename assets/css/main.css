@@ -552,6 +552,18 @@ a.card:hover, .card.linked:hover {
   .grid-cards.cols-2-3 { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* Reserva altura para grids populadas async (home blog teaser, pillar pages
+ * post-grid). Evita CLS quando os cards entram via fetch+innerHTML depois
+ * do paint inicial. Valores baseados em altura típica de .post-card. */
+#home-blog-grid,
+[data-pillar-filter] {
+  min-height: 900px; /* 3 cards empilhados — mobile */
+}
+@media (min-width: 768px) {
+  #home-blog-grid,
+  [data-pillar-filter] { min-height: 360px; } /* 1 linha de cards — desktop */
+}
+
 /* ============ PILARES (overview) ============ */
 
 /* .pillar-card herda base de .card; só seu delta (cor por pilar, lista) fica aqui. */

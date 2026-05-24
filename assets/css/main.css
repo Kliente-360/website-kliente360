@@ -945,7 +945,9 @@ a.card:hover, .card.linked:hover {
 .post-card[data-hidden="true"],
 .post-card[data-overflow="true"] { display: none; }
 
-/* Load-more — bloco abaixo do grid de cards. Contador + botão centralizados. */
+/* Load-more — bloco abaixo do grid de cards. Contador + botão centralizados.
+ * O seletor [hidden] precisa ser explícito pq display:flex sobrepõe o
+ * comportamento default do atributo HTML hidden. */
 .blog-more {
   display: flex;
   flex-direction: column;
@@ -953,6 +955,7 @@ a.card:hover, .card.linked:hover {
   gap: var(--sp-3);
   margin-top: var(--sp-12);
 }
+.blog-more[hidden] { display: none; }
 .blog-more-count {
   font-family: var(--font-mono);
   font-size: var(--fs-12);

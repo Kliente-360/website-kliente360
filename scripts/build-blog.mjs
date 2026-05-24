@@ -573,7 +573,7 @@ ${JSON.stringify(breadcrumb, null, 2)}
 ${navHtml('/blog/' + post.slug)}
 
   <main id="main">
-    <article class="post-article" data-pillar="${post.pillar}" data-pagefind-body data-pagefind-meta="title:${escapeHtml(t.title)}" data-pagefind-meta="pillar_label:${escapeHtml(S.sections[post.pillar])}" data-pagefind-filter="pillar:${post.pillar}">
+    <article class="post-article" data-pillar="${post.pillar}" data-pagefind-body data-pagefind-meta="title:${escapeHtml(t.title)}, pillar_label:${escapeHtml(S.sections[post.pillar])}" data-pagefind-filter="pillar:${post.pillar}">
 
       <header class="post-header">
         <div class="container container-narrow">
@@ -797,11 +797,16 @@ ${footerHtml}
       if (pf._err) { status.textContent = labels.empty; return; }
       const filter = currentFilter();
       const opts = filter === 'all' ? {} : { filters: { pillar: filter } };
-      const r = await pf.search(q, opts);
+      let r;
+      try { r = await pf.search(q, opts); }
+      catch (e) { console.error('Pagefind search error:', e); status.textContent = labels.empty; return; }
       if (my !== token) return;
-      if (!r.results.length) { status.textContent = labels.empty; return; }
+      if (!r || !r.results.length) { status.textContent = labels.empty; return; }
       status.textContent = '';
-      const data = await Promise.all(r.results.slice(0, 24).map(x => x.data()));
+      let data;
+      try { data = await Promise.all(r.results.slice(0, 24).map(x => x.data())); }
+      catch (e) { console.error('Pagefind data() error:', e); status.textContent = labels.empty; return; }
+      if (my !== token) return;
       list.innerHTML = data.map(d => {
         const pillarCode = (d.filters && d.filters.pillar && d.filters.pillar[0]) || '';
         const pillarLabel = (d.meta && d.meta.pillar_label) || '';

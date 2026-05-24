@@ -2,7 +2,7 @@
 
 Documento mantido em main. Registra contexto, decisões tomadas e próximos passos. Atualizar a cada sessão.
 
-Última atualização: 2026-05-22 (sétima passada — design system fechado, **`DESIGN.md` é fonte única**).
+Última atualização: 2026-05-24 (décima terceira passada — top 5 quick wins SEO publicados, form de contato em produção, validação editorial pendente).
 
 ---
 
@@ -180,9 +180,11 @@ CSS reduzido de 1651 → 1536 linhas. ~3000 caracteres de regras duplicadas elim
 
 - ✅ Design system fechado e documentado em `/DESIGN.md`. Nova página/componente segue o padrão sem revisita.
 - ✅ Refator do `styleguide.html` para usar o design system real (décima passada) — 837 → 759 linhas, ~47% menos CSS inline.
-- ⏳ Validar conteúdo de pillar pages, glossário e comercial em produção (tom, exemplos, calibração de copy).
-- ⏳ Acompanhar a routine continuar publicando 2 posts/semana.
-- ⏳ Migrar pra produção (kliente360.com via Netlify + DNS Hostinger) quando Felipe der o go — ver §8.1.
+- ✅ Top 5 quick wins SEO publicados (#1–#4 e #10 do brief — ver §6.3).
+- ✅ Form de contato em produção via Netlify Function + Resend (décima segunda passada — pendente apenas env vars do Felipe, §8.1 #1).
+- 🅿 **Validação editorial do site inteiro pelo Felipe** — tom, exemplos, copy de home, pillars, glossário, `/como-trabalhamos/`, posts publicados. Ver §8.1 #7. Maior pendência aberta hoje.
+- 🔁 **Manter routine de blog rodando** — 2 posts/semana × 3 idiomas. Continuous, sem data de fim. Próximos posts puxam da fila §6.3 (5 quick wins restantes) ou de temas novos do `EDITORIAL.md`.
+- ⏳ Migrar pra produção (kliente360.com via Netlify + DNS Hostinger) quando Felipe der o go — ver §8.1 #3.
 - ⏳ Resolver itens do parking lot (§8.1) conforme bloqueios externos destravarem.
 
 ## 6. Roadmap SEO/Conteúdo
@@ -213,7 +215,27 @@ Derivado do audit pós-#10. Quick wins do Bloco A já aplicados. Pendências org
 
 ### 6.3. Competitive SEO
 
-✅ Brief rodado (décima primeira passada, 2026-05-24) — `research/seo-competitive-brief.md`. Catalogados: Indicium (15 títulos, blog migrou pra EN), Everymind (9 itens, mais press release que blog), Sottelli (7 títulos, PT-BR ativo). Principais achados: IA Aplicada é território vazio em PT-BR (Kliente já tem 12 posts no pilar — manter cadência); Indicium abriu janela ao migrar pra EN; Sottelli é o concorrente real. Top 10 quick wins listados no brief.
+✅ Brief rodado (décima primeira passada, 2026-05-24) — `research/seo-competitive-brief.md`. Catalogados: Indicium (15 títulos, blog migrou pra EN), Everymind (9 itens, mais press release que blog), Sottelli (7 títulos, PT-BR ativo). Principais achados: IA Aplicada é território vazio em PT-BR (Kliente já tem 12 posts no pilar — manter cadência); Indicium abriu janela ao migrar pra EN; Sottelli é o concorrente real.
+
+**Top 5 quick wins publicados** (do brief, ordenados originalmente por impacto × facilidade × encaixe na voz):
+
+| # | Pilar | Título | Slug |
+|---|---|---|---|
+| 1 | data | Modern Data Stack em 2026 | `modern-data-stack-2026` ✅ |
+| 2 | sf | Quando NÃO usar Salesforce | `quando-nao-usar-salesforce` ✅ |
+| 3 | data | Databricks vs Snowflake vs BigQuery | `databricks-snowflake-bigquery-lock-in` ✅ |
+| 4 | ai | FinOps de IA | `finops-de-ia` ✅ |
+| 10 | ai | Multi-agent em produção (90 dias) | `multi-agent-em-producao` ✅ |
+
+**Quick wins restantes** (5 de 10 — fila pra routine consumir):
+
+| # | Pilar | Título | Ângulo |
+|---|---|---|---|
+| 5 | sf | Implementação de Salesforce em 6 semanas — o que cabe num MVP | Crítica direta às promessas de "14 dias" |
+| 6 | ai | RAG não é a resposta: 6 padrões em que fine-tuning ganha em 2026 | Contraintuitivo, GEO-friendly |
+| 7 | data | Tendências de data management 2026 — 5 que mudam, 3 que não | Annual trends post |
+| 8 | sf | Migração de Pardot para Marketing Cloud Engagement | Migração técnica concreta |
+| 9 | data | Power BI vs Tableau vs Looker vs Metabase — matriz por porte | Comparativo Brasil-específico |
 
 ## 7. Decisões fechadas
 
@@ -252,11 +274,15 @@ Itens bloqueados por **ação do Felipe** (input externo, decisão comercial, cr
 | 4 | **WhatsApp — número oficial** | Trocar `5511961875594` (provisório) pelo número oficial. | `index.html` (contato + footer) e `scripts/build-blog.mjs` (footer das páginas geradas). |
 | 5 | **Badge "Salesforce Partner" oficial** | Hoje é pílula textual. Baixar badge SVG/PNG oficial do programa de Partners da Salesforce + ler guidelines de uso da marca. Substituir no hero. | `index.html` hero (badge1). |
 | 6 | **Cases — métricas reais** | Sem Parar e Bodytech estão com `—` (dashed) como placeholder. Trocar `—` pela métrica numérica + `lbl` pelo dado contextual quando aprovados pelo cliente. | `index.html` §cases. |
+| 7 | **Validação editorial do site inteiro pelo Felipe** *(maior pendência aberta)* | Ler home + 3 pillars + glossário + `/como-trabalhamos/` + sample de posts publicados. Calibrar: tom, exemplos, copy, métricas placeholder, vocabulário rebrand aplicado, exemplos batem com a operação real, FAQ está honesto. Marcar trechos pra reescrever, frases que soam genéricas, claims sem evidência. Esperado: lista de edits → eu aplico em batch numa próxima passada. | Todo o site público. Pode usar `/ultrareview` pra dump de review automatizado se quiser baseline antes da leitura humana. |
+
+#### Continuous (sem data de fim)
+
+- 🔁 **Routine de blog**: 2 posts/semana × 3 idiomas. Próximos puxam da fila §6.3 (5 quick wins restantes) ou temas novos do `EDITORIAL.md`. Felipe valida lote a cada 5 posts publicados (pass de backlinks editorial — §6.1).
 
 #### Conteúdo / rebrand (Felipe quando tiver banda)
 
 - **Faixas de preço / ordem de grandeza de investimento**: removidas (decisão 2026-05-22 — não combinava com "consultoria especializada que não vende em catálogo"). Reavaliar se em algum momento quisermos transparência comercial pública. Conteúdo recuperável via Git.
-- **EN/ES de novos posts**: routine deve produzir as 3 variantes simultaneamente. Validar lote de #11+ quando publicar.
 - ~~OG image PNG dinâmica por post~~: feito (oitava passada). Atualizar template caso queira variante B/C no futuro.
 
 ## 9. Histórico de sessões
@@ -275,3 +301,4 @@ Itens bloqueados por **ação do Felipe** (input externo, decisão comercial, cr
 - **2026-05-22 (sétima passada)** — Design system fechado e documentado: 7 ondas de refator (eyebrow base + 3 modificadores; section-head global; padding-block 16/24/32 universal; `.card` base + accent-top/accent-side; trilha + stats consolidadas entre home e pillar; `.grid-cards` substitui 8 classes de grid; ~3000 chars de CSS deprecated removidos). **`DESIGN.md` na raiz** vira fonte única — catálogo de primitivos, modificadores, tokens, anti-padrões. `blog/posts/README.md` aponta pro DESIGN.md. CSS 1651 → 1536 linhas. Auditoria de classes órfãs em `research/css-audit-2026-05-22.md`. Dívida de design = zero.
 - **2026-05-24 (décima primeira passada)** — Competitive SEO brief rodado contra a shortlist (Indicium, Everymind, Sottelli). Resultado em `research/seo-competitive-brief.md` — 333 linhas, 9 seções, top 10 quick wins ordenados por (impacto × facilidade × encaixe na voz). Principais achados: **IA Aplicada é território vazio em PT-BR** (Kliente já lidera com 12 posts); **Indicium migrou pra EN** abrindo janela em português pra Modern Data Stack/dbt/Databricks vs Snowflake; **Sottelli é o concorrente real** (mesmo posicionamento + cadência crescente). Top 5 quick wins: "Quando NÃO usar Salesforce"; comparativo Databricks/Snowflake/BigQuery; Modern Data Stack 2026; FinOps de IA; diário multi-agent em produção.
 - **2026-05-24 (décima segunda passada)** — Form de contato ligado em produção (resolvido §8.1 #1 pendente de env vars). Criada Netlify Function `netlify/functions/contact.js`: valida payload, honeypot anti-spam (campo `website` em `.hp-field` offscreen), envia e-mail via **Resend** (`reply_to` = e-mail do lead → sócio responde direto), e POST opcional fire-and-forget pro app de tasks do Felipe (env vars `TASK_APP_URL`/`TASK_APP_TOKEN`/`TASK_APP_HEADER` quando estiver pronto). Front em `assets/js/main.js` faz fetch real com estados PT/EN/ES (enviando/enviado/erro). `netlify.toml` ganhou bloco `[functions]`. Parking lot §8.1 reorganizado em tabela de infra (1–6) ordenada por dependência, com ações concretas pra Felipe executar.
+- **2026-05-24 (décima terceira passada)** — Roadmap consolidado pra refletir estado real. **Top 5 quick wins SEO publicados** (#1 Modern Data Stack, #2 Quando NÃO usar Salesforce, #3 Databricks/Snowflake/BigQuery, #4 FinOps de IA, #10 Multi-agent em produção). §6.3 dividido em "publicados" + "restantes" (5 itens na fila pra routine consumir: #5 Implementação SF em 6 semanas, #6 RAG vs fine-tuning, #7 Tendências data 2026, #8 Pardot → MC Engagement, #9 BI tools matriz). §8.1 ganhou item #7: **validação editorial do site inteiro pelo Felipe** (maior pendência aberta). Bloco "Continuous" formalizado: routine de blog 2/semana × 3 idiomas sem data de fim. §5 atualizado coerente.

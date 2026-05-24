@@ -23,9 +23,9 @@
 
 
   <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/assets/css/tokens.css?v=cb6aebb459" />
-  <link rel="stylesheet" href="/assets/css/reset.css?v=cb6aebb459" />
-  <link rel="stylesheet" href="/assets/css/main.css?v=cb6aebb459" />
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=275c4ac78f" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=275c4ac78f" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=275c4ac78f" />
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -455,7 +455,13 @@
             </ul>
           </div>
 
-          <form class="form" method="post" action="#" novalidate>
+          <form class="form" method="post" action="/.netlify/functions/contact" novalidate>
+            <!-- Honeypot anti-spam: bots tipicamente preenchem todo input visível e
+                 com autocomplete. Humanos não veem nem tabuleiam aqui. -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="f-website">Website (deixe em branco)</label>
+              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
             <div>
               <label for="f-name" data-i18n="contact.name">Nome</label>
               <input id="f-name" name="name" type="text" required autocomplete="name" />
@@ -472,7 +478,7 @@
               <label for="f-msg" data-i18n="contact.msg">Sobre o que conversamos?</label>
               <textarea id="f-msg" name="message" rows="4" data-i18n-attr="placeholder:contact.msgPh" placeholder="Ex.: estamos implantando Data Cloud e queremos avaliar parceria."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary submit" data-i18n="contact.submit" data-i18n-attr="data-sent:contact.sent" data-sent="Enviado — em breve respondemos">Enviar mensagem</button>
+            <button type="submit" class="btn btn-primary submit" data-i18n="contact.submit" data-i18n-attr="data-sent:contact.sent;data-error:contact.error" data-sent="Enviado — em breve respondemos" data-error="Erro ao enviar — tente novamente">Enviar mensagem</button>
             <p class="muted" style="font-size: var(--fs-12);" data-i18n="contact.reply">Respondemos pessoalmente em até 1 dia útil.</p>
           </form>
         </div>
@@ -536,7 +542,7 @@
     </div>
   </footer>
 
-  <script src="/assets/js/i18n.js?v=cb6aebb459"></script>
-  <script src="/assets/js/main.js?v=cb6aebb459" type="module"></script>
+  <script src="/assets/js/i18n.js?v=275c4ac78f"></script>
+  <script src="/assets/js/main.js?v=275c4ac78f" type="module"></script>
 </body>
 </html>

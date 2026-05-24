@@ -1619,6 +1619,15 @@ a.card:hover, .card.linked:hover {
 .contact-list svg { width: 20px; height: 20px; color: var(--color-fg-muted); }
 
 .form { display: flex; flex-direction: column; gap: var(--sp-4); }
+/* Honeypot anti-spam: invisível pro humano, presente pro bot.
+ * Não usar display:none — alguns bots ignoram. position:absolute + offscreen
+ * + tabindex=-1 é o padrão battle-tested. */
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px; height: 1px;
+  overflow: hidden;
+}
 .form label { font-size: var(--fs-14); color: var(--color-fg-muted); display: block; margin-bottom: var(--sp-2); }
 .form input,
 .form textarea {

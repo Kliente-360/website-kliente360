@@ -2,4 +2,11 @@
   publish = "."
   command = "npm run build"
 
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # Headers e cache-control vivem em /_headers (fonte única).
+# Secrets das functions vivem em variáveis de ambiente do Netlify
+# (Site settings → Environment variables): RESEND_API_KEY, CONTACT_TO,
+# TASK_APP_URL (opcional), TASK_APP_TOKEN (opcional).

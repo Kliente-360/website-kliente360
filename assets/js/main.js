@@ -46,18 +46,32 @@
     });
   }
 
-  // -------- Form (impede submit, mostra estado) --------
+  // -------- Form (POST pra /.netlify/functions/contact) --------
   const form = document.querySelector('form.form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('.submit');
       const original = btn.textContent;
-      const sentMsg = btn.dataset.sent || 'Enviado — em breve respondemos';
-      btn.textContent = sentMsg;
+      const sentMsg  = btn.dataset.sent || 'Enviado — em breve respondemos';
+      const errorMsg = btn.dataset.error || 'Erro ao enviar — tente novamente';
       btn.disabled = true;
-      // TODO: integrar com endpoint (Formspree / Netlify Forms / API própria).
-      setTimeout(() => { btn.textContent = original; btn.disabled = false; form.reset(); }, 4000);
+      btn.textContent = '…';
+      try {
+        const data = Object.fromEntries(new FormData(form));
+        const res = await fetch('/.netlify/functions/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        btn.textContent = sentMsg;
+        form.reset();
+      } catch (err) {
+        console.error('Form submit failed:', err);
+        btn.textContent = errorMsg;
+      }
+      setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 4000);
     });
   }
 })();

@@ -57,4 +57,4 @@ Se você está adotando dbt agora, três movimentos práticos que rendem mais qu
 
 **Trate `dbt docs` como produto interno.** Apresente em reunião de área, deixe o link na intranet, treine analista pra usar antes do warehouse. Documentação que ninguém abre é overhead. Documentação que vira primeiro recurso de consulta paga seis vezes o esforço de manter.
 
-dbt sem essa disciplina é só uma versão melhor do ETL antigo — e melhor do ETL antigo já é alguma coisa. Com essa disciplina, vira a peça que faz o warehouse parar de ser uma caixa-preta. A diferença entre os dois usos é uma cultura, não uma feature.
+dbt sem essa disciplina é só uma versão melhor do ETL antigo — e melhor do ETL antigo já é alguma coisa. Com essa disciplina, vira a peça que faz o warehouse parar de ser uma caixa-preta. A diferença entre os dois usos é uma cultura, não uma feature. ([No mapa do que sobreviveu do Modern Data Stack em 2026](/blog/modern-data-stack-2026.html), transformação versionada como código é uma das três peças que passaram o teste — e dbt foi quem provou a tese.)

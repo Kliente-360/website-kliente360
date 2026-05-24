@@ -57,4 +57,4 @@ If you're adopting dbt now, three practical moves that pay back more than pickin
 
 **Treat `dbt docs` as an internal product.** Present it in team meetings, put the link on the intranet, train analysts to use it before the warehouse. Documentation no one opens is overhead. Documentation that becomes the first lookup pays six times the effort to keep.
 
-dbt without that discipline is just a better version of the old ETL — and better ETL is already something. With that discipline, it becomes the piece that stops the warehouse from being a black box. The difference between the two uses is a culture, not a feature.
+dbt without that discipline is just a better version of the old ETL — and better ETL is already something. With that discipline, it becomes the piece that stops the warehouse from being a black box. The difference between the two uses is a culture, not a feature. ([On the map of what survived from the Modern Data Stack in 2026](/blog/en/modern-data-stack-2026.html), versioned transformation as code is one of three pieces that passed the test — and dbt was the one that proved the thesis.)

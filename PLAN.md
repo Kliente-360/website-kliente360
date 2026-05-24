@@ -200,7 +200,8 @@ Derivado do audit pós-#10. Quick wins do Bloco A já aplicados. Pendências org
 | **Cases-âncora** (Sem Parar, Bodytech) | 2 sessões | Alto | **Bloqueado** por input do Felipe sobre escopo, números aprovados e o que pode ser dito publicamente. |
 | ~~Página comercial~~ (`/como-trabalhamos/`) | ✅ PT (quinta) + EN/ES (oitava) |
 | ~~Pass de backlinks site-wide~~ | ✅ feito (décima passada) — bloco automático "Continue explorando" em todo post (3 cards: pilar + comercial + glossário com `?pilar=` filter); 111 páginas × 3 backlinks contextuais. Glossário PT/EN/ES agora lê `?pilar=` da URL. |
-| **Pass de backlinks editorial** após cada lote de 5 posts | 0,5 sessão/lote | Médio | Revisar posts antigos pra linkar inline pros novos onde fizer sentido (separado do bloco automático). |
+| ~~Pass de backlinks editorial~~ — routine automatizada | ✅ feito (14ª passada) — quinzenal, lote de ~4 posts. Prompt em `.claude/agents/backlink-pass.md`, fluxo no `blog/posts/README.md` §"Routine de backlink-pass", state tracker em `EDITORIAL.md` coluna `Backlink pass`. Trigger ainda manual ou via scheduler externo. |
+| **Catch-up pass de backlinks pra posts #01–#42** | 2–3 sessões | Alto | Posts antigos nunca receberam pass inverso. Sem isso, débito histórico fica em aberto. Rodar DEPOIS da validação editorial do Felipe (senão links inseridos podem ficar fora de contexto após reescritas). ~80 backlinks potenciais (~2 antigos por post novo × 42). |
 
 ### 6.2. Build/Infra (Felipe ou outro mantenedor — fora do escopo do agente de blog)
 

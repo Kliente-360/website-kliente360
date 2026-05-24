@@ -215,7 +215,9 @@ Derivado do audit pós-#10. Quick wins do Bloco A já aplicados. Pendências org
 
 ### 6.3. Competitive SEO
 
-✅ Brief rodado (décima primeira passada, 2026-05-24) — `research/seo-competitive-brief.md`. Catalogados: Indicium (15 títulos, blog migrou pra EN), Everymind (9 itens, mais press release que blog), Sottelli (7 títulos, PT-BR ativo). Principais achados: IA Aplicada é território vazio em PT-BR (Kliente já tem 12 posts no pilar — manter cadência); Indicium abriu janela ao migrar pra EN; Sottelli é o concorrente real.
+✅ **Primeira passada do brief** (décima primeira passada, 2026-05-24) — `research/seo-competitive-brief.md`. Catalogados: Indicium (15 títulos, blog migrou pra EN), Everymind (9 itens, mais press release que blog), Sottelli (7 títulos, PT-BR ativo). Principais achados: IA Aplicada é território vazio em PT-BR (Kliente já tem 12 posts no pilar — manter cadência); Indicium abriu janela ao migrar pra EN; Sottelli é o concorrente real.
+
+🎯 **Segunda passada pendente** — fechar gaps do brief com **claude-chrome**: (a) fetches retornaram 403, faltou comparar JSON-LD/schemas dos concorrentes, hreflang, sitemaps; (b) sem dados quantitativos de DA/backlinks/keyword rank; (c) sample profundo de posts top 3 pra comparar copy, estrutura, CTAs; (d) re-validar se os 10 quick wins ainda fazem sentido com info mais profunda — possivelmente achar 2-3 ângulos novos. **Output esperado**: brief v2 + lista de quick wins re-ordenada/expandida pra alimentar a routine.
 
 **Top 5 quick wins publicados** (do brief, ordenados originalmente por impacto × facilidade × encaixe na voz):
 
@@ -283,7 +285,7 @@ Itens bloqueados por **ação do Felipe** (input externo, decisão comercial, cr
 #### Conteúdo / rebrand (Felipe quando tiver banda)
 
 - **Faixas de preço / ordem de grandeza de investimento**: removidas (decisão 2026-05-22 — não combinava com "consultoria especializada que não vende em catálogo"). Reavaliar se em algum momento quisermos transparência comercial pública. Conteúdo recuperável via Git.
-- ~~OG image PNG dinâmica por post~~: feito (oitava passada). Atualizar template caso queira variante B/C no futuro.
+- ~~OG image PNG dinâmica por post~~: feito (oitava passada). Variante A é definitiva — decisão 14ª passada de **descartar variantes B/C**: sem evidência de fadiga visual no feed, sem analytics de CTR por OG, multi-variant seria otimização sem dado. Reabrir só se observarmos problema real.
 
 ## 9. Histórico de sessões
 

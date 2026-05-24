@@ -573,7 +573,7 @@ ${JSON.stringify(breadcrumb, null, 2)}
 ${navHtml('/blog/' + post.slug)}
 
   <main id="main">
-    <article class="post-article" data-pillar="${post.pillar}" data-pagefind-body data-pagefind-meta="title:${escapeHtml(t.title)}, pillar_label:${escapeHtml(S.sections[post.pillar])}" data-pagefind-filter="pillar:${post.pillar}">
+    <article class="post-article" data-pillar="${post.pillar}" data-pagefind-body data-pagefind-filter="pillar:${post.pillar}">
 
       <header class="post-header">
         <div class="container container-narrow">
@@ -581,7 +581,7 @@ ${navHtml('/blog/' + post.slug)}
             <span class="pill-pillar">${escapeHtml(pillarLabel)}</span>
             <a class="post-back" href="${blogHref}">${escapeHtml(S.blogBack)}</a>
           </div>
-          <h1>${escapeHtml(t.title)}</h1>
+          <h1 data-pagefind-meta="title">${escapeHtml(t.title)}</h1>
           <div class="post-meta-line">
             <time datetime="${post.date}">${formatDate(post.date, lang)}</time>
             <span class="sep">·</span>
@@ -747,6 +747,7 @@ ${footerHtml}
     const moreBtn = document.querySelector('[data-blog-more-btn]');
     const moreCount = document.querySelector('[data-blog-more-count]');
     const labels = { loading: ${JSON.stringify(S.searchLoading)}, empty: ${JSON.stringify(S.searchEmpty)}, read: ${JSON.stringify(S.readLink)}, of: ${JSON.stringify(S.loadMoreOf)} };
+    const pillarLabels = ${JSON.stringify(S.sections)};
 
     // ----- Load more (paginação no modo navegação) -----
     const mq = window.matchMedia('(min-width: 768px)');
@@ -809,7 +810,7 @@ ${footerHtml}
       if (my !== token) return;
       list.innerHTML = data.map(d => {
         const pillarCode = (d.filters && d.filters.pillar && d.filters.pillar[0]) || '';
-        const pillarLabel = (d.meta && d.meta.pillar_label) || '';
+        const pillarLabel = pillarLabels[pillarCode] || '';
         const title = (d.meta && d.meta.title) || d.url;
         return \`<a class="card post-card" data-pillar="\${pillarCode}" href="\${d.url}">
           <div class="post-meta"><span class="pill-pillar">\${pillarLabel}</span></div>

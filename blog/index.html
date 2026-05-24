@@ -531,6 +531,7 @@
     const moreBtn = document.querySelector('[data-blog-more-btn]');
     const moreCount = document.querySelector('[data-blog-more-count]');
     const labels = { loading: "Buscando…", empty: "Nenhum post corresponde à busca.", read: "Ler →", of: "de" };
+    const pillarLabels = {"sf":"Salesforce","data":"Data & Analytics","ai":"IA Aplicada"};
 
     // ----- Load more (paginação no modo navegação) -----
     const mq = window.matchMedia('(min-width: 768px)');
@@ -593,7 +594,7 @@
       if (my !== token) return;
       list.innerHTML = data.map(d => {
         const pillarCode = (d.filters && d.filters.pillar && d.filters.pillar[0]) || '';
-        const pillarLabel = (d.meta && d.meta.pillar_label) || '';
+        const pillarLabel = pillarLabels[pillarCode] || '';
         const title = (d.meta && d.meta.title) || d.url;
         return `<a class="card post-card" data-pillar="${pillarCode}" href="${d.url}">
           <div class="post-meta"><span class="pill-pillar">${pillarLabel}</span></div>

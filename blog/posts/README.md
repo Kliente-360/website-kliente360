@@ -9,14 +9,16 @@ Este diretório guarda **os posts do blog em Markdown**. O build os converte em 
 ```
 1. cp _template.md  meu-novo-post.md
 2. Edite o frontmatter e escreva o corpo (em Markdown)
-3. (opcional) cp _template.md meu-novo-post.en.md  e traduza
-4. (opcional) cp _template.md meu-novo-post.es.md  e traduza
+3. cp _template.md meu-novo-post.en.md  e traduza   (obrigatório)
+4. cp _template.md meu-novo-post.es.md  e traduza   (obrigatório)
 5. git add . && git commit -m "blog: meu-novo-post — ai"
 6. git push origin main
 7. Netlify roda `npm run build` automaticamente
 8. Em ~1min o post aparece em /blog/, /blog/en/, /blog/es/
    e nos 3 destaques da home (substitui o mais antigo se for o caso)
 ```
+
+**Política**: todo post novo sai nos 3 idiomas no mesmo commit. Sem versão "só PT" — Felipe não precisa validar lote de tradução porque ela é parte do entregável, não etapa opcional posterior.
 
 Pra rodar local: `npm install && npm run build`.
 
@@ -313,7 +315,7 @@ Antes de marcar `[x]` no EDITORIAL, confirmar:
 - [ ] Pelo menos um blockquote forte para sintetizar um ponto.
 - [ ] Sem palavras da lista de evitar.
 - [ ] 5–8 minutos de leitura, salvo justificativa.
-- [ ] Se for traduzir: arquivos `.en.md` / `.es.md` com mesmo `slug`.
+- [ ] **Arquivos `.en.md` e `.es.md` com mesmo `slug`** (obrigatório — todo post sai nos 3 idiomas).
 - [ ] **SEO**: palavra-chave primária no title, no slug, no primeiro parágrafo e em pelo menos 1 H2. **1–3 forward links pra posts publicados** (ver "Estratégia de links internos"), com texto-âncora descritivo.
 - [ ] **GEO**: TL;DR autoexplicativo (sem CTA), H2 em forma de pergunta/afirmação curta, pelo menos 1 blockquote citável, listas numeradas para passos/regras, números/dados concretos quando aplicável.
 
@@ -325,10 +327,11 @@ Se você é um agente automatizado escrevendo um post:
 2. Verifique 2–3 posts publicados nesta pasta como referência de tom.
 3. Use os pilares conforme tabela acima — não invente cor ou label.
 4. Datas devem ser realistas (não futuras além de poucos dias).
-5. Slug = nome do arquivo (sem `.md`). Devem ser idênticos.
-6. **Não** crie HTML por conta própria. **Não** edite `assets/`, `scripts/`, `index.html`, `netlify.toml` ou qualquer arquivo fora de `blog/posts/`. **Não** suba dependências.
-7. Após criar o(s) arquivo(s), commite em `main` com a mensagem: `blog: <slug> — <pilar>`.
-8. Não rode `npm run build` localmente — o Netlify faz isso no deploy.
+5. Slug = nome do arquivo (sem `.md`). Devem ser idênticos entre as 3 variantes (`<slug>.md`, `<slug>.en.md`, `<slug>.es.md`).
+6. **Gere as 3 variantes (`.md`, `.en.md`, `.es.md`) no mesmo commit.** Não publique só PT. Traduzir é parte do entregável, não etapa posterior — Felipe não revisa traduções em batch. Mantenha `pillar` e `date` apenas no `.md` (PT); traduza `title`, `excerpt`, `tldr`, `keywords` e o corpo.
+7. **Não** crie HTML por conta própria. **Não** edite `assets/`, `scripts/`, `index.html`, `netlify.toml` ou qualquer arquivo fora de `blog/posts/`. **Não** suba dependências.
+8. Após criar os 3 arquivos, commite em `main` com a mensagem: `blog: <slug> — <pilar>`.
+9. Não rode `npm run build` localmente — o Netlify faz isso no deploy.
 
 ## Para agentes de revisão
 

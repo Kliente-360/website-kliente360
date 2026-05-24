@@ -11,7 +11,7 @@ keywords: ["modelado dimensional", "Kimball", "lakehouse", "data warehouse", "di
 
 La pregunta que aparece en comité de datos en 2026: "¿todavía vale hacer modelado dimensional? ¿el lakehouse no resuelve todo?". La respuesta honesta — sí, todavía vale — va contra un poco de la moda. Pero la moda está equivocada, o al menos vendiendo lakehouse para problema que no es de lakehouse. El modelado dimensional (Kimball, star schema, hecho + dimensión) sigue siendo la mejor forma de organizar dato para consumo analítico — y la confusión entre "almacenar dato de cualquier forma" y "modelar para uso" cuesta caro para empresas que todavía no vivieron el ciclo completo.
 
-Este texto es la defensa del modelado dimensional en 2026. No es nostalgia — es argumento práctico sobre dónde el enfoque todavía gana y por qué abandonarlo tiene vuelta fuerte de retrabajo.
+Este texto es la defensa del modelado dimensional en 2026. No es nostalgia — es argumento práctico sobre dónde el enfoque todavía gana y por qué abandonarlo tiene vuelta fuerte de retrabajo. [Cuándo lakehouse es de verdad la arquitectura correcta — y cuándo no lo es — tiene criterios separados propios](/blog/es/lakehouse-vs-warehouse.html).
 
 ## Lo que cambió y lo que no
 

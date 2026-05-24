@@ -17,7 +17,7 @@ const DICT = {
     hero: {
       badge1: 'Salesforce Partner', badge2: 'Agentforce ready',
       title1: 'Conhecimento aplicado,', title2: 'como serviço',
-      sub: 'Consultoria especializada em CRM, dados e IA — três pilares como uma prática única. Poucos clientes estratégicos, atendidos por quem entrega.',
+      sub: 'Consultoria especializada em CRM com Salesforce, dados e IA — três pilares como uma prática única. Carteira com poucos clientes estratégicos, atendidos diretamente por quem entrega.',
       cta1: 'Falar com um sócio', cta2: 'Conhecer a Trilha 360',
     },
     pillars: {
@@ -26,25 +26,25 @@ const DICT = {
       lead: 'Nenhuma consultoria especializada do Brasil entrega os três como uma só disciplina. CRM sem dado é cego; dado sem ativação é decoração; IA sem operação é demo. Operamos os três como uma engrenagem.',
       more: 'Ver o pilar',
       sf: { num: '01 · Pilar', t: 'Salesforce', d: 'Core CRM. Da implementação à evolução com agentes, sem terceirizar a estratégia.' },
-      data: { num: '02 · Pilar', t: 'Data & Analytics', d: 'Engenharia de dados, analytics avançado e data science. Agnóstico de stack — escolha guiada pelo cenário.' },
-      ai: { num: '03 · Pilar', t: 'IA Aplicada', d: 'Agentes de IA sob medida e produtos SaaS verticais. Pegada de software house com discovery rápido.' },
+      data: { num: '02 · Pilar', t: 'Data & Analytics', d: 'Do dado bruto à decisão. Stack moderna, agnóstica, escolhida pelo cenário.' },
+      ai: { num: '03 · Pilar', t: 'IA Aplicada', d: 'Agentes de IA sob medida e produtos SaaS verticais. Discovery rápido, entrega em ciclos curtos.' },
     },
     pillarDeep: {
       cta: 'Falar com um sócio', link: 'Como entregamos',
-      sf:   { eyebrow: 'Pilar 01', title: 'Salesforce — do CRM ao agente.', lead: 'Sales, Service, Data Cloud e Agentforce. Implementamos com cabeça de negócio, evoluímos com agentes onde já existe dado e processo.' },
+      sf:   { eyebrow: 'Pilar 01', title: 'Salesforce — do CRM ao agente.', lead: 'Sales, Service, Data Cloud e Agentforce. Implementação com cabeça de negócio; evolução com agentes onde dado e processo já sustentam.' },
       data: { eyebrow: 'Pilar 02', title: 'Data & Analytics — do dado bruto à decisão.', lead: 'Engenharia de dados moderna, modelos preditivos e visualização. Agnóstico de stack, com prática certificada na camada de consumo — escolha guiada pelo cenário.' },
-      ai:   { eyebrow: 'Pilar 03', titleLead: 'IA Aplicada — do', titleMid: 'dado', titleConn: 'ao', titleEnd: 'agente', titleTail: '. Sem emendas.',
-              lead: 'Agentes de IA sob medida e produtos SaaS verticais. Sprint de IA enxuto: do diagnóstico ao primeiro modelo em produção rapidamente.' },
+      ai:   { eyebrow: 'Pilar 03', titleLead: 'IA Aplicada — do', titleMid: 'problema', titleConn: 'ao', titleEnd: 'agente', titleTail: '.',
+              lead: 'Agentes de IA sob medida e produtos SaaS verticais. Validação rápida: do diagnóstico ao primeiro modelo em produção.' },
     },
     trilha: {
       eyebrow: 'Metodologia', title: 'Trilha 360.',
       lead: 'Cinco verbos. Híbrido entre consultoria estratégica, projeto de tecnologia e deploy rápido de IA. Mesmo método nos três pilares.',
       steps: [
-        { v: 'Mapear',     d: 'Negócio, dados e processos. Onde a fricção mora.' },
+        { v: 'Mapear',     d: 'Negócio, dados e processos. O cenário real, sem suposição.' },
         { v: 'Prototipar', d: 'Primeiro corte funcional. Baixo compromisso, alto aprendizado.' },
         { v: 'Validar',    d: 'Prova de valor com KPI claro. Mata ou avança.' },
         { v: 'Implantar',  d: 'Engenharia robusta, produção, integração.' },
-        { v: 'Sustentar',  d: 'AMS, evolução contínua, agentes vivos.' },
+        { v: 'Sustentar',  d: 'Evolução contínua, suporte ativo, agentes vivos.' },
       ],
     },
     cases: {
@@ -56,8 +56,8 @@ const DICT = {
       eyebrow: 'Por que a Kliente 360', title: 'Parceria Salesforce, time enxuto, conversa direta.',
       lead: 'Especialização por escolha. Operação liderada pelos sócios em todos os pilares, sem camadas de account manager entre você e quem entrega.',
       items: [
-        { n: '3',     l: 'Pilares integrados — CRM, dados e IA' },
-        { n: '2026',  l: 'Salesforce Partner ativo' },
+        { n: '20+',   l: 'Anos de mercado dos sócios' },
+        { n: '100+',  l: 'Projetos implementados com sucesso' },
         { n: '100%',  l: 'Contas lideradas por sócio' },
         { n: '<10',   l: 'Clientes estratégicos por vez' },
       ],
@@ -69,7 +69,7 @@ const DICT = {
     },
     contact: {
       eyebrow: 'Contato', title: 'Conversa direta com um sócio.',
-      lead: 'Mande uma linha sobre o problema. Respondemos em 1 dia útil. Sem formulário-fila, sem SDR, sem agenda fantasma.',
+      lead: 'Mande uma linha sobre o que está em jogo. Em até 1 dia útil, um dos sócios responde diretamente — sem etapas intermediárias, sem agenda padronizada.',
       name: 'Nome', email: 'E-mail corporativo', company: 'Empresa', msg: 'Sobre o que conversamos?',
       msgPh: 'Ex.: estamos implantando Data Cloud e queremos avaliar parceria.',
       submit: 'Enviar mensagem', sent: 'Enviado — em breve respondemos', error: 'Erro ao enviar — tente novamente',
@@ -78,7 +78,7 @@ const DICT = {
       whatsapp: 'WhatsApp — Kliente 360',
     },
     footer: {
-      tagline: 'Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.',
+      tagline: 'Consultoria especializada em CRM com Salesforce, dados e IA. Conhecimento aplicado, como serviço.',
       pillarsTitle: 'Pilares', empresaTitle: 'Empresa', contactTitle: 'Contato',
       rights: '© 2026 Kliente 360. Todos os direitos reservados.',
     },
@@ -94,7 +94,7 @@ const DICT = {
     hero: {
       badge1: 'Salesforce Partner', badge2: 'Agentforce ready',
       title1: 'Applied knowledge,', title2: 'as a service',
-      sub: 'A specialist consultancy in CRM, data and AI — three practices as a single discipline. Few strategic clients, served by the people who deliver.',
+      sub: 'A specialist consultancy in CRM with Salesforce, data and AI — three practices as a single discipline. A small book of strategic clients, served directly by the people who deliver.',
       cta1: 'Talk to a partner', cta2: 'Explore the Method',
     },
     pillars: {
@@ -103,25 +103,25 @@ const DICT = {
       lead: 'No specialist consultancy in Brazil delivers all three as one. CRM without data is blind; data without activation is decoration; AI without operation is a demo. We run them as a single engine.',
       more: 'Open practice',
       sf:   { num: '01 · Practice', t: 'Salesforce', d: 'Core CRM. From implementation to agent-driven evolution, without outsourcing strategy.' },
-      data: { num: '02 · Practice', t: 'Data & Analytics', d: 'Data engineering, advanced analytics and data science. Stack-agnostic — guided by the scenario.' },
-      ai:   { num: '03 · Practice', t: 'Applied AI', d: 'Custom AI agents and vertical SaaS products. Software-house pace with fast discovery.' },
+      data: { num: '02 · Practice', t: 'Data & Analytics', d: 'From raw data to decision. Modern, stack-agnostic, chosen per scenario.' },
+      ai:   { num: '03 · Practice', t: 'Applied AI', d: 'Custom AI agents and vertical SaaS products. Fast discovery, short delivery cycles.' },
     },
     pillarDeep: {
       cta: 'Talk to a partner', link: 'How we deliver',
-      sf:   { eyebrow: 'Practice 01', title: 'Salesforce — from CRM to agent.', lead: 'Sales, Service, Data Cloud and Agentforce. We implement with business sense, evolve with agents where data and process already exist.' },
+      sf:   { eyebrow: 'Practice 01', title: 'Salesforce — from CRM to agent.', lead: 'Sales, Service, Data Cloud and Agentforce. Implementation with business sense; agent-driven evolution where data and process already hold up.' },
       data: { eyebrow: 'Practice 02', title: 'Data & Analytics — from raw data to decision.', lead: 'Modern data engineering, predictive models and visualization. Stack-agnostic at the consumption layer — chosen per scenario.' },
-      ai:   { eyebrow: 'Practice 03', titleLead: 'Applied AI — from', titleMid: 'data', titleConn: 'to', titleEnd: 'agent', titleTail: '. No seams.',
-              lead: 'Custom AI agents and vertical SaaS products. Lean AI sprint: from discovery to first model in production, fast.' },
+      ai:   { eyebrow: 'Practice 03', titleLead: 'Applied AI — from', titleMid: 'problem', titleConn: 'to', titleEnd: 'agent', titleTail: '.',
+              lead: 'Custom AI agents and vertical SaaS products. Fast validation: from discovery to first model in production.' },
     },
     trilha: {
       eyebrow: 'Method', title: 'Method 360.',
       lead: 'Five verbs. A hybrid of strategic consulting, tech project and rapid AI deployment. Same method across all three practices.',
       steps: [
-        { v: 'Map',         d: 'Business, data and process. Where friction lives.' },
+        { v: 'Map',         d: 'Business, data and process. The real scenario, no assumptions.' },
         { v: 'Prototype',   d: 'First functional cut. Low commitment, high learning.' },
         { v: 'Validate',    d: 'Proof of value with a clear KPI. Kills or advances.' },
         { v: 'Deploy',      d: 'Robust engineering, production, integration.' },
-        { v: 'Sustain',     d: 'AMS, continuous evolution, living agents.' },
+        { v: 'Sustain',     d: 'Continuous evolution, active support, living agents.' },
       ],
     },
     cases: {
@@ -133,8 +133,8 @@ const DICT = {
       eyebrow: 'Why Kliente 360', title: 'Salesforce partnership, lean team, direct conversation.',
       lead: 'Specialization by choice. Operation led by partners across all practices, no account-manager layer between you and the people who deliver.',
       items: [
-        { n: '3',     l: 'Integrated practices — CRM, data and AI' },
-        { n: '2026',  l: 'Active Salesforce Partner' },
+        { n: '20+',   l: 'Years of market experience among the partners' },
+        { n: '100+',  l: 'Projects delivered successfully' },
         { n: '100%',  l: 'Accounts led by a partner' },
         { n: '<10',   l: 'Strategic clients at a time' },
       ],
@@ -146,7 +146,7 @@ const DICT = {
     },
     contact: {
       eyebrow: 'Contact', title: 'A direct conversation with a partner.',
-      lead: 'Send a line about the problem. We reply within 1 business day. No form-queue, no SDR, no phantom calendar.',
+      lead: 'Send a line about what is at stake. Within 1 business day, one of the partners replies directly — no intermediate steps, no standardized calendar.',
       name: 'Name', email: 'Work email', company: 'Company', msg: 'What should we discuss?',
       msgPh: 'E.g., we are rolling out Data Cloud and want to evaluate a partnership.',
       submit: 'Send message', sent: 'Sent — we will reply shortly', error: 'Failed to send — try again',
@@ -155,7 +155,7 @@ const DICT = {
       whatsapp: 'WhatsApp — Kliente 360',
     },
     footer: {
-      tagline: 'Specialist consultancy in CRM, data and AI. Applied knowledge, as a service.',
+      tagline: 'Specialist consultancy in CRM with Salesforce, data and AI. Applied knowledge, as a service.',
       pillarsTitle: 'Practices', empresaTitle: 'Company', contactTitle: 'Contact',
       rights: '© 2026 Kliente 360. All rights reserved.',
     },
@@ -171,7 +171,7 @@ const DICT = {
     hero: {
       badge1: 'Salesforce Partner', badge2: 'Agentforce ready',
       title1: 'Conocimiento aplicado,', title2: 'como servicio',
-      sub: 'Consultoría especializada en CRM, datos e IA — tres pilares como una sola práctica. Pocos clientes estratégicos, atendidos por quien entrega.',
+      sub: 'Consultoría especializada en CRM con Salesforce, datos e IA — tres pilares como una sola práctica. Cartera con pocos clientes estratégicos, atendidos directamente por quien entrega.',
       cta1: 'Hablar con un socio', cta2: 'Conocer el Método 360',
     },
     pillars: {
@@ -180,25 +180,25 @@ const DICT = {
       lead: 'Ninguna consultoría especializada en Brasil entrega los tres como una sola disciplina. CRM sin datos es ciego; datos sin activación son decoración; IA sin operación es demo. Operamos los tres como un solo engranaje.',
       more: 'Ver el pilar',
       sf:   { num: '01 · Pilar', t: 'Salesforce', d: 'Core CRM. De la implementación a la evolución con agentes, sin tercerizar la estrategia.' },
-      data: { num: '02 · Pilar', t: 'Data & Analytics', d: 'Ingeniería de datos, analítica avanzada y data science. Agnóstico de stack — la elección la guía el escenario.' },
-      ai:   { num: '03 · Pilar', t: 'IA Aplicada', d: 'Agentes de IA a medida y productos SaaS verticales. Velocidad de software house con discovery rápido.' },
+      data: { num: '02 · Pilar', t: 'Data & Analytics', d: 'Del dato bruto a la decisión. Stack moderna, agnóstica, elegida según el escenario.' },
+      ai:   { num: '03 · Pilar', t: 'IA Aplicada', d: 'Agentes de IA a medida y productos SaaS verticales. Discovery rápido, entrega en ciclos cortos.' },
     },
     pillarDeep: {
       cta: 'Hablar con un socio', link: 'Cómo entregamos',
-      sf:   { eyebrow: 'Pilar 01', title: 'Salesforce — del CRM al agente.', lead: 'Sales, Service, Data Cloud y Agentforce. Implementamos con cabeza de negocio, evolucionamos con agentes donde ya existen datos y proceso.' },
+      sf:   { eyebrow: 'Pilar 01', title: 'Salesforce — del CRM al agente.', lead: 'Sales, Service, Data Cloud y Agentforce. Implementación con cabeza de negocio; evolución con agentes donde dato y proceso ya sostienen.' },
       data: { eyebrow: 'Pilar 02', title: 'Data & Analytics — del dato bruto a la decisión.', lead: 'Ingeniería de datos moderna, modelos predictivos y visualización. Agnóstico de stack en la capa de consumo — la elección la guía el escenario.' },
-      ai:   { eyebrow: 'Pilar 03', titleLead: 'IA Aplicada — del', titleMid: 'dato', titleConn: 'al', titleEnd: 'agente', titleTail: '. Sin uniones.',
-              lead: 'Agentes de IA a medida y productos SaaS verticales. Sprint de IA enjuto: del diagnóstico al primer modelo en producción, rápido.' },
+      ai:   { eyebrow: 'Pilar 03', titleLead: 'IA Aplicada — del', titleMid: 'problema', titleConn: 'al', titleEnd: 'agente', titleTail: '.',
+              lead: 'Agentes de IA a medida y productos SaaS verticales. Validación rápida: del diagnóstico al primer modelo en producción.' },
     },
     trilha: {
       eyebrow: 'Metodología', title: 'Método 360.',
       lead: 'Cinco verbos. Híbrido entre consultoría estratégica, proyecto de tecnología y deploy rápido de IA. Mismo método en los tres pilares.',
       steps: [
-        { v: 'Mapear',     d: 'Negocio, datos y procesos. Dónde vive la fricción.' },
+        { v: 'Mapear',     d: 'Negocio, datos y procesos. El escenario real, sin suposiciones.' },
         { v: 'Prototipar', d: 'Primer corte funcional. Bajo compromiso, alto aprendizaje.' },
         { v: 'Validar',    d: 'Prueba de valor con KPI claro. Mata o avanza.' },
         { v: 'Implantar',  d: 'Ingeniería robusta, producción, integración.' },
-        { v: 'Sostener',   d: 'AMS, evolución continua, agentes vivos.' },
+        { v: 'Sostener',   d: 'Evolución continua, soporte activo, agentes vivos.' },
       ],
     },
     cases: {
@@ -210,8 +210,8 @@ const DICT = {
       eyebrow: 'Por qué Kliente 360', title: 'Sociedad Salesforce, equipo enjuto, conversación directa.',
       lead: 'Especialización por elección. Operación liderada por los socios en todos los pilares, sin capas de account manager entre tú y quien entrega.',
       items: [
-        { n: '3',     l: 'Pilares integrados — CRM, datos e IA' },
-        { n: '2026',  l: 'Salesforce Partner activo' },
+        { n: '20+',   l: 'Años de mercado de los socios' },
+        { n: '100+',  l: 'Proyectos implementados con éxito' },
         { n: '100%',  l: 'Cuentas lideradas por socio' },
         { n: '<10',   l: 'Clientes estratégicos a la vez' },
       ],
@@ -223,7 +223,7 @@ const DICT = {
     },
     contact: {
       eyebrow: 'Contacto', title: 'Conversación directa con un socio.',
-      lead: 'Envía una línea sobre el problema. Respondemos en 1 día hábil. Sin formulario-cola, sin SDR, sin agenda fantasma.',
+      lead: 'Envía una línea sobre lo que está en juego. En hasta 1 día hábil, uno de los socios responde directamente — sin etapas intermedias, sin agenda estandarizada.',
       name: 'Nombre', email: 'E-mail corporativo', company: 'Empresa', msg: '¿Sobre qué conversamos?',
       msgPh: 'Ej.: estamos implementando Data Cloud y queremos evaluar una sociedad.',
       submit: 'Enviar mensaje', sent: 'Enviado — pronto respondemos', error: 'Error al enviar — vuelve a intentar',
@@ -232,7 +232,7 @@ const DICT = {
       whatsapp: 'WhatsApp — Kliente 360',
     },
     footer: {
-      tagline: 'Consultoría especializada en CRM, datos e IA. Conocimiento aplicado, como servicio.',
+      tagline: 'Consultoría especializada en CRM con Salesforce, datos e IA. Conocimiento aplicado, como servicio.',
       pillarsTitle: 'Pilares', empresaTitle: 'Empresa', contactTitle: 'Contacto',
       rights: '© 2026 Kliente 360. Todos los derechos reservados.',
     },

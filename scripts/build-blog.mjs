@@ -265,7 +265,7 @@ const footerHtml = `
             </svg>
             <span>kliente 360</span>
           </a>
-          <p data-i18n="footer.tagline">Consultoria especializada em CRM, dados e IA. Conhecimento aplicado, como serviço.</p>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM com Salesforce, dados e IA. Conhecimento aplicado, como serviço.</p>
         </div>
         <div class="footer-col">
           <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
@@ -296,7 +296,6 @@ const footerHtml = `
       </div>
       <div class="footer-bottom">
         <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
-        <div class="mono">v0.1 · CRM · dados · IA</div>
       </div>
     </div>
   </footer>`;

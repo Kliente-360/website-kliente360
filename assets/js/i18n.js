@@ -63,8 +63,8 @@ const DICT = {
       ],
     },
     blog: {
-      eyebrow: 'Blog', title: 'Estratégia, prática e crítica.',
-      lead: 'CRM, dados e IA — ensaios e análises para quem decide. Conteúdo técnico, sem clichês.',
+      eyebrow: 'Blog', title: 'Análise, prática, opinião.',
+      lead: 'Textos curtos sobre o que estamos vendo na prática em projetos de CRM, dados e IA.',
       read: 'Ler →', all: 'Ver todos os textos', date: 'Em breve', filterAll: 'Todos',
     },
     contact: {
@@ -140,8 +140,8 @@ const DICT = {
       ],
     },
     blog: {
-      eyebrow: 'Blog', title: 'Strategy, practice and critique.',
-      lead: 'CRM, data and AI — essays and analysis for decision-makers. Technical content, no buzzwords.',
+      eyebrow: 'Blog', title: 'Analysis, practice, opinion.',
+      lead: 'Short pieces on what we are seeing in real CRM, data and AI projects.',
       read: 'Read →', all: 'See all posts', date: 'Coming soon', filterAll: 'All',
     },
     contact: {
@@ -217,8 +217,8 @@ const DICT = {
       ],
     },
     blog: {
-      eyebrow: 'Blog', title: 'Estrategia, práctica y crítica.',
-      lead: 'CRM, datos e IA — ensayos y análisis para quien decide. Contenido técnico, sin clichés.',
+      eyebrow: 'Blog', title: 'Análisis, práctica, opinión.',
+      lead: 'Textos cortos sobre lo que estamos viendo en proyectos reales de CRM, datos e IA.',
       read: 'Leer →', all: 'Ver todos los textos', date: 'Pronto', filterAll: 'Todos',
     },
     contact: {

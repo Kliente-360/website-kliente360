@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Cómo trabajamos | Kliente 360</title>
+  <meta name="description" content="Cómo trabaja Kliente 360: Método 360 (Mapear → Prototipar → Validar → Implantar → Sostener), prácticas de Salesforce / Datos / IA, prerrequisitos del cliente y FAQ." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+
+  <link rel="canonical" href="/es/como-trabalhamos/" />
+  <link rel="alternate" hreflang="pt-BR" href="/como-trabalhamos/" />
+  <link rel="alternate" hreflang="en-US" href="/en/como-trabalhamos/" />
+  <link rel="alternate" hreflang="es-ES" href="/es/como-trabalhamos/" />
+  <link rel="alternate" hreflang="x-default" href="/como-trabalhamos/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Cómo trabajamos | Kliente 360" />
+  <meta property="og:description" content="Método 360, pilares de entrega, prerrequisitos y FAQ." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/reset.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "inLanguage": "es-ES",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿A qué tamaño de empresa atienden?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Mid-market y enterprise en Brasil. Cliente típico: de 200 a 5000 empleados, con operación de Salesforce existente o datos a escala que justifiquen una analítica madura." } },
+      { "@type": "Question", "name": "¿Cómo deciden si aceptan un proyecto?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Conversación con un socio antes de cualquier propuesta. Evaluamos el encaje técnico, un alcance realista y la disponibilidad del equipo del cliente. Rechazamos proyectos donde no podemos entregar bien." } },
+      { "@type": "Question", "name": "¿Asignan personas en nuestras oficinas?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Trabajamos en remoto con sesiones presenciales cuando el escenario lo exige (kickoff, validación, handover). Body shop o asignación dedicada de largo plazo no forman parte de nuestro modelo." } },
+      { "@type": "Question", "name": "¿Quién hace realmente el trabajo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Los socios lideran la estrategia, el descubrimiento y la relación con su equipo. Especialistas sénior ejecutan. Sin junior haciéndose pasar por consultor — quien promete entrega, entrega." } },
+      { "@type": "Question", "name": "¿Son partners de Salesforce?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, partners activos. Las implementaciones y los trabajos con Agentforce usan aceleradores propios bajo la metodología oficial. En el pilar de Datos somos cloud-agnostic — elegimos la herramienta adecuada al problema, no al portafolio." } },
+      { "@type": "Question", "name": "¿Cómo inicio la conversación?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Envíe una línea sobre el problema por el formulario de contacto, email o WhatsApp. Respondemos personalmente en 1 día hábil. La primera reunión es con un socio — sin calificación por SDR." } }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — inicio">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/><circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/><circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Prácticas</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Método 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/es/" data-i18n="nav.blog">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contacto</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es" aria-current="true">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menú">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Prácticas</div>
+        <a href="/es/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/es/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/es/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Método 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/es/" data-i18n="nav.mobile.blog">Blog</a>
+        <a href="/es/como-trabalhamos/">Cómo trabajamos</a>
+        <a href="/es/glossario/">Glosario</a>
+        <a href="/#contato" data-i18n="nav.contact">Contacto</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Hablar con un socio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="cm-hero">
+      <div class="container">
+        <span class="eyebrow">Cómo trabajamos</span>
+        <h1 style="margin-top: var(--sp-3);">Qué esperar antes de llamarnos.</h1>
+        <p class="lead">Kliente 360 atiende a un número reducido de clientes estratégicos a la vez. Cada cuenta es liderada por un socio, del diagnóstico al sostenimiento. Aquí está el método, lo que entregamos por práctica y lo que esperamos de su parte.</p>
+      </div>
+    </section>
+
+    <section class="cm-section alt">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Metodología</span>
+          <h2>Método 360 — qué pasa en cada paso.</h2>
+          <p class="lead">Cinco verbos. Un híbrido entre consultoría estratégica, proyecto de tecnología e implantación rápida de IA. El mismo método en las tres prácticas — cambia la escala, no el paso.</p>
+        </header>
+
+        <div class="trilha-timeline">
+          <article class="step">
+            <div class="num">01</div>
+            <div>
+              <h3>Mapear</h3>
+              <p>Descubrimiento profundo. Miramos negocio, datos, proceso y personas. Identificamos dónde está la fricción y qué vale atacar primero. Workshops con el dueño del negocio, assessment técnico y revisión de los KPIs actuales.</p>
+              <div class="output"><strong>Entregable</strong>Documento de alcance, hipótesis priorizadas y línea base de KPIs.</div>
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="num">02</div>
+            <div>
+              <h3>Prototipar</h3>
+              <p>Primer corte funcional del problema más relevante. No es el producto final — es el camino más corto para validar la tesis antes de invertir en el proyecto completo. Construido con datos reales, o sintéticos cuando es necesario.</p>
+              <div class="output"><strong>Entregable</strong>Prototipo navegable, modelo offline o prueba técnica de concepto.</div>
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="num">03</div>
+            <div>
+              <h3>Validar</h3>
+              <p>Sometemos el prototipo a casos reales con supervisión humana. Recogemos precisión, tipos de error y casos de escalado. Comparamos contra la línea base operativa establecida en Mapear.</p>
+              <div class="output"><strong>Entregable</strong>Informe stop/go con una decisión clara sobre la siguiente fase.</div>
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="num">04</div>
+            <div>
+              <h3>Implantar</h3>
+              <p>Ingeniería robusta para producción. Integraciones con sistemas existentes (Salesforce, ERP, warehouse), rollout planificado, adopción del equipo, observabilidad. Aquí es donde el esfuerzo de ingeniería es mayor.</p>
+              <div class="output"><strong>Entregable</strong>Solución en producción, integraciones activas, equipo formado.</div>
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="num">05</div>
+            <div>
+              <h3>Sostener</h3>
+              <p>Operación continua: evolución incremental conforme cambia el negocio, gobernanza (sobre todo en IA), respuesta a incidentes. No es body shop — es un socio que entiende el conjunto.</p>
+              <div class="output"><strong>Entregable</strong>Sostenimiento activo o handover documentado al equipo interno.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cm-section">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Lo que entregamos</span>
+          <h2>Tres prácticas. Elija lo que importa primero.</h2>
+          <p class="lead">Cada práctica tiene su página dedicada con ofertas, método aplicado y biblioteca de contenido.</p>
+        </header>
+
+        <div class="grid-cards cols-3">
+          <a class="card cm-mode" href="/es/pilares/salesforce/" style="text-decoration: none;">
+            <div class="num">Práctica 01</div>
+            <h3>Salesforce</h3>
+            <p>Sales, Service, Data Cloud y Agentforce. Del CRM al agente.</p>
+            <div class="when"><strong>Abrir práctica →</strong></div>
+          </a>
+          <a class="card cm-mode" href="/es/pilares/data/" style="text-decoration: none;">
+            <div class="num">Práctica 02</div>
+            <h3>Data &amp; Analytics</h3>
+            <p>Ingeniería, analítica avanzada y visualización. Del dato bruto a la decisión.</p>
+            <div class="when"><strong>Abrir práctica →</strong></div>
+          </a>
+          <a class="card cm-mode" href="/es/pilares/ia/" style="text-decoration: none;">
+            <div class="num">Práctica 03</div>
+            <h3>IA Aplicada</h3>
+            <p>Agentes a medida y productos SaaS verticales. Del dato al agente.</p>
+            <div class="when"><strong>Abrir práctica →</strong></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cm-section alt">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Prerrequisitos</span>
+          <h2>Lo que esperamos de su parte.</h2>
+          <p class="lead">Las tres señales que separan los proyectos que funcionan de los proyectos que se vuelven retrabajo.</p>
+        </header>
+
+        <div class="grid-cards cols-3">
+          <div class="card cm-expect-item accent-side">
+            <h3>Dueño del negocio comprometido</h3>
+            <p>No el "patrocinador ejecutivo" — el operador sénior que sabe dónde duele y tiene tiempo para decisiones semanales.</p>
+          </div>
+          <div class="card cm-expect-item accent-side">
+            <h3>Datos mínimos viables</h3>
+            <p>Los datos de los que depende el proyecto existen, son accesibles y tienen un responsable identificado. No necesitan estar limpios — necesitan estar disponibles.</p>
+          </div>
+          <div class="card cm-expect-item accent-side">
+            <h3>KPI claro desde el inicio</h3>
+            <p>Qué número va a cambiar y cuánto. Sin KPI no hay criterio de aprobación — y la entrega se vuelve teatro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cm-section">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Preguntas frecuentes.</h2>
+        </header>
+
+        <div class="cm-faq">
+          <details>
+            <summary>¿A qué tamaño de empresa atienden?</summary>
+            <p>Mid-market y enterprise en Brasil. El cliente típico tiene entre 200 y 5000 empleados, con operación de Salesforce existente o volumen de datos que justifique una analítica madura.</p>
+          </details>
+          <details>
+            <summary>¿Cómo deciden si aceptan un proyecto?</summary>
+            <p>Conversación con un socio antes de cualquier propuesta. Evaluamos el encaje técnico, un alcance realista y la disponibilidad del equipo del cliente. Rechazamos proyectos donde no podemos entregar bien — preferimos perder una cuenta a entregar a medias.</p>
+          </details>
+          <details>
+            <summary>¿Asignan personas en nuestras oficinas?</summary>
+            <p>No. Trabajamos en remoto con sesiones presenciales cuando el escenario lo exige (kickoff, validación, handover). Body shop o asignación dedicada de largo plazo no forman parte de nuestro modelo.</p>
+          </details>
+          <details>
+            <summary>¿Quién hace realmente el trabajo?</summary>
+            <p>Los socios lideran la estrategia, el descubrimiento y la relación con su equipo. Especialistas sénior ejecutan. Sin junior haciéndose pasar por consultor — quien promete entrega, entrega.</p>
+          </details>
+          <details>
+            <summary>¿Son partners de Salesforce?</summary>
+            <p>Sí, partners activos. Las implementaciones y los trabajos con Agentforce usan aceleradores propios bajo la metodología oficial. En el pilar de Datos somos cloud-agnostic — elegimos la herramienta adecuada al problema, no al portafolio.</p>
+          </details>
+          <details>
+            <summary>¿Cómo inicio la conversación?</summary>
+            <p>Envíe una línea sobre el problema por el formulario de contacto, email o WhatsApp. Respondemos personalmente en 1 día hábil. La primera reunión es con un socio — sin calificación por SDR.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cm-cta">
+      <div class="container">
+        <span class="eyebrow">Siguiente paso</span>
+        <h2>Una conversación directa con un socio. Sin cola, sin SDR.</h2>
+        <p>Envíe una línea sobre el problema. Respondemos en 1 día hábil.</p>
+        <div class="cta-row">
+          <a class="btn btn-on-dark" href="/#contato">Hablar con un socio</a>
+          <a class="btn btn-ghost-dark" href="/blog/es/">Leer antes de contratar</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/><circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/><circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoría especializada en CRM, datos e IA. Conocimiento aplicado, como servicio.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Prácticas</h4>
+          <ul>
+            <li><a href="/es/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/es/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/es/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Método 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/es/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/es/como-trabalhamos/">Cómo trabajamos</a></li>
+            <li><a href="/es/glossario/">Glosario</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contacto</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos los derechos reservados.</div>
+        <div class="mono">v0.3</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/main.js" type="module"></script>
+</body>
+</html>

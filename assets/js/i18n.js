@@ -249,13 +249,34 @@ const PILLAR_LABELS = {
 
 const get = (obj, path) => path.split('.').reduce((o, k) => (o == null ? o : o[k]), obj);
 
-// Detecta idioma de uma página de blog pelo prefixo da URL.
-// /blog/en/...  → en | /blog/es/... → es | /blog/... → pt | (outras URLs) → null
+// Detecta idioma da URL atual.
+// /blog/en/...     → en  (blog usa subpasta interna por convenção legada)
+// /blog/es/...     → es
+// /blog/...        → pt
+// /en/...          → en  (resto do site usa prefixo top-level)
+// /es/...          → es
+// /(qualquer)      → null se não tem variante; pt se a rota tem variante
 const langFromUrl = () => {
-  const m = location.pathname.match(/^\/blog\/(en|es)\//);
-  if (m) return m[1];
-  if (location.pathname.startsWith('/blog/')) return 'pt';
+  const p = location.pathname;
+  const blog = p.match(/^\/blog\/(en|es)\//);
+  if (blog) return blog[1];
+  if (p.startsWith('/blog/')) return 'pt';
+  const top = p.match(/^\/(en|es)(\/|$)/);
+  if (top) return top[1];
+  // Para rotas que TÊM variantes em /en/ e /es/, retorna pt se URL é "raw"
+  if (/^\/(pilares|como-trabalhamos|glossario)(\/|$)/.test(p)) return 'pt';
   return null;
+};
+
+// Rotas que possuem variantes EN/ES (define onde o lang switcher pode redirecionar).
+const HAS_VARIANTS = (path) => {
+  const normalized = path.replace(/^\/(en|es)\//, '/');
+  return normalized.startsWith('/blog/')
+      || normalized.startsWith('/pilares/')
+      || normalized === '/como-trabalhamos/'
+      || normalized === '/glossario/'
+      || normalized.startsWith('/como-trabalhamos')
+      || normalized.startsWith('/glossario');
 };
 
 const detect = () => {
@@ -344,19 +365,28 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-lang]').forEach(btn => {
     btn.addEventListener('click', () => {
       const lang = btn.dataset.lang;
-      // Em páginas de blog: SÓ redireciona, sem aplicar antes (evita flash).
       const path = location.pathname;
-      const isBlog = path.startsWith('/blog/');
-      if (isBlog) {
-        const m = path.match(/^\/blog\/(en|es)\/(.*)$/);
-        const rest = m ? m[2] : path.slice('/blog/'.length);
-        const newPath = lang === 'pt' ? `/blog/${rest}` : `/blog/${lang}/${rest}`;
+
+      // Rotas com variantes (blog, pilares, comercial, glossário) — redireciona sem flash.
+      if (HAS_VARIANTS(path)) {
+        let newPath;
+        if (path.startsWith('/blog/')) {
+          // Convenção legada do blog: /blog/<lang>/<rest>
+          const m = path.match(/^\/blog\/(en|es)\/(.*)$/);
+          const rest = m ? m[2] : path.slice('/blog/'.length);
+          newPath = lang === 'pt' ? `/blog/${rest}` : `/blog/${lang}/${rest}`;
+        } else {
+          // Resto do site: /<lang>/<rest>
+          const stripped = path.replace(/^\/(en|es)\//, '/');
+          newPath = lang === 'pt' ? stripped : `/${lang}${stripped}`;
+        }
         if (newPath !== path) {
           localStorage.setItem('k360.lang', lang);
           location.href = newPath;
           return;
         }
       }
+      // Rotas sem variante (home, styleguide etc) — apenas troca a chrome.
       apply(lang);
     });
   });

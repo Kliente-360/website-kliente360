@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Glossary — CRM, data and AI in practice | Kliente 360</title>
+  <meta name="description" content="The vocabulary we use. Short, direct definitions of Agentforce, Data Cloud, RAG, dbt, ELT, embedding, fine-tuning and more — with link to the canonical post." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+
+  <link rel="canonical" href="/en/glossario/" />
+  <link rel="alternate" hreflang="pt-BR" href="/glossario/" />
+  <link rel="alternate" hreflang="en-US" href="/en/glossario/" />
+  <link rel="alternate" hreflang="es-ES" href="/es/glossario/" />
+  <link rel="alternate" hreflang="x-default" href="/glossario/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Glossary — CRM, data and AI in practice | Kliente 360" />
+  <meta property="og:description" content="The vocabulary we use. Short definitions, with link to the canonical post." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css" />
+  <link rel="stylesheet" href="/assets/css/reset.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    "name": "Kliente 360 Glossary",
+    "description": "Vocabulary used by Kliente 360 in CRM, data, and AI.",
+    "inLanguage": "en-US",
+    "publisher": { "@type": "Organization", "name": "Kliente 360" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — home">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/><circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/><circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="/#pilares" data-i18n="nav.pillars">Practices</a>
+        <a href="/#trilha" data-i18n="nav.trilha">Method 360</a>
+        <a href="/#cases" data-i18n="nav.cases">Cases</a>
+        <a href="/blog/en/" data-i18n="nav.blog">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="pt">PT</button>
+          <button type="button" data-lang="en" aria-current="true">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Practices</div>
+        <a href="/en/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/en/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/en/pilares/ia/" data-i18n="nav.mobile.ai">Applied AI</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Company</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Method 360</a>
+        <a href="/#cases" data-i18n="nav.mobile.cases">Cases</a>
+        <a href="/blog/en/" data-i18n="nav.mobile.blog">Blog</a>
+        <a href="/en/como-trabalhamos/">How we work</a>
+        <a href="/en/glossario/">Glossary</a>
+        <a href="/#contato" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Talk to a partner</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="gloss-hero">
+      <div class="container">
+        <span class="eyebrow">Glossary</span>
+        <h1 style="margin-top: var(--sp-3);">The vocabulary we use.</h1>
+        <p class="lead">In one paragraph, no buzzwords, with links for whoever wants to dig deeper. The terms alive in our work with CRM, data, and applied AI.</p>
+
+        <div class="blog-filter" role="group" aria-label="Filter by practice" style="margin-top: var(--sp-8);">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="sf"   aria-pressed="false">Salesforce</button>
+          <button type="button" data-filter="data" aria-pressed="false">Data &amp; Analytics</button>
+          <button type="button" data-filter="ai"   aria-pressed="false">Applied AI</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="gloss-list">
+
+          <article class="gloss-term" data-pillar="sf">
+            <div class="header">
+              <h2>Agentforce</h2>
+              <span class="pill-pillar">Practice 01 · Salesforce</span>
+            </div>
+            <p>Salesforce's AI agent platform, successor to Einstein. Creates agents that consume Data Cloud as their context source and act over Sales, Service, and the remaining clouds. It's not a chatbot — it's an execution layer.</p>
+            <a class="more" href="/blog/en/quando-agente-e-resposta.html">When an agent is the answer</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="sf">
+            <div class="header">
+              <h2>Data Cloud</h2>
+              <span class="pill-pillar">Practice 01 · Salesforce</span>
+            </div>
+            <p>Salesforce's operational context layer. Materializes profiles in real time, feeds Agentforce, Marketing, and Sales. It's not just a CDP — it's a foundation. Treating it as "just a CDP" leaves value on the table.</p>
+            <a class="more" href="/blog/en/data-cloud-nervo-central.html">Data Cloud is no longer a CDP</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="sf">
+            <div class="header">
+              <h2>Sales Cloud</h2>
+              <span class="pill-pillar">Practice 01 · Salesforce</span>
+            </div>
+            <p>Salesforce's sales core. Pipeline, opportunities, accounts, contacts, commercial process automation. It was the platform's original product; today it works best when integrated with Data Cloud and Agentforce.</p>
+            <a class="more" href="/blog/en/sales-cloud-cinco-antipadroes.html">5 implementation antipatterns</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="sf">
+            <div class="header">
+              <h2>Service Cloud</h2>
+              <span class="pill-pillar">Practice 01 · Salesforce</span>
+            </div>
+            <p>Salesforce's customer service product. Cases, omnichannel, SLAs, knowledge base. Well implemented, it becomes the common language between operations, quality, and product.</p>
+            <a class="more" href="/blog/en/service-cloud-sla-nao-e-decoracao.html">SLA is not decoration</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="sf">
+            <div class="header">
+              <h2>CDP (Customer Data Platform)</h2>
+              <span class="pill-pillar">Practice 01 · Salesforce</span>
+            </div>
+            <p>Platform to unify customer identity, segment, and activate in marketing channels. Product category that Data Cloud transcends — still useful as a concept, but insufficient as a definition of the data layer.</p>
+            <a class="more" href="/blog/en/customer-360-vs-cdp.html">Customer 360 vs CDP</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="sf">
+            <div class="header">
+              <h2>Customer 360</h2>
+              <span class="pill-pillar">Practice 01 · Salesforce</span>
+            </div>
+            <p>Both Data Cloud's harmonized data model (canonical objects like orders, cases, contacts) and Salesforce's strategic thesis — every interaction happens over the same unified profile.</p>
+            <a class="more" href="/blog/en/customer-360-vs-cdp.html">Customer 360 vs CDP</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="sf">
+            <div class="header">
+              <h2>Process mapping</h2>
+              <span class="pill-pillar">Practice 01 · Salesforce</span>
+            </div>
+            <p>Mandatory step before any Salesforce configuration. Documents steps, exceptions, rules, and SLAs in a format readable by both non-expert humans and LLMs. Skipping it is the largest source of rework in CRM projects.</p>
+            <a class="more" href="/blog/en/mapear-processos-antes-do-salesforce.html">How to map processes before Salesforce</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="data">
+            <div class="header">
+              <h2>dbt (data build tool)</h2>
+              <span class="pill-pillar">Practice 02 · Data</span>
+            </div>
+            <p>Data transformation tool that became the de facto standard in analytical modeling. Uses SQL + Jinja + tests + documentation as code. The real win isn't the model — it's the versioned documentation.</p>
+            <a class="more" href="/blog/en/dbt-na-pratica.html">dbt in practice</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="data">
+            <div class="header">
+              <h2>ELT vs ETL</h2>
+              <span class="pill-pillar">Practice 02 · Data</span>
+            </div>
+            <p>ETL extracts, transforms, then loads — bottlenecking on intermediate servers. ELT loads raw into the warehouse and transforms there — using the engine that already exists. The inversion is structural, not aesthetic.</p>
+            <a class="more" href="/blog/en/elt-vs-etl.html">ELT vs ETL</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="data">
+            <div class="header">
+              <h2>Modern data stack</h2>
+              <span class="pill-pillar">Practice 02 · Data</span>
+            </div>
+            <p>Typical stack today: ingestion (Fivetran/Airbyte) → warehouse (Snowflake/BigQuery/Databricks) → transformation (dbt) → BI (Tableau/Looker). Not a prescription — common vocabulary among data engineers in 2026.</p>
+            <a class="more" href="/blog/en/dbt-na-pratica.html">dbt in practice</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="data">
+            <div class="header">
+              <h2>Data warehouse vs Data lake</h2>
+              <span class="pill-pillar">Practice 02 · Data</span>
+            </div>
+            <p>Warehouse: structured data, SQL queries, analytics focus. Lake: raw data in varied formats, cheap-storage focus. Lakehouse tries both — works when the problem justifies it, hurts when it's the default answer.</p>
+            <a class="more" href="/blog/en/dbt-na-pratica.html">dbt in practice</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="data">
+            <div class="header">
+              <h2>Data contracts</h2>
+              <span class="pill-pillar">Practice 02 · Data</span>
+            </div>
+            <p>Formal agreement between producer and consumer of a data asset: schema, quality guarantees, change policy. Reduces the "pipeline broke because someone renamed a column" — the most common problem in data teams.</p>
+            <a class="more" href="/blog/en/data-contracts.html">Data contracts</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="data">
+            <div class="header">
+              <h2>Dimensional modeling</h2>
+              <span class="pill-pillar">Practice 02 · Data</span>
+            </div>
+            <p>Modeling approach (Kimball) with fact and dimension tables. Still valid in 2026 — not as the only architecture, but as the pattern for the analytical consumption layer.</p>
+            <a class="more" href="/blog/en/dbt-na-pratica.html">dbt in practice</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="data">
+            <div class="header">
+              <h2>Self-service BI</h2>
+              <span class="pill-pillar">Practice 02 · Data</span>
+            </div>
+            <p>Culture where business people create their own analyses from trustworthy models. Fails when the model is bad — each department creates its "final draft" and the company loses single source of truth.</p>
+            <a class="more" href="/blog/en/tableau-linguagem-executiva.html">Tableau as executive language</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="data">
+            <div class="header">
+              <h2>Tableau</h2>
+              <span class="pill-pillar">Practice 02 · Data</span>
+            </div>
+            <p>Visualization and BI platform (Salesforce). Excellent for rapid visual exploration over well-modeled data. It doesn't replace modeling or business decision — it visualizes, doesn't think.</p>
+            <a class="more" href="/blog/en/tableau-linguagem-executiva.html">Tableau as executive language</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="ai">
+            <div class="header">
+              <h2>RAG (Retrieval-Augmented Generation)</h2>
+              <span class="pill-pillar">Practice 03 · AI</span>
+            </div>
+            <p>Pattern where an LLM retrieves relevant snippets from an external base before generating a response. Reduces hallucination and enables use of up-to-date knowledge. The hard part is "retrieving well", not generating.</p>
+            <a class="more" href="/blog/en/rag-na-pratica.html">RAG in practice</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="ai">
+            <div class="header">
+              <h2>LLM (Large Language Model)</h2>
+              <span class="pill-pillar">Practice 03 · AI</span>
+            </div>
+            <p>Language model trained on vast text corpora (GPT, Claude, Gemini). Useful as a reasoning layer in AI pipelines; dangerous as the sole source of truth. Treat as a very well-informed junior human.</p>
+            <a class="more" href="/blog/en/llm-como-agente-interno.html">LLM as internal agent</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="ai">
+            <div class="header">
+              <h2>Embedding</h2>
+              <span class="pill-pillar">Practice 03 · AI</span>
+            </div>
+            <p>Numerical representation (vector) of text, image, or other data. Enables semantic similarity calculation. Foundation of vector search and RAG. The quality of the embedding determines the quality of retrieval.</p>
+            <a class="more" href="/blog/en/rag-na-pratica.html">RAG in practice</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="ai">
+            <div class="header">
+              <h2>Vector database</h2>
+              <span class="pill-pillar">Practice 03 · AI</span>
+            </div>
+            <p>Database optimized for vector similarity search (Pinecone, Weaviate, pgvector). Typical RAG component. Choice depends on scale, latency, and existing tooling — not hype.</p>
+            <a class="more" href="/blog/en/vector-databases-comparados.html">Vector databases compared</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="ai">
+            <div class="header">
+              <h2>Fine-tuning</h2>
+              <span class="pill-pillar">Practice 03 · AI</span>
+            </div>
+            <p>Training a ready-made LLM further with domain-specific data. Expensive, slow, rarely the first move. RAG and prompt engineering usually deliver 80% of the value at 10% of the cost.</p>
+            <a class="more" href="/blog/en/fine-tuning-vs-rag-vs-prompt.html">Fine-tuning vs RAG vs prompt</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="ai">
+            <div class="header">
+              <h2>Prompt engineering</h2>
+              <span class="pill-pillar">Practice 03 · AI</span>
+            </div>
+            <p>Discipline of writing instructions for LLMs that produce reliable outputs. Versioned, tested, and measured — not improvised. Almost always the first experiment before RAG or fine-tuning.</p>
+            <a class="more" href="/blog/en/fine-tuning-vs-rag-vs-prompt.html">Fine-tuning vs RAG vs prompt</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="ai">
+            <div class="header">
+              <h2>Agent evaluation</h2>
+              <span class="pill-pillar">Practice 03 · AI</span>
+            </div>
+            <p>Process of measuring agent performance on real cases and edge cases. Includes accuracy, error types, escalation rate, cost per interaction. Without rigorous evaluation, an agent in production becomes silent liability.</p>
+            <a class="more" href="/blog/en/avaliacao-de-agentes.html">Agent evaluation</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="ai">
+            <div class="header">
+              <h2>Hallucination</h2>
+              <span class="pill-pillar">Practice 03 · AI</span>
+            </div>
+            <p>LLM response that sounds plausible but is factually wrong. RAG and prompt engineering reduce; never eliminate. That's why governance and human-in-the-loop are part of the design, not overhead.</p>
+            <a class="more" href="/blog/en/quando-agente-e-resposta.html">When an agent is the answer</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="ai">
+            <div class="header">
+              <h2>AI governance</h2>
+              <span class="pill-pillar">Practice 03 · AI</span>
+            </div>
+            <p>Set of practices for operating AI responsibly: logs of every interaction, audit of decisions, kill switch, retention policy, incident process. It's not overhead — it's what separates a project that survives a new board.</p>
+            <a class="more" href="/blog/en/quando-agente-e-resposta.html">When an agent is the answer</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="ai">
+            <div class="header">
+              <h2>AI sprint</h2>
+              <span class="pill-pillar">Practice 03 · AI</span>
+            </div>
+            <p>Kliente 360 engagement model for AI projects — four weeks of Map, Prototype, Validate, and Decide. Low-commitment entry to validate the thesis before a long project.</p>
+            <a class="more" href="/en/pilares/ia/">Practice 03 · Applied AI</a>
+          </article>
+
+          <article class="gloss-term" data-pillar="sf">
+            <div class="header">
+              <h2>Method 360</h2>
+              <span class="pill-pillar">Kliente 360 methodology</span>
+            </div>
+            <p>Kliente 360's delivery method. Five verbs applied across the three practices: Map, Prototype, Validate, Deploy, Sustain. A hybrid of strategic consulting, technology project, and rapid AI deployment.</p>
+            <a class="more" href="/#trilha">Method 360 on home</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/><circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/><circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Specialized consultancy in CRM, data and AI. Applied knowledge, as a service.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Practices</h4>
+          <ul>
+            <li><a href="/en/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/en/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/en/pilares/ia/" data-i18n="nav.mobile.ai">Applied AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Company</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Method 360</a></li>
+            <li><a href="/#cases" data-i18n="nav.cases">Cases</a></li>
+            <li><a href="/blog/en/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/en/como-trabalhamos/">How we work</a></li>
+            <li><a href="/en/glossario/">Glossary</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contact</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="http://wa.me/5511961875594" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. All rights reserved.</div>
+        <div class="mono">v0.3</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js"></script>
+  <script src="/assets/js/main.js" type="module"></script>
+  <script>
+    document.querySelectorAll('.blog-filter button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.blog-filter button').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+        document.querySelectorAll('.gloss-term').forEach(term => {
+          const show = filter === 'all' || term.dataset.pillar === filter;
+          term.dataset.hidden = show ? 'false' : 'true';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

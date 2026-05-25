@@ -64,7 +64,7 @@ const DICT = {
     },
     blog: {
       eyebrow: 'Blog', title: 'Análise, prática, opinião.',
-      lead: 'Textos curtos sobre o que estamos vendo na prática em projetos de CRM, dados e IA.',
+      lead: 'Textos curtos sobre o que estamos vendo na prática em projetos de Salesforce, dados e IA.',
       read: 'Ler →', all: 'Ver todos os textos', date: 'Em breve', filterAll: 'Todos',
     },
     contact: {
@@ -140,7 +140,7 @@ const DICT = {
     },
     blog: {
       eyebrow: 'Blog', title: 'Analysis, practice, opinion.',
-      lead: 'Short pieces on what we are seeing in real CRM, data and AI projects.',
+      lead: 'Short pieces on what we are seeing in real Salesforce, data and AI projects.',
       read: 'Read →', all: 'See all posts', date: 'Coming soon', filterAll: 'All',
     },
     contact: {
@@ -216,7 +216,7 @@ const DICT = {
     },
     blog: {
       eyebrow: 'Blog', title: 'Análisis, práctica, opinión.',
-      lead: 'Textos cortos sobre lo que estamos viendo en proyectos reales de CRM, datos e IA.',
+      lead: 'Textos cortos sobre lo que estamos viendo en proyectos reales de Salesforce, datos e IA.',
       read: 'Leer →', all: 'Ver todos los textos', date: 'Pronto', filterAll: 'Todos',
     },
     contact: {

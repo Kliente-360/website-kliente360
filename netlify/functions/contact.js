@@ -47,7 +47,7 @@ const sendEmail = async ({ name, email, company, message }) => {
         ${company ? `<tr><td style="padding:6px 12px 6px 0;color:#6e6e73">Empresa</td><td>${escapeHtml(company)}</td></tr>` : ''}
       </table>
       ${message ? `<div style="margin-top:16px;padding:12px 16px;background:#f5f5f7;border-radius:8px;white-space:pre-wrap">${escapeHtml(message)}</div>` : ''}
-      <p style="margin-top:24px;color:#86868b;font-size:12px">Enviado via kliente360.com — function /contact</p>
+      <p style="margin-top:24px;color:#86868b;font-size:12px">Enviado via kliente360.com</p>
     </div>`;
   const text = [
     `Novo lead pelo site`,

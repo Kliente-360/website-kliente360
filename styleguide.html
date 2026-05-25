@@ -51,9 +51,9 @@
     .brand-lockup.large { gap: var(--sp-4); }
     .brand-lockup.large .mark-aperture { width: 72px; height: 72px; }
     .brand-lockup.large .wordmark { font-size: clamp(2rem, 4vw, 3rem); font-weight: var(--fw-bold); letter-spacing: var(--ls-tighter); }
-    .brand-lockup.xl { gap: var(--sp-6); }
-    .brand-lockup.xl .mark-aperture { width: clamp(64px, 9vw, 120px); height: clamp(64px, 9vw, 120px); }
-    .brand-lockup.xl .wordmark { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: var(--fw-bold); letter-spacing: var(--ls-tighter); }
+    .brand-lockup.xl { gap: clamp(var(--sp-3), 2vw, var(--sp-6)); }
+    .brand-lockup.xl .mark-aperture { width: clamp(48px, 9vw, 120px); height: clamp(48px, 9vw, 120px); }
+    .brand-lockup.xl .wordmark { font-size: clamp(2rem, 6vw, 5rem); font-weight: var(--fw-bold); letter-spacing: var(--ls-tighter); }
     .brand-lockup.sm .mark-aperture { width: 36px; height: 36px; }
     .brand-lockup.sm .wordmark { font-size: var(--fs-20); font-weight: var(--fw-bold); letter-spacing: var(--ls-tight); }
     .brand-lockup.stacked { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
@@ -161,7 +161,18 @@
     /* Paleta — strip "tirinha de tinta" (showcase específico de cor) */
     .palette-strip { display: flex; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--color-line); box-shadow: var(--shadow-xs); }
     .palette-strip .chip { flex: 1; min-width: 0; padding: var(--sp-4) var(--sp-3); display: flex; flex-direction: column; justify-content: flex-end; min-height: 120px; gap: 2px; position: relative; }
-    @media (max-width: 480px) { .palette-strip .chip { min-height: 88px; padding: var(--sp-3) var(--sp-2); } }
+    .palette-strip .chip .name, .palette-strip .chip .hex { overflow-wrap: anywhere; }
+    @media (max-width: 560px) {
+      /* Em mobile, chips ficam estreitos demais pra ler hex+token.
+       * Stack vertical = cada chip full-width, altura compacta. */
+      .palette-strip { flex-direction: column; }
+      .palette-strip .chip { min-height: 64px; padding: var(--sp-3) var(--sp-4); justify-content: center; }
+    }
+    @media (max-width: 480px) { .palette-strip .chip { min-height: 60px; } }
+
+    /* Utility — grid 2-col que vira 1-col em mobile (usado em do/don't, faça/não-faça) */
+    .col-split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
+    @media (max-width: 640px) { .col-split { grid-template-columns: 1fr; gap: var(--sp-4); } }
     .palette-strip .chip .name { font-size: var(--fs-12); font-weight: var(--fw-medium); letter-spacing: var(--ls-tight); line-height: 1.15; }
     .palette-strip .chip .hex { font-family: var(--font-mono); font-size: 10px; opacity: 0.75; letter-spacing: 0; }
     .palette-strip .chip.light { color: #fff; }
@@ -650,7 +661,7 @@
         <span class="eyebrow" style="color: var(--green-700);">PADRÃO EDITORIAL</span>
         <h3 class="h4" style="margin-top: var(--sp-3);">Acento verde em parte do heading</h3>
         <p style="margin-top: var(--sp-3); max-width: 65ch;">A marca abre o hero com um título em <strong>duas partes</strong>: a primeira em tinta cheia, a segunda em verde <span class="mono">--color-accent</span>. É o gestual que sustenta a tagline canônica — "Conhecimento aplicado, <em style="color: var(--color-accent); font-style: normal; font-weight: var(--fw-bold);">como serviço</em>." — e funciona como assinatura visual da Kliente.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); margin-top: var(--sp-6);">
+        <div class="col-split" style="margin-top: var(--sp-6);">
           <div>
             <span class="eyebrow" style="color: var(--green-700); font-size: 10px;">✓ FAÇA</span>
             <ul style="margin-top: var(--sp-2); font-size: var(--fs-14); line-height: var(--lh-normal); color: var(--ink-800);">

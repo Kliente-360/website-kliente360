@@ -2,17 +2,20 @@
  * /netlify/functions/contact
  *
  * Recebe POST do form de contato da home, envia e-mail aos sócios via Resend
- * e (opcionalmente) cria um card no app de tasks do Felipe.
+ * e (opcionalmente) cria um card no app de tasks do Felipe (Supabase Edge
+ * Function ingest-task) com schema fixo.
  *
  * Env vars necessárias (Netlify → Site settings → Environment variables):
- *   RESEND_API_KEY   → chave do Resend (https://resend.com/api-keys)
- *   CONTACT_FROM     → remetente verificado (ex: "Kliente 360 <contato@kliente360.com>")
- *   CONTACT_TO       → destinatário(s) separados por vírgula
- *                       (ex: "felipe@kliente360.com,outrosocio@kliente360.com")
- *   TASK_APP_URL     → opcional. URL do endpoint do app de tasks.
- *   TASK_APP_TOKEN   → opcional. Bearer token de autenticação no app.
- *   TASK_APP_HEADER  → opcional. Nome do header (default: "Authorization", valor "Bearer <TOKEN>").
- *                       Se o app usa header próprio (ex: X-API-Key), define aqui.
+ *   RESEND_API_KEY            → chave do Resend (https://resend.com/api-keys)
+ *   CONTACT_FROM              → remetente verificado
+ *                                (ex: "Kliente 360 <contato@kliente360.com>")
+ *   CONTACT_TO                → destinatário(s) separados por vírgula
+ *                                (ex: "felipe@kliente360.com,rafael@kliente360.com")
+ *   TASK_APP_URL              → opcional. URL do endpoint ingest-task.
+ *                                Se vazio, integração com task app é pulada.
+ *   TASK_APP_TOKEN            → opcional. Valor do header x-api-key.
+ *   TASK_APP_RESPONSAVEL_ID   → opcional. UUID do sócio responsável (default
+ *                                hardcoded em TASK_APP_DEFAULTS).
  */
 
 const MAX_FIELD = 2000;
@@ -73,25 +76,65 @@ const sendEmail = async ({ name, email, company, message }) => {
   return res.json();
 };
 
+// Schema do app de tasks (Supabase Edge Function ingest-task).
+// Tudo fixo exceto `descricao` (compõe info do lead) e `prazo` (hoje+1).
+// Env vars necessárias:
+//   TASK_APP_URL                 — endpoint ingest-task
+//   TASK_APP_TOKEN               — valor do header x-api-key
+//   TASK_APP_RESPONSAVEL_ID      — UUID do sócio responsável (default abaixo)
+const TASK_APP_DEFAULTS = {
+  responsavelId: 'f75b99d1-b2ce-42af-8988-42ec5eec8c8a',
+  prioridade:    'P0',
+  esforco:       4,
+  subetapa:      'backlog',
+  isprivate:     true,
+};
+
+const formatDescricao = ({ name, email, company, message }) => {
+  const linhas = [
+    `Nome: ${name}`,
+    `E-mail: ${email}`,
+    company ? `Empresa: ${company}` : null,
+    '',
+    'Mensagem:',
+    message || '(sem mensagem)',
+    '',
+    `Recebido em: ${new Date().toISOString()}`,
+  ].filter(line => line !== null);
+  return linhas.join('\n');
+};
+
+const tomorrowISODate = () => {
+  const d = new Date();
+  d.setUTCDate(d.getUTCDate() + 1);
+  return d.toISOString().split('T')[0]; // YYYY-MM-DD
+};
+
 const createTask = async ({ name, email, company, message }) => {
   const url = process.env.TASK_APP_URL;
-  if (!url) return null; // opcional
+  if (!url) return null; // opcional — se URL não setada, pula sem erro
   const token = process.env.TASK_APP_TOKEN;
-  const headerName = process.env.TASK_APP_HEADER || 'Authorization';
-  const headerValue = headerName.toLowerCase() === 'authorization' && token
-    ? `Bearer ${token}`
-    : token;
+  if (!token) throw new Error('TASK_APP_TOKEN não configurado.');
 
   const payload = {
-    source: 'site-kliente360',
-    title: `Lead: ${name}${company ? ` — ${company}` : ''}`,
-    lead: { name, email, company: company || null, message: message || null },
-    received_at: new Date().toISOString(),
+    titulo:         '[LEAD] Novo lead capturado via website',
+    descricao:      formatDescricao({ name, email, company, message }),
+    responsavel_id: process.env.TASK_APP_RESPONSAVEL_ID || TASK_APP_DEFAULTS.responsavelId,
+    prioridade:     TASK_APP_DEFAULTS.prioridade,
+    esforco:        TASK_APP_DEFAULTS.esforco,
+    prazo:          tomorrowISODate(),
+    subetapa:       TASK_APP_DEFAULTS.subetapa,
+    isprivate:      TASK_APP_DEFAULTS.isprivate,
   };
-  const headers = { 'Content-Type': 'application/json' };
-  if (headerValue) headers[headerName] = headerValue;
 
-  const res = await fetch(url, { method: 'POST', headers, body: JSON.stringify(payload) });
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': token,
+    },
+    body: JSON.stringify(payload),
+  });
   if (!res.ok) {
     const body = await res.text().catch(() => '');
     throw new Error(`Task app ${res.status}: ${body}`);

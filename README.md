@@ -8,7 +8,7 @@ Site institucional da **Kliente 360** — consultoria especializada em Salesforc
 
 Single-page em HTML, CSS e JS puros + seção de blog estática gerada de Markdown. Sem framework, sem runtime de servidor (exceto a function `/contact`). Build estático no Netlify a cada push em `main`.
 
-Três idiomas (PT/EN/ES) com hreflang real. Design system documentado em [`DESIGN.md`](DESIGN.md).
+Três idiomas (PT/EN/ES) com hreflang real. **Brand &amp; Design System v1.0** — guia definitivo em [`design-system/README.md`](design-system/README.md) (porta de entrada), companion narrativo em [`DESIGN.md`](DESIGN.md) e showcase visual em [`styleguide.html`](https://kliente360.com/styleguide.html).
 
 ## Estrutura
 
@@ -31,6 +31,7 @@ Três idiomas (PT/EN/ES) com hreflang real. Design system documentado em [`DESIG
 │   └── data/  (posts.json manifest)
 ├── netlify/functions/contact.js   # form de contato (Resend + task app)
 ├── scripts/build-blog.mjs         # MD → HTML × 3 idiomas + schemas + OG
+├── design-system/                  # porta de entrada do Brand & Design System
 ├── research/                       # competitive brief, css audit
 ├── PLAN.md     DESIGN.md    EDITORIAL.md
 └── netlify.toml   _headers   sitemap.xml   robots.txt
@@ -41,7 +42,8 @@ Três idiomas (PT/EN/ES) com hreflang real. Design system documentado em [`DESIG
 | Doc | Escopo |
 |---|---|
 | [`PLAN.md`](PLAN.md) | Plano vivo: contexto, decisões, próximos passos, parking lot, histórico de sessões |
-| [`DESIGN.md`](DESIGN.md) | Design system — tokens, primitivos, modificadores, anti-padrões |
+| [`design-system/README.md`](design-system/README.md) | **Porta de entrada do Brand &amp; Design System** — pra quem chega de fora e quer adotar o sistema em outro projeto |
+| [`DESIGN.md`](DESIGN.md) | Companion narrativo do design system — tokens, primitivos, modificadores, anti-padrões |
 | [`EDITORIAL.md`](EDITORIAL.md) | Plano editorial 01-52, fila de posts, state tracker de backlink-pass |
 | [`blog/posts/README.md`](blog/posts/README.md) | Anatomia de post, frontmatter, routines (publicação + backlink-pass) |
 | [`research/seo-competitive-brief.md`](research/seo-competitive-brief.md) | Brief competitivo (Indicium, Everymind, Sottelli) + quick wins ordenados |

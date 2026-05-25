@@ -939,12 +939,12 @@ a.card:hover, .card.linked:hover {
   margin: var(--sp-8) 0 var(--sp-12);
   flex-wrap: wrap;
 }
-/* Mobile: aperta gap+padding+fonte pros 4 filtros caberem em 1 linha
- * (Todos · Salesforce · Dados · IA Aplicada). Labels já foram encurtados
- * pra "Dados/Data/Datos" só no filtro. */
+/* Mobile: gap menor pros 4 filtros (Todos · Salesforce · Dados · IA)
+ * caberem em 1 linha em viewport ~360px. Labels do pilar 2 e 3 já são
+ * curtos só no filtro (vide filterDataShort/filterAiShort no build);
+ * com isso, padding e fonte podem ficar no padrão sem quebrar. */
 @media (max-width: 480px) {
   .blog-filter { gap: 6px; }
-  .blog-filter button { padding: 6px 10px; font-size: var(--fs-12); }
 }
 .blog-filter button {
   padding: 8px 14px;

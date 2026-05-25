@@ -78,11 +78,12 @@ const STRINGS = {
     exploreHow: 'Como trabalhamos',
     exploreHowDesc: 'Trilha 360 — os cinco verbos da nossa prática: mapear, prototipar, validar, implantar, sustentar.',
     relatedTitle: 'Próximas leituras',
-    listingTitle: 'Estratégia, prática e crítica.',
-    listingLead: 'CRM, dados e IA — ensaios e análises para quem decide. Conteúdo técnico, sem clichês.',
-    listingMeta: 'Blog Kliente 360 — Estratégia, prática e crítica em CRM, dados e IA. Ensaios e análises para quem decide.',
+    listingTitle: 'Análise, prática, opinião.',
+    listingLead: 'Textos curtos sobre o que estamos vendo na prática em projetos de CRM, dados e IA.',
+    listingMeta: 'Blog Kliente 360 — análise, prática e opinião em CRM, dados e IA. Textos curtos sobre o que estamos vendo na prática.',
     filterAll: 'Todos',
     filterDataShort: 'Dados',
+    filterAiShort: 'IA',
     readLink: 'Ler →',
     searchPlaceholder: 'Buscar no conteúdo',
     searchEmpty: 'Nenhum post corresponde à busca.',
@@ -109,11 +110,12 @@ const STRINGS = {
     exploreHow: 'How we work',
     exploreHowDesc: 'Trilha 360 — the five verbs of our practice: map, prototype, validate, deploy, sustain.',
     relatedTitle: 'Further reading',
-    listingTitle: 'Strategy, practice and critique.',
-    listingLead: 'CRM, data and AI — essays and analysis for decision-makers. Technical content, no buzzwords.',
-    listingMeta: 'Kliente 360 Blog — Strategy, practice and critique in CRM, data and AI. Essays for decision-makers.',
+    listingTitle: 'Analysis, practice, opinion.',
+    listingLead: 'Short pieces on what we are seeing in real CRM, data and AI projects.',
+    listingMeta: 'Kliente 360 Blog — analysis, practice and opinion on CRM, data and AI. Short pieces from real projects.',
     filterAll: 'All',
     filterDataShort: 'Data',
+    filterAiShort: 'AI',
     readLink: 'Read →',
     searchPlaceholder: 'Search content',
     searchEmpty: 'No post matches the search.',
@@ -140,11 +142,12 @@ const STRINGS = {
     exploreHow: 'Cómo trabajamos',
     exploreHowDesc: 'Trilha 360 — los cinco verbos de nuestra práctica: mapear, prototipar, validar, implantar, sostener.',
     relatedTitle: 'Próximas lecturas',
-    listingTitle: 'Estrategia, práctica y crítica.',
-    listingLead: 'CRM, datos e IA — ensayos y análisis para quien decide. Contenido técnico, sin clichés.',
-    listingMeta: 'Blog Kliente 360 — Estrategia, práctica y crítica en CRM, datos e IA. Ensayos para quien decide.',
+    listingTitle: 'Análisis, práctica, opinión.',
+    listingLead: 'Textos cortos sobre lo que estamos viendo en proyectos reales de CRM, datos e IA.',
+    listingMeta: 'Blog Kliente 360 — análisis, práctica y opinión en CRM, datos e IA. Textos cortos desde proyectos reales.',
     filterAll: 'Todos',
     filterDataShort: 'Datos',
+    filterAiShort: 'IA',
     readLink: 'Leer →',
     searchPlaceholder: 'Buscar contenido',
     searchEmpty: 'Ningún post coincide con la búsqueda.',
@@ -700,7 +703,7 @@ ${navHtml(listingPath(lang))}
             <button type="button" data-filter="all" aria-pressed="true">${escapeHtml(S.filterAll)}</button>
             <button type="button" data-filter="sf"   aria-pressed="false">${escapeHtml(S.sections.sf)}</button>
             <button type="button" data-filter="data" aria-pressed="false">${escapeHtml(S.filterDataShort)}</button>
-            <button type="button" data-filter="ai"   aria-pressed="false">${escapeHtml(S.sections.ai)}</button>
+            <button type="button" data-filter="ai"   aria-pressed="false">${escapeHtml(S.filterAiShort)}</button>
           </div>
         </div>
       </div>

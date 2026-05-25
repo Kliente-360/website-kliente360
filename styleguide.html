@@ -564,14 +564,63 @@
       </div>
       <p class="muted mono" style="margin-top: var(--sp-3); font-size: var(--fs-12);">Navy resgatado da paleta antiga. Usar quando quisermos "alma corporativa" sem o gelado do preto puro — ex.: hero alternativo, seção de IA.</p>
 
-      <h3 class="h4" style="margin-top: var(--sp-12); margin-bottom: var(--sp-4);">Cores secundárias — uma por pilar (proposta)</h3>
-      <p class="lead" style="max-width: 70ch;">Cada pilar ganha uma cor que só aparece dentro da sua seção (eyebrow, ícones, micro-acentos). No nível do site, dominam neutro + verde. É um sistema, não um arco-íris.</p>
-      <div class="palette-strip" style="margin-top: var(--sp-6);">
-        <div class="chip light" style="background:#0B5394"><div class="name">Salesforce</div><div class="hex">#0B5394</div></div>
-        <div class="chip dark" style="background:#C9A227"><div class="name">Data</div><div class="hex">#C9A227</div></div>
-        <div class="chip light" style="background:#6D28D9"><div class="name">IA</div><div class="hex">#6D28D9</div></div>
+      <h3 class="h4" style="margin-top: var(--sp-12); margin-bottom: var(--sp-4);">Cores secundárias — uma por pilar</h3>
+      <p class="lead" style="max-width: 70ch;">Cada pilar ganha uma cor que só aparece dentro da sua seção (eyebrow, ícones, micro-acentos). No nível do site, dominam neutro + verde — é um sistema, não um arco-íris. Cada pilar tem variantes <strong>base</strong> (cor canônica), <strong>deep</strong> (hover/emphasis), <strong>soft</strong> (background tint) e — onde necessário — <strong>darker</strong> ou <strong>on-dark</strong> (versão pra contraste em fundo escuro).</p>
+
+      <!-- Salesforce -->
+      <div style="margin-top: var(--sp-8);">
+        <div style="display: flex; align-items: baseline; gap: var(--sp-3); margin-bottom: var(--sp-3);">
+          <strong style="font-size: var(--fs-16); letter-spacing: var(--ls-tight);">Salesforce</strong>
+          <span class="mono" style="font-size: var(--fs-12); color: var(--color-fg-muted);">— azul natural sem cair em cyan</span>
+        </div>
+        <div class="palette-strip">
+          <div class="chip light" style="background:#0B5394"><div class="name">base</div><div class="hex">--c-salesforce · #0B5394</div></div>
+          <div class="chip light" style="background:#07355f"><div class="name">deep</div><div class="hex">--c-salesforce-deep · #07355f</div></div>
+          <div class="chip dark" style="background:#e8eff7"><div class="name">soft</div><div class="hex">--c-salesforce-soft · #e8eff7</div></div>
+        </div>
       </div>
-      <p class="muted mono" style="margin-top: var(--sp-3); font-size: var(--fs-12);">Salesforce → azul natural sem cair em cyan. Data → âmbar lê "inteligência" sem virar startup. IA → violeta universal (OpenAI, Anthropic).</p>
+
+      <!-- Data -->
+      <div style="margin-top: var(--sp-8);">
+        <div style="display: flex; align-items: baseline; gap: var(--sp-3); margin-bottom: var(--sp-3);">
+          <strong style="font-size: var(--fs-16); letter-spacing: var(--ls-tight);">Data</strong>
+          <span class="mono" style="font-size: var(--fs-12); color: var(--color-fg-muted);">— âmbar lê "inteligência" sem virar startup</span>
+        </div>
+        <div class="palette-strip">
+          <div class="chip dark" style="background:#C9A227"><div class="name">base</div><div class="hex">--c-data · #C9A227</div></div>
+          <div class="chip light" style="background:#8a6f15"><div class="name">deep</div><div class="hex">--c-data-deep · #8a6f15</div></div>
+          <div class="chip light" style="background:#5d4a0e"><div class="name">darker</div><div class="hex">--c-data-darker · #5d4a0e</div></div>
+          <div class="chip dark" style="background:#fbf3dc"><div class="name">soft</div><div class="hex">--c-data-soft · #fbf3dc</div></div>
+        </div>
+        <p class="muted mono" style="margin-top: var(--sp-2); font-size: var(--fs-12);">A variante <strong>darker</strong> é exclusiva do Data — o âmbar base é claro demais pra fundo escuro com texto branco; usar darker em hero/stats em modo dark.</p>
+      </div>
+
+      <!-- IA -->
+      <div style="margin-top: var(--sp-8);">
+        <div style="display: flex; align-items: baseline; gap: var(--sp-3); margin-bottom: var(--sp-3);">
+          <strong style="font-size: var(--fs-16); letter-spacing: var(--ls-tight);">IA Aplicada</strong>
+          <span class="mono" style="font-size: var(--fs-12); color: var(--color-fg-muted);">— violeta universal (OpenAI, Anthropic)</span>
+        </div>
+        <div class="palette-strip">
+          <div class="chip light" style="background:#6D28D9"><div class="name">base</div><div class="hex">--c-ai · #6D28D9</div></div>
+          <div class="chip light" style="background:#4c1d95"><div class="name">deep</div><div class="hex">--c-ai-deep · #4c1d95</div></div>
+          <div class="chip dark" style="background:#ede4fd"><div class="name">soft</div><div class="hex">--c-ai-soft · #ede4fd</div></div>
+          <div class="chip dark" style="background:#A78BFA"><div class="name">on-dark</div><div class="hex">--c-ai-on-dark · #A78BFA</div></div>
+        </div>
+        <p class="muted mono" style="margin-top: var(--sp-2); font-size: var(--fs-12);">A variante <strong>on-dark</strong> é exclusiva do AI — o violeta base perde contraste em fundo preto/escuro; usar on-dark (mais claro) pra atingir WCAG AA.</p>
+      </div>
+
+      <!-- Quando usar cada variante -->
+      <div class="card" style="margin-top: var(--sp-12); background: var(--bg-alt); border-color: transparent;">
+        <h4 class="h4" style="margin-bottom: var(--sp-4);">Quando usar cada variante</h4>
+        <div style="display: grid; grid-template-columns: 100px 1fr; gap: var(--sp-2) var(--sp-6); font-size: var(--fs-14); line-height: var(--lh-normal);">
+          <strong>base</strong><span>Cor canônica. Eyebrow, pílulas, ícones, accent topo de card.</span>
+          <strong>deep</strong><span>Hover/emphasis. Hero colorido full-bleed (pillar pages). Stats strip.</span>
+          <strong>soft</strong><span>Background tint. Pílulas em estado soft, micro-fundos de seção.</span>
+          <strong>darker</strong><span><em>Só no Data</em>. Stats strip em pillar page Data (âmbar base é claro demais).</span>
+          <strong>on-dark</strong><span><em>Só no AI</em>. Eyebrow e pílulas dentro de <code class="mono">.section.dark</code>.</span>
+        </div>
+      </div>
 
     </div>
   </section>

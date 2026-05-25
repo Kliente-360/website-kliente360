@@ -43,7 +43,7 @@ La solución técnica honesta pasa por [Customer 360 y Data Cloud](/blog/es/cust
 
 Salesforce premia operación madura: admin certificado, proceso de release, gobierno de campos personalizados, gestión de Flow y Apex. Empresa sin ese músculo entra a la plataforma y en 18 meses tiene 400 campos personalizados sin dueño, 60 Flows que nadie entiende, y contrato de sostenimiento fuera del presupuesto original.
 
-El punto ciego: el costo total de Salesforce no es la licencia. Es la operación continua. Equipo de 3 personas en comercial y cero personas dedicadas a CRM no tiene capacidad de absorber la manutención. El sistema se vuelve fuente de deuda técnica creciente, y el ROI desaparece dentro de la factura mensual del partner de sostenimiento.
+El punto ciego: el costo total de Salesforce no es la licencia. Es la operación continua. Equipo de 3 personas en comercial y cero personas dedicadas a CRM no tiene capacidad de absorber la manutención. El sistema se vuelve fuente de deuda técnica creciente, y el ROI desaparece dentro de la factura mensual del partner de sostenimiento — y [elegir ese partner por el tier del Partner Program solo](/blog/es/salesforce-partner-program.html) es una trampa aparte.
 
 Antes de comprar Salesforce, el socio honesto pregunta: ¿tienes (o vas a contratar) admin certificado en los próximos 6 meses? Si la respuesta es no y ni siquiera es prioridad, la recomendación es diferir la decisión. Existe vida productiva con [Flow vs Apex](/blog/es/flow-vs-apex.html) configurado por admin sénior — pero no existe vida productiva sin admin alguno.
 

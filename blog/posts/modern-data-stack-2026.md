@@ -47,7 +47,7 @@ Três camadas sofreram compressão de margem brutal e perderam diferenciação.
 
 Cinco movimentos arquiteturais reais — não mais relacionados ao rótulo Modern Data Stack, mas que definem stack de dados sério hoje.
 
-1. **Lakehouse virou default.** Databricks consolidou a tese (storage aberto + SQL/Spark/ML no mesmo lugar). Snowflake respondeu (Iceberg). BigQuery respondeu (BigLake). Em 2026, separar "warehouse" de "lake" é arquitetura legacy.
+1. **Lakehouse virou default.** Databricks consolidou a tese (storage aberto + SQL/Spark/ML no mesmo lugar). Snowflake respondeu (Iceberg). BigQuery respondeu (BigLake). Em 2026, separar "warehouse" de "lake" é arquitetura legacy — o que não significa abandonar [modelagem dimensional bem feita em cima do lakehouse](/blog/modelagem-dimensional-2026.html); pelo contrário.
 2. **Camada semântica é onde a disputa está.** dbt Semantic Layer, Cube, MetricFlow disputam por ser o "MetricStore" canônico. Sem ela, métricas brigam entre BI tools. Com ela, mais um motor de governança que afeta produto.
 3. **Real-time deixou de ser categoria à parte.** Materialize, RisingWave, ClickHouse e Iceberg streaming reduziram o gap entre batch e stream. Em 2026, escolher batch ou stream é decisão de SLA, não de stack diferente.
 4. **Governança virou camada do warehouse.** Unity Catalog (Databricks), Horizon (Snowflake), Dataplex (BigQuery) absorveram parte da função de catálogo e lineage. Ferramenta separada só sobrevive em casos complexos multi-warehouse.

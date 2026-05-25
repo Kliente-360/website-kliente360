@@ -103,9 +103,9 @@
     }
     .safe-area-demo .inner { background: var(--bg); padding: var(--sp-4) var(--sp-6); border-radius: var(--r-sm); }
 
-    /* Tamanhos mínimos legíveis */
-    .min-size-row { display: flex; align-items: flex-end; gap: var(--sp-8); flex-wrap: wrap; padding: var(--sp-6); background: var(--bg-alt); border-radius: var(--r-md); }
-    .min-size-row .size-item { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); }
+    /* Tamanhos mínimos legíveis — espalha 4 sizes uniformemente na linha */
+    .min-size-row { display: flex; align-items: flex-end; justify-content: space-around; gap: var(--sp-4); flex-wrap: wrap; padding: var(--sp-8) var(--sp-6); background: var(--bg-alt); border-radius: var(--r-md); }
+    .min-size-row .size-item { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); min-width: 80px; }
     .min-size-row .label { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--color-fg-muted); }
 
     /* Do / Don't — copy do .voice mas para visuais */
@@ -187,18 +187,27 @@
     .type-h3 em,
     .type-h4 em { font-style: normal; color: var(--color-accent); }
 
-    /* Escalas — espaçamento / raio / sombra (showcase de tokens) */
-    .scale-row { display: flex; align-items: flex-end; gap: var(--sp-4); flex-wrap: wrap; }
+    /* Escalas — espaçamento / raio / sombra (showcase de tokens).
+     * Estratégia: usar space-between + flex-wrap pra ocupar toda a horizontal
+     * em telas largas e quebrar elegante em telas estreitas. */
+    .scale-row { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-4); flex-wrap: wrap; padding: var(--sp-8) var(--sp-6); background: var(--bg-alt); border-radius: var(--r-md); }
     .scale-row .item { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); }
     .scale-row .box { background: var(--color-accent); border-radius: 4px; }
     .scale-row .label { font-family: var(--font-mono); font-size: var(--fs-12); color: var(--color-fg-muted); }
 
-    .radius-row { display: flex; gap: var(--sp-6); flex-wrap: wrap; }
-    .radius-row .box { width: 100px; height: 100px; background: var(--bg-alt); border: 1px solid var(--color-line); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: var(--fs-12); color: var(--color-fg-muted); }
+    .radius-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--sp-4); }
+    @media (max-width: 768px) { .radius-row { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 480px) { .radius-row { grid-template-columns: repeat(2, 1fr); } }
+    .radius-row .box { aspect-ratio: 1; background: var(--bg-alt); border: 1px solid var(--color-line); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: var(--fs-12); color: var(--color-fg-muted); }
 
     .shadow-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-6); }
     @media (max-width: 640px) { .shadow-row { grid-template-columns: repeat(2, 1fr); } }
     .shadow-row .box { aspect-ratio: 16/10; background: var(--bg); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: var(--fs-12); color: var(--color-fg-muted); }
+
+    /* Lockup em fundos: 4 cards numa linha só em desktop */
+    .brand-stage-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-6); }
+    @media (max-width: 1024px) { .brand-stage-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .brand-stage-grid { grid-template-columns: 1fr; } }
 
     /* Tom de voz — usar/evitar (showcase específico) */
     .voice { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-8); }
@@ -337,7 +346,7 @@
       <!-- Lockup canônico em 4 fundos -->
       <h3 class="h4" style="margin-top: var(--sp-16); margin-bottom: var(--sp-6);">Lockup canônico em fundos</h3>
       <p class="muted" style="margin-bottom: var(--sp-6);">Wordmark + mark à esquerda. Use sempre o lockup canônico — variações verticais ou compostas só com justificativa específica.</p>
-      <div class="grid-cards cols-2-3">
+      <div class="brand-stage-grid">
         <figure class="brand-cell">
           <div class="brand-stage">
             <span class="brand-lockup sm">

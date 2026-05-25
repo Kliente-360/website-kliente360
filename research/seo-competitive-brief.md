@@ -327,7 +327,7 @@ Critério: alternar pilar a cada post, abrir a sequência com os dois mais "anti
 - Sottelli blog: `https://www.sottelli.com/blog`
 - Releases imprensa Everymind: TI Inside, IT Forum, Inforchannel, E-Commerce Brasil
 - Webcast Everymind "Transform AI": GlobeNewswire (2025-09-08)
-- Inventário Kliente: `/home/user/novo-site-kliente360/blog/posts/` (37 .md PT + EN + ES)
-- Pilares e shortlist: `/home/user/novo-site-kliente360/PLAN.md` §3.1-3.2
+- Inventário Kliente: `/home/user/website-kliente360/blog/posts/` (37 .md PT + EN + ES)
+- Pilares e shortlist: `/home/user/website-kliente360/PLAN.md` §3.1-3.2
 
 > Próxima iteração recomendada: raspagem manual (browser real) dos 3 blogs para coletar (a) listagem completa real de posts paginados, (b) datas exatas de publicação, (c) presença/ausência de Article schema, FAQPage schema, OG images bem renderizadas. Estimativa: 1h.

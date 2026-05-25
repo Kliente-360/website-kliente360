@@ -2,7 +2,7 @@
 
 Documento mantido em main. Registra contexto, decisões tomadas e próximos passos. Atualizar a cada sessão.
 
-Última atualização: 2026-05-24 (décima terceira passada — top 5 quick wins SEO publicados, form de contato em produção, validação editorial pendente).
+Última atualização: 2026-05-25 (décima quinta passada — LANÇAMENTO: site oficialmente no ar em kliente360.com, form ativo, routines configuradas).
 
 ---
 
@@ -28,7 +28,7 @@ Site institucional novo da **Kliente 360** — consultoria especializada em CRM,
 
 Decisor: Felipe Silva (felipe@kliente360.com).
 
-Repositório: `novo-site-kliente360`. Branch: `main`. Scaffold inicial criado em `165f314`.
+Repositório: `website-kliente360` (renomeado em 2026-05-25 — era `novo-site-kliente360`). Branch: `main`. Scaffold inicial criado em `165f314`.
 
 ## 2. Direção definida
 
@@ -306,3 +306,4 @@ Itens bloqueados por **ação do Felipe** (input externo, decisão comercial, cr
 - **2026-05-24 (décima segunda passada)** — Form de contato ligado em produção (resolvido §8.1 #1 pendente de env vars). Criada Netlify Function `netlify/functions/contact.js`: valida payload, honeypot anti-spam (campo `website` em `.hp-field` offscreen), envia e-mail via **Resend** (`reply_to` = e-mail do lead → sócio responde direto), e POST opcional fire-and-forget pro app de tasks do Felipe (env vars `TASK_APP_URL`/`TASK_APP_TOKEN`/`TASK_APP_HEADER` quando estiver pronto). Front em `assets/js/main.js` faz fetch real com estados PT/EN/ES (enviando/enviado/erro). `netlify.toml` ganhou bloco `[functions]`. Parking lot §8.1 reorganizado em tabela de infra (1–6) ordenada por dependência, com ações concretas pra Felipe executar.
 - **2026-05-24 (décima terceira passada)** — Roadmap consolidado pra refletir estado real. **Top 5 quick wins SEO publicados** (#1 Modern Data Stack, #2 Quando NÃO usar Salesforce, #3 Databricks/Snowflake/BigQuery, #4 FinOps de IA, #10 Multi-agent em produção). §6.3 dividido em "publicados" + "restantes" (5 itens na fila pra routine consumir: #5 Implementação SF em 6 semanas, #6 RAG vs fine-tuning, #7 Tendências data 2026, #8 Pardot → MC Engagement, #9 BI tools matriz). §8.1 ganhou item #7: **validação editorial do site inteiro pelo Felipe** (maior pendência aberta). Bloco "Continuous" formalizado: routine de blog 2/semana × 3 idiomas sem data de fim. §5 atualizado coerente.
 - **2026-05-24 (décima quarta passada)** — Pillar pages polish + seção de cases oculta. **Pillar grid**: limita a 6 posts mais recentes (manifest já vem sorted desc por date); CSS `@media (max-width: 767px)` esconde `nth-child(n+4)` no mobile → mostra só 3 cards, blog index continua exaustivo. **Fix CSS Grid**: `align-content: start` em `#home-blog-grid` e `[data-pillar-filter]` impede esticar rows pra preencher `min-height` (reserva pro CLS) — eliminava ~200px de gap fantasma entre cards no mobile. **CTA pillar**: removido botão secundário "Ler antes de contratar" / "Read before hiring" / "Leer antes de contratar"; sobra só "Falar com um sócio" em `btn-pillar` (cor do pilar). **Cases ocultos**: section `#cases` comentada inline em `index.html` (preserva conteúdo pronto pra reativação fácil); removidos 3 links de nav em cada arquivo (`index.html` + 9 pillar pages + 3 como-trabalhamos + 3 glossário + `scripts/build-blog.mjs`); rebuild propaga remoção pros 126 blog posts. Decisão: placeholder `—` parece prova social fraca, melhor esconder até Sem Parar/Bodytech aprovarem métricas.
+- **2026-05-25 (décima quinta passada — LANÇAMENTO)** — Site live em **kliente360.com**. Form 100% funcional: Resend dispara e-mail pra felipe@ + rafael@; Supabase `ingest-task` cria card no app de tasks com `external_id` UUID v4 e schema fixo. Routine de publicação reformulada com **Step 0** (precondições: dia Tue/Wed BRT, sem feriado BR+SP, lote pendente). EDITORIAL.md consolidado em **tabela única 01-52** com coluna `Plano sim/não`; **lote 2 (jun)** adicionado com 5 quick wins SEO restantes + 5 temas novos. Repo renomeado pra `website-kliente360`. DNS migrado da Hostinger: `ALIAS @` → `apex-loadbalancer.netlify.com`, `CNAME www` → `website-kliente360.netlify.app`; HTTPS via Let's Encrypt ativo. **Marco: encerra fase scaffold + rebrand.**

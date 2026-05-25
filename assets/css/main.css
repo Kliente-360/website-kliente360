@@ -1588,6 +1588,7 @@ a.card:hover, .card.linked:hover {
   display: flex; flex-direction: column;
   gap: var(--sp-2);
   max-width: 760px;
+  margin: 0 auto;
 }
 .cm-faq details {
   border: 1px solid var(--color-line);

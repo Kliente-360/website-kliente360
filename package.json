@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node scripts/build-blog.mjs && pagefind --site . --exclude-selectors \".nav, .footer, .post-explore, .post-related, .post-end\""
+    "build": "node scripts/build-blog.mjs && pagefind --site . --exclude-selectors \".nav, .footer, .post-explore, .post-related, .post-end\"",
+    "export:brand": "node scripts/export-brand-assets.mjs"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.2",

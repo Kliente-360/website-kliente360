@@ -19,7 +19,7 @@ The Salesforce program has multiple axes. Three matter for the end client:
 
 **Partner status.** In 2026 Salesforce simplified the tiers — basically Registered, Crest, Summit. Crest is intermediate; Summit is top. Criteria: revenue generated for Salesforce, number of certifications, customer satisfaction (CSAT), specialization.
 
-**Vertical and functional specializations.** A partner can have specific specialization — Service Cloud, Manufacturing Cloud, Data Cloud, Industries verticals. Means they have certifications + proven projects in that scope.
+**Vertical and functional specializations.** A partner can have specific specialization — Service Cloud, Manufacturing Cloud, Data Cloud, [Industries verticals (ex-Vlocity)](/blog/en/salesforce-industries-vlocity.html). Means they have certifications + proven projects in that scope.
 
 **Partner type.** Consulting Partner (does implementation), ISV (makes AppExchange product), Reseller (sells license), AppDev (builds custom app). In 2026, many operate in more than one category.
 

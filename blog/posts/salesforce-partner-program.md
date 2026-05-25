@@ -19,7 +19,7 @@ O programa Salesforce tem múltiplos eixos. Três importam pra cliente final:
 
 **Status de parceiro.** Em 2026 a Salesforce simplificou os tiers — basicamente Registered, Crest, Summit. Crest é o intermediário; Summit é o topo. Critério: receita gerada pra Salesforce, número de certificações, satisfação de cliente (CSAT), especialização.
 
-**Especializações verticais e funcionais.** Parceiro pode ter especialização específica — Service Cloud, Manufacturing Cloud, Data Cloud, Industries verticals. Significa que tem certificações + projetos comprovados naquele escopo.
+**Especializações verticais e funcionais.** Parceiro pode ter especialização específica — Service Cloud, Manufacturing Cloud, Data Cloud, [Industries verticals (ex-Vlocity)](/blog/salesforce-industries-vlocity.html). Significa que tem certificações + projetos comprovados naquele escopo.
 
 **Tipo de parceiro.** Consulting Partner (faz implementação), ISV (faz produto AppExchange), Reseller (vende licença), AppDev (constrói app customizado). Em 2026, muitos atuam em mais de uma categoria.
 

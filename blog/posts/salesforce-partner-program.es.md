@@ -19,7 +19,7 @@ El programa Salesforce tiene múltiples ejes. Tres importan para el cliente fina
 
 **Status de partner.** En 2026 Salesforce simplificó los tiers — básicamente Registered, Crest, Summit. Crest es el intermedio; Summit es el tope. Criterio: ingreso generado para Salesforce, número de certificaciones, satisfacción de cliente (CSAT), especialización.
 
-**Especializaciones verticales y funcionales.** El partner puede tener especialización específica — Service Cloud, Manufacturing Cloud, Data Cloud, Industries verticals. Significa que tiene certificaciones + proyectos comprobados en ese alcance.
+**Especializaciones verticales y funcionales.** El partner puede tener especialización específica — Service Cloud, Manufacturing Cloud, Data Cloud, [Industries verticals (ex-Vlocity)](/blog/es/salesforce-industries-vlocity.html). Significa que tiene certificaciones + proyectos comprobados en ese alcance.
 
 **Tipo de partner.** Consulting Partner (hace implementación), ISV (hace producto AppExchange), Reseller (vende licencia), AppDev (construye app custom). En 2026, muchos actúan en más de una categoría.
 

@@ -14,40 +14,40 @@ Cadência: terça **ou** quarta, pulando feriados (ver `blog/posts/README.md` §
 
 | # | Data | Dia | Pilar | Tema | Ângulo | Status | Backlink pass |
 |---|---|---|---|---|---|---|---|
-| 01 | 2026-01-06 | ter | sf | [Mapear processos antes do Salesforce: o checklist que economiza meses](blog/posts/mapear-processos-antes-do-salesforce.md) | O checklist que economiza meses no projeto | [x] | [ ] |
-| 02 | 2026-01-07 | qua | data | [Dado limpo é um mito: convivendo com qualidade imperfeita](blog/posts/dado-limpo-e-um-mito.md) | Como conviver com qualidade imperfeita sem travar o roadmap | [x] | [ ] |
-| 03 | 2026-01-13 | ter | ai | [RAG na prática: a recuperação é o gargalo, não o LLM](blog/posts/rag-na-pratica.md) | Por que recuperar é mais difícil que gerar | [x] | [ ] |
-| 04 | 2026-01-14 | qua | sf | [Sales Cloud: cinco antipadrões que separam rollout caro de rollout que rende](blog/posts/sales-cloud-cinco-antipadroes.md) | O que separa rollout caro de rollout que rende | [x] | [ ] |
-| 05 | 2026-01-20 | ter | data | [dbt na prática: o pulo do gato é a documentação, não o modelo](blog/posts/dbt-na-pratica.md) | O pulo do gato é a documentação, não o modelo | [x] | [ ] |
-| 06 | 2026-01-21 | qua | ai | [LLM como agente interno: três casos onde funciona, dois onde fracassa](blog/posts/llm-como-agente-interno.md) | Três casos onde funciona, dois onde fracassa | [x] | [ ] |
-| 07 | 2026-01-27 | ter | sf | [Service Cloud: SLA não é decoração — medir capacidade antes de prometer](blog/posts/service-cloud-sla-nao-e-decoracao.md) | Como medir capacidade real antes de prometer prazo | [x] | [ ] |
-| 08 | 2026-01-28 | qua | data | [ELT vs ETL: por que a moda mudou e o que importa de fato](blog/posts/elt-vs-etl.md) | Por que a moda mudou e o que importa de fato | [x] | [ ] |
-| 09 | 2026-02-03 | ter | ai | [Avaliação de agentes: a métrica que ninguém quer publicar](blog/posts/avaliacao-de-agentes.md) | A métrica que ninguém quer publicar | [x] | [ ] |
-| 10 | 2026-02-04 | qua | sf | [Customer 360 vs CDP: diferenças que mudam o roadmap de dados](blog/posts/customer-360-vs-cdp.md) | Diferenças que mudam o roadmap de dados | [x] | [ ] |
-| 11 | 2026-02-10 | ter | data | [Snowflake vs BigQuery vs Databricks: comparação honesta pra médio porte](blog/posts/snowflake-bigquery-databricks.md) | Comparação honesta para empresa brasileira de médio porte | [x] | [ ] |
-| 12 | 2026-02-11 | qua | ai | [Fine-tuning vs RAG vs prompt engineering: como decidir sem queimar caixa](blog/posts/fine-tuning-vs-rag-vs-prompt.md) | Como decidir sem queimar caixa | [x] | [ ] |
-| 13 | 2026-02-24 | ter | sf | [Agentforce em atendimento humano: o que automatizar e o que NÃO](blog/posts/agentforce-atendimento-humano.md) | O que automatizar e o que NÃO | [x] | [ ] |
-| 14 | 2026-02-25 | qua | data | [Data contracts: o jeito menos doloroso de não quebrar produção](blog/posts/data-contracts.md) | O jeito menos doloroso de não quebrar produção | [x] | [ ] |
-| 15 | 2026-03-03 | ter | ai | [Vector databases comparados: Pinecone, Weaviate, pgvector — quando cada um faz sentido](blog/posts/vector-databases-comparados.md) | Pinecone, Weaviate, pgvector — quando cada um faz sentido | [x] | [ ] |
-| 16 | 2026-03-04 | qua | sf | [Salesforce Flow vs Apex: quando código vale mais que clique](blog/posts/flow-vs-apex.md) | Quando código vale mais que clique | [x] | [ ] |
-| 17 | 2026-03-10 | ter | data | [Métricas de produto: por que north star vira "north dust" em 6 meses](blog/posts/metricas-de-produto-north-dust.md) | Por que north star vira "north dust" em 6 meses | [x] | [ ] |
-| 18 | 2026-03-11 | qua | ai | [Multi-agent systems: quando vale orquestrar versus consolidar tudo num agente](blog/posts/multi-agent-systems.md) | Quando vale orquestrar versus consolidar tudo num agente | [x] | [ ] |
-| 19 | 2026-03-17 | ter | sf | [Integração Salesforce ↔ ERP: por que projetos travam no contrato, não na arquitetura](blog/posts/integracao-salesforce-erp.md) | Por que projetos travam no contrato, não na arquitetura | [x] | [ ] |
-| 20 | 2026-03-18 | qua | data | [Self-service BI: por que cada departamento tem seu "rascunho final"](blog/posts/self-service-bi.md) | Por que cada departamento tem seu "rascunho final" | [x] | [ ] |
-| 21 | 2026-03-24 | ter | ai | [Custos reais de inferência: como evitar surpresa de US$ no fim do mês](blog/posts/custos-reais-de-inferencia.md) | Como evitar surpresa de US$ no fim do mês | [x] | [ ] |
-| 22 | 2026-03-25 | qua | sf | [Sandbox strategy: como evitar "a última sandbox foi há 4 meses"](blog/posts/sandbox-strategy.md) | Como evitar "a última sandbox foi há 4 meses" | [x] | [ ] |
-| 23 | 2026-03-31 | ter | data | [Data Catalog que ninguém usa: sintoma do problema real (não é a ferramenta)](blog/posts/data-catalog-ninguem-usa.md) | Sintoma do problema real (não é a ferramenta) | [x] | [ ] |
-| 24 | 2026-04-01 | qua | ai | [Privacidade de dados em LLMs: a checklist de governança que falta no piloto](blog/posts/privacidade-dados-llms.md) | A checklist de governança que falta no piloto | [x] | [ ] |
-| 25 | 2026-04-07 | ter | sf | [Marketing Cloud + Data Cloud: a stack que devia ter nascido junta](blog/posts/marketing-cloud-data-cloud.md) | A stack que devia ter nascido junta | [x] | [ ] |
-| 26 | 2026-04-08 | qua | data | [Engenharia de prompts pra analytics: o pipeline esquecido entre dado e relatório](blog/posts/prompts-pra-analytics.md) | O pipeline esquecido entre dado e relatório | [x] | [ ] |
-| 27 | 2026-04-14 | ter | ai | [IA generativa para vendas: além do "ChatGPT de respostas" — onde gera receita](blog/posts/ia-generativa-vendas.md) | Além do "ChatGPT de respostas" — onde gera receita | [x] | [ ] |
-| 28 | 2026-04-15 | qua | sf | [CPQ em SaaS B2B: a diferença entre cotação e proposta de fato](blog/posts/cpq-saas-b2b.md) | A diferença entre cotação e proposta de fato | [x] | [ ] |
-| 29 | 2026-04-22 | qua | data | [Modelagem dimensional ainda vale em 2026? Sim — defesa contra o lakehouse-pra-tudo](blog/posts/modelagem-dimensional-2026.md) | Sim, e por isto — defesa contra o lakehouse-pra-tudo | [x] | [ ] |
-| 30 | 2026-04-28 | ter | ai | [Open source vs proprietary LLMs: critérios honestos pra escolher sem ideologia](blog/posts/open-source-vs-proprietary-llms.md) | Critérios honestos para escolher sem ideologia | [x] | [ ] |
-| 31 | 2026-04-29 | qua | sf | [Salesforce Industries (Vlocity): vale a pena para empresas brasileiras de médio porte?](blog/posts/salesforce-industries-vlocity.md) | Vale a pena para empresas brasileiras de médio porte? | [x] | [ ] |
-| 32 | 2026-05-05 | ter | data | [Análise de churn: o erro de definir "perda" antes da estratégia](blog/posts/analise-de-churn.md) | O erro de definir "perda" antes da estratégia | [x] | [ ] |
-| 33 | 2026-05-06 | qua | ai | [IA para RH: caso prático do agente de triagem interna](blog/posts/ia-para-rh.md) | Caso prático do agente de triagem interna | [x] | [ ] |
-| 34 | 2026-05-12 | ter | sf | [Salesforce Partner Program: o que o cliente nunca te conta](blog/posts/salesforce-partner-program.md) | O que o cliente nunca te conta | [x] | [ ] |
+| 01 | 2026-01-06 | ter | sf | [Mapear processos antes do Salesforce: o checklist que economiza meses](blog/posts/mapear-processos-antes-do-salesforce.md) | O checklist que economiza meses no projeto | [x] | [x] |
+| 02 | 2026-01-07 | qua | data | [Dado limpo é um mito: convivendo com qualidade imperfeita](blog/posts/dado-limpo-e-um-mito.md) | Como conviver com qualidade imperfeita sem travar o roadmap | [x] | [x] |
+| 03 | 2026-01-13 | ter | ai | [RAG na prática: a recuperação é o gargalo, não o LLM](blog/posts/rag-na-pratica.md) | Por que recuperar é mais difícil que gerar | [x] | [x] |
+| 04 | 2026-01-14 | qua | sf | [Sales Cloud: cinco antipadrões que separam rollout caro de rollout que rende](blog/posts/sales-cloud-cinco-antipadroes.md) | O que separa rollout caro de rollout que rende | [x] | [x] |
+| 05 | 2026-01-20 | ter | data | [dbt na prática: o pulo do gato é a documentação, não o modelo](blog/posts/dbt-na-pratica.md) | O pulo do gato é a documentação, não o modelo | [x] | [x] |
+| 06 | 2026-01-21 | qua | ai | [LLM como agente interno: três casos onde funciona, dois onde fracassa](blog/posts/llm-como-agente-interno.md) | Três casos onde funciona, dois onde fracassa | [x] | [x] |
+| 07 | 2026-01-27 | ter | sf | [Service Cloud: SLA não é decoração — medir capacidade antes de prometer](blog/posts/service-cloud-sla-nao-e-decoracao.md) | Como medir capacidade real antes de prometer prazo | [x] | [x] |
+| 08 | 2026-01-28 | qua | data | [ELT vs ETL: por que a moda mudou e o que importa de fato](blog/posts/elt-vs-etl.md) | Por que a moda mudou e o que importa de fato | [x] | [x] |
+| 09 | 2026-02-03 | ter | ai | [Avaliação de agentes: a métrica que ninguém quer publicar](blog/posts/avaliacao-de-agentes.md) | A métrica que ninguém quer publicar | [x] | [x] |
+| 10 | 2026-02-04 | qua | sf | [Customer 360 vs CDP: diferenças que mudam o roadmap de dados](blog/posts/customer-360-vs-cdp.md) | Diferenças que mudam o roadmap de dados | [x] | [x] |
+| 11 | 2026-02-10 | ter | data | [Snowflake vs BigQuery vs Databricks: comparação honesta pra médio porte](blog/posts/snowflake-bigquery-databricks.md) | Comparação honesta para empresa brasileira de médio porte | [x] | [x] |
+| 12 | 2026-02-11 | qua | ai | [Fine-tuning vs RAG vs prompt engineering: como decidir sem queimar caixa](blog/posts/fine-tuning-vs-rag-vs-prompt.md) | Como decidir sem queimar caixa | [x] | [x] |
+| 13 | 2026-02-24 | ter | sf | [Agentforce em atendimento humano: o que automatizar e o que NÃO](blog/posts/agentforce-atendimento-humano.md) | O que automatizar e o que NÃO | [x] | [x] |
+| 14 | 2026-02-25 | qua | data | [Data contracts: o jeito menos doloroso de não quebrar produção](blog/posts/data-contracts.md) | O jeito menos doloroso de não quebrar produção | [x] | [x] |
+| 15 | 2026-03-03 | ter | ai | [Vector databases comparados: Pinecone, Weaviate, pgvector — quando cada um faz sentido](blog/posts/vector-databases-comparados.md) | Pinecone, Weaviate, pgvector — quando cada um faz sentido | [x] | [x] |
+| 16 | 2026-03-04 | qua | sf | [Salesforce Flow vs Apex: quando código vale mais que clique](blog/posts/flow-vs-apex.md) | Quando código vale mais que clique | [x] | [x] |
+| 17 | 2026-03-10 | ter | data | [Métricas de produto: por que north star vira "north dust" em 6 meses](blog/posts/metricas-de-produto-north-dust.md) | Por que north star vira "north dust" em 6 meses | [x] | [x] |
+| 18 | 2026-03-11 | qua | ai | [Multi-agent systems: quando vale orquestrar versus consolidar tudo num agente](blog/posts/multi-agent-systems.md) | Quando vale orquestrar versus consolidar tudo num agente | [x] | [x] |
+| 19 | 2026-03-17 | ter | sf | [Integração Salesforce ↔ ERP: por que projetos travam no contrato, não na arquitetura](blog/posts/integracao-salesforce-erp.md) | Por que projetos travam no contrato, não na arquitetura | [x] | [x] |
+| 20 | 2026-03-18 | qua | data | [Self-service BI: por que cada departamento tem seu "rascunho final"](blog/posts/self-service-bi.md) | Por que cada departamento tem seu "rascunho final" | [x] | [x] |
+| 21 | 2026-03-24 | ter | ai | [Custos reais de inferência: como evitar surpresa de US$ no fim do mês](blog/posts/custos-reais-de-inferencia.md) | Como evitar surpresa de US$ no fim do mês | [x] | [x] |
+| 22 | 2026-03-25 | qua | sf | [Sandbox strategy: como evitar "a última sandbox foi há 4 meses"](blog/posts/sandbox-strategy.md) | Como evitar "a última sandbox foi há 4 meses" | [x] | [x] |
+| 23 | 2026-03-31 | ter | data | [Data Catalog que ninguém usa: sintoma do problema real (não é a ferramenta)](blog/posts/data-catalog-ninguem-usa.md) | Sintoma do problema real (não é a ferramenta) | [x] | [x] |
+| 24 | 2026-04-01 | qua | ai | [Privacidade de dados em LLMs: a checklist de governança que falta no piloto](blog/posts/privacidade-dados-llms.md) | A checklist de governança que falta no piloto | [x] | [x] |
+| 25 | 2026-04-07 | ter | sf | [Marketing Cloud + Data Cloud: a stack que devia ter nascido junta](blog/posts/marketing-cloud-data-cloud.md) | A stack que devia ter nascido junta | [x] | [x] |
+| 26 | 2026-04-08 | qua | data | [Engenharia de prompts pra analytics: o pipeline esquecido entre dado e relatório](blog/posts/prompts-pra-analytics.md) | O pipeline esquecido entre dado e relatório | [x] | [x] |
+| 27 | 2026-04-14 | ter | ai | [IA generativa para vendas: além do "ChatGPT de respostas" — onde gera receita](blog/posts/ia-generativa-vendas.md) | Além do "ChatGPT de respostas" — onde gera receita | [x] | [x] |
+| 28 | 2026-04-15 | qua | sf | [CPQ em SaaS B2B: a diferença entre cotação e proposta de fato](blog/posts/cpq-saas-b2b.md) | A diferença entre cotação e proposta de fato | [x] | [x] |
+| 29 | 2026-04-22 | qua | data | [Modelagem dimensional ainda vale em 2026? Sim — defesa contra o lakehouse-pra-tudo](blog/posts/modelagem-dimensional-2026.md) | Sim, e por isto — defesa contra o lakehouse-pra-tudo | [x] | [x] |
+| 30 | 2026-04-28 | ter | ai | [Open source vs proprietary LLMs: critérios honestos pra escolher sem ideologia](blog/posts/open-source-vs-proprietary-llms.md) | Critérios honestos para escolher sem ideologia | [x] | [x] |
+| 31 | 2026-04-29 | qua | sf | [Salesforce Industries (Vlocity): vale a pena para empresas brasileiras de médio porte?](blog/posts/salesforce-industries-vlocity.md) | Vale a pena para empresas brasileiras de médio porte? | [x] | [x] |
+| 32 | 2026-05-05 | ter | data | [Análise de churn: o erro de definir "perda" antes da estratégia](blog/posts/analise-de-churn.md) | O erro de definir "perda" antes da estratégia | [x] | [x] |
+| 33 | 2026-05-06 | qua | ai | [IA para RH: caso prático do agente de triagem interna](blog/posts/ia-para-rh.md) | Caso prático do agente de triagem interna | [x] | [x] |
+| 34 | 2026-05-12 | ter | sf | [Salesforce Partner Program: o que o cliente nunca te conta](blog/posts/salesforce-partner-program.md) | O que o cliente nunca te conta | [x] | [x] |
 
 ## Como atualizar
 

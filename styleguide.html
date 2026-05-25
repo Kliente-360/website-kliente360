@@ -51,8 +51,25 @@
     .brand-lockup.large { gap: var(--sp-4); }
     .brand-lockup.large .mark-aperture { width: 72px; height: 72px; }
     .brand-lockup.large .wordmark { font-size: clamp(2rem, 4vw, 3rem); font-weight: var(--fw-bold); letter-spacing: var(--ls-tighter); }
+    .brand-lockup.xl { gap: var(--sp-6); }
+    .brand-lockup.xl .mark-aperture { width: clamp(64px, 9vw, 120px); height: clamp(64px, 9vw, 120px); }
+    .brand-lockup.xl .wordmark { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: var(--fw-bold); letter-spacing: var(--ls-tighter); }
+    .brand-lockup.sm .mark-aperture { width: 36px; height: 36px; }
+    .brand-lockup.sm .wordmark { font-size: var(--fs-20); font-weight: var(--fw-bold); letter-spacing: var(--ls-tight); }
     .brand-lockup.stacked { flex-direction: column; align-items: flex-start; gap: var(--sp-3); }
     .brand-lockup.stacked .wordmark { font-size: var(--fs-24); }
+
+    /* Hero do lockup definitivo — bloco grande, horizontal puro, sem quebra */
+    .brand-hero {
+      background: var(--bg-alt);
+      border-radius: var(--r-lg);
+      padding: clamp(var(--sp-8), 6vw, var(--sp-20)) var(--sp-8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: auto;
+    }
+    .brand-hero .brand-lockup { white-space: nowrap; }
 
     /* Stages — fundos canônicos pra mostrar marca em contexto */
     .brand-stage {
@@ -63,7 +80,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: var(--sp-12);
+      padding: var(--sp-8);
+      overflow: hidden;
     }
     .brand-stage.dark { background: var(--bg-dark); border-color: var(--ink-800); color: var(--fg-on-dark); }
     .brand-stage.dark .brand-lockup { color: var(--fg-on-dark); }
@@ -253,6 +271,20 @@
         <p class="lead">A marca é composta por dois elementos canônicos: <strong>Mark Aperture</strong> — quatro círculos nas posições cardeais (N/E/S/W) com opacidade crescente no sentido horário (0.45 → 0.65 → 0.85 → 1.0) — e o <strong>wordmark</strong> em lowercase "kliente 360" com espaço. Cor sagrada: <span class="mono" style="color: var(--logo-green);">#009900</span>. Forma pura sem container — lê "360°" como compasso/lente.</p>
       </header>
 
+      <!-- Lockup definitivo: hero horizontal puro, sem quebra -->
+      <div class="brand-hero">
+        <span class="brand-lockup xl">
+          <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+            <circle cx="40" cy="22" r="11"/>
+            <circle cx="58" cy="40" r="11"/>
+            <circle cx="40" cy="58" r="11"/>
+            <circle cx="22" cy="40" r="11"/>
+          </svg>
+          <span class="wordmark">kliente 360</span>
+        </span>
+      </div>
+      <p class="muted mono" style="margin-top: var(--sp-3); font-size: var(--fs-12);"><strong>Lockup definitivo</strong> — mark à esquerda, wordmark à direita, alinhamento baseline, gap proporcional. Esta é a forma canônica da marca; tudo abaixo são aplicações dela.</p>
+
       <!-- Aperture isolado: 3 tamanhos canônicos -->
       <h3 class="h4" style="margin-bottom: var(--sp-6);">Mark isolado</h3>
       <div class="min-size-row">
@@ -301,7 +333,7 @@
       <div class="grid-cards cols-2-3">
         <figure class="brand-cell">
           <div class="brand-stage">
-            <span class="brand-lockup large">
+            <span class="brand-lockup sm">
               <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
                 <circle cx="40" cy="22" r="11"/><circle cx="58" cy="40" r="11"/><circle cx="40" cy="58" r="11"/><circle cx="22" cy="40" r="11"/>
               </svg>
@@ -312,7 +344,7 @@
         </figure>
         <figure class="brand-cell">
           <div class="brand-stage dark">
-            <span class="brand-lockup large">
+            <span class="brand-lockup sm">
               <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
                 <circle cx="40" cy="22" r="11"/><circle cx="58" cy="40" r="11"/><circle cx="40" cy="58" r="11"/><circle cx="22" cy="40" r="11"/>
               </svg>
@@ -323,7 +355,7 @@
         </figure>
         <figure class="brand-cell">
           <div class="brand-stage deep">
-            <span class="brand-lockup large">
+            <span class="brand-lockup sm">
               <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
                 <circle cx="40" cy="22" r="11"/><circle cx="58" cy="40" r="11"/><circle cx="40" cy="58" r="11"/><circle cx="22" cy="40" r="11"/>
               </svg>
@@ -334,7 +366,7 @@
         </figure>
         <figure class="brand-cell">
           <div class="brand-stage accent">
-            <span class="brand-lockup large">
+            <span class="brand-lockup sm">
               <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
                 <circle cx="40" cy="22" r="11"/><circle cx="58" cy="40" r="11"/><circle cx="40" cy="58" r="11"/><circle cx="22" cy="40" r="11"/>
               </svg>

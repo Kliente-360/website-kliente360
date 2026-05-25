@@ -43,7 +43,7 @@ A régua que aplicamos em todo kickoff de integração Salesforce-ERP, e que des
 
 1. **Quem é o sistema de registro pra cliente?** Não "ambos" — um. O outro vira reflexo. Decisão executiva, com autoridade pra valer pra todas as áreas.
 2. **Quem é o sistema de registro pra pedido?** Mesma régua. Sales no Salesforce até X; depois ERP. X precisa ser definido com critério claro (status, aprovação, evento).
-3. **Quem decide preço final, e qual a regra de override?** Pricebook do Salesforce, tabela do ERP, CPQ, exceção manual. Hierarquia explícita, sem ambiguidade.
+3. **Quem decide preço final, e qual a regra de override?** Pricebook do Salesforce, tabela do ERP, [CPQ entregando proposta real e não só cotação](/blog/cpq-saas-b2b.html), exceção manual. Hierarquia explícita, sem ambiguidade.
 4. **Qual a frequência aceitável de sincronização por entidade?** Cliente em tempo real? Pedido a cada 15 min? Estoque a cada hora? Critério: o que o caso de uso de negócio exige, não o que a ferramenta consegue.
 5. **Quem é o dono operacional da integração em produção?** Quando quebra, quem investiga primeiro? Nome no fluxo, não "o time de integração". Sem isso, MTTR explode no primeiro incidente.
 

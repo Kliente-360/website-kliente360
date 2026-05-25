@@ -43,7 +43,7 @@ La regla que aplicamos en todo kickoff de integración Salesforce-ERP, y que des
 
 1. **¿Quién es el sistema de registro para cliente?** No "ambos" — uno. El otro se vuelve reflejo. Decisión ejecutiva, con autoridad para valer en todas las áreas.
 2. **¿Quién es el sistema de registro para pedido?** Misma regla. Sales en Salesforce hasta X; después ERP. X necesita estar definido con criterio claro (status, aprobación, evento).
-3. **¿Quién decide precio final, y cuál es la regla de override?** Pricebook de Salesforce, tabla del ERP, CPQ, excepción manual. Jerarquía explícita, sin ambigüedad.
+3. **¿Quién decide precio final, y cuál es la regla de override?** Pricebook de Salesforce, tabla del ERP, [CPQ entregando propuesta real y no solo cotización](/blog/es/cpq-saas-b2b.html), excepción manual. Jerarquía explícita, sin ambigüedad.
 4. **¿Cuál es la frecuencia aceptable de sincronización por entidad?** ¿Cliente en tiempo real? ¿Pedido cada 15 min? ¿Stock cada hora? Criterio: lo que el caso de uso de negocio exige, no lo que la herramienta puede.
 5. **¿Quién es el dueño operativo de la integración en producción?** Cuando se rompe, ¿quién investiga primero? Nombre en el flujo, no "el equipo de integración". Sin eso, el MTTR explota en el primer incidente.
 

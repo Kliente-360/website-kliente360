@@ -43,7 +43,7 @@ The rule we apply at every Salesforce-ERP integration kickoff, which unblocks 80
 
 1. **Who's the system of record for customer?** Not "both" — one. The other becomes a mirror. Executive decision, with authority across all areas.
 2. **Who's the system of record for order?** Same rule. Sales in Salesforce up to X; then ERP. X needs to be defined with clear criteria (status, approval, event).
-3. **Who decides final price, and what's the override rule?** Salesforce pricebook, ERP table, CPQ, manual exception. Explicit hierarchy, no ambiguity.
+3. **Who decides final price, and what's the override rule?** Salesforce pricebook, ERP table, [CPQ delivering real proposals not just quotes](/blog/en/cpq-saas-b2b.html), manual exception. Explicit hierarchy, no ambiguity.
 4. **What's the acceptable sync frequency per entity?** Customer in real time? Order every 15 min? Inventory hourly? Criterion: what the business case requires, not what the tool can do.
 5. **Who's the operational owner of the integration in production?** When it breaks, who investigates first? Name in the flow, not "the integration team". Without that, MTTR explodes on the first incident.
 

@@ -204,7 +204,9 @@ const postUrl = (slug, lang) => abs(postPath(slug, lang));
 const listingUrl = (lang) => abs(listingPath(lang));
 
 // ---------- shared chunks ----------
-const navHtml = (currentPath = '') => `
+const navHtml = (currentPath = '', lang = 'pt') => {
+  const cmPath = lang === 'pt' ? '/como-trabalhamos/' : `/${lang}/como-trabalhamos/`;
+  return `
   <header class="nav" role="banner">
     <div class="container nav-inner">
       <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
@@ -219,7 +221,7 @@ const navHtml = (currentPath = '') => `
 
       <nav class="nav-links" aria-label="Principal">
         <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
-        <a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a>
+        <a href="${cmPath}" data-i18n="nav.howWeWork">Como trabalhamos</a>
         <a href="/blog/" data-i18n="nav.blog"${currentPath.startsWith('/blog') ? ' aria-current="page"' : ''}>Blog</a>
         <a href="/#contato" data-i18n="nav.contact">Contato</a>
       </nav>
@@ -256,6 +258,7 @@ const navHtml = (currentPath = '') => `
       </div>
     </div>
   </header>`;
+};
 
 const footerHtml = `
   <footer class="footer" role="contentinfo">
@@ -572,7 +575,7 @@ ${JSON.stringify(breadcrumb, null, 2)}
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
-${navHtml('/blog/' + post.slug)}
+${navHtml('/blog/' + post.slug, lang)}
 
   <main id="main">
     <article class="post-article" data-pillar="${post.pillar}" data-pagefind-body data-pagefind-filter="pillar:${post.pillar}">
@@ -685,7 +688,7 @@ ${headCommon({
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
-${navHtml(listingPath(lang))}
+${navHtml(listingPath(lang), lang)}
 
   <main id="main">
     <section class="blog-hero">

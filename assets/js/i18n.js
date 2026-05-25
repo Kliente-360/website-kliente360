@@ -9,7 +9,7 @@
 const DICT = {
   pt: {
     nav: {
-      pillars: 'Pilares', trilha: 'Trilha 360', cases: 'Cases', blog: 'Blog', contact: 'Contato',
+      pillars: 'Pilares', trilha: 'Trilha 360', howWeWork: 'Como trabalhamos', cases: 'Cases', blog: 'Blog', contact: 'Contato',
       cta: 'Falar com um sócio', menu: 'Abrir menu',
       mobile: { pillars: 'Pilares', salesforce: 'Salesforce', data: 'Data & Analytics', ai: 'IA Aplicada',
                 empresa: 'Empresa', trilha: 'Trilha 360', cases: 'Cases', blog: 'Blog' },
@@ -85,7 +85,7 @@ const DICT = {
 
   en: {
     nav: {
-      pillars: 'Practices', trilha: 'Method', cases: 'Cases', blog: 'Blog', contact: 'Contact',
+      pillars: 'Practices', trilha: 'Method', howWeWork: 'How we work', cases: 'Cases', blog: 'Blog', contact: 'Contact',
       cta: 'Talk to a partner', menu: 'Open menu',
       mobile: { pillars: 'Practices', salesforce: 'Salesforce', data: 'Data & Analytics', ai: 'Applied AI',
                 empresa: 'Company', trilha: 'Method', cases: 'Cases', blog: 'Blog' },
@@ -161,7 +161,7 @@ const DICT = {
 
   es: {
     nav: {
-      pillars: 'Pilares', trilha: 'Método', cases: 'Casos', blog: 'Blog', contact: 'Contacto',
+      pillars: 'Pilares', trilha: 'Método', howWeWork: 'Cómo trabajamos', cases: 'Casos', blog: 'Blog', contact: 'Contacto',
       cta: 'Hablar con un socio', menu: 'Abrir menú',
       mobile: { pillars: 'Pilares', salesforce: 'Salesforce', data: 'Data & Analytics', ai: 'IA Aplicada',
                 empresa: 'Empresa', trilha: 'Método', cases: 'Casos', blog: 'Blog' },

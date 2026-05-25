@@ -28,7 +28,7 @@ The cost is triple: time of whoever built it (visible), attention of who should 
 The rule we use to review BI before any project. If the dashboard doesn't answer **one of three**, it probably doesn't justify existing.
 
 1. **What is happening now that I need to decide on this week?** Focus on *actionable*. Not "YTD sales", but "which 3 accounts need intervention today".
-2. **What trend affects the next quarter?** Focus on *directional*. Not "churn per month", but "this cohort is leaving in pattern X and demands a response".
+2. **What trend affects the next quarter?** Focus on *directional*. Not "churn per month", but "this cohort is leaving in pattern X and demands a response" — and that depends on [defining churn before modeling churn](/blog/en/analise-de-churn.html), a more common mistake than it seems.
 3. **Where is my intuition wrong?** Focus on *counterintuitive*. Not "show me my numbers", but "show me where my mental model fails".
 
 A dashboard that answers none of this is decoration.

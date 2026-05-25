@@ -28,7 +28,7 @@ El costo es triple: tiempo de quien lo construyó (visible), atención de quien 
 La regla que usamos para revisar BI antes de cualquier proyecto. Si el dashboard no responde **una de las tres**, probablemente no justifica existir.
 
 1. **¿Qué está pasando ahora que necesito decidir esta semana?** Foco en *accionable*. No "ventas YTD", sino "qué 3 cuentas necesitan intervención hoy".
-2. **¿Cuál es la tendencia que afecta el próximo trimestre?** Foco en *direccional*. No "churn por mes", sino "esta cohorte está saliendo en el patrón X y exige respuesta".
+2. **¿Cuál es la tendencia que afecta el próximo trimestre?** Foco en *direccional*. No "churn por mes", sino "esta cohorte está saliendo en el patrón X y exige respuesta" — y eso depende de [definir churn antes de modelar churn](/blog/es/analise-de-churn.html), error más común de lo que parece.
 3. **¿Dónde está equivocada mi intuición?** Foco en *contraintuitivo*. No "muéstrame mis números", sino "muéstrame dónde mi modelo mental falla".
 
 Un dashboard que no responde nada de eso es decoración.

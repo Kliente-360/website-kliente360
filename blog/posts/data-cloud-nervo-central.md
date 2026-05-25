@@ -28,7 +28,7 @@ A diferença é arquitetural, não comercial. Um CDP é um sistema; Data Cloud �
 
 ## Por que Agentforce sem Data Cloud é cego
 
-Agentes precisam de contexto. Um agente de atendimento que não sabe o histórico do cliente, status dos pedidos, valor do contrato e tickets anteriores responde rápido — coisas erradas. Esse contexto pode vir de mil lugares, mas se ele vem fragmentado, o agente fica lento (latência de API) ou impreciso (dados desatualizados).
+Agentes precisam de contexto. [Um agente de atendimento que não sabe o histórico do cliente](/blog/agentforce-atendimento-humano.html), status dos pedidos, valor do contrato e tickets anteriores responde rápido — coisas erradas. Esse contexto pode vir de mil lugares, mas se ele vem fragmentado, o agente fica lento (latência de API) ou impreciso (dados desatualizados).
 
 Data Cloud resolve isso com **perfis materializados em tempo real** que o agente consulta como uma única fonte. Sem joins, sem ETL noturno, sem cache desincronizado. O agente puxa o contexto e age.
 

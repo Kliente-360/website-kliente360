@@ -9,7 +9,7 @@ tldr: "Adoção de IA dentro da empresa multiplica casos de uso mais rápido do 
 keywords: ["FinOps de IA", "custos de LLM", "AI FinOps", "cobrança interna", "inferência"]
 ---
 
-**N**a primeira fase de adoção de IA dentro da empresa, ninguém pergunta quanto custa. Os pilotos são pequenos, a fatura mensal cabe no orçamento de inovação, e a conversa é sobre se a tecnologia funciona. Seis meses depois, quando cinco times diferentes têm casos de uso em produção e a fatura mensal triplicou, a conversa muda. Inevitavelmente, vira briga: TI quer que cada time pague o que consome; produto quer que TI absorva; ninguém quer ser o primeiro a colocar limite.
+**N**a primeira fase de adoção de IA dentro da empresa, ninguém pergunta quanto custa. Os pilotos são pequenos, a fatura mensal cabe no orçamento de inovação, e a conversa é sobre se a tecnologia funciona. Seis meses depois, quando cinco times diferentes têm casos de uso em produção e a fatura mensal triplicou, a conversa muda. Inevitavelmente, vira briga: TI quer que cada time pague o que consome; produto quer que TI absorva; ninguém quer ser o primeiro a colocar limite. (A camada técnica disso — [como os custos reais de inferência explodem em produção](/blog/custos-reais-de-inferencia.html) — é tópico complementar.)
 
 Esse é o problema que FinOps de IA resolve. Cobrar inferência de LLM internamente parece simples — divide a fatura — mas é um dos exercícios mais delicados de governança financeira em tecnologia hoje, porque mistura custo variável real, atribuição multi-tenant, e incentivos comportamentais. Esse texto enumera quatro modelos de cobrança interna, quando cada um funciona, e o que evitar.
 

@@ -9,7 +9,7 @@ tldr: "AI adoption inside a company multiplies use cases faster than the budget 
 keywords: ["AI FinOps", "LLM costs", "inference billing", "internal chargeback", "AI cost management"]
 ---
 
-**I**n the first phase of AI adoption inside a company, nobody asks how much it costs. Pilots are small, the monthly bill fits the innovation budget, and the conversation is about whether the technology works. Six months later, when five different teams have use cases in production and the monthly bill has tripled, the conversation changes. Inevitably, it becomes a fight: IT wants each team to pay what it consumes; product wants IT to absorb it; nobody wants to be the first to set a limit.
+**I**n the first phase of AI adoption inside a company, nobody asks how much it costs. Pilots are small, the monthly bill fits the innovation budget, and the conversation is about whether the technology works. Six months later, when five different teams have use cases in production and the monthly bill has tripled, the conversation changes. Inevitably, it becomes a fight: IT wants each team to pay what it consumes; product wants IT to absorb it; nobody wants to be the first to set a limit. (The technical layer underneath this — [how real inference costs explode in production](/blog/en/custos-reais-de-inferencia.html) — is a complementary topic.)
 
 This is the problem AI FinOps solves. Charging LLM inference back internally sounds simple — split the bill — but it's one of the most delicate exercises of financial governance in tech today, because it mixes real variable cost, multi-tenant attribution, and behavioral incentives. This post enumerates four internal chargeback models, when each one works, and what to avoid.
 

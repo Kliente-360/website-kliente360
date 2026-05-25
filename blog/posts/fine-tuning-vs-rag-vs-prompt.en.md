@@ -31,7 +31,7 @@ The difference isn't only technical. It's *what you're willing to invest before 
 
 The rule we apply before any AI project with business adaptation. Always in this order.
 
-1. **Exhaust prompt engineering first.** Before touching the corpus or the model, try solving with a better instruction. Well-chosen few-shot examples lift accuracy by 10–25% in almost every case. Forced response structure (JSON, numbered list) removes ambiguity. Explicit chain-of-thought improves reasoning. Whoever skips this step invests in RAG/fine-tuning to solve a prompt problem.
+1. **Exhaust prompt engineering first.** Before touching the corpus or the model, try solving with a better instruction. Well-chosen few-shot examples lift accuracy by 10–25% in almost every case. Forced response structure (JSON, numbered list) removes ambiguity. Explicit chain-of-thought improves reasoning. Whoever skips this step invests in RAG/fine-tuning to solve a prompt problem. (The same principle applies to [prompt engineering for analytics pipelines](/blog/en/prompts-pra-analytics.html), where LLM-generated SQL needs the same rigor.)
 2. **Climb to RAG when the model needs knowledge it doesn't have.** Internal document, company policy, product base, customer history. If the question requires a fact the LLM doesn't know, RAG is the path. Not fine-tuning — fine-tuning teaches *patterns*, not *facts*.
 3. **Climb to fine-tuning when the problem is style, format, or very specific domain.** When the model needs to write in your company's jargon, generate code in your internal standard, or respond in a rare structured format. Fine-tuning changes behavior; it doesn't change knowledge.
 

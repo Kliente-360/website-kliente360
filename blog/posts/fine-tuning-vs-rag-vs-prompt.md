@@ -31,7 +31,7 @@ A diferença não é apenas técnica. É *o que você está dispondo a investir 
 
 A régua que aplicamos antes de qualquer projeto de IA com adaptação ao negócio. Sempre nessa ordem.
 
-1. **Esgotar prompt engineering primeiro.** Antes de mexer em corpus ou em modelo, tente resolver com instrução melhor. Few-shot examples bem escolhidos sobem acurácia em 10–25% em quase todo caso. Estrutura de resposta forçada (JSON, lista numerada) elimina ambiguidade. Chain-of-thought explícito melhora raciocínio. Quem pula essa etapa investe em RAG/fine-tuning pra resolver problema que era de prompt.
+1. **Esgotar prompt engineering primeiro.** Antes de mexer em corpus ou em modelo, tente resolver com instrução melhor. Few-shot examples bem escolhidos sobem acurácia em 10–25% em quase todo caso. Estrutura de resposta forçada (JSON, lista numerada) elimina ambiguidade. Chain-of-thought explícito melhora raciocínio. Quem pula essa etapa investe em RAG/fine-tuning pra resolver problema que era de prompt. (O mesmo princípio vale pra [engenharia de prompts em pipelines de analytics](/blog/prompts-pra-analytics.html), onde SQL gerado por LLM precisa do mesmo rigor.)
 2. **Subir pra RAG quando o modelo precisa de conhecimento que não tem.** Documento interno, política da empresa, base de produto, histórico de cliente. Se a pergunta exige fato que o LLM não sabe, RAG é o caminho. Não fine-tuning — fine-tuning ensina *padrão*, não *fato*.
 3. **Subir pra fine-tuning quando o problema é estilo, formato ou domínio muito específico.** Quando o modelo precisa escrever no jargão da sua empresa, gerar código no seu padrão interno, ou responder em um formato estruturado raro. Fine-tuning muda comportamento; não muda conhecimento.
 

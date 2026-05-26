@@ -56,7 +56,7 @@ Numeração sequencial pela ordem cronológica de publicação. Quando duas entr
 | 40 | 2026-05-20 | qua | ai | [Quando um agente é a resposta — e quando ele é fuga de problema mal modelado](blog/posts/quando-agente-e-resposta.md) | Não | Back-catálogo | [x] | [x] |
 | 41 | 2026-05-24 | dom | ai | [FinOps de IA: como cobrar inferência de LLM do cliente interno sem brigar com a TI](blog/posts/finops-de-ia.md) | Não | Quick win SEO #4 — vocabulário emergente sem competição PT-BR | [x] | [x] |
 | 42 | 2026-05-24 | dom | sf | [Quando NÃO usar Salesforce: 4 cenários em que o custo de licença supera o ROI](blog/posts/quando-nao-usar-salesforce.md) | Não | Quick win SEO #2 — consultoria que diz NÃO, GEO ouro | [x] | [x] |
-| 43 | 2026-05-26 | ter | data | Tendências de data management 2026 — 5 que mudam, 3 que não | Sim | Quick win SEO #7 — annual trends post | [ ] | [ ] |
+| 43 | 2026-05-26 | ter | data | [Tendências de data management 2026: 5 que mudam, 3 que não](blog/posts/tendencias-data-management-2026.md) | Sim | Quick win SEO #7 — annual trends post | [x] | [ ] |
 | 44 | 2026-05-27 | qua | ai | RAG não é a resposta — 6 padrões em que fine-tuning ganha | Sim | Quick win SEO #6 — contraintuitivo, GEO-friendly | [ ] | [ ] |
 | 45 | 2026-06-02 | ter | sf | Implementação de Salesforce em 6 semanas — o que cabe num MVP | Sim | Quick win SEO #5 — crítica às promessas de "14 dias" | [ ] | [ ] |
 | 46 | 2026-06-03 | qua | data | Power BI vs Tableau vs Looker vs Metabase — matriz por porte | Sim | Quick win SEO #9 — comparativo Brasil-específico | [ ] | [ ] |

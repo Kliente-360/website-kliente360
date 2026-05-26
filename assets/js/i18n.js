@@ -23,7 +23,7 @@ const DICT = {
     pillars: {
       eyebrow: 'Portfólio',
       title: 'Três pilares. Uma prática única.',
-      lead: 'Nenhuma consultoria especializada do Brasil entrega os três como uma só disciplina. CRM sem dado é cego; dado sem ativação é decoração; IA sem operação é demo. Operamos os três como uma engrenagem.',
+      lead: 'Nenhuma consultoria especializada do Brasil entrega os três como uma só disciplina. CRM sem dado é cego. Dados sem ativação é desperdício. IA sem operação é demo. Operamos os três como uma engrenagem.',
       more: 'Ver o pilar',
       sf: { num: '01 · Pilar', t: 'Salesforce', d: 'Core CRM. Da implementação à evolução com agentes, sem terceirizar a estratégia.' },
       data: { num: '02 · Pilar', t: 'Data & Analytics', d: 'Do dado bruto à decisão. Stack moderna, agnóstica, escolhida pelo cenário.' },
@@ -93,13 +93,13 @@ const DICT = {
     hero: {
       badge1: 'Salesforce Partner', badge2: 'Agentforce ready',
       title1: 'Applied knowledge,', title2: 'as a service',
-      sub: 'A specialist consultancy in CRM with Salesforce, data and AI — three practices as a single discipline. A small book of strategic clients, served directly by the people who deliver.',
+      sub: 'A specialist consultancy in CRM with Salesforce, Data and AI — three practices as a single discipline. A small book of strategic clients, served directly by the people who deliver.',
       cta1: 'Talk to a partner', cta2: 'Explore the Method',
     },
     pillars: {
       eyebrow: 'Portfolio',
       title: 'Three practices. One discipline.',
-      lead: 'No specialist consultancy in Brazil delivers all three as one. CRM without data is blind; data without activation is decoration; AI without operation is a demo. We run them as a single engine.',
+      lead: 'No specialist consultancy in Brazil delivers all three as one discipline. CRM without data is blind. Data without activation is waste. AI without operation is a demo. We run them as a single engine.',
       more: 'Open practice',
       sf:   { num: '01 · Practice', t: 'Salesforce', d: 'Core CRM. From implementation to agent-driven evolution, without outsourcing strategy.' },
       data: { num: '02 · Practice', t: 'Data & Analytics', d: 'From raw data to decision. Modern, stack-agnostic, chosen per scenario.' },
@@ -153,7 +153,7 @@ const DICT = {
       whatsapp: 'WhatsApp — Kliente 360',
     },
     footer: {
-      tagline: 'Specialist consultancy in CRM with Salesforce, data and AI. Applied knowledge, as a service.',
+      tagline: 'Specialist consultancy in CRM with Salesforce, Data and AI. Applied knowledge, as a service.',
       pillarsTitle: 'Practices', empresaTitle: 'Company', contactTitle: 'Contact',
       rights: '© 2026 Kliente 360. All rights reserved.',
     },
@@ -169,13 +169,13 @@ const DICT = {
     hero: {
       badge1: 'Salesforce Partner', badge2: 'Agentforce ready',
       title1: 'Conocimiento aplicado,', title2: 'como servicio',
-      sub: 'Consultoría especializada en CRM con Salesforce, datos e IA — tres pilares como una sola práctica. Cartera con pocos clientes estratégicos, atendidos directamente por quien entrega.',
+      sub: 'Consultoría especializada en CRM con Salesforce, Datos e IA — tres pilares como una sola práctica. Cartera con pocos clientes estratégicos, atendidos directamente por quien entrega.',
       cta1: 'Hablar con un socio', cta2: 'Conocer el Método 360',
     },
     pillars: {
       eyebrow: 'Portafolio',
       title: 'Tres pilares. Una práctica única.',
-      lead: 'Ninguna consultoría especializada en Brasil entrega los tres como una sola disciplina. CRM sin datos es ciego; datos sin activación son decoración; IA sin operación es demo. Operamos los tres como un solo engranaje.',
+      lead: 'Ninguna consultoría especializada en Brasil entrega los tres como una sola disciplina. CRM sin datos es ciego. Datos sin activación es desperdicio. IA sin operación es demo. Operamos los tres como un solo engranaje.',
       more: 'Ver el pilar',
       sf:   { num: '01 · Pilar', t: 'Salesforce', d: 'Core CRM. De la implementación a la evolución con agentes, sin tercerizar la estrategia.' },
       data: { num: '02 · Pilar', t: 'Data & Analytics', d: 'Del dato bruto a la decisión. Stack moderna, agnóstica, elegida según el escenario.' },
@@ -229,7 +229,7 @@ const DICT = {
       whatsapp: 'WhatsApp — Kliente 360',
     },
     footer: {
-      tagline: 'Consultoría especializada en CRM con Salesforce, datos e IA. Conocimiento aplicado, como servicio.',
+      tagline: 'Consultoría especializada en CRM con Salesforce, Datos e IA. Conocimiento aplicado, como servicio.',
       pillarsTitle: 'Pilares', empresaTitle: 'Empresa', contactTitle: 'Contacto',
       rights: '© 2026 Kliente 360. Todos los derechos reservados.',
     },

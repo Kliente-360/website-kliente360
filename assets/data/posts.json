@@ -1,5 +1,27 @@
 [
   {
+    "slug": "tendencias-data-management-2026",
+    "pillar": "data",
+    "date": "2026-05-26",
+    "translations": {
+      "pt": {
+        "title": "Tendências de data management 2026: 5 que mudam, 3 que não",
+        "url": "/blog/tendencias-data-management-2026.html",
+        "date": "26 mai 2026"
+      },
+      "en": {
+        "title": "Data management trends 2026: 5 that are changing, 3 that aren't",
+        "url": "/blog/en/tendencias-data-management-2026.html",
+        "date": "26 May 2026"
+      },
+      "es": {
+        "title": "Tendencias de data management 2026: 5 que cambian, 3 que no",
+        "url": "/blog/es/tendencias-data-management-2026.html",
+        "date": "26 may 2026"
+      }
+    }
+  },
+  {
     "slug": "lakehouse-vs-warehouse",
     "pillar": "data",
     "date": "2026-05-25",

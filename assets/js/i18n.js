@@ -17,7 +17,7 @@ const DICT = {
     hero: {
       badge1: 'Salesforce Partner', badge2: 'Agentforce ready',
       title1: 'Conhecimento aplicado,', title2: 'como serviço',
-      sub: 'Consultoria especializada em CRM com Salesforce, dados e IA — três pilares como uma prática única. Carteira com poucos clientes estratégicos, atendidos diretamente por quem entrega.',
+      sub: 'Consultoria especializada em CRM com Salesforce, Dados e IA — três pilares como uma prática única. Carteira com poucos clientes estratégicos, atendidos diretamente por quem entrega.',
       cta1: 'Falar com um sócio', cta2: 'Conhecer a Trilha 360',
     },
     pillars: {
@@ -38,7 +38,7 @@ const DICT = {
     },
     trilha: {
       eyebrow: 'Metodologia', title: 'Trilha 360.',
-      lead: 'Cinco verbos. Híbrido entre consultoria estratégica, projeto de tecnologia e deploy rápido de IA. Mesmo método nos três pilares.',
+      lead: 'Metodologia híbrida entre consultoria estratégica, projeto de tecnologia e deploy rápido de IA. Mesmo método nos três pilares.',
       steps: [
         { v: 'Mapear',     d: 'Negócio, dados e processos. O cenário real, sem suposição.' },
         { v: 'Prototipar', d: 'Primeiro corte funcional. Baixo compromisso, alto aprendizado.' },
@@ -64,8 +64,8 @@ const DICT = {
     },
     blog: {
       eyebrow: 'Blog', title: 'Análise, prática, opinião.',
-      lead: 'Textos curtos sobre o que estamos vendo na prática em projetos de Salesforce, dados e IA.',
-      read: 'Ler →', all: 'Ver todos os textos', date: 'Em breve', filterAll: 'Todos',
+      lead: 'Textos sobre o que estamos vendo na prática em projetos de Salesforce, Dados e IA.',
+      read: 'Ler →', all: 'Ver mais', date: 'Em breve', filterAll: 'Todos',
     },
     contact: {
       eyebrow: 'Contato', title: 'Conversa direta com um sócio.',
@@ -77,7 +77,7 @@ const DICT = {
       whatsapp: 'WhatsApp — Kliente 360',
     },
     footer: {
-      tagline: 'Consultoria especializada em CRM com Salesforce, dados e IA. Conhecimento aplicado, como serviço.',
+      tagline: 'Consultoria especializada em CRM com Salesforce, Dados e IA. Conhecimento aplicado, como serviço.',
       pillarsTitle: 'Pilares', empresaTitle: 'Empresa', contactTitle: 'Contato',
       rights: '© 2026 Kliente 360. Todos os direitos reservados.',
     },
@@ -114,7 +114,7 @@ const DICT = {
     },
     trilha: {
       eyebrow: 'Method', title: 'Method 360.',
-      lead: 'Five verbs. A hybrid of strategic consulting, tech project and rapid AI deployment. Same method across all three practices.',
+      lead: 'A hybrid methodology of strategic consulting, tech project and rapid AI deployment. Same method across all three practices.',
       steps: [
         { v: 'Map',         d: 'Business, data and process. The real scenario, no assumptions.' },
         { v: 'Prototype',   d: 'First functional cut. Low commitment, high learning.' },
@@ -140,8 +140,8 @@ const DICT = {
     },
     blog: {
       eyebrow: 'Blog', title: 'Analysis, practice, opinion.',
-      lead: 'Short pieces on what we are seeing in real Salesforce, data and AI projects.',
-      read: 'Read →', all: 'See all posts', date: 'Coming soon', filterAll: 'All',
+      lead: 'Pieces on what we are seeing in real Salesforce, Data and AI projects.',
+      read: 'Read →', all: 'See more', date: 'Coming soon', filterAll: 'All',
     },
     contact: {
       eyebrow: 'Contact', title: 'A direct conversation with a partner.',
@@ -190,7 +190,7 @@ const DICT = {
     },
     trilha: {
       eyebrow: 'Metodología', title: 'Método 360.',
-      lead: 'Cinco verbos. Híbrido entre consultoría estratégica, proyecto de tecnología y deploy rápido de IA. Mismo método en los tres pilares.',
+      lead: 'Metodología híbrida entre consultoría estratégica, proyecto de tecnología y deploy rápido de IA. Mismo método en los tres pilares.',
       steps: [
         { v: 'Mapear',     d: 'Negocio, datos y procesos. El escenario real, sin suposiciones.' },
         { v: 'Prototipar', d: 'Primer corte funcional. Bajo compromiso, alto aprendizaje.' },
@@ -216,8 +216,8 @@ const DICT = {
     },
     blog: {
       eyebrow: 'Blog', title: 'Análisis, práctica, opinión.',
-      lead: 'Textos cortos sobre lo que estamos viendo en proyectos reales de Salesforce, datos e IA.',
-      read: 'Leer →', all: 'Ver todos los textos', date: 'Pronto', filterAll: 'Todos',
+      lead: 'Textos sobre lo que estamos viendo en proyectos reales de Salesforce, Datos e IA.',
+      read: 'Leer →', all: 'Ver más', date: 'Pronto', filterAll: 'Todos',
     },
     contact: {
       eyebrow: 'Contacto', title: 'Conversación directa con un socio.',

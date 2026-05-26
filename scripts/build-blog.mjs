@@ -889,7 +889,19 @@ const collectPosts = () => {
   }
 
   // Ordena do mais recente pro mais antigo.
-  return [...bySlug.values()].sort((a, b) => b.date.localeCompare(a.date));
+  const posts = [...bySlug.values()].sort((a, b) => b.date.localeCompare(a.date));
+
+  // Fail-fast: nenhum post pode ter data futura (BRT). Princípio: publicações
+  // são sempre retroativas ou do dia. Captura erro humano antes de propagar
+  // pro sitemap, JSON-LD e listings.
+  const todayBRT = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Sao_Paulo' });
+  const future = posts.filter(p => p.date > todayBRT);
+  if (future.length) {
+    const lines = future.map(p => `  - ${p.slug}: ${p.date}`).join('\n');
+    throw new Error(`Posts com data futura detectados (hoje BRT = ${todayBRT}):\n${lines}\n\nCorrija o frontmatter (\`date:\`) pra hoje ou passado antes de buildar.`);
+  }
+
+  return posts;
 };
 
 // ---------- write helper ----------

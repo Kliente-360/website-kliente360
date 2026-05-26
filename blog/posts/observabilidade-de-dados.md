@@ -2,7 +2,7 @@
 title: "Observabilidade de dados: detectar falhas antes do stakeholder"
 slug: "observabilidade-de-dados"
 pillar: "data"
-date: "2026-06-30"
+date: "2026-05-22"
 readMinutes: 6
 excerpt: "Pipelines quebram em silêncio. A observabilidade de dados detecta falhas antes que o negócio descubra pelo relatório errado."
 tldr: "Observabilidade de dados é a capacidade de detectar falhas — de volume, frescor, distribuição e esquema — antes que o negócio sinta. A maioria dos times descobre problemas quando alguém reclama; com instrumentação certa, você detecta primeiro. Não é só monitoramento de infra: é saber o que é normal no seu dado e alertar quando desvia."

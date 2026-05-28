@@ -11,7 +11,7 @@ keywords: ["data contracts", "ingeniería de datos", "calidad de datos", "schema
 
 La historia que se repite en toda empresa que opera dato: pipeline funcionando hace meses, dashboard ejecutivo confiable, equipo de producto decidiendo sobre el número. Un lunes, ingeniero de backend renombra un campo en Postgres porque "nadie usa bien ese nombre igual". El miércoles a las 17h, el dashboard se rompe. La dirección llama, el equipo de datos corre, y la culpa cae sobre quien no tiene herramienta para defenderse — generalmente el equipo de datos, que se enteró del cambio cuando el pipeline ya estaba roto.
 
-Los data contracts existen para cerrar ese loop. Son acuerdos versionados entre quien produce dato (sistema fuente) y quien consume (warehouse, dashboard, agente, ML). Salieron del mundo del blog post de 2022 y se volvieron herramienta concreta en 2025. Este texto va sobre qué cambió, cuándo vale adoptarlos y cómo no transformarlos en otro overhead burocrático.
+Los data contracts existen para cerrar ese loop. Son acuerdos versionados entre quien produce dato (sistema fuente) y quien consume (warehouse, dashboard, agente, ML). Salieron del mundo del blog post de 2022 y se volvieron herramienta concreta en 2025 — [entre las prácticas que cambiaron el data management en 2026](/blog/es/tendencias-data-management-2026.html). Este texto va sobre qué cambió, cuándo vale adoptarlos y cómo no transformarlos en otro overhead burocrático.
 
 ## El problema que el data contract resuelve
 

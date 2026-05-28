@@ -11,7 +11,7 @@ keywords: ["data contracts", "data engineering", "data quality", "schema evoluti
 
 The story that repeats at every company operating data: pipeline working for months, executive dashboard trustworthy, product team deciding on top of the number. On a Monday, a backend engineer renames a field in Postgres because "nobody uses that name right anyway". On Wednesday at 5pm, the dashboard breaks. Leadership calls, data team runs, blame lands on whoever has no tool to defend themselves — usually the data team, which found out about the change only when the pipeline broke.
 
-Data contracts exist to close this loop. They're versioned agreements between data producers (source systems) and consumers (warehouse, dashboard, agent, ML). They left the 2022 blog-post world and became a concrete tool in 2025. This text is about what changed, when to adopt them, and how not to turn them into yet another bureaucratic overhead.
+Data contracts exist to close this loop. They're versioned agreements between data producers (source systems) and consumers (warehouse, dashboard, agent, ML). They left the 2022 blog-post world and became a concrete tool in 2025 — [among the practices that changed data management in 2026](/blog/en/tendencias-data-management-2026.html). This text is about what changed, when to adopt them, and how not to turn them into yet another bureaucratic overhead.
 
 ## The problem data contract solves
 

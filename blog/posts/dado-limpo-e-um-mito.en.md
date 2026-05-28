@@ -35,7 +35,7 @@ A decent data consultancy works like this. No magic, no new tool.
 2. **Use real, dirty data in parallel with cleansing.** Don't block the use case waiting for cleanliness. Run the report, build the agent, launch the campaign — with what exists. The first run will show exactly where the noise hurts. *Then* clean. That's ten times cheaper than cleaning in the dark.
 3. **Make [data observability](/blog/en/observabilidade-de-dados.html) the permanent piece, not the cleansing.** Cleansing is an event. Observability is a process. Set up alerts for "% of records without tax ID on the Account object went from 5% to 12%", "average value of the Proposal stage dropped 30% without funnel variation". Those alerts tell you what to clean, when, and the real business impact. [In a modern warehouse, dbt delivers that observability via `freshness` and declarative tests](/blog/en/dbt-na-pratica.html) — it isn't a separate project.
 
-Companies that apply those three rules start treating quality as operational practice, not as project. And the classic quality project — six-month, with consultancy, with "initial cleansing" package — becomes what it always should have been: an exception for specific problems, not the general rule.
+Companies that apply those three rules start treating quality as operational practice — [one of the fundamentals that did not change in 2026](/blog/en/tendencias-data-management-2026.html) — not as project. And the classic quality project — six-month, with consultancy, with "initial cleansing" package — becomes what it always should have been: an exception for specific problems, not the general rule.
 
 ## Where serious cleansing still makes sense
 

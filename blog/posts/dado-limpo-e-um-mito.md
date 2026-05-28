@@ -35,7 +35,7 @@ Uma consultoria de dados decente trabalha assim. Sem mágica, sem ferramenta nov
 2. **Use dado real ruim em paralelo com a limpeza.** Não trave o caso de uso esperando limpeza. Rode o relatório, monte o agente, publique a campanha — com o que existe. A primeira execução vai mostrar exatamente onde o ruído atrapalha. *Aí* limpa. Isso é dez vezes mais barato que limpar no escuro.
 3. **Faça da [observabilidade de dados](/blog/observabilidade-de-dados.html) a peça permanente, não da limpeza.** Limpeza é evento. Observabilidade é processo. Monte alertas pra "% de registros sem CNPJ no objeto Conta passou de 5% pra 12%", "valor médio do estágio Proposta caiu 30% sem variação no funil". Esses alertas dizem o que limpar, quando, e o impacto real no negócio. [Em warehouse moderno, dbt entrega esse tipo de observabilidade via `freshness` e testes declarativos](/blog/dbt-na-pratica.html) — não é projeto à parte.
 
-Empresas que aplicam essas três regras passam a tratar qualidade como prática operacional, não como projeto. E projeto de qualidade clássico — aquele de seis meses, com consultoria, com pacote de "limpeza inicial" — vira o que sempre deveria ter sido: uma exceção pra problemas específicos, não a regra geral.
+Empresas que aplicam essas três regras passam a tratar qualidade como prática operacional — [um dos fundamentos que não mudaram em 2026](/blog/tendencias-data-management-2026.html) — não como projeto. E projeto de qualidade clássico — aquele de seis meses, com consultoria, com pacote de "limpeza inicial" — vira o que sempre deveria ter sido: uma exceção pra problemas específicos, não a regra geral.
 
 ## Onde a limpeza séria ainda faz sentido
 

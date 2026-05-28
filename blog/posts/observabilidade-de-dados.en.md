@@ -67,4 +67,4 @@ The practical paradox: the exercise of documenting expected behavior already rev
 
 Most critical data quality problems that reach users are detectable with three simple checks: freshness, volume, and nulls in required fields. The advanced stack matters when the basics are solved and you need statistical coverage of distribution and full lineage. Start with what detects the most failures with the least instrumentation; the rest comes naturally as maturity grows.
 
-The signal that observability is working is not zero incidents — it's the team detecting before the user does. When the ratio of "we detected first" exceeds "user found it through the dashboard," the layer is delivering value. That simple metric is the most honest proxy for data maturity in any operation.
+The signal that observability is working is not zero incidents — it's the team detecting before the user does. When the ratio of "we detected first" exceeds "user found it through the dashboard," the layer is delivering value. That simple metric is the most honest proxy for [data maturity in 2026](/blog/en/tendencias-data-management-2026.html) in any operation.

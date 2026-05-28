@@ -35,7 +35,7 @@ A régua que aplicamos antes de qualquer projeto de IA com dado real. Faltando d
 2. **Base legal pra cada categoria de dado.** Consentimento, execução de contrato, interesse legítimo, ou outra. Cada categoria de dado precisa de base legal mapeada. Sem isso, LGPD virá cobrar.
 3. **Política do vendor sobre retenção e treino.** Confirmação por escrito (não slide de vendedor) de que prompts não entram em treinamento, que retenção é zero ou X dias, que dado fica em região específica. Sem documento, é assunção.
 4. **DPIA quando aplicável.** Avaliação de Impacto à Proteção de Dados pra usos de alto risco — IA tomando decisão sobre cliente, perfilagem, análise preditiva. ANPD vem fiscalizando isso em 2026.
-5. **Pseudo-anonimização ou redaction no caminho.** Quando possível, remover ou mascarar PII antes de enviar pro LLM. Bibliotecas como Microsoft Presidio fazem isso. Reduz superfície de risco e simplifica compliance.
+5. **Pseudo-anonimização ou redaction no caminho.** Quando possível, remover ou mascarar PII antes de enviar pro LLM. Bibliotecas como Microsoft Presidio fazem isso. Reduz superfície de risco e simplifica compliance — em domínios com dado estável, [fine-tuning elimina a necessidade de índice persistente](/blog/quando-fine-tuning-supera-rag.html).
 6. **Log próprio do que foi enviado.** Registro local (não do vendor) de todo prompt + resposta + usuário + timestamp. Necessário pra auditoria, pra investigação de incidente, pra responder a titular que pede info LGPD.
 7. **Política de bypass humano em decisões automatizadas.** LGPD garante direito a revisão humana em decisão automatizada relevante. Sistema sério tem botão "escalar pra humano" desde o dia 1, e processo definido pra revisão.
 

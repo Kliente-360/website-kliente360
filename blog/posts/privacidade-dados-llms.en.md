@@ -35,7 +35,7 @@ The rule we apply before any AI project with real data. Missing two or more, the
 2. **Legal basis for each data category.** Consent, contract execution, legitimate interest, or another. Each data category needs a mapped legal basis. Without it, regulators will come.
 3. **Vendor policy on retention and training.** Written confirmation (not vendor slide) that prompts don't enter training, that retention is zero or X days, that data sits in a specific region. Without a document, it's assumption.
 4. **DPIA when applicable.** Data Protection Impact Assessment for high-risk uses — AI making decisions about customers, profiling, predictive analysis. Authorities are actively inspecting this in 2026.
-5. **Pseudo-anonymization or redaction in the path.** When possible, remove or mask PII before sending to the LLM. Libraries like Microsoft Presidio do this. Reduces risk surface and simplifies compliance.
+5. **Pseudo-anonymization or redaction in the path.** When possible, remove or mask PII before sending to the LLM. Libraries like Microsoft Presidio do this. Reduces risk surface and simplifies compliance — in stable-knowledge domains, [fine-tuning eliminates the need for persistent index](/blog/en/quando-fine-tuning-supera-rag.html).
 6. **Own log of what was sent.** Local registry (not vendor's) of every prompt + response + user + timestamp. Needed for auditing, for incident investigation, for responding to a subject who requests info under privacy law.
 7. **Human bypass policy for automated decisions.** Privacy laws guarantee the right to human review on relevant automated decisions. A serious system has an "escalate to human" button from day 1, and a defined process for review.
 

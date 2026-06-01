@@ -282,7 +282,7 @@ Derivado do audit pós-#10. Quick wins do Bloco A já aplicados. Pendências org
 
 | Item | Bloqueio | Onde aparece |
 |---|---|---|
-| **WhatsApp — número oficial** | Trocar `5511961875594` (provisório) pelo número oficial. | `index.html` (contato + footer) e `scripts/build-blog.mjs` (footer das páginas geradas). |
+| **WhatsApp — número oficial** | Trocar `5511930488622` (provisório) pelo número oficial. | `index.html` (contato + footer) e `scripts/build-blog.mjs` (footer das páginas geradas). |
 | **Badge "Salesforce Partner" oficial** | Hoje é pílula textual. Baixar badge SVG/PNG oficial + ler guidelines de uso da marca. Substituir no hero. | `index.html` hero (badge1). |
 | **Cases — métricas reais** | Sem Parar e Bodytech precisam aprovar números publicáveis. Section `#cases` permanece oculta até lá. | `index.html` §cases (comentado). |
 | **Reativar seção cases** | Depende do item acima. Pra reativar: descomentar bloco em `index.html`, re-adicionar `<a href="/#cases">` nos 3 lugares de nav + no `scripts/build-blog.mjs`, rebuildar. | `index.html` + 9 pillar pages + 3 como-trabalhamos + 3 glossário + `scripts/build-blog.mjs`. |

@@ -1,5 +1,27 @@
 [
   {
+    "slug": "quando-fine-tuning-supera-rag",
+    "pillar": "ai",
+    "date": "2026-05-27",
+    "translations": {
+      "pt": {
+        "title": "RAG não é a resposta — 6 padrões em que fine-tuning ganha",
+        "url": "/blog/quando-fine-tuning-supera-rag.html",
+        "date": "27 mai 2026"
+      },
+      "en": {
+        "title": "RAG Is Not the Answer — 6 Patterns Where Fine-Tuning Wins",
+        "url": "/blog/en/quando-fine-tuning-supera-rag.html",
+        "date": "27 May 2026"
+      },
+      "es": {
+        "title": "RAG no es la respuesta — 6 patrones donde el fine-tuning gana",
+        "url": "/blog/es/quando-fine-tuning-supera-rag.html",
+        "date": "27 may 2026"
+      }
+    }
+  },
+  {
     "slug": "tendencias-data-management-2026",
     "pillar": "data",
     "date": "2026-05-26",

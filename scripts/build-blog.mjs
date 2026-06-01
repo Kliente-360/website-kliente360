@@ -27,6 +27,7 @@ import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import { Resvg } from '@resvg/resvg-js';
+import { footerHtml, injectFooter } from './templates.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = dirname(__filename);
@@ -260,54 +261,6 @@ const navHtml = (currentPath = '', lang = 'pt') => {
   </header>`;
 };
 
-const footerHtml = `
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-top">
-        <div>
-          <a class="footer-brand" href="/" aria-label="Kliente 360">
-            <svg viewBox="0 0 80 80" aria-hidden="true">
-              <circle cx="40" cy="22" r="11" opacity="0.45"/>
-              <circle cx="58" cy="40" r="11" opacity="0.65"/>
-              <circle cx="40" cy="58" r="11" opacity="0.85"/>
-              <circle cx="22" cy="40" r="11"/>
-            </svg>
-            <span>kliente 360</span>
-          </a>
-          <p data-i18n="footer.tagline">Consultoria especializada em CRM com Salesforce, dados e IA. Conhecimento aplicado, como serviço.</p>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
-          <ul>
-            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
-            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
-            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
-          <ul>
-            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
-            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
-            <li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
-            <li><a href="/glossario/">Glossário</a></li>
-            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4 data-i18n="footer.contactTitle">Contato</h4>
-          <ul>
-            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
-            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="http://wa.me/5511930488622" target="_blank" rel="noopener">WhatsApp</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
-      </div>
-    </div>
-  </footer>`;
 
 const hreflangCode = { pt: 'pt-BR', en: 'en-US', es: 'es-ES', 'x-default': 'x-default' };
 const renderAlternates = (alternates = []) => alternates
@@ -658,7 +611,7 @@ ${related.map(r => `            <a class="card post-card" data-pillar="${r.pilla
     </article>
   </main>
 
-${footerHtml}
+${footerHtml(lang)}
 
   <script src="/assets/js/i18n.js?v=${ASSET_VERSION}"></script>
   <script src="/assets/js/main.js?v=${ASSET_VERSION}" type="module"></script>
@@ -736,7 +689,7 @@ ${posts.map(p => `          <a class="card post-card" data-pillar="${p.pillar}" 
     </section>
   </main>
 
-${footerHtml}
+${footerHtml(lang)}
 
   <script src="/assets/js/i18n.js?v=${ASSET_VERSION}"></script>
   <script src="/assets/js/main.js?v=${ASSET_VERSION}" type="module"></script>
@@ -1039,10 +992,49 @@ ${allUrls.map(u => `  <url>
     console.log(`   ✓ og-image.png (1200x630)`);
   }
 
+  // Injeta footer nas páginas estáticas que tiverem os marcadores
+  // <!-- footer:auto -->...<!-- /footer:auto -->. Single source: templates.mjs.
+  injectStaticComponents();
+
   // Carimba ?v=<hash> em HTMLs estáticas (não geradas)
   stampStaticAssetVersions(['index.html', 'styleguide.html']);
 
   console.log(`✅ Build concluído (asset version: ${ASSET_VERSION}).`);
+};
+
+const STATIC_PAGES = [
+  'index.html',
+  'como-trabalhamos/index.html',
+  'glossario/index.html',
+  'pilares/salesforce/index.html',
+  'pilares/data/index.html',
+  'pilares/ia/index.html',
+  'en/como-trabalhamos/index.html',
+  'en/glossario/index.html',
+  'en/pilares/salesforce/index.html',
+  'en/pilares/data/index.html',
+  'en/pilares/ia/index.html',
+  'es/como-trabalhamos/index.html',
+  'es/glossario/index.html',
+  'es/pilares/salesforce/index.html',
+  'es/pilares/data/index.html',
+  'es/pilares/ia/index.html',
+];
+
+const injectStaticComponents = () => {
+  let touched = 0;
+  for (const rel of STATIC_PAGES) {
+    const target = join(ROOT, rel);
+    if (!existsSync(target)) continue;
+    const src = readFileSync(target, 'utf-8');
+    const { html, changed } = injectFooter(src);
+    if (changed) {
+      writeFileSync(target, html);
+      touched++;
+      console.log(`   ✓ ${rel} (footer)`);
+    }
+  }
+  if (touched === 0) console.log(`   ℹ nenhuma página estática alterada (footer)`);
 };
 
 main();

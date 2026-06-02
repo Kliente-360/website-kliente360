@@ -58,7 +58,7 @@ Numeração sequencial pela ordem cronológica de publicação. Quando duas entr
 | 42 | 2026-05-24 | dom | sf | [Quando NÃO usar Salesforce: 4 cenários em que o custo de licença supera o ROI](blog/posts/quando-nao-usar-salesforce.md) | Não | Quick win SEO #2 — consultoria que diz NÃO, GEO ouro | [x] | [x] |
 | 43 | 2026-05-26 | ter | data | [Tendências de data management 2026: 5 que mudam, 3 que não](blog/posts/tendencias-data-management-2026.md) | Sim | Quick win SEO #7 — annual trends post | [x] | [ ] |
 | 44 | 2026-05-27 | qua | ai | [RAG não é a resposta — 6 padrões em que fine-tuning ganha](blog/posts/quando-fine-tuning-supera-rag.md) | Sim | Quick win SEO #6 — contraintuitivo, GEO-friendly | [x] | [ ] |
-| 45 | 2026-06-02 | ter | sf | Implementação de Salesforce em 6 semanas — o que cabe num MVP | Sim | Quick win SEO #5 — crítica às promessas de "14 dias" | [ ] | [ ] |
+| 45 | 2026-06-02 | ter | sf | [Salesforce em 6 semanas: o que cabe de verdade num MVP](blog/posts/implementacao-salesforce-seis-semanas.md) | Sim | Quick win SEO #5 — crítica às promessas de "14 dias" | [x] | [ ] |
 | 46 | 2026-06-03 | qua | data | Power BI vs Tableau vs Looker vs Metabase — matriz por porte | Sim | Quick win SEO #9 — comparativo Brasil-específico | [ ] | [ ] |
 | 47 | 2026-06-09 | ter | ai | Por que CRM, dados e IA são uma engrenagem — o argumento estrutural | Sim | Pitch integrado — pega FAQ #1 de /como-trabalhamos/ e aprofunda | [ ] | [ ] |
 | 48 | 2026-06-10 | qua | sf | Migração de Pardot para Marketing Cloud Engagement — o que ninguém te conta | Sim | Quick win SEO #8 — migração técnica concreta | [ ] | [ ] |

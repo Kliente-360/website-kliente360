@@ -59,7 +59,7 @@ Numeração sequencial pela ordem cronológica de publicação. Quando duas entr
 | 43 | 2026-05-26 | ter | data | [Tendências de data management 2026: 5 que mudam, 3 que não](blog/posts/tendencias-data-management-2026.md) | Sim | Quick win SEO #7 — annual trends post | [x] | [ ] |
 | 44 | 2026-05-27 | qua | ai | [RAG não é a resposta — 6 padrões em que fine-tuning ganha](blog/posts/quando-fine-tuning-supera-rag.md) | Sim | Quick win SEO #6 — contraintuitivo, GEO-friendly | [x] | [ ] |
 | 45 | 2026-06-02 | ter | sf | [Salesforce em 6 semanas: o que cabe de verdade num MVP](blog/posts/implementacao-salesforce-seis-semanas.md) | Sim | Quick win SEO #5 — crítica às promessas de "14 dias" | [x] | [ ] |
-| 46 | 2026-06-03 | qua | data | Power BI vs Tableau vs Looker vs Metabase — matriz por porte | Sim | Quick win SEO #9 — comparativo Brasil-específico | [ ] | [ ] |
+| 46 | 2026-06-03 | qua | data | [Power BI vs Tableau vs Looker vs Metabase — matriz por porte](blog/posts/power-bi-tableau-looker-metabase.md) | Sim | Quick win SEO #9 — comparativo Brasil-específico | [x] | [ ] |
 | 47 | 2026-06-09 | ter | ai | Por que CRM, dados e IA são uma engrenagem — o argumento estrutural | Sim | Pitch integrado — pega FAQ #1 de /como-trabalhamos/ e aprofunda | [ ] | [ ] |
 | 48 | 2026-06-10 | qua | sf | Migração de Pardot para Marketing Cloud Engagement — o que ninguém te conta | Sim | Quick win SEO #8 — migração técnica concreta | [ ] | [ ] |
 | 49 | 2026-06-16 | ter | data | Multi-cloud: mito ou estratégia — critério honesto pra decidir | Sim | Anti-hype, não é sobre lock-in | [ ] | [ ] |

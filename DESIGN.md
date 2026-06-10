@@ -426,6 +426,44 @@ Use sempre tokens. **Não escreva `padding: 24px`** — escreva `padding: var(--
 
 ---
 
+## Motion
+
+> Adicionado na evolução design-2026 (ver `research/design-benchmark-2026.md`). Família "editorial restraint" (Linear/Stripe): movimento preciso e quieto, nunca circo.
+
+### Tokens
+
+- `--dur-fast (150ms) / --dur-base (240) / --dur-slow (480) / --dur-slower (720)`
+- `--ease-out` (padrão) e `--ease-spring` (entradas com personalidade — Aperture)
+
+### Primitivos de motion (main.css, seção MOTION)
+
+| O quê | Como | Suporte |
+|---|---|---|
+| **Reveal on scroll** | Automático em `.section-head`, `.grid-cards > *`, `.stats-strip .stat`, `.trilha-step`, `.trilha-timeline .step`. Opt-in pontual: classe `.reveal` | Chrome/Edge (`animation-timeline: view()`); demais veem estado final |
+| **Aperture entrance** | `.hero-mark circle` — círculos abrem em sequência horária no load (1×). Micro-eco no hover do `.nav-brand` | Universal |
+| **Hero entrance** | badges → h1 → sub → term → ctas, stagger 60–420ms | Universal |
+| **Trilha progress** | Linha de 2px se desenha no topo da `.trilha-wrap` conforme scroll | Chrome/Edge |
+| **Parallax watermark** | `.hero-mark` desloca 44px em 600px de scroll (usa `translate`, não `transform`) | Chrome/Edge |
+| **View Transitions** | `@view-transition { navigation: auto }` + `view-transition-name: brand-mark` no `.nav-brand` | Chrome/Edge; fallback navegação normal |
+| **Read progress** | `.read-progress` (3px fixa no topo) — injetada nos posts pelo build | Chrome/Edge; invisível sem suporte |
+| **Hero terminal** | `.hero-term` — 3 linhas de posicionamento ciclando 12s. Estado estático = 1ª linha | Universal |
+| **Número do pillar hero** | `.pp-hero .number` esmaece/desloca no scroll | Chrome/Edge |
+| **FAQ** | `+` rotaciona 45° (vira ×); conteúdo expande com fade via `::details-content` | Chrome 131+ |
+
+### Regras de governança
+
+1. **Máx. 1 animação "hero" por página** — reveal padrão pra todo o resto.
+2. **`prefers-reduced-motion: reduce` zera tudo** (bloco global no fim do main.css). Qualquer motion novo DEVE estar dentro de `@media (prefers-reduced-motion: no-preference)`.
+3. **Progressive enhancement only** — scroll-driven e view transitions degradam pro estado final. Nunca esconder conteúdo atrás de animação não suportada.
+4. **Nada anima em loop infinito** (exceção documentada: `.hero-term`, que é conteúdo).
+5. **PageSpeed 100/100 é gate** — animações rodam no compositor (transform/opacity/scale/translate only).
+
+### Bento grid
+
+`.grid-cards.cols-3.bento` — célula `[data-pillar="sf"]` ocupa 2 colunas (pilar âncora). Células auxiliares: `.bento-stat` (número grande mono + texto) e `.bento-cta`. Usado na seção de pilares da home.
+
+---
+
 ## Decisões de copy embutidas no design
 
 | Quero… | Use… |

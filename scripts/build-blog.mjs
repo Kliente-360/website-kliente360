@@ -527,6 +527,7 @@ ${JSON.stringify(breadcrumb, null, 2)}
   </script>${faqScript}
 </head>
 <body>
+  <div class="read-progress" aria-hidden="true"></div>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
 ${navHtml('/blog/' + post.slug, lang)}
 

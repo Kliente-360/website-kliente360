@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Power BI vs Tableau vs Looker vs Metabase: a matrix by size | Kliente 360</title>
+  <meta name="description" content="Four BI tools, three decision dimensions, and a size-based matrix. In Brazil, the answer is never just about features — it&#39;s about total cost in local currency." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <link rel="canonical" href="https://kliente360.com/blog/en/power-bi-tableau-looker-metabase.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://kliente360.com/blog/power-bi-tableau-looker-metabase.html" />
+  <link rel="alternate" hreflang="en-US" href="https://kliente360.com/blog/en/power-bi-tableau-looker-metabase.html" />
+  <link rel="alternate" hreflang="es-ES" href="https://kliente360.com/blog/es/power-bi-tableau-looker-metabase.html" />
+  <link rel="alternate" hreflang="x-default" href="https://kliente360.com/blog/power-bi-tableau-looker-metabase.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Power BI vs Tableau vs Looker vs Metabase: a matrix by size | Kliente 360" />
+  <meta property="og:description" content="Four BI tools, three decision dimensions, and a size-based matrix. In Brazil, the answer is never just about features — it&#39;s about total cost in local currency." />
+  <meta property="og:url" content="https://kliente360.com/blog/en/power-bi-tableau-looker-metabase.html" />
+  <meta property="og:image" content="https://kliente360.com/assets/img/og/power-bi-tableau-looker-metabase-en.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-06-03" />
+  <meta property="article:section" content="Data &amp; Analytics" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Power BI vs Tableau vs Looker vs Metabase: a matrix by size | Kliente 360" />
+  <meta name="twitter:description" content="Four BI tools, three decision dimensions, and a size-based matrix. In Brazil, the answer is never just about features — it&#39;s about total cost in local currency." />
+
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=9a01533a43" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=9a01533a43" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=9a01533a43" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Power BI vs Tableau vs Looker vs Metabase: a matrix by size",
+  "description": "Four BI tools, three decision dimensions, and a size-based matrix. In Brazil, the answer is never just about features — it's about total cost in local currency.",
+  "datePublished": "2026-06-03",
+  "inLanguage": "en-US",
+  "image": "https://kliente360.com/assets/img/og/power-bi-tableau-looker-metabase-en.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kliente360.com/blog/en/power-bi-tableau-looker-metabase.html"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Data & Analytics",
+  "keywords": [
+    "Power BI",
+    "Tableau",
+    "Looker",
+    "Metabase",
+    "BI tools comparison",
+    "business intelligence"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Blog",
+      "item": "https://kliente360.com/blog/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Data & Analytics",
+      "item": "https://kliente360.com/en/pilares/data/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Power BI vs Tableau vs Looker vs Metabase: a matrix by size",
+      "item": "https://kliente360.com/blog/en/power-bi-tableau-looker-metabase.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="read-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/en/como-trabalhamos/" data-i18n="nav.howWeWork">Como trabalhamos</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+        <a href="/como-trabalhamos/">Como trabalhamos</a>
+        <a href="/glossario/">Glossário</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="data" data-pagefind-body data-pagefind-filter="pillar:data">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Practice 02 · Data</span>
+            <a class="post-back" href="https://kliente360.com/blog/en/">Blog</a>
+          </div>
+          <h1 data-pagefind-meta="title">Power BI vs Tableau vs Looker vs Metabase: a matrix by size</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-06-03">3 Jun 2026</time>
+            <span class="sep">·</span>
+            <span>7 min read</span>
+            <span class="sep">·</span>
+            <span>By Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Power BI, Tableau, Looker, and Metabase serve distinct contexts, not a quality hierarchy. The right choice depends on three factors: existing cloud stack, data team maturity, and total cost of ownership in local currency. This matrix organizes all four by company size and Brazilian context, with five questions to decide without making a costly first swap.</p>
+          </aside>
+
+          <p class="post-intro">When the BI tool decision reaches the table, it almost always brings the wrong question: which one is best? Power BI, Tableau, Looker, and Metabase appear in every market comparison with aligned features, similar benchmarks, and success stories across all industries. The honest answer is that the best tool is the one that fits your context — and in Brazil there is an additional variable: the cost in local currency of dollar-denominated licenses in a constantly shifting exchange rate.</p>
+<p>This piece builds the matrix. It is not a feature analysis — it is a decision guide by company size and context. If you already know the tools and want the direct answer, jump to &quot;Matrix by size.&quot; If you want to understand the criteria, read from the beginning.</p>
+<h2>What all four share — and where they actually diverge</h2>
+<p>All four tools connect to the same set of warehouses (Snowflake, BigQuery, Redshift, Databricks), produce visually comparable dashboards, and have APIs for product embedding. The confusion in market benchmarks comes exactly from this: on the surface, they do similar things.</p>
+<p>The real divergences are in three dimensions:</p>
+<ol>
+<li><strong>Total cost of ownership.</strong> Licensing + infrastructure + human cost to operate. This calculation varies widely across the four — and even more depending on the exchange rate at contract time.</li>
+<li><strong>Integration with existing stack.</strong> Power BI is native to the Microsoft ecosystem (Azure, M365, SQL Server). Looker is native to Google Cloud (BigQuery). Tableau and Metabase are warehouse-agnostic: they fit any stack, with no native advantage in any particular one.</li>
+<li><strong>Technical requirements to operate.</strong> Metabase requires no BI specialist — any analyst with basic SQL can operate it. Looker requires an engineer with LookML, a data engineer profile. Tableau and Power BI sit in the middle: they need a BI analyst, not a data engineer.</li>
+</ol>
+<h2>Anatomy of the four tools</h2>
+<p><strong>Power BI</strong> is the Microsoft ecosystem bet. Anyone already running M365 + Azure gets Pro included or at marginal cost — bundled licensing is its greatest competitive advantage. The DAX data model is learnable by a BI analyst in a few weeks. The limitation appears at scale: sharing dashboards outside M365 requires Premium Per User or Premium Per Capacity, and that cost jump is significant in contract negotiations.</p>
+<p><strong>Tableau</strong> has no peer in visual flexibility and ad hoc exploration. Tableau Prep + Desktop + Server/Cloud delivers a complete enterprise visualization pipeline. The limitation is direct: it is the most expensive of the four. At current exchange rates, Tableau Creator runs between R$ 1,500 and R$ 2,500 per user per month in Brazil, making it prohibitive for mid-size companies without a dedicated BI team. <a href="/blog/en/tableau-linguagem-executiva.html">Building executive analytics that drives real decisions with Tableau</a> requires more than a license — it requires a solid data model underneath.</p>
+<p><strong>Looker</strong> is Google&#39;s bet on the semantic layer. LookML creates a single source of truth for metric definitions — exactly <a href="/blog/en/modern-data-stack-2026.html">the problem that the semantic layer solves in today&#39;s data stack</a>, and where most companies still improvise. BigQuery + Looker is the most integrated combination available on a public platform. The LookML requirement is real: it is not a self-service tool; it is a product of a data team with a dedicated engineer.</p>
+<p><strong>Metabase</strong> is the fastest path to BI without a specialist. The open-source version runs on any cloud VM; the Cloud version starts at around USD 500/month. SQL or no-SQL interface, it connects to any warehouse. The limitation is scale: governance, granular permissions, and complex embedding start requiring workarounds above ~200 active users.</p>
+<h2>Matrix by size and Brazilian context</h2>
+<p><strong>Startup and SME (up to ~200 employees).</strong> Metabase or Power BI. Metabase when there is no dedicated BI analyst and whoever operates BI is the business itself with SQL. Power BI when there is already a Microsoft 365 dependency and the finance team lives in Excel. Tableau and Looker have licensing and operational costs incompatible with this size.</p>
+<p><strong>Mid-market (200–1,000 employees).</strong> Power BI if the stack is Microsoft; Tableau if there is a BI team and the budget allows. At this range, the decision almost always follows the primary cloud: if IT already runs Azure + SQL Server, Power BI licensing is marginal. If the stack is mixed or AWS, Tableau enters with the visual flexibility advantage — if the contract fits the annual budget.</p>
+<p><strong>Large enterprise (above 1,000 employees, multiple data teams).</strong> Tableau or Looker. Tableau when the team has BI analysts doing visualization. Looker when there are data engineers maintaining LookML models. At this scale, governance and the semantic layer matter more than visualization flexibility.</p>
+<p><strong>Google Cloud shop (any size).</strong> Looker native. BigQuery + Looker is a complete, integrated offering. Switching BI tools in that stack is technical friction that rarely justifies itself.</p>
+<p><strong>Microsoft enterprise (above 2,000 employees + Power Platform).</strong> Power BI Premium. At this scale, Power BI Embedded + Power Platform + Azure makes sense as a data product platform — not just a dashboard layer.</p>
+<blockquote>
+<p>The size matrix is a starting point, not a verdict. What decides at the second layer is the maturity of the data that will feed the tool.</p>
+</blockquote>
+<h2>The five questions that decide</h2>
+<ol>
+<li><p><strong>Is your cloud stack predominantly Microsoft or Google?</strong> Microsoft → Power BI. Google Cloud → Looker. Neither → Tableau or Metabase, by size and budget.</p>
+</li>
+<li><p><strong>Do you have a dedicated BI analyst — or will the business operate it independently?</strong> Self-service by the business → Metabase or Power BI. Dedicated BI team → any of the four; refine by stack and cost.</p>
+</li>
+<li><p><strong>What is the cost in local currency per year, including storage, compute, and team hours?</strong> Calculate full TCO. For Brazilian mid-market companies, Tableau and Looker often sum to R$ 200–400k/year in licensing + operations. Power BI Premium can come close depending on user count. Metabase Cloud sits in the R$ 30–80k/year range.</p>
+</li>
+<li><p><strong>Is the main problem ad hoc exploration or standardized reporting?</strong> Ad hoc exploration → Tableau has the best interface. Standardized metrics with governance → Looker (LookML). Fast operational reporting → Power BI or Metabase.</p>
+</li>
+<li><p><strong>Do you already have the problem of &quot;each team with its own number&quot;?</strong> If yes, the priority is the semantic layer before the BI tool. None of the four solves this alone — <a href="/blog/en/self-service-bi.html">self-service without governance reproduces exactly that problem</a>, regardless of which tool is in front. Solve the data model first; the visualization tool is the last decision, not the first.</p>
+</li>
+</ol>
+<h2>The three anti-patterns that cost projects and budget</h2>
+<p><strong>Choosing the tool before the architecture.</strong> BI tool is the last stack decision, not the first. Warehouse, transformation layer (dbt or native), semantic layer — in that order. Projects that start with &quot;we&#39;ll use Tableau&quot; frequently discover that the data model doesn&#39;t support the expected semantic complexity, and the implementation turns into two years of model corrections.</p>
+<p><strong>Buying Tableau or Looker without a data engineer.</strong> Tableau without a modeled dataset delivers beautiful and inaccurate dashboards. Looker without a LookML engineer is an empty shell. Both tools require investment in data infrastructure — not just a visualization license.</p>
+<p><strong>Using Metabase beyond the right size.</strong> Metabase is an excellent entry point. It is not an enterprise tool. Above ~200–300 active users, governance failures, granular permission issues, and slow queries appear. Growing beyond Metabase is maturity — not failure.</p>
+<h2>The question that comes before the license contract</h2>
+<p>The BI decision is, in practice, a data architecture decision with a visual interface. Whoever licenses the tool without solving what sits beneath — fragmented data, no semantic layer, no metric owner — will switch tools in two years and reproduce the same problem on a new stack.</p>
+<p>The question a specialized consultancy asks before recommending any tool: &quot;Is the data that will feed this BI modeled, governed, and with a clear owner?&quot; If the answer is not yes, that conversation needs to happen before the conversation with the license vendor.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Keep the conversation going</div>
+            <h3>Want to discuss this topic with a partner?</h3>
+            <p>Initial diagnostic with no commitment. We assess your scenario in a week and send back a report.</p>
+            <a class="btn-link" href="/#contato">Talk to a partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-explore">
+        <div class="container">
+          <div class="label">Keep exploring</div>
+          <div class="grid-cards cols-2-3">
+            <a class="card explore-card" data-pillar="data" href="/en/pilares/data/">
+              <div class="explore-kind">Practice · Data &amp; Analytics</div>
+              <p>How we deliver Data &amp; Analytics in practice — scope, common pitfalls, health signals.</p>
+            </a>
+            <a class="card explore-card" href="/en/como-trabalhamos/">
+              <div class="explore-kind">How we work</div>
+              <p>Trilha 360 — the five verbs of our practice: map, prototype, validate, deploy, sustain.</p>
+            </a>
+            <a class="card explore-card" href="/en/glossario/?pilar=data">
+              <div class="explore-kind">Glossary</div>
+              <p>Vocabulary for CRM with Salesforce, Data and AI. No buzzwords, with links to the canonical post.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Further reading</h2>
+          <div class="grid-cards cols-2-3">
+            <a class="card post-card" data-pillar="data" href="/blog/en/tendencias-data-management-2026.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">26 May 2026</span>
+              </div>
+              <h3>Data management trends 2026: 5 that are changing, 3 that aren&#39;t</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/en/lakehouse-vs-warehouse.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">25 May 2026</span>
+              </div>
+              <h3>Lakehouse Is Not a Silver Bullet: When Plain Warehouse Still Wins</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/en/observabilidade-de-dados.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">22 May 2026</span>
+              </div>
+              <h3>Data observability: catching pipeline failures before stakeholders do</h3>
+              <div class="read">Read →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Specialist consultancy in CRM with Salesforce, Data and AI. Applied knowledge, as a service.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Practices</h4>
+          <ul>
+            <li><a href="/en/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/en/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/en/pilares/ia/" data-i18n="nav.mobile.ai">Applied AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Company</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Method 360</a></li>
+            <li><a href="/blog/en/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/en/como-trabalhamos/">How we work</a></li>
+            <li><a href="/en/glossario/">Glossary</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contact</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://wa.me/5511930488622" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=9a01533a43"></script>
+  <script src="/assets/js/main.js?v=9a01533a43" type="module"></script>
+</body>
+</html>

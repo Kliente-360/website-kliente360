@@ -1,6 +1,6 @@
 # Design Benchmark & Upgrade Plan — Kliente 360 · 2026
 
-> **v1.0 · 2026-06-10** — benchmark de design de última geração + plano interativo de evolução.
+> **v1.1 · 2026-06-10** — Ondas 1–3 + 4.3/4.4 implementadas na branch design-2026. — benchmark de design de última geração + plano interativo de evolução.
 > Companion de `DESIGN.md` (sistema atual) e `PLAN.md` (roadmap geral).
 > Princípio inegociável: evoluir **sem abandonar** a identidade "Apple como base, Google no acento, Salesforce na confiança" — e sem regredir o PageSpeed 100/100.
 
@@ -84,37 +84,37 @@ Tudo acima degrada graciosamente (Safari/Firefox veem o site atual) e respeita `
 
 A base que destrava todo o resto. CSS-only, zero JS novo.
 
-- [ ] **1.1** (S, ★★★) Tokens de motion em `tokens.css`: `--dur-1/2/3` (150/300/600ms), `--ease-out` (já existe), `--ease-spring`. Documentar em DESIGN.md.
-- [ ] **1.2** (S, ★★★) Bloco global `@media (prefers-reduced-motion: reduce)` que zera animações — pré-requisito ético/legal de tudo abaixo.
-- [ ] **1.3** (M, ★★★) **Reveal on scroll** via `animation-timeline: view()`: cards, stats, steps da trilha sobem 12px + fade na entrada do viewport. Classe utilitária `.reveal` no main.css. Fallback: sem animação (estado final direto).
-- [ ] **1.4** (S, ★★) Micro-interações de botão: `.btn` ganha translate-y(-1px) + sombra no hover, scale(0.98) no active. Setas de `.btn-link` deslizam 4px no hover.
-- [ ] **1.5** (S, ★★) `text-wrap: balance` em todos os headings; `text-wrap: pretty` em `.lead`.
-- [ ] **1.6** (M, ★★) Stats com contagem animada (`@property` + CSS counter animation, sem JS) na entrada do viewport.
+- [x] **1.1** (S, ★★★) Tokens de motion em `tokens.css`: `--dur-1/2/3` (150/300/600ms), `--ease-out` (já existe), `--ease-spring`. Documentar em DESIGN.md.
+- [x] **1.2** (S, ★★★) Bloco global `@media (prefers-reduced-motion: reduce)` que zera animações — pré-requisito ético/legal de tudo abaixo.
+- [x] **1.3** (M, ★★★) **Reveal on scroll** via `animation-timeline: view()`: cards, stats, steps da trilha sobem 12px + fade na entrada do viewport. Classe utilitária `.reveal` no main.css. Fallback: sem animação (estado final direto).
+- [x] **1.4** (S, ★★) Micro-interações de botão: `.btn` ganha translate-y(-1px) + sombra no hover, scale(0.98) no active. Setas de `.btn-link` deslizam 4px no hover.
+- [x] **1.5** (S, ★★) `text-wrap: balance` em todos os headings; `text-wrap: pretty` em `.lead`.
+- [x] **1.6** (M, ★★) Stats animados na entrada do viewport. *Implementado como reveal (não counter): metade dos valores é não-numérica ("Multi-Cloud", "<10") — contagem não se aplica.*
 
 ### Onda 2 — Assinatura de marca viva (1-2 sessões, M/L, médio risco)
 
 O que nos diferencia. A Aperture vira o "Stripe gradient" da Kliente.
 
-- [ ] **2.1** (M, ★★★) **Aperture entrance**: no load do hero, os 4 círculos do mark animam de raio 0 → raio final em sequência horária (stagger 80ms), opacidades chegando em cascata. É a marca "abrindo a abertura". Mesma animação em micro nos `.mark-aperture` da nav no hover.
-- [ ] **2.2** (L, ★★★) **Hero kinetic type**: "Conhecimento aplicado," entra com Inter Variable animando weight 300→650; "como serviço" (verde) entra 200ms depois. Uma vez só, no load — nada de loop.
-- [ ] **2.3** (M, ★★) **View Transitions** entre páginas: `@view-transition { navigation: auto }` + `view-transition-name: brand-mark` no lockup da nav — o mark persiste/morfa entre páginas. Chrome/Edge only, fallback = navegação normal.
-- [ ] **2.4** (M, ★★) Scroll-driven na **Trilha 360** da home: a linha conectora dos 5 verbos se desenha conforme o scroll (`animation-timeline: view()` num pseudo-elemento de progresso), steps acendem em sequência.
-- [ ] **2.5** (S, ★) Watermark Aperture do hero ganha parallax sutil de 8-12px no scroll (CSS scroll-driven, não JS).
+- [x] **2.1** (M, ★★★) **Aperture entrance**: no load do hero, os 4 círculos do mark animam de raio 0 → raio final em sequência horária (stagger 80ms), opacidades chegando em cascata. É a marca "abrindo a abertura". Mesma animação em micro nos `.mark-aperture` da nav no hover.
+- [x] **2.2** (L, ★★★) **Hero entrance staggered** (badges → h1 → sub → ctas). *Nota: nossa inter-latin.woff2 é estática (sem fvar) — animação de weight exigiria trocar pra Inter Variable (+~80KB). Adiado; entrance por opacity/translate entrega o efeito sem custo.*
+- [x] **2.3** (M, ★★) **View Transitions** entre páginas: `@view-transition { navigation: auto }` + `view-transition-name: brand-mark` no lockup da nav — o mark persiste/morfa entre páginas. Chrome/Edge only, fallback = navegação normal.
+- [x] **2.4** (M, ★★) Scroll-driven na **Trilha 360** da home: a linha conectora dos 5 verbos se desenha conforme o scroll (`animation-timeline: view()` num pseudo-elemento de progresso), steps acendem em sequência.
+- [x] **2.5** (S, ★) Watermark Aperture do hero ganha parallax sutil de 8-12px no scroll (CSS scroll-driven, não JS).
 
 ### Onda 3 — Layout de última geração (2 sessões, L, exige decisão de design)
 
-- [ ] **3.1** (L, ★★★) **Bento grid na home**: substituir a grid uniforme de 3 pilares por bento assimétrico — Salesforce em célula 2×1 (pilar âncora, Partner badge), Data e IA em 1×1, célula extra com stat vivo ("45+ posts publicados") e célula com micro-CTA. Benchmark: +23% scroll depth medido em bento vs grid tradicional.
-- [ ] **3.2** (M, ★★) **Hero demonstrativo**: sob o subtítulo, uma linha mono tipo terminal que cicla 3 outputs reais (`pipeline ✓ 2.3M rows`, `agent deployed · KPI +18%`, `dashboard live · 4 squads`) — o "build log" da Vercel traduzido pra consultoria. Respeita reduced-motion (mostra 1 estático).
-- [ ] **3.3** (M, ★★) Seções com **profundidade Linear**: `.section.dark` ganha gradient radial sutil de fundo + cards com inset border 1px branco-alpha. Aplicar na stats strip e CTA final.
-- [ ] **3.4** (M, ★★) **Pillar pages**: número gigante do hero (`02`) vira elemento scroll-driven — desloca e esmaece conforme entra o conteúdo. Editorial asymmetry: manifesto em 2 colunas desalinhadas (texto + pull-quote).
-- [ ] **3.5** (S, ★★) Blog post: barra de progresso de leitura scroll-linked (CSS puro) + TL;DR em card sticky no desktop.
+- [x] **3.1** (L, ★★★) **Bento grid na home**: substituir a grid uniforme de 3 pilares por bento assimétrico — Salesforce em célula 2×1 (pilar âncora, Partner badge), Data e IA em 1×1, célula extra com stat vivo ("45+ posts publicados") e célula com micro-CTA. Benchmark: +23% scroll depth medido em bento vs grid tradicional.
+- [x] **3.2** (M, ★★) **Hero demonstrativo**: sob o subtítulo, uma linha mono tipo terminal que cicla 3 outputs reais (`pipeline ✓ 2.3M rows`, `agent deployed · KPI +18%`, `dashboard live · 4 squads`) — o "build log" da Vercel traduzido pra consultoria. Respeita reduced-motion (mostra 1 estático).
+- [x] **3.3** (M, ★★) Seções com **profundidade Linear**: `.section.dark` ganha gradient radial sutil de fundo + cards com inset border 1px branco-alpha. Aplicar na stats strip e CTA final.
+- [x] **3.4** (M, ★★) **Pillar pages**: número gigante scroll-driven ✓. *Editorial asymmetry do manifesto: pendente (mexe em 9 páginas, decisão separada).*
+- [x] **3.5** (S, ★★) Blog post: barra de progresso de leitura scroll-linked (CSS puro) + TL;DR em card sticky no desktop.
 
 ### Onda 4 — Refinos e prova social (contínuo, S/M)
 
 - [ ] **4.1** (M, ★★★) Template de **case study** com narrativa scroll (contexto → intervenção → métrica), métricas em stats animados. Destrava quando houver case aprovado (parking lot do PLAN.md).
 - [ ] **4.2** (S, ★★) Logos de clientes em faixa com `mask-image` fade nas bordas (quando autorizados).
-- [ ] **4.3** (S, ★) FAQ accordion: chevron rotaciona, conteúdo expande com `@starting-style` + `transition-behavior: allow-discrete`.
-- [ ] **4.4** (S, ★) Lang-switch e nav mobile com transições suaves (já tem estrutura, falta motion).
+- [x] **4.3** (S, ★) FAQ accordion: chevron rotaciona, conteúdo expande com `@starting-style` + `transition-behavior: allow-discrete`.
+- [x] **4.4** (S, ★) Lang-switch e nav mobile com transições suaves (já tem estrutura, falta motion).
 - [ ] **4.5** (M, ★) Dark mode opt-in (`prefers-color-scheme`) — temos todos os tokens `on-dark` prontos; avaliar custo/benefício antes.
 
 ---

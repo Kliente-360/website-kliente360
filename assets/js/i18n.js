@@ -19,6 +19,9 @@ const DICT = {
       title1: 'Conhecimento aplicado,', title2: 'como serviço',
       sub: 'Consultoria especializada em CRM com Salesforce, Dados e IA — três pilares como uma prática única. Carteira com poucos clientes estratégicos, atendidos diretamente por quem entrega.',
       cta1: 'Falar com um sócio', cta2: 'Conhecer a Trilha 360',
+      term0: 'mapear → prototipar → validar → implantar → sustentar',
+      term1: 'salesforce + dados + ia · uma engrenagem',
+      term2: 'agentes em produção, auditáveis, com governança desde o dia 1',
     },
     pillars: {
       eyebrow: 'Portfólio',
@@ -28,6 +31,8 @@ const DICT = {
       sf: { num: '01 · Pilar', t: 'Salesforce', d: 'Core CRM. Da implementação à evolução com agentes, sem terceirizar a estratégia.' },
       data: { num: '02 · Pilar', t: 'Data & Analytics', d: 'Do dado bruto à decisão. Stack moderna, agnóstica, escolhida pelo cenário.' },
       ai: { num: '03 · Pilar', t: 'IA Aplicada', d: 'Agentes de IA sob medida e produtos SaaS verticais. Discovery rápido, entrega em ciclos curtos.' },
+      bentoStat: 'textos publicados sobre a prática — análise, método, opinião. Sem hype.',
+      bentoCta: 'Conversa direta com quem entrega — sem camadas no meio.',
     },
     pillarDeep: {
       cta: 'Falar com um sócio', link: 'Como entregamos',
@@ -95,6 +100,9 @@ const DICT = {
       title1: 'Applied knowledge,', title2: 'as a service',
       sub: 'A specialist consultancy in CRM with Salesforce, Data and AI — three practices as a single discipline. A small book of strategic clients, served directly by the people who deliver.',
       cta1: 'Talk to a partner', cta2: 'Explore the Method',
+      term0: 'map → prototype → validate → deploy → sustain',
+      term1: 'salesforce + data + ai · a single engine',
+      term2: 'agents in production, auditable, governed from day 1',
     },
     pillars: {
       eyebrow: 'Portfolio',
@@ -104,6 +112,8 @@ const DICT = {
       sf:   { num: '01 · Practice', t: 'Salesforce', d: 'Core CRM. From implementation to agent-driven evolution, without outsourcing strategy.' },
       data: { num: '02 · Practice', t: 'Data & Analytics', d: 'From raw data to decision. Modern, stack-agnostic, chosen per scenario.' },
       ai:   { num: '03 · Practice', t: 'Applied AI', d: 'Custom AI agents and vertical SaaS products. Fast discovery, short delivery cycles.' },
+      bentoStat: 'published pieces on the practice — analysis, method, opinion. No hype.',
+      bentoCta: 'A direct line to the people who deliver — no layers in between.',
     },
     pillarDeep: {
       cta: 'Talk to a partner', link: 'How we deliver',
@@ -171,6 +181,9 @@ const DICT = {
       title1: 'Conocimiento aplicado,', title2: 'como servicio',
       sub: 'Consultoría especializada en CRM con Salesforce, Datos e IA — tres pilares como una sola práctica. Cartera con pocos clientes estratégicos, atendidos directamente por quien entrega.',
       cta1: 'Hablar con un socio', cta2: 'Conocer el Método 360',
+      term0: 'mapear → prototipar → validar → implantar → sostener',
+      term1: 'salesforce + datos + ia · un solo engranaje',
+      term2: 'agentes en producción, auditables, con gobernanza desde el día 1',
     },
     pillars: {
       eyebrow: 'Portafolio',
@@ -180,6 +193,8 @@ const DICT = {
       sf:   { num: '01 · Pilar', t: 'Salesforce', d: 'Core CRM. De la implementación a la evolución con agentes, sin tercerizar la estrategia.' },
       data: { num: '02 · Pilar', t: 'Data & Analytics', d: 'Del dato bruto a la decisión. Stack moderna, agnóstica, elegida según el escenario.' },
       ai:   { num: '03 · Pilar', t: 'IA Aplicada', d: 'Agentes de IA a medida y productos SaaS verticales. Discovery rápido, entrega en ciclos cortos.' },
+      bentoStat: 'textos publicados sobre la práctica — análisis, método, opinión. Sin hype.',
+      bentoCta: 'Conversación directa con quien entrega — sin capas en el medio.',
     },
     pillarDeep: {
       cta: 'Hablar con un socio', link: 'Cómo entregamos',

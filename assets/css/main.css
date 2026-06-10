@@ -1734,3 +1734,219 @@ a.card:hover, .card.linked:hover {
   color: var(--ink-300);
 }
 @media (min-width: 768px) { .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
+
+/* ============ MOTION (design-benchmark-2026, Ondas 1–3) ============
+ * Regras de governança (research/design-benchmark-2026.md §3):
+ *  - máx. 1 animação "hero" por página; reveal padrão pro resto;
+ *  - tudo é progressive enhancement: Safari/Firefox sem scroll-driven
+ *    veem o site no estado final, 100% funcional;
+ *  - prefers-reduced-motion zera tudo (bloco no fim desta seção).
+ */
+
+/* Tipografia: headlines sem viúvas, leads com quebra equilibrada. */
+h1, h2, h3, h4 { text-wrap: balance; }
+.lead, .sub { text-wrap: pretty; }
+
+/* --- Keyframes (inertes até serem referenciados) --- */
+@keyframes mo-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes mo-aperture-in {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+@keyframes mo-draw-x {
+  from { scale: 0 1; }
+  to   { scale: 1 1; }
+}
+@keyframes mo-num-drift {
+  to { translate: 0 28px; opacity: 0.3; }
+}
+@keyframes mo-parallax {
+  to { translate: 0 44px; }
+}
+@keyframes mo-menu-in {
+  from { opacity: 0; translate: 0 -8px; }
+}
+@keyframes mo-term-cycle {
+  0%, 28%   { opacity: 1; }
+  33%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* -- Onda 2.1 · Aperture entrance: a marca "abre" no load do hero (1×). -- */
+  .hero-mark circle {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: mo-aperture-in var(--dur-slow) var(--ease-spring) backwards;
+  }
+  .hero-mark circle:nth-child(1) { animation-delay: 80ms; }
+  .hero-mark circle:nth-child(2) { animation-delay: 160ms; }
+  .hero-mark circle:nth-child(3) { animation-delay: 240ms; }
+  .hero-mark circle:nth-child(4) { animation-delay: 320ms; }
+
+  /* Micro-eco da entrada no lockup da nav (hover). */
+  .nav-brand:hover .mark-aperture circle {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: mo-aperture-in var(--dur-base) var(--ease-spring);
+  }
+  .nav-brand:hover .mark-aperture circle:nth-child(2) { animation-delay: 40ms; }
+  .nav-brand:hover .mark-aperture circle:nth-child(3) { animation-delay: 80ms; }
+  .nav-brand:hover .mark-aperture circle:nth-child(4) { animation-delay: 120ms; }
+
+  /* -- Onda 2.2 · Hero entrance staggered (1× no load). -- */
+  .hero .badges  { animation: mo-rise var(--dur-slow) var(--ease-out) backwards 60ms; }
+  .hero h1       { animation: mo-rise var(--dur-slower) var(--ease-out) backwards 140ms; }
+  .hero .sub     { animation: mo-rise var(--dur-slower) var(--ease-out) backwards 260ms; }
+  .hero .hero-term { animation: mo-rise var(--dur-slower) var(--ease-out) backwards 340ms; }
+  .hero .cta-row { animation: mo-rise var(--dur-slower) var(--ease-out) backwards 420ms; }
+
+  /* -- Onda 4.4 · Nav mobile: entrada suave do menu. -- */
+  .nav-menu[data-open="true"] { animation: mo-menu-in var(--dur-base) var(--ease-out); }
+
+  /* -- Onda 4.3 · FAQ: conteúdo do <details> expande com fade. -- */
+  @supports selector(::details-content) {
+    .cm-faq details::details-content {
+      opacity: 0; translate: 0 -4px;
+      transition:
+        opacity var(--dur-base) var(--ease-out),
+        translate var(--dur-base) var(--ease-out),
+        content-visibility var(--dur-base) allow-discrete;
+    }
+    .cm-faq details[open]::details-content { opacity: 1; translate: 0 0; }
+  }
+
+  /* ====== Scroll-driven (Chrome/Edge; demais veem estado final) ====== */
+  @supports (animation-timeline: view()) {
+
+    /* -- Onda 1.3 · Reveal on scroll: aplicado por seletor de sistema,
+          sem tocar HTML. `.reveal` disponível pra opt-in pontual. -- */
+    .reveal,
+    .section-head,
+    .grid-cards > *,
+    .stats-strip .stat,
+    .trilha-step,
+    .trilha-timeline .step {
+      animation: mo-rise var(--dur-slower) var(--ease-out) both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+
+    /* -- Onda 2.4 · Trilha 360: linha de progresso se desenha no scroll. -- */
+    .trilha-wrap { position: relative; }
+    .trilha-wrap::after {
+      content: "";
+      position: absolute; inset-inline: 0; top: 0; height: 2px;
+      background: var(--c-pillar, var(--color-accent));
+      transform-origin: left;
+      animation: mo-draw-x 1ms linear both;
+      animation-timeline: view();
+      animation-range: entry 25% cover 55%;
+    }
+
+    /* -- Onda 2.5 · Watermark do hero: parallax sutil. -- */
+    .hero-mark {
+      animation:
+        mo-parallax linear both;
+      animation-timeline: scroll();
+      animation-range: 0 600px;
+    }
+
+    /* -- Onda 3.4 · Pillar pages: número gigante desloca/esmaece no scroll. -- */
+    .pp-hero .number {
+      animation: mo-num-drift 1ms linear both;
+      animation-timeline: scroll();
+      animation-range: 0 420px;
+    }
+
+    /* -- Onda 3.5 · Blog post: barra de progresso de leitura. -- */
+    .read-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--color-accent);
+      transform-origin: left;
+      scale: 0 1;
+      animation: mo-draw-x 1ms linear both;
+      animation-timeline: scroll();
+      z-index: 200;
+    }
+  }
+
+  /* -- Onda 3.2 · Hero terminal: cicla 3 linhas de posicionamento. -- */
+  .hero-term span { animation: mo-term-cycle 12s infinite; }
+  .hero-term span:nth-child(2) { animation-delay: 4s; }
+  .hero-term span:nth-child(3) { animation-delay: 8s; }
+}
+
+/* Aperture entrance conflita com o transform:none do mobile? Não — anima
+   os <circle>, não o container. O parallax usa `translate` (propriedade
+   separada), sem brigar com `transform` existente do .hero-mark. */
+
+/* -- Onda 3.2 · Hero terminal: estrutura (estado estático = 1ª linha). -- */
+.hero-term {
+  position: relative;
+  margin-top: var(--sp-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-14);
+  color: var(--color-fg-muted);
+  min-height: 1.6em;
+}
+.hero-term span {
+  position: absolute; inset-inline: 0; top: 0;
+  opacity: 0;
+}
+.hero-term span:first-child { opacity: 1; }
+.hero-term span::before {
+  content: "› ";
+  color: var(--color-accent);
+}
+
+/* -- Onda 3.1 · Bento grid (home, pilares). -- */
+@media (min-width: 900px) {
+  .grid-cards.bento { grid-template-columns: repeat(3, 1fr); }
+  .grid-cards.bento > [data-pillar="sf"] { grid-column: span 2; }
+}
+.bento-stat .num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-tighter);
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: var(--sp-3);
+}
+.bento-stat p { color: var(--color-fg-muted); font-size: var(--fs-14); line-height: var(--lh-snug); }
+.bento-cta { display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-6); }
+.bento-cta p { font-weight: var(--fw-semibold); letter-spacing: var(--ls-tight); font-size: var(--fs-18); }
+
+/* -- Onda 3.3 · Profundidade Linear nas seções dark. -- */
+.section.dark {
+  background: radial-gradient(120% 90% at 50% 0%, #161616 0%, var(--bg-dark) 60%);
+}
+.section.dark .card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* -- Onda 2.3 · View Transitions entre páginas (Chrome/Edge). -- */
+@view-transition { navigation: auto; }
+.nav-brand { view-transition-name: brand-mark; }
+
+/* -- Onda 4.3 · FAQ: o "+" rotaciona 45° e vira "×" ao abrir. -- */
+.cm-faq details summary::after {
+  transition: color var(--dur-fast) var(--ease-out), rotate var(--dur-base) var(--ease-out);
+}
+.cm-faq details[open] summary::after { content: "+"; rotate: 45deg; }
+
+/* -- Onda 1.2 · Reduced motion é lei: zera animações e transições. -- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}

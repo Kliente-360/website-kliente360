@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Pardot to Marketing Cloud Engagement Migration: What the Project Won&#39;t Tell You | Kliente 360</title>
+  <meta name="description" content="Pardot and Marketing Cloud Engagement are not the same product. What changes, what must be rebuilt, and when migration doesn&#39;t pay off." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <link rel="canonical" href="https://kliente360.com/blog/en/migracao-pardot-marketing-cloud.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://kliente360.com/blog/migracao-pardot-marketing-cloud.html" />
+  <link rel="alternate" hreflang="en-US" href="https://kliente360.com/blog/en/migracao-pardot-marketing-cloud.html" />
+  <link rel="alternate" hreflang="es-ES" href="https://kliente360.com/blog/es/migracao-pardot-marketing-cloud.html" />
+  <link rel="alternate" hreflang="x-default" href="https://kliente360.com/blog/migracao-pardot-marketing-cloud.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Pardot to Marketing Cloud Engagement Migration: What the Project Won&#39;t Tell You | Kliente 360" />
+  <meta property="og:description" content="Pardot and Marketing Cloud Engagement are not the same product. What changes, what must be rebuilt, and when migration doesn&#39;t pay off." />
+  <meta property="og:url" content="https://kliente360.com/blog/en/migracao-pardot-marketing-cloud.html" />
+  <meta property="og:image" content="https://kliente360.com/assets/img/og/migracao-pardot-marketing-cloud-en.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-06-10" />
+  <meta property="article:section" content="Salesforce" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pardot to Marketing Cloud Engagement Migration: What the Project Won&#39;t Tell You | Kliente 360" />
+  <meta name="twitter:description" content="Pardot and Marketing Cloud Engagement are not the same product. What changes, what must be rebuilt, and when migration doesn&#39;t pay off." />
+
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=9a01533a43" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=9a01533a43" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=9a01533a43" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Pardot to Marketing Cloud Engagement Migration: What the Project Won't Tell You",
+  "description": "Pardot and Marketing Cloud Engagement are not the same product. What changes, what must be rebuilt, and when migration doesn't pay off.",
+  "datePublished": "2026-06-10",
+  "inLanguage": "en-US",
+  "image": "https://kliente360.com/assets/img/og/migracao-pardot-marketing-cloud-en.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kliente360.com/blog/en/migracao-pardot-marketing-cloud.html"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Salesforce",
+  "keywords": [
+    "Pardot migration",
+    "Marketing Cloud Engagement",
+    "Pardot to Marketing Cloud",
+    "MCAE",
+    "Salesforce marketing automation"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Blog",
+      "item": "https://kliente360.com/blog/en/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Salesforce",
+      "item": "https://kliente360.com/en/pilares/salesforce/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Pardot to Marketing Cloud Engagement Migration: What the Project Won't Tell You",
+      "item": "https://kliente360.com/blog/en/migracao-pardot-marketing-cloud.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div class="read-progress" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/en/como-trabalhamos/" data-i18n="nav.howWeWork">Como trabalhamos</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+        <a href="/como-trabalhamos/">Como trabalhamos</a>
+        <a href="/glossario/">Glossário</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="sf" data-pagefind-body data-pagefind-filter="pillar:sf">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Practice 01 · Salesforce</span>
+            <a class="post-back" href="https://kliente360.com/blog/en/">Blog</a>
+          </div>
+          <h1 data-pagefind-meta="title">Pardot to Marketing Cloud Engagement Migration: What the Project Won&#39;t Tell You</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-06-10">10 Jun 2026</time>
+            <span class="sep">·</span>
+            <span>6 min read</span>
+            <span class="sep">·</span>
+            <span>By Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Pardot (MCAE) and Marketing Cloud Engagement have distinct architectures: data model, templates, and journey logic must be rebuilt, not converted. Migration requires an inventory of active programs, a Subscriber Key decision, and IP warming before the project starts. It makes sense if the real use case is B2C or multichannel at scale — not if marketing is pure B2B pipeline-oriented.</p>
+          </aside>
+
+          <p class="post-intro">The recommendation typically arrives in two contexts: license renewal with an upgrade proposal, or a marketing stack audit that detects growth beyond Pardot&#39;s scope. In both cases, the Salesforce partner frames the change as a &quot;migration&quot; — and that is where the project begins accumulating surprises.</p>
+<p>Pardot, rebranded as Marketing Cloud Account Engagement (MCAE) in 2022, and Marketing Cloud Engagement are not the same product at different scales. They are platforms with distinct architectures, different data models, and originally separate use cases.</p>
+<blockquote>
+<p>What looks like a migration is almost always a reimplementation — with the budget and timeline of a new project.</p>
+</blockquote>
+<h2>Pardot and Marketing Cloud Engagement Start from Different Premises</h2>
+<p>MCAE was built for B2B marketing: leads connected to CRM opportunities, engagement-score-based nurture, forms feeding the commercial pipeline. The central data entity is the Lead — the same object as in Sales Cloud, with native synchronization and no additional configuration.</p>
+<p>Marketing Cloud Engagement was built for B2C marketing at scale: batch email, multichannel journeys (email, SMS, push, ads), segmentation in Data Extensions, dynamic templates with AMPscript. The central data entity is not the Lead — it is the Subscriber, with an independent key and a CRM connection via Marketing Cloud Connect, configured separately.</p>
+<p>This architectural difference cascades throughout the entire project:</p>
+<ol>
+<li><p><strong>Data model.</strong> MCAE uses Salesforce objects directly (Lead, Contact, Account, Opportunity). MCE uses Data Extensions — configurable relational tables with no native CRM link. Synchronization requires Marketing Cloud Connect, which must be configured, tested, and monitored as part of the project scope.</p>
+</li>
+<li><p><strong>Template syntax.</strong> MCAE uses HML (Handlebars Merge Language). MCE uses AMPscript — a proprietary language with conditional logic, loops, and inline API calls. HML templates do not convert to AMPscript: they need to be rewritten.</p>
+</li>
+<li><p><strong>Journey logic.</strong> MCAE&#39;s Engagement Studio is oriented toward CRM conditions: lead score, opportunity stage, object field values. MCE&#39;s Journey Builder is event-driven: data stream entry, external trigger, branching by Data Extension attribute. The business logic exists in both tools — but the available triggers and exit conditions are different enough to require redesigning programs, not converting them.</p>
+</li>
+</ol>
+<h2>What Must Happen Before the Project Starts</h2>
+<p>Migration projects that hit surprises halfway through almost always skipped the diagnostic phase. Four inventories are mandatory before approving scope and timeline:</p>
+<ol>
+<li><p><strong>Active program inventory.</strong> How many Engagement Programs are running in MCAE? With how many steps? With how many leads inside? Each active program needs a Journey Builder equivalent — and the logic mapping is manual, not importable.</p>
+</li>
+<li><p><strong>Template inventory.</strong> List actively used HML email templates (welcome, nurture, re-engagement). Abandoned templates do not need to migrate; frequently used ones need to be rewritten in AMPscript or converted to Content Builder drag-and-drop. Template count is the primary driver of timeline — not platform configuration.</p>
+</li>
+<li><p><strong>Contact model mapping.</strong> In MCAE, the key follows the Salesforce model (Lead ID or Contact ID). In MCE, the key is the Subscriber Key — configurable as email, CRM ID, or a proprietary identifier. Defining this key before importing data avoids the most expensive problem: duplicate subscribers with fragmented history.</p>
+</li>
+<li><p><strong>IP reputation history.</strong> For volumes above 100,000 emails per month, migration requires IP warming in MCE — a gradual process of 4 to 8 weeks that cannot be compressed without risk of landing on blacklists. Warming must appear in the project schedule with real buffer, not as a parallel track alongside go-live.</p>
+</li>
+</ol>
+<h2>Pitfalls That Appear After Go-live</h2>
+<p>Even with a solid diagnostic, some difficulties surface in real use:</p>
+<p><strong>Marketing Cloud Connect is not plug-and-play.</strong> CRM integration requires configuring Synchronized Data Sources, field mapping, and latency testing. In rushed implementations, Connect works in sandbox and fails under real load — especially when there is a high volume of simultaneous Lead and Contact updates.</p>
+<p><strong>Permissions follow their own model.</strong> In MCAE, permissions follow Salesforce profiles. In MCE, the model is internal: Roles, Business Units, and Content Builder permissions must be configured separately. Teams with multiple brands or product lines need to redesign the access structure — not just replicate what existed in the CRM.</p>
+<p><strong>Reports do not migrate.</strong> MCAE campaign reports (open rate, click rate, generated pipeline) have no automatic equivalent in MCE. Intelligence Reports uses a different model, and the history of older campaigns rarely migrates faithfully to the new system.</p>
+<p><strong>License cost increases.</strong> MCE is an enterprise product priced differently from MCAE. Projects that treat migration as an &quot;upgrade&quot; frequently discover at the final contract that annual costs increased 40 to 100% — with a valid justification, but one that should have been in the business case from day one, not as a renewal surprise.</p>
+<h2>When Migration Does Not Pay Off</h2>
+<p><a href="/blog/en/quando-nao-usar-salesforce.html">The same logic for evaluating when not to use Salesforce</a> applies to the choice between MCAE and MCE: the cost of licensing and operations must justify the additional capability.</p>
+<p>If the use case is primarily B2B — lead scoring, pipeline-based nurture, campaign reports tied to opportunities — MCAE is the more appropriate product. The native CRM integration, scoring logic, and Engagement Studio were built exactly for this case. Migrating to MCE in this scenario means paying more for a platform built for a different use case.</p>
+<p>MCE makes sense when marketing operates with high volumes of transactional or multichannel communication — complex behavioral segmentation for B2C campaigns, or when <a href="/blog/en/marketing-cloud-data-cloud.html">Marketing Cloud needs to consume Data Cloud data</a> for granular personalization at scale. In those scenarios, MCE&#39;s architecture delivers what MCAE cannot.</p>
+<p>The qualifying question before any migration proposal: <strong>is the real use case B2C or multichannel at scale?</strong> If yes, the migration has solid technical grounds. If marketing remains pipeline-oriented B2B, the honest recommendation is to optimize MCAE rather than migrate.</p>
+<h2>The Real Scope of a Migration Project</h2>
+<p>For timeline reference: a migration with 10 to 20 active programs, 30 to 50 templates, and a mid-sized marketing team takes 12 to 20 weeks in well-managed projects. Not six — and not with the same team that handled the original Salesforce implementation.</p>
+<p>Diagnosis occupies the first 4 weeks: program inventory, data model mapping, Subscriber Key decision, Data Extension design. Template rewriting and journey rebuilding occupy the following 6 to 10 weeks. IP warming and Marketing Cloud Connect testing run in parallel. A phased go-live — starting with the simplest programs — closes the project with lower risk.</p>
+<p><a href="/blog/en/mapear-processos-antes-do-salesforce.html">Mapping what exists before starting to configure</a> is the discipline that distinguishes successful CRM implementations from those that need to be redone two years later. In a marketing platform migration, the diagnostic is not overhead — it is the work that determines whether the project ends at go-live or at rework.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Keep the conversation going</div>
+            <h3>Want to discuss this topic with a partner?</h3>
+            <p>Initial diagnostic with no commitment. We assess your scenario in a week and send back a report.</p>
+            <a class="btn-link" href="/#contato">Talk to a partner</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-explore">
+        <div class="container">
+          <div class="label">Keep exploring</div>
+          <div class="grid-cards cols-2-3">
+            <a class="card explore-card" data-pillar="sf" href="/en/pilares/salesforce/">
+              <div class="explore-kind">Practice · Salesforce</div>
+              <p>How we deliver Salesforce in practice — scope, common pitfalls, health signals.</p>
+            </a>
+            <a class="card explore-card" href="/en/como-trabalhamos/">
+              <div class="explore-kind">How we work</div>
+              <p>Trilha 360 — the five verbs of our practice: map, prototype, validate, deploy, sustain.</p>
+            </a>
+            <a class="card explore-card" href="/en/glossario/?pilar=sf">
+              <div class="explore-kind">Glossary</div>
+              <p>Vocabulary for CRM with Salesforce, Data and AI. No buzzwords, with links to the canonical post.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Further reading</h2>
+          <div class="grid-cards cols-2-3">
+            <a class="card post-card" data-pillar="sf" href="/blog/en/implementacao-salesforce-seis-semanas.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 01 · Salesforce</span>
+                <span class="post-date">2 Jun 2026</span>
+              </div>
+              <h3>Salesforce in 6 Weeks: What Actually Fits in an MVP</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="sf" href="/blog/en/quando-nao-usar-salesforce.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 01 · Salesforce</span>
+                <span class="post-date">24 May 2026</span>
+              </div>
+              <h3>When NOT to use Salesforce: 4 scenarios where license cost beats ROI</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="sf" href="/blog/en/data-cloud-nervo-central.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 01 · Salesforce</span>
+                <span class="post-date">19 May 2026</span>
+              </div>
+              <h3>Data Cloud is no longer a CDP — it&#39;s the central nervous system of Salesforce</h3>
+              <div class="read">Read →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Specialist consultancy in CRM with Salesforce, Data and AI. Applied knowledge, as a service.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Practices</h4>
+          <ul>
+            <li><a href="/en/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/en/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/en/pilares/ia/" data-i18n="nav.mobile.ai">Applied AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Company</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Method 360</a></li>
+            <li><a href="/blog/en/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/en/como-trabalhamos/">How we work</a></li>
+            <li><a href="/en/glossario/">Glossary</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contact</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://wa.me/5511930488622" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=9a01533a43"></script>
+  <script src="/assets/js/main.js?v=9a01533a43" type="module"></script>
+</body>
+</html>

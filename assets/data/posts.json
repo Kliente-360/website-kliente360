@@ -1,5 +1,93 @@
 [
   {
+    "slug": "migracao-pardot-marketing-cloud",
+    "pillar": "sf",
+    "date": "2026-06-10",
+    "translations": {
+      "pt": {
+        "title": "Migração Pardot para Marketing Cloud Engagement: o que o projeto não revela",
+        "url": "/blog/migracao-pardot-marketing-cloud.html",
+        "date": "10 jun 2026"
+      },
+      "en": {
+        "title": "Pardot to Marketing Cloud Engagement Migration: What the Project Won't Tell You",
+        "url": "/blog/en/migracao-pardot-marketing-cloud.html",
+        "date": "10 Jun 2026"
+      },
+      "es": {
+        "title": "Migración de Pardot a Marketing Cloud Engagement: lo que el proyecto no revela",
+        "url": "/blog/es/migracao-pardot-marketing-cloud.html",
+        "date": "10 jun 2026"
+      }
+    }
+  },
+  {
+    "slug": "crm-dados-ia-engrenagem",
+    "pillar": "ai",
+    "date": "2026-06-09",
+    "translations": {
+      "pt": {
+        "title": "CRM, dados e IA não são projetos separados — são uma engrenagem",
+        "url": "/blog/crm-dados-ia-engrenagem.html",
+        "date": "9 jun 2026"
+      },
+      "en": {
+        "title": "CRM, Data and AI Are Not Separate Projects — They Are a System",
+        "url": "/blog/en/crm-dados-ia-engrenagem.html",
+        "date": "9 Jun 2026"
+      },
+      "es": {
+        "title": "CRM, datos e IA no son proyectos separados — son un sistema",
+        "url": "/blog/es/crm-dados-ia-engrenagem.html",
+        "date": "9 jun 2026"
+      }
+    }
+  },
+  {
+    "slug": "power-bi-tableau-looker-metabase",
+    "pillar": "data",
+    "date": "2026-06-03",
+    "translations": {
+      "pt": {
+        "title": "Power BI vs Tableau vs Looker vs Metabase — matriz por porte",
+        "url": "/blog/power-bi-tableau-looker-metabase.html",
+        "date": "3 jun 2026"
+      },
+      "en": {
+        "title": "Power BI vs Tableau vs Looker vs Metabase: a matrix by size",
+        "url": "/blog/en/power-bi-tableau-looker-metabase.html",
+        "date": "3 Jun 2026"
+      },
+      "es": {
+        "title": "Power BI vs Tableau vs Looker vs Metabase — matriz por tamaño",
+        "url": "/blog/es/power-bi-tableau-looker-metabase.html",
+        "date": "3 jun 2026"
+      }
+    }
+  },
+  {
+    "slug": "implementacao-salesforce-seis-semanas",
+    "pillar": "sf",
+    "date": "2026-06-02",
+    "translations": {
+      "pt": {
+        "title": "Salesforce em 6 semanas: o que cabe de verdade num MVP",
+        "url": "/blog/implementacao-salesforce-seis-semanas.html",
+        "date": "2 jun 2026"
+      },
+      "en": {
+        "title": "Salesforce in 6 Weeks: What Actually Fits in an MVP",
+        "url": "/blog/en/implementacao-salesforce-seis-semanas.html",
+        "date": "2 Jun 2026"
+      },
+      "es": {
+        "title": "Salesforce en 6 Semanas: Qué Cabe de Verdad en un MVP",
+        "url": "/blog/es/implementacao-salesforce-seis-semanas.html",
+        "date": "2 jun 2026"
+      }
+    }
+  },
+  {
     "slug": "quando-fine-tuning-supera-rag",
     "pillar": "ai",
     "date": "2026-05-27",

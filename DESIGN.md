@@ -440,14 +440,22 @@ Use sempre tokens. **Não escreva `padding: 24px`** — escreva `padding: var(--
 | O quê | Como | Suporte |
 |---|---|---|
 | **Reveal on scroll** | Automático em `.section-head`, `.grid-cards > *`, `.stats-strip .stat`, `.trilha-step`, `.trilha-timeline .step`. Opt-in pontual: classe `.reveal` | Chrome/Edge (`animation-timeline: view()`); demais veem estado final |
+| **Section-head sweep** | `eyebrow` desliza da esquerda, depois `h1/h2/lead` sobem — desencaixe sutil | Chrome/Edge |
+| **Grid stagger** | `.grid-cards > *` em cascata 80/160/240ms | Chrome/Edge |
 | **Aperture entrance** | `.hero-mark circle` — círculos abrem em sequência horária no load (1×). Micro-eco no hover do `.nav-brand` | Universal |
 | **Hero entrance** | badges → h1 → sub → term → ctas, stagger 60–420ms | Universal |
-| **Trilha progress** | Linha de 2px se desenha no topo da `.trilha-wrap` conforme scroll | Chrome/Edge |
+| **Hero exit elegante** | `.hero .container` desfoca + escala 0.985 + opacity 0.35 quando o hero está saindo do viewport (`view-timeline` exit) | Chrome/Edge |
+| **Trilha progress** | Linha 4px com gradiente accent→logo-green se desenha no topo da `.trilha-wrap` conforme scroll | Chrome/Edge |
+| **Trilha verbos** | `.trilha-step .num` e `.verb` mudam pra cor do pilar quando o step entra | Chrome/Edge |
 | **Parallax watermark** | `.hero-mark` desloca 44px em 600px de scroll (usa `translate`, não `transform`) | Chrome/Edge |
+| **Stats pop-in** | Números do `.stats-strip`, `.trust-numbers`, `.pp-stats` entram com scale 0.92→1 + opacity, ease-spring | Chrome/Edge |
+| **CTA gradient bar** | `.pp-cta`/`.cm-cta::before` — barra de 4px com gradiente accent→logo-green→pilar se desenha sob a seção quando ela entra | Chrome/Edge |
+| **Manifesto sticky** | Em pilares (≥1024px) eyebrow+h2 ficam sticky enquanto parágrafos rolam ao lado — `position: sticky`, universal | Universal |
 | **View Transitions** | `@view-transition { navigation: auto }` + `view-transition-name: brand-mark` no `.nav-brand` | Chrome/Edge; fallback navegação normal |
 | **Read progress** | `.read-progress` (3px fixa no topo) — injetada nos posts pelo build | Chrome/Edge; invisível sem suporte |
 | **Hero terminal** | `.hero-term` — 3 linhas de posicionamento ciclando 12s. Estado estático = 1ª linha | Universal |
-| **Número do pillar hero** | `.pp-hero .number` esmaece/desloca no scroll | Chrome/Edge |
+| **Número do pillar hero** | `.pp-hero .number` esmaece (0.22→0) + sobe 64px quando hero está saindo | Chrome/Edge |
+| **Footer brand Aperture** | Círculos do lockup do footer entram com mini-Aperture spring quando o footer entra no viewport | Chrome/Edge |
 | **FAQ** | `+` rotaciona 45° (vira ×); conteúdo expande com fade via `::details-content` | Chrome 131+ |
 
 ### Regras de governança

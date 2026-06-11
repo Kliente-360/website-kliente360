@@ -1782,6 +1782,24 @@ h1, h2, h3, h4 { text-wrap: balance; }
   0%, 28%   { opacity: 1; }
   33%, 100% { opacity: 0; }
 }
+@keyframes mo-hero-exit {
+  to { opacity: 0.35; filter: blur(2px); transform: scale(0.985); }
+}
+@keyframes mo-pop {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes mo-verb-on {
+  to { color: var(--c-pillar, var(--color-accent)); }
+}
+@keyframes mo-cta-bar {
+  from { scale: 0 1; opacity: 0.65; }
+  to   { scale: 1 1; opacity: 1; }
+}
+@keyframes mo-footer-mark-in {
+  from { opacity: 0; transform: scale(0.6) rotate(-12deg); }
+  to   { opacity: 1; transform: none; }
+}
 
 @media (prefers-reduced-motion: no-preference) {
 
@@ -1908,6 +1926,78 @@ h1, h2, h3, h4 { text-wrap: balance; }
       animation-timeline: scroll();
       z-index: 200;
     }
+
+    /* -- Extra A · Hero exit elegante: desfoca/escala/opaca conforme sai. -- */
+    .hero { view-timeline-name: --hero; view-timeline-axis: block; }
+    .hero .container {
+      animation: mo-hero-exit linear both;
+      animation-timeline: --hero;
+      animation-range: exit 0% exit 80%;
+    }
+
+    /* -- Extra B · Trilha: cada verbo acende quando o step entra. -- */
+    .trilha-step .num,
+    .trilha-step .verb {
+      animation: mo-verb-on var(--dur-base) var(--ease-out) both;
+      animation-timeline: view();
+      animation-range: entry 20% entry 60%;
+    }
+
+    /* -- Extra C · Stats: números aparecem com scale-in. -- */
+    .stats-strip .stat .num,
+    .trust-numbers .trust-item .num,
+    .pp-stats .stat .num {
+      animation: mo-pop var(--dur-slow) var(--ease-spring) both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 50%;
+    }
+
+    /* -- Extra D · CTA: barra de gradiente se desenha sob a seção na entrada. -- */
+    .pp-cta, .cm-cta { position: relative; isolation: isolate; }
+    .pp-cta::before, .cm-cta::before {
+      content: "";
+      position: absolute; left: 0; right: 0; top: 0; height: 4px;
+      background: linear-gradient(90deg,
+        var(--color-accent) 0%,
+        var(--logo-green) 50%,
+        var(--c-pillar, var(--color-accent)) 100%);
+      transform-origin: left; scale: 0 1;
+      animation: mo-cta-bar 1ms linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+
+    /* -- Extra F · Footer brand: Aperture mini-entrance quando o footer entra. -- */
+    .footer-brand svg { transform-origin: center; }
+    .footer-brand svg circle {
+      transform-box: fill-box; transform-origin: center;
+      animation: mo-footer-mark-in var(--dur-slow) var(--ease-spring) both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+    .footer-brand svg circle:nth-child(2) { animation-delay: 80ms; }
+    .footer-brand svg circle:nth-child(3) { animation-delay: 160ms; }
+    .footer-brand svg circle:nth-child(4) { animation-delay: 240ms; }
+  }
+
+  /* -- Extra E · Pillar manifesto sticky/parallax (Stripe-style storytelling).
+     Layout em 2 colunas a partir de 1024px; coluna esquerda (eyebrow + h2)
+     gruda no topo, coluna direita (parágrafos) rola ao lado. Universal:
+     position: sticky tem suporte amplo, não depende de scroll-driven. -- */
+  @media (min-width: 1024px) {
+    .pp-manifesto .container {
+      max-width: 1100px;
+      display: grid;
+      grid-template-columns: minmax(260px, 360px) 1fr;
+      gap: var(--sp-16);
+      align-items: start;
+    }
+    .pp-manifesto .pp-manifesto-aside {
+      position: sticky; top: calc(var(--sp-16) + 56px);
+    }
+    .pp-manifesto .pp-manifesto-body { max-width: 64ch; }
+    .pp-manifesto h2 { margin-bottom: 0; }
+    .pp-manifesto p { margin-bottom: var(--sp-6); }
   }
 
   /* -- Onda 3.2 · Hero terminal: cicla 3 linhas de posicionamento. -- */

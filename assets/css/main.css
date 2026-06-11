@@ -1752,6 +1752,14 @@ h1, h2, h3, h4 { text-wrap: balance; }
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: none; }
 }
+@keyframes mo-rise-sm {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes mo-sweep-in {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: none; }
+}
 @keyframes mo-aperture-in {
   from { transform: scale(0); }
   to   { transform: scale(1); }
@@ -1761,7 +1769,8 @@ h1, h2, h3, h4 { text-wrap: balance; }
   to   { scale: 1 1; }
 }
 @keyframes mo-num-drift {
-  to { translate: 0 28px; opacity: 0.3; }
+  from { translate: 0 0; opacity: 0.22; }
+  to   { translate: 0 -64px; opacity: 0; }
 }
 @keyframes mo-parallax {
   to { translate: 0 44px; }
@@ -1835,16 +1844,42 @@ h1, h2, h3, h4 { text-wrap: balance; }
       animation-range: entry 0% entry 45%;
     }
 
+    /* Section-head: eyebrow desliza, depois título sobe — desencaixe sutil. */
+    .section-head .eyebrow {
+      animation: mo-sweep-in var(--dur-slow) var(--ease-out) both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+    .section-head h1,
+    .section-head h2,
+    .section-head .lead {
+      animation: mo-rise-sm var(--dur-slower) var(--ease-out) both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 50%;
+    }
+
+    /* Cards de uma mesma grid entram em stagger (1, 2, 3). */
+    .grid-cards > *:nth-child(2) { animation-delay: 80ms; }
+    .grid-cards > *:nth-child(3) { animation-delay: 160ms; }
+    .grid-cards > *:nth-child(4) { animation-delay: 240ms; }
+
     /* -- Onda 2.4 · Trilha 360: linha de progresso se desenha no scroll. -- */
     .trilha-wrap { position: relative; }
     .trilha-wrap::after {
       content: "";
-      position: absolute; inset-inline: 0; top: 0; height: 2px;
-      background: var(--c-pillar, var(--color-accent));
+      position: absolute; inset-inline: 0; top: 0; height: 4px;
+      background: linear-gradient(90deg,
+        var(--c-pillar, var(--color-accent)) 0%,
+        color-mix(in srgb, var(--c-pillar, var(--color-accent)) 70%, var(--logo-green)) 100%);
       transform-origin: left;
       animation: mo-draw-x 1ms linear both;
       animation-timeline: view();
-      animation-range: entry 25% cover 55%;
+      animation-range: entry 20% cover 60%;
+    }
+    /* Verbos se acendem em sequência conforme o scroll cobre a Trilha. */
+    .trilha-step .num,
+    .trilha-step .verb {
+      transition: color var(--dur-base) var(--ease-out);
     }
 
     /* -- Onda 2.5 · Watermark do hero: parallax sutil. -- */
@@ -1855,11 +1890,12 @@ h1, h2, h3, h4 { text-wrap: balance; }
       animation-range: 0 600px;
     }
 
-    /* -- Onda 3.4 · Pillar pages: número gigante desloca/esmaece no scroll. -- */
+    /* -- Onda 3.4 · Pillar pages: número gigante esmaece e sobe conforme o hero sai. -- */
+    .pp-hero { view-timeline-name: --pp-hero; view-timeline-axis: block; }
     .pp-hero .number {
-      animation: mo-num-drift 1ms linear both;
-      animation-timeline: scroll();
-      animation-range: 0 420px;
+      animation: mo-num-drift linear both;
+      animation-timeline: --pp-hero;
+      animation-range: exit 0% exit 100%;
     }
 
     /* -- Onda 3.5 · Blog post: barra de progresso de leitura. -- */
@@ -1903,23 +1939,7 @@ h1, h2, h3, h4 { text-wrap: balance; }
   color: var(--color-accent);
 }
 
-/* -- Onda 3.1 · Bento grid (home, pilares). -- */
-@media (min-width: 900px) {
-  .grid-cards.bento { grid-template-columns: repeat(3, 1fr); }
-  .grid-cards.bento > [data-pillar="sf"] { grid-column: span 2; }
-}
-.bento-stat .num {
-  font-family: var(--font-mono);
-  font-size: var(--fs-h2);
-  font-weight: var(--fw-bold);
-  letter-spacing: var(--ls-tighter);
-  color: var(--color-accent);
-  line-height: 1;
-  margin-bottom: var(--sp-3);
-}
-.bento-stat p { color: var(--color-fg-muted); font-size: var(--fs-14); line-height: var(--lh-snug); }
-.bento-cta { display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-6); }
-.bento-cta p { font-weight: var(--fw-semibold); letter-spacing: var(--ls-tight); font-size: var(--fs-18); }
+/* (Bento grid removido — revertido pra grid uniforme de 3 colunas por decisão editorial.) */
 
 /* -- Onda 3.3 · Profundidade Linear nas seções dark. -- */
 .section.dark {

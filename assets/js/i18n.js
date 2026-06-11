@@ -31,8 +31,6 @@ const DICT = {
       sf: { num: '01 · Pilar', t: 'Salesforce', d: 'Core CRM. Da implementação à evolução com agentes, sem terceirizar a estratégia.' },
       data: { num: '02 · Pilar', t: 'Data & Analytics', d: 'Do dado bruto à decisão. Stack moderna, agnóstica, escolhida pelo cenário.' },
       ai: { num: '03 · Pilar', t: 'IA Aplicada', d: 'Agentes de IA sob medida e produtos SaaS verticais. Discovery rápido, entrega em ciclos curtos.' },
-      bentoStat: 'textos publicados sobre a prática — análise, método, opinião. Sem hype.',
-      bentoCta: 'Conversa direta com quem entrega — sem camadas no meio.',
     },
     pillarDeep: {
       cta: 'Falar com um sócio', link: 'Como entregamos',
@@ -112,8 +110,6 @@ const DICT = {
       sf:   { num: '01 · Practice', t: 'Salesforce', d: 'Core CRM. From implementation to agent-driven evolution, without outsourcing strategy.' },
       data: { num: '02 · Practice', t: 'Data & Analytics', d: 'From raw data to decision. Modern, stack-agnostic, chosen per scenario.' },
       ai:   { num: '03 · Practice', t: 'Applied AI', d: 'Custom AI agents and vertical SaaS products. Fast discovery, short delivery cycles.' },
-      bentoStat: 'published pieces on the practice — analysis, method, opinion. No hype.',
-      bentoCta: 'A direct line to the people who deliver — no layers in between.',
     },
     pillarDeep: {
       cta: 'Talk to a partner', link: 'How we deliver',
@@ -193,8 +189,6 @@ const DICT = {
       sf:   { num: '01 · Pilar', t: 'Salesforce', d: 'Core CRM. De la implementación a la evolución con agentes, sin tercerizar la estrategia.' },
       data: { num: '02 · Pilar', t: 'Data & Analytics', d: 'Del dato bruto a la decisión. Stack moderna, agnóstica, elegida según el escenario.' },
       ai:   { num: '03 · Pilar', t: 'IA Aplicada', d: 'Agentes de IA a medida y productos SaaS verticales. Discovery rápido, entrega en ciclos cortos.' },
-      bentoStat: 'textos publicados sobre la práctica — análisis, método, opinión. Sin hype.',
-      bentoCta: 'Conversación directa con quien entrega — sin capas en el medio.',
     },
     pillarDeep: {
       cta: 'Hablar con un socio', link: 'Cómo entregamos',

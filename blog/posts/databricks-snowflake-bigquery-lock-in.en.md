@@ -59,7 +59,7 @@ The most underestimated lock-in: how much the warehouse is sewn together with ot
 
 **BigQuery** lives inside Google Cloud. Native integration with Looker, Vertex AI, Pub/Sub, Dataflow, Cloud Storage. Reverse migration is not just warehouse — it's renegotiating the entire data stack that grew around it. A company with Looker + BigQuery + Vertex AI must migrate three products together. Exit cost grows exponentially with time inside GCP.
 
-**Snowflake** runs multi-cloud (AWS, Azure, GCP). That's the main marketing argument — "Snowflake is neutral between clouds". True at compute. Not true at integrations: Snowflake Native Apps, Snowpark Container Services, Streamlit, Cortex are exclusive. A team adopting those layers re-creates lock-in at another level.
+**Snowflake** runs multi-cloud (AWS, Azure, GCP). That's the main marketing argument — "Snowflake is neutral between clouds". True at compute — but [intentional multi-cloud architecture carries operational overhead that goes well beyond choosing a cloud-neutral warehouse](/blog/en/multi-cloud-mito-ou-estrategia.html). Not true at integrations: Snowflake Native Apps, Snowpark Container Services, Streamlit, Cortex are exclusive. A team adopting those layers re-creates lock-in at another level.
 
 **Databricks** runs on AWS, Azure and GCP natively. Has deep integrations with each (especially Azure, via Microsoft partnership), but the engine is portable between clouds — workspace in AWS migrates to Azure with lower cost than other options. Real lock-in is in Unity Catalog (governance layer) and Workflows (orchestration) — those migrate with refactoring, not simple export.
 

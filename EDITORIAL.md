@@ -63,7 +63,7 @@ Numeração sequencial pela ordem cronológica de publicação. Quando duas entr
 | 47 | 2026-06-09 | ter | ai | [CRM, dados e IA não são projetos separados — são uma engrenagem](blog/posts/crm-dados-ia-engrenagem.md) | Sim | Pitch integrado — pega FAQ #1 de /como-trabalhamos/ e aprofunda | [x] | [ ] |
 | 48 | 2026-06-10 | qua | sf | [Migração Pardot para Marketing Cloud Engagement: o que o projeto não revela](blog/posts/migracao-pardot-marketing-cloud.md) | Sim | Quick win SEO #8 — migração técnica concreta | [x] | [ ] |
 | 49 | 2026-06-16 | ter | data | [Multi-cloud: mito ou estratégia — critério honesto pra decidir](blog/posts/multi-cloud-mito-ou-estrategia.md) | Sim | Anti-hype, não é sobre lock-in | [x] | [ ] |
-| 50 | 2026-06-17 | qua | ai | Vector database OU search engine — quando RAG não precisa de vetor | Sim | Contraintuitivo — quando o índice clássico ainda ganha | [ ] | [ ] |
+| 50 | 2026-06-17 | qua | ai | [Vector database não é obrigatório em RAG — quando o índice clássico ganha](blog/posts/vector-database-ou-search-engine.md) | Sim | Contraintuitivo — quando o índice clássico ainda ganha | [x] | [ ] |
 | 51 | 2026-06-23 | ter | sf | Salesforce ROI — a matriz que vendedor de licença não mostra | Sim | Continuação anti-hype do "Quando NÃO usar Salesforce" | [ ] | [ ] |
 | 52 | 2026-06-24 | qua | data | Customer Data Platform — morreu ou virou commodity? | Sim | Picks up Data Cloud thread + market angle | [ ] | [ ] |
 | 53 | 2026-06-30 | ter | data | [Observabilidade de dados: detectar falhas antes do stakeholder](blog/posts/observabilidade-de-dados.md) | Não | Back-catálogo recuperado de auto-branch (gerado 2026-05-23, nunca mergeado) | [ ] | [ ] |

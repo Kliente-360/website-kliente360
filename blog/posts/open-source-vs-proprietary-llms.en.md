@@ -45,7 +45,7 @@ Four contexts where the balance clearly tilts toward self-hosted open source:
 
 **High predictable volume.** SaaS with 50M+ inferences/month. Cost difference justifies investment in own infra — payback in 6–12 months.
 
-**Sensitive data that can't leave.** Healthcare, regulated financial data, personal data under strict jurisdiction. No way to do it with proprietary that sends to external cloud.
+**Sensitive data that can't leave.** Healthcare, regulated financial data, personal data under strict jurisdiction. No way to do it with proprietary that sends to external cloud. In these cases, [fine-tuning an open source model removes sensitive data from the production inference cycle](/blog/en/quando-fine-tuning-supera-rag.html) — the knowledge stays in the weights after training, without needing a persistent index accessible at runtime.
 
 **Need for cheap custom fine-tuning.** Open source allows [serious fine-tuning with full control](/blog/en/fine-tuning-vs-rag-vs-prompt.html) — useful when use case requires specialization. Proprietary has fine-tuning, but more restrictive and expensive.
 

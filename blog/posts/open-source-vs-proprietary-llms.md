@@ -45,7 +45,7 @@ Quatro contextos onde a balança claramente pende pra open source self-hosted:
 
 **Volume alto previsível.** SaaS com 50M+ inferências/mês. A diferença de custo justifica investimento em infra própria — payback em 6–12 meses.
 
-**Dado sensível que não pode sair.** Saúde, dado financeiro regulado, dado pessoal sob jurisdição estrita. Não tem como fazer com proprietary que envia pra cloud externa.
+**Dado sensível que não pode sair.** Saúde, dado financeiro regulado, dado pessoal sob jurisdição estrita. Não tem como fazer com proprietary que envia pra cloud externa. Nesses casos, [fine-tuning em modelo open source remove dado sensível do ciclo de inferência em produção](/blog/quando-fine-tuning-supera-rag.html) — o conhecimento fica nos pesos após o treinamento, sem precisar de índice persistente acessível em tempo de execução.
 
 **Necessidade de fine-tuning customizado e barato.** Open source permite [fine-tuning sério com controle total](/blog/fine-tuning-vs-rag-vs-prompt.html) — útil quando o caso de uso exige especialização. Proprietary tem fine-tuning, mas mais restrito e caro.
 

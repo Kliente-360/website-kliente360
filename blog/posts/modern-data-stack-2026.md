@@ -51,7 +51,7 @@ Cinco movimentos arquiteturais reais — não mais relacionados ao rótulo Moder
 2. **Camada semântica é onde a disputa está.** dbt Semantic Layer, Cube, MetricFlow disputam por ser o "MetricStore" canônico. Sem ela, métricas brigam entre BI tools. Com ela, mais um motor de governança que afeta produto.
 3. **Real-time deixou de ser categoria à parte.** Materialize, RisingWave, ClickHouse e Iceberg streaming reduziram o gap entre batch e stream. Em 2026, escolher batch ou stream é decisão de SLA, não de stack diferente.
 4. **Governança virou camada do warehouse.** Unity Catalog (Databricks), Horizon (Snowflake), Dataplex (BigQuery) absorveram parte da função de catálogo e lineage. Ferramenta separada só sobrevive em casos complexos multi-warehouse.
-5. **IA generativa virou consumidor de dados, não substituto.** GPT/Claude/Gemini pra análise ad-hoc, geração de SQL natural, descoberta de insight. Esse é o caso onde a camada semântica fica ainda mais crítica — LLM precisa de definição canônica pra não inventar métrica.
+5. **IA generativa virou consumidor de dados, não substituto.** GPT/Claude/Gemini pra análise ad-hoc, geração de SQL natural, descoberta de insight. Esse é o caso onde a camada semântica fica ainda mais crítica — LLM precisa de definição canônica pra não inventar métrica. É também o ponto de entrada da [governança AI-ready como novo critério de maturidade de dados em 2026](/blog/tendencias-data-management-2026.html): proveniência, classificação de sensibilidade e controle de acesso granular por pipeline de IA.
 
 > Modern Data Stack era brand. Stack de dados em 2026 é arquitetura. Quem ainda vende a etiqueta está vendendo 2021.
 

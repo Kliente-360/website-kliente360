@@ -51,7 +51,7 @@ Cinco movimientos arquitectónicos reales — ya no relacionados al rótulo Mode
 2. **Capa semántica es donde está la disputa.** dbt Semantic Layer, Cube, MetricFlow disputan por ser el "MetricStore" canónico. Sin ella, métricas pelean entre BI tools. Con ella, un motor más de gobierno que afecta producto.
 3. **Real-time dejó de ser categoría aparte.** Materialize, RisingWave, ClickHouse e Iceberg streaming redujeron el gap entre batch y stream. En 2026, elegir batch o stream es decisión de SLA, no de stack diferente.
 4. **Gobierno se volvió capa del warehouse.** Unity Catalog (Databricks), Horizon (Snowflake), Dataplex (BigQuery) absorbieron parte de la función de catálogo y lineage. Herramienta separada sólo sobrevive en casos complejos multi-warehouse.
-5. **IA generativa se volvió consumidor de datos, no sustituto.** GPT/Claude/Gemini para análisis ad-hoc, generación de SQL natural, descubrimiento de insight. Ese es el caso donde la capa semántica queda aún más crítica — LLM necesita definición canónica para no inventar métrica.
+5. **IA generativa se volvió consumidor de datos, no sustituto.** GPT/Claude/Gemini para análisis ad-hoc, generación de SQL natural, descubrimiento de insight. Ese es el caso donde la capa semántica queda aún más crítica — LLM necesita definición canónica para no inventar métrica. Es también el punto de entrada de la [gobernanza AI-ready como nuevo criterio de madurez de datos en 2026](/blog/es/tendencias-data-management-2026.html): procedencia, clasificación de sensibilidad y control de acceso granular por pipeline de IA.
 
 > Modern Data Stack era marca. Stack de datos en 2026 es arquitectura. Quien aún vende la etiqueta está vendiendo 2021.
 

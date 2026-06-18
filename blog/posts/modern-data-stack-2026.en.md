@@ -51,7 +51,7 @@ Five real architectural moves — no longer tied to the Modern Data Stack label,
 2. **Semantic layer is where the dispute is.** dbt Semantic Layer, Cube, MetricFlow compete to be the canonical "MetricStore". Without it, metrics fight between BI tools. With it, one more governance engine that affects product.
 3. **Real-time stopped being a separate category.** Materialize, RisingWave, ClickHouse and Iceberg streaming closed the gap between batch and stream. In 2026, choosing batch or stream is an SLA decision, not a different stack.
 4. **Governance became warehouse layer.** Unity Catalog (Databricks), Horizon (Snowflake), Dataplex (BigQuery) absorbed part of the catalog and lineage function. Separate tool only survives in complex multi-warehouse cases.
-5. **Generative AI became a data consumer, not a substitute.** GPT/Claude/Gemini for ad-hoc analysis, natural SQL generation, insight discovery. This is the case where the semantic layer becomes even more critical — LLM needs canonical definition not to invent a metric.
+5. **Generative AI became a data consumer, not a substitute.** GPT/Claude/Gemini for ad-hoc analysis, natural SQL generation, insight discovery. This is the case where the semantic layer becomes even more critical — LLM needs canonical definition not to invent a metric. It's also the entry point for [AI-ready governance as the new data maturity criterion in 2026](/blog/en/tendencias-data-management-2026.html): provenance, sensitivity classification and granular access control per AI pipeline.
 
 > Modern Data Stack was brand. Data stack in 2026 is architecture. Whoever still sells the label is selling 2021.
 

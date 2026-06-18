@@ -74,7 +74,7 @@ Whoever answers the five clearly decides with conviction. Whoever answers "it de
 [Data contracts](/blog/en/data-contracts.html) and dbt complement catalog — they don't replace one another. In mature architecture:
 
 - **dbt** documents what's in the warehouse, describes models, tests.
-- **Data contracts** version agreements between data producer and consumer.
+- **[Data contracts that became operational practice in 2026](/blog/en/tendencias-data-management-2026.html)** version agreements between data producer and consumer.
 - **Enterprise catalog**, if justified, is the cross-cutting governance layer above everything.
 
 Most Brazilian mid-market companies don't need the third layer. They need the first two done right. Skipping the first two to jump straight to catalog is building a building without foundation.

@@ -74,7 +74,7 @@ Quien responde las cinco con claridad decide con convicción. Quien responde "de
 [Data contracts](/blog/es/data-contracts.html) y dbt complementan al catalog — no se sustituyen entre sí. En arquitectura madura:
 
 - **dbt** documenta lo que está en el warehouse, describe modelos, testea.
-- **Data contracts** versiona acuerdos entre productor y consumidor de dato.
+- **[Data contracts que se volvieron práctica operacional en 2026](/blog/es/tendencias-data-management-2026.html)** versiona acuerdos entre productor y consumidor de dato.
 - **Catalog enterprise**, si se justifica, es la capa de gobernanza cruzada que atraviesa todo.
 
 La mayoría de las empresas de tamaño medio no necesita la tercera capa. Necesita las dos primeras hechas bien. Saltearse las dos primeras para ir directo al catalog es construir edificio sin cimientos.

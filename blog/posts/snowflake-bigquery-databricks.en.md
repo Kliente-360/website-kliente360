@@ -40,7 +40,7 @@ Three honest sentences about each:
 
 **Snowflake.** Shines in pure SQL operations with a mature BI/analytics team. UX, per-workload warehouse separation, time travel are best-in-class. Hurts in native ML/data-science workloads (needs external integrations to do what Databricks does at home) and in heavy query federation.
 
-**BigQuery.** Shines in Google ecosystem (GA4, Vertex, Looker integration) and a truly serverless model — you don't size clusters. Hurts in cost predictability (per-query-scanned model punishes badly written queries) and in less polished UX than Snowflake for teams coming from classic SQL.
+**BigQuery.** Shines in Google ecosystem (GA4, Vertex, Looker integration) and a truly serverless model — you don't size clusters. The BigQuery + Looker combination is the most integrated on public cloud, but [the BI tool choice — Looker, Power BI, Tableau or Metabase — follows size and stack criteria separate from the warehouse](/blog/en/power-bi-tableau-looker-metabase.html). Hurts in cost predictability (per-query-scanned model punishes badly written queries) and in less polished UX than Snowflake for teams coming from classic SQL.
 
 **Databricks.** Shines in native ML/data science, Delta/Iceberg support, streaming pipelines, collaborative notebooks. Hurts in complexity — requires a more technical team, and purely analytical operations (BI + dashboards) can be overkill. Steepest learning curve of the three.
 

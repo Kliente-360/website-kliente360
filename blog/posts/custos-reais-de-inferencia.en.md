@@ -41,7 +41,7 @@ These five implemented with discipline control 80% of cost. Without them, any "c
 
 ## The cost × quality relation nobody calculates
 
-The LLM cost discussion usually ends in "let's switch to the cheaper model". Wrong call in 70% of cases. The right math is cost *per successfully resolved interaction*, not cost per token.
+The LLM cost discussion usually ends in "let's switch to the cheaper model". Wrong call in 70% of cases. [Baking behavior into the model via fine-tuning instead of injecting context via RAG](/blog/en/quando-fine-tuning-supera-rag.html) is another lever that lowers cost per interaction without switching providers — shorter prompts plus trained behavior replace long instructions repeated on every call. The right math is cost *per successfully resolved interaction*, not cost per token.
 
 Cheap model with 60% accuracy costs more than expensive model with 90% — because the user comes back, redoes, escalates to human. Total cost (LLM + human time + rework) exceeds the apparent savings.
 

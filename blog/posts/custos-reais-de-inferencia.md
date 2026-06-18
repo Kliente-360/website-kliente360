@@ -41,7 +41,7 @@ Esses cinco padrões implementados de forma disciplinada controlam 80% do custo.
 
 ## A relação custo × qualidade que ninguém calcula
 
-A discussão de custo de LLM costuma terminar em "vamos trocar pro modelo mais barato". Decisão errada em 70% dos casos. O cálculo certo é custo *por interação resolvida com sucesso*, não custo por token.
+A discussão de custo de LLM costuma terminar em "vamos trocar pro modelo mais barato". Decisão errada em 70% dos casos. [Incorporar comportamento via fine-tuning em vez de injetar contexto via RAG](/blog/quando-fine-tuning-supera-rag.html) é outra alavanca que reduz custo por interação sem trocar de provider — prompt menor mais comportamento treinado substituem instrução longa repetida em cada chamada. O cálculo certo é custo *por interação resolvida com sucesso*, não custo por token.
 
 Modelo barato com acurácia de 60% custa mais que modelo caro com acurácia de 90% — porque o usuário volta, refaz, escala pra humano. Custo total (LLM + tempo humano + retrabalho) supera o que parecia economia.
 

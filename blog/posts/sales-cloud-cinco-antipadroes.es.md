@@ -43,7 +43,7 @@ El cuarto antipatrón es gerencial. La dirección comercial pasa a mirar Sales C
 
 El quinto error está en el rollout. El equipo termina la configuración, agenda dos horas de capacitación, manda video, abre canal de dudas, mide uso por login. En tres meses, la mitad del equipo no la usa bien. La causa no es falta de capacitación — es que nadie respondió *qué gana* el vendedor al usarla.
 
-La adopción real viene de dos cosas concretas: el vendedor ver que registrar actividad le ahorra tiempo después (visión única del cliente, contexto para la próxima reunión, comisión bien calculada), y el gerente cobrar el uso como ítem de gestión, no como métrica de TI. Sin esas dos, la capacitación es teatro. Con ellas, la capacitación es detalle. Y [la IA generativa en ventas amplifica esa ganancia donde ya existe disciplina](/blog/es/ia-generativa-vendas.html) — donde no existe, se vuelve otra herramienta ignorada.
+La adopción real viene de dos cosas concretas: el vendedor ver que registrar actividad le ahorra tiempo después (visión única del cliente, contexto para la próxima reunión, comisión bien calculada), y el gerente cobrar el uso como ítem de gestión, no como métrica de TI. Sin esas dos, la capacitación es teatro. Con ellas, la capacitación es detalle. Estructurar esto en cronograma real — no como paso comprimido al final — es lo que [separa un MVP de Salesforce en seis semanas que dura de una configuración con fecha de vencimiento de 90 días](/blog/es/implementacao-salesforce-seis-semanas.html). Y [la IA generativa en ventas amplifica esa ganancia donde ya existe disciplina](/blog/es/ia-generativa-vendas.html) — donde no existe, se vuelve otra herramienta ignorada.
 
 ## El hilo común
 

@@ -43,7 +43,7 @@ O quarto antipadrão é gerencial. Diretoria comercial passa a olhar Sales Cloud
 
 O quinto erro está no rollout. Time termina configuração, marca duas horas de treinamento, manda vídeo, abre canal de dúvidas, mede uso por login. Em três meses, metade do time não está usando direito. A causa não é falta de treinamento — é que ninguém respondeu *qual ganho* o vendedor tem ao usar.
 
-Adoção real vem de duas coisas concretas: o vendedor ver que registrar atividade economiza tempo dele depois (visão única do cliente, contexto pra próxima reunião, comissão calculada certa), e o gerente cobrar o uso como item de gestão, não como métrica de TI. Sem essas duas, treinamento é teatro. Com elas, treinamento é detalhe. E [IA generativa em vendas amplifica esse ganho onde já existe disciplina](/blog/ia-generativa-vendas.html) — onde não existe, vira mais uma ferramenta ignorada.
+Adoção real vem de duas coisas concretas: o vendedor ver que registrar atividade economiza tempo dele depois (visão única do cliente, contexto pra próxima reunião, comissão calculada certa), e o gerente cobrar o uso como item de gestão, não como métrica de TI. Sem essas duas, treinamento é teatro. Com elas, treinamento é detalhe. Estruturar isso em cronograma real — não como etapa comprimida no fim — é o que [separa MVP de Salesforce em seis semanas que dura de configuração com prazo de validade de 90 dias](/blog/implementacao-salesforce-seis-semanas.html). E [IA generativa em vendas amplifica esse ganho onde já existe disciplina](/blog/ia-generativa-vendas.html) — onde não existe, vira mais uma ferramenta ignorada.
 
 ## O fio comum
 

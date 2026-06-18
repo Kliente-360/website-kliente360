@@ -43,7 +43,7 @@ The fourth antipattern is managerial. Sales leadership starts looking at Sales C
 
 The fifth mistake is in rollout. The team finishes configuration, schedules two hours of training, ships a video, opens a Q&A channel, measures usage by login. In three months, half the team isn't using it properly. The cause isn't lack of training — it's that no one answered *what gain* the rep gets from using it.
 
-Real adoption comes from two concrete things: the rep seeing that logging activity saves them time later (single customer view, context for the next meeting, commission calculated correctly), and the manager treating usage as a management item, not a TI metric. Without those two, training is theater. With them, training is a detail. And [generative AI in sales amplifies this gain where discipline already exists](/blog/en/ia-generativa-vendas.html) — where it doesn't, it becomes another ignored tool.
+Real adoption comes from two concrete things: the rep seeing that logging activity saves them time later (single customer view, context for the next meeting, commission calculated correctly), and the manager treating usage as a management item, not a TI metric. Without those two, training is theater. With them, training is a detail. Structuring this into a real schedule — not as a compressed step at the end — is what [separates a six-week Salesforce MVP that lasts from a configuration with a 90-day shelf life](/blog/en/implementacao-salesforce-seis-semanas.html). And [generative AI in sales amplifies this gain where discipline already exists](/blog/en/ia-generativa-vendas.html) — where it doesn't, it becomes another ignored tool.
 
 ## The common thread
 

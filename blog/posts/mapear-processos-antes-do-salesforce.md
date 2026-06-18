@@ -57,7 +57,7 @@ O argumento contra mapeamento sério costuma ser: *"vamos colocar o básico no a
 - **Métricas saem distorcidas desde o dia 1.** Se o estágio "Qualificação" significa coisas diferentes pra cada vendedor, o funil reportado é ficção. Diretoria toma decisão em cima de ficção por seis meses.
 - **A primeira integração quebra a confiança.** Quando o pedido não bate no ERP porque ninguém mapeou a regra de tax exemption, o time questiona o projeto inteiro — não a integração específica.
 
-Ajuste contínuo é saudável. Pular discovery não é ajuste contínuo, é dívida técnica nascendo capitalizada.
+Ajuste contínuo é saudável. Pular discovery não é ajuste contínuo, é dívida técnica nascendo capitalizada. Um MVP de Salesforce honesto — com processo mapeado antes da configuração — [mostra o que cabe de fato em seis semanas de implementação](/blog/implementacao-salesforce-seis-semanas.html) e o que precisa esperar o próximo ciclo.
 
 ## Como apresentar o checklist pro sponsor
 

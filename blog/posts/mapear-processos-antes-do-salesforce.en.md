@@ -57,7 +57,7 @@ The argument against serious mapping usually goes: *"let's get the basics live, 
 - **Metrics come out distorted from day one.** If the "Qualification" stage means different things to different reps, the reported funnel is fiction. Leadership makes decisions on fiction for six months.
 - **The first integration breaks trust.** When an order doesn't reconcile in the ERP because no one mapped the tax-exemption rule, the team questions the entire project — not the specific integration.
 
-Continuous adjustment is healthy. Skipping discovery isn't continuous adjustment, it's technical debt being born capitalized.
+Continuous adjustment is healthy. Skipping discovery isn't continuous adjustment, it's technical debt being born capitalized. An honest Salesforce MVP — with process mapped before configuration — [shows what actually fits in a six-week implementation](/blog/en/implementacao-salesforce-seis-semanas.html) and what has to wait for the next cycle.
 
 ## How to pitch the checklist to the sponsor
 

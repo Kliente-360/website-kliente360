@@ -57,7 +57,7 @@ El argumento contra mapeo serio suele ser: *"pongamos lo básico en el aire y de
 - **Las métricas salen distorsionadas desde el día 1.** Si la etapa "Calificación" significa cosas distintas para cada vendedor, el funnel reportado es ficción. La dirección toma decisiones sobre ficción durante seis meses.
 - **La primera integración rompe la confianza.** Cuando el pedido no cuadra en el ERP porque nadie mapeó la regla de tax exemption, el equipo cuestiona el proyecto entero — no la integración específica.
 
-El ajuste continuo es saludable. Saltar discovery no es ajuste continuo, es deuda técnica naciendo capitalizada.
+El ajuste continuo es saludable. Saltar discovery no es ajuste continuo, es deuda técnica naciendo capitalizada. Un MVP de Salesforce honesto — con proceso mapeado antes de la configuración — [muestra lo que cabe de verdad en seis semanas de implementación](/blog/es/implementacao-salesforce-seis-semanas.html) y lo que tiene que esperar el próximo ciclo.
 
 ## Cómo presentar el checklist al sponsor
 

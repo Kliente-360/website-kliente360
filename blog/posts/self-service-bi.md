@@ -54,7 +54,7 @@ A diferença entre os dois é clara pra todos. Quem precisa de exploração, exp
 A implementação prática da separação acima exige quatro guardrails concretos.
 
 1. **Workspace separado por nível de oficialidade.** Pastas, espaços, ou áreas no Tableau/Power BI/Looker com nomes claros: "exploração", "oficial", "obsoleto". Usuário sabe o que está olhando.
-2. **Layer de métricas semânticas.** dbt mart, dbt semantic layer, Looker LookML, Power BI dataset. Define as 20–30 métricas que importam, com lógica única, reutilizável. Dashboard oficial *usa* essa camada — não cria lógica nova. Dashboard de exploração pode quebrar regra, mas vive em outro workspace.
+2. **Layer de métricas semânticas.** dbt mart, dbt semantic layer, Looker LookML, Power BI dataset. Define as 20–30 métricas que importam, com lógica única, reutilizável. Dashboard oficial *usa* essa camada — não cria lógica nova. Dashboard de exploração pode quebrar regra, mas vive em outro workspace. A [escolha da ferramenta de BI que vai consumir essa camada — Power BI, Tableau, Looker ou Metabase por porte e contexto](/blog/power-bi-tableau-looker-metabase.html) — vem depois de resolver a semântica, não antes.
 3. **Ciclo de revisão pra dashboards oficiais.** Mudança em dashboard oficial passa por revisão (time de dados + sponsor da métrica). Não burocrático — passo de 30 minutos por mudança, com objetivo de manter consistência semântica.
 4. **Limpeza de cemitério a cada 6 meses.** Dashboards não acessados em 90 dias entram em quarentena. Em 6 meses, vão pra obsoleto. Empresa que não faz isso acumula 5.000 dashboards e ninguém entende o que existe.
 

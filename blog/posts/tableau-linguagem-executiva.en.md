@@ -55,7 +55,7 @@ Tableau (and equivalents) delivers this pattern well when you build it. But the 
 
 ## What Tableau does well (and what it doesn't replace)
 
-Tableau is excellent at three things: rapid visual exploration over modeled data, distribution of views across the organization, and personalization by persona/role.
+Tableau is excellent at three things: rapid visual exploration over modeled data, distribution of views across the organization, and personalization by persona/role. The [choice between Tableau, Power BI, Looker and Metabase by company size and cloud stack](/blog/en/power-bi-tableau-looker-metabase.html) is a decision prior to the tool itself; any of the four requires a solid data model underneath to work.
 
 It does not replace:
 

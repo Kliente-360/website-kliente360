@@ -55,7 +55,7 @@ Tableau (y similares) entrega ese patrón bien cuando lo construyes. Pero la her
 
 ## Lo que Tableau hace bien (y lo que no sustituye)
 
-Tableau es excelente en tres cosas: exploración visual rápida sobre datos modelados, distribución de vistas por la organización, y personalización por persona/rol.
+Tableau es excelente en tres cosas: exploración visual rápida sobre datos modelados, distribución de vistas por la organización, y personalización por persona/rol. La [elección entre Tableau, Power BI, Looker y Metabase por porte y stack de nube](/blog/es/power-bi-tableau-looker-metabase.html) es una decisión anterior a la herramienta; cualquiera de las cuatro exige modelo de datos sólido abajo para funcionar.
 
 No sustituye:
 

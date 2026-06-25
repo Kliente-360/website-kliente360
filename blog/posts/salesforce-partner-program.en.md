@@ -94,6 +94,6 @@ If your company is about to hire a Salesforce partner, three moves:
 
 **Ask for names, ask for references, ask for specialization.** Serious salespeople answer. Pitch-sellers dodge.
 
-**Calculate honest total cost, not proposal price.** A consultancy that charges 40% more but delivers in half the time is cheaper. A cheap consultancy that extends scope doubles the cost in the third month.
+**Calculate [honest total cost](/blog/en/salesforce-roi-matriz.html), not proposal price.** A consultancy that charges 40% more but delivers in half the time is cheaper. A cheap consultancy that extends scope doubles the cost in the third month.
 
 The Salesforce Partner Program in 2026 is useful structure — for Salesforce to organize its ecosystem. For the client, it's a starting point. The hiring decision that pays back comes from what's underneath the tier: names, cases, specialization, incentive. A company that looks underneath chooses well. A company that decides by the logo on the consultancy's site discovers what was underneath in the third month of the project — usually in a hard meeting.

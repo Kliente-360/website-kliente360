@@ -54,15 +54,15 @@ Esses quatro são reais. Pra cliente grande com projeto complexo (R$ 5M+, multi-
 
 Pra cliente médio com projeto único (R$ 200k–800k, Sales Cloud ou Service Cloud), tier alto importa menos. Consultoria Crest especializada no seu setor frequentemente entrega melhor que Summit generalista — e cobra 30–50% menos. [Como em qualquer projeto Salesforce sério](/blog/mapear-processos-antes-do-salesforce.html), o discovery e o time fazem mais diferença que o tier.
 
-## Os três antipadrões em escolha de parceiro
+## Os três antipdrões em escolha de parceiro
 
 Erros que vejo cliente cometer com frequência:
 
-**Antipadrão 1: contratar Summit "pra ter garantia".** Empresa de médio porte contrata Summit grande pra projeto de R$ 400k. Recebe consultor júnior (porque os seniores estão em projeto Summit grande), paga premium, qualidade decepciona. Garantia comprada vira passivo.
+**Antipadrão 1: contratar Summit "pra ter garantia".** Empresa de médio porte contrata Summit grande pra projeto de R$ 400k. Recebe consultor júnior (porque os sêniores estão em projeto Summit grande), paga premium, qualidade decepciona. Garantia comprada vira passivo.
 
 **Antipadrão 2: contratar Registered "porque é mais barato".** Outro extremo. Empresa pega Registered sem cases, sem especialização. Projeto vira aprendizado pra consultoria, retrabalho recai no cliente. Economia inicial vira custo dobrado.
 
-**Antipadrão 3: contratar consultoria pela proposta visual.** Slide bonito, métricas genéricas, casos não comprováveis. Decisão por aparência sem diagnóstico. Funciona em vendedor ruim; aceitar é responsabilidade do cliente.
+**Antipadrão 3: contratar consultoria pela proposta visual.** Slide bonito, métricas genéricas, casos não comprovação. Decisão por aparência sem diagnóstico. Funciona em vendedor ruim; aceitar é responsabilidade do cliente.
 
 Os três combinados explicam grande parte dos projetos Salesforce decepcionantes no Brasil.
 
@@ -94,6 +94,6 @@ Se sua empresa está pra contratar parceiro Salesforce, três movimentos:
 
 **Peça nomes, peça referências, peça especialização.** Vendedor sério atende. Vendedor que vende pitch dá volta.
 
-**Calcule custo total honesto, não preço de proposta.** Consultoria que cobra 40% mais mas entrega em metade do tempo é mais barata. Consultoria barata que estende escopo dobra o custo no terceiro mês.
+**Calcule [custo total honesto](/blog/salesforce-roi-matriz.html), não preço de proposta.** Consultoria que cobra 40% mais mas entrega em metade do tempo é mais barata. Consultoria barata que estende escopo dobra o custo no terceiro mês.
 
 Salesforce Partner Program em 2026 é estrutura útil — pra Salesforce organizar seu ecossistema. Pra cliente, é ponto de partida. A decisão de contratação que rende vem do que está embaixo do tier: nomes, cases, especialização, incentivo. Empresa que olha embaixo escolhe bem. Empresa que decide pelo logo no site da consultoria descobre o que estava embaixo no terceiro mês de projeto — geralmente em reunião difícil.

@@ -90,10 +90,10 @@ Quien responde las cinco con claridad es candidato serio. Quien duda en dos o m�
 
 Si tu empresa está por contratar partner Salesforce, tres movimientos:
 
-**No decidas por el tier solo.** Es señal, no diagnóstico. Usalo como filtro inicial para tener al menos Crest. La decisión final viene de las otras cuatro preguntas.
+**No decidas por el tier solo.** Es señal, no diagnóstico. Usálo como filtro inicial para tener al menos Crest. La decisión final viene de las otras cuatro preguntas.
 
 **Pedí nombres, pedí referencias, pedí especialización.** Vendedor serio responde. Vendedor que vende pitch lo evade.
 
-**Calculá costo total honesto, no precio de propuesta.** Consultora que cobra 40% más pero entrega en la mitad del tiempo es más barata. Consultora barata que extiende alcance dobla el costo al tercer mes.
+**Calculá [costo total honesto](/blog/es/salesforce-roi-matriz.html), no precio de propuesta.** Consultora que cobra 40% más pero entrega en la mitad del tiempo es más barata. Consultora barata que extiende alcance dobla el costo al tercer mes.
 
 El Salesforce Partner Program en 2026 es estructura útil — para que Salesforce organice su ecosistema. Para el cliente, es punto de partida. La decisión de contratación que rinde viene de lo que está debajo del tier: nombres, casos, especialización, incentivo. Empresa que mira debajo elige bien. Empresa que decide por el logo en el sitio de la consultora descubre lo que estaba debajo al tercer mes de proyecto — generalmente en reunión difícil.

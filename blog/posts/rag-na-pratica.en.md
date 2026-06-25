@@ -55,7 +55,7 @@ A decent consultancy builds RAG in layers, not as a single API call. The skeleto
 
 **Structure-aware chunking.** Splitting that respects headings, paragraphs, logical blocks. 10–20% overlap between adjacent chunks to avoid context loss at the boundary. Metadata embedded: section title, hierarchy, source, date.
 
-**Hybrid indexing.** Vector (embedding) + text (BM25 or similar). Vector catches semantics; text catches exact terms (product name, code, clause number). Combined top-k covers more than either alone. [The vector database choice — Pinecone, Weaviate or pgvector — depends more on operational context than on raw performance](/blog/en/vector-databases-comparados.html).
+**Hybrid indexing.** Vector (embedding) + text ([BM25 or similar](/blog/en/vector-database-ou-search-engine.html)). Vector catches semantics; text catches exact terms (product name, code, clause number). Combined top-k covers more than either alone. [The vector database choice — Pinecone, Weaviate or pgvector — depends more on operational context than on raw performance](/blog/en/vector-databases-comparados.html).
 
 **Query rewriting before searching.** Same LLM that will generate the answer — or a smaller dedicated model — reformulates the user question into 2–3 variants, expands terms, decomposes composite questions. Each variant searches; results combine.
 

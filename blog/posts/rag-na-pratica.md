@@ -55,7 +55,7 @@ A consultoria decente monta RAG em camadas, não como uma chamada de API. O esqu
 
 **Chunking informado pela estrutura.** Quebrar respeitando headings, parágrafos, blocos lógicos. Sobreposição de 10–20% entre chunks adjacentes pra evitar perda de contexto na fronteira. Metadados embutidos: título da seção, hierarquia, fonte, data.
 
-**Indexação híbrida.** Vetor (embedding) + texto (BM25 ou similar). Vetor pega semântica; texto pega termos exatos (nome de produto, código, número de cláusula). Top-k combinado de ambos cobre mais que cada um isolado. [A escolha do vector database — Pinecone, Weaviate ou pgvector — depende mais do contexto operacional que da performance bruta](/blog/vector-databases-comparados.html).
+**Indexação híbrida.** Vetor (embedding) + texto ([BM25 ou similar](/blog/vector-database-ou-search-engine.html)). Vetor pega semântica; texto pega termos exatos (nome de produto, código, número de cláusula). Top-k combinado de ambos cobre mais que cada um isolado. [A escolha do vector database — Pinecone, Weaviate ou pgvector — depende mais do contexto operacional que da performance bruta](/blog/vector-databases-comparados.html).
 
 **Query rewriting antes da busca.** Mesmo LLM que vai gerar a resposta — ou um modelo menor dedicado — reformula a pergunta do usuário em 2–3 variantes, expande termos, decompõe pergunta composta. Cada variante busca; resultados se combinam.
 

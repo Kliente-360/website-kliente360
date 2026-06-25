@@ -9,7 +9,7 @@ tldr: "Data Cloud has transcended the CDP concept. In 2026 it is the context lay
 keywords: ["Salesforce", "Data Cloud", "Agentforce", "CDP", "activation"]
 ---
 
-When Data Cloud was announced, the market classified it as "the Salesforce CDP". That was a reasonable reading in 2023 — unified profile, segmentation, activation. But what has unfolded since then changed the game, and many companies still implement with the old mindset.
+When Data Cloud was announced, the market classified it as ["the Salesforce CDP"](/blog/en/customer-data-platform-commodity.html). That was a reasonable reading in 2023 — unified profile, segmentation, activation. But what has unfolded since then changed the game, and many companies still implement with the old mindset.
 
 The short statement: **Data Cloud in 2026 is the context layer on which the rest of the platform decides.** CDP is one of the functions, not the definition.
 

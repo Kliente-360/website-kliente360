@@ -9,7 +9,7 @@ tldr: "Data Cloud transcendeu o conceito de CDP. Em 2026 ele é a camada de cont
 keywords: ["Salesforce", "Data Cloud", "Agentforce", "CDP", "ativação"]
 ---
 
-Quando Data Cloud foi anunciado, o mercado classificou como "o CDP do Salesforce". Era uma leitura razoável em 2023 — perfil unificado, segmentação, ativação. Mas o que rolou de lá pra cá mudou o jogo, e muita empresa ainda implanta com a cabeça antiga.
+Quando Data Cloud foi anunciado, o mercado classificou como ["o CDP do Salesforce"](/blog/customer-data-platform-commodity.html). Era uma leitura razoável em 2023 — perfil unificado, segmentação, ativação. Mas o que rolou de lá pra cá mudou o jogo, e muita empresa ainda implanta com a cabeça antiga.
 
 A frase curta: **Data Cloud em 2026 é a camada de contexto sobre a qual o restante da plataforma decide.** CDP é uma das funções, não a definição.
 
@@ -17,7 +17,7 @@ A frase curta: **Data Cloud em 2026 é a camada de contexto sobre a qual o resta
 
 Um CDP clássico resolve três coisas: ingestão, unificação de identidade e ativação para canais de marketing. Útil, mas estreito. Data Cloud hoje carrega:
 
-- **Modelos de dados harmonizados** (Customer 360 Data Model) — não só perfis, mas pedidos, casos, contatos, produtos, dispositivos, conversações.
+- **Modelos de dados harmonizados** (Customer 360 Data Model) — não só perfis, mas pedidos, casos, contatos, produtos, dispositivos, conversasções.
 - **Pipeline analítico embutido** — capacidade de computar métricas, modelar features, treinar modelos sobre o próprio dado vivo.
 - **Camada de ativação universal** — não só martech: alimenta Service Cloud, Sales Cloud, Commerce, [Marketing Cloud em casamento natural](/blog/marketing-cloud-data-cloud.html), e o que mais aparecer.
 - **Contexto pra agentes** — é daqui que Agentforce puxa o que precisa pra decidir em tempo real.

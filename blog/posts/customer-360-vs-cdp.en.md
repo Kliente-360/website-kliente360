@@ -45,7 +45,7 @@ A company making a decision on "CDP or not CDP" is on a 2020 question. The 2026 
 
 ## Consolidation under Data Cloud
 
-Salesforce made an explicit move: it treated Customer 360 and CDP as two sides of the same problem and merged them under Data Cloud. [It's no longer a CDP — it's the nerve center of Salesforce](/blog/en/data-cloud-nervo-central.html). For a company already invested in Salesforce, this changes the math. Before, the choice was "buy Segment's CDP or build Customer 360 with integration?". Today, if you already pay for Sales, Service and Marketing Cloud, Data Cloud delivers the three layers as part of the platform — no custom integration.
+Salesforce made an explicit move: it treated Customer 360 and CDP as two sides of the same problem and merged them under Data Cloud. [It's no longer a CDP — it's the nerve center of Salesforce](/blog/en/data-cloud-nervo-central.html). For a company already invested in Salesforce, this changes the math. Before, the choice was "buy [Segment's CDP](/blog/en/customer-data-platform-commodity.html) or build Customer 360 with integration?". Today, if you already pay for Sales, Service and Marketing Cloud, Data Cloud delivers the three layers as part of the platform — no custom integration.
 
 The practical consequence: companies about to buy an external CDP in 2024–2025 that are already Salesforce customers have to reassess. The math isn't "Data Cloud is better than Segment" (in raw features, it depends). It's: "considering I'll pay for Sales/Service Cloud integration anyway, what's the real TCO?". It usually tips toward Data Cloud when the ecosystem is already Salesforce.
 

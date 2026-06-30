@@ -2,7 +2,7 @@
 title: "Data observability: catching pipeline failures before stakeholders do"
 slug: "observabilidade-de-dados"
 pillar: "data"
-date: "2026-05-22"
+date: "2026-06-30"
 readMinutes: 6
 excerpt: "Pipelines fail silently. Data observability catches quality failures before the business finds out through a wrong report."
 tldr: "Data observability is the ability to detect failures — in volume, freshness, distribution, and schema — before the business feels them. Most teams discover problems when someone complains; with the right instrumentation, you detect first. It's not just infrastructure monitoring: it's knowing what's normal in your data and alerting when it deviates."

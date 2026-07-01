@@ -2,7 +2,7 @@
 title: "Lakehouse no es la bala de plata: cuándo el warehouse sencillo sigue ganando"
 slug: "lakehouse-vs-warehouse"
 pillar: "data"
-date: "2026-05-25"
+date: "2026-07-01"
 readMinutes: 7
 excerpt: "¿Lakehouse o warehouse sencillo? La respuesta depende del volumen, la variedad del dato y la madurez del equipo — no del discurso del vendor."
 tldr: "Lakehouse agrega capas de ingeniería que solo tienen sentido cuando el volumen y la variedad del dato lo justifican. La mayoría de las empresas medianas todavía no llegó a ese punto. Antes de adoptarlo, respondé tres preguntas sobre tu caso de uso y decidí con un TCO honesto — no con una presentación de vendor."

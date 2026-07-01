@@ -67,7 +67,7 @@ Numeração sequencial pela ordem cronológica de publicação. Quando duas entr
 | 51 | 2026-06-23 | ter | sf | [Salesforce ROI — a matriz que vendedor de licença não mostra](blog/posts/salesforce-roi-matriz.md) | Sim | Continuação anti-hype do "Quando NÃO usar Salesforce" | [x] | [x] |
 | 52 | 2026-06-24 | qua | data | [Customer Data Platform virou commodity — o que sobrou](blog/posts/customer-data-platform-commodity.md) | Sim | Picks up Data Cloud thread + market angle | [x] | [x] |
 | 53 | 2026-06-30 | ter | data | [Observabilidade de dados: detectar falhas antes do stakeholder](blog/posts/observabilidade-de-dados.md) | Não | Back-catálogo recuperado de auto-branch (gerado 2026-05-23, nunca mergeado) | [x] | [ ] |
-| 54 | 2026-07-01 | qua | data | [Lakehouse não é silver bullet: quando warehouse simples ainda ganha](blog/posts/lakehouse-vs-warehouse.md) | Não | Back-catálogo recuperado de auto-branch (gerado 2026-05-24, nunca mergeado) | [ ] | [ ] |
+| 54 | 2026-07-01 | qua | data | [Lakehouse não é silver bullet: quando warehouse simples ainda ganha](blog/posts/lakehouse-vs-warehouse.md) | Não | Back-catálogo recuperado de auto-branch (gerado 2026-05-24, nunca mergeado) | [x] | [ ] |
 
 ## Como atualizar
 

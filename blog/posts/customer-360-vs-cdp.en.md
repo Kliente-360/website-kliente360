@@ -39,7 +39,7 @@ In 2026, the useful boundary for decisions isn't "CDP vs Customer 360" anymore. 
 - **Operational activation layer** (the problem CDP solved first)
 - **Context layer for agents and applications** (the problem Data Cloud is solving now)
 
-A company making a decision on "CDP or not CDP" is on a 2020 question. The 2026 decision is which of these three layers you need first — and how they connect.
+A company making a decision on "CDP or not CDP" is on a 2020 question. The 2026 decision is which of these three layers you need first — and how they connect. [CRM, data and AI work as a gear system](/blog/en/crm-dados-ia-engrenagem.html), not as isolated projects — each layer feeds the next.
 
 > In 2026, "Customer 360 vs CDP" became a vendor-marketing question. The real roadmap question is which layer of customer data your operations need first.
 

@@ -39,7 +39,7 @@ En 2026, la frontera útil para la decisión ya no es "CDP vs Customer 360". Es:
 - **Capa de activación operacional** (el problema que CDP resolvió primero)
 - **Capa de contexto para agentes y aplicaciones** (el problema que Data Cloud está resolviendo ahora)
 
-La empresa que decide pensando "CDP o no CDP" está en una pregunta de 2020. La decisión de 2026 es cuál de esas tres capas necesitás primero — y cómo se conectan.
+La empresa que decide pensando "CDP o no CDP" está en una pregunta de 2020. La decisión de 2026 es cuál de esas tres capas necesitás primero — y cómo se conectan. [CRM, dato e IA funcionan como un engranaje](/blog/es/crm-dados-ia-engrenagem.html), no como proyectos aislados — cada capa realimenta la siguiente.
 
 > En 2026, "Customer 360 vs CDP" se volvió pregunta de marketing de vendor. La pregunta de roadmap real es qué capa de dato de cliente necesita tu operación primero.
 

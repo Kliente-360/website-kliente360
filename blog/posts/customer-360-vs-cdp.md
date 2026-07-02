@@ -39,7 +39,7 @@ Em 2026, a fronteira útil pra decisão não é mais "CDP vs Customer 360". É:
 - **Camada de ativação operacional** (o problema que CDP resolveu primeiro)
 - **Camada de contexto pra agentes e aplicações** (o problema que Data Cloud está resolvendo agora)
 
-Empresa que toma decisão pensando em "CDP ou não CDP" está numa pergunta de 2020. A decisão de 2026 é qual dessas três camadas você precisa primeiro — e como elas se conectam.
+Empresa que toma decisão pensando em "CDP ou não CDP" está numa pergunta de 2020. A decisão de 2026 é qual dessas três camadas você precisa primeiro — e como elas se conectam. [CRM, dados e IA funcionam como uma engrenagem](/blog/crm-dados-ia-engrenagem.html), não como projetos isolados — cada camada realimenta a próxima.
 
 > Em 2026, "Customer 360 vs CDP" virou uma pergunta de marketing de vendor. A pergunta de roadmap real é qual camada de dado de cliente sua operação precisa primeiro.
 

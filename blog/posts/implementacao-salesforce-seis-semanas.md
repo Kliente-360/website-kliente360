@@ -47,7 +47,7 @@ Não cabe em seis semanas:
 
 - **Automação complexa de Flows.** Automação que dispara e-mail para cliente, gera documento de proposta ou move estágios automaticamente precisa de mapeamento de exceções e testes sob carga. Em MVP, automatize notificações internas; deixe automações externas para o próximo ciclo.
 
-- **Múltiplos Clouds ao mesmo tempo.** Sales Cloud + Service Cloud + Marketing Cloud num sprint de 6 semanas não é MVP — é corrida. Cada Cloud tem sua curva de adoção e sua complexidade de configuração. Começar com Sales Cloud, estabilizar e expandir é o padrão que dura.
+- **Múltiplos Clouds ao mesmo tempo.** Sales Cloud + Service Cloud + Marketing Cloud num sprint de 6 semanas não é MVP — é corrida. Cada Cloud tem sua curva de adoção e sua complexidade de configuração. Começar com Sales Cloud, estabilizar e expandir é o padrão que dura. O mesmo prazo comprimido aparece em [migração de Pardot para Marketing Cloud Engagement](/blog/migracao-pardot-marketing-cloud.html) — a proposta promete upgrade rápido, e o projeto real revela reimplementação completa.
 
 - **Customização pesada de objetos.** Objetos customizados além de Account, Contact, Opportunity e Lead entram no MVP só se o processo não funciona sem eles. Em geral, [mapear o processo antes da configuração](/blog/mapear-processos-antes-do-salesforce.html) revela que o objeto padrão bem configurado resolve — e economiza de 2 a 4 semanas de projeto.
 

@@ -21,7 +21,7 @@ La implementación tipo "abrí el ChatGPT, pedile lo que quieras" falla por tres
 
 **El vendedor nuevo no sabe pedir.** Quien tiene 6 meses todavía está aprendiendo el producto, el cliente, el proceso. Pide algo al ChatGPT, recibe respuesta genérica que no considera contexto de la empresa. La respuesta se vuelve problema, no solución.
 
-**Sin integración con CRM, la IA no ve contexto real.** El vendedor pide "escribí mail para el cliente X". El ChatGPT no conoce al cliente X — no sabe historial, status, última interacción. Sale mail genérico que parece spam al cliente.
+**Sin integración con CRM, la IA no ve contexto real.** El vendedor pide "escribí mail para el cliente X". El ChatGPT no conoce al cliente X — no sabe historial, status, última interacción. Sale mail genérico que parece spam al cliente. Es el mismo punto detrás de [tratar CRM, dato e IA como un engranaje único](/blog/es/crm-dados-ia-engrenagem.html): la pieza de IA se traba sin la pieza de dato que la alimenta antes.
 
 Los tres combinados producen el resultado típico: el uso activo cae al 15% en 3 meses, el equipo comercial dice "no sirve", el proyecto se vuelve diapositiva de "lecciones aprendidas". La culpa no es de la IA — es del casamiento equivocado entre herramienta y caso de uso.
 

@@ -21,7 +21,7 @@ This text is about the four patterns where generative AI in sales moves the need
 
 **Junior rep doesn't know what to ask.** Whoever has 6 months is still learning the product, the customer, the process. Asks ChatGPT something, gets a generic response that doesn't consider company context. Response becomes the problem, not the solution.
 
-**Without CRM integration, AI doesn't see real context.** Rep asks "write an email for customer X". ChatGPT doesn't know customer X — doesn't know history, status, last interaction. Out comes a generic email that looks like spam to the customer.
+**Without CRM integration, AI doesn't see real context.** Rep asks "write an email for customer X". ChatGPT doesn't know customer X — doesn't know history, status, last interaction. Out comes a generic email that looks like spam to the customer. It's the same point behind [treating CRM, data and AI as a single gear system](/blog/en/crm-dados-ia-engrenagem.html): the AI piece jams without the data piece that feeds it.
 
 These three combined produce the typical result: active usage drops to 15% in 3 months, sales team says "it doesn't work", project becomes a "lessons learned" slide. The fault isn't the AI — it's the wrong fit between tool and use case.
 

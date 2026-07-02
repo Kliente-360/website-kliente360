@@ -60,14 +60,14 @@ Numeração sequencial pela ordem cronológica de publicação. Quando duas entr
 | 44 | 2026-05-27 | qua | ai | [RAG não é a resposta — 6 padrões em que fine-tuning ganha](blog/posts/quando-fine-tuning-supera-rag.md) | Sim | Quick win SEO #6 — contraintuitivo, GEO-friendly | [x] | [x] |
 | 45 | 2026-06-02 | ter | sf | [Salesforce em 6 semanas: o que cabe de verdade num MVP](blog/posts/implementacao-salesforce-seis-semanas.md) | Sim | Quick win SEO #5 — crítica às promessas de "14 dias" | [x] | [x] |
 | 46 | 2026-06-03 | qua | data | [Power BI vs Tableau vs Looker vs Metabase — matriz por porte](blog/posts/power-bi-tableau-looker-metabase.md) | Sim | Quick win SEO #9 — comparativo Brasil-específico | [x] | [x] |
-| 47 | 2026-06-09 | ter | ai | [CRM, dados e IA não são projetos separados — são uma engrenagem](blog/posts/crm-dados-ia-engrenagem.md) | Sim | Pitch integrado — pega FAQ #1 de /como-trabalhamos/ e aprofunda | [x] | [ ] |
-| 48 | 2026-06-10 | qua | sf | [Migração Pardot para Marketing Cloud Engagement: o que o projeto não revela](blog/posts/migracao-pardot-marketing-cloud.md) | Sim | Quick win SEO #8 — migração técnica concreta | [x] | [ ] |
+| 47 | 2026-06-09 | ter | ai | [CRM, dados e IA não são projetos separados — são uma engrenagem](blog/posts/crm-dados-ia-engrenagem.md) | Sim | Pitch integrado — pega FAQ #1 de /como-trabalhamos/ e aprofunda | [x] | [x] |
+| 48 | 2026-06-10 | qua | sf | [Migração Pardot para Marketing Cloud Engagement: o que o projeto não revela](blog/posts/migracao-pardot-marketing-cloud.md) | Sim | Quick win SEO #8 — migração técnica concreta | [x] | [x] |
 | 49 | 2026-06-16 | ter | data | [Multi-cloud: mito ou estratégia — critério honesto pra decidir](blog/posts/multi-cloud-mito-ou-estrategia.md) | Sim | Anti-hype, não é sobre lock-in | [x] | [x] |
 | 50 | 2026-06-17 | qua | ai | [Vector database não é obrigatório em RAG — quando o índice clássico ganha](blog/posts/vector-database-ou-search-engine.md) | Sim | Contraintuitivo — quando o índice clássico ainda ganha | [x] | [x] |
 | 51 | 2026-06-23 | ter | sf | [Salesforce ROI — a matriz que vendedor de licença não mostra](blog/posts/salesforce-roi-matriz.md) | Sim | Continuação anti-hype do "Quando NÃO usar Salesforce" | [x] | [x] |
 | 52 | 2026-06-24 | qua | data | [Customer Data Platform virou commodity — o que sobrou](blog/posts/customer-data-platform-commodity.md) | Sim | Picks up Data Cloud thread + market angle | [x] | [x] |
-| 53 | 2026-06-30 | ter | data | [Observabilidade de dados: detectar falhas antes do stakeholder](blog/posts/observabilidade-de-dados.md) | Não | Back-catálogo recuperado de auto-branch (gerado 2026-05-23, nunca mergeado) | [x] | [ ] |
-| 54 | 2026-07-01 | qua | data | [Lakehouse não é silver bullet: quando warehouse simples ainda ganha](blog/posts/lakehouse-vs-warehouse.md) | Não | Back-catálogo recuperado de auto-branch (gerado 2026-05-24, nunca mergeado) | [x] | [ ] |
+| 53 | 2026-06-30 | ter | data | [Observabilidade de dados: detectar falhas antes do stakeholder](blog/posts/observabilidade-de-dados.md) | Não | Back-catálogo recuperado de auto-branch (gerado 2026-05-23, nunca mergeado) | [x] | [x] |
+| 54 | 2026-07-01 | qua | data | [Lakehouse não é silver bullet: quando warehouse simples ainda ganha](blog/posts/lakehouse-vs-warehouse.md) | Não | Back-catálogo recuperado de auto-branch (gerado 2026-05-24, nunca mergeado) | [x] | [x] |
 
 ## Como atualizar
 

@@ -11,7 +11,7 @@ keywords: ["Marketing Cloud", "Data Cloud", "Salesforce", "journeys", "activatio
 
 The marketing automation meeting in 2026 almost always has the same implicit problem: Marketing Cloud configured nicely, journeys designed, emails going out with personalization — but the data feeding all this comes from disconnected sources, replicated three times, out of date on different cycles. The result: "personalized" campaigns sending promos to a customer who bought yesterday, welcome emails to someone already a customer for two years, segmentation that diverges between email and social channels.
 
-The root cause is architectural: Marketing Cloud operates on isolated data when it should operate on live data. [Data Cloud in 2026 is the piece that closes this gap](/blog/en/data-cloud-nervo-central.html). This text is about the real gain of the combination, and why so many companies still implement the two separately.
+The root cause is architectural: Marketing Cloud operates on isolated data when it should operate on live data. [Data Cloud in 2026 is the piece that closes this gap](/blog/en/data-cloud-nervo-central.html). This text is about the real gain of the combination, and why so many companies still implement the two separately — the same symptom that shows up when [CRM, data and AI are treated as separate projects](/blog/en/crm-dados-ia-engrenagem.html) instead of a single gear system.
 
 ## What Marketing Cloud alone doesn't solve
 

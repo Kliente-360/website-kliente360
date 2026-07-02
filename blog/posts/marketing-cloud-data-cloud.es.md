@@ -11,7 +11,7 @@ keywords: ["Marketing Cloud", "Data Cloud", "Salesforce", "jornadas", "activaci�
 
 La reunión de marketing automation en 2026 casi siempre tiene el mismo problema implícito: Marketing Cloud configurado lindo, jornadas diseñadas, e-mail saliendo con personalización — pero el dato que alimenta todo eso viene de fuentes desconectadas, replicado tres veces, desactualizado en ciclos distintos. El resultado: campaña "personalizada" que manda promoción a cliente que compró ayer, e-mail de bienvenida a quien ya es cliente hace dos años, segmentación que diverge entre canal de e-mail y canal social.
 
-La causa raíz es arquitectónica: Marketing Cloud opera sobre dato aislado cuando debería operar sobre dato vivo. [Data Cloud en 2026 es la pieza que cierra ese gap](/blog/es/data-cloud-nervo-central.html). Este texto va sobre la ganancia real de la combinación, y por qué tantas empresas todavía implementan los dos por separado.
+La causa raíz es arquitectónica: Marketing Cloud opera sobre dato aislado cuando debería operar sobre dato vivo. [Data Cloud en 2026 es la pieza que cierra ese gap](/blog/es/data-cloud-nervo-central.html). Este texto va sobre la ganancia real de la combinación, y por qué tantas empresas todavía implementan los dos por separado — el mismo síntoma que aparece cuando [CRM, dato e IA se tratan como proyectos separados](/blog/es/crm-dados-ia-engrenagem.html) en vez de un engranaje único.
 
 ## Lo que Marketing Cloud solo no resuelve
 

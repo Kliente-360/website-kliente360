@@ -57,7 +57,7 @@ Además de la matriz, cinco preguntas que cambian la cuenta:
 
 1. **¿Cuál es el costo mensual de operación continua con un admin certificado, post go-live?** Si la respuesta es "depende", pide un rango basado en casos comparables a tu tamaño. No cierres el contrato sin ese número.
 
-2. **¿Cuál es el costo de migración de datos heredados — y quién paga si los datos están sucios?** Los datos sucios son la regla, no la excepción. La propuesta que no menciona este costo está omitiendo el mayor riesgo del proyecto.
+2. **¿Cuál es el costo de migración de datos heredados — y quién paga si los datos están sucios?** Los datos sucios son la regla, no la excepción. La propuesta que no menciona este costo está omitiendo el mayor riesgo del proyecto. [La migración de Pardot a Marketing Cloud Engagement](/blog/es/migracao-pardot-marketing-cloud.html) es ejemplo concreto: la mayor parte del costo real solo aparece después de firmar el contrato.
 
 3. **¿Cuál es el modelo de soporte después del go-live?** El socio de implementación y el socio de sustentación rara vez son el mismo contrato. El [modelo de socios de Salesforce](/blog/es/salesforce-partner-program.html) tiene tiers y obligaciones que el cliente solo entiende cuando necesita soporte urgente — y ya pagó por la sorpresa.
 

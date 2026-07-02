@@ -57,7 +57,7 @@ Beyond the matrix, five questions that change the account:
 
 1. **What's the monthly ongoing operations cost with a certified admin, post-go-live?** If the answer is "it depends," ask for a range based on comparable cases at your size. Don't close a contract without that number.
 
-2. **What's the cost of migrating legacy data — and who pays if the data is dirty?** Dirty data is the rule, not the exception. A proposal that doesn't mention this cost is hiding the project's biggest risk.
+2. **What's the cost of migrating legacy data — and who pays if the data is dirty?** Dirty data is the rule, not the exception. A proposal that doesn't mention this cost is hiding the project's biggest risk. [Pardot to Marketing Cloud Engagement migration](/blog/en/migracao-pardot-marketing-cloud.html) is a concrete example: most of the real cost only surfaces after the contract is signed.
 
 3. **What's the support model after go-live?** Implementation partner and managed services partner are rarely the same contract. The [Salesforce partner model](/blog/en/salesforce-partner-program.html) has tiers and obligations the customer only understands when they need urgent support — and have already paid for the surprise.
 

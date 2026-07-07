@@ -68,6 +68,19 @@ Numeração sequencial pela ordem cronológica de publicação. Quando duas entr
 | 52 | 2026-06-24 | qua | data | [Customer Data Platform virou commodity — o que sobrou](blog/posts/customer-data-platform-commodity.md) | Sim | Picks up Data Cloud thread + market angle | [x] | [x] |
 | 53 | 2026-06-30 | ter | data | [Observabilidade de dados: detectar falhas antes do stakeholder](blog/posts/observabilidade-de-dados.md) | Não | Back-catálogo recuperado de auto-branch (gerado 2026-05-23, nunca mergeado) | [x] | [x] |
 | 54 | 2026-07-01 | qua | data | [Lakehouse não é silver bullet: quando warehouse simples ainda ganha](blog/posts/lakehouse-vs-warehouse.md) | Não | Back-catálogo recuperado de auto-branch (gerado 2026-05-24, nunca mergeado) | [x] | [x] |
+| 55 | 2026-07-07 | ter | ai | [Model Context Protocol: o que muda quando toda ferramenta expõe um servidor MCP](blog/posts/model-context-protocol-servidor-mcp.md) | Sim | Mercado 2026 — MCP passou de 9.400 para 10k+ servidores enterprise; parte 1/2 (panorama). Dupla MCP na mesma semana por decisão editorial (justifica pilar `ai` repetido em ter+qua) | [x] | [ ] |
+| 56 | 2026-07-08 | qua | ai | [Arquitetura de um servidor MCP: transporte, autenticação e onde ele quebra](blog/posts/arquitetura-servidor-mcp.md) | Sim | Mercado 2026 — parte 2/2, profundidade técnica (JSON-RPC, transporte, riscos de segurança) | [x] | [ ] |
+| 57 | 2026-07-14 | ter | sf | Agentforce Commerce: quando vale um agente vender sem humano no loop | Sim | Mercado 2026 — lançamento jul/2026 (Shopper/Buyer/Merchant Agent), onde funciona e onde é cedo demais | [ ] | [ ] |
+| 58 | 2026-07-15 | qua | data | Apache Iceberg venceu a disputa de table format — o que muda no lakehouse | Sim | Mercado 2026 — Databricks, Snowflake e BigQuery convergiram em Iceberg como padrão | [ ] | [ ] |
+| 59 | 2026-07-21 | ter | ai | Regulação de IA no Brasil: o que a ANPD já sinalizou pra quem treina modelo com dado de cliente | Sim | Mercado 2026 — PL 2338 travado no Congresso, mas ANPD elencou IA como eixo de fiscalização 2026-2027 | [ ] | [ ] |
+| 60 | 2026-07-22 | qua | sf | Data Cloud pricing 2026: o novo modelo de créditos e o que muda no orçamento | Sim | Mercado 2026 — consolidação de créditos + SKU por perfil (overhaul de mar/2026) | [ ] | [ ] |
+| 61 | 2026-07-28 | ter | data | Zero-ETL: a promessa de matar pipeline é real ou é marketing de hyperscaler? | Sim | Mercado 2026 — AWS, Databricks e Snowflake empurrando zero-ETL como diferencial | [ ] | [ ] |
+| 62 | 2026-07-29 | qua | ai | Small language models no pipeline de agentes: quando o modelo pequeno vence o de fronteira | Sim | Mercado 2026 — SLM-first routing e economia real de custo de inferência | [ ] | [ ] |
+| 63 | 2026-08-04 | ter | sf | De Sales Cloud a Agentforce Sales: o que a troca de nome sinaliza pra quem já comprou | Sim | Mercado 2026 — rebranding sinaliza mudança de CRM pra plataforma de agente | [ ] | [ ] |
+| 64 | 2026-08-05 | qua | data | Camada semântica: por que o agente erra a pergunta certa sem ela | Sim | Mercado 2026 — semantic layer como pré-requisito de agente confiável | [ ] | [ ] |
+| 65 | 2026-08-11 | ter | ai | "Dono do agente": o cargo que virou padrão em 2026 e o que ele resolve | Sim | Mercado 2026 — 56% das empresas já nomeiam um agentic ops lead | [ ] | [ ] |
+| 66 | 2026-08-12 | qua | sf | Salesforce Foundations: o que o pacote gratuito cobre de verdade (e onde ele para) | Sim | Mercado 2026 — add-on $0 com Agentforce incluso, mas com limites de uso reais | [ ] | [ ] |
+| 67 | 2026-08-18 | ter | data | Governança de dados como código: o fim da checklist manual de compliance | Sim | Mercado 2026 — DataGovOps, lineage e trilha de auditoria automatizados | [ ] | [ ] |
 
 ## Como atualizar
 
@@ -83,9 +96,9 @@ A coluna `Backlink pass` é controlada pela routine de backlink-pass (ver `blog/
 
 | Pilar | Plano (Sim) | Extras (Não) | Total |
 |---|---|---|---|
-| sf (Salesforce) | 15 | 3 | **18** |
-| data (Data & Analytics) | 15 | 4 | **19** |
-| ai (IA Aplicada) | 14 | 3 | **17** |
-| **Total** | 44 | 10 | **54** |
+| sf (Salesforce) | 19 | 3 | **22** |
+| data (Data & Analytics) | 19 | 4 | **23** |
+| ai (IA Aplicada) | 19 | 3 | **22** |
+| **Total** | 57 | 10 | **67** |
 
-Publicados: 42 (34 do plano lote 1 + 8 extras). Pendentes do plano lote 2: 10. Back-catálogo recuperado de auto-branches: 2 (#53 observabilidade, #54 lakehouse).
+Publicados: 56. Back-catálogo recuperado de auto-branches: 2 (#53 observabilidade, #54 lakehouse). Pendentes do lote 3 — temas de mercado 2026, sem análise de concorrência, ver research de jul/2026 nesta conversa: 11 (#57 a #67).

@@ -1,4 +1,42 @@
+# Kliente 360 — política de crawlers
+#
+# Decisão (research/geo-diagnostic.md, G2): permitir TUDO, inclusive
+# crawlers de treino de IA. Somos marca em construção de presença —
+# estar dentro dos modelos e das respostas geradas É o objetivo.
+# Revisitar se um dia o custo (conteúdo canibalizado sem citação)
+# superar o benefício.
+
+# Crawlers de busca tradicionais
 User-agent: *
+Allow: /
+
+# Crawlers de RETRIEVAL/busca de IA (citam e linkam — sempre permitir)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Crawlers de TREINO de IA (permitidos por decisão explícita — ver acima)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://kliente360.com/sitemap.xml

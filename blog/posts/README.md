@@ -216,7 +216,10 @@ Esses pontos saem de graça, o agente não precisa se preocupar:
 
 LLMs (ChatGPT, Claude, Perplexity, Gemini, AI Overviews do Google) **citam e resumem** conteúdo de forma diferente. O que ajuda:
 
-1. **TL;DR no topo** — caixa explícita logo após o título. LLMs priorizam essa estrutura ao sumarizar. **Já temos `tldr` no frontmatter** — capriche, é o resumo mais lido. 2–3 frases, autoexplicativo, **sem CTA**. Pense: "se o leitor sair daqui, ele já tem 80% do valor".
+1. **TL;DR no topo** — caixa explícita logo após o título. LLMs priorizam essa estrutura ao sumarizar. **Já temos `tldr` no frontmatter** — capriche, é o resumo mais lido. 2–4 frases, autoexplicativo, **sem CTA**. Pense: "se o leitor sair daqui, ele já tem 80% do valor".
+   **Regra da primeira frase (obrigatória desde jul/2026)**: a primeira frase do TL;DR é **definicional ou tese autossuficiente** — o leitor (ou LLM) entende o claim sem ler o título. Padrões: *"X é/são Y que Z…"*, *"X falha/resolve porque Y…"*, *"A escolha entre X e Y se decide por Z…"*. Proibido teaser ("Entenda como…", "Descubra por que…", "O que você precisa saber…").
+
+1b. **FAQ no fim do post (opcional, recomendado em temas de busca alta)** — seção `## Perguntas que sempre voltam` (EN: `## Questions that keep coming back` / ES: `## Preguntas que siempre vuelven`) com 1 frase de transição + 3 headings `##` em forma de pergunta terminando em `?`, resposta de 1–2 parágrafos cada. **O build converte automaticamente H2 terminados em `?` (≥2) em FAQPage JSON-LD** — as perguntas devem ser as que um usuário real faria a um LLM, e a primeira frase de cada resposta responde direto (forma definicional). Respostas derivam do próprio post — nunca claims novos.
 
 2. **H2 em forma de pergunta ou afirmação curta** — facilita featured snippets e AI Overviews. Em vez de "Diagnóstico", use "O sintoma e o diagnóstico". Em vez de "Conclusão", "Por que IA sem governança vira passivo".
 
@@ -341,7 +344,7 @@ Antes de marcar `[x]` no EDITORIAL, confirmar:
 - [ ] Pilar correto (sf | data | ai).
 - [ ] Title declarativo, sem ponto final.
 - [ ] Excerpt em uma linha, ≤160 caracteres.
-- [ ] TL;DR em 2–3 frases (cabeça, não chamada para ação).
+- [ ] TL;DR em 2–4 frases (cabeça, não chamada para ação) — **primeira frase definicional/autossuficiente** (regra GEO 1).
 - [ ] Primeiro parágrafo abre direto na tese, sem "neste post".
 - [ ] H2 em forma de sentença declarativa ou pergunta, nunca "Introdução"/"Conclusão".
 - [ ] Pelo menos um blockquote forte para sintetizar um ponto.

@@ -1,0 +1,65 @@
+# Kliente 360
+
+> Consultoria especializada em CRM com Salesforce, Dados e IA, sediada no Brasil, atendendo mid-market e enterprise. Salesforce Partner desde 2019. Três pilares operados como uma prática única: Salesforce (Sales, Service, Data Cloud, Agentforce), Data & Analytics (engenharia de dados, modelos preditivos, BI) e IA Aplicada (agentes de IA em produção, produtos SaaS verticais). Conteúdo em PT-BR (canônico), EN e ES.
+
+Método de entrega: Trilha 360 — mapear, prototipar, validar, implantar, sustentar. Metodologia híbrida entre consultoria estratégica, projeto de tecnologia e deploy rápido de IA.
+
+## Páginas principais
+
+- [Home](https://kliente360.com/): visão dos três pilares, método e contato
+- [Como trabalhamos](https://kliente360.com/como-trabalhamos/): método, entregas por pilar, pré-requisitos e FAQ
+- [Pilar Salesforce](https://kliente360.com/pilares/salesforce/): implementação e evolução com agentes
+- [Pilar Data & Analytics](https://kliente360.com/pilares/data/): do dado bruto à decisão
+- [Pilar IA Aplicada](https://kliente360.com/pilares/ia/): agentes de IA sob medida
+- [Glossário](https://kliente360.com/glossario/): definições diretas de CRM, Dados e IA
+- [Blog](https://kliente360.com/blog/): análise, prática e opinião — 2 posts/semana
+
+## Blog — Salesforce
+
+- [Salesforce ROI — a matriz que vendedor de licença não mostra](https://kliente360.com/blog/salesforce-roi-matriz.html): ROI de Salesforce tem três custos que a proposta comercial omite. A matriz que separa investimento que rende de investimento que sangra.
+- [Migração Pardot para Marketing Cloud Engagement: o que o projeto não revela](https://kliente360.com/blog/migracao-pardot-marketing-cloud.html): Pardot e Marketing Cloud Engagement não são o mesmo produto. O que muda, o que precisa ser refeito e quando migrar não compensa.
+- [Salesforce em 6 semanas: o que cabe de verdade num MVP](https://kliente360.com/blog/implementacao-salesforce-seis-semanas.html): Seis semanas é o mínimo honesto para um MVP de Salesforce funcional. O que cabe, o que não cabe, e como validar escopo antes de assinar.
+- [Quando NÃO usar Salesforce: 4 cenários em que o custo de licença supera o ROI](https://kliente360.com/blog/quando-nao-usar-salesforce.html): Salesforce resolve muita coisa. Não resolve tudo. Quatro cenários em que a licença consome mais valor do que devolve — e o que usar no lugar.
+- [Data Cloud não é mais CDP — é o nervo central do Salesforce](https://kliente360.com/blog/data-cloud-nervo-central.html): Quem ainda trata Data Cloud como CDP perde o melhor do Agentforce e da nova plataforma. O salto conceitual em três pontos.
+- [Salesforce Partner Program: o que o cliente nunca te conta](https://kliente360.com/blog/salesforce-partner-program.html): Cliente escolhe parceiro Salesforce pelo logo no site. Em três meses, descobre o que estava embaixo. Quatro coisas sobre Partner Program que ajudam a separar consultoria séria de revenda mascarada.
+- [Salesforce Industries (Vlocity): vale a pena para empresas brasileiras de médio porte?](https://kliente360.com/blog/salesforce-industries-vlocity.html): Salesforce Industries promete acelerar implantação com modelo vertical pronto. Pra alguns setores no Brasil, vale. Pra maioria das empresas médias, vira complexidade adicional sem ROI claro.
+- [CPQ em SaaS B2B: a diferença entre cotação e proposta de fato](https://kliente360.com/blog/cpq-saas-b2b.html): CPQ que vendedor usa pra gerar PDF não é CPQ — é máquina de cotação. CPQ real entrega proposta que o cliente entende, aprova e assina sem retrabalho. A diferença mora em quatro decisões.
+- [Marketing Cloud + Data Cloud: a stack que devia ter nascido junta](https://kliente360.com/blog/marketing-cloud-data-cloud.html): Marketing Cloud sozinho é jornadas isoladas. Com Data Cloud por baixo, vira ativação contextual real. A combinação que muita empresa ignora — e perde tempo replicando dado pelo caminho.
+- [Sandbox strategy: como evitar "a última sandbox foi há 4 meses"](https://kliente360.com/blog/sandbox-strategy.html): Sandbox no Salesforce é grátis — em licença. Caro em disciplina. Empresa que não trata sandbox como produto entrega bug em produção e descobre que ninguém atualiza ambiente há meses.
+- [Integração Salesforce ↔ ERP: por que projetos travam no contrato, não na arquitetura](https://kliente360.com/blog/integracao-salesforce-erp.html): Quase toda integração Salesforce-ERP que atrasa atrasou no acordo de quem responde pelo dado — não no técnico. O fracasso é organizacional, vestido de arquitetura.
+- [Salesforce Flow vs Apex: quando código vale mais que clique](https://kliente360.com/blog/flow-vs-apex.html): Salesforce diz pra usar Flow sempre que possível. A regra é boa — até virar dogma e o time configurar Flow gigante onde 30 linhas de Apex resolveriam em metade do tempo.
+
+## Blog — Data & Analytics
+
+- [Lakehouse não é silver bullet: quando warehouse simples ainda ganha](https://kliente360.com/blog/lakehouse-vs-warehouse.html): Lakehouse ou warehouse simples? A resposta depende de volume, diversidade de dado e maturidade de time — não da conversa do vendor.
+- [Observabilidade de dados: detectar falhas antes do stakeholder](https://kliente360.com/blog/observabilidade-de-dados.html): Pipelines quebram em silêncio. A observabilidade de dados detecta falhas antes que o negócio descubra pelo relatório errado.
+- [Customer Data Platform virou commodity — o que sobrou](https://kliente360.com/blog/customer-data-platform-commodity.html): Em 2026 a categoria CDP foi absorvida pelos grandes players. Não morreu — virou feature de plataforma. O que muda para quem avalia dados de cliente.
+- [Multi-cloud: mito ou estratégia — critério honesto pra decidir](https://kliente360.com/blog/multi-cloud-mito-ou-estrategia.html): Multi-cloud quase sempre é arquitetura de acidente, não de opção. Cinco critérios para separar estratégia real de slide de fornecedor.
+- [Power BI vs Tableau vs Looker vs Metabase — matriz por porte](https://kliente360.com/blog/power-bi-tableau-looker-metabase.html): Quatro ferramentas de BI, três dimensões de decisão e uma matriz Brasil-específica por porte. A resposta raramente é a mais cara.
+- [Tendências de data management 2026: 5 que mudam, 3 que não](https://kliente360.com/blog/tendencias-data-management-2026.html): Data management em 2026: o que mudou de fato, o que ainda não mudou, e onde investir a atenção da equipe nos próximos 12 meses.
+- [Modern Data Stack em 2026: o que sobreviveu, o que morreu, o que virou commodity](https://kliente360.com/blog/modern-data-stack-2026.html): Modern Data Stack tinha 40 ferramentas em 2021. Hoje, três camadas viraram commodity, uma morreu silenciosamente, e uma sobreviveu como tese — não como rótulo.
+- [Tableau como linguagem executiva: matando o dashboard de vaidade](https://kliente360.com/blog/tableau-linguagem-executiva.html): Dashboard executivo bom é o que vira decisão na sala. Pare de medir, comece a recomendar.
+- [Databricks vs Snowflake vs BigQuery: lock-in, custos de saída e o que o parceiro oficial não fala](https://kliente360.com/blog/databricks-snowflake-bigquery-lock-in.html): Os três warehouses entregam performance equivalente. A diferença real está no que cada um custa pra abandonar — e nenhum parceiro oficial vai te contar isso na proposta.
+- [Análise de churn: o erro de definir "perda" antes da estratégia](https://kliente360.com/blog/analise-de-churn.html): Time roda modelo de churn com 85% de precisão. Em produção, ninguém usa porque "perda" foi definida sem alinhar com o que negócio considera perda. A definição vem antes do modelo.
+- [Modelagem dimensional ainda vale em 2026? Sim — defesa contra o lakehouse-pra-tudo](https://kliente360.com/blog/modelagem-dimensional-2026.html): Lakehouse virou o padrão do momento. Mas modelagem dimensional (Kimball) não morreu — está mais relevante que nunca. Onde ela ganha do lakehouse cru.
+- [Engenharia de prompts pra analytics: o pipeline esquecido entre dado e relatório](https://kliente360.com/blog/prompts-pra-analytics.html): Analista joga pergunta no ChatGPT, recebe SQL, roda no warehouse, manda gráfico pro diretor. Em metade dos casos, o número está errado — e ninguém percebe.
+
+## Blog — IA Aplicada
+
+- [Arquitetura de um servidor MCP: transporte, autenticação e onde ele quebra](https://kliente360.com/blog/arquitetura-servidor-mcp.html): Por dentro de um servidor MCP: as três primitivas do protocolo, stdio vs HTTP remoto, e os riscos de segurança que checklist de integração costuma ignorar.
+- [Model Context Protocol: o que muda quando toda ferramenta expõe um servidor MCP](https://kliente360.com/blog/model-context-protocol-servidor-mcp.html): MCP passou de curiosidade técnica a infraestrutura padrão em 2026 — mais de 10 mil servidores mudam como agentes acessam ferramentas e dados.
+- [Vector database não é obrigatório em RAG — quando o índice clássico ganha](https://kliente360.com/blog/vector-database-ou-search-engine.html): RAG não exige vector database. BM25 e busca híbrida ganham em queries exatas e docs estruturados — com menos custo e complexidade operacional.
+- [CRM, dados e IA não são projetos separados — são uma engrenagem](https://kliente360.com/blog/crm-dados-ia-engrenagem.html): CRM sem dados é agenda. Dados sem CRM ficam no warehouse, sem chegar ao front. IA sem os dois é demo. Por que os três funcionam como engrenagem.
+- [RAG não é a resposta — 6 padrões em que fine-tuning ganha](https://kliente360.com/blog/quando-fine-tuning-supera-rag.html): RAG virou a resposta padrão pra LLMs em contexto corporativo. Em seis padrões específicos, fine-tuning entrega resultado melhor — e custo mais previsível.
+- [FinOps de IA: como cobrar inferência de LLM do cliente interno sem brigar com a TI](https://kliente360.com/blog/finops-de-ia.html): Inferência de LLM tem custo variável e atribuição difusa. Sem modelo de cobrança, vira fatura de TI no fim do mês. Quatro modelos de FinOps de IA que funcionam.
+- [Quando um agente é a resposta — e quando ele é fuga de problema mal modelado](https://kliente360.com/blog/quando-agente-e-resposta.html): Agente de IA não conserta processo torto. Cinco perguntas para validar, e o caminho do MVP em quatro semanas.
+- [IA para RH: caso prático do agente de triagem interna](https://kliente360.com/blog/ia-para-rh.html): RH é a área onde IA generativa rende mais discretamente. Pilotos viraram operação real em 2026 — sem alarde, com ROI mensurável. O caso prático do agente de triagem que funciona.
+- [Multi-agent em produção: o que aprendemos rodando 5 agentes por 90 dias](https://kliente360.com/blog/multi-agent-em-producao.html): Diário de campo de 90 dias com 5 agentes rodando em produção. O que funcionou, o que quebrou, e o custo real de manter sistema multi-agent vivo.
+- [Open source vs proprietary LLMs: critérios honestos pra escolher sem ideologia](https://kliente360.com/blog/open-source-vs-proprietary-llms.html): Time defende Llama "porque é open". Outro defende GPT "porque é melhor". Os dois estão certos em parte — e errados em medir só uma dimensão. Como decidir pela necessidade, não pela ideologia.
+- [IA generativa para vendas: além do "ChatGPT de respostas" — onde gera receita](https://kliente360.com/blog/ia-generativa-vendas.html): Diretor comercial pediu "copiloto pra vendedores". Time entregou ChatGPT corporativo. Em três meses, taxa de uso em 8%. O problema não é o vendedor — é o que se ofereceu como ajuda.
+- [Privacidade de dados em LLMs: a checklist de governança que falta no piloto](https://kliente360.com/blog/privacidade-dados-llms.html): Time piloteia LLM com dado real de cliente, sem pensar na LGPD. Em três meses, vira incidente público. Sete itens que precisam ser respondidos antes do primeiro prompt.
+
+## Optional
+
+- [Sitemap completo](https://kliente360.com/sitemap.xml): todas as 187 URLs, PT/EN/ES
+- [Versões EN](https://kliente360.com/blog/en/) e [ES](https://kliente360.com/blog/es/) do blog

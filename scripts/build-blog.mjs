@@ -21,6 +21,7 @@
  */
 
 import { readFileSync, readdirSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { execSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -64,7 +65,8 @@ const STRINGS = {
     pillars: { sf: 'Pilar 01 · Salesforce', data: 'Pilar 02 · Data', ai: 'Pilar 03 · IA' },
     sections: { sf: 'Salesforce', data: 'Data & Analytics', ai: 'IA Aplicada' },
     blogBack: 'Blog',
-    by: 'Por Kliente 360',
+    by: 'Por Felipe Silva · Kliente 360',
+    updatedOn: 'Atualizado em',
     readMin: 'min de leitura',
     tldr: 'TL;DR',
     endLabel: 'Continuar a conversa',
@@ -96,7 +98,8 @@ const STRINGS = {
     pillars: { sf: 'Practice 01 · Salesforce', data: 'Practice 02 · Data', ai: 'Practice 03 · AI' },
     sections: { sf: 'Salesforce', data: 'Data & Analytics', ai: 'Applied AI' },
     blogBack: 'Blog',
-    by: 'By Kliente 360',
+    by: 'By Felipe Silva · Kliente 360',
+    updatedOn: 'Updated',
     readMin: 'min read',
     tldr: 'TL;DR',
     endLabel: 'Keep the conversation going',
@@ -128,7 +131,8 @@ const STRINGS = {
     pillars: { sf: 'Pilar 01 · Salesforce', data: 'Pilar 02 · Data', ai: 'Pilar 03 · IA' },
     sections: { sf: 'Salesforce', data: 'Data & Analytics', ai: 'IA Aplicada' },
     blogBack: 'Blog',
-    by: 'Por Kliente 360',
+    by: 'Por Felipe Silva · Kliente 360',
+    updatedOn: 'Actualizado el',
     readMin: 'min de lectura',
     tldr: 'TL;DR',
     endLabel: 'Continuar la conversación',
@@ -302,6 +306,20 @@ ${renderAlternates(alternates)}
 
 // Extrai pares pergunta/resposta de H2 terminados em "?" no markdown.
 // A resposta é tudo do H2 até o próximo H2 (ou EOF), convertido pra texto puro.
+// Data da última modificação real do arquivo fonte (git). Sinal de frescor
+// pra GEO/SEO: alimenta dateModified do Article schema e o "Atualizado em"
+// visível. Fallback: datePublished (clone shallow ou fora de repo git).
+const gitLastModified = (relFile) => {
+  try {
+    const out = execSync(`git log -1 --format=%cs -- "blog/posts/${relFile}"`, {
+      cwd: ROOT, encoding: 'utf-8', stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    return /^\d{4}-\d{2}-\d{2}$/.test(out) ? out : null;
+  } catch {
+    return null;
+  }
+};
+
 const extractFaqs = (md) => {
   const lines = md.split('\n');
   const faqs = [];
@@ -479,16 +497,28 @@ const renderPost = (post, lang, allPosts) => {
 
   const ogImage = '/' + ogImageRelPath(post.slug, lang);
 
+  // dateModified: última alteração real do .md no git (> datePublished
+  // significa refresh — sinal de frescor pra GEO). Nunca antes do publish.
+  const modified = gitLastModified(t.srcFile);
+  const dateModified = modified && modified > post.date ? modified : post.date;
+
   const ldJson = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: t.title,
     description: t.excerpt,
     datePublished: post.date,
+    dateModified,
     inLanguage: HTML_LANG[lang],
     image: abs(ogImage),
     mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
-    author:    { '@type': 'Organization', name: 'Kliente 360' },
+    author: {
+      '@type': 'Person',
+      name: 'Felipe Silva',
+      url: 'https://www.linkedin.com/in/flpgonzaga/',
+      sameAs: ['https://www.linkedin.com/in/flpgonzaga/'],
+      worksFor: { '@type': 'Organization', name: 'Kliente 360' },
+    },
     publisher: { '@type': 'Organization', name: 'Kliente 360' },
     articleSection: sectionLabel,
     keywords: t.keywords || [],
@@ -545,7 +575,9 @@ ${navHtml('/blog/' + post.slug, lang)}
             <span class="sep">·</span>
             <span>${t.readMinutes} ${escapeHtml(S.readMin)}</span>
             <span class="sep">·</span>
-            <span>${escapeHtml(S.by)}</span>
+            <span>${escapeHtml(S.by)}</span>${dateModified !== post.date ? `
+            <span class="sep">·</span>
+            <span>${escapeHtml(S.updatedOn)} <time datetime="${dateModified}">${formatDate(dateModified, lang)}</time></span>` : ''}
           </div>
         </div>
       </header>
@@ -838,6 +870,7 @@ const collectPosts = () => {
       readMinutes: data.readMinutes || Math.max(2, Math.round(content.split(/\s+/).length / 220)),
       keywords: data.keywords || [],
       body: content,
+      srcFile: file,
     };
   }
 
@@ -962,6 +995,51 @@ ${allUrls.map(u => `  <url>
 `;
   writeFileSync(join(ROOT, 'sitemap.xml'), sitemap);
   console.log(`   ✓ sitemap.xml (${allUrls.length} URLs)`);
+
+  // llms.txt — índice em Markdown pra LLMs (convenção llmstxt.org).
+  // Gerado a cada build: sempre reflete o conteúdo atual. GEO: G1.
+  const byPillar = { sf: [], data: [], ai: [] };
+  for (const p of posts) {
+    if (p.translations.pt) byPillar[p.pillar]?.push(p);
+  }
+  const pillarTitles = { sf: 'Salesforce', data: 'Data & Analytics', ai: 'IA Aplicada' };
+  const llmsPostLine = (p) =>
+    `- [${p.translations.pt.title}](${postUrl(p.slug, 'pt')}): ${p.translations.pt.excerpt}`;
+  const llmsTxt = `# Kliente 360
+
+> Consultoria especializada em CRM com Salesforce, Dados e IA, sediada no Brasil, atendendo mid-market e enterprise. Salesforce Partner desde 2019. Três pilares operados como uma prática única: Salesforce (Sales, Service, Data Cloud, Agentforce), Data & Analytics (engenharia de dados, modelos preditivos, BI) e IA Aplicada (agentes de IA em produção, produtos SaaS verticais). Conteúdo em PT-BR (canônico), EN e ES.
+
+Método de entrega: Trilha 360 — mapear, prototipar, validar, implantar, sustentar. Metodologia híbrida entre consultoria estratégica, projeto de tecnologia e deploy rápido de IA.
+
+## Páginas principais
+
+- [Home](${SITE_URL}/): visão dos três pilares, método e contato
+- [Como trabalhamos](${SITE_URL}/como-trabalhamos/): método, entregas por pilar, pré-requisitos e FAQ
+- [Pilar Salesforce](${SITE_URL}/pilares/salesforce/): implementação e evolução com agentes
+- [Pilar Data & Analytics](${SITE_URL}/pilares/data/): do dado bruto à decisão
+- [Pilar IA Aplicada](${SITE_URL}/pilares/ia/): agentes de IA sob medida
+- [Glossário](${SITE_URL}/glossario/): definições diretas de CRM, Dados e IA
+- [Blog](${SITE_URL}/blog/): análise, prática e opinião — 2 posts/semana
+
+## Blog — Salesforce
+
+${byPillar.sf.slice(0, 12).map(llmsPostLine).join('\n')}
+
+## Blog — Data & Analytics
+
+${byPillar.data.slice(0, 12).map(llmsPostLine).join('\n')}
+
+## Blog — IA Aplicada
+
+${byPillar.ai.slice(0, 12).map(llmsPostLine).join('\n')}
+
+## Optional
+
+- [Sitemap completo](${SITE_URL}/sitemap.xml): todas as ${allUrls.length} URLs, PT/EN/ES
+- [Versões EN](${SITE_URL}/blog/en/) e [ES](${SITE_URL}/blog/es/) do blog
+`;
+  writeFileSync(join(ROOT, 'llms.txt'), llmsTxt);
+  console.log(`   ✓ llms.txt (${posts.length} posts indexados)`);
 
   // Manifest de posts (para o home trocar cards no swap de idioma)
   const manifest = posts.map(p => ({

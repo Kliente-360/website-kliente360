@@ -287,6 +287,7 @@ Derivado do audit pós-#10. Quick wins do Bloco A já aplicados. Pendências org
 | **Cases — métricas reais** | Sem Parar e Bodytech precisam aprovar números publicáveis. Section `#cases` permanece oculta até lá. | `index.html` §cases (comentado). |
 | **Reativar seção cases** | Depende do item acima. Pra reativar: descomentar bloco em `index.html`, re-adicionar `<a href="/#cases">` nos 3 lugares de nav + no `scripts/build-blog.mjs`, rebuildar. | `index.html` + 9 pillar pages + 3 como-trabalhamos + 3 glossário + `scripts/build-blog.mjs`. |
 | **Faixas de preço** | Decisão pendente sobre transparência comercial pública. Removidas em 2026-05-22 (não combinava com "consultoria especializada que não vende em catálogo"). Conteúdo recuperável via Git. | — |
+| **Chaves de API pra rotina GEO de mention tracking** | Felipe precisa (1) criar chaves nos consoles — `PERPLEXITY_API_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY`, `ANTHROPIC_API_KEY` (funciona parcial, qualquer subconjunto); (2) adicioná-las como env vars do environment do Claude Code; (3) configurar o trigger mensal no scheduler com o prompt pronto do README da rotina. Sem as chaves, `scripts/geo-probe.mjs` roda em modo no-key e a medição de mention rate nos engines fica vazia. | `scripts/geo-probe.mjs`, `research/geo-mentions/README.md` (prompt do trigger), dashboard artefato "GEO Mentions — Kliente 360". |
 
 #### Continuous (rolando sem ação)
 

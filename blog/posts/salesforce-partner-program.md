@@ -54,7 +54,7 @@ Esses quatro são reais. Pra cliente grande com projeto complexo (R$ 5M+, multi-
 
 Pra cliente médio com projeto único (R$ 200k–800k, Sales Cloud ou Service Cloud), tier alto importa menos. Consultoria Crest especializada no seu setor frequentemente entrega melhor que Summit generalista — e cobra 30–50% menos. [Como em qualquer projeto Salesforce sério](/blog/mapear-processos-antes-do-salesforce.html), o discovery e o time fazem mais diferença que o tier.
 
-## Os três antipdrões em escolha de parceiro
+## Os três antipadrões em escolha de parceiro
 
 Erros que vejo cliente cometer com frequência:
 

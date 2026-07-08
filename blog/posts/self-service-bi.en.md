@@ -83,3 +83,25 @@ If your company has self-service BI deployed and the "each one with their versio
 **Clean the past.** Orphan dashboards to quarantine. Duplicated logic migrated to the semantic layer. 2–3 months of work, but restores confidence in what's left.
 
 Well-governed self-service BI is one of the most rewarding investments in data maturity. Badly governed, it's the worst of worlds: high investment + untrustworthy data + culture of each person on their own spreadsheet. The difference isn't the tool — it's what you do around it.
+
+## Questions that keep coming back
+
+Before wrapping up, the three questions that come up most once this diagnosis lands.
+
+## Is self-service BI still worth it in 2026?
+
+Yes — as long as it ships with guardrails from day one, not as a loose tool rollout. Where it worked, self-service delivered three real gains: a data team freed from trivial requests, hypotheses becoming charts in an afternoon instead of a month, and users who understand the number because they built the dashboard. Those three justify the investment on their own.
+
+What isn't worth it is self-service without governance: it's the fastest way for a mid-market company to lose confidence in its own numbers. The good news is that the guardrails require organizational decisions, not new technology — the tool you already have is enough.
+
+## Should I pull access and centralize everything back with the data team?
+
+No — recentralizing is regression, not correction. You go back to the request queue that motivated self-service in the first place, lose the speed gain, and frustrate users who learned to fend for themselves. The instinctive "only the data team builds official reports" fixes the symptom and recreates the original problem.
+
+The right path is separating exploration from official reporting, with different rules for each: full freedom for drafts in each team's own workspace, and rigid governance (single definition, single source, cross-approval) only for what reaches the board and strategic decisions. Whoever needs to explore, explores; whoever needs a trustworthy number goes to the official one.
+
+## How long does it take to fix a messy self-service BI?
+
+Cleaning up the past takes about 2–3 months of work — and restores confidence in what's left. The package: orphan dashboards to quarantine, duplicated logic migrated to the semantic layer, and the 20–30 metrics that matter defined with calculation, named owner, and data source documented before any new official dashboard.
+
+After that, maintenance is light: a 30-minute review per change to an official dashboard and a cemetery cleanup every 6 months (not accessed in 90 days → quarantine → obsolete). The sign it worked is counterintuitive: the number of dashboards decreases over time, not increases — maturity is measured in consolidation.

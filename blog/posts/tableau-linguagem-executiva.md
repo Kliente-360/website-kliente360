@@ -70,3 +70,25 @@ A combinação que funciona: **warehouse limpo + modelo de negócio bem definido
 A melhor métrica de qualidade pra um dashboard: *quantas decisões reais saíram dele no último trimestre*. Não acessos, não tempo de tela. Decisões. Se zero, mata e refaz. [O mesmo princípio vale pra métricas de produto que viram "north dust"](/blog/metricas-de-produto-north-dust.html) — o problema raramente é a métrica, é o sistema em volta.
 
 Empresas que adotam essa régua reduzem 60–80% do número de dashboards e — não por acaso — passam a confiar no que sobrou. Consultoria de dados decente entrega isso, não relatório.
+
+## Perguntas que sempre voltam
+
+Pra terminar, as dúvidas que mais aparecem quando esse assunto entra na sala de reunião.
+
+## Como saber se um dashboard executivo está funcionando?
+
+Contando quantas decisões reais saíram dele no último trimestre — essa é a métrica, não acessos nem tempo de tela. Dashboard que gerou zero decisão é decoração, por mais bonito que seja, e a atitude honesta é matar e refazer a partir da decisão que a diretoria precisa tomar.
+
+Um atalho pra diagnosticar: ele responde alguma das três perguntas que justificam existir? O que decidir essa semana, qual tendência afeta o próximo trimestre, ou onde a intuição do executivo está errada. Se não responde nenhuma, o problema não é de design — é de propósito.
+
+## Quantos KPIs um dashboard executivo deve mostrar?
+
+Muito menos do que o padrão do mercado — e a tela deve abrir com um único headline numérico, não com quinze indicadores. Quinze KPIs, três cores e quatro filtros na mesma tela é a marca registrada do dashboard de vaidade: tudo "importante", nada acionável.
+
+O padrão que ativa decisão é enxuto: o número que importa em palavras claras (tipo "3 contas estratégicas em risco de churn nas próximas 4 semanas"), uma linha de contexto comparativo logo abaixo, e drill que termina em próximo passo recomendado. Cada visão a mais precisa ganhar o espaço — não ocupar por inércia.
+
+## Tableau é melhor que Power BI ou Looker pra dashboard de diretoria?
+
+A ferramenta importa menos do que parece — os três entregam o padrão executivo bem quando você o constrói. A escolha entre elas (e Metabase) segue critérios de porte e stack de nuvem, e é decisão anterior ao dashboard em si.
+
+O que nenhuma delas substitui é o que costuma faltar: modelagem de dados sólida embaixo, discovery sério com quem vai decidir, e recomendação — que é trabalho de gente ou de ML, não da camada de visualização. Modelo ruim faz qualquer BI ficar bonito e impreciso; a combinação que funciona é warehouse limpo o suficiente, modelo de negócio bem definido e o BI como camada de leitura.

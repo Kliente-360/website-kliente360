@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena correr un modelo de churn sin estrategia de retención armada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Sin playbook, dueño y acciones probadas, el modelo es ejercicio académico — genera una lista que nadie acciona. Si tu empresa está en lo que llamamos Nivel 0 (sin estrategia de retención operativa), la inversión correcta es construir la estrategia primero y el modelo después. Invertir en el orden inverso es la razón número uno de &quot;proyecto de churn que no rindió&quot;.\n\nY la inversión de orden no sale barata: empezar por el modelo y armar la estrategia después suele costar entre 3 y 9 meses de retrabajo. Escribir el playbook, definir al dueño y recién ahí modelar es el camino más corto, no el más lento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánta precisión necesita un modelo de churn para ser útil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Menos de lo que parece — la utilidad viene de calibrar por el costo del error, no de la acertividad bruta. Un modelo con 70% de acertividad bien calibrado para falso negativo puede rendir más que uno de 90% calibrado para falso positivo, porque el falso negativo cuesta ingreso perdido y el falso positivo cuesta tiempo de CS. Esa relación de costos es del negocio, no del algoritmo.\n\nLa otra variable que pesa más que la precisión es la ventana de antelación. Si el vendedor necesita 45 días para revertir una salida, un modelo que prevé con 15 días de antelación es inútil aunque acierte casi todo. Calibrá ventana y costo antes de optimizar la métrica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo definir churn cuando el cliente no cancela formalmente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con un proxy comportamental específico para tu modelo de negocio. En SaaS B2C, 90 días sin login captura el churn pasivo que el usuario todavía no declaró. En varejo, es ausencia de compra en N días — con N variando por categoría (60 para mercado, 365 para electrónico), porque sin segmentar el modelo agregado es inútil. En B2B no contractual, la señal es caída abrupta de volumen de pedidos o cambio de frecuencia y ticket promedio.\n\nLo que no cambia entre contextos: la definición tiene que ser operativa, testeable y auditable. &quot;Cliente que desaparece&quot; no sirve; &quot;cliente sin compra en 180 días en la categoría calzado&quot; sirve."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -232,6 +265,17 @@
 <p><strong>Construí playbook de retención segmentado.</strong> Cliente alto valor + alta probabilidad de churn = vendedor sénior llama en 48h. Medio valor + alta probabilidad = automatización de mail + monitoreo. Sin segmentación, el equipo de CS se ahoga en 200 alertas.</p>
 <p><strong>Calibrá el modelo por el costo, no por la acertividad.</strong> Modelo con 70% de acertividad bien calibrado para falso negativo puede rendir más que modelo con 90% bien calibrado para falso positivo — depende del costo de cada error para el negocio.</p>
 <p><a href="/blog/es/dado-limpo-e-um-mito.html">Como en cualquier proyecto de dato en 2026</a>, el problema rara vez está en la técnica. Está en lo que se le pidió a la técnica antes de aplicarla. El análisis de churn sigue esa regla: equipo que define pérdida en alineación con estrategia de retención entrega modelo que reduce cancelación. Equipo que se saltea esa etapa entrega ejercicio de ML que se vuelve diapositiva de &quot;lecciones aprendidas&quot;.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las dudas que más aparecen cuando este tema llega a la mesa.</p>
+<h2>¿Vale la pena correr un modelo de churn sin estrategia de retención armada?</h2>
+<p>No. Sin playbook, dueño y acciones probadas, el modelo es ejercicio académico — genera una lista que nadie acciona. Si tu empresa está en lo que llamamos Nivel 0 (sin estrategia de retención operativa), la inversión correcta es construir la estrategia primero y el modelo después. Invertir en el orden inverso es la razón número uno de &quot;proyecto de churn que no rindió&quot;.</p>
+<p>Y la inversión de orden no sale barata: empezar por el modelo y armar la estrategia después suele costar entre 3 y 9 meses de retrabajo. Escribir el playbook, definir al dueño y recién ahí modelar es el camino más corto, no el más lento.</p>
+<h2>¿Cuánta precisión necesita un modelo de churn para ser útil?</h2>
+<p>Menos de lo que parece — la utilidad viene de calibrar por el costo del error, no de la acertividad bruta. Un modelo con 70% de acertividad bien calibrado para falso negativo puede rendir más que uno de 90% calibrado para falso positivo, porque el falso negativo cuesta ingreso perdido y el falso positivo cuesta tiempo de CS. Esa relación de costos es del negocio, no del algoritmo.</p>
+<p>La otra variable que pesa más que la precisión es la ventana de antelación. Si el vendedor necesita 45 días para revertir una salida, un modelo que prevé con 15 días de antelación es inútil aunque acierte casi todo. Calibrá ventana y costo antes de optimizar la métrica.</p>
+<h2>¿Cómo definir churn cuando el cliente no cancela formalmente?</h2>
+<p>Con un proxy comportamental específico para tu modelo de negocio. En SaaS B2C, 90 días sin login captura el churn pasivo que el usuario todavía no declaró. En varejo, es ausencia de compra en N días — con N variando por categoría (60 para mercado, 365 para electrónico), porque sin segmentar el modelo agregado es inútil. En B2B no contractual, la señal es caída abrupta de volumen de pedidos o cambio de frecuencia y ticket promedio.</p>
+<p>Lo que no cambia entre contextos: la definición tiene que ser operativa, testeable y auditable. &quot;Cliente que desaparece&quot; no sirve; &quot;cliente sin compra en 180 días en la categoría calzado&quot; sirve.</p>
 
         </div>
       </div>

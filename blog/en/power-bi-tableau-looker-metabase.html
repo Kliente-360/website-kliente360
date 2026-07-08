@@ -102,6 +102,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Tableau worth it for a mid-size company in Brazil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most cases, no — unless you have a dedicated BI team and a budget that supports the contract. At current exchange rates, Tableau Creator runs between R$ 1,500 and R$ 2,500 per user per month in Brazil, and the TCO of Tableau or Looker at mid-market size often adds up to R$ 200–400k per year across licensing and operations. Without a BI analyst to extract value from that visual flexibility, you&#39;re paying enterprise prices for Metabase-level results.\n\nThe exception: a mixed or AWS stack, an established BI team, and a genuine ad hoc exploration problem. In that scenario, Tableau has the best interface of the four and the contract can justify itself. Outside it, Power BI (if the stack is Microsoft) or Metabase covers the need at a fraction of the cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I start with Metabase and switch tools later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and that is exactly the healthy trajectory — growing beyond Metabase is maturity, not failure. Metabase is the fastest path to BI without a specialist: any analyst with basic SQL can operate it, the open-source version runs on any VM, and Cloud starts at around USD 500/month. For startups and SMEs, it is a hard entry point to beat.\n\nThe signal that it&#39;s time to migrate is clear: above ~200–300 active users, governance failures, granular permission issues, and slow queries start appearing. If the data underneath is modeled and owned, swapping the tool on top is the easy part — what makes migrations expensive is business logic trapped inside dashboards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I need to solve before picking a BI tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The data architecture — the visualization tool is the last stack decision, not the first. The order is: warehouse, transformation layer (dbt or native), semantic layer with single metric definitions, and only then the BI tool. Projects that start with &quot;we&#39;ll use Tableau&quot; tend to discover the data model can&#39;t support what&#39;s expected of it, and turn into two years of corrections.\n\nThe practical test: if each team already has its own number for the same metric, none of the four tools fixes that alone. Solve the model, governance, and metric ownership first; otherwise you&#39;ll switch tools in two years and reproduce the same problem on a new stack."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -229,6 +262,17 @@
 <h2>The question that comes before the license contract</h2>
 <p>The BI decision is, in practice, a data architecture decision with a visual interface. Whoever licenses the tool without solving what sits beneath — fragmented data, no semantic layer, no metric owner — will switch tools in two years and reproduce the same problem on a new stack.</p>
 <p>The question a specialized consultancy asks before recommending any tool: &quot;Is the data that will feed this BI modeled, governed, and with a clear owner?&quot; If the answer is not yes, that conversation needs to happen before the conversation with the license vendor.</p>
+<h2>Questions that keep coming back</h2>
+<p>Before wrapping up, the questions that come up most often when this decision hits the table.</p>
+<h2>Is Tableau worth it for a mid-size company in Brazil?</h2>
+<p>In most cases, no — unless you have a dedicated BI team and a budget that supports the contract. At current exchange rates, Tableau Creator runs between R$ 1,500 and R$ 2,500 per user per month in Brazil, and the TCO of Tableau or Looker at mid-market size often adds up to R$ 200–400k per year across licensing and operations. Without a BI analyst to extract value from that visual flexibility, you&#39;re paying enterprise prices for Metabase-level results.</p>
+<p>The exception: a mixed or AWS stack, an established BI team, and a genuine ad hoc exploration problem. In that scenario, Tableau has the best interface of the four and the contract can justify itself. Outside it, Power BI (if the stack is Microsoft) or Metabase covers the need at a fraction of the cost.</p>
+<h2>Can I start with Metabase and switch tools later?</h2>
+<p>Yes, and that is exactly the healthy trajectory — growing beyond Metabase is maturity, not failure. Metabase is the fastest path to BI without a specialist: any analyst with basic SQL can operate it, the open-source version runs on any VM, and Cloud starts at around USD 500/month. For startups and SMEs, it is a hard entry point to beat.</p>
+<p>The signal that it&#39;s time to migrate is clear: above ~200–300 active users, governance failures, granular permission issues, and slow queries start appearing. If the data underneath is modeled and owned, swapping the tool on top is the easy part — what makes migrations expensive is business logic trapped inside dashboards.</p>
+<h2>What do I need to solve before picking a BI tool?</h2>
+<p>The data architecture — the visualization tool is the last stack decision, not the first. The order is: warehouse, transformation layer (dbt or native), semantic layer with single metric definitions, and only then the BI tool. Projects that start with &quot;we&#39;ll use Tableau&quot; tend to discover the data model can&#39;t support what&#39;s expected of it, and turn into two years of corrections.</p>
+<p>The practical test: if each team already has its own number for the same metric, none of the four tools fixes that alone. Solve the model, governance, and metric ownership first; otherwise you&#39;ll switch tools in two years and reproduce the same problem on a new stack.</p>
 
         </div>
       </div>

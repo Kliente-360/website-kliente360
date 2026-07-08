@@ -70,3 +70,25 @@ The decision to operate CRM, data and AI as an integrated system is not about te
 Every isolated project has measurable, localized ROI: implementation time, adoption, automation of a specific task. The ROI of the system is different — it shows up in the gaps. In the lead that would not have been qualified, but the propensity model identified the right window. In the churn that did not happen because the agent had context to offer a solution before cancellation. In the renewal that closed in one call because the salesperson already had the full history.
 
 Those results do not appear in any of the three isolated projects. They appear when all three operate together — and when there is a specialist consultancy capable of connecting all three layers without treating each one as separate territory.
+
+## Questions that keep coming back
+
+Three doubts that surface in almost every conversation about connecting these layers.
+
+## Where should I start: CRM, data or AI?
+
+Start by diagnosing the connections, not by picking a layer in advance. The three questions in this piece — does sales decide using warehouse data? does the analyst know which insights turned into action? does the agent have access to the customer's history in CRM? — show exactly where the system is stuck, and that is where investment pays off first.
+
+That said, the system has a structural starting point: CRM is the contact surface with the real customer, and without it as a structured anchor, data has no business grounding. AI is the last piece to make sense — without reliable data and customer context beneath it, the agent acts on synthetic context.
+
+## Is it worth hiring a different vendor for each layer?
+
+Generally, no — that is precisely the pattern that produces the silos described here. Each request with its own budget, its own sponsor and its own vendor optimizes its layer's metric (users logging in, dashboards accessed, automation rate), and nobody answers for the metric that matters: a better-served customer, better decisions, an operation that scales without growing headcount at the same rate.
+
+The predictable result is three success reports and a business that does not change. The ROI of the system shows up in the gaps between layers — and the gap between layers is exactly what no single-layer vendor has an incentive to solve.
+
+## Why does my AI pilot impress in the demo and stall in production?
+
+Almost always because the agent lacks reliable, current data about the specific customer. In the demo, context is controlled; in production, the agent needs to know what the customer bought, when they renewed, which tickets they had open — and without a connection to CRM and the data layer, it answers generically. A generic response with an AI interface is not better than one without — just faster and more expensive to maintain.
+
+That is the predictable ceiling of the isolated AI project, and the way out is not more context in the prompt — that is localized rework that does not solve the structural problem. The way out is connecting the agent to real history: an enriched profile from the data layer, anchored in CRM, with the outcome of each interaction returning as new data.

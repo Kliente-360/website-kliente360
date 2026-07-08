@@ -88,3 +88,25 @@ La pregunta correcta antes de contratar no es "¿cuál es el plazo mínimo posib
 Seis semanas lo logran — si el alcance es honesto desde el inicio. La empresa que entra al proyecto con expectativas calibradas, un proceso mapeado antes de comenzar y un gerente comprometido con la adopción saldrá con una org funcionando y una base para crecer. La que entra esperando 14 días porque la propuesta prometió 14 días saldrá con una org configurada que necesitará ser reimplementada.
 
 La diferencia no está en Salesforce. Está en lo que cabe en un proyecto — y en la disposición de decirlo antes de firmar.
+
+## Preguntas que siempre vuelven
+
+Para terminar, las dudas que más aparecen cuando el tema es el plazo de implementación.
+
+## ¿Se puede implementar Salesforce en 14 días?
+
+Se puede configurar — no implementar. Lo que la "implementación express" entrega en dos semanas es creación de la org, objetos estándar configurados, leads importados desde una planilla, uno o dos dashboards básicos y acceso de usuario. Una instalación guiada. Lo que falta es justamente lo que hace funcionar al CRM: proceso comercial mapeado en las etapas, validación de campos por fase del embudo, automatización probada, reporte que el gerente usa en la reunión semanal y rollout con adopción real.
+
+La promesa de 14 días solo tiene sentido cuando el cliente ya sabe exactamente qué quiere, tiene datos limpios y no necesita nada más allá de la configuración estándar. Ese cliente existe, pero no es la mayoría. Para quien todavía está definiendo su proceso, 14 días entregan una herramienta que nadie usa — y a los 90 días la org está abandonada.
+
+## ¿Qué queda fuera de un MVP de Salesforce de 6 semanas?
+
+Cinco cosas, y vale comunicarlas antes de firmar: integración con ERP (Salesforce ↔ SAP, Totvs, Oracle es un proyecto con contrato propio), automatización compleja de Flows que envía correos al cliente o genera documentos, múltiples Clouds simultáneos (Sales + Service + Marketing en 6 semanas no es un MVP, es una carrera al fracaso), personalización pesada más allá de los objetos estándar, y reporting ejecutivo sofisticado — los dashboards de directorio vienen en la segunda ola, cuando ya hay 60+ días de datos reales.
+
+Un MVP no es una versión inferior del producto. Es la versión que entrega valor completo en un alcance menor — y que sobrevive 90 días de uso real sin necesitar parches.
+
+## ¿Cómo saber si mi alcance realmente cabe en 6 semanas?
+
+Pase el alcance por cuatro preguntas antes de firmar: cuántos objetos personalizados (más de 2 no estándar y el plazo ya enfrenta riesgo real); si hay integración con un sistema legado (todo lo que va más allá de las APIs/OAuth documentadas de Salesforce multiplica el riesgo de plazo por un mínimo de 2x); si el proceso comercial está mapeado antes de iniciar el proyecto (el proceso no documentado es la principal causa de desbordamientos de plazo en CRM); y cuántos usuarios en el go-live (por encima de 30, la adopción necesita presupuesto y cronograma propios).
+
+Si más de dos respuestas son "no" o "por encima del límite", el alcance honesto es de 10 a 12 semanas. Decirlo de antemano no es un problema. Descubrirlo en la semana 5, sí.

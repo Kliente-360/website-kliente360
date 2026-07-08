@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it worth buying Data Cloud just to use with Marketing Cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on volume and use case — Data Cloud isn&#39;t cheap, and a company with 50k contacts has no ROI; at 500k+ it starts to. Beyond volume, the rule has four more questions: are the sources that need to become context already accessible via mature APIs, is there a clear contextual-personalization use case, is identity resolved across systems, and is the marketing team ready to operate dynamic segmentation.\n\nA clear yes on all five makes a strong case. Hesitating on three or more means the company hasn&#39;t matured for this stack yet — and investing now becomes an underused project."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the most common mistakes when integrating Marketing Cloud with Data Cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two mistakes account for 80% of implementations stuck in an intermediate state for two years. The first is ingesting everything into Data Cloud without a defined use case — pulling all data &quot;for the future&quot; ends in 200 entities, high cost, and nobody knowing how to use it. Data Cloud grows from use case, not ingestion: start with 3–5 entities that serve real journeys.\n\nThe second is keeping the legacy sync running in parallel &quot;for safety&quot;. In 6 months you have two diverging universes — one from Data Cloud, one from the direct sync — and the campaign team doesn&#39;t know which to use. Migration needs to be complete, not dual-write."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where should the implementation actually start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With a specific marketing use case, not with &quot;let&#39;s unify the whole customer&quot;. Something like solving real-time suppression for one concrete campaign: 8 weeks, measurable ROI, a base to expand from. Before that, map the current gap — how many campaigns depend on stale data, how many &quot;promo for what I already bought&quot; errors go out per quarter. That diagnosis justifies or refutes the investment.\n\nAnd as you migrate, turn off the legacy: each new case in Data Cloud means switching off the corresponding old sync. Dual-write is debt that grows."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -235,6 +268,17 @@
 <p><strong>Start Data Cloud with a specific marketing use case.</strong> Not &quot;let&#39;s unify the whole customer&quot;. But &quot;let&#39;s solve real-time suppression for campaign X&quot;. 8 weeks, measurable ROI, base to expand.</p>
 <p><strong>Turn off the legacy as you migrate.</strong> Each new case in Data Cloud → turn off the corresponding legacy sync. Dual-write is debt that grows.</p>
 <p>Marketing Cloud alone continues to be a powerful platform in 2026. With Data Cloud underneath, it becomes the contextual activation the market describes in decks and rarely delivers. The difference isn&#39;t technological — it&#39;s architectural, and requires conscious decision from the start. Companies that do this deliver marketing that looks smart <em>and is</em>. Companies that don&#39;t keep sending promos to the customer who bought yesterday.</p>
+<h2>Questions that keep coming back</h2>
+<p>Before wrapping up, the three questions I hear most whenever this stack comes up.</p>
+<h2>Is it worth buying Data Cloud just to use with Marketing Cloud?</h2>
+<p>It depends on volume and use case — Data Cloud isn&#39;t cheap, and a company with 50k contacts has no ROI; at 500k+ it starts to. Beyond volume, the rule has four more questions: are the sources that need to become context already accessible via mature APIs, is there a clear contextual-personalization use case, is identity resolved across systems, and is the marketing team ready to operate dynamic segmentation.</p>
+<p>A clear yes on all five makes a strong case. Hesitating on three or more means the company hasn&#39;t matured for this stack yet — and investing now becomes an underused project.</p>
+<h2>What are the most common mistakes when integrating Marketing Cloud with Data Cloud?</h2>
+<p>Two mistakes account for 80% of implementations stuck in an intermediate state for two years. The first is ingesting everything into Data Cloud without a defined use case — pulling all data &quot;for the future&quot; ends in 200 entities, high cost, and nobody knowing how to use it. Data Cloud grows from use case, not ingestion: start with 3–5 entities that serve real journeys.</p>
+<p>The second is keeping the legacy sync running in parallel &quot;for safety&quot;. In 6 months you have two diverging universes — one from Data Cloud, one from the direct sync — and the campaign team doesn&#39;t know which to use. Migration needs to be complete, not dual-write.</p>
+<h2>Where should the implementation actually start?</h2>
+<p>With a specific marketing use case, not with &quot;let&#39;s unify the whole customer&quot;. Something like solving real-time suppression for one concrete campaign: 8 weeks, measurable ROI, a base to expand from. Before that, map the current gap — how many campaigns depend on stale data, how many &quot;promo for what I already bought&quot; errors go out per quarter. That diagnosis justifies or refutes the investment.</p>
+<p>And as you migrate, turn off the legacy: each new case in Data Cloud means switching off the corresponding old sync. Dual-write is debt that grows.</p>
 
         </div>
       </div>

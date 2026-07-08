@@ -64,3 +64,25 @@ What hasn't commoditized — and still requires careful decision-making — is i
 > The CDP function became a platform. Identity architecture remains the work of specialized consultancy.
 
 In 2026, a company still asking "which CDP should we buy?" is asking the wrong question. The right question is: which layer of customer data does my stack already have, and what does it not cover yet? From there, the decision is about gaps — not categories. And filling gaps costs less than switching platforms.
+
+## Questions that keep coming back
+
+To close, the three questions I hear most whenever this topic comes up.
+
+## Is an independent CDP still worth buying in 2026?
+
+Only in specific niches. Multi-cloud companies without a dominant vendor, marketing operations with heterogeneous stacks that won't accept lock-in, data teams that need platform mobility — in those three cases, the neutrality of a RudderStack or Tealium still pays for the integration cost. Outside them, an independent CDP is an answer to a question your stack has already answered.
+
+Before looking at vendors, check the use case: independent CDPs handle marketing channel activation well; real-time agent context requires an architecture the classic CDP doesn't deliver by design.
+
+## If we're already on Salesforce, do we need a separate CDP?
+
+Almost never. A Salesforce-first company already has Data Cloud available — or available to negotiate — and an independent CDP would become a second customer data layer, with high integration cost and little differential over what's already in the contract. In that scenario, the TCO case rarely closes for a separate CDP.
+
+What the decision does require is awareness of the horizon: buying Data Cloud means betting on the Salesforce ecosystem for at least 3–5 years. If that horizon is acceptable, the CDP discussion is over; if it isn't, the right question goes back to platform mobility.
+
+## What hasn't commoditized in customer data?
+
+Identity architecture. The tool became a platform feature, but deciding what the canonical customer key is and how to resolve identity conflicts between Sales Cloud, ERP, and the product platform still demands careful technical decisions — and that comes before any CDP or Data Cloud contract.
+
+That's why commoditization is good news without being the end of the work: the solved problem left the budget, the identity problem stayed. Get that layer wrong and any platform — bought or embedded — delivers a duplicated view of the customer.

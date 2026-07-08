@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is AI chargeback worth it for a small operation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — with few use cases and a low bill, showback is enough. If the company has 1–3 use cases in production and spends under USD 10k/month on inference, standing up a real debit process is disproportionate bureaucracy: a monthly report showing what each team consumed already creates the cost awareness that&#39;s missing at that stage.\n\nWhat doesn&#39;t work is staying on showback forever. Above 10 use cases or USD 50k/month, information without consequence becomes theater — at that point the path is chargeback by real cost or per-use-case budgets, or the distortion between teams keeps growing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do you start if nobody knows what each team spends today?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With the tagged inference log — nothing works before that. Every call needs to record team, use case, model, input/output tokens and calculated cost. Without it, any chargeback model is guesswork; with it, choosing among the four becomes a policy decision, not an engineering one.\n\nIn practice there are three paths: a self-hosted inference gateway (LiteLLM, Portkey, Helicone), the provider&#39;s native logging, or an SDK wrapper writing to your own warehouse. The gateway gives the most control and is the standard in mature operations. And timing matters: tagging from the first call is cheap; adding it later is a painful retrofit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you know AI FinOps is actually working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By PM behavior, not by the dashboard. The test is simple: ask each PM to say, without looking anything up, how much their use case cost last month. If nobody knows, the model exists on paper but hasn&#39;t reached decisions — and the classic symptom is finance still calling IT when the bill goes up.\n\nThe tipping point is when the product team itself starts asking whether a cheaper model would do the job, before IT suggests it. Until you get there, you&#39;re in cultural translation — which takes longer than the technical implementation, and that&#39;s normal."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -219,6 +252,17 @@
 <h2>Where AI FinOps silently fails</h2>
 <p>The signal that the model isn&#39;t working: the finance team still calls IT when the bill goes up. That means cost distribution didn&#39;t reach the visibility level that changes behavior. Diagnostic for who&#39;s implementing: ask each PM to say, without checking the dashboard, how much their use case cost last month. If nobody knows, FinOps exists on paper, not in decisions.</p>
 <p>The tipping point happens when a PM starts asking &quot;would this cheaper model work for this case?&quot; before IT suggests it. There the system is working. Until then, it&#39;s in cultural translation phase — and cultural translation takes longer than technical implementation.</p>
+<h2>Questions that keep coming back</h2>
+<p>Three doubts that surface in almost every conversation about this topic.</p>
+<h2>Is AI chargeback worth it for a small operation?</h2>
+<p>No — with few use cases and a low bill, showback is enough. If the company has 1–3 use cases in production and spends under USD 10k/month on inference, standing up a real debit process is disproportionate bureaucracy: a monthly report showing what each team consumed already creates the cost awareness that&#39;s missing at that stage.</p>
+<p>What doesn&#39;t work is staying on showback forever. Above 10 use cases or USD 50k/month, information without consequence becomes theater — at that point the path is chargeback by real cost or per-use-case budgets, or the distortion between teams keeps growing.</p>
+<h2>Where do you start if nobody knows what each team spends today?</h2>
+<p>With the tagged inference log — nothing works before that. Every call needs to record team, use case, model, input/output tokens and calculated cost. Without it, any chargeback model is guesswork; with it, choosing among the four becomes a policy decision, not an engineering one.</p>
+<p>In practice there are three paths: a self-hosted inference gateway (LiteLLM, Portkey, Helicone), the provider&#39;s native logging, or an SDK wrapper writing to your own warehouse. The gateway gives the most control and is the standard in mature operations. And timing matters: tagging from the first call is cheap; adding it later is a painful retrofit.</p>
+<h2>How do you know AI FinOps is actually working?</h2>
+<p>By PM behavior, not by the dashboard. The test is simple: ask each PM to say, without looking anything up, how much their use case cost last month. If nobody knows, the model exists on paper but hasn&#39;t reached decisions — and the classic symptom is finance still calling IT when the bill goes up.</p>
+<p>The tipping point is when the product team itself starts asking whether a cheaper model would do the job, before IT suggests it. Until you get there, you&#39;re in cultural translation — which takes longer than the technical implementation, and that&#39;s normal.</p>
 
         </div>
       </div>

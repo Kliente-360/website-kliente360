@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does multi-cloud actually protect you from lock-in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not from the lock-in that hurts. Multi-cloud addresses compute and networking lock-in — but the genuinely expensive lock-in is data and proprietary services: pulling 1 PB out of S3 costs in the range of US$ 20,000–90,000 in egress fees, and the dependency on Redshift, BigQuery, or Synapse (SQL dialect, specific integrations) doesn&#39;t disappear because you have a second provider.\n\nWorse: using multi-cloud to avoid lock-in is a contradiction. It only works if you give up proprietary services — which are exactly what makes each provider worth using. Before deciding for this reason, calculate the hypothetical lock-in cost against the multi-cloud overhead over five years. In 80% of cases, the overhead wins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much more does it cost to run two clouds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In the range of 30–40% operational overhead compared to an equivalent well-configured single-cloud setup — the estimate from teams that operated real multi-cloud for two or more years. It shows up in engineering hours, cross-environment support tickets, IAM boundary permission incidents, and onboarding engineers who need to learn two operational worlds.\n\nAdd per-GB egress fees for traffic crossing cloud boundaries, 20–100ms of extra latency between workloads, and two complete sets of operational skills. The relevant number is the projected overhead over five years — not the setup cost for month one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "We inherited two clouds through an acquisition — should we consolidate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The real decision is to consolidate or to coexist rigorously — what doesn&#39;t work is pretending the situation is strategic. Multi-cloud by acquisition inheritance is an accident, not a design, and calling it &quot;strategy&quot; only postpones the choice.\n\nIf consolidating doesn&#39;t pay off (expensive migration, stable workloads), coexisting is legitimate — as long as it&#39;s genuinely operationalized: defined governance, cross-cloud orchestration tooling, unified observability, and egress accounting. What you can&#39;t do is let it grow into parallel silos without governance, which is where inertia naturally leads."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -228,6 +261,17 @@
 <p>If the answer is &quot;because the board asked&quot; or &quot;because the competitor does it&quot; — there&#39;s a strategic communication problem, not an architecture problem.</p>
 <p>Anyone defining <a href="/blog/en/modern-data-stack-2026.html">data architecture in 2026</a> faces pressure to adopt what sounds modern. Multi-cloud sounds modern — and that is, frequently, the only real reason behind the decision.</p>
 <p>Multi-cloud isn&#39;t wrong. It&#39;s expensive — and the cost is only justified when the specific gain (regulation, proven technical capability, DR with contractual SLA, or real contract leverage) exceeds the permanent overhead of operating two providers with quality. The right question isn&#39;t &quot;should we be multi-cloud?&quot; but &quot;what specific problem are we solving that single cloud, well operated, doesn&#39;t solve?&quot;</p>
+<h2>Questions that keep coming back</h2>
+<p>To close, the three doubts that show up most often when this debate reaches the committee.</p>
+<h2>Does multi-cloud actually protect you from lock-in?</h2>
+<p>Not from the lock-in that hurts. Multi-cloud addresses compute and networking lock-in — but the genuinely expensive lock-in is data and proprietary services: pulling 1 PB out of S3 costs in the range of US$ 20,000–90,000 in egress fees, and the dependency on Redshift, BigQuery, or Synapse (SQL dialect, specific integrations) doesn&#39;t disappear because you have a second provider.</p>
+<p>Worse: using multi-cloud to avoid lock-in is a contradiction. It only works if you give up proprietary services — which are exactly what makes each provider worth using. Before deciding for this reason, calculate the hypothetical lock-in cost against the multi-cloud overhead over five years. In 80% of cases, the overhead wins.</p>
+<h2>How much more does it cost to run two clouds?</h2>
+<p>In the range of 30–40% operational overhead compared to an equivalent well-configured single-cloud setup — the estimate from teams that operated real multi-cloud for two or more years. It shows up in engineering hours, cross-environment support tickets, IAM boundary permission incidents, and onboarding engineers who need to learn two operational worlds.</p>
+<p>Add per-GB egress fees for traffic crossing cloud boundaries, 20–100ms of extra latency between workloads, and two complete sets of operational skills. The relevant number is the projected overhead over five years — not the setup cost for month one.</p>
+<h2>We inherited two clouds through an acquisition — should we consolidate?</h2>
+<p>The real decision is to consolidate or to coexist rigorously — what doesn&#39;t work is pretending the situation is strategic. Multi-cloud by acquisition inheritance is an accident, not a design, and calling it &quot;strategy&quot; only postpones the choice.</p>
+<p>If consolidating doesn&#39;t pay off (expensive migration, stable workloads), coexisting is legitimate — as long as it&#39;s genuinely operationalized: defined governance, cross-cloud orchestration tooling, unified observability, and egress accounting. What you can&#39;t do is let it grow into parallel silos without governance, which is where inertia naturally leads.</p>
 
         </div>
       </div>

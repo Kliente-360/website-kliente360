@@ -97,3 +97,25 @@ Se sua empresa está pra contratar parceiro Salesforce, três movimentos:
 **Calcule [custo total honesto](/blog/salesforce-roi-matriz.html), não preço de proposta.** Consultoria que cobra 40% mais mas entrega em metade do tempo é mais barata. Consultoria barata que estende escopo dobra o custo no terceiro mês.
 
 Salesforce Partner Program em 2026 é estrutura útil — pra Salesforce organizar seu ecossistema. Pra cliente, é ponto de partida. A decisão de contratação que rende vem do que está embaixo do tier: nomes, cases, especialização, incentivo. Empresa que olha embaixo escolhe bem. Empresa que decide pelo logo no site da consultoria descobre o que estava embaixo no terceiro mês de projeto — geralmente em reunião difícil.
+
+## Perguntas que sempre voltam
+
+Pra fechar, as dúvidas que mais escuto quando cliente está escolhendo parceiro.
+
+## Parceiro Summit é sempre melhor que Crest?
+
+Não. Summit indica volume operacional (50–200+ consultores), relacionamento com a Salesforce e CSAT mínimo agregado — o que importa em projeto grande e complexo (R$ 5M+, multi-cloud, internacional). Pra projeto médio (R$ 200k–800k, Sales Cloud ou Service Cloud), consultoria Crest especializada no seu setor frequentemente entrega melhor que Summit generalista — e cobra 30–50% menos.
+
+Tem até antipadrão clássico aí: empresa média contrata Summit "pra ter garantia", recebe consultor júnior porque os sêniores estão nos projetos grandes, paga premium e a qualidade decepciona. Tier é sinal, não diagnóstico.
+
+## Como avaliar uma consultoria Salesforce antes de assinar?
+
+Com cinco perguntas diretas na conversa de proposta: quem nominalmente vai estar no projeto (cargo e anos de experiência), cases públicos no seu setor e porte com 2 clientes pra você ligar, qual especialização cobre o seu escopo, qual o modelo de comissão (licença vs. hora vs. resultado), e quem é o sócio responsável e em quantas reuniões você o vê.
+
+Quem responde as cinco com clareza é candidato sério. Quem hesita em duas ou mais está vendendo pitch — e "temos 200 certificações" sem nomes é marketing, porque empresa grande tem time bom *e* time não-tão-bom, e você pode ficar com o segundo.
+
+## O modelo de comissão do parceiro importa mesmo?
+
+Importa, e muda a leitura de tudo que ele recomenda. Consultoria que ganha por licença vendida tem incentivo pra empurrar Industries quando Sales Cloud puro resolveria, empurrar Marketing Cloud e Data Cloud quando o caso não pede, e expandir escopo quando deveria fechar. Modelo de hora alinha incentivos de outro jeito.
+
+É pergunta sensível, mas legítima — e no fim vale comparar custo total honesto, não preço de proposta: consultoria que cobra 40% mais e entrega em metade do tempo é mais barata que a barata que estende escopo e dobra o custo no terceiro mês.

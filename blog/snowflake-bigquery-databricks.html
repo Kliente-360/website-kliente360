@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vale a pena trocar de warehouse em 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Na maioria dos casos, não — e essa é a conta que quase nunca entra no business case. Migração de warehouse custa de 6 a 18 meses de equipe sênior, e esse custo raramente aparece no deck do &quot;switch&quot;. Se o motivo é performance e o warehouse atual já entrega queries em segundos, o ganho é marginal. Se é custo, o problema quase sempre é governança — e vai reaparecer no warehouse novo.\n\nA troca faz sentido quando algum dos quatro critérios grita: stack já pesando pra um lado, perfil do time desalinhado da ferramenta, roadmap de IA/ML que o warehouse atual não cobre. Quem troca sem responder isso com clareza costuma migrar duas vezes em três anos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual dos três é o mais barato?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nenhum, em abstrato — o custo real depende do seu padrão de uso, não da tabela de preço. Os três publicam valores por crédito, hora ou query escaneada, e nenhum desses números reflete a fatura que vai chegar. O que decide é pico vs. uso constante, maturidade do time em otimizar queries e governança básica (auto-suspend funcionando faz diferença real).\n\nO caminho prático: pegar o uso do último trimestre e simular os três no preço público. As diferenças costumam ficar entre 30 e 50%, e raramente o &quot;mais caro&quot; do papel é o mais caro na prática. Empresa que pula essa simulação descobre fatura 2–3× maior no terceiro mês."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso do Databricks pra usar IA?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não, se o plano é rodar LLM via API com RAG sobre dados do warehouse — qualquer um dos três resolve isso com plugins externos. O que muita empresa chama de &quot;roadmap de IA&quot; é exatamente esse cenário, e ele não justifica trocar de plataforma.\n\nO Databricks vale a diferença quando o plano envolve treinar modelos próprios, feature store e MLOps sério — aí ele tem cerca de 18 meses de vantagem em integração nativa sobre os outros dois. A pergunta honesta antes de decidir é se o gargalo real é o warehouse ou o time."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -220,6 +253,17 @@
 <p><strong>Cálculo de custo histórico simulado.</strong> Pegar uso real do último trimestre (volume scaneado, número de queries, picos) e simular cada um dos três no preço público. Diferenças costumam ser de 30–50%, e raramente o &quot;mais caro&quot; do papel é o mais caro na prática.</p>
 <p><strong>Conversa com 2 clientes de cada um, do mesmo porte que você.</strong> Vendor te conecta. Se não conecta, péssimo sinal. Empresa de porte similar te diz em 30 minutos o que folheto esconde em 100 páginas.</p>
 <p>Os três warehouses são produto maduro de empresa séria. A pior decisão é assinar pelo melhor pitch. A segunda pior é não decidir por seis meses por medo de errar. A melhor é entender que <a href="/blog/dbt-na-pratica.html">a sigla do warehouse importa menos do que como a modelagem é versionada em cima dele</a> — e que <a href="/blog/modelagem-dimensional-2026.html">modelagem dimensional bem feita continua valendo em 2026</a>, independente da escolha de stack. (Pra quem quer o ângulo complementar — não qual é melhor, mas <a href="/blog/databricks-snowflake-bigquery-lock-in.html">qual é mais caro abandonar</a> — vale ler o exame de lock-in. E pra entender <a href="/blog/modern-data-stack-2026.html">onde cada warehouse se encaixa no mapa do que sobreviveu do Modern Data Stack</a>, a leitura complementa.) Antes de avaliar uma mudança para lakehouse, <a href="/blog/lakehouse-vs-warehouse.html">vale confirmar se os critérios de adoção realmente se aplicam</a>.</p>
+<h2>Perguntas que sempre voltam</h2>
+<p>Antes de fechar, as três dúvidas que mais chegam quando essa decisão entra na pauta.</p>
+<h2>Vale a pena trocar de warehouse em 2026?</h2>
+<p>Na maioria dos casos, não — e essa é a conta que quase nunca entra no business case. Migração de warehouse custa de 6 a 18 meses de equipe sênior, e esse custo raramente aparece no deck do &quot;switch&quot;. Se o motivo é performance e o warehouse atual já entrega queries em segundos, o ganho é marginal. Se é custo, o problema quase sempre é governança — e vai reaparecer no warehouse novo.</p>
+<p>A troca faz sentido quando algum dos quatro critérios grita: stack já pesando pra um lado, perfil do time desalinhado da ferramenta, roadmap de IA/ML que o warehouse atual não cobre. Quem troca sem responder isso com clareza costuma migrar duas vezes em três anos.</p>
+<h2>Qual dos três é o mais barato?</h2>
+<p>Nenhum, em abstrato — o custo real depende do seu padrão de uso, não da tabela de preço. Os três publicam valores por crédito, hora ou query escaneada, e nenhum desses números reflete a fatura que vai chegar. O que decide é pico vs. uso constante, maturidade do time em otimizar queries e governança básica (auto-suspend funcionando faz diferença real).</p>
+<p>O caminho prático: pegar o uso do último trimestre e simular os três no preço público. As diferenças costumam ficar entre 30 e 50%, e raramente o &quot;mais caro&quot; do papel é o mais caro na prática. Empresa que pula essa simulação descobre fatura 2–3× maior no terceiro mês.</p>
+<h2>Preciso do Databricks pra usar IA?</h2>
+<p>Não, se o plano é rodar LLM via API com RAG sobre dados do warehouse — qualquer um dos três resolve isso com plugins externos. O que muita empresa chama de &quot;roadmap de IA&quot; é exatamente esse cenário, e ele não justifica trocar de plataforma.</p>
+<p>O Databricks vale a diferença quando o plano envolve treinar modelos próprios, feature store e MLOps sério — aí ele tem cerca de 18 meses de vantagem em integração nativa sobre os outros dois. A pergunta honesta antes de decidir é se o gargalo real é o warehouse ou o time.</p>
 
         </div>
       </div>

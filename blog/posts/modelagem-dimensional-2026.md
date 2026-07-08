@@ -86,3 +86,25 @@ Se sua empresa está discutindo "lakehouse e modelagem é overhead", três movim
 **Resista ao "vamos modelar depois".** [Mesmo erro do dado limpo depois](/blog/dado-limpo-e-um-mito.html). Modelar quando o problema explode é 5× mais caro que modelar quando o uso começa.
 
 Modelagem dimensional em 2026 não é nostalgia. É a forma testada por 30 anos de organizar dado pra consumo analítico — e nenhuma evolução de storage tornou isso obsoleto. Lakehouse é peça nova; dimensional continua sendo método. Quem combina os dois entrega plataforma sólida. Quem tenta substituir um pelo outro descobre o gap em 18 meses, geralmente em reunião difícil sobre número divergente.
+
+## Perguntas que sempre voltam
+
+Antes de fechar, as dúvidas que mais aparecem quando esse assunto entra na mesa.
+
+## Vale a pena fazer modelagem dimensional em cima de um lakehouse?
+
+Vale — e é exatamente a arquitetura que funciona em 2026: lakehouse como storage, dimensional como camada semântica. Não é escolher um ou outro. Bronze e silver ficam no lakehouse (dado bruto e limpo, formato aberto, storage barato), e a camada gold recebe modelagem dimensional via dbt mart — fato + dimensão, métricas pré-calculadas, governança forte.
+
+Esse é o padrão medallion, e hoje é consenso entre quem operou os dois mundos. Quem implementa só bronze + silver tem um warehouse caótico mascarado de lakehouse moderno. A camada gold dimensional é o que transforma storage flexível em plataforma que a diretoria confia.
+
+## O que acontece se a empresa pular a modelagem pra ir mais rápido?
+
+Ela reconstrói a modelagem dimensional dentro do lakehouse nos 18 meses seguintes — com nomes diferentes, mas a mesma estrutura. Três problemas aparecem em 12–18 meses: cada analista vira arquiteto e produz versões divergentes da mesma análise; queries que rodavam em segundo passam a levar 30 segundos e o time reinventa pré-agregação caso a caso; e o histórico vira espaguete porque "cliente em março" e "cliente hoje" se confundem, geralmente descoberto em auditoria.
+
+Modelar quando o problema explode é 5× mais caro que modelar quando o uso começa. O atalho não é atalho — é dívida com juros.
+
+## Quando dá pra dispensar a modelagem dimensional?
+
+Quando a empresa responde "não" às cinco perguntas da régua: menos de 20 dashboards executivos, sem necessidade de histórico de dimensão (SCD), menos de 10 pessoas modelando, sem dbt rodando e sem caso onde performance de query é crítica. Nesse cenário, o custo de manter um modelo dimensional formal pode não se pagar ainda.
+
+Mas se qualquer uma das cinco vira "sim" ou "depende", a modelagem continua valendo. E o mais comum é que empresas em crescimento cruzem esses limites sem perceber — e descubram o gap em reunião difícil sobre número divergente.

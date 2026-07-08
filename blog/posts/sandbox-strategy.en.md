@@ -86,3 +86,25 @@ If your Salesforce organization has symptoms of a broken strategy — recurring 
 **Semi-annual audit.** Every 6 months, the team looks at: active sandboxes, named owner, last refresh, real usage. Retires obsolete ones (each costs license), reorganizes active ones. Without this routine, it becomes a cemetery.
 
 A sandbox in Salesforce is the environment where you're allowed to err. A company that operates well in sandbox delivers with predictability. A company that operates poorly — or skips sandbox in haste — finds the error in the first place where it isn't allowed: production. The difference between the two worlds is strategy, not technical talent.
+
+## Questions that keep coming back
+
+Before wrapping up, the three questions that come up most whenever sandboxes hit the table.
+
+## How many sandboxes does my company actually need?
+
+For a mid-market company, the stack that works has three layers before production: one Developer Sandbox per developer (refreshed on demand, so each dev works in isolation without blocking anyone), one Partial Copy for continuous integration that receives everyone's merges via Git/Salesforce DX, and one Full Sandbox for UAT/staging that mirrors production, where the customer tests before approving the deploy. That pipeline covers 95% of needs.
+
+The common mistake is saving money by cramming everything into a single shared sandbox: devs step on each other's changes, UAT runs on stale data, and bugs in production become routine. Using only Developer Sandboxes saves on license — and finds the bugs in the one place where you're not allowed to err.
+
+## Is a Full Sandbox worth the cost?
+
+Yes, if the project is serious — it's the only environment that faithfully reflects production, with a complete copy of metadata and data. For load testing, full regression, and training that needs a real scenario, there's no substitute: Partial Copy works with a data sample, not the real volume.
+
+The license cost is real, but the cost of not having one is bigger: approving deploys against an environment months behind production is the recipe for "it passed QA in the sandbox" — the incomplete truth leadership hears after the fire. The practical constraint is the 29-day refresh cycle, so it needs disciplined cadence to stay useful.
+
+## How often should sandboxes be refreshed?
+
+On a planned, calendared cadence — not when someone remembers. The reference: Developer Sandboxes weekly, Partial Copy every 5 days (say, Thursday morning, every other week), Full Sandbox on its 29-day cycle — first Sunday of the month, with an announced maintenance window. Without cadence, refresh happens too late and the team is back to "4 months, maybe 6".
+
+A useful thermometer: a healthy Full Sandbox refresh is a 4–6 hour event, automated, nobody loses sleep. When it turns into a week-long project with prep, plan, and escalation, it's a sign it's being done rarely and everything has piled up.

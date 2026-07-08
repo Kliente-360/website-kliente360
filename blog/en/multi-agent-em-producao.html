@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to run a multi-agent system in production?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In our case, about USD 7,700 a month — more than double the initial budget of &quot;about USD 3k of inference&quot;. Inference was only <del>2,400; the rest came from infrastructure (</del>600), technical sustaining with one engineer at 30% of their time (<del>3,500), and eval governance (</del>1,200). Sustaining and governance are the lines nobody anticipates.\n\nThe practical rule we kept: budget 3× the initial estimated cost. Presenting the full bill from day 1 is what prevents a bitter renegotiation in month 6 — in our case, the equation only closed because the estimated monthly ROI (~USD 12k) covered the total."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many agents should you start with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fewer than you think — if we went back to week 1, we&#39;d start with 3 instead of 5. Every extra agent is coordination budget: it adds latency, adds cost, and creates one more data contract that can fail silently. In week 4 we killed an agent whose output was rarely used, and the system got 22% cheaper, 4s faster, and marginally more accurate.\n\nThe merge criterion: when two contiguous agents share the same &quot;mental perspective&quot; — same model, similar prompts, one&#39;s output feeding straight into the other — specialization is luxury, not architecture. Start minimal and add an agent only when the use case proves it can&#39;t work without it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is multi-agent worth it for my company?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It&#39;s worth it if you have high volume (more than 5,000 interactions/month), high value per interaction, and a dedicated technical team that will care for the system for 12 months without complaining. Outside those three conditions, it&#39;s paper architecture — pretty, citable, and expensive to maintain.\n\nIf the answer to any of them is no, the honest recommendation is to simplify: a single well-designed agent tends to deliver 70% of the value with 30% of the complexity. Multi-agent works — but it works expensive, with real fragility, demanding observability and continuous-operation muscle that no framework white-paper mentions."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -256,6 +289,17 @@
 <p>Multi-agent works. But it works expensive, with real fragility, and demanding a team with continuous-operation muscle. Before proposing a multi-agent system to a client, the question that unlocks the decision is: do you have a team that will take care of this for 12 months without complaining? If the answer is no, the honest recommendation is to simplify — maybe a single well-designed agent delivers 70% of the value with 30% of the complexity.</p>
 <p>Cases where multi-agent pays off: high volume (&gt; 5,000 interactions/month), high value per interaction (each error is expensive), and existence of dedicated technical team. Outside that, it&#39;s paper architecture — pretty, citable, and expensive to maintain.</p>
 <p>90 days later, we keep the 4 remaining agents in production, with predictable cost and reliable metrics. But the honest version of the story is not &quot;it worked out&quot; — it&#39;s &quot;it worked out after revising architecture 3 times, killing 1 agent, and investing in observability nobody sold as a priority&quot;. That&#39;s the real way multi-agent systems thrive.</p>
+<h2>Questions that keep coming back</h2>
+<p>Three questions everyone asks after reading this diary — with the answers the 90 days gave us.</p>
+<h2>How much does it cost to run a multi-agent system in production?</h2>
+<p>In our case, about USD 7,700 a month — more than double the initial budget of &quot;about USD 3k of inference&quot;. Inference was only <del>2,400; the rest came from infrastructure (</del>600), technical sustaining with one engineer at 30% of their time (<del>3,500), and eval governance (</del>1,200). Sustaining and governance are the lines nobody anticipates.</p>
+<p>The practical rule we kept: budget 3× the initial estimated cost. Presenting the full bill from day 1 is what prevents a bitter renegotiation in month 6 — in our case, the equation only closed because the estimated monthly ROI (~USD 12k) covered the total.</p>
+<h2>How many agents should you start with?</h2>
+<p>Fewer than you think — if we went back to week 1, we&#39;d start with 3 instead of 5. Every extra agent is coordination budget: it adds latency, adds cost, and creates one more data contract that can fail silently. In week 4 we killed an agent whose output was rarely used, and the system got 22% cheaper, 4s faster, and marginally more accurate.</p>
+<p>The merge criterion: when two contiguous agents share the same &quot;mental perspective&quot; — same model, similar prompts, one&#39;s output feeding straight into the other — specialization is luxury, not architecture. Start minimal and add an agent only when the use case proves it can&#39;t work without it.</p>
+<h2>Is multi-agent worth it for my company?</h2>
+<p>It&#39;s worth it if you have high volume (more than 5,000 interactions/month), high value per interaction, and a dedicated technical team that will care for the system for 12 months without complaining. Outside those three conditions, it&#39;s paper architecture — pretty, citable, and expensive to maintain.</p>
+<p>If the answer to any of them is no, the honest recommendation is to simplify: a single well-designed agent tends to deliver 70% of the value with 30% of the complexity. Multi-agent works — but it works expensive, with real fragility, demanding observability and continuous-operation muscle that no framework white-paper mentions.</p>
 
         </div>
       </div>

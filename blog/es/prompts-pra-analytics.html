@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Puedo confiar en el SQL que genera el ChatGPT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No sin validación — en al menos la mitad de los casos, el SQL generado tiene un error sutil que pasa desapercibido. Los tres modos de falla más comunes: columna que no existe en el schema (el LLM inventa <code>orders.total</code> cuando es <code>orders.amount_total</code>), definición de negocio genérica que diverge de la tuya (&quot;activo&quot; en 30 días vs. 90 días) y agregación inflada por JOIN contra una dimensión duplicada. Ninguno produce un número absurdo — producen un número plausible y equivocado.\n\nEl agravante es de comportamiento: como el LLM presenta el SQL con confianza, el analista revisa menos de lo que revisaría el SQL de un colega. La regla práctica: SQL generado es borrador hasta pasar por validación — sandbox, eval set o al menos revisión contra las definiciones oficiales de métrica."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pongo en el prompt para que el LLM se equivoque menos con el SQL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dos cosas: el schema del warehouse y tus definiciones oficiales de negocio — nunca la pregunta cruda sola. El prompt tiene que cargar la estructura de las tablas-clave con descripciones (dbt docs alimenta eso bien) y las 5–10 definiciones core como parte fija del system prompt: qué es cliente activo, cómo se calcula el ingreso, qué cuenta como churn. Sin schema, el LLM inventa columnas; sin definiciones, usa la genérica y el número diverge.\n\nEl paso siguiente es apuntar el LLM a la capa semántica (dbt mart o semantic layer) en vez del warehouse crudo — eso reduce el error de definición en 80%. Un buen prompt no es una frase mágica; es contexto estructurado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena construir una herramienta interna en vez de dejar que el equipo use el ChatGPT directo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale, si el equipo ya genera SQL con LLM en el día a día — el &quot;ChatGPT abierto&quot; sin gobernanza es improvisación que se vuelve incidente en 3–6 meses. La interfaz controlada empaqueta lo que el uso suelto no tiene: schema-aware prompt, definiciones de negocio embebidas, ejecución en sandbox read-only y log automático de toda interacción. Costo alto al inicio, ROI claro en 6 meses.\n\nSi todavía no podés construirla, empezá por los movimientos baratos: conexión read-only restringida a tablas analíticas, sesión de 1 hora entrenando al equipo en los tres modos de falla, y log de quién generó qué. Sin log, la gobernanza de IA en analytics simplemente no existe."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -228,6 +261,17 @@
 <p><strong>Capacitá al equipo para desconfiar.</strong> Sesión de 1 hora mostrando los tres modos de falla (schema, definición, JOIN). Cuando el equipo entiende cómo el LLM se equivoca, el uso se vuelve más cuidadoso.</p>
 <p><strong>Integrá con la capa semántica.</strong> <a href="/blog/es/dbt-na-pratica.html">dbt mart o semantic layer</a> define métricas; el LLM consulta la capa, no el warehouse crudo. Reduce el error de definición en 80%.</p>
 <p>LLM en analytics en 2026 es una de las oportunidades más claras de productividad — y una de las más peligrosas sin disciplina. La diferencia entre las dos posturas no está en qué modelo se elige. Está en el pipeline construido alrededor, con validación, contexto y log que tratan al LLM como herramienta crítica — no como asistente confiable por inercia.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Para cerrar, las tres dudas que más escucho cuando este tema aparece.</p>
+<h2>¿Puedo confiar en el SQL que genera el ChatGPT?</h2>
+<p>No sin validación — en al menos la mitad de los casos, el SQL generado tiene un error sutil que pasa desapercibido. Los tres modos de falla más comunes: columna que no existe en el schema (el LLM inventa <code>orders.total</code> cuando es <code>orders.amount_total</code>), definición de negocio genérica que diverge de la tuya (&quot;activo&quot; en 30 días vs. 90 días) y agregación inflada por JOIN contra una dimensión duplicada. Ninguno produce un número absurdo — producen un número plausible y equivocado.</p>
+<p>El agravante es de comportamiento: como el LLM presenta el SQL con confianza, el analista revisa menos de lo que revisaría el SQL de un colega. La regla práctica: SQL generado es borrador hasta pasar por validación — sandbox, eval set o al menos revisión contra las definiciones oficiales de métrica.</p>
+<h2>¿Qué pongo en el prompt para que el LLM se equivoque menos con el SQL?</h2>
+<p>Dos cosas: el schema del warehouse y tus definiciones oficiales de negocio — nunca la pregunta cruda sola. El prompt tiene que cargar la estructura de las tablas-clave con descripciones (dbt docs alimenta eso bien) y las 5–10 definiciones core como parte fija del system prompt: qué es cliente activo, cómo se calcula el ingreso, qué cuenta como churn. Sin schema, el LLM inventa columnas; sin definiciones, usa la genérica y el número diverge.</p>
+<p>El paso siguiente es apuntar el LLM a la capa semántica (dbt mart o semantic layer) en vez del warehouse crudo — eso reduce el error de definición en 80%. Un buen prompt no es una frase mágica; es contexto estructurado.</p>
+<h2>¿Vale la pena construir una herramienta interna en vez de dejar que el equipo use el ChatGPT directo?</h2>
+<p>Vale, si el equipo ya genera SQL con LLM en el día a día — el &quot;ChatGPT abierto&quot; sin gobernanza es improvisación que se vuelve incidente en 3–6 meses. La interfaz controlada empaqueta lo que el uso suelto no tiene: schema-aware prompt, definiciones de negocio embebidas, ejecución en sandbox read-only y log automático de toda interacción. Costo alto al inicio, ROI claro en 6 meses.</p>
+<p>Si todavía no podés construirla, empezá por los movimientos baratos: conexión read-only restringida a tablas analíticas, sesión de 1 hora entrenando al equipo en los tres modos de falla, y log de quién generó qué. Sin log, la gobernanza de IA en analytics simplemente no existe.</p>
 
         </div>
       </div>

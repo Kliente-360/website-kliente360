@@ -66,3 +66,25 @@ Suppose you measured and got 65% accuracy. Not good; not terrible. Three practic
 The combination that works: rigorous measurement + focused iteration + transparency with leadership on the number and the path. That trio separates an AI project that ships from one that lands in the third governance plan in 2027.
 
 The uncomfortable metric isn't the problem. It's the only tool for getting out of it. (Combined with [rigorous inference-cost control](/blog/en/custos-reais-de-inferencia.html), it delivers the complete equation of economic AI in production.)
+
+## Questions that keep coming back
+
+Three doubts that surface in almost every conversation about agent evaluation.
+
+## How much does it cost and how long does it take to build an eval set?
+
+One to two weeks to assemble — and after that, running it is trivial. The heavy lifting is curating 50–200 questions representative of the use case, with ground truth reviewed by a domain specialist. Once that's done, every system change (new prompt, new model, tuned RAG) runs against the same baseline in minutes.
+
+It sounds expensive for a pilot, but it's the most profitable technical investment in any AI project: without an eval set, every release is a gamble, and regressions only surface when users complain. Worth remembering it doesn't replace weekly production sampling — the eval set catches regressions, sampling catches drift.
+
+## What accuracy rate is good enough for production?
+
+It depends on the risk of the use case — and it's a product decision, not an engineering one. Low-risk support can operate at 70% accuracy, as long as escalation to a human is well designed. Regulated financial customer service demands 95% at minimum. The mistake is defining no floor at all and scaling blind.
+
+And a middling number — say 65% — isn't a final verdict: it's a starting point. Decomposing the error by category (retrieval, generation or prompt) and iterating in 2–3 week cycles with measurement at the end shows whether the curve is rising. What kills the project isn't low initial accuracy; it's not knowing what it is.
+
+## Who should evaluate the agent's responses?
+
+A third party with domain expertise — never the team that built it. It's not about bad faith: builders tend to mark partially correct answers as correct and mentally fill in what the agent didn't say. The bias is predictable and inflates the number, and an inflated number doesn't force the next decision.
+
+The format scales with the project: an operations analyst on a small project, a dedicated review pair (rotating if possible) on a medium one, a separate cell reporting outside the AI team on a large one. The common criterion: the judge has no access to the code or the prompt.

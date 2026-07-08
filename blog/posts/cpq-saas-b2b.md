@@ -86,3 +86,25 @@ Se sua empresa SaaS B2B tem CPQ funcionando como máquina de cotação, três mo
 **Integre proposta + contrato.** Investe em Revenue Cloud ou em integração CPQ + Conga/DocuSign séria. Sem isso, jurídico continua sendo gargalo permanente.
 
 CPQ em SaaS B2B bem implantado encurta ciclo de venda em 30–50%, reduz erro de proposta em 80%, libera vendedor pra vender em vez de operar planilha. Mal implantado é só calculadora bonita custando licença Salesforce premium. A diferença não está no produto — está em quatro decisões arquiteturais feitas antes do primeiro clique no Setup.
+
+## Perguntas que sempre voltam
+
+Pra fechar, as três dúvidas que mais escuto quando CPQ entra na pauta.
+
+## Vale a pena implementar CPQ numa empresa SaaS B2B?
+
+Vale — desde que seja implementado como plataforma de proposta, não como máquina de cotação. Bem implantado, CPQ encurta o ciclo de venda em 30–50% (de 60–90 dias pra 30–45), reduz erro de proposta em 80% e libera o vendedor pra vender em vez de operar planilha. Em volume, essa diferença de ciclo é receita.
+
+Mal implantado, é uma calculadora bonita custando licença Salesforce premium: vendedor gera PDF, cliente não entende, proposta é refeita no Word e o jurídico monta contrato à parte. O produto é o mesmo nos dois cenários — o que muda são quatro decisões arquiteturais feitas antes do primeiro clique no Setup.
+
+## Como saber se meu CPQ virou só uma máquina de cotação?
+
+Três sintomas entregam o diagnóstico. Primeiro: vendedor refaz a proposta no Word ou Google Doc — se isso acontece em mais de 10% dos deals, o output do CPQ não é proposta, é insumo. Segundo: jurídico pede dado pro vendedor pra montar contrato, sinal de que o sistema parou no meio do processo. Terceiro: o comitê de pricing reúne toda semana pra decidir exceções que deviam ser aprovações automáticas.
+
+Qualquer um dos três já é alerta. Os três combinados indicam que o CPQ existe no slide, mas não no processo.
+
+## O que precisa estar pronto antes de implementar CPQ?
+
+Cinco coisas, e a primeira é política de pricing documentada — não na cabeça do CFO, em documento. Se não existe, escrevê-la é o primeiro projeto. Depois: saber quantos bundles comerciais reais existem (se passa de 30, simplifique antes de implementar), ter mapa nominal de quem aprova o quê, conhecer o ciclo médio de venda atual como baseline de ROI, e garantir sponsor cross-funcional — idealmente CFO + CRO juntos.
+
+Quem responde os cinco com clareza tem caso pra CPQ sério. Quem não consegue ainda está montando processo — e implementar agora só vai cristalizar o caos. O erro mais frequente é exatamente esse: configurar antes de definir.

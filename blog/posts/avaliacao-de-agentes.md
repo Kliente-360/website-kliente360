@@ -66,3 +66,25 @@ Suponha que você mediu e o resultado foi 65% de acurácia. Não bom; não terr�
 A combinação que funciona: medição rigorosa + iteração focada + transparência pra diretoria sobre o número e o caminho. Esse trio é o que separa projeto de IA que vinga de projeto que entra no terceiro plano de governança em 2027.
 
 A métrica desconfortável não é o problema. É a única ferramenta pra sair dele. (Combinada com [controle rigoroso de custo de inferência](/blog/custos-reais-de-inferencia.html), entrega a equação completa de IA econômica em produção.)
+
+## Perguntas que sempre voltam
+
+Três dúvidas que aparecem em quase toda conversa sobre avaliação de agente.
+
+## Quanto custa e quanto demora montar um eval set?
+
+Uma a duas semanas pra montar — e depois disso, rodar é trivial. O trabalho pesado é curar 50–200 perguntas representativas do caso de uso, com gabarito revisado por especialista do domínio. Feito isso, cada mudança no sistema (prompt novo, modelo novo, RAG ajustado) roda contra o mesmo baseline em minutos.
+
+Parece caro pra um piloto, mas é o investimento técnico mais lucrativo de qualquer projeto de IA: sem eval set, cada release é uma aposta, e regressão só aparece quando o usuário reclama. Vale lembrar que ele não substitui a amostragem semanal de produção — o eval set pega regressão, a amostragem pega drift.
+
+## Qual taxa de acerto é aceitável pra ir pra produção?
+
+Depende do risco do caso de uso — é decisão de produto, não de engenharia. Suporte de baixo risco pode operar com 70% de acurácia, desde que o escalonamento pra humano esteja bem desenhado. Atendimento financeiro regulado exige 95% no mínimo. O erro é não definir piso nenhum e escalar no escuro.
+
+E um número intermediário — tipo 65% — não é veredito final: é ponto de partida. Decompor o erro por categoria (retrieval, generation ou prompt) e iterar em ciclos de 2–3 semanas com medição ao final mostra se a curva sobe. O que mata o projeto não é a acurácia inicial baixa; é não saber qual ela é.
+
+## Quem deve avaliar as respostas do agente?
+
+Um terceiro com domínio do assunto — nunca o time que construiu. Não é questão de má-fé: construtor tende a marcar resposta parcialmente certa como correta e completa mentalmente o que o agente não disse. O viés é previsível e infla o número, e número inflado não força a próxima decisão.
+
+O formato escala com o projeto: analista de operação em projeto pequeno, par dedicado de revisão (rotativo se possível) em projeto médio, célula separada reportando fora do time de IA em projeto grande. O critério comum: o juiz não tem acesso ao código nem ao prompt.

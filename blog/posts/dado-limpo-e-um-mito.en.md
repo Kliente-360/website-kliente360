@@ -62,3 +62,25 @@ When you add those three over six months of "let's clean first", you reach a num
 In the next meeting where someone says "we need to clean the base first", the question that unblocks is simple: *clean for what*. If the answer is vague ("to have a reliable base", "to ensure quality"), the project isn't ready — cleansing isn't missing, the use case is. If the answer is specific ("to run that dashboard with confidence on `contract value`"), then the cleansing scope is specific too: that field, in those records, with that threshold.
 
 Good data isn't clean data. It's data fit for use. Companies that understand the difference move the roadmap. Those still chasing universal cleanliness will deliver their third governance plan in 2027 — and keep making decisions in a spreadsheet.
+
+## Questions that keep coming back
+
+Before closing, what people ask most when this argument reaches the meeting room.
+
+## Can you start a data project with a dirty base?
+
+You can — and it's usually the cheaper path. Use is what reveals which dirt matters: teams that clean before using clean what the technical team thinks matters, and discover months later they attacked the wrong things. Running the report, building the agent, or launching the campaign with the data that exists shows exactly where the noise hurts — and cleaning from there is ten times cheaper than cleaning in the dark.
+
+What you can't do is start without defining "good enough": for this decision, which fields need to be correct in what percentage of records. With that number written down, the dirty base stops being a blocker and becomes a prioritized backlog.
+
+## How much quality does data need to be usable?
+
+It depends on the decision it feeds — quality is always relative to use, not an absolute attribute of the base. An executive dashboard needs something like 98% correctness on `amount` and `close date` and tolerates noise elsewhere; an email campaign works with 90% on `primary email`; a churn dashboard demands rigor on the cancellation date and ignores the secondary phone.
+
+The mistake is holding the entire base to a single standard. The right threshold is set field by field, use case by use case — before the project starts, not during.
+
+## When does a dedicated cleansing project make sense?
+
+In three contexts: system migration, customer identity, and regulatory requirements. In a migration, you don't want to carry historical junk into the new system — but "clean" there means clean for the records that will operate from now on. For identity, a serious matching, dedup, and golden-record effort pays off — usually on the 3–5 critical entities, not full MDM. For regulatory, quality is compliance and doesn't negotiate, but the scope is narrow: the fields the regulator looks at.
+
+Outside those three, a universal cleansing project is almost always an escape from the decision to ship — and the invisible cost of waiting (parallel Excel, senior time, the data team's credibility) usually exceeds the cost of the project that got parked.

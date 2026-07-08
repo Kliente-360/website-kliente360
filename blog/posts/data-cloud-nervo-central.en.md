@@ -59,3 +59,25 @@ If you're evaluating Data Cloud, three moves that separate projects that thrive 
 3. **Connect to your existing data stack, don't replace it.** Snowflake, BigQuery, Databricks remain. Data Cloud is the operational context layer, not a replacement for the analytical warehouse.
 
 Those who accept this design today will, in 2027, have a platform that serves agents, activation and analytics on a single foundation. Those still implementing Data Cloud as a "CDP" will be revising their architecture next year.
+
+## Questions that keep coming back
+
+Before closing, three questions that come up in nearly every Data Cloud conversation.
+
+## Does Data Cloud replace the data warehouse (Snowflake, BigQuery)?
+
+No — and trying to replace everything always fails. Data Cloud is the operational context layer: hot, real-time, live customer data. Ten years of transaction history stays in the lake or warehouse you already have. Snowflake, BigQuery and Databricks don't leave the stack; Data Cloud connects to them.
+
+The confusion comes from treating Data Cloud as a destination: import everything and stop there. The real value is in activating back — segments in Marketing, lists in Sales, context in Service. Without activation flows designed from the discovery phase, the project becomes an expensive data warehouse.
+
+## Can you run Agentforce without Data Cloud?
+
+You can, but you're building an informal ETL underneath the agent — and that becomes technical debt by the second quarter. Agents need context: customer history, order status, contract value, previous tickets. When that context arrives fragmented from a thousand places, the agent gets slow (API latency) or imprecise (stale data) — it responds fast, to wrong things.
+
+Data Cloud solves this with profiles materialized in real time that the agent queries as a single source: no joins, no nightly ETL, no out-of-sync caches. The agent pulls context and acts.
+
+## Where should a Data Cloud implementation start?
+
+From the activation use case, not from ingest. Define where Data Cloud will deliver value — an agent, a journey, a segmentation — and ingest only what that case needs. As in any serious Salesforce rollout, process discovery comes before configuration.
+
+Two additions: treat identity resolution as a separate project, with its own sprint and dedicated QA — investing 3–4 weeks in identity design upfront saves months of rework on fragmented profiles. And connect to your existing data stack instead of replacing it: Data Cloud is the operational context layer, not the new analytical warehouse.

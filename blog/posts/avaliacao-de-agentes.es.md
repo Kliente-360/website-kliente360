@@ -66,3 +66,25 @@ Suponé que mediste y el resultado fue 65% de acertividad. Ni bueno ni terrible.
 La combinación que funciona: medición rigurosa + iteración enfocada + transparencia ante la dirección sobre el número y el camino. Ese trío es lo que separa proyecto de IA que prospera de proyecto que entra en el tercer plan de gobernanza en 2027.
 
 La métrica incómoda no es el problema. Es la única herramienta para salir de él. (Combinada con [control riguroso del costo de inferencia](/blog/es/custos-reais-de-inferencia.html), entrega la ecuación completa de IA económica en producción.)
+
+## Preguntas que siempre vuelven
+
+Tres dudas que aparecen en casi toda conversación sobre evaluación de agentes.
+
+## ¿Cuánto cuesta y cuánto tarda armar un eval set?
+
+Una a dos semanas para armarlo — y después de eso, correrlo es trivial. El trabajo pesado es curar 50–200 preguntas representativas del caso de uso, con ground truth revisado por un especialista del dominio. Hecho eso, cada cambio del sistema (prompt nuevo, modelo nuevo, RAG ajustado) corre contra el mismo baseline en minutos.
+
+Parece caro para un piloto, pero es la inversión técnica más rentable de cualquier proyecto de IA: sin eval set, cada release es una apuesta, y la regresión solo aparece cuando el usuario se queja. Vale recordar que no reemplaza el muestreo semanal de producción — el eval set captura regresión, el muestreo captura drift.
+
+## ¿Qué tasa de acierto alcanza para ir a producción?
+
+Depende del riesgo del caso de uso — y es decisión de producto, no de ingeniería. Soporte de bajo riesgo puede operar con 70% de acertividad, siempre que el escalamiento a humano esté bien diseñado. Atención financiera regulada exige 95% como mínimo. El error es no definir piso alguno y escalar a ciegas.
+
+Y un número intermedio — digamos 65% — no es veredicto final: es punto de partida. Descomponer el error por categoría (retrieval, generation o prompt) e iterar en ciclos de 2–3 semanas con medición al final muestra si la curva sube. Lo que mata el proyecto no es la acertividad inicial baja; es no saber cuál es.
+
+## ¿Quién debería evaluar las respuestas del agente?
+
+Un tercero con dominio del tema — nunca el equipo que lo construyó. No es cuestión de mala fe: el constructor tiende a marcar una respuesta parcialmente correcta como correcta y completa mentalmente lo que el agente no dijo. El sesgo es predecible e infla el número, y un número inflado no fuerza la próxima decisión.
+
+El formato escala con el proyecto: analista de operación en proyecto chico, par dedicado de revisión (rotativo si se puede) en proyecto medio, célula separada reportando fuera del equipo de IA en proyecto grande. El criterio común: el juez no tiene acceso al código ni al prompt.

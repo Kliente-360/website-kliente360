@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vale a pena pagar ChatGPT Enterprise ou Copilot pra empresa toda?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale se você mapeou a fronteira antes; não vale se a motivação é &quot;todo mundo está usando&quot;. Provisionar a ferramenta e abrir o canal sem caso de uso definido leva ao padrão conhecido: uso ativo em 15% depois de três meses e ninguém sabendo se é resistência ou produto errado. O agente rende muito em três contextos — redação assistida, lookup sobre documentação e suporte nível 1 — e fracassa em decisão estratégica e substituição de conhecimento sênior.\n\nO teste antes de assinar é responder três perguntas sem hesitar: qual pergunta repetida o agente vai responder, se a base de conhecimento existe e está atualizada, e se o risco de erro é tolerável. Quem hesita em duas está no território do &quot;vamos tentar e ver&quot; — onde mora o piloto eterno."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que ninguém usa o agente depois do lançamento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quase sempre é problema de escopo, não de adoção. Quando o agente é oferecido como assistente genérico, o profissional experiente não encontra ganho e o iniciante recebe resposta superficial — e o uso cai antes de qualquer campanha interna conseguir salvá-lo. A ferramenta amplifica capacidade existente em tarefa específica; não cria capacidade nova em tarefa vaga.\n\nO diagnóstico nos primeiros 90 dias usa três sinais: uso ativo (5+ vezes por semana, não logins), taxa de pergunta resolvida sem escalonar (acima de 60% é valor real; abaixo de 30% é RAG ou prompt ruim) e tempo poupado autodeclarado. Se dois estão em vermelho, recoloque o agente no caso de uso certo em vez de insistir em treinamento de usuário."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso deixar o agente tomar decisões pelo time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Só quando a decisão depende exclusivamente de dado escrito — e a maioria das decisões gerenciais não depende. Escolher fornecedor, priorizar backlog, decidir qual cliente atender primeiro: em produção, o agente decide com 60% do contexto, porque o resto vive em conversa de corredor, política interna e relacionamento. Forçar automação aí é o caminho mais rápido pra incidente, e incidente de IA tem peso político maior que o de sistema tradicional.\n\nO arranjo que funciona é outro: agente responde primeiro, humano confirma o de baixo risco, escalonamento explícito quando há sinal de complexidade. O agente informa e prepara contexto; a decisão que exige dado vivido continua humana."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -221,6 +254,17 @@
 <p><strong>Tempo poupado autodeclarado.</strong> Em redação, perguntar mensalmente: &quot;quanto tempo o agente te economizou esta semana?&quot;. É subjetivo, mas detecta deserções antes de a métrica de uso cair.</p>
 <p>Se essas três estiverem em sinal verde no fim do trimestre, o agente venceu o piloto. Se duas estiverem em vermelho, a ferramenta provavelmente foi colocada no caso de uso errado — não é problema de adoção, é problema de escopo.</p>
 <p>Agente interno bem colocado é uma das melhores compras de produtividade de 2026. Mal colocado é a melhor cobrança de licença sem retorno do trimestre. A diferença mora no mapa.</p>
+<h2>Perguntas que sempre voltam</h2>
+<p>Três dúvidas que aparecem em quase toda conversa sobre esse tema.</p>
+<h2>Vale a pena pagar ChatGPT Enterprise ou Copilot pra empresa toda?</h2>
+<p>Vale se você mapeou a fronteira antes; não vale se a motivação é &quot;todo mundo está usando&quot;. Provisionar a ferramenta e abrir o canal sem caso de uso definido leva ao padrão conhecido: uso ativo em 15% depois de três meses e ninguém sabendo se é resistência ou produto errado. O agente rende muito em três contextos — redação assistida, lookup sobre documentação e suporte nível 1 — e fracassa em decisão estratégica e substituição de conhecimento sênior.</p>
+<p>O teste antes de assinar é responder três perguntas sem hesitar: qual pergunta repetida o agente vai responder, se a base de conhecimento existe e está atualizada, e se o risco de erro é tolerável. Quem hesita em duas está no território do &quot;vamos tentar e ver&quot; — onde mora o piloto eterno.</p>
+<h2>Por que ninguém usa o agente depois do lançamento?</h2>
+<p>Quase sempre é problema de escopo, não de adoção. Quando o agente é oferecido como assistente genérico, o profissional experiente não encontra ganho e o iniciante recebe resposta superficial — e o uso cai antes de qualquer campanha interna conseguir salvá-lo. A ferramenta amplifica capacidade existente em tarefa específica; não cria capacidade nova em tarefa vaga.</p>
+<p>O diagnóstico nos primeiros 90 dias usa três sinais: uso ativo (5+ vezes por semana, não logins), taxa de pergunta resolvida sem escalonar (acima de 60% é valor real; abaixo de 30% é RAG ou prompt ruim) e tempo poupado autodeclarado. Se dois estão em vermelho, recoloque o agente no caso de uso certo em vez de insistir em treinamento de usuário.</p>
+<h2>Posso deixar o agente tomar decisões pelo time?</h2>
+<p>Só quando a decisão depende exclusivamente de dado escrito — e a maioria das decisões gerenciais não depende. Escolher fornecedor, priorizar backlog, decidir qual cliente atender primeiro: em produção, o agente decide com 60% do contexto, porque o resto vive em conversa de corredor, política interna e relacionamento. Forçar automação aí é o caminho mais rápido pra incidente, e incidente de IA tem peso político maior que o de sistema tradicional.</p>
+<p>O arranjo que funciona é outro: agente responde primeiro, humano confirma o de baixo risco, escalonamento explícito quando há sinal de complexidade. O agente informa e prepara contexto; a decisão que exige dado vivido continua humana.</p>
 
         </div>
       </div>

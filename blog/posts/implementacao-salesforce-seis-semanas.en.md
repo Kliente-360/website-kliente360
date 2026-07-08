@@ -88,3 +88,25 @@ The right question before signing a contract isn't "what's the shortest timeline
 Six weeks delivers that — if the scope is honest from the start. The company that enters the project with calibrated expectations, a process mapped before the project begins, and a manager committed to adoption will end up with a working org and a foundation to grow. The company that expects 14 days because the proposal promised 14 days will end up with a configured org that needs to be reimplemented.
 
 The difference isn't Salesforce. It's what actually fits in a project — and the willingness to say so before signing.
+
+## Questions that keep coming back
+
+To wrap up, the questions that come up most whenever implementation timelines are on the table.
+
+## Can you really implement Salesforce in 14 days?
+
+You can configure it — you can't implement it. What an "express implementation" delivers in two weeks is org creation, standard objects configured, leads imported from a spreadsheet, one or two basic dashboards, and user access. A guided installation. What's missing is exactly what makes a CRM work: a sales process mapped to stages, field validation per funnel phase, tested automation, a report the manager actually uses in weekly reviews, and a rollout with genuine adoption.
+
+The 14-day promise only makes sense when the client already knows exactly what they want, has clean data, and needs nothing beyond the standard configuration. That client exists, but it's not the majority. For companies still defining their process, 14 days delivers a tool no one uses — and within 90 days the org is abandoned.
+
+## What gets left out of a 6-week Salesforce MVP?
+
+Five things, and they're worth communicating before signing: ERP integration (Salesforce ↔ SAP, Totvs, Oracle is a separate project with its own contract), complex Flow automation that emails customers or generates documents, multiple Clouds at once (Sales + Service + Marketing in 6 weeks isn't an MVP, it's a sprint to failure), heavy customization beyond the standard objects, and sophisticated executive reporting — boardroom dashboards come in the second wave, once you have 60+ days of real data.
+
+An MVP isn't a poor version of the product. It's the version that delivers complete value within a smaller scope — and survives 90 days of real use without needing to be patched.
+
+## How do I know if my scope actually fits in 6 weeks?
+
+Run the scope through four questions before signing: how many custom objects (more than 2 non-standard ones puts the timeline at real risk); whether there's legacy system integration (anything beyond Salesforce's documented OAuth/APIs multiplies timeline risk by at least 2x); whether the sales process is mapped before the project starts (undocumented process is the number-one cause of blown CRM timelines); and how many users at go-live (above 30, adoption needs its own budget and schedule).
+
+If more than two answers are "no" or "above the limit," the honest scope is 10 to 12 weeks. Saying so upfront isn't a problem. Discovering it in week 5 is.

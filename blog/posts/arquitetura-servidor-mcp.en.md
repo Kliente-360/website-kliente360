@@ -66,3 +66,25 @@ None of these risks is a reason not to publish an MCP server. They're a reason t
 The point that remains after this checklist is that MCP doesn't introduce a new risk in essence — it introduces speed and scale for risks that already existed in any automated integration. What changes is that, in a world of dynamic tool discovery, those risks stop being evaluated once per integration and start needing continuous evaluation — because the set of tools available to the agent can change without anyone on the team reviewing it again.
 
 That's the same argument behind [treating agent governance as part of the design, not a layer bolted on afterward](/blog/en/privacidade-dados-llms.html): whoever publishes an MCP server today is, in fact, deciding how much they'll trust code they didn't write to act on behalf of an agent they may not have even maintained.
+
+## Questions that keep coming back
+
+Three doubts that surface in almost every conversation before publishing an MCP server.
+
+## When should I use stdio versus remote HTTP?
+
+Use stdio when client and server run on the same machine — developer tools, editors, CLIs; use Streamable HTTP for a remote, multi-tenant server serving agents that don't share a process or machine. The choice isn't cosmetic: each transport carries a different risk profile.
+
+With stdio there's no network involved, but the server inherits the privileges of the process that invoked it — a path-traversal or command-injection bug becomes direct access to the local filesystem. With remote HTTP, authentication (typically OAuth 2.1), per-request scoping, and session isolation between tenants are mandatory from the first deploy — retrofitting them later is expensive.
+
+## Can you trust the tool descriptions a server exposes?
+
+Not without treating them as potentially hostile content. The model reads a tool's natural-language description as an instruction, not just as metadata — which is exactly why tool poisoning works: a malicious or compromised server can describe an innocuous-looking tool in a way that nudges the model to do more than expected.
+
+And the problem doesn't end at first connection. Nothing in the protocol prevents a rug-pull: the server can change the description — or the behavior behind it — after the client has already approved the tool. That's why the checklist calls for explicit contract versioning with a visible changelog, and why risk evaluation needs to be continuous, not done once per integration.
+
+## Which actions can an agent run without human review?
+
+Only reversible, low-impact ones. Deleting a record, sending an external communication, and moving money require mandatory human review — it's one of the six items on the production checklist, and it isn't bureaucracy: MCP's core risk is precisely the distance it creates between a model's decision and a human's review.
+
+In practice, that rule pairs with minimum scope per tool (never forwarding the user's full token to the downstream system) and structured logging of every call. Without logs, an incident isn't investigable after the fact; without minimum scope, any agent action runs with the full privilege of whoever authorized it.

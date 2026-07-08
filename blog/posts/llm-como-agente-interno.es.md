@@ -68,3 +68,25 @@ Métricas que dicen si el agente está rindiendo:
 Si esas tres están en verde al cierre del trimestre, el agente ganó el piloto. Si dos están en rojo, la herramienta probablemente se puso en el caso de uso equivocado — no es problema de adopción, es problema de alcance.
 
 Un agente interno bien colocado es una de las mejores compras de productividad de 2026. Mal colocado es el mejor cobro de licencia sin retorno del trimestre. La diferencia vive en el mapa.
+
+## Preguntas que siempre vuelven
+
+Tres dudas que aparecen en casi toda conversación sobre este tema.
+
+## ¿Vale la pena pagar ChatGPT Enterprise o Copilot para toda la empresa?
+
+Vale si mapeaste la frontera antes; no vale si la motivación es "todos lo están usando". Aprovisionar la herramienta y abrir el canal sin caso de uso definido lleva al patrón conocido: uso activo en 15% después de tres meses y nadie sabiendo si es resistencia o producto equivocado. El agente rinde mucho en tres contextos — redacción asistida, lookup sobre documentación y soporte nivel 1 — y fracasa en decisión estratégica y reemplazo de conocimiento sénior.
+
+El test antes de firmar es responder tres preguntas sin dudar: qué pregunta repetida va a responder el agente, si la base de conocimiento existe y está actualizada, y si el riesgo de error es tolerable. Si dudás en dos, estás en territorio de "probemos y vemos" — donde vive el piloto eterno.
+
+## ¿Por qué nadie usa el agente después del lanzamiento?
+
+Casi siempre es problema de alcance, no de adopción. Cuando el agente se ofrece como asistente genérico, el profesional experimentado no encuentra ganancia y el principiante recibe respuesta superficial — y el uso cae antes de que cualquier campaña interna pueda salvarlo. La herramienta amplifica capacidad existente en tarea específica; no crea capacidad nueva en tarea vaga.
+
+El diagnóstico en los primeros 90 días usa tres señales: uso activo (5+ veces por semana, no logins), tasa de pregunta resuelta sin escalar (arriba del 60% es valor real; abajo del 30% es RAG o prompt malo) y tiempo ahorrado autodeclarado. Si dos están en rojo, mové el agente al caso de uso correcto en vez de insistir con capacitación de usuarios.
+
+## ¿Puedo dejar que el agente tome decisiones por el equipo?
+
+Solo cuando la decisión depende exclusivamente de dato escrito — y la mayoría de las decisiones gerenciales no depende. Elegir proveedor, priorizar el backlog, decidir qué cliente atender primero: en producción, el agente decide con el 60% del contexto, porque el resto vive en conversación de pasillo, política interna y relaciones. Forzar automatización ahí es el camino más rápido a un incidente, y un incidente de IA tiene peso político mayor que uno de sistema tradicional.
+
+El arreglo que funciona es otro: el agente responde primero, el humano confirma lo de bajo riesgo, escalamiento explícito cuando hay señal de complejidad. El agente informa y prepara contexto; la decisión que exige dato vivido sigue siendo humana.

@@ -70,3 +70,25 @@ For timeline reference: a migration with 10 to 20 active programs, 30 to 50 temp
 Diagnosis occupies the first 4 weeks: program inventory, data model mapping, Subscriber Key decision, Data Extension design. Template rewriting and journey rebuilding occupy the following 6 to 10 weeks. IP warming and Marketing Cloud Connect testing run in parallel. A phased go-live — starting with the simplest programs — closes the project with lower risk.
 
 [Mapping what exists before starting to configure](/blog/en/mapear-processos-antes-do-salesforce.html) is the discipline that distinguishes successful CRM implementations from those that need to be redone two years later. In a marketing platform migration, the diagnostic is not overhead — it is the work that determines whether the project ends at go-live or at rework.
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most often when this migration lands on the table.
+
+## How long does a Pardot to Marketing Cloud migration take?
+
+12 to 20 weeks for a well-managed project with 10 to 20 active programs and 30 to 50 templates — not six weeks, and not with the same team that did the original Salesforce implementation. The first 4 weeks go to diagnosis: program inventory, data model mapping, the Subscriber Key decision, and Data Extension design. Template rewriting and journey rebuilding take the following 6 to 10 weeks, with IP warming and Marketing Cloud Connect testing running in parallel.
+
+The primary timeline driver isn't platform configuration — it's the number of templates to rewrite. And if you send more than 100,000 emails per month, IP warming adds 4 to 8 weeks that cannot be compressed without risking blacklists.
+
+## Can I reuse my Pardot templates and journeys in Marketing Cloud?
+
+No — templates and journeys have to be rebuilt, not converted. MCAE uses HML (Handlebars Merge Language) and MCE uses AMPscript: HML templates don't convert, they need to be rewritten or recreated in Content Builder. The same goes for journeys: Engagement Studio is oriented toward CRM conditions, while Journey Builder is event-driven — the available triggers and exit conditions differ enough that every program needs to be redesigned, with the logic mapped manually.
+
+That's why what the market calls a "migration" is, in practice, a reimplementation — with the budget and timeline of a new project. The upside: abandoned templates don't need to migrate, so an honest inventory shrinks the real scope.
+
+## Does licensing cost go up when moving from Pardot to Marketing Cloud?
+
+Yes, significantly: MCE is an enterprise product priced differently, and projects that treat the move as an "upgrade" frequently discover at the final contract that annual costs increased 40 to 100%. The justification can be valid — multichannel capability, B2C scale, granular personalization — but that number should be in the business case from day one, not show up as a renewal surprise.
+
+The qualifying question before accepting any proposal: is the real use case B2C or multichannel at scale? If marketing remains pipeline-oriented B2B, the honest recommendation is to optimize MCAE rather than pay more for a platform built for a different use case.

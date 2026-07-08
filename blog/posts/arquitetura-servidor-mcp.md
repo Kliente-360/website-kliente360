@@ -69,3 +69,25 @@ Nenhum desses riscos é motivo pra não publicar um servidor MCP. São motivo pr
 O ponto que fica depois desse checklist é que MCP não introduz um risco novo em essência — introduz velocidade e escala pra riscos que já existiam em qualquer integração automatizada. O que muda é que, num mundo de descoberta dinâmica de ferramenta, esses riscos deixam de ser avaliados uma vez por integração e passam a precisar de avaliação contínua — porque o conjunto de tools disponíveis pro agente pode mudar sem que ninguém do time revise de novo.
 
 Isso é o mesmo argumento por trás de [tratar governança de agente como parte do design, não como camada posterior](/blog/privacidade-dados-llms.html): quem publica um servidor MCP hoje está decidindo, de fato, o quanto vai confiar em código que não escreveu pra agir em nome de um agente que talvez nem tenha mantido.
+
+## Perguntas que sempre voltam
+
+Três dúvidas que aparecem em quase toda conversa antes de publicar um servidor MCP.
+
+## Quando usar stdio e quando usar HTTP remoto?
+
+Stdio é pra quando cliente e servidor rodam na mesma máquina — ferramenta de desenvolvedor, editor, CLI; Streamable HTTP é pra servidor remoto e multi-tenant, atendendo agentes que não compartilham processo nem máquina. A escolha não é estética: cada transporte carrega um perfil de risco diferente.
+
+No stdio não há rede envolvida, mas o servidor herda os privilégios do processo que o invocou — um bug de path traversal ou de injeção de comando vira acesso direto ao sistema de arquivos. No HTTP remoto, autenticação (tipicamente OAuth 2.1), escopo por requisição e isolamento de sessão entre tenants são obrigatórios desde o primeiro deploy — retrofit depois sai caro.
+
+## Dá pra confiar na descrição das tools que um servidor expõe?
+
+Não sem tratá-la como conteúdo potencialmente hostil. O modelo lê a descrição em linguagem natural como instrução, não só como metadado — e é exatamente por isso que tool poisoning funciona: um servidor malicioso ou comprometido descreve uma tool aparentemente inofensiva de um jeito que induz o modelo a fazer mais do que o esperado.
+
+E o problema não termina na primeira conexão. Nada no protocolo impede o rug-pull: o servidor pode alterar a descrição — ou o comportamento por trás dela — depois que o cliente já aprovou a tool. Por isso o checklist pede versionamento explícito de contrato com changelog visível, e por isso a avaliação de risco precisa ser contínua, não feita uma vez por integração.
+
+## Quais ações um agente pode executar sem revisão humana?
+
+Só as reversíveis e de baixo impacto. Deletar registro, enviar comunicação externa e mover dinheiro exigem revisão humana obrigatória — é um dos seis itens do checklist de produção, e não é burocracia: o risco central do MCP é justamente a distância que ele cria entre a decisão do modelo e a revisão de um humano.
+
+Na prática, essa regra se combina com escopo mínimo por tool (nunca repassar o token completo do usuário pro sistema downstream) e log estruturado de toda chamada. Sem log, incidente não é investigável depois do fato; sem escopo mínimo, qualquer ação do agente roda com o privilégio total de quem o autorizou.

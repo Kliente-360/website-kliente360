@@ -83,3 +83,25 @@ El fine-tuning no es mejor que RAG en abstracto. Es mejor bajo condiciones espec
 Cuando ninguna de las cuatro se aplica claramente, RAG gana por costo operacional y facilidad de mantenimiento. Cuando una o más se aplica, el fine-tuning merece una evaluación seria — y el costo de entrenamiento, que parece alto por adelantado, frecuentemente se recupera en los primeros meses de producción en volumen.
 
 La decisión arquitectural no es estética. Es optimizar para el problema real — y el primer paso es hacer la pregunta antes de abrir el notebook de RAG.
+
+## Preguntas que siempre vuelven
+
+Tres dudas que aparecen siempre que esta elección arquitectural entra en discusión — respondidas con lo que este texto defiende.
+
+## ¿Vale la pena hacer fine-tuning o es mejor quedarse con RAG?
+
+Depende del problema, no de la preferencia — el fine-tuning vale cuando el problema es de comportamiento; RAG, cuando es de conocimiento. Esa distinción es el corazón de la elección: RAG inyecta contexto externo en el momento del prompt (documentos internos, base actualizada, producto nuevo); el fine-tuning entrena en los pesos cómo responde el modelo — tono, terminología, formato, casos límite.
+
+En la práctica, los patrones donde el fine-tuning gana claramente son seis: tono propietario a escala, latencia crítica, terminología técnica cerrada, consistencia en alto volumen, dato sensible que no puede estar en un índice y dominio estrecho de alta frecuencia. Si ninguno se aplica claramente a tu caso, RAG gana por costo operacional y facilidad de mantenimiento.
+
+## ¿El fine-tuning no sale demasiado caro?
+
+El costo de entrenamiento parece alto por adelantado, pero frecuentemente se recupera en los primeros meses de producción en volumen. Un modelo fine-tuned trabaja con un prompt más corto — sin la instrucción larga repetida en cada llamada — y eso aparece directo en la factura mensual del proveedor. En tono de voz, el costo se recupera en meses de overhead de QA eliminado.
+
+El otro lado de la cuenta suele olvidarse: RAG también tiene costo de mantenimiento real — la calidad del pipeline de recuperación necesita cuidado continuo, y ese costo es frecuentemente subestimado en el momento de la elección. Un pipeline de recuperación mal construido entrega resultados peores que un fine-tuning bien hecho en casos simples.
+
+## ¿Puedo usar RAG y fine-tuning juntos?
+
+Podés — un modelo fine-tuned con RAG encima es una arquitectura legítima, porque los dos resuelven problemas diferentes. El fine-tuning se encarga del comportamiento (tono, vocabulario, formato de salida) y RAG se encarga del conocimiento dinámico que cambia demasiado rápido para vivir en los pesos.
+
+Lo que no funciona es usar uno para tapar el hueco del otro. Cuando el problema central es de comportamiento, RAG solo se queda corto — ningún prompt más elaborado resuelve lo que el entrenamiento necesita resolver. Y cuando el corpus es grande y cambia toda la semana, el fine-tuning no sustituye la actualización de índice que RAG te da gratis.

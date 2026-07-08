@@ -100,3 +100,25 @@ Si tu empresa está siendo presentada a Salesforce Industries, tres movimientos 
 **Calculá TCO de 24 meses, incluyendo capacitación y operación.** Industries cuesta más en todos los ejes. La diferencia necesita ser justificada por la ganancia — no por el pitch.
 
 Salesforce Industries en 2026 es herramienta poderosa en los sectores donde encaja, complejidad adicional donde no encaja. Empresa brasileña de tamaño medio fuera de los 6 verticales foco casi siempre está mejor con Sales Cloud + CPQ + customización — más barato, comunidad local, partners disponibles. Aceptar Industries por pitch sin esa regla es la forma más elegante de pagar premium para tener el mismo resultado de la plataforma estándar.
+
+## Preguntas que siempre vuelven
+
+Antes de cerrar, las dudas que más aparecen cuando Industries entra en la conversación.
+
+## ¿Salesforce Industries vale la pena para una empresa mediana en Brasil?
+
+En la mayoría de los casos, no. Fuera de los tres contextos donde el encaje es real — telecom de tamaño medio/grande, utilities y financial services con producto complejo —, la empresa brasileña de tamaño medio casi siempre está mejor con Sales Cloud + CPQ + customización: más barato, comunidad local mayor, partners disponibles.
+
+La regla es responder cuatro preguntas con sí claro: tu sector está en el foco de Salesforce, la especificidad del sector es alta, el volumen justifica la curva de aprendizaje de OmniStudio, y el ROI entra en los primeros 12 meses. Si respondés "depende" en dos o más, probablemente estás mirando overshoot.
+
+## ¿Cuánto más caro es Industries que el Salesforce estándar?
+
+Industries cuesta más en todos los ejes: licencia por encima del Salesforce estándar, implementación similar o más cara, y capacitación de OmniStudio encima. El cliente que acepta la recomendación del vendor sin cuestionar típicamente entra en proyecto de 18 meses pagando 30–50% más — y a veces descubre que Sales Cloud estándar lo resolvía.
+
+Por eso la recomendación es calcular TCO de 24 meses incluyendo capacitación y operación, y correr POC paralelo de 60 días contra el Salesforce estándar. La diferencia de costo necesita ser justificada por la ganancia de aceleración — si el ROI no se materializa en los primeros 12 meses, queda plataforma cara sin retorno.
+
+## ¿Necesito un equipo grande para operar OmniStudio?
+
+Sí — OmniStudio exige capacitación seria, y el desarrollador Salesforce estándar no entra automáticamente. Equipo de 2 personas en Salesforce va a sufrir; equipo de 10+ con sponsor dispuesto a invertir en capacitación logra hacerlo valer.
+
+Hay además un riesgo de mercado: pocos brasileños saben operar OmniStudio, así que encontrar consultor especializado se vuelve problema. Antes de firmar, verificá si existe partner Salesforce con Industries en Brasil, con casos públicos en tu sector — sector sin partner local significa sin soporte real.

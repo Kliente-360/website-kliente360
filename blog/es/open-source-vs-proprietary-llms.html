@@ -102,6 +102,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena cambiar GPT o Claude por un modelo open source?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de tu caso de uso, no del benchmark: open source reciente compite en calidad en el 70–80% de los casos empresariales, pero proprietary todavía lidera por 6–12 meses en las tareas de frontera — razonamiento complejo, código de alta calidad, multimodal avanzado. Si tu producto depende de esa calidad, open source todavía no es opción.\n\nLa única forma de saber de qué lado cae tu caso es correr eval set propio contra 3–4 candidatos — Llama, Mistral Large, Claude Sonnet, GPT-4o — en la misma tarea real. Tarda 2 semanas y vale 2 años de decisión; sin eso, la calidad es palpito."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿A partir de qué volumen conviene el self-hosted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por debajo de ~1M llamadas/mes, proprietary es más barato; por encima de ~10M/mes, self-hosted gana; entre los dos, depende del caso. El motivo: self-hosted cambia precio por token por costo de GPU + ops + energía + mantenimiento — y la GPU ociosa en volumen bajo o variable se come el ahorro de token.\n\nEl volumen no es el único factor. El cálculo serio es TCO de 24 meses por arquitectura, incluyendo ops, GPU, dev y mantenimiento — las diferencias suelen ser de 2–5×. Y exige equipo con capacidad operativa real en ML ops; si no lo tenés, el self-hosted se vuelve costo de oportunidad, no ahorro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede combinar open source y proprietary en el mismo stack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí — y es la arquitectura que viene funcionando en empresas maduras: proprietary para calidad de frontera en bajo volumen, open source self-hosted para tareas de media calidad en alto volumen, y self-hosted obligatorio en el alcance regulatorio. Esa combinación entrega el 70–80% del ahorro de open source con el 95% de la calidad de proprietary.\n\nEl requisito es routing inteligente, resolvible con gateway de LLM (LiteLLM, OpenRouter o propio). El híbrido no es compromiso perezoso — es optimización por contexto. Quien fuerza arquitectura única paga en una de las cuatro dimensiones que no consideró."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -247,6 +280,17 @@
 <p><strong>Calculá TCO de 24 meses por arquitectura.</strong> Proprietary, self-hosted, híbrido. Incluí ops, GPU, dev, mantenimiento. Las diferencias suelen ser de 2–5×.</p>
 <p><strong>Considerá el híbrido en serio.</strong> No es compromiso perezoso — es optimización por contexto. El stack moderno lo permite sin complejidad absurda.</p>
 <p>Open source vs proprietary en 2026 ya no es debate filosófico — es decisión operativa con criterios mensurables. Empresa que elige ideológicamente pierde en las dimensiones que no consideró. Empresa que elige por necesidad combina los dos mundos donde tiene sentido, sin atarse a religión de stack.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Tres preguntas que cierran la mayoría de las discusiones de elección de LLM — respondidas con los criterios de este texto.</p>
+<h2>¿Vale la pena cambiar GPT o Claude por un modelo open source?</h2>
+<p>Depende de tu caso de uso, no del benchmark: open source reciente compite en calidad en el 70–80% de los casos empresariales, pero proprietary todavía lidera por 6–12 meses en las tareas de frontera — razonamiento complejo, código de alta calidad, multimodal avanzado. Si tu producto depende de esa calidad, open source todavía no es opción.</p>
+<p>La única forma de saber de qué lado cae tu caso es correr eval set propio contra 3–4 candidatos — Llama, Mistral Large, Claude Sonnet, GPT-4o — en la misma tarea real. Tarda 2 semanas y vale 2 años de decisión; sin eso, la calidad es palpito.</p>
+<h2>¿A partir de qué volumen conviene el self-hosted?</h2>
+<p>Por debajo de ~1M llamadas/mes, proprietary es más barato; por encima de ~10M/mes, self-hosted gana; entre los dos, depende del caso. El motivo: self-hosted cambia precio por token por costo de GPU + ops + energía + mantenimiento — y la GPU ociosa en volumen bajo o variable se come el ahorro de token.</p>
+<p>El volumen no es el único factor. El cálculo serio es TCO de 24 meses por arquitectura, incluyendo ops, GPU, dev y mantenimiento — las diferencias suelen ser de 2–5×. Y exige equipo con capacidad operativa real en ML ops; si no lo tenés, el self-hosted se vuelve costo de oportunidad, no ahorro.</p>
+<h2>¿Se puede combinar open source y proprietary en el mismo stack?</h2>
+<p>Sí — y es la arquitectura que viene funcionando en empresas maduras: proprietary para calidad de frontera en bajo volumen, open source self-hosted para tareas de media calidad en alto volumen, y self-hosted obligatorio en el alcance regulatorio. Esa combinación entrega el 70–80% del ahorro de open source con el 95% de la calidad de proprietary.</p>
+<p>El requisito es routing inteligente, resolvible con gateway de LLM (LiteLLM, OpenRouter o propio). El híbrido no es compromiso perezoso — es optimización por contexto. Quien fuerza arquitectura única paga en una de las cuatro dimensiones que no consideró.</p>
 
         </div>
       </div>

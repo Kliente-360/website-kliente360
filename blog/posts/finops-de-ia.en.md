@@ -70,3 +70,25 @@ With structured log in warehouse, a dashboard of [real inference costs](/blog/en
 The signal that the model isn't working: the finance team still calls IT when the bill goes up. That means cost distribution didn't reach the visibility level that changes behavior. Diagnostic for who's implementing: ask each PM to say, without checking the dashboard, how much their use case cost last month. If nobody knows, FinOps exists on paper, not in decisions.
 
 The tipping point happens when a PM starts asking "would this cheaper model work for this case?" before IT suggests it. There the system is working. Until then, it's in cultural translation phase — and cultural translation takes longer than technical implementation.
+
+## Questions that keep coming back
+
+Three doubts that surface in almost every conversation about this topic.
+
+## Is AI chargeback worth it for a small operation?
+
+No — with few use cases and a low bill, showback is enough. If the company has 1–3 use cases in production and spends under USD 10k/month on inference, standing up a real debit process is disproportionate bureaucracy: a monthly report showing what each team consumed already creates the cost awareness that's missing at that stage.
+
+What doesn't work is staying on showback forever. Above 10 use cases or USD 50k/month, information without consequence becomes theater — at that point the path is chargeback by real cost or per-use-case budgets, or the distortion between teams keeps growing.
+
+## Where do you start if nobody knows what each team spends today?
+
+With the tagged inference log — nothing works before that. Every call needs to record team, use case, model, input/output tokens and calculated cost. Without it, any chargeback model is guesswork; with it, choosing among the four becomes a policy decision, not an engineering one.
+
+In practice there are three paths: a self-hosted inference gateway (LiteLLM, Portkey, Helicone), the provider's native logging, or an SDK wrapper writing to your own warehouse. The gateway gives the most control and is the standard in mature operations. And timing matters: tagging from the first call is cheap; adding it later is a painful retrofit.
+
+## How do you know AI FinOps is actually working?
+
+By PM behavior, not by the dashboard. The test is simple: ask each PM to say, without looking anything up, how much their use case cost last month. If nobody knows, the model exists on paper but hasn't reached decisions — and the classic symptom is finance still calling IT when the bill goes up.
+
+The tipping point is when the product team itself starts asking whether a cheaper model would do the job, before IT suggests it. Until you get there, you're in cultural translation — which takes longer than the technical implementation, and that's normal.

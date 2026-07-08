@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is dimensional modeling on top of a lakehouse worth it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — and it&#39;s exactly the architecture that works in 2026: lakehouse as storage, dimensional as the semantic layer. It&#39;s not either-or. Bronze and silver live in the lakehouse (raw and cleansed data, open format, cheap storage), and the gold layer gets dimensional modeling via dbt mart — fact + dimension, pre-computed metrics, strong governance.\n\nThat&#39;s the medallion pattern, and today it&#39;s the consensus among teams that have operated both worlds. Implementing only bronze + silver gives you a chaotic warehouse masked as a modern lakehouse. The dimensional gold layer is what turns flexible storage into a platform leadership can trust."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if a company skips modeling to move faster?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It rebuilds dimensional modeling inside the lakehouse over the next 18 months — under different names, but the same structure. Three problems show up within 12–18 months: every analyst becomes an architect and produces diverging versions of the same analysis; queries that ran in a second start taking 30 seconds and the team reinvents pre-aggregation case by case; and history turns into spaghetti because &quot;customer in March&quot; and &quot;customer today&quot; get mixed up, usually discovered at audit time.\n\nModeling when the problem explodes is 5× more expensive than modeling when usage begins. The shortcut isn&#39;t a shortcut — it&#39;s debt with interest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When can you skip dimensional modeling?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When the company answers &quot;no&quot; to all five questions in the checklist: fewer than 20 executive dashboards, no need for dimension change history (SCD), fewer than 10 people modeling, no dbt running, and no case where query performance is critical. In that scenario, the cost of maintaining a formal dimensional model may not pay off yet.\n\nBut if any of the five turns into &quot;yes&quot; or &quot;it depends&quot;, modeling still pays. And the most common pattern is growing companies crossing those thresholds without noticing — and finding the gap in a hard meeting about a diverging number."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -234,6 +267,17 @@
 <p><strong>Identify the 10 critical gold models.</strong> Central metrics (revenue, churn, activation, conversion) deserve careful dimensional modeling, with SCD where applicable, serious documentation. Others can stay lighter.</p>
 <p><strong>Resist &quot;let&#39;s model later&quot;.</strong> <a href="/blog/en/dado-limpo-e-um-mito.html">Same mistake as clean data later</a>. Modeling when the problem explodes is 5× more expensive than modeling when use begins.</p>
 <p>Dimensional modeling in 2026 isn&#39;t nostalgia. It&#39;s the method tested for 30 years to organize data for analytical consumption — and no storage evolution made it obsolete. Lakehouse is a new piece; dimensional is still the method. Whoever combines the two delivers a solid platform. Whoever tries to substitute one for the other finds the gap in 18 months, usually in a hard meeting about a diverging number.</p>
+<h2>Questions that keep coming back</h2>
+<p>Before wrapping up, the doubts that come up most often when this topic hits the table.</p>
+<h2>Is dimensional modeling on top of a lakehouse worth it?</h2>
+<p>Yes — and it&#39;s exactly the architecture that works in 2026: lakehouse as storage, dimensional as the semantic layer. It&#39;s not either-or. Bronze and silver live in the lakehouse (raw and cleansed data, open format, cheap storage), and the gold layer gets dimensional modeling via dbt mart — fact + dimension, pre-computed metrics, strong governance.</p>
+<p>That&#39;s the medallion pattern, and today it&#39;s the consensus among teams that have operated both worlds. Implementing only bronze + silver gives you a chaotic warehouse masked as a modern lakehouse. The dimensional gold layer is what turns flexible storage into a platform leadership can trust.</p>
+<h2>What happens if a company skips modeling to move faster?</h2>
+<p>It rebuilds dimensional modeling inside the lakehouse over the next 18 months — under different names, but the same structure. Three problems show up within 12–18 months: every analyst becomes an architect and produces diverging versions of the same analysis; queries that ran in a second start taking 30 seconds and the team reinvents pre-aggregation case by case; and history turns into spaghetti because &quot;customer in March&quot; and &quot;customer today&quot; get mixed up, usually discovered at audit time.</p>
+<p>Modeling when the problem explodes is 5× more expensive than modeling when usage begins. The shortcut isn&#39;t a shortcut — it&#39;s debt with interest.</p>
+<h2>When can you skip dimensional modeling?</h2>
+<p>When the company answers &quot;no&quot; to all five questions in the checklist: fewer than 20 executive dashboards, no need for dimension change history (SCD), fewer than 10 people modeling, no dbt running, and no case where query performance is critical. In that scenario, the cost of maintaining a formal dimensional model may not pay off yet.</p>
+<p>But if any of the five turns into &quot;yes&quot; or &quot;it depends&quot;, modeling still pays. And the most common pattern is growing companies crossing those thresholds without noticing — and finding the gap in a hard meeting about a diverging number.</p>
 
         </div>
       </div>

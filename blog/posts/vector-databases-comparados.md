@@ -94,3 +94,25 @@ Se você está parado nessa escolha hoje, três movimentos honestos antes de ass
 **Lembrar que vector DB é peça, não estratégia.** [O retrieval é o gargalo](/blog/rag-na-pratica.html), mas dentro do retrieval, a escolha do banco é só uma camada. Sem chunking bom, embedding adequado e reranking, qualquer banco vai entregar resultado medíocre.
 
 A pior decisão é gastar três meses escolhendo o vector DB perfeito e três semanas implementando RAG ruim. A melhor é escolher o banco "bom o suficiente pro caso de uso" e investir o tempo economizado na qualidade do pipeline.
+
+## Perguntas que sempre voltam
+
+Três dúvidas que aparecem em toda escolha de vector database — respondidas com a régua deste texto.
+
+## pgvector dá conta de um RAG em produção?
+
+Dá — em volume médio, até ~10M de embeddings, Postgres com pgvector + ivfflat ou HNSW resolve queries em menos de 100ms. Acima desse teto começa a sofrer, mas a maioria das empresas brasileiras de médio porte está abaixo dele. Se a empresa já roda Postgres, o custo operacional incremental é próximo de zero: mesmo time, mesmo backup, mesma observabilidade.
+
+O bônus que os concorrentes não têm: quando os embeddings precisam ser cruzados com dado relacional (clientes, produtos, transações), pgvector permite JOIN nativo — Pinecone e Weaviate exigem orquestração externa. Na nossa leitura, pgvector resolve 70% dos casos de médio porte; os outros 30% justificam Pinecone ou Weaviate.
+
+## Qual dos três é o mais rápido?
+
+Nenhum de forma que importe — em benchmark, os três entregam resultado parecido, e todos são rápidos o suficiente em escopo médio. A pergunta certa não é "qual é mais rápido", é "qual cabe na sua operação": volume esperado em 18 meses, padrão de query, capacidade do time e requisitos de compliance mudam a resposta muito mais que performance bruta.
+
+Onde a diferença aparece de verdade é em dado real: query real, filtro real, volume real. Por isso a recomendação é pilotar por 2 semanas com 1M de embeddings reais em vez de decidir por benchmark sintético — e calibrar latência pelo caso de uso (chatbot interno tolera 500ms; sub-50ms global custa muito).
+
+## Vale a pena começar com Pinecone pra não ter que migrar depois?
+
+Não — quem escolhe Pinecone "por garantia" gasta 5–10× mais no primeiro ano e raramente usa a capacidade. E a migração "pra baixo" que parecia o plano B é a mais cara: reindexar dezenas de milhões de embeddings, validar paridade e redirecionar tráfego sem perda custa 6–12 semanas de engenharia sênior, além de cortar features.
+
+O caminho mais barato é o inverso: começar simples (pgvector, se o volume de 18 meses couber) e subir pra Pinecone ou Weaviate quando de fato não couber mais. Migrar pra cima é mais barato porque os requisitos que justificam o upgrade já estão claros. Pinecone se justifica desde o início em três contextos: acima de ~50M de embeddings, time sem apetite pra operar infra de vetor, ou multi-região com SLA agressivo.

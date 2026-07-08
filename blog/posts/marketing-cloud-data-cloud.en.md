@@ -87,3 +87,25 @@ If your company is Salesforce-first and has Marketing Cloud running, three pract
 **Turn off the legacy as you migrate.** Each new case in Data Cloud → turn off the corresponding legacy sync. Dual-write is debt that grows.
 
 Marketing Cloud alone continues to be a powerful platform in 2026. With Data Cloud underneath, it becomes the contextual activation the market describes in decks and rarely delivers. The difference isn't technological — it's architectural, and requires conscious decision from the start. Companies that do this deliver marketing that looks smart *and is*. Companies that don't keep sending promos to the customer who bought yesterday.
+
+## Questions that keep coming back
+
+Before wrapping up, the three questions I hear most whenever this stack comes up.
+
+## Is it worth buying Data Cloud just to use with Marketing Cloud?
+
+It depends on volume and use case — Data Cloud isn't cheap, and a company with 50k contacts has no ROI; at 500k+ it starts to. Beyond volume, the rule has four more questions: are the sources that need to become context already accessible via mature APIs, is there a clear contextual-personalization use case, is identity resolved across systems, and is the marketing team ready to operate dynamic segmentation.
+
+A clear yes on all five makes a strong case. Hesitating on three or more means the company hasn't matured for this stack yet — and investing now becomes an underused project.
+
+## What are the most common mistakes when integrating Marketing Cloud with Data Cloud?
+
+Two mistakes account for 80% of implementations stuck in an intermediate state for two years. The first is ingesting everything into Data Cloud without a defined use case — pulling all data "for the future" ends in 200 entities, high cost, and nobody knowing how to use it. Data Cloud grows from use case, not ingestion: start with 3–5 entities that serve real journeys.
+
+The second is keeping the legacy sync running in parallel "for safety". In 6 months you have two diverging universes — one from Data Cloud, one from the direct sync — and the campaign team doesn't know which to use. Migration needs to be complete, not dual-write.
+
+## Where should the implementation actually start?
+
+With a specific marketing use case, not with "let's unify the whole customer". Something like solving real-time suppression for one concrete campaign: 8 weeks, measurable ROI, a base to expand from. Before that, map the current gap — how many campaigns depend on stale data, how many "promo for what I already bought" errors go out per quarter. That diagnosis justifies or refutes the investment.
+
+And as you migrate, turn off the legacy: each new case in Data Cloud means switching off the corresponding old sync. Dual-write is debt that grows.

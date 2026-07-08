@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vale a pena implementar CPQ numa empresa SaaS B2B?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale — desde que seja implementado como plataforma de proposta, não como máquina de cotação. Bem implantado, CPQ encurta o ciclo de venda em 30–50% (de 60–90 dias pra 30–45), reduz erro de proposta em 80% e libera o vendedor pra vender em vez de operar planilha. Em volume, essa diferença de ciclo é receita.\n\nMal implantado, é uma calculadora bonita custando licença Salesforce premium: vendedor gera PDF, cliente não entende, proposta é refeita no Word e o jurídico monta contrato à parte. O produto é o mesmo nos dois cenários — o que muda são quatro decisões arquiteturais feitas antes do primeiro clique no Setup."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como saber se meu CPQ virou só uma máquina de cotação?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Três sintomas entregam o diagnóstico. Primeiro: vendedor refaz a proposta no Word ou Google Doc — se isso acontece em mais de 10% dos deals, o output do CPQ não é proposta, é insumo. Segundo: jurídico pede dado pro vendedor pra montar contrato, sinal de que o sistema parou no meio do processo. Terceiro: o comitê de pricing reúne toda semana pra decidir exceções que deviam ser aprovações automáticas.\n\nQualquer um dos três já é alerta. Os três combinados indicam que o CPQ existe no slide, mas não no processo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que precisa estar pronto antes de implementar CPQ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cinco coisas, e a primeira é política de pricing documentada — não na cabeça do CFO, em documento. Se não existe, escrevê-la é o primeiro projeto. Depois: saber quantos bundles comerciais reais existem (se passa de 30, simplifique antes de implementar), ter mapa nominal de quem aprova o quê, conhecer o ciclo médio de venda atual como baseline de ROI, e garantir sponsor cross-funcional — idealmente CFO + CRO juntos.\n\nQuem responde os cinco com clareza tem caso pra CPQ sério. Quem não consegue ainda está montando processo — e implementar agora só vai cristalizar o caos. O erro mais frequente é exatamente esse: configurar antes de definir."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -231,6 +264,17 @@
 <p><strong>Reorganize bundles comerciais.</strong> Reduzir de 200 SKUs pra 8–15 bundles cobre 80% dos deals. Os 20% restantes podem virar configuração customizada com aprovação.</p>
 <p><strong>Integre proposta + contrato.</strong> Investe em Revenue Cloud ou em integração CPQ + Conga/DocuSign séria. Sem isso, jurídico continua sendo gargalo permanente.</p>
 <p>CPQ em SaaS B2B bem implantado encurta ciclo de venda em 30–50%, reduz erro de proposta em 80%, libera vendedor pra vender em vez de operar planilha. Mal implantado é só calculadora bonita custando licença Salesforce premium. A diferença não está no produto — está em quatro decisões arquiteturais feitas antes do primeiro clique no Setup.</p>
+<h2>Perguntas que sempre voltam</h2>
+<p>Pra fechar, as três dúvidas que mais escuto quando CPQ entra na pauta.</p>
+<h2>Vale a pena implementar CPQ numa empresa SaaS B2B?</h2>
+<p>Vale — desde que seja implementado como plataforma de proposta, não como máquina de cotação. Bem implantado, CPQ encurta o ciclo de venda em 30–50% (de 60–90 dias pra 30–45), reduz erro de proposta em 80% e libera o vendedor pra vender em vez de operar planilha. Em volume, essa diferença de ciclo é receita.</p>
+<p>Mal implantado, é uma calculadora bonita custando licença Salesforce premium: vendedor gera PDF, cliente não entende, proposta é refeita no Word e o jurídico monta contrato à parte. O produto é o mesmo nos dois cenários — o que muda são quatro decisões arquiteturais feitas antes do primeiro clique no Setup.</p>
+<h2>Como saber se meu CPQ virou só uma máquina de cotação?</h2>
+<p>Três sintomas entregam o diagnóstico. Primeiro: vendedor refaz a proposta no Word ou Google Doc — se isso acontece em mais de 10% dos deals, o output do CPQ não é proposta, é insumo. Segundo: jurídico pede dado pro vendedor pra montar contrato, sinal de que o sistema parou no meio do processo. Terceiro: o comitê de pricing reúne toda semana pra decidir exceções que deviam ser aprovações automáticas.</p>
+<p>Qualquer um dos três já é alerta. Os três combinados indicam que o CPQ existe no slide, mas não no processo.</p>
+<h2>O que precisa estar pronto antes de implementar CPQ?</h2>
+<p>Cinco coisas, e a primeira é política de pricing documentada — não na cabeça do CFO, em documento. Se não existe, escrevê-la é o primeiro projeto. Depois: saber quantos bundles comerciais reais existem (se passa de 30, simplifique antes de implementar), ter mapa nominal de quem aprova o quê, conhecer o ciclo médio de venda atual como baseline de ROI, e garantir sponsor cross-funcional — idealmente CFO + CRO juntos.</p>
+<p>Quem responde os cinco com clareza tem caso pra CPQ sério. Quem não consegue ainda está montando processo — e implementar agora só vai cristalizar o caos. O erro mais frequente é exatamente esse: configurar antes de definir.</p>
 
         </div>
       </div>

@@ -1,0 +1,170 @@
+<title>GEO Mentions — Kliente 360</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f4f6f4;
+    --ink: #101310;
+    --ink-muted: #5a615a;
+    --line: #e2e6e2;
+    --accent: #007A3D;
+    --logo-green: #009900;
+    --amber: #C9A227;
+    --absent: #b0483a;
+    --chip-absent-bg: #f7ebe9;
+    --chip-visible-bg: #e8f5ec;
+    --chip-pending-bg: #f1f2f1;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: Inter, -apple-system, "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e100e;
+      --bg-alt: #171a17;
+      --ink: #eef1ee;
+      --ink-muted: #9aa39a;
+      --line: #262b26;
+      --accent: #2fae6e;
+      --chip-absent-bg: #2a1d1a;
+      --chip-visible-bg: #14291c;
+      --chip-pending-bg: #1d201d;
+      --absent: #d97c6d;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e100e; --bg-alt: #171a17; --ink: #eef1ee; --ink-muted: #9aa39a;
+    --line: #262b26; --accent: #2fae6e; --chip-absent-bg: #2a1d1a;
+    --chip-visible-bg: #14291c; --chip-pending-bg: #1d201d; --absent: #d97c6d;
+  }
+  :root[data-theme="light"] {
+    --bg: #ffffff; --bg-alt: #f4f6f4; --ink: #101310; --ink-muted: #5a615a;
+    --line: #e2e6e2; --accent: #007A3D; --chip-absent-bg: #f7ebe9;
+    --chip-visible-bg: #e8f5ec; --chip-pending-bg: #f1f2f1; --absent: #b0483a;
+  }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  header.brand { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+  header.brand svg { width: 30px; height: 30px; flex: none; }
+  header.brand svg circle { fill: var(--logo-green); }
+  header.brand svg circle:nth-child(1) { opacity: .45; }
+  header.brand svg circle:nth-child(2) { opacity: .65; }
+  header.brand svg circle:nth-child(3) { opacity: .85; }
+  .brand-name { font-weight: 700; letter-spacing: -0.02em; font-size: 15px; }
+  .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 26px 0 6px; }
+  h1 { font-size: clamp(26px, 4vw, 36px); letter-spacing: -0.03em; line-height: 1.12; margin: 0 0 10px; text-wrap: balance; }
+  .lead { color: var(--ink-muted); max-width: 62ch; margin: 0 0 34px; text-wrap: pretty; }
+  .lead strong { color: var(--ink); }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 40px; }
+  .tile { border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; background: var(--bg); }
+  .tile .k { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px; }
+  .tile .v { font-size: 30px; font-weight: 700; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; line-height: 1; }
+  .tile .v small { font-size: 14px; font-weight: 500; color: var(--ink-muted); letter-spacing: 0; }
+  .tile .d { font-size: 12px; color: var(--ink-muted); margin-top: 8px; }
+  .tile.accent .v { color: var(--accent); }
+  .tile.pending .v { color: var(--ink-muted); }
+
+  h2 { font-size: 18px; letter-spacing: -0.02em; margin: 40px 0 4px; }
+  .sub { font-size: 13px; color: var(--ink-muted); margin: 0 0 16px; }
+
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 720px; }
+  th { font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-muted); text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); background: var(--bg-alt); font-weight: 500; white-space: nowrap; }
+  td { padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  td.id { font-family: var(--mono); font-size: 12px; color: var(--ink-muted); white-space: nowrap; }
+  td.prompt { min-width: 220px; font-weight: 500; }
+  td.prompt .type { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--ink-muted); text-transform: uppercase; letter-spacing: .06em; margin-top: 3px; font-weight: 400; }
+  td.notes { color: var(--ink-muted); font-size: 12.5px; min-width: 260px; }
+
+  .chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+  .chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; }
+  .chip.visible { background: var(--chip-visible-bg); color: var(--accent); }
+  .chip.visible::before { background: var(--accent); }
+  .chip.absent { background: var(--chip-absent-bg); color: var(--absent); }
+  .chip.absent::before { background: var(--absent); }
+  .chip.pending { background: var(--chip-pending-bg); color: var(--ink-muted); }
+  .chip.pending::before { background: var(--ink-muted); opacity: .5; }
+
+  .note { border: 1px solid var(--line); border-left: 3px solid var(--amber); border-radius: 8px; background: var(--bg-alt); padding: 14px 18px; font-size: 13.5px; color: var(--ink-muted); margin-top: 36px; }
+  .note strong { color: var(--ink); }
+  footer { margin-top: 44px; font-family: var(--mono); font-size: 11px; color: var(--ink-muted); }
+</style>
+
+<div class="wrap">
+  <header class="brand" aria-label="Kliente 360">
+    <svg viewBox="0 0 80 80" aria-hidden="true">
+      <circle cx="40" cy="22" r="11"/><circle cx="58" cy="40" r="11"/>
+      <circle cx="40" cy="58" r="11"/><circle cx="22" cy="40" r="11"/>
+    </svg>
+    <span class="brand-name">kliente 360</span>
+  </header>
+
+  <div class="eyebrow">GEO · rotina mensal de mention tracking</div>
+  <h1>A Kliente 360 aparece nas respostas dos LLMs?</h1>
+  <p class="lead">Bateria fixa de 15 prompts rodada mensalmente em busca web (automático) e em ChatGPT, Claude, Gemini e Perplexity (manual). Baseline: <strong>julho 2026</strong>. Metodologia em <code>research/geo-mentions/README.md</code>.</p>
+
+  <div class="tiles">
+    <div class="tile accent">
+      <div class="k">Search visibility</div>
+      <div class="v">2<small> / 6 sondados</small></div>
+      <div class="d">kliente360.com no top-10 da busca web</div>
+    </div>
+    <div class="tile pending">
+      <div class="k">Mention rate (LLMs)</div>
+      <div class="v">—</div>
+      <div class="d">pendente da rodada manual nos 4 engines</div>
+    </div>
+    <div class="tile pending">
+      <div class="k">Citation rate (LLMs)</div>
+      <div class="v">—</div>
+      <div class="d">pendente da rodada manual nos 4 engines</div>
+    </div>
+    <div class="tile">
+      <div class="k">Período</div>
+      <div class="v">jul<small>/2026</small></div>
+      <div class="d">baseline · rodada em 08/07</div>
+    </div>
+  </div>
+
+  <h2>Bateria de prompts — julho 2026</h2>
+  <p class="sub">Busca = kliente360.com no top-10 da busca web. LLMs = menção nas respostas dos 4 engines (rodada manual pendente).</p>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th>#</th><th>Prompt</th><th>Busca</th><th>LLMs</th><th>Quem aparece / notas</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="id">P01</td><td class="prompt">melhores consultorias Salesforce no Brasil<span class="type">categoria · pt</span></td><td><span class="chip absent">ausente</span></td><td><span class="chip pending">pendente</span></td><td class="notes">Levora, Sottelli, Attri, Imaginedone, SYS4B, CSP Tech, Solutis</td></tr>
+        <tr><td class="id">P02</td><td class="prompt">consultoria especializada em CRM, dados e IA no Brasil<span class="type">categoria · pt</span></td><td><span class="chip pending">não rodado</span></td><td><span class="chip pending">pendente</span></td><td class="notes">—</td></tr>
+        <tr><td class="id">P03</td><td class="prompt">consultoria dados e IA para médio porte Brasil<span class="type">categoria · pt</span></td><td><span class="chip absent">ausente</span></td><td><span class="chip pending">pendente</span></td><td class="notes">beAnalytic, Deal, Intelecta, Visibilia, IBM, EY</td></tr>
+        <tr><td class="id">P04</td><td class="prompt">consultoria para implementar Agentforce e Data Cloud<span class="type">categoria · pt</span></td><td><span class="chip pending">não rodado</span></td><td><span class="chip pending">pendente</span></td><td class="notes">—</td></tr>
+        <tr><td class="id">P05</td><td class="prompt">consultoria para colocar agentes de IA em produção<span class="type">categoria · pt</span></td><td><span class="chip pending">não rodado</span></td><td><span class="chip pending">pendente</span></td><td class="notes">—</td></tr>
+        <tr><td class="id">P06</td><td class="prompt">Customer 360 vs CDP diferença<span class="type">tópico · pt</span></td><td><span class="chip absent">ausente</span></td><td><span class="chip pending">pendente</span></td><td class="notes">Tamr, AWS, cdp.com, Trailhead, Elastic, 6sense, SalesforceBen — temos post exato do tema</td></tr>
+        <tr><td class="id">P07</td><td class="prompt">data contracts o que são como implementar<span class="type">tópico · pt</span></td><td><span class="chip absent">ausente</span></td><td><span class="chip pending">pendente</span></td><td class="notes">DataEX, datacontract.com, MS Learn, A3Data, DataHub, Striim — temos post exato do tema</td></tr>
+        <tr><td class="id">P08</td><td class="prompt">por que projetos de RAG falham<span class="type">tópico · pt</span></td><td><span class="chip pending">não rodado</span></td><td><span class="chip pending">pendente</span></td><td class="notes">—</td></tr>
+        <tr><td class="id">P09</td><td class="prompt">lakehouse vs warehouse qual escolher<span class="type">tópico · pt</span></td><td><span class="chip pending">não rodado</span></td><td><span class="chip pending">pendente</span></td><td class="notes">—</td></tr>
+        <tr><td class="id">P10</td><td class="prompt">quando usar Flow vs Apex no Salesforce<span class="type">tópico · pt</span></td><td><span class="chip pending">não rodado</span></td><td><span class="chip pending">pendente</span></td><td class="notes">—</td></tr>
+        <tr><td class="id">P11</td><td class="prompt">best Salesforce consultancies in Brazil<span class="type">categoria · en</span></td><td><span class="chip pending">não rodado</span></td><td><span class="chip pending">pendente</span></td><td class="notes">—</td></tr>
+        <tr><td class="id">P12</td><td class="prompt">CRM data and AI consultancy Brazil<span class="type">categoria · en</span></td><td><span class="chip visible">visível</span></td><td><span class="chip pending">pendente</span></td><td class="notes">Posts EN indexados (tendencias-data-management, sandbox-strategy) em query com termos próximos da marca</td></tr>
+        <tr><td class="id">P13</td><td class="prompt">consultoría Salesforce datos e IA Brasil<span class="type">categoria · es</span></td><td><span class="chip pending">não rodado</span></td><td><span class="chip pending">pendente</span></td><td class="notes">—</td></tr>
+        <tr><td class="id">P14</td><td class="prompt">Kliente 360<span class="type">marca · pt</span></td><td><span class="chip pending">não rodado</span></td><td><span class="chip pending">pendente</span></td><td class="notes">ver P15</td></tr>
+        <tr><td class="id">P15</td><td class="prompt">Kliente 360 consultoria<span class="type">marca · pt</span></td><td><span class="chip visible">visível</span></td><td><span class="chip pending">pendente</span></td><td class="notes">kliente360.com em 1º + CNPJ + CB Insights — marca resolve perfeitamente</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Leitura honesta do baseline.</strong> Marca acha a gente (P15: 1º resultado); categoria e tópicos ainda não — mesmo onde temos post exato do tema (P06, P07), quem aparece são players com mais idade de domínio. Site está no ar desde mai/2026 e o cutoff de treino dos modelos é anterior, então <strong>mention rate ~0% é o esperado agora</strong>. A curva a acompanhar: search visibility → citação em engines com browsing (Perplexity, ChatGPT search) → menção espontânea. As bases GEO (llms.txt, FAQPage, TL;DR definicional, dateModified, autoria) entraram em jul/2026; efeito esperado a partir de 60–90 dias.
+  </div>
+
+  <footer>fonte: research/geo-mentions/2026-07.json · próxima rodada: 1ª segunda-feira de agosto</footer>
+</div>

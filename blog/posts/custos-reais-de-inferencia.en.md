@@ -80,3 +80,25 @@ If you're at a company with LLM in production, three practical moves:
 **Bring FinOps to the AI stack.** Just as cloud FinOps exists, AI needs its equivalent. Dashboards, alerts, review cycles. Without it, the bill tells the story after — always too late to prevent this quarter's impact. When volume grows and multiple teams consume inference, [the problem becomes cost allocation between teams — AI FinOps as a governance discipline](/blog/en/finops-de-ia.html).
 
 LLM cost in 2026 is controllable. Whoever grows with AI and keeps healthy economics doesn't have a secret model — they have discipline on five patterns. Whoever doesn't sees the successful pilot become an unviable bill in the third month of production. The difference isn't in the LLM. It's in the controls around it.
+
+## Questions that keep coming back
+
+Three doubts that surface in almost every conversation about LLM cost in production.
+
+## How much should I budget for production based on the POC cost?
+
+Multiply the POC number by 5–10× — not by 1.5×. The POC runs at low volume, with controlled prompts and hand-picked cases; production brings context that grows from 500 to 3,500 tokens, hard cases with 3–5 retries, long conversations, failures that cost full tokens, and peaks of 10× the average traffic.
+
+Whoever budgets at 1.5× isn't being careless — they're using the math that seemed trivial ("just multiply tokens by price") and finding the rest on the bill. The 5–10× multiplier isn't pessimism: it's what the POC hides by design.
+
+## Does switching to the cheaper model fix the cost?
+
+Most of the time, no — it's the wrong call in 70% of cases. A cheap model at 60% accuracy ends up more expensive than an expensive model at 90%, because the user comes back, redoes, escalates to a human: total cost (LLM + human time + rework) exceeds the apparent savings. The right metric is cost per successfully resolved interaction, not price per million tokens.
+
+What works is routing by use case: a mid-tier model for classification and short summarization (90% of the quality at 10% of the price), an expensive model only where complex generation demands it. A system using the same model for everything pays 5–10× more than one with routing.
+
+## How long does it take to implement the cost controls?
+
+Two to four weeks of work — which save 50–70% of the bill. They're the five patterns: context truncation, routing by use case, caching, batching where applicable, and smart retry. None requires new tooling; they require architectural discipline from the start.
+
+If you need to prioritize, caching and batching have the most direct payback: prompt caching cuts input cost by 90% for repeated context (implementing it is roughly 2 weeks of work that pays back 50% of the bill), and the Batch API charges half price on workflows that don't need real time — savings almost nobody captures because they "forget to implement".

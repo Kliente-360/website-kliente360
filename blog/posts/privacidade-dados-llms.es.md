@@ -86,3 +86,25 @@ Si tu empresa está por pilotear LLM con dato real, tres movimientos antes del p
 **Sponsor con mandato de pausar el piloto si hace falta.** Cuando algo salga mal — y algo va a salir mal en algún piloto — alguien necesita tener autoridad para pausar antes de la escalada. Sin ese sponsor, el equipo va a esconder el problema hasta volverse incidente.
 
 La gobernanza de privacidad en LLM en 2026 es parte del proyecto, no fase adicional. Empresa que acepta esa lógica entrega IA responsable y crece con confianza. Empresa que todavía lo trata como burocracia opcional va a estar en el titular antes de estar en el business case. La diferencia no está en tener compliance — está en tener compliance *desde el primer prompt*.
+
+## Preguntas que siempre vuelven
+
+Tres dudas que aparecen en toda conversación sobre privacidad y LLM — respondidas con lo que este texto argumenta.
+
+## ¿Puedo usar dato real de cliente en un piloto de LLM?
+
+Podés, pero solo después de resolver la gobernanza — usar dato real "porque es solo una prueba" es exactamente como nacen los incidentes. El arco es siempre el mismo: el piloto se vuelve proyecto, el proyecto se vuelve producto, y en algún momento alguien descubre que dato personal de miles de clientes pasó por API externa sin base legal, sin DPIA, sin registro.
+
+El camino responsable es responder por escrito los siete ítems del checklist antes del primer prompt: mapa del dato, base legal por categoría, política del vendor documentada, DPIA cuando aplica, redaction en el camino, log propio y bypass humano. Faltando dos o más, el piloto no debería salir del papel. Y cuando puedas enmascarar PII antes de enviar, mejor todavía — reduce riesgo y simplifica compliance.
+
+## ¿Correr el LLM on-premise resuelve el problema de privacidad?
+
+No lo resuelve — cambia parte del problema, pero la gobernanza no desaparece. Con modelo propio, el vendor sale del camino: desaparece la preocupación por retención y entrenamiento de tercero. A cambio, surgen otras: gobernanza del modelo interno, control de acceso al servidor, hardening. Y la filtración interna sigue siendo filtración.
+
+El punto central es que la ley de privacidad no diferencia dónde corre el modelo. Bases legales, DPIA, log propio y derecho a revisión humana siguen valiendo igual. Correr propio es más seguro en una dimensión (perímetro), pero no dispensa el resto del checklist.
+
+## ¿Cuánto cuesta poner gobernanza en un proyecto de LLM?
+
+Menos de lo que parece, y mucho menos que la alternativa — pero tiene que entrar al presupuesto desde el inicio. Log propio, redaction y monitoreo tienen costo real: olvidarse de eso es presupuestar el piloto con 20–30% de costo invisible. Del lado del proceso, el esfuerzo es modesto: un documento de 2–3 páginas con el checklist respondido, aprobado por DPO y responsable técnico, más 1 hora de capacitación del equipo — que previene el 80% de los incidentes.
+
+El contrapunto es el costo de no tenerla: en 2026, reguladores fiscalizando IA específicamente, cliente B2B exigiendo cláusulas sobre uso de IA en contrato, y la prensa transformando filtración en titular. La empresa sin gobernanza pierde negocio antes de tomar multa — y la reputación cuesta más que la multa.

@@ -87,3 +87,25 @@ Se sua empresa já é Salesforce-first e tem Marketing Cloud rodando, três movi
 **Desliga o legado conforme migra.** Cada caso novo em Data Cloud → desligar o sync legado correspondente. Dual-write é dívida que cresce.
 
 Marketing Cloud sozinho continua sendo plataforma poderosa em 2026. Com Data Cloud por baixo, vira a ativação contextual que o mercado descreve em deck e raramente entrega. A diferença não é tecnológica — é arquitetural, e exige decisão consciente desde o início. Empresa que faz isso entrega marketing que parece esperto *e é*. Empresa que não faz continua mandando promoção pro cliente que comprou ontem.
+
+## Perguntas que sempre voltam
+
+Antes de encerrar, as três dúvidas que mais escuto quando essa stack entra em discussão.
+
+## Vale a pena comprar Data Cloud só pra usar com Marketing Cloud?
+
+Depende do volume e do caso de uso — Data Cloud não é barato, e empresa com 50k contatos não tem ROI; com 500k+ começa a ter. Fora o volume, a régua tem mais quatro perguntas: as fontes que precisam virar contexto já estão acessíveis via API madura, existe caso de uso claro de personalização contextual, a identidade entre sistemas está resolvida, e o time de marketing está pronto pra operar segmentação dinâmica.
+
+Quem responde os cinco com sim claro tem caso forte. Quem hesita em três ou mais ainda não amadureceu pra essa stack — e investir agora vira projeto subutilizado.
+
+## Quais são os erros mais comuns ao integrar Marketing Cloud com Data Cloud?
+
+Dois erros somam 80% das implementações que ficam num estado intermediário por dois anos. O primeiro é ingerir tudo em Data Cloud sem caso de uso definido — puxar todo dado "pra ter futuro" termina em 200 entidades, custo alto e ninguém sabendo usar. Data Cloud cresce a partir do caso de uso, não do ingest: comece com 3–5 entidades que servem a jornadas reais.
+
+O segundo é manter o sync legado em paralelo "por segurança". Em 6 meses são dois universos divergentes — um vindo de Data Cloud, outro do sync direto — e o time de campanha não sabe qual usar. Migração precisa ser completa, não dual-write.
+
+## Por onde começar a implementação na prática?
+
+Por um caso de uso de marketing específico, não por "vamos unificar todo o cliente". Algo como resolver suppression em tempo real pra uma campanha concreta: 8 semanas, ROI mensurável, base pra expandir. Antes disso, vale mapear o gap atual — quantas campanhas dependem de dado desatualizado, quantos erros de "promoção do que já comprou" saem por trimestre. Esse diagnóstico justifica ou refuta o investimento.
+
+E conforme migra, desligue o legado: cada caso novo em Data Cloud significa desligar o sync antigo correspondente. Dual-write é dívida que cresce.

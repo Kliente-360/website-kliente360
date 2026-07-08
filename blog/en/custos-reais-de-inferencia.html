@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much should I budget for production based on the POC cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply the POC number by 5–10× — not by 1.5×. The POC runs at low volume, with controlled prompts and hand-picked cases; production brings context that grows from 500 to 3,500 tokens, hard cases with 3–5 retries, long conversations, failures that cost full tokens, and peaks of 10× the average traffic.\n\nWhoever budgets at 1.5× isn&#39;t being careless — they&#39;re using the math that seemed trivial (&quot;just multiply tokens by price&quot;) and finding the rest on the bill. The 5–10× multiplier isn&#39;t pessimism: it&#39;s what the POC hides by design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does switching to the cheaper model fix the cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most of the time, no — it&#39;s the wrong call in 70% of cases. A cheap model at 60% accuracy ends up more expensive than an expensive model at 90%, because the user comes back, redoes, escalates to a human: total cost (LLM + human time + rework) exceeds the apparent savings. The right metric is cost per successfully resolved interaction, not price per million tokens.\n\nWhat works is routing by use case: a mid-tier model for classification and short summarization (90% of the quality at 10% of the price), an expensive model only where complex generation demands it. A system using the same model for everything pays 5–10× more than one with routing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to implement the cost controls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two to four weeks of work — which save 50–70% of the bill. They&#39;re the five patterns: context truncation, routing by use case, caching, batching where applicable, and smart retry. None requires new tooling; they require architectural discipline from the start.\n\nIf you need to prioritize, caching and batching have the most direct payback: prompt caching cuts input cost by 90% for repeated context (implementing it is roughly 2 weeks of work that pays back 50% of the bill), and the Batch API charges half price on workflows that don&#39;t need real time — savings almost nobody captures because they &quot;forget to implement&quot;."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -232,6 +265,17 @@
 <p><strong>Implement the five patterns before scaling.</strong> Context truncation, routing by use case, caching, batching where applicable, smart retry. 2–4 weeks of work that save 50–70% of the bill.</p>
 <p><strong>Bring FinOps to the AI stack.</strong> Just as cloud FinOps exists, AI needs its equivalent. Dashboards, alerts, review cycles. Without it, the bill tells the story after — always too late to prevent this quarter&#39;s impact. When volume grows and multiple teams consume inference, <a href="/blog/en/finops-de-ia.html">the problem becomes cost allocation between teams — AI FinOps as a governance discipline</a>.</p>
 <p>LLM cost in 2026 is controllable. Whoever grows with AI and keeps healthy economics doesn&#39;t have a secret model — they have discipline on five patterns. Whoever doesn&#39;t sees the successful pilot become an unviable bill in the third month of production. The difference isn&#39;t in the LLM. It&#39;s in the controls around it.</p>
+<h2>Questions that keep coming back</h2>
+<p>Three doubts that surface in almost every conversation about LLM cost in production.</p>
+<h2>How much should I budget for production based on the POC cost?</h2>
+<p>Multiply the POC number by 5–10× — not by 1.5×. The POC runs at low volume, with controlled prompts and hand-picked cases; production brings context that grows from 500 to 3,500 tokens, hard cases with 3–5 retries, long conversations, failures that cost full tokens, and peaks of 10× the average traffic.</p>
+<p>Whoever budgets at 1.5× isn&#39;t being careless — they&#39;re using the math that seemed trivial (&quot;just multiply tokens by price&quot;) and finding the rest on the bill. The 5–10× multiplier isn&#39;t pessimism: it&#39;s what the POC hides by design.</p>
+<h2>Does switching to the cheaper model fix the cost?</h2>
+<p>Most of the time, no — it&#39;s the wrong call in 70% of cases. A cheap model at 60% accuracy ends up more expensive than an expensive model at 90%, because the user comes back, redoes, escalates to a human: total cost (LLM + human time + rework) exceeds the apparent savings. The right metric is cost per successfully resolved interaction, not price per million tokens.</p>
+<p>What works is routing by use case: a mid-tier model for classification and short summarization (90% of the quality at 10% of the price), an expensive model only where complex generation demands it. A system using the same model for everything pays 5–10× more than one with routing.</p>
+<h2>How long does it take to implement the cost controls?</h2>
+<p>Two to four weeks of work — which save 50–70% of the bill. They&#39;re the five patterns: context truncation, routing by use case, caching, batching where applicable, and smart retry. None requires new tooling; they require architectural discipline from the start.</p>
+<p>If you need to prioritize, caching and batching have the most direct payback: prompt caching cuts input cost by 90% for repeated context (implementing it is roughly 2 weeks of work that pays back 50% of the bill), and the Batch API charges half price on workflows that don&#39;t need real time — savings almost nobody captures because they &quot;forget to implement&quot;.</p>
 
         </div>
       </div>

@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I know if an executive dashboard is actually working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Count how many real decisions came out of it in the last quarter — that&#39;s the metric, not visits or screen time. A dashboard that produced zero decisions is decoration, no matter how pretty, and the honest move is to kill it and rebuild starting from the decision the board needs to make.\n\nA shortcut for diagnosis: does it answer any of the three questions that justify its existence? What to decide this week, which trend affects next quarter, or where the executive&#39;s intuition is wrong. If it answers none, the problem isn&#39;t design — it&#39;s purpose."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many KPIs should an executive dashboard show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Far fewer than the market default — and the screen should open with a single numeric headline, not fifteen indicators. Fifteen KPIs, three colors, and four filters on one screen is the trademark of the vanity dashboard: everything &quot;important&quot;, nothing actionable.\n\nThe pattern that drives decisions is lean: the number that matters in plain language (like &quot;3 strategic accounts at churn risk in the next 4 weeks&quot;), one line of comparative context right below it, and a drill-down that ends in a recommended next step. Every extra view has to earn its place — not occupy it by inertia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Tableau better than Power BI or Looker for board-level dashboards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tool matters less than it seems — all three deliver the executive pattern well when you build it. The choice between them (and Metabase) follows company-size and cloud-stack criteria, and it&#39;s a decision prior to the dashboard itself.\n\nWhat none of them replaces is what&#39;s usually missing: solid data modeling underneath, serious discovery with whoever will decide, and recommendation — which is the job of people or ML, not the visualization layer. A bad model makes any BI tool pretty and imprecise; the combination that works is a warehouse clean enough for the use case, a well-defined business model, and BI as the reading layer."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -228,6 +261,17 @@
 <h2>The final dashboard</h2>
 <p>The best quality metric for a dashboard: <em>how many real decisions came from it in the last quarter</em>. Not visits, not screen time. Decisions. If zero, kill it and rebuild. <a href="/blog/en/metricas-de-produto-north-dust.html">The same principle applies to product metrics that become &quot;north dust&quot;</a> — the problem rarely is the metric, it&#39;s the system around it.</p>
 <p>Companies adopting this rule cut 60–80% of their dashboard count and — not by chance — start trusting what&#39;s left. A decent data consultancy delivers this, not a report.</p>
+<h2>Questions that keep coming back</h2>
+<p>To close, the questions that come up most often when this topic reaches the meeting room.</p>
+<h2>How do I know if an executive dashboard is actually working?</h2>
+<p>Count how many real decisions came out of it in the last quarter — that&#39;s the metric, not visits or screen time. A dashboard that produced zero decisions is decoration, no matter how pretty, and the honest move is to kill it and rebuild starting from the decision the board needs to make.</p>
+<p>A shortcut for diagnosis: does it answer any of the three questions that justify its existence? What to decide this week, which trend affects next quarter, or where the executive&#39;s intuition is wrong. If it answers none, the problem isn&#39;t design — it&#39;s purpose.</p>
+<h2>How many KPIs should an executive dashboard show?</h2>
+<p>Far fewer than the market default — and the screen should open with a single numeric headline, not fifteen indicators. Fifteen KPIs, three colors, and four filters on one screen is the trademark of the vanity dashboard: everything &quot;important&quot;, nothing actionable.</p>
+<p>The pattern that drives decisions is lean: the number that matters in plain language (like &quot;3 strategic accounts at churn risk in the next 4 weeks&quot;), one line of comparative context right below it, and a drill-down that ends in a recommended next step. Every extra view has to earn its place — not occupy it by inertia.</p>
+<h2>Is Tableau better than Power BI or Looker for board-level dashboards?</h2>
+<p>The tool matters less than it seems — all three deliver the executive pattern well when you build it. The choice between them (and Metabase) follows company-size and cloud-stack criteria, and it&#39;s a decision prior to the dashboard itself.</p>
+<p>What none of them replaces is what&#39;s usually missing: solid data modeling underneath, serious discovery with whoever will decide, and recommendation — which is the job of people or ML, not the visualization layer. A bad model makes any BI tool pretty and imprecise; the combination that works is a warehouse clean enough for the use case, a well-defined business model, and BI as the reading layer.</p>
 
         </div>
       </div>

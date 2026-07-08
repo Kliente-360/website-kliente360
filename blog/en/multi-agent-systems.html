@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When is multi-agent worth it instead of a single agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It&#39;s worth it in three cases: long tasks with inherently different perspectives (one agent generates, another criticizes), heterogeneous technical domains demanding distinct expertise, and workflows with human decisions between steps. What the three share: coordination cost is lower than the specialization gain.\n\nOutside them, a single agent with well-designed tools covers 70–80% of the cases that arrive labeled &quot;we need multi-agent&quot;. The right order is to start with the single agent and only climb to orchestration after exhausting it — inverting that order is expensive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much more does multi-agent cost than a single agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A typical multi-agent system costs 3–10× more in tokens than the equivalent monolith, and each agent adds 1–5s of inference latency. Latency compounds and cost multiplies: each agent runs an LLM, and the coordination itself also consumes tokens.\n\nHence the recommendation to measure latency and cost from the first prototype. A 5-agent system can be unusable in synchronous UX — it pays off in async workflows and kills real-time chatbots. Discovering that in a pilot is cheap; in production, expensive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if my system is really multi-agent or just a prompt chain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If it doesn&#39;t have real specialization, independent state, and non-trivial coordination — all three — it&#39;s a monolith with a prompt chain, not multi-agent. An agent calling another agent isn&#39;t enough: by that definition, any LLM with tool use would become multi-agent and the term would lose meaning.\n\nThe two most common disguises have names: splitting a single task into N agents &quot;because it looks organized&quot; (4× slower and more expensive, with no quality gain) and an orchestrator with identical workers (that&#39;s fan-out, not multi-agent). If your system falls into either, the monolithic version is cheaper, faster, and easier to debug."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -232,6 +265,17 @@
 <p><strong>Pilot multi-agent only where specialization is qualitative.</strong> Generation + critique is the most classic case worth it. Mixed heterogeneous technical domains, second. Other cases, go back to single agent.</p>
 <p><strong>Measure latency and cost from the first prototype.</strong> Multi-agent scales poorly in both. Discovering this in production is expensive; in pilot, cheap.</p>
 <p>The worst enterprise AI decision in 2026 is confusing sophistication with necessity. Multi-agent systems are powerful where they fit. Applying everywhere is the most expensive way to do with five agents what one would do better. (For those who want to see this in real operation, with 5 agents in production for 90 days and the errors named, <a href="/blog/en/multi-agent-em-producao.html">the field diary is here</a>.)</p>
+<h2>Questions that keep coming back</h2>
+<p>Three questions that show up in every multi-agent architecture discussion — answered with this text&#39;s rule.</p>
+<h2>When is multi-agent worth it instead of a single agent?</h2>
+<p>It&#39;s worth it in three cases: long tasks with inherently different perspectives (one agent generates, another criticizes), heterogeneous technical domains demanding distinct expertise, and workflows with human decisions between steps. What the three share: coordination cost is lower than the specialization gain.</p>
+<p>Outside them, a single agent with well-designed tools covers 70–80% of the cases that arrive labeled &quot;we need multi-agent&quot;. The right order is to start with the single agent and only climb to orchestration after exhausting it — inverting that order is expensive.</p>
+<h2>How much more does multi-agent cost than a single agent?</h2>
+<p>A typical multi-agent system costs 3–10× more in tokens than the equivalent monolith, and each agent adds 1–5s of inference latency. Latency compounds and cost multiplies: each agent runs an LLM, and the coordination itself also consumes tokens.</p>
+<p>Hence the recommendation to measure latency and cost from the first prototype. A 5-agent system can be unusable in synchronous UX — it pays off in async workflows and kills real-time chatbots. Discovering that in a pilot is cheap; in production, expensive.</p>
+<h2>How do I know if my system is really multi-agent or just a prompt chain?</h2>
+<p>If it doesn&#39;t have real specialization, independent state, and non-trivial coordination — all three — it&#39;s a monolith with a prompt chain, not multi-agent. An agent calling another agent isn&#39;t enough: by that definition, any LLM with tool use would become multi-agent and the term would lose meaning.</p>
+<p>The two most common disguises have names: splitting a single task into N agents &quot;because it looks organized&quot; (4× slower and more expensive, with no quality gain) and an orchestrator with identical workers (that&#39;s fan-out, not multi-agent). If your system falls into either, the monolithic version is cheaper, faster, and easier to debug.</p>
 
         </div>
       </div>

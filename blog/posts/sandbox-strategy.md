@@ -86,3 +86,25 @@ Se sua organização Salesforce tem sintomas de estratégia quebrada — bug rec
 **Auditoria semestral.** A cada 6 meses, time olha: sandboxes ativas, dono nominal, último refresh, uso real. Aposenta as obsoletas (cada uma custa licença), reorganiza as ativas. Sem essa rotina, vira cemitério.
 
 A sandbox no Salesforce é o ambiente onde você tem direito a errar. Empresa que opera bem na sandbox entrega com previsibilidade. Empresa que opera mal — ou pula sandbox por pressa — descobre o erro no primeiro lugar onde não tem direito: produção. A diferença entre os dois mundos é estratégia, não talento técnico.
+
+## Perguntas que sempre voltam
+
+Antes de encerrar, as três dúvidas que mais aparecem quando o assunto sandbox entra na conversa.
+
+## Quantas sandboxes minha empresa precisa?
+
+Pra empresa de médio porte, a pilha que funciona tem três camadas antes de produção: uma Developer Sandbox por desenvolvedor (refresh sob demanda, cada dev trabalha isolado sem travar ninguém), uma Partial Copy de integração contínua que recebe o merge de todos via Git/Salesforce DX, e uma Full Sandbox de UAT/staging que espelha produção pro cliente aprovar antes do deploy. Esse pipeline cobre 95% das necessidades.
+
+O erro comum é economizar misturando tudo numa sandbox compartilhada: dev pisa na alteração do colega, UAT roda com dado velho e bug em produção vira rotina. Quem usa só Developer Sandbox economiza licença — e descobre os bugs onde não tem direito de errar.
+
+## Vale a pena pagar por uma Full Sandbox?
+
+Vale, se o projeto é sério — é o único ambiente que reflete produção fielmente, com cópia completa de metadata e dado integral. Pra teste de carga, regressão completa e treinamento com cenário real, não existe substituto: Partial Copy trabalha com amostra de dado, não com o volume verdadeiro.
+
+O custo em licença é real, mas o custo de não ter é maior: aprovar deploy testando num ambiente que está meses atrás da produção é a receita do "passou no QA na sandbox" — verdade incompleta que a diretoria escuta depois do incêndio. O limite prático é o refresh a cada 29 dias, então ela precisa de cadência disciplinada pra não degradar.
+
+## De quanto em quanto tempo devo atualizar as sandboxes?
+
+Com cadência planejada e calendarizada, não quando alguém lembra. A referência: Developer Sandbox toda semana, Partial Copy a cada 5 dias (por exemplo, quinta de manhã, semana sim semana não), Full Sandbox no ciclo de 29 dias — primeiro domingo do mês, com janela de manutenção anunciada. Sem cadência, o refresh acontece tarde demais e o time volta pro cenário dos "4 meses, talvez 6".
+
+Um termômetro útil: refresh saudável da Full Sandbox é evento de 4–6 horas, automatizado, sem drama. Quando vira projeto de uma semana com prep, plano e escalação, é sinal de que está sendo feito raramente e tudo acumulou.

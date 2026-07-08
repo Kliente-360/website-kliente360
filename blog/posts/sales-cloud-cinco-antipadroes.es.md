@@ -52,3 +52,25 @@ Los cinco comparten algo: confunden *configurar Salesforce* con *implantar Sales
 La misma regla de antes del proyecto vale en el medio: si no podés decir en una frase qué decisión sustenta cada parte de Sales Cloud, todavía hay trabajo por hacer. No falta capacitación — falta diseño.
 
 La buena noticia es que esos antipatrones son conocidos. La empresa que entra al proyecto sabiendo qué evitar ahorra tres a seis meses de retrabajo — y descubre que Sales Cloud es una de las mejores herramientas de venta del mercado cuando se implanta con disciplina. (Antes de empezar el proyecto, vale la otra pregunta: [si Sales Cloud realmente es la respuesta correcta para ese momento de la operación](/blog/es/quando-nao-usar-salesforce.html). Los cinco antipatrones sólo aparecen si la decisión de adoptar ya fue tomada.)
+
+## Preguntas que siempre vuelven
+
+Para cerrar, las dudas que más escuchamos cuando estos antipatrones aparecen en diagnóstico.
+
+## ¿Por qué los vendedores no usan Salesforce después del rollout?
+
+Porque nadie respondió qué gana el vendedor al usarlo — la causa casi nunca es falta de capacitación. El rollout típico termina la configuración, agenda dos horas de capacitación, manda video y mide uso por login; en tres meses, la mitad del equipo no la usa bien. Capacitación sin respuesta a la pregunta de la ganancia es teatro.
+
+La adopción real viene de dos cosas concretas: el vendedor ver que registrar actividad le ahorra tiempo después (visión única del cliente, contexto para la próxima reunión, comisión bien calculada), y el gerente cobrar el uso como ítem de gestión, no como métrica de TI. Una pantalla con 40 campos opcionales trabaja contra las dos — el vendedor se congela, completa lo mínimo y el resto se vuelve ruido estadístico.
+
+## ¿Cuántos campos debería tener un page layout de Sales Cloud?
+
+No hay número mágico — la regla es que cada campo tiene que servir a una decisión: avanzar etapa, calificar lead, calcular comisión o alimentar un reporte que alguien realmente mira. Si el campo no sustenta ninguna decisión, hay que ocultarlo. El page layout de 40 campos es el síntoma clásico del equipo que apiló campos "por si acaso" porque Sales Cloud no cobra por campo.
+
+Esa disciplina sale del mapeo de proceso antes de la configuración. Sin él, el layout se vuelve colección de campos opcionales que nadie completa — y el dato que la dirección usa para decidir nace corrompido.
+
+## ¿Toda automatización en Sales Cloud necesita aprobación humana?
+
+No en todo paso — en los puntos de impacto irreversible. La regla que funciona: la automatización que toca cliente externo, dispara firma o mueve dinero necesita validación humana intermedia. El resto puede correr automático sin ceremonia.
+
+El riesgo de saltarse esto es la cascada: el vendedor cambia a la etapa equivocada, tres sistemas reaccionan, el cliente recibe un mail que no debía, legal cierra un caso válido — y revertir cuesta dos semanas. La velocidad pura es rasgo de demo; la resiliencia es rasgo de producción.

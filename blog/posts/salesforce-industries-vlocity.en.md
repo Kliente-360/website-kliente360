@@ -100,3 +100,25 @@ If your company is being presented Salesforce Industries, three honest moves:
 **Calculate 24-month TCO including training and operation.** Industries costs more on every axis. The difference has to be justified by the gain — not by the pitch.
 
 Salesforce Industries in 2026 is powerful tooling in sectors where it fits, added complexity where it doesn't. A Brazilian mid-market company outside the 6 focus verticals is almost always better off with Sales Cloud + CPQ + customization — cheaper, local community, available partners. Accepting Industries by pitch without this rule is the most elegant way to pay premium to get the same result as the standard platform.
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most often when Industries enters the conversation.
+
+## Is Salesforce Industries worth it for a mid-market company in Brazil?
+
+In most cases, no. Outside the three contexts where the fit is real — mid/large telecom, utilities, and financial services with complex products — a Brazilian mid-market company is almost always better off with Sales Cloud + CPQ + customization: cheaper, larger local community, available partners.
+
+The test is answering four questions with a clear yes: your sector is in Salesforce's focus, sector specificity is high, volume justifies the OmniStudio learning curve, and ROI fits in the first 12 months. If "it depends" comes up on two or more, you're probably looking at overshoot.
+
+## How much more does Industries cost than standard Salesforce?
+
+Industries costs more on every axis: licenses above standard Salesforce, implementation similar or higher, plus OmniStudio training on top. A client who accepts the vendor's recommendation without questioning typically enters an 18-month project paying 30–50% more — sometimes only to find standard Sales Cloud would have solved it.
+
+That's why the recommendation is to calculate 24-month TCO including training and operation, and run a 60-day parallel POC against standard Salesforce. The cost difference has to be justified by the acceleration gain — if ROI doesn't materialize in the first 12 months, you're left with an expensive platform without return.
+
+## Do I need a big team to operate OmniStudio?
+
+Yes — OmniStudio requires serious training, and a standard Salesforce developer doesn't fall in automatically. A team of 2 in Salesforce will struggle; a team of 10+ with a sponsor willing to invest in training can make it pay.
+
+There's also a market risk: few Brazilians know how to operate OmniStudio, so finding specialized consultants becomes a problem. Before signing, check whether there's a Salesforce partner with Industries in Brazil, with public cases in your sector — a sector without a local partner means no real support.

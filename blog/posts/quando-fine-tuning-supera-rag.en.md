@@ -83,3 +83,25 @@ Fine-tuning is not better than RAG in the abstract. It's better under specific c
 When none of the four clearly applies, RAG wins on operational cost and ease of maintenance. When one or more applies, fine-tuning deserves serious evaluation — and the training cost, which looks high upfront, frequently pays for itself in the first months of production at volume.
 
 The architectural decision is not aesthetic. It's about optimizing for the real problem — and the first step is asking the question before opening the RAG notebook.
+
+## Questions that keep coming back
+
+Three questions that surface whenever this architectural choice comes up — answered with what this piece argues.
+
+## Is fine-tuning worth it, or should I just stick with RAG?
+
+It depends on the problem, not on preference — fine-tuning is worth it when the problem is behavioral; RAG, when it's about knowledge. That distinction is the heart of the choice: RAG injects external context at prompt time (internal documents, an updated knowledge base, a new product); fine-tuning trains how the model responds into the weights — tone, terminology, format, edge cases.
+
+In practice, the patterns where fine-tuning wins cleanly are six: proprietary tone at scale, critical latency, closed technical terminology, consistency at high volume, sensitive data that can't sit in an index, and narrow high-frequency domains. If none clearly applies to your case, RAG wins on operational cost and ease of maintenance.
+
+## Isn't fine-tuning too expensive?
+
+The training cost looks high upfront, but it frequently pays for itself in the first months of production at volume. A fine-tuned model works with a shorter prompt — no long instruction repeated in every call — and that shows up directly in the monthly provider invoice. For tone of voice, the cost pays off in months of eliminated QA overhead.
+
+The other side of the ledger is usually forgotten: RAG carries real maintenance cost too — retrieval pipeline quality needs continuous care, and that cost is frequently underestimated at the moment of choice. A poorly built retrieval pipeline delivers worse results than well-done fine-tuning in simple cases.
+
+## Can I use RAG and fine-tuning together?
+
+Yes — a fine-tuned model with RAG on top is a legitimate architecture, because the two solve different problems. Fine-tuning handles behavior (tone, vocabulary, output format) and RAG handles dynamic knowledge that changes too fast to live in the weights.
+
+What doesn't work is using one to patch the other's gap. When the core problem is behavioral, RAG alone falls short — no more elaborate prompt solves what training needs to solve. And when the corpus is large and changes every week, fine-tuning doesn't replace the index updates RAG gives you for free.

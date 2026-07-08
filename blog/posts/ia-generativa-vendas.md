@@ -86,3 +86,25 @@ Se sua empresa está avaliando IA generativa em vendas, três movimentos antes d
 **Meça contra grupo de controle.** Sem grupo de controle, lift é palpite. Com grupo, em 90 dias você sabe se IA está movendo o ponteiro ou só dando sensação de modernidade.
 
 IA generativa em vendas em 2026 é uma das maiores alavancas de produtividade disponíveis. Mas não é "ChatGPT pra vendedor". É integração específica em pontos específicos do ciclo de venda. Empresa que faz essa distinção entrega aumento de receita atribuível à IA. Empresa que não faz tem assinatura de OpenAI no orçamento e mesmo número de vendas no fim do trimestre.
+
+## Perguntas que sempre voltam
+
+Três dúvidas que aparecem em quase toda conversa sobre esse tema.
+
+## IA generativa vai substituir vendedor ou SDR?
+
+Não — e tentar substituir é justamente onde os projetos viram passivo. Os quatro padrões que rendem têm a mesma lógica: a IA pega trabalho que o vendedor já faz (research de prospect, follow-up, briefing, redação de proposta) e acelera com qualidade comparável. Ela economiza tempo em tarefa existente; não pede comportamento novo nem assume a relação com o cliente.
+
+Os dois antipadrões clássicos confirmam isso pelo avesso. Agente decidindo desconto gera incidente e quebra confiança — preço continua sendo decisão humana sênior. E SDR trocado por outbound automático vira spam em escala, derruba a reputação do domínio e entrega ROI negativo. Prospecção em volume precisa de discriminação humana.
+
+## Por qual caso de uso vale a pena começar?
+
+Por um só — e redação assistida com contexto é o candidato mais consistente em ROI. Puxando dado real do CRM, do RFP do cliente e da documentação interna, o vendedor passa a editar em vez de escrever do zero, e o tempo de proposta cai de 4h pra 1h. Prospecção contextual é a alternativa forte quando o gargalo está no topo do funil.
+
+O critério importa mais que o caso: escolha uma tarefa repetitiva específica, com dado acessível pra contextualizar e resultado mensurável. Se a justificativa do projeto ainda é "aumentar produtividade", ele não está pronto. E pilote uma tarefa, não cinco — profundidade vence amplitude.
+
+## Quanto tempo demora pra saber se o projeto está dando retorno?
+
+Uns 90 dias — desde que exista grupo de controle. Comparando vendedores com IA contra vendedores sem, você mede lift real em métrica de funil que importa: conversão de prospect pra reunião, de proposta pra fechamento, ticket médio. Diferença menor que 5% significa que o projeto não está movendo o que importa. Sem grupo de controle, qualquer lift é palpite.
+
+Complemente com tempo economizado autodeclarado (captura abandono cedo), adoção segmentada por perfil júnior/sênior e custo por venda assistida — se o custo de inferência passa de 1:10 sobre o lift de receita, é hora de repensar.

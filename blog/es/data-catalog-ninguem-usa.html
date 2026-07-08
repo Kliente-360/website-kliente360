@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena comprar un data catalog tipo Alation o Collibra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo en tres contextos: empresa grande con 5+ equipos de datos independientes, exigencia regulatoria de documentación centralizada con trazabilidad de aprobación, o lineage que atraviesa 5+ sistemas distintos. Fuera de eso, el catalog premium tiende a ser overshoot — pagás USD 200k+/año por una herramienta cuyo uso real se desploma cuando el entusiasmo inicial pasa.\n\nEl prerequisito que nadie chequea: cultura de documentación. Si tus 20 tablas más usadas no están documentadas hoy, comprar catalog es amplificar ausencia. La herramienta no escribe descripciones por vos y no crea disciplina que no existe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿dbt sustituye a un data catalog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para la mayoría de las empresas de tamaño medio, sí — dbt con disciplina de documentación cubre un 80% de lo que el catalog intentaría resolver. Descriptions versionadas en Git al lado del código, <code>dbt docs</code> generando sitio navegable con lineage visual, owner explícito en el <code>.yml</code>, source freshness con alerta activa. Y la infra cuesta cero, porque dbt es open source.\n\nLa limitación honesta: dbt solo cubre lo que está en el warehouse. Si buena parte de tu dato crítico vive en fuentes externas (Salesforce, Mixpanel, planillas) o el lineage necesita cruzar varios sistemas, ahí el catalog cubre algo que dbt solo no cubre. El catalog es el upgrade cuando dbt se agota — no al revés."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo saber si la implementación del catalog funcionó?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por el uso, no por la cobertura — y la reevaluación honesta es a los 12 meses. Catalog con 100% de las tablas documentadas y 5 accesos por semana es catalog muerto; catalog con 60% de las tablas y 500 accesos por semana es catalog vivo. Inventario completo no prueba nada si el analista sigue preguntando por Slack.\n\nEl test práctico: ¿cuántas veces alguien consultó el catalog en la última semana, descontando al propio equipo de gobernanza verificando si está actualizado? Si la respuesta incomoda, el problema no se resuelve con más población — se resuelve con dueño nominal, proceso de mantenimiento y un caso de uso primario definido antes de cualquier renovación de contrato."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -240,6 +273,17 @@
 <p><strong>Si decidís comprar catalog, armá el equipo antes.</strong> No se puede comprar catalog y esperar que &quot;el equipo de datos pueble&quot;. Persona nominal, plazo, sponsor con autoridad para cobrar áreas a documentar.</p>
 <p><strong>Reevaluá a los 12 meses por el uso, no por la cobertura.</strong> Catalog con 100% de las tablas y 5 accesos por semana es catalog muerto. Catalog con 60% de las tablas y 500 accesos por semana es catalog vivo. La métrica de éxito es uso, no inventario.</p>
 <p>Data Catalog en 2026 es herramienta legítima — pero es último escalón de una escalera de cultura de documentación. Empresa que se saltea escalones paga catalog caro y sigue preguntando por Slack. Empresa que sube por la escalera llega al escalón alto sabiendo si vale o no.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.</p>
+<h2>¿Vale la pena comprar un data catalog tipo Alation o Collibra?</h2>
+<p>Solo en tres contextos: empresa grande con 5+ equipos de datos independientes, exigencia regulatoria de documentación centralizada con trazabilidad de aprobación, o lineage que atraviesa 5+ sistemas distintos. Fuera de eso, el catalog premium tiende a ser overshoot — pagás USD 200k+/año por una herramienta cuyo uso real se desploma cuando el entusiasmo inicial pasa.</p>
+<p>El prerequisito que nadie chequea: cultura de documentación. Si tus 20 tablas más usadas no están documentadas hoy, comprar catalog es amplificar ausencia. La herramienta no escribe descripciones por vos y no crea disciplina que no existe.</p>
+<h2>¿dbt sustituye a un data catalog?</h2>
+<p>Para la mayoría de las empresas de tamaño medio, sí — dbt con disciplina de documentación cubre un 80% de lo que el catalog intentaría resolver. Descriptions versionadas en Git al lado del código, <code>dbt docs</code> generando sitio navegable con lineage visual, owner explícito en el <code>.yml</code>, source freshness con alerta activa. Y la infra cuesta cero, porque dbt es open source.</p>
+<p>La limitación honesta: dbt solo cubre lo que está en el warehouse. Si buena parte de tu dato crítico vive en fuentes externas (Salesforce, Mixpanel, planillas) o el lineage necesita cruzar varios sistemas, ahí el catalog cubre algo que dbt solo no cubre. El catalog es el upgrade cuando dbt se agota — no al revés.</p>
+<h2>¿Cómo saber si la implementación del catalog funcionó?</h2>
+<p>Por el uso, no por la cobertura — y la reevaluación honesta es a los 12 meses. Catalog con 100% de las tablas documentadas y 5 accesos por semana es catalog muerto; catalog con 60% de las tablas y 500 accesos por semana es catalog vivo. Inventario completo no prueba nada si el analista sigue preguntando por Slack.</p>
+<p>El test práctico: ¿cuántas veces alguien consultó el catalog en la última semana, descontando al propio equipo de gobernanza verificando si está actualizado? Si la respuesta incomoda, el problema no se resuelve con más población — se resuelve con dueño nominal, proceso de mantenimiento y un caso de uso primario definido antes de cualquier renovación de contrato.</p>
 
         </div>
       </div>

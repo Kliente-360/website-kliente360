@@ -74,3 +74,25 @@ Se sua empresa tem north star e ninguém olha mais, a opção certa não é troc
 4. As decisões de produto da última quarter citaram explicitamente a métrica? Se sim, está viva. Se não, está moribunda.
 
 Respondendo as quatro com sinceridade, fica claro se o problema é a métrica (raro) ou o sistema em volta dela (quase sempre). Empresa que aceita essa lógica gasta menos tempo escolhendo a próxima north star perfeita e mais tempo construindo o músculo de operar por métrica — que é o que de fato move o ponteiro. [O mesmo princípio vale pra análise de churn](/blog/analise-de-churn.html): definição antes de modelo, sistema em volta antes de dashboard.
+
+## Perguntas que sempre voltam
+
+Antes de encerrar, as dúvidas que mais escuto quando esse tema aparece.
+
+## Vale a pena trocar a north star quando ela para de funcionar?
+
+Quase nunca — trocar de métrica sem consertar o sistema em volta é garantir a mesma morte em seis meses. O problema raramente é a escolha (o off-site novo com framework novo produz outra métrica que vai morrer igual); o problema é o que falta embaixo: desdobramento em métricas operacionais, ritmo de revisão, dono nominal e playbook de ação.
+
+O caminho honesto é o autodiagnóstico primeiro: cada métrica operacional tem dono? Existe cadência calendarizada? Existe playbook quando degrada? As decisões da última quarter citaram a métrica? Se a resposta revela sistema ausente — que é o caso quase sempre —, monte o sistema. Trocar a métrica só se justifica no caso raro em que ela de fato está errada.
+
+## Com que frequência revisar a north star?
+
+Mensal, com análise de causa-raiz, em cerca de 1 hora — nem semanal (overkill, ela não move tão rápido), nem trimestral (tarde demais, o problema já cresceu). Quem se olha toda semana são as métricas operacionais, em revisão curta de 15 minutos, porque são elas que o time move em sprint.
+
+Fecha o ciclo a revisão trimestral de recalibração, de meio dia. Sem esse ritmo em três camadas, calendarizado, a métrica passa a ser olhada "quando alguém lembra" — e ninguém lembra. Ritmo sem calendário é intenção, não sistema.
+
+## Como saber se a nossa north star ainda está viva?
+
+O teste mais direto: as decisões de produto da última quarter citaram a métrica explicitamente? Se alguém pergunta "como isso move nossa north star?" no planejamento de roadmap e a resposta é silêncio, ela virou ornamento — sintoma terminal.
+
+Antes disso, dois sinais de alerta aparecem: a discussão sobre como calcular a métrica volta toda hora (definição ambígua, cada relatório mede de um jeito), e o dashboard fica desatualizado por mais de 2 semanas sem ninguém consertar (métrica central se conserta em horas, porque alguém precisa dela). Quando os três sinais aparecem juntos, a métrica está morta independente do que o dashboard mostra — vale matar formalmente e refazer o sistema.

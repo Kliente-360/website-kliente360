@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to migrate from one warehouse to another?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the lock-in vector, but here&#39;s the sobering benchmark: reverse-migrating 50TB out of Snowflake costs US$ 200k–500k in specialized consulting, because it requires <code>COPY INTO</code> of every table to Parquet and re-ingestion at the destination. BigQuery&#39;s exit looks similar (the Capacitor format is closed, full extraction via export jobs), softened somewhat by the Storage Read API for external reads.\n\nAnd data is only one part. If more than 30% of your critical queries use proprietary functions (Cortex, BQML, JavaScript UDFs), migration is refactoring, not export. And if the entire stack lives in a single cloud — say Looker + BigQuery + Vertex AI — moving the warehouse means moving the whole stack. That&#39;s why &quot;how much does it cost to leave?&quot; has to be asked before signing, not after."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which of the three has the least lock-in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Databricks, on the vector that weighs most: data sits in Delta (open format) on the client&#39;s own storage, readable by Spark, DuckDB, Trino and others — switching engines means pointing the new one at the same bucket. Snowflake and BigQuery keep data in proprietary formats, and a full exit goes through costly export.\n\nLeast lock-in isn&#39;t zero lock-in. Databricks grips you another way: notebooks, MLflow, Unity Catalog and Workflows are exclusive, and a team used to them faces high friction anywhere else. The difference is that this kind of lock-in resolves through process refactoring, not data rescue — which is the expensive kind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you trust the official partner's comparison?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As the sole basis for the decision, no — and it&#39;s not about bad faith. A Databricks Gold, Snowflake Premier or Google Cloud partner earns revenue delivering the platform they represent; their expertise sits entirely on one side of the choice, and they structurally cannot recommend you leave it. The comparison can be technically correct on the surface and biased in the conclusion.\n\nThe right way to use the partner: ask the four measurement questions (% of data in open format, % of pure ANSI SQL, native integrations with the same cloud, estimated US$/TB for a full export) and watch the answer. If they don&#39;t know or deflect on the fourth, that&#39;s a red flag. An honest comparison only comes from someone with no resale incentive."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -245,6 +278,17 @@
 <p><strong>Pure analytical use case, no heavy ML, small team</strong>: Snowflake. Simpler operation, pure SQL, no need to manage Spark.</p>
 <p><strong>Analytical + ML at scale use case</strong>: Databricks (or BigQuery + Vertex if already on Google). Snowflake with Snowpark only partially solves it.</p>
 <p>Important: none of these recommendations come from <a href="/blog/en/snowflake-bigquery-databricks.html">mid-market comparative</a> alone. They come from specific lock-in. For each case, the question &quot;how much does it cost to leave?&quot; is as important as &quot;how much does it cost to run?&quot;. Official partners answer the second. The first is for the client to research — or for an agnostic consultant to answer. There&#39;s a structural reason for that arrangement.</p>
+<h2>Questions that keep coming back</h2>
+<p>To close, the questions that come up most when this decision lands on the table.</p>
+<h2>How much does it cost to migrate from one warehouse to another?</h2>
+<p>It depends on the lock-in vector, but here&#39;s the sobering benchmark: reverse-migrating 50TB out of Snowflake costs US$ 200k–500k in specialized consulting, because it requires <code>COPY INTO</code> of every table to Parquet and re-ingestion at the destination. BigQuery&#39;s exit looks similar (the Capacitor format is closed, full extraction via export jobs), softened somewhat by the Storage Read API for external reads.</p>
+<p>And data is only one part. If more than 30% of your critical queries use proprietary functions (Cortex, BQML, JavaScript UDFs), migration is refactoring, not export. And if the entire stack lives in a single cloud — say Looker + BigQuery + Vertex AI — moving the warehouse means moving the whole stack. That&#39;s why &quot;how much does it cost to leave?&quot; has to be asked before signing, not after.</p>
+<h2>Which of the three has the least lock-in?</h2>
+<p>Databricks, on the vector that weighs most: data sits in Delta (open format) on the client&#39;s own storage, readable by Spark, DuckDB, Trino and others — switching engines means pointing the new one at the same bucket. Snowflake and BigQuery keep data in proprietary formats, and a full exit goes through costly export.</p>
+<p>Least lock-in isn&#39;t zero lock-in. Databricks grips you another way: notebooks, MLflow, Unity Catalog and Workflows are exclusive, and a team used to them faces high friction anywhere else. The difference is that this kind of lock-in resolves through process refactoring, not data rescue — which is the expensive kind.</p>
+<h2>Can you trust the official partner&#39;s comparison?</h2>
+<p>As the sole basis for the decision, no — and it&#39;s not about bad faith. A Databricks Gold, Snowflake Premier or Google Cloud partner earns revenue delivering the platform they represent; their expertise sits entirely on one side of the choice, and they structurally cannot recommend you leave it. The comparison can be technically correct on the surface and biased in the conclusion.</p>
+<p>The right way to use the partner: ask the four measurement questions (% of data in open format, % of pure ANSI SQL, native integrations with the same cloud, estimated US$/TB for a full export) and watch the answer. If they don&#39;t know or deflect on the fourth, that&#39;s a red flag. An honest comparison only comes from someone with no resale incentive.</p>
 
         </div>
       </div>

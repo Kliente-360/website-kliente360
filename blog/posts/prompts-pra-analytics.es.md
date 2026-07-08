@@ -80,3 +80,25 @@ Si tu empresa tiene analistas usando ChatGPT/Claude para generar SQL sin goberna
 **Integrá con la capa semántica.** [dbt mart o semantic layer](/blog/es/dbt-na-pratica.html) define métricas; el LLM consulta la capa, no el warehouse crudo. Reduce el error de definición en 80%.
 
 LLM en analytics en 2026 es una de las oportunidades más claras de productividad — y una de las más peligrosas sin disciplina. La diferencia entre las dos posturas no está en qué modelo se elige. Está en el pipeline construido alrededor, con validación, contexto y log que tratan al LLM como herramienta crítica — no como asistente confiable por inercia.
+
+## Preguntas que siempre vuelven
+
+Para cerrar, las tres dudas que más escucho cuando este tema aparece.
+
+## ¿Puedo confiar en el SQL que genera el ChatGPT?
+
+No sin validación — en al menos la mitad de los casos, el SQL generado tiene un error sutil que pasa desapercibido. Los tres modos de falla más comunes: columna que no existe en el schema (el LLM inventa `orders.total` cuando es `orders.amount_total`), definición de negocio genérica que diverge de la tuya ("activo" en 30 días vs. 90 días) y agregación inflada por JOIN contra una dimensión duplicada. Ninguno produce un número absurdo — producen un número plausible y equivocado.
+
+El agravante es de comportamiento: como el LLM presenta el SQL con confianza, el analista revisa menos de lo que revisaría el SQL de un colega. La regla práctica: SQL generado es borrador hasta pasar por validación — sandbox, eval set o al menos revisión contra las definiciones oficiales de métrica.
+
+## ¿Qué pongo en el prompt para que el LLM se equivoque menos con el SQL?
+
+Dos cosas: el schema del warehouse y tus definiciones oficiales de negocio — nunca la pregunta cruda sola. El prompt tiene que cargar la estructura de las tablas-clave con descripciones (dbt docs alimenta eso bien) y las 5–10 definiciones core como parte fija del system prompt: qué es cliente activo, cómo se calcula el ingreso, qué cuenta como churn. Sin schema, el LLM inventa columnas; sin definiciones, usa la genérica y el número diverge.
+
+El paso siguiente es apuntar el LLM a la capa semántica (dbt mart o semantic layer) en vez del warehouse crudo — eso reduce el error de definición en 80%. Un buen prompt no es una frase mágica; es contexto estructurado.
+
+## ¿Vale la pena construir una herramienta interna en vez de dejar que el equipo use el ChatGPT directo?
+
+Vale, si el equipo ya genera SQL con LLM en el día a día — el "ChatGPT abierto" sin gobernanza es improvisación que se vuelve incidente en 3–6 meses. La interfaz controlada empaqueta lo que el uso suelto no tiene: schema-aware prompt, definiciones de negocio embebidas, ejecución en sandbox read-only y log automático de toda interacción. Costo alto al inicio, ROI claro en 6 meses.
+
+Si todavía no podés construirla, empezá por los movimientos baratos: conexión read-only restringida a tablas analíticas, sesión de 1 hora entrenando al equipo en los tres modos de falla, y log de quién generó qué. Sin log, la gobernanza de IA en analytics simplemente no existe.

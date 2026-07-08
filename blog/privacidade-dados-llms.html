@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Posso usar dado real de cliente num piloto de LLM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pode, mas só depois de resolver a governança — usar dado real &quot;porque é só um teste&quot; é exatamente como nascem os incidentes. O arco é sempre o mesmo: piloto vira projeto, projeto vira produto, e em algum momento alguém descobre que dado pessoal de milhares de clientes passou por API externa sem base legal, sem DPIA, sem registro.\n\nO caminho responsável é responder por escrito os sete itens da checklist antes do primeiro prompt: mapa do dado, base legal por categoria, política do vendor documentada, DPIA quando aplicável, redaction no caminho, log próprio e bypass humano. Faltando dois ou mais, o piloto não deveria sair do papel. E quando der pra mascarar PII antes de enviar, melhor ainda — reduz risco e simplifica compliance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Rodar o LLM on-premise resolve o problema de privacidade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não resolve — muda parte do problema, mas a governança não some. Com modelo próprio, o vendor sai do caminho: some a preocupação com retenção e treino de terceiro. Em troca, surgem outras: governança do modelo interno, controle de acesso ao servidor, hardening. E vazamento interno continua sendo vazamento.\n\nO ponto central é que a LGPD não diferencia onde o modelo roda. Bases legais, DPIA, log próprio e direito de revisão humana continuam valendo do mesmo jeito. Rodar interno é mais seguro em uma dimensão (perímetro), mas não dispensa o resto da checklist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto custa colocar governança num projeto de LLM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Menos do que parece, e muito menos que a alternativa — mas precisa entrar no orçamento desde o início. Log próprio, redaction e monitoramento têm custo real: esquecer disso é orçar o piloto com 20–30% de custo invisível. Do lado do processo, o esforço é modesto: um documento de 2–3 páginas com a checklist respondida, aprovado por DPO e responsável técnico, mais 1 hora de treinamento do time — que previne 80% dos incidentes.\n\nO contraponto é o custo de não ter: em 2026, ANPD fiscalizando IA especificamente, cliente B2B exigindo cláusulas sobre uso de IA em contrato, e mídia transformando vazamento em manchete. Empresa sem governança perde negócio antes de tomar multa — e a reputação custa mais que a multa."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -232,6 +265,17 @@
 <p><strong>Política mínima de uso aceitável.</strong> Quem pode enviar o quê pro LLM. Quais dados são proibidos. Treinamento curto pro time. 1 hora de treinamento previne 80% dos incidentes.</p>
 <p><strong>Sponsor com mandato de pausar piloto se necessário.</strong> Quando algo der errado — e algo vai dar errado em algum piloto — alguém precisa ter autoridade pra pausar antes da escalada. Sem esse sponsor, time vai esconder problema até virar incidente.</p>
 <p>Governança de privacidade em LLM em 2026 é parte do projeto, não fase adicional. Empresa que aceita essa lógica entrega IA responsável e cresce com confiança. Empresa que ainda trata como burocracia opcional vai estar na manchete antes de estar no business case. A diferença não está em ter compliance — está em ter compliance <em>desde o primeiro prompt</em>.</p>
+<h2>Perguntas que sempre voltam</h2>
+<p>Três dúvidas que aparecem em toda conversa sobre privacidade e LLM — respondidas com base no que este texto argumenta.</p>
+<h2>Posso usar dado real de cliente num piloto de LLM?</h2>
+<p>Pode, mas só depois de resolver a governança — usar dado real &quot;porque é só um teste&quot; é exatamente como nascem os incidentes. O arco é sempre o mesmo: piloto vira projeto, projeto vira produto, e em algum momento alguém descobre que dado pessoal de milhares de clientes passou por API externa sem base legal, sem DPIA, sem registro.</p>
+<p>O caminho responsável é responder por escrito os sete itens da checklist antes do primeiro prompt: mapa do dado, base legal por categoria, política do vendor documentada, DPIA quando aplicável, redaction no caminho, log próprio e bypass humano. Faltando dois ou mais, o piloto não deveria sair do papel. E quando der pra mascarar PII antes de enviar, melhor ainda — reduz risco e simplifica compliance.</p>
+<h2>Rodar o LLM on-premise resolve o problema de privacidade?</h2>
+<p>Não resolve — muda parte do problema, mas a governança não some. Com modelo próprio, o vendor sai do caminho: some a preocupação com retenção e treino de terceiro. Em troca, surgem outras: governança do modelo interno, controle de acesso ao servidor, hardening. E vazamento interno continua sendo vazamento.</p>
+<p>O ponto central é que a LGPD não diferencia onde o modelo roda. Bases legais, DPIA, log próprio e direito de revisão humana continuam valendo do mesmo jeito. Rodar interno é mais seguro em uma dimensão (perímetro), mas não dispensa o resto da checklist.</p>
+<h2>Quanto custa colocar governança num projeto de LLM?</h2>
+<p>Menos do que parece, e muito menos que a alternativa — mas precisa entrar no orçamento desde o início. Log próprio, redaction e monitoramento têm custo real: esquecer disso é orçar o piloto com 20–30% de custo invisível. Do lado do processo, o esforço é modesto: um documento de 2–3 páginas com a checklist respondida, aprovado por DPO e responsável técnico, mais 1 hora de treinamento do time — que previne 80% dos incidentes.</p>
+<p>O contraponto é o custo de não ter: em 2026, ANPD fiscalizando IA especificamente, cliente B2B exigindo cláusulas sobre uso de IA em contrato, e mídia transformando vazamento em manchete. Empresa sem governança perde negócio antes de tomar multa — e a reputação custa mais que a multa.</p>
 
         </div>
       </div>

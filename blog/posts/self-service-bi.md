@@ -83,3 +83,25 @@ Se sua empresa tem self-service BI implantado e os sintomas do "cada um com sua 
 **Limpe o passado.** Dashboards órfãos pra quarentena. Lógica duplicada migrada pra layer semântica. 2–3 meses de trabalho, mas restaura confiança no que sobra.
 
 Self-service BI bem governado é um dos investimentos mais rentáveis em maturidade de dado. Mal governado, é o pior dos mundos: investimento alto + dado desconfiável + cultura de cada um na sua planilha. A diferença não é a ferramenta — é o que se faz em volta dela.
+
+## Perguntas que sempre voltam
+
+Antes de encerrar, as três perguntas que mais aparecem quando esse diagnóstico bate.
+
+## Self-service BI ainda vale a pena em 2026?
+
+Vale — desde que venha com guardrails desde o início, não como projeto de ferramenta solta. Onde funcionou, self-service entregou três ganhos reais: time de dados liberado de pedidos triviais, hipótese virando gráfico em uma tarde em vez de um mês, e usuário que entende o número porque construiu o dashboard. Esses três justificam o investimento sozinhos.
+
+O que não vale é self-service sem governança: é o jeito mais rápido de uma empresa de médio porte perder confiança nos próprios números. A boa notícia é que os guardrails exigem decisão organizacional, não tecnologia nova — a ferramenta que você já tem serve.
+
+## Devo tirar o acesso e centralizar tudo no time de dados de novo?
+
+Não — centralizar é regressão, não correção. Você volta pra fila de pedidos que motivou o self-service, perde o ganho de velocidade e frustra usuários que aprenderam a se virar. A reação instintiva de "só o time de dados cria relatório oficial" resolve o sintoma e recria o problema original.
+
+O caminho certo é separar exploração de relatório oficial, com regras diferentes: liberdade total pra rascunho em workspace próprio, governança rígida (definição única, fonte única, aprovação cruzada) só pro que aparece em board e decisão estratégica. Quem precisa explorar, explora; quem precisa de número confiável, vai no oficial.
+
+## Quanto tempo leva pra arrumar um self-service BI bagunçado?
+
+A limpeza do passado leva uns 2–3 meses de trabalho — e restaura a confiança no que sobra. O pacote: dashboards órfãos pra quarentena, lógica duplicada migrada pra camada semântica, e a definição das 20–30 métricas que importam com cálculo, dono nominal e fonte de dado documentados antes de qualquer dashboard oficial novo.
+
+Depois disso, a manutenção é leve: revisão de 30 minutos por mudança em dashboard oficial e limpeza de cemitério a cada 6 meses (não acessou em 90 dias → quarentena → obsoleto). O sinal de que funcionou é contraintuitivo: o número de dashboards diminui com o tempo, não aumenta — maturidade se mede em consolidação.

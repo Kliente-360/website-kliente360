@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Self-service BI todavía vale la pena en 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale — siempre que venga con guardrails desde el inicio, no como proyecto de herramienta suelta. Donde funcionó, self-service entregó tres ganancias reales: equipo de datos liberado de pedidos triviales, hipótesis que se vuelve gráfico en una tarde en vez de un mes, y usuario que entiende el número porque construyó el dashboard. Esas tres justifican la inversión por sí solas.\n\nLo que no vale es self-service sin gobernanza: es la forma más rápida de que una empresa de tamaño medio pierda confianza en sus propios números. La buena noticia es que los guardrails exigen decisión organizacional, no tecnología nueva — la herramienta que ya tenés alcanza."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Debería sacar el acceso y centralizar todo en el equipo de datos de nuevo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — centralizar es regresión, no corrección. Volvés a la fila de pedidos que motivó el self-service en primer lugar, perdés la ganancia de velocidad y frustrás a usuarios que aprendieron a arreglárselas. El instinto de &quot;solo el equipo de datos crea reporte oficial&quot; corrige el síntoma y recrea el problema original.\n\nEl camino correcto es separar exploración de reporte oficial, con reglas distintas para cada uno: libertad total para el borrador en workspace propio, y gobernanza rígida (definición única, fuente única, aprobación cruzada) solo para lo que llega a board y decisión estratégica. Quien necesita explorar, explora; quien necesita número confiable, va al oficial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo lleva ordenar un self-service BI desordenado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La limpieza del pasado lleva unos 2–3 meses de trabajo — y restaura la confianza en lo que queda. El paquete: dashboards huérfanos a cuarentena, lógica duplicada migrada a la capa semántica, y las 20–30 métricas que importan definidas con cálculo, dueño nominal y fuente de dato documentados antes de cualquier dashboard oficial nuevo.\n\nDespués de eso, el mantenimiento es liviano: revisión de 30 minutos por cambio en dashboard oficial y limpieza de cementerio cada 6 meses (no accedido en 90 días → cuarentena → obsoleto). La señal de que funcionó es contraintuitiva: el número de dashboards disminuye con el tiempo, no aumenta — la madurez se mide en consolidación."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -232,6 +265,17 @@
 <p><strong>Creá la separación física entre exploración y oficial.</strong> Tableau Sites, Power BI workspaces, Looker boards. Visibilidad clara para el usuario.</p>
 <p><strong>Limpiá el pasado.</strong> Dashboards huérfanos a cuarentena. Lógica duplicada migrada a la capa semántica. 2–3 meses de trabajo, pero restaura confianza en lo que queda.</p>
 <p>Self-service BI bien gobernado es una de las inversiones más rentables en madurez de dato. Mal gobernado, es lo peor de los mundos: inversión alta + dato no confiable + cultura de cada uno en su planilla. La diferencia no es la herramienta — es lo que se hace alrededor.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las tres preguntas que más aparecen cuando este diagnóstico cae.</p>
+<h2>¿Self-service BI todavía vale la pena en 2026?</h2>
+<p>Vale — siempre que venga con guardrails desde el inicio, no como proyecto de herramienta suelta. Donde funcionó, self-service entregó tres ganancias reales: equipo de datos liberado de pedidos triviales, hipótesis que se vuelve gráfico en una tarde en vez de un mes, y usuario que entiende el número porque construyó el dashboard. Esas tres justifican la inversión por sí solas.</p>
+<p>Lo que no vale es self-service sin gobernanza: es la forma más rápida de que una empresa de tamaño medio pierda confianza en sus propios números. La buena noticia es que los guardrails exigen decisión organizacional, no tecnología nueva — la herramienta que ya tenés alcanza.</p>
+<h2>¿Debería sacar el acceso y centralizar todo en el equipo de datos de nuevo?</h2>
+<p>No — centralizar es regresión, no corrección. Volvés a la fila de pedidos que motivó el self-service en primer lugar, perdés la ganancia de velocidad y frustrás a usuarios que aprendieron a arreglárselas. El instinto de &quot;solo el equipo de datos crea reporte oficial&quot; corrige el síntoma y recrea el problema original.</p>
+<p>El camino correcto es separar exploración de reporte oficial, con reglas distintas para cada uno: libertad total para el borrador en workspace propio, y gobernanza rígida (definición única, fuente única, aprobación cruzada) solo para lo que llega a board y decisión estratégica. Quien necesita explorar, explora; quien necesita número confiable, va al oficial.</p>
+<h2>¿Cuánto tiempo lleva ordenar un self-service BI desordenado?</h2>
+<p>La limpieza del pasado lleva unos 2–3 meses de trabajo — y restaura la confianza en lo que queda. El paquete: dashboards huérfanos a cuarentena, lógica duplicada migrada a la capa semántica, y las 20–30 métricas que importan definidas con cálculo, dueño nominal y fuente de dato documentados antes de cualquier dashboard oficial nuevo.</p>
+<p>Después de eso, el mantenimiento es liviano: revisión de 30 minutos por cambio en dashboard oficial y limpieza de cementerio cada 6 meses (no accedido en 90 días → cuarentena → obsoleto). La señal de que funcionó es contraintuitiva: el número de dashboards disminuye con el tiempo, no aumenta — la madurez se mide en consolidación.</p>
 
         </div>
       </div>

@@ -45,3 +45,25 @@ Pass all three, and the investment pays off. Fail two or more, and it's worth fi
 ## The pattern forming now is the one that will last
 
 The adoption speed — from zero to 10,000 enterprise servers in a bit over a year — suggests MCP has become the common vocabulary between agent and tool, the same way REST became the common vocabulary between frontend and backend. Whoever decides to expose a system as an MCP server today is, in practice, deciding the contract that will govern agent integration for years to come. It deserves the same care any public API would — because, effectively, that's what's being published.
+
+## Questions that keep coming back
+
+Three practical questions that show up in almost every MCP conversation — answered with what this piece already argued.
+
+## Is it worth adopting MCP now, or can it wait?
+
+It's worth adopting now if you pass the three criteria of reuse, governance, and versioning — and worth waiting if you fail two or more. Adoption stopped being a bet: with more than 10,000 enterprise servers and Anthropic, OpenAI, Google, Microsoft, and AWS behind the protocol, the risk of backing a standard that dies has all but disappeared.
+
+What still applies is scope discipline. If today there's only one agent and one use case, direct integration remains simpler and cheaper to maintain. The right moment is when a real second consumer shows up — or a concrete two-quarter roadmap that brings one.
+
+## Which internal systems are worth exposing as an MCP server?
+
+Systems with high-reuse-value data and more than one candidate agent as a consumer — CRM, data layer, ticketing — are the ones that justify the investment. The rule is real reuse, not hypothetical: if nothing beyond a single agent will ever call that system, exposing an MCP server just adds maintenance.
+
+The maturity of the owning team matters just as much. An MCP server in production is, in practice, a public API: it needs a stable contract, access control inside the server, and the ability to version without breaking clients you don't control. A system whose schema still changes without warning isn't ready to become a surface for third parties.
+
+## Do I need to switch agent frameworks to use MCP?
+
+No — the MCP client works from inside any framework. That's precisely the point of the protocol: the server exposes standardized tools, resources, and prompts, and any compatible agent discovers and consumes those primitives without knowing anything about the system's internal implementation.
+
+It also lowers the cost of switching LLM providers later. Before MCP, changing models meant rewriting every bespoke integration; with the protocol, the tool learns to speak MCP once and the agent consuming it can change without touching the server.

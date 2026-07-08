@@ -52,3 +52,25 @@ The five share something: they confuse *configuring Salesforce* with *deploying 
 Same rule as before the project applies in the middle of it: if you can't say in one sentence which decision each part of Sales Cloud supports, there's still work to do. It's not training that's missing — it's design.
 
 The good news is that these antipatterns are known. A company entering the project knowing what to avoid saves three to six months of rework — and discovers that Sales Cloud is one of the best sales tools on the market when deployed with discipline. (Before the project starts, the other question is worth asking: [whether Sales Cloud is actually the right answer for this moment of the operation](/blog/en/quando-nao-usar-salesforce.html). The five antipatterns only appear if the decision to adopt has already been made.)
+
+## Questions that keep coming back
+
+To wrap up, the questions we hear most often when these antipatterns show up in a diagnostic.
+
+## Why don't sales reps use Salesforce after the rollout?
+
+Because no one answered what gain the rep gets from using it — the cause is almost never lack of training. The typical rollout finishes configuration, schedules two hours of training, ships a video, and measures usage by login; three months later, half the team isn't using it properly. Training without an answer to the gain question is theater.
+
+Real adoption comes from two concrete things: the rep seeing that logging activity saves them time later (single customer view, context for the next meeting, commission calculated correctly), and the manager treating usage as a management item, not an IT metric. A screen with 40 optional fields works against both — the rep freezes, fills in the minimum, and the rest becomes statistical noise.
+
+## How many fields should a Sales Cloud page layout have?
+
+There's no magic number — the rule is that every field has to serve a decision: advance a stage, qualify a lead, compute a commission, or feed a report someone actually reads. If a field supports no decision, hide it. The 40-field page layout is the classic symptom of a team that piled on "just in case" fields because Sales Cloud doesn't charge per field.
+
+That discipline comes from mapping the process before configuring. Without it, the layout becomes a collection of optional fields nobody fills — and the data leadership uses to decide is corrupted from birth.
+
+## Does every Sales Cloud automation need human approval?
+
+Not at every step — at the points of irreversible impact. The rule that works: automation that touches an external customer, triggers a signature, or moves money needs an intermediate human validation. Everything else can run automatically without ceremony.
+
+The risk of skipping this is the cascade: a rep changes to the wrong stage, three systems react, the customer gets an email they shouldn't, legal closes a valid case — and rolling back takes two weeks. Pure speed is a demo trait; resilience is a production trait.

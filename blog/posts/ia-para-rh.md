@@ -94,3 +94,25 @@ Se sua empresa está pra implementar IA em RH, três movimentos honestos:
 **Defina o que NÃO automatizar.** Política escrita, treinada com o time, comunicada pro funcionário. Sem isso, o agente vira problema quando alguém esperava humano.
 
 IA generativa pra RH em 2026 é uma das maiores oportunidades de produtividade silenciosa. Empresa que opera bem nesse caso libera capacidade do RH humano pra o que de fato exige humano. Empresa que tenta automatizar tudo, ou pula pra recrutamento sem governança, gera passivo. A diferença não está na tecnologia — está em saber o que automatizar e o que não, com a humildade de respeitar o limite.
+
+## Perguntas que sempre voltam
+
+Três dúvidas que aparecem em quase toda conversa sobre esse tema.
+
+## Quanto tempo demora pra ter um agente de RH funcionando?
+
+Piloto sólido em 8–12 semanas; operação estável em 6 meses. Isso vale quando os cinco componentes são implementados em ordem: escopo limitado às 25–40 perguntas mais frequentes, base de conhecimento curada, interface no Slack ou portal onde o funcionário já está, escalonamento claro pra humano e governança de privacidade desde o dia 1.
+
+O que estica esse prazo é quase sempre a curadoria — e ela não dá pra pular. Curar 30–50 documentos canônicos bem estruturados é metade do esforço, e empresa que despeja 500 docs no agente entrega alucinação, não velocidade. O ROI, por sua vez, fica visível em uns 90 dias quando você compara custo por interação resolvida com o custo do RH humano fazendo a mesma triagem.
+
+## Vale a pena começar IA de RH pelo recrutamento?
+
+Não — triagem de currículo é o pitch mais comum e o pior lugar pra começar. Combina risco regulatório (LGPD sobre dado de candidato), viés algorítmico e impacto direto na vida de uma pessoa. É o tipo de erro que vira passivo em vez de aprendizado.
+
+O caminho que rende é começar pelo interno: agente de triagem respondendo as dúvidas repetidas de funcionário sobre férias, política de viagem, plano de saúde. Risco baixo, base documentada, ROI previsível. Depois que a operação interna prova valor e a governança amadurece, aí se discute expandir.
+
+## Precisa treinar o modelo com os dados da empresa?
+
+Não — o padrão que funciona é prompt + RAG sobre documentos curados, sem fine-tuning com dado interno. Além de desnecessário pra responder pergunta de política documentada, treinar modelo com dado de funcionário cria problema de privacidade que a abordagem de RAG evita por design.
+
+O que precisa existir é governança: logs auditáveis, política clara do que não pode entrar no prompt, e checklist de privacidade aplicado desde o dia 1. Dado de funcionário é sensível — o esforço vai em curadoria e controle, não em treinamento de modelo.

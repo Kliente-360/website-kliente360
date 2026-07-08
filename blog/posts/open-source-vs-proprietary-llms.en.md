@@ -103,3 +103,25 @@ Three honest moves before signing an annual contract with proprietary or investi
 **Take hybrid seriously.** It isn't lazy compromise — it's optimization by context. Modern stack allows it without absurd complexity.
 
 Open source vs proprietary in 2026 isn't philosophical debate anymore — it's operational decision with measurable criteria. Companies choosing ideologically lose on the dimensions they didn't consider. Companies choosing by need combine the two worlds where it makes sense, without tying themselves to stack religion.
+
+## Questions that keep coming back
+
+Three questions that settle most LLM-choice discussions — answered with this text's criteria.
+
+## Is it worth swapping GPT or Claude for an open source model?
+
+It depends on your use case, not the benchmark: recent open source competes on quality in 70–80% of enterprise cases, but proprietary still leads by 6–12 months on frontier tasks — complex reasoning, high-quality code, advanced multimodal. If your product depends on that quality, open source isn't an option yet.
+
+The only way to know which side your case falls on is running your own eval set against 3–4 candidates — Llama, Mistral Large, Claude Sonnet, GPT-4o — on the same real task. It takes 2 weeks and is worth 2 years of decisions; without it, quality is a guess.
+
+## At what volume does self-hosted start paying off?
+
+Below ~1M calls/month, proprietary is cheaper; above ~10M/month, self-hosted wins; in between, it depends on the case. The reason: self-hosted trades price per token for GPU + ops + energy + maintenance cost — and idle GPU at low or variable volume eats the token savings.
+
+Volume isn't the only factor. The serious calculation is 24-month TCO per architecture, including ops, GPU, dev, and maintenance — differences are typically 2–5×. And it requires a team with real ML ops capacity; without one, self-hosted becomes opportunity cost, not savings.
+
+## Can you combine open source and proprietary in the same stack?
+
+Yes — and it's the architecture that has worked at mature companies: proprietary for frontier quality at low volume, self-hosted open source for medium-quality tasks at high volume, and self-hosted mandatory for the regulatory scope. That combination delivers 70–80% of open source savings with 95% of proprietary quality.
+
+The requirement is intelligent routing, solvable with an LLM gateway (LiteLLM, OpenRouter, or custom). Hybrid isn't lazy compromise — it's optimization by context. Whoever forces a single architecture pays on one of the four dimensions they didn't consider.

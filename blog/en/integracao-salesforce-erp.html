@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "MuleSoft, middleware, or custom: which should I pick for a Salesforce-ERP integration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on operational context, not feature comparison — and three patterns cover 90% of cases. Native (MuleSoft Anypoint, Salesforce Connect, Data Cloud) makes sense when the company is already invested in the Salesforce ecosystem: higher license cost, lower implementation cost. Generic middleware (Boomi, Workato, Tray) makes sense when the integration has to serve multiple systems beyond the Salesforce-ERP pair. Custom (Lambda, API Gateway, messaging) makes sense for huge volume, critical latency, or logic standard tools don&#39;t cover — full control, ongoing maintenance.\n\nWhat actually drives the choice is team skills, existing ecosystem, and volume. And the debate only makes sense after the five governance questions are resolved — before that, any architecture delivers the same delay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does discovery take for a Salesforce-ERP integration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a mid-market company, serious discovery takes 4–6 weeks — focused on the five governance questions (who owns the customer, the order, the price, sync frequency, operational ownership), not on architecture or the field map. Whoever quotes two weeks will deliver something superficial and find the rest during implementation, at 10× the cost.\n\nThe math on the other side is just as well known: teams that answer the five questions before the sprint deliver on time; teams that answer during construction slip 2–4 months; teams that answer after go-live enter the eternal living project."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I tell before starting whether the integration will be late?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three signs almost guarantee delay. First: a sponsor with no cross-functional authority — a sales director sponsoring something that touches finance will stall, and an IT director turns it into a technical project with no business decisions. Second: a discovery quoted at two weeks. Third: nobody wrote down the five governance questions — if at sprint planning there&#39;s no documented answer, any estimate is a guess.\n\nIf any of the three shows up, the right move is to stop and fix it before architecture. The ideal setup is a sponsor with weight across sales + ops + finance, and the ownership decisions documented from day 1."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -233,6 +266,17 @@
 <p><strong>Dedicated 4–6 week discovery focused on the five questions.</strong> Not on architecture. Not on the field map. On the governance decisions that will cross every technical choice.</p>
 <p><strong>Architectural decision only after.</strong> Native, middleware, custom — choose based on context, not fashion. Volume, skills, ecosystem, latency tolerance. Each one weighs differently per company.</p>
 <p>Well-implemented Salesforce-ERP integration is one of the most valuable pieces of modern enterprise architecture — it unlocks commercial, accounting and operational predictability. Badly implemented, it&#39;s the integration that becomes a living project for two years. The difference rarely sits in the MuleSoft picked. It sits in who owned what from day 1.</p>
+<h2>Questions that keep coming back</h2>
+<p>Before wrapping up, the three questions that come up most whenever this topic hits the table.</p>
+<h2>MuleSoft, middleware, or custom: which should I pick for a Salesforce-ERP integration?</h2>
+<p>It depends on operational context, not feature comparison — and three patterns cover 90% of cases. Native (MuleSoft Anypoint, Salesforce Connect, Data Cloud) makes sense when the company is already invested in the Salesforce ecosystem: higher license cost, lower implementation cost. Generic middleware (Boomi, Workato, Tray) makes sense when the integration has to serve multiple systems beyond the Salesforce-ERP pair. Custom (Lambda, API Gateway, messaging) makes sense for huge volume, critical latency, or logic standard tools don&#39;t cover — full control, ongoing maintenance.</p>
+<p>What actually drives the choice is team skills, existing ecosystem, and volume. And the debate only makes sense after the five governance questions are resolved — before that, any architecture delivers the same delay.</p>
+<h2>How long does discovery take for a Salesforce-ERP integration?</h2>
+<p>For a mid-market company, serious discovery takes 4–6 weeks — focused on the five governance questions (who owns the customer, the order, the price, sync frequency, operational ownership), not on architecture or the field map. Whoever quotes two weeks will deliver something superficial and find the rest during implementation, at 10× the cost.</p>
+<p>The math on the other side is just as well known: teams that answer the five questions before the sprint deliver on time; teams that answer during construction slip 2–4 months; teams that answer after go-live enter the eternal living project.</p>
+<h2>How can I tell before starting whether the integration will be late?</h2>
+<p>Three signs almost guarantee delay. First: a sponsor with no cross-functional authority — a sales director sponsoring something that touches finance will stall, and an IT director turns it into a technical project with no business decisions. Second: a discovery quoted at two weeks. Third: nobody wrote down the five governance questions — if at sprint planning there&#39;s no documented answer, any estimate is a guess.</p>
+<p>If any of the three shows up, the right move is to stop and fix it before architecture. The ideal setup is a sponsor with weight across sales + ops + finance, and the ownership decisions documented from day 1.</p>
 
         </div>
       </div>

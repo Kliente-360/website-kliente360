@@ -72,3 +72,25 @@ If the answer is "because the board asked" or "because the competitor does it" �
 Anyone defining [data architecture in 2026](/blog/en/modern-data-stack-2026.html) faces pressure to adopt what sounds modern. Multi-cloud sounds modern — and that is, frequently, the only real reason behind the decision.
 
 Multi-cloud isn't wrong. It's expensive — and the cost is only justified when the specific gain (regulation, proven technical capability, DR with contractual SLA, or real contract leverage) exceeds the permanent overhead of operating two providers with quality. The right question isn't "should we be multi-cloud?" but "what specific problem are we solving that single cloud, well operated, doesn't solve?"
+
+## Questions that keep coming back
+
+To close, the three doubts that show up most often when this debate reaches the committee.
+
+## Does multi-cloud actually protect you from lock-in?
+
+Not from the lock-in that hurts. Multi-cloud addresses compute and networking lock-in — but the genuinely expensive lock-in is data and proprietary services: pulling 1 PB out of S3 costs in the range of US$ 20,000–90,000 in egress fees, and the dependency on Redshift, BigQuery, or Synapse (SQL dialect, specific integrations) doesn't disappear because you have a second provider.
+
+Worse: using multi-cloud to avoid lock-in is a contradiction. It only works if you give up proprietary services — which are exactly what makes each provider worth using. Before deciding for this reason, calculate the hypothetical lock-in cost against the multi-cloud overhead over five years. In 80% of cases, the overhead wins.
+
+## How much more does it cost to run two clouds?
+
+In the range of 30–40% operational overhead compared to an equivalent well-configured single-cloud setup — the estimate from teams that operated real multi-cloud for two or more years. It shows up in engineering hours, cross-environment support tickets, IAM boundary permission incidents, and onboarding engineers who need to learn two operational worlds.
+
+Add per-GB egress fees for traffic crossing cloud boundaries, 20–100ms of extra latency between workloads, and two complete sets of operational skills. The relevant number is the projected overhead over five years — not the setup cost for month one.
+
+## We inherited two clouds through an acquisition — should we consolidate?
+
+The real decision is to consolidate or to coexist rigorously — what doesn't work is pretending the situation is strategic. Multi-cloud by acquisition inheritance is an accident, not a design, and calling it "strategy" only postpones the choice.
+
+If consolidating doesn't pay off (expensive migration, stable workloads), coexisting is legitimate — as long as it's genuinely operationalized: defined governance, cross-cloud orchestration tooling, unified observability, and egress accounting. What you can't do is let it grow into parallel silos without governance, which is where inertia naturally leads.

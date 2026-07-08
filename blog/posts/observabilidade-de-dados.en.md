@@ -68,3 +68,25 @@ The practical paradox: the exercise of documenting expected behavior already rev
 Most critical data quality problems that reach users are detectable with three simple checks: freshness, volume, and nulls in required fields. The advanced stack matters when the basics are solved and you need statistical coverage of distribution and full lineage. Start with what detects the most failures with the least instrumentation; the rest comes naturally as maturity grows.
 
 The signal that observability is working is not zero incidents — it's the team detecting before the user does. When the ratio of "we detected first" exceeds "user found it through the dashboard," the layer is delivering value. That simple metric is the most honest proxy for data maturity in any operation.
+
+## Questions that keep coming back
+
+To wrap up, the doubts I hear most often when the topic is getting observability off the ground.
+
+## Do I need to buy an observability tool to get started?
+
+No — and buying too early is the most common mistake. A tool without a documented baseline of expected behavior monitors in the dark: it produces either total silence or a cascade of false positives, and a team that gets 50 alerts a day learns to ignore all of them. For smaller teams, dbt with custom tests and SQL checks cover what's needed without additional licensing.
+
+Monte Carlo, Soda, Acceldata and the like come into play when the operation has dozens of pipelines and distributed teams — and they only deliver real gains if the data's expected behavior is already documented. The practical paradox: the exercise of documenting that baseline reveals much of the problems on its own, before any purchase.
+
+## Where do I start instrumenting data observability?
+
+With freshness and volume — quick to implement and high impact. A freshness check in SQL (`MAX(updated_at)` against an hours threshold) catches 60% of pipeline problems with no tooling at all, and a volume baseline (30-day median, alert below 70%) costs one metadata table and 10 lines of SQL. If you're already on dbt, the native tests (`not_null`, `unique`, `accepted_values`) are 80% of the path.
+
+The sequence that works is incremental: freshness and volume first, then distribution, then schema (with data contracts), then lineage — each axis only once the previous one is stable. Teams that try to cover all five axes at once across all models usually stall in the first month.
+
+## How do I know observability is actually working?
+
+When the data team detects the problem before the user does — not when incidents drop to zero. Zero incidents isn't a realistic goal; the honest metric is the ratio of "we detected first" versus "the user found it through the dashboard". When the first exceeds the second, the layer is delivering value.
+
+That simple metric is also the most honest proxy for data maturity in the operation as a whole. And remember: an alert isn't resolution — without a defined workflow for who receives it, who pauses dependent dashboards, and how status gets communicated, the alert becomes an ignored notification in the first week of silence.

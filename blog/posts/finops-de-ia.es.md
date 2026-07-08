@@ -70,3 +70,25 @@ Con log estructurado en warehouse, un dashboard de [costos reales de inferencia]
 La señal que indica que el modelo no está funcionando: el equipo financiero sigue llamando a TI cuando la factura sube. Eso significa que la distribución de costo no llegó al nivel de visibilidad que cambia comportamiento. Diagnóstico para quien está implantando: pide a cada PM decir, sin consultar dashboard, cuánto le costó el caso de uso suyo el mes pasado. Si nadie sabe, FinOps existe en el papel, no en la decisión.
 
 El punto de inflexión sucede cuando PM empieza a preguntar "¿ese modelo más barato funcionaría para ese caso?" antes que TI lo sugiera. Ahí el sistema está funcionando. Hasta ahí, está en fase de traducción cultural — y la traducción cultural lleva más tiempo que la implementación técnica.
+
+## Preguntas que siempre vuelven
+
+Tres dudas que aparecen en casi toda conversación sobre este tema.
+
+## ¿Vale la pena implementar chargeback de IA en una operación chica?
+
+No — con pocos casos de uso y factura baja, showback alcanza. Si la empresa tiene 1–3 casos de uso en producción y gasta menos de USD 10k/mes en inferencia, armar un proceso de débito real es burocracia desproporcionada: un reporte mensual mostrando cuánto consumió cada equipo ya crea la conciencia de costo que falta en esa fase.
+
+Lo que no sirve es quedarte en showback para siempre. Por arriba de 10 casos de uso o USD 50k/mes, información sin consecuencia se vuelve teatro — ahí el camino es chargeback por costo real o budget por caso de uso, si no la distorsión entre equipos sigue creciendo.
+
+## ¿Por dónde empezás si hoy nadie sabe cuánto gasta cada equipo?
+
+Por el log de inferencia con tag — nada funciona antes de eso. Cada llamada necesita registrar team, caso de uso, modelo, tokens de input/output y costo calculado. Sin eso, cualquier modelo de cobro es adivinanza; con eso, elegir entre los cuatro se vuelve decisión de política, no de ingeniería.
+
+En la práctica hay tres caminos: gateway de inferencia self-hosted (LiteLLM, Portkey, Helicone), logging nativo del provider, o wrapper en el SDK que escribe en tu propio warehouse. El gateway da más control y es el estándar en operaciones maduras. Y el timing importa: taggear desde la primera llamada es barato; agregarlo después es un retrofit doloroso.
+
+## ¿Cómo sabés si el FinOps de IA está funcionando de verdad?
+
+Por el comportamiento de los PMs, no por el dashboard. El test es simple: pedile a cada PM que diga, sin consultar nada, cuánto costó su caso de uso el mes pasado. Si nadie sabe, el modelo existe en el papel pero no llegó a la decisión — y el síntoma clásico es que finanzas siga llamando a TI cuando la factura sube.
+
+El punto de inflexión es cuando el propio equipo de producto empieza a preguntar si un modelo más barato serviría, antes de que TI lo sugiera. Hasta llegar ahí, estás en traducción cultural — que lleva más tiempo que la implementación técnica, y es normal que así sea.

@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuántos sandboxes necesita mi empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para empresa de tamaño medio, la pila que funciona tiene tres capas antes de producción: un Developer Sandbox por desarrollador (refresh bajo demanda, cada dev trabaja aislado sin trabar a nadie), una Partial Copy de integración continua que recibe el merge de todos vía Git/Salesforce DX, y una Full Sandbox de UAT/staging que espeja producción, donde el cliente prueba antes de aprobar el deploy. Ese pipeline cubre el 95% de las necesidades.\n\nEl error común es ahorrar mezclando todo en un único sandbox compartido: el dev pisa el cambio del colega, el UAT corre con dato viejo y el bug en producción se vuelve rutina. Quien usa solo Developer Sandbox ahorra licencia — y descubre los bugs en el único lugar donde no tenés derecho a equivocarte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena pagar por una Full Sandbox?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale, si el proyecto es serio — es el único ambiente que refleja producción fielmente, con copia completa de metadata y dato integral. Para test de carga, regresión completa y capacitación con escenario real no hay sustituto: la Partial Copy trabaja con muestra de dato, no con el volumen verdadero.\n\nEl costo en licencia es real, pero el costo de no tenerla es mayor: aprobar deploys probando en un ambiente que está meses atrás de producción es la receta del &quot;pasó el QA en el sandbox&quot; — la verdad incompleta que la dirección escucha después del incendio. El límite práctico es el refresh cada 29 días, así que necesita cadencia disciplinada para no degradar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cada cuánto conviene hacer refresh de los sandboxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con cadencia planificada y agendada, no cuando alguien se acuerda. La referencia: Developer Sandbox cada semana, Partial Copy cada 5 días (por ejemplo, jueves a la mañana, semana sí semana no), Full Sandbox en su ciclo de 29 días — primer domingo del mes, con ventana de mantenimiento anunciada. Sin cadencia, el refresh llega tarde y el equipo vuelve al escenario de los &quot;4 meses, tal vez 6&quot;.\n\nUn termómetro útil: el refresh saludable de la Full Sandbox es evento de 4–6 horas, automatizado, nadie pierde sueño. Cuando se vuelve proyecto de una semana con prep, plan y escalación, es señal de que se hace rara vez y todo acumuló."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -230,6 +263,17 @@
 <p><strong>Implementá Salesforce DX si todavía no tenés.</strong> Git como fuente de la verdad, CI/CD entre sandboxes, Scratch Orgs para exploración. Es estándar moderno y elimina el 70% del caos operativo.</p>
 <p><strong>Auditoría semestral.</strong> Cada 6 meses, el equipo mira: sandboxes activas, dueño nominal, último refresh, uso real. Jubila las obsoletas (cada una cuesta licencia), reorganiza las activas. Sin esa rutina, se vuelve cementerio.</p>
 <p>El sandbox en Salesforce es el ambiente donde tenés derecho a equivocarte. Empresa que opera bien en el sandbox entrega con previsibilidad. Empresa que opera mal — o saltea el sandbox por apuro — descubre el error en el primer lugar donde no tiene derecho: producción. La diferencia entre los dos mundos es estrategia, no talento técnico.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las tres dudas que más aparecen cuando el tema sandbox entra en la conversación.</p>
+<h2>¿Cuántos sandboxes necesita mi empresa?</h2>
+<p>Para empresa de tamaño medio, la pila que funciona tiene tres capas antes de producción: un Developer Sandbox por desarrollador (refresh bajo demanda, cada dev trabaja aislado sin trabar a nadie), una Partial Copy de integración continua que recibe el merge de todos vía Git/Salesforce DX, y una Full Sandbox de UAT/staging que espeja producción, donde el cliente prueba antes de aprobar el deploy. Ese pipeline cubre el 95% de las necesidades.</p>
+<p>El error común es ahorrar mezclando todo en un único sandbox compartido: el dev pisa el cambio del colega, el UAT corre con dato viejo y el bug en producción se vuelve rutina. Quien usa solo Developer Sandbox ahorra licencia — y descubre los bugs en el único lugar donde no tenés derecho a equivocarte.</p>
+<h2>¿Vale la pena pagar por una Full Sandbox?</h2>
+<p>Vale, si el proyecto es serio — es el único ambiente que refleja producción fielmente, con copia completa de metadata y dato integral. Para test de carga, regresión completa y capacitación con escenario real no hay sustituto: la Partial Copy trabaja con muestra de dato, no con el volumen verdadero.</p>
+<p>El costo en licencia es real, pero el costo de no tenerla es mayor: aprobar deploys probando en un ambiente que está meses atrás de producción es la receta del &quot;pasó el QA en el sandbox&quot; — la verdad incompleta que la dirección escucha después del incendio. El límite práctico es el refresh cada 29 días, así que necesita cadencia disciplinada para no degradar.</p>
+<h2>¿Cada cuánto conviene hacer refresh de los sandboxes?</h2>
+<p>Con cadencia planificada y agendada, no cuando alguien se acuerda. La referencia: Developer Sandbox cada semana, Partial Copy cada 5 días (por ejemplo, jueves a la mañana, semana sí semana no), Full Sandbox en su ciclo de 29 días — primer domingo del mes, con ventana de mantenimiento anunciada. Sin cadencia, el refresh llega tarde y el equipo vuelve al escenario de los &quot;4 meses, tal vez 6&quot;.</p>
+<p>Un termómetro útil: el refresh saludable de la Full Sandbox es evento de 4–6 horas, automatizado, nadie pierde sueño. Cuando se vuelve proyecto de una semana con prep, plan y escalación, es señal de que se hace rara vez y todo acumuló.</p>
 
         </div>
       </div>

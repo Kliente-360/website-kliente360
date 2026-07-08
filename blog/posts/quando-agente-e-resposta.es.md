@@ -59,3 +59,25 @@ Antes de aprobar cualquier proyecto de agente, pasamos por cinco verificaciones.
 Sin eso, lo que parecía ganancia de eficiencia se vuelve riesgo operacional silencioso. Las ganancias desaparecen en los primeros meses; el pasivo aparece en el primer incidente — generalmente público.
 
 Buena IA empresarial es IA con auditoría incorporada. No es overhead — es lo que separa un proyecto que sobrevive a una nueva dirección de uno que se vuelve slide de "lecciones aprendidas".
+
+## Preguntas que siempre vuelven
+
+Tres dudas que aparecen en casi toda conversación sobre agentes — respondidas con el argumento de este texto.
+
+## ¿Vale la pena implantar un agente de IA en mi operación?
+
+Vale si la operación pasa las cinco preguntas de validación — si fallan tres o más, agente no es la próxima decisión. Las cinco: proceso escrito (no solo en la cabeza de alguien), datos confiables y accesibles vía API, KPI de baseline de la operación actual, un humano dueño del proceso (el operador sénior, no el patrocinador ejecutivo) y riesgo de error tolerable para el caso de uso.
+
+Lo que no vale es usar un agente para huir del diagnóstico. El síntoma suele ser operación cara que no escala, pero la causa rara vez es "falta agente" — suele ser proceso mal diseñado, dato fragmentado, SLA mal calibrado o ausencia de feedback loop. Un agente pegado a un proceso malo solo se vuelve ruido más rápido.
+
+## ¿Cuánto demora poner un agente de IA en producción?
+
+Cuatro semanas hasta la decisión de stop/go, si las cinco validaciones ya pasaron. Semana 1: mapear el proceso con el operador sénior e identificar los 3–5 caminos que cubren ~80% de los casos. Semana 2: prototipar solo el camino más simple, conectado a datos vía API y probado con 10 casos reales offline. Semana 3: producción con supervisión humana, toda respuesta revisada antes de salir. Semana 4: reunión de stop/go contra el baseline.
+
+El criterio típico de "go" es 80%+ de acierto en el camino más simple con tiempo medio por debajo del 30% del actual. Si no cumple, el problema rara vez es el agente — es una de las cinco preguntas del inicio que pasó sin estar resuelta de verdad.
+
+## ¿Necesito datos perfectos antes de implantar un agente?
+
+No — lo que traba a un agente es dato fragmentado o insuficiente *para el caso de uso*, no la imperfección en sí. Perseguir limpieza absoluta antes de cualquier proyecto es otra forma de postergar la decisión. La pregunta correcta es más estrecha: ¿los datos que el agente va a consultar existen, son confiables y están accesibles vía API?
+
+Si la respuesta es no, agente sin datos es palpito confiado — y ahí el trabajo previo es integración, no IA. Si el conocimiento vive en documentos y no en sistemas, el camino es RAG, y el cuello de botella pasa a ser la recuperación, no el LLM.

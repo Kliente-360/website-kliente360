@@ -86,3 +86,25 @@ If your company is evaluating generative AI in sales, three moves before approvi
 **Measure against a control group.** Without a control group, lift is guesswork. With one, in 90 days you know if AI is moving the needle or just giving a feeling of modernity.
 
 Generative AI in sales in 2026 is one of the biggest productivity levers available. But it isn't "ChatGPT for the rep". It's specific integration at specific points of the sales cycle. Companies that make this distinction deliver attributable revenue lift from AI. Companies that don't have an OpenAI subscription in the budget and the same number of sales at quarter-end.
+
+## Questions that keep coming back
+
+Three doubts that surface in almost every conversation about this topic.
+
+## Will generative AI replace sales reps or SDRs?
+
+No — and trying to replace them is exactly where projects turn into liability. The four patterns that pay back share the same logic: AI takes work the rep already does (prospect research, follow-up, briefings, proposal drafting) and speeds it up with comparable quality. It saves time on existing tasks; it doesn't demand new behavior and doesn't take over the customer relationship.
+
+The two classic antipatterns confirm this in reverse. An agent deciding discounts generates incidents and breaks trust — pricing stays a senior human decision. And an SDR swapped for automated outbound becomes spam at scale, tanks domain reputation and delivers negative ROI. Prospecting at volume needs human discrimination.
+
+## Which use case is worth starting with?
+
+Just one — and assisted writing with context is the most consistent ROI candidate. Pulling real data from the CRM, the customer's RFP and internal docs, the rep edits instead of writing from scratch, and proposal time drops from 4h to 1h. Contextual prospecting is the strong alternative when the bottleneck is at the top of the funnel.
+
+The criteria matter more than the case: pick a specific repetitive task, with accessible data to contextualize it and a measurable result. If the project's rationale is still "boost productivity", it isn't ready. And pilot one task, not five — depth beats breadth.
+
+## How long until you know the project is paying off?
+
+About 90 days — as long as there's a control group. Comparing reps with AI against reps without, you measure real lift on a funnel metric that matters: prospect-to-meeting conversion, proposal-to-close conversion, average ticket. A difference under 5% means the project isn't moving what matters. Without a control group, any lift is guesswork.
+
+Round it out with self-reported time saved (it catches abandonment early), adoption segmented by junior/senior profile, and cost per AI-assisted sale — if inference cost exceeds a 1:10 ratio against revenue lift, it's time to rethink.

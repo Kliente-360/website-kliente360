@@ -88,3 +88,25 @@ Se sua empresa está pra rodar análise de churn (ou tem modelo rodando sem rend
 **Calibre o modelo pelo custo, não pela acurácia.** Modelo com 70% de acurácia bem calibrado pra falso negativo pode render mais que modelo com 90% bem calibrado pra falso positivo — depende do custo de cada erro pro negócio.
 
 [Como em qualquer projeto de dado em 2026](/blog/dado-limpo-e-um-mito.html), o problema raramente está na técnica. Está no que se pediu da técnica antes de aplicá-la. Análise de churn segue essa regra: time que define perda em alinhamento com estratégia de retenção entrega modelo que reduz cancelamento. Time que pula essa etapa entrega exercício de ML que vira slide de "lições aprendidas".
+
+## Perguntas que sempre voltam
+
+Antes de fechar, as dúvidas que mais aparecem quando esse assunto entra na mesa.
+
+## Vale a pena rodar modelo de churn sem estratégia de retenção montada?
+
+Não. Sem playbook, dono e ações testadas, o modelo é exercício acadêmico — gera lista que ninguém aciona. Se sua empresa está no que chamamos de Nível 0 (sem estratégia de retenção operacional), o investimento certo é construir estratégia primeiro e modelo depois. Investir na ordem inversa é o motivo número um de "projeto de churn que não rendeu".
+
+E a inversão não sai barata: começar pelo modelo e montar a estratégia depois costuma custar entre 3 e 9 meses de retrabalho. Escrever o playbook, definir o dono e só então modelar é o caminho mais curto, não o mais lento.
+
+## Quanta precisão um modelo de churn precisa pra ser útil?
+
+Menos do que parece — utilidade vem da calibração pelo custo do erro, não da acurácia bruta. Modelo com 70% de acurácia bem calibrado pra falso negativo pode render mais que um de 90% calibrado pra falso positivo, porque falso negativo custa receita perdida e falso positivo custa tempo de CS. Essa relação de custos é do negócio, não do algoritmo.
+
+A outra variável que pesa mais que precisão é a janela de antecedência. Se o vendedor precisa de 45 dias pra reverter uma saída, modelo que prevê com 15 dias de antecedência é inútil mesmo acertando quase tudo. Calibre janela e custo antes de otimizar métrica.
+
+## Como definir churn quando o cliente não cancela formalmente?
+
+Com proxy comportamental específico pro seu modelo de negócio. Em SaaS B2C, 90 dias sem login captura o churn passivo que o usuário ainda não declarou. No varejo, é ausência de compra em N dias — com N variando por categoria (60 pra mercado, 365 pra eletrônico), porque sem segmentar o modelo agregado é inútil. Em B2B não-contratual, o sinal é queda abrupta de volume de pedidos ou mudança de frequência e ticket médio.
+
+O que não muda entre contextos: a definição precisa ser operacional, testável e auditável. "Cliente que some" não serve; "cliente sem compra em 180 dias na categoria calçado" serve.

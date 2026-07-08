@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is switching warehouses worth it in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most cases, no — and that&#39;s the math that almost never makes it into the business case. A warehouse migration costs 6 to 18 months of senior-engineering time, and that cost rarely shows up in the &quot;switch&quot; deck. If the reason is performance and the current warehouse already returns queries in seconds, the gain is marginal. If it&#39;s cost, the problem is almost always governance — and it will resurface in the new warehouse too.\n\nSwitching makes sense when one of the four criteria is screaming: a stack already leaning hard one way, a team profile misaligned with the tool, an AI/ML roadmap the current warehouse can&#39;t cover. Companies that switch without answering those clearly tend to migrate twice in three years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which of the three is the cheapest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "None of them, in the abstract — real cost depends on your usage pattern, not the price sheet. All three publish rates per credit, hour, or scanned query, and none of those numbers reflects the bill that will actually arrive. What decides it is spikes vs. steady usage, the team&#39;s maturity at optimizing queries, and basic governance (a working auto-suspend makes a real difference).\n\nThe practical path: take last quarter&#39;s actual usage and simulate all three on public pricing. Differences usually land between 30 and 50%, and the &quot;most expensive&quot; on paper is rarely the most expensive in practice. Companies that skip this simulation find a 2–3× bigger bill in month three."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need Databricks to use AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, not if the plan is running an LLM via API with RAG over warehouse data — any of the three handles that with external plugins. What many companies call an &quot;AI roadmap&quot; is exactly that scenario, and it doesn&#39;t justify switching platforms.\n\nDatabricks earns its keep when the plan involves training proprietary models, a feature store, and serious MLOps — there it holds roughly an 18-month lead in native integration over the other two. The honest question before deciding is whether the real bottleneck is the warehouse or the team."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -220,6 +253,17 @@
 <p><strong>Simulated historical cost calculation.</strong> Take real usage from the last quarter (scanned volume, query count, peaks) and simulate each of the three on public pricing. Differences are usually 30–50%, and rarely is the &quot;most expensive&quot; on paper actually the most expensive in practice.</p>
 <p><strong>Conversations with 2 customers of each one at your size.</strong> The vendor connects you. If they don&#39;t, terrible sign. A peer at similar size tells you in 30 minutes what the brochure hides in 100 pages.</p>
 <p>The three warehouses are mature products from serious companies. The worst decision is signing based on the best pitch. The second worst is not deciding for six months out of fear of being wrong. The best is to understand that <a href="/blog/en/dbt-na-pratica.html">the warehouse acronym matters less than how the modeling is versioned on top of it</a> — and that <a href="/blog/en/modelagem-dimensional-2026.html">well-done dimensional modeling still pays off in 2026</a>, regardless of stack choice. (For the complementary angle — not which is best, but <a href="/blog/en/databricks-snowflake-bigquery-lock-in.html">which is most expensive to abandon</a> — read the lock-in exam. And to understand <a href="/blog/en/modern-data-stack-2026.html">where each warehouse fits on the map of what survived from the Modern Data Stack</a>, the read complements.) Before evaluating a move to lakehouse, <a href="/blog/en/lakehouse-vs-warehouse.html">it&#39;s worth confirming whether the adoption criteria genuinely apply</a>.</p>
+<h2>Questions that keep coming back</h2>
+<p>Before wrapping up, the three questions that come up most whenever this decision hits the agenda.</p>
+<h2>Is switching warehouses worth it in 2026?</h2>
+<p>In most cases, no — and that&#39;s the math that almost never makes it into the business case. A warehouse migration costs 6 to 18 months of senior-engineering time, and that cost rarely shows up in the &quot;switch&quot; deck. If the reason is performance and the current warehouse already returns queries in seconds, the gain is marginal. If it&#39;s cost, the problem is almost always governance — and it will resurface in the new warehouse too.</p>
+<p>Switching makes sense when one of the four criteria is screaming: a stack already leaning hard one way, a team profile misaligned with the tool, an AI/ML roadmap the current warehouse can&#39;t cover. Companies that switch without answering those clearly tend to migrate twice in three years.</p>
+<h2>Which of the three is the cheapest?</h2>
+<p>None of them, in the abstract — real cost depends on your usage pattern, not the price sheet. All three publish rates per credit, hour, or scanned query, and none of those numbers reflects the bill that will actually arrive. What decides it is spikes vs. steady usage, the team&#39;s maturity at optimizing queries, and basic governance (a working auto-suspend makes a real difference).</p>
+<p>The practical path: take last quarter&#39;s actual usage and simulate all three on public pricing. Differences usually land between 30 and 50%, and the &quot;most expensive&quot; on paper is rarely the most expensive in practice. Companies that skip this simulation find a 2–3× bigger bill in month three.</p>
+<h2>Do I need Databricks to use AI?</h2>
+<p>No, not if the plan is running an LLM via API with RAG over warehouse data — any of the three handles that with external plugins. What many companies call an &quot;AI roadmap&quot; is exactly that scenario, and it doesn&#39;t justify switching platforms.</p>
+<p>Databricks earns its keep when the plan involves training proprietary models, a feature store, and serious MLOps — there it holds roughly an 18-month lead in native integration over the other two. The honest question before deciding is whether the real bottleneck is the warehouse or the team.</p>
 
         </div>
       </div>

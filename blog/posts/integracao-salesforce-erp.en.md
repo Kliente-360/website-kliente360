@@ -82,3 +82,25 @@ If your company is about to start a Salesforce-ERP integration, three moves befo
 **Architectural decision only after.** Native, middleware, custom — choose based on context, not fashion. Volume, skills, ecosystem, latency tolerance. Each one weighs differently per company.
 
 Well-implemented Salesforce-ERP integration is one of the most valuable pieces of modern enterprise architecture — it unlocks commercial, accounting and operational predictability. Badly implemented, it's the integration that becomes a living project for two years. The difference rarely sits in the MuleSoft picked. It sits in who owned what from day 1.
+
+## Questions that keep coming back
+
+Before wrapping up, the three questions that come up most whenever this topic hits the table.
+
+## MuleSoft, middleware, or custom: which should I pick for a Salesforce-ERP integration?
+
+It depends on operational context, not feature comparison — and three patterns cover 90% of cases. Native (MuleSoft Anypoint, Salesforce Connect, Data Cloud) makes sense when the company is already invested in the Salesforce ecosystem: higher license cost, lower implementation cost. Generic middleware (Boomi, Workato, Tray) makes sense when the integration has to serve multiple systems beyond the Salesforce-ERP pair. Custom (Lambda, API Gateway, messaging) makes sense for huge volume, critical latency, or logic standard tools don't cover — full control, ongoing maintenance.
+
+What actually drives the choice is team skills, existing ecosystem, and volume. And the debate only makes sense after the five governance questions are resolved — before that, any architecture delivers the same delay.
+
+## How long does discovery take for a Salesforce-ERP integration?
+
+For a mid-market company, serious discovery takes 4–6 weeks — focused on the five governance questions (who owns the customer, the order, the price, sync frequency, operational ownership), not on architecture or the field map. Whoever quotes two weeks will deliver something superficial and find the rest during implementation, at 10× the cost.
+
+The math on the other side is just as well known: teams that answer the five questions before the sprint deliver on time; teams that answer during construction slip 2–4 months; teams that answer after go-live enter the eternal living project.
+
+## How can I tell before starting whether the integration will be late?
+
+Three signs almost guarantee delay. First: a sponsor with no cross-functional authority — a sales director sponsoring something that touches finance will stall, and an IT director turns it into a technical project with no business decisions. Second: a discovery quoted at two weeks. Third: nobody wrote down the five governance questions — if at sprint planning there's no documented answer, any estimate is a guess.
+
+If any of the three shows up, the right move is to stop and fix it before architecture. The ideal setup is a sponsor with weight across sales + ops + finance, and the ownership decisions documented from day 1.

@@ -68,3 +68,25 @@ Metrics that say whether the agent is paying back:
 If those three are green at the end of the quarter, the agent won the pilot. If two are red, the tool was probably placed on the wrong use case — not an adoption problem, a scope problem.
 
 A well-placed internal agent is one of the best productivity buys of 2026. Badly placed, it's the best no-return license fee of the quarter. The difference lives in the map.
+
+## Questions that keep coming back
+
+Three doubts that surface in almost every conversation about this topic.
+
+## Is ChatGPT Enterprise or Copilot worth buying for the whole company?
+
+Worth it if you mapped the boundary first; not worth it if the motivation is "everyone is using it". Provisioning the tool and opening the channel without a defined use case leads to the familiar pattern: active usage at 15% after three months and nobody knowing whether it's resistance or the wrong product. The agent pays off big in three contexts — assisted writing, lookup over documentation and tier-1 support — and fails at strategic decisions and replacing senior knowledge.
+
+The test before signing is answering three questions without hesitating: which repeat question the agent will answer, whether the knowledge base exists and stays updated, and whether the risk of error is tolerable. Hesitate on two and you're in "let's try and see" territory — where the eternal pilot lives.
+
+## Why does nobody use the agent after launch?
+
+It's almost always a scope problem, not an adoption problem. When the agent is offered as a generic assistant, the experienced professional finds no gain and the beginner gets superficial answers — and usage drops before any internal campaign can save it. The tool amplifies existing capability on a specific task; it doesn't create new capability on a vague one.
+
+The diagnosis in the first 90 days uses three signals: active usage (5+ times a week, not logins), rate of questions resolved without escalation (above 60% is real value; below 30% is bad RAG or bad prompt) and self-reported time saved. If two are red, move the agent to the right use case instead of doubling down on user training.
+
+## Can I let the agent make decisions for the team?
+
+Only when the decision depends exclusively on written data — and most managerial decisions don't. Picking a vendor, prioritizing the backlog, deciding which customer to serve first: in production, the agent decides with 60% of the context, because the rest lives in hallway conversation, internal politics and relationships. Forcing automation there is the fastest path to an incident, and AI incidents carry more political weight than traditional-system ones.
+
+The arrangement that works is different: agent answers first, human confirms the low-risk stuff, explicit escalation when there's a complexity signal. The agent informs and prepares context; the decision that requires lived data stays human.

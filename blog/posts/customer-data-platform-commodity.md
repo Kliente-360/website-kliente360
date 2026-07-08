@@ -64,3 +64,25 @@ O que não virou commodity — e ainda exige decisão cuidadosa — é a arquite
 > A função de CDP virou plataforma. A arquitetura de identidade continua sendo trabalho de consultoria especializada.
 
 Em 2026, empresa que ainda pergunta "qual CDP comprar" está na pergunta errada. A pergunta certa é: qual camada de dado de cliente meu stack já tem, e o que ela não cobre ainda? A partir daí, a decisão é de gaps — não de categorias. E fechar gap custa menos do que trocar de plataforma.
+
+## Perguntas que sempre voltam
+
+Pra fechar, as três perguntas que mais escuto quando esse tema aparece.
+
+## Ainda vale a pena comprar um CDP independente em 2026?
+
+Só em nichos específicos. Empresa multi-cloud sem vendor dominante, operação de marketing com stack heterogêneo que não aceita lock-in, time de dados que precisa de mobilidade entre plataformas — nesses três casos, a neutralidade de um RudderStack ou Tealium ainda paga o custo de integração. Fora deles, CDP independente é resposta pra uma pergunta que seu stack já respondeu.
+
+Antes de olhar fornecedor, vale checar o caso de uso: ativação de marketing em canais, CDP independente resolve bem; contexto em tempo real pra agentes exige arquitetura que o CDP clássico não entrega por design.
+
+## Quem já usa Salesforce precisa de um CDP separado?
+
+Quase nunca. Empresa Salesforce-first já tem Data Cloud disponível — ou disponível pra negociar — e um CDP independente viraria uma segunda camada de dados de cliente, com custo de integração alto e diferencial pequeno frente ao que já está no contrato. Nesse cenário, a conta de TCO raramente fecha pro CDP separado.
+
+O que essa decisão exige é consciência do horizonte: comprar Data Cloud é apostar no ecossistema Salesforce por no mínimo 3–5 anos. Se esse horizonte é aceitável, a discussão de CDP acabou; se não é, a pergunta certa volta a ser a de mobilidade entre plataformas.
+
+## O que ainda não virou commodity em dados de cliente?
+
+A arquitetura de identidade. A ferramenta virou feature de plataforma, mas decidir qual é a chave canônica de cliente e como resolver conflito de identidade entre Sales Cloud, ERP e plataforma de produto continua exigindo decisão técnica cuidadosa — e ela vem antes de qualquer assinatura de CDP ou Data Cloud.
+
+Por isso a commoditização é boa notícia sem ser o fim do trabalho: o problema resolvido saiu do orçamento, o problema de identidade ficou. Errar essa camada faz qualquer plataforma — comprada ou embutida — entregar visão duplicada de cliente.

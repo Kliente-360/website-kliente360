@@ -94,3 +94,25 @@ If your company is about to implement AI in HR, three honest moves:
 **Define what NOT to automate.** Written policy, trained with the team, communicated to employees. Without it, the agent becomes a problem when someone expected a human.
 
 Generative AI for HR in 2026 is one of the largest silent-productivity opportunities. A company that operates well in this case frees human HR capacity for what truly requires humans. A company that tries to automate everything, or skips to recruiting without governance, generates liability. The difference isn't in the technology — it's in knowing what to automate and what not, with the humility to respect the limit.
+
+## Questions that keep coming back
+
+Three doubts that surface in almost every conversation about this topic.
+
+## How long does it take to get an HR agent up and running?
+
+A solid pilot in 8–12 weeks; stable operation in 6 months. That holds when the five components are implemented in order: scope limited to the 25–40 most frequent questions, curated knowledge base, interface in Slack or the portal where employees already are, clear escalation to humans, and privacy governance from day 1.
+
+What stretches that timeline is almost always curation — and you can't skip it. Curating 30–50 well-structured canonical documents is half the effort, and a company that dumps 500 docs at the agent gets hallucination, not speed. ROI, in turn, becomes visible in about 90 days once you compare cost per resolved interaction with the cost of human HR doing the same triage.
+
+## Should HR AI start with recruiting?
+
+No — resume triage is the most common pitch and the worst place to start. It combines regulatory risk (LGPD on candidate data), algorithmic bias and direct impact on a person's life. It's the kind of mistake that becomes liability instead of learning.
+
+The path that pays is starting internal: a triage agent answering employees' repeated questions about vacations, travel policy, health plan. Low risk, documented base, predictable ROI. Once the internal operation proves value and governance matures, then you discuss expanding.
+
+## Do you need to train the model on company data?
+
+No — the pattern that works is prompt + RAG over curated documents, without fine-tuning on internal data. Beyond being unnecessary for answering documented-policy questions, training a model on employee data creates a privacy problem the RAG approach avoids by design.
+
+What does need to exist is governance: auditable logs, a clear policy on what can't enter the prompt, and a privacy checklist applied from day 1. Employee data is sensitive — the effort goes into curation and control, not model training.

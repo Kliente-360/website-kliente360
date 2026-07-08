@@ -66,3 +66,25 @@ Sponsor executivo costuma ver discovery como custo, não investimento. A convers
 Outra forma de enquadrar: discovery não é fase do projeto Salesforce, é o projeto de **definir o processo que o Salesforce vai sustentar**. Se a empresa decidir que não vale fazer, a pergunta seguinte não é "como reduzir discovery?", é "por que estamos comprando licença pra um processo que ninguém quer escrever?". Geralmente essa pergunta sozinha destrava o orçamento — ou abre [a conversa honesta sobre quando NÃO usar Salesforce](/blog/quando-nao-usar-salesforce.html), porque mapeamento bem-feito às vezes mostra que a ferramenta certa pra esse momento é outra.
 
 O melhor projeto de Salesforce é o que parece chato no mês 1 — porque o time está escrevendo, desenhando, validando — e impressiona no mês 4, quando o go-live acontece sem o circo de incidentes que virou normal no mercado. Discovery não é a parte glamorosa. É a parte que faz a configuração ser previsível, e previsibilidade é o que o sponsor compra quando contrata Salesforce. (Junto disso, [estratégia de sandbox bem desenhada](/blog/sandbox-strategy.html) e [escolha cuidadosa do partner Salesforce](/blog/salesforce-partner-program.html) fecham o trio que define rollout sólido.)
+
+## Perguntas que sempre voltam
+
+Antes de fechar, as dúvidas que mais aparecem quando esse assunto entra na mesa.
+
+## Quanto tempo leva o mapeamento de processos antes de implantar Salesforce?
+
+Duas a quatro semanas — e os três artefatos que importam (mapa de processo em uma página, matriz de campos por estágio, lista de integrações) cabem em duas a três semanas de trabalho focado com 4–6 pessoas. É o investimento mais barato do projeto inteiro.
+
+A comparação que fecha a conta: mapear depois — quando o usuário já reclamou, o sponsor já cobrou e o consultor já configurou — custa três a seis meses. A pressa de abrir o Setup no mês 1 é exatamente o que o time inteiro paga em retrabalho no mês 4.
+
+## Vale a pena colocar o básico no ar e ajustar com o uso real?
+
+Não do jeito que a frase promete. Três armadilhas se repetem: o básico vira definitivo (usuário aprende o fluxo errado, e refazer custa mudança de comportamento, muito mais cara que mudança de config); as métricas saem distorcidas desde o dia 1 (se "Qualificação" significa coisa diferente pra cada vendedor, a diretoria decide em cima de funil ficção por seis meses); e a primeira integração que quebra derruba a confiança no projeto inteiro.
+
+Ajuste contínuo é saudável — pular discovery não é ajuste contínuo, é dívida técnica nascendo capitalizada. O caminho honesto é MVP com processo mapeado antes da configuração.
+
+## Como justificar o custo do discovery pro sponsor?
+
+Com números concretos: cada semana de mapeamento bem feito evita cerca de quatro a seis semanas de retrabalho pós go-live. A conta sai positiva já no primeiro caminho alternativo que o time evitou descobrir em produção.
+
+O outro enquadramento que funciona: discovery não é fase do projeto Salesforce, é o projeto de definir o processo que o Salesforce vai sustentar. Se a empresa acha que não vale fazer, a pergunta que segue não é "como reduzir discovery?" — é "por que estamos comprando licença pra um processo que ninguém quer escrever?". Essa pergunta sozinha costuma destravar o orçamento.

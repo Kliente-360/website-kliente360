@@ -105,3 +105,25 @@ A tentação depois de uma lista de tendências é começar dez projetos em para
 3. **Escolher um stack e comprometer.** Equipe que avalia Snowflake, BigQuery, Databricks e Redshift em paralelo por 8 meses está pagando custo de indecisão disfarçado de rigor técnico. Escolher e aprofundar devolve mais do que otimizar a escolha por mais um trimestre.
 
 O mercado de dados vai produzir mais termos em 2027. O filtro que funciona continua o mesmo: a mudança resolve um problema real que você tem hoje, com dado que você já tem, na equipe que você consegue operar?
+
+## Perguntas que sempre voltam
+
+Antes de fechar o texto, as dúvidas que mais aparecem quando essa lista chega no comitê.
+
+## Por onde começar com tantas tendências ao mesmo tempo?
+
+Pelo diagnóstico do seu maior gargalo atual — não pelas dez frentes em paralelo. Se pipeline quebra sem aviso, comece por observabilidade. Se o mesmo número diverge entre áreas, camada semântica. Se dado de IA roda sem governança, data contracts mais classificação de sensibilidade. A tendência certa é a que resolve um problema que você já tem hoje, com o dado que já existe, na equipe que você consegue operar.
+
+E antes de qualquer tendência, os três fundamentos precisam estar funcionando: qualidade com dono, modelo de domínio e ownership claro. Tendência nova em cima de dado sem dono é investimento sem retorno.
+
+## Data contracts valem o esforço ou são mais um hype?
+
+Valem — e em 2026 o custo de não ter já é mensurável em incidentes silenciosos de produção: schema que muda sem aviso, pipeline que quebra na sexta à noite, relatório executivo com número errado. A prática saiu do palco de conferência e virou operação.
+
+O esforço também caiu: Snowflake, BigQuery e Databricks começaram a embutir primitivos de contrato nos planos enterprise, e o que era projeto de engenharia virou feature de plataforma. A ressalva honesta é que contrato sem enforcement não resolve nada — precisa de dono, e de consequência quando o produtor viola o acordo.
+
+## Preciso migrar pra lakehouse em 2026?
+
+Não, se seu dado cabe em warehouse relacional e sua equipe domina SQL — nesse cenário, lakehouse adiciona complexidade sem retorno proporcional. A arquitetura amadureceu de verdade (Delta, Iceberg e Hudi viraram formatos de fato, transação ACID em escala virou commodity), mas amadurecer não significa servir pra todo mundo.
+
+O critério que vale é o de sempre: arquitetura boa é a que entrega confiabilidade com o menor acréscimo de complexidade operacional. Pra times com dado em escala real, a promessa do lakehouse finalmente é entregável em produção; pro resto, o warehouse simples continua ganhando.

@@ -86,3 +86,25 @@ If your company is about to pilot an LLM with real data, three moves before the 
 **Sponsor with mandate to pause the pilot if needed.** When something goes wrong — and something will go wrong in some pilot — someone needs authority to pause before escalation. Without that sponsor, the team will hide the problem until it becomes an incident.
 
 Privacy governance in LLMs in 2026 is part of the project, not an extra phase. Companies that accept this logic deliver responsible AI and grow with confidence. Companies still treating it as optional bureaucracy will be in the headline before being in the business case. The difference isn't having compliance — it's having compliance *from the first prompt*.
+
+## Questions that keep coming back
+
+Three questions that surface in every conversation about privacy and LLMs — answered with what this piece argues.
+
+## Can I use real customer data in an LLM pilot?
+
+You can, but only after governance is settled — using real data "because it's just a test" is exactly how incidents are born. The arc is always the same: pilot becomes project, project becomes product, and at some point someone discovers personal data for thousands of customers passed through an external API without legal basis, without DPIA, without registry.
+
+The responsible path is answering the seven checklist items in writing before the first prompt: data map, legal basis per category, documented vendor policy, DPIA when applicable, redaction in the path, your own log, and human bypass. Missing two or more, the pilot shouldn't leave the drawing board. And where you can mask PII before sending, even better — it shrinks risk and simplifies compliance.
+
+## Does running the LLM on-premise solve the privacy problem?
+
+No — it changes part of the problem, but governance doesn't go away. With your own model, the vendor leaves the path: third-party retention and training concerns disappear. In exchange, new ones appear: internal model governance, server access control, hardening. And an internal leak is still a leak.
+
+The central point is that privacy law doesn't differentiate where the model runs. Legal basis, DPIA, your own log, and the right to human review all still apply. Running your own is more secure in one dimension (perimeter), but it doesn't waive the rest of the checklist.
+
+## How much does governance cost in an LLM project?
+
+Less than it looks, and far less than the alternative — but it has to be budgeted from the start. Your own log, redaction, and monitoring carry real cost: forgetting them means budgeting the pilot with 20–30% invisible cost. On the process side, the effort is modest: a 2–3 page document with the checklist answered, approved by the DPO and technical lead, plus 1 hour of team training — which prevents 80% of incidents.
+
+The counterpoint is the cost of not having it: in 2026, regulators are inspecting AI specifically, B2B customers demand AI clauses in contracts, and media turns leaks into headlines. Companies without governance lose business before getting fined — and reputation costs more than the fine.

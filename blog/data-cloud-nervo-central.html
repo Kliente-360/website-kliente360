@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Data Cloud substitui o data warehouse (Snowflake, BigQuery)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não — e tentar substituir tudo sempre falha. Data Cloud é a camada de contexto operacional: dados quentes, em tempo real, do cliente vivo. Histórico de 10 anos de transação continua no lake ou warehouse que você já tem. Snowflake, BigQuery e Databricks não saem do stack; Data Cloud conecta neles.\n\nA confusão vem de tratar Data Cloud como destino: importar tudo e parar por aí. O valor real está em ativar de volta — segmentos no Marketing, listas no Sales, contexto no Service. Sem os fluxos de ativação desenhados desde o discovery, o projeto vira um data warehouse caro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá pra usar Agentforce sem Data Cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dá, mas você está construindo um ETL informal por baixo do agente — e isso vira dívida técnica no segundo trimestre. Agente precisa de contexto: histórico do cliente, status de pedidos, valor de contrato, tickets anteriores. Quando esse contexto vem fragmentado de mil lugares, o agente fica lento (latência de API) ou impreciso (dado desatualizado) — responde rápido, mas coisas erradas.\n\nData Cloud resolve com perfis materializados em tempo real que o agente consulta como fonte única: sem joins, sem ETL noturno, sem cache desincronizado. O agente puxa o contexto e age."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por onde começar uma implantação de Data Cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pelo caso de uso de ativação, não pelo ingest. Defina onde Data Cloud vai entregar valor — um agente, uma jornada, uma segmentação — e ingira só o que esse caso precisa. Como em qualquer rollout Salesforce sério, o discovery do processo vem antes da configuração.\n\nDois complementos: trate identity resolution como projeto separado, com sprint próprio e QA dedicado — investir 3-4 semanas no design de identidade no início economiza meses de retrabalho com perfis fragmentados. E conecte ao data stack existente em vez de substituí-lo: Data Cloud é camada de contexto operacional, não o novo warehouse analítico."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -220,6 +253,17 @@
 <li><strong>Conecte ao seu data stack existente, não substitua.</strong> Snowflake, BigQuery, Databricks continuam. Data Cloud é a camada de contexto operacional, não o substituto do warehouse analítico.</li>
 </ol>
 <p>Quem aceita esse desenho hoje, em 2027 vai ter uma plataforma que serve agentes, ativação e analítica numa só fundação. Quem ainda implanta Data Cloud como &quot;CDP&quot; vai estar revisando arquitetura no ano que vem.</p>
+<h2>Perguntas que sempre voltam</h2>
+<p>Antes de fechar, três dúvidas que aparecem em quase toda conversa sobre Data Cloud.</p>
+<h2>Data Cloud substitui o data warehouse (Snowflake, BigQuery)?</h2>
+<p>Não — e tentar substituir tudo sempre falha. Data Cloud é a camada de contexto operacional: dados quentes, em tempo real, do cliente vivo. Histórico de 10 anos de transação continua no lake ou warehouse que você já tem. Snowflake, BigQuery e Databricks não saem do stack; Data Cloud conecta neles.</p>
+<p>A confusão vem de tratar Data Cloud como destino: importar tudo e parar por aí. O valor real está em ativar de volta — segmentos no Marketing, listas no Sales, contexto no Service. Sem os fluxos de ativação desenhados desde o discovery, o projeto vira um data warehouse caro.</p>
+<h2>Dá pra usar Agentforce sem Data Cloud?</h2>
+<p>Dá, mas você está construindo um ETL informal por baixo do agente — e isso vira dívida técnica no segundo trimestre. Agente precisa de contexto: histórico do cliente, status de pedidos, valor de contrato, tickets anteriores. Quando esse contexto vem fragmentado de mil lugares, o agente fica lento (latência de API) ou impreciso (dado desatualizado) — responde rápido, mas coisas erradas.</p>
+<p>Data Cloud resolve com perfis materializados em tempo real que o agente consulta como fonte única: sem joins, sem ETL noturno, sem cache desincronizado. O agente puxa o contexto e age.</p>
+<h2>Por onde começar uma implantação de Data Cloud?</h2>
+<p>Pelo caso de uso de ativação, não pelo ingest. Defina onde Data Cloud vai entregar valor — um agente, uma jornada, uma segmentação — e ingira só o que esse caso precisa. Como em qualquer rollout Salesforce sério, o discovery do processo vem antes da configuração.</p>
+<p>Dois complementos: trate identity resolution como projeto separado, com sprint próprio e QA dedicado — investir 3-4 semanas no design de identidade no início economiza meses de retrabalho com perfis fragmentados. E conecte ao data stack existente em vez de substituí-lo: Data Cloud é camada de contexto operacional, não o novo warehouse analítico.</p>
 
         </div>
       </div>

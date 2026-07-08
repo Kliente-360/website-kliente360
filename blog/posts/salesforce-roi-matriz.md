@@ -74,3 +74,25 @@ Quem entra com o modelo de vendor e descobre o custo real dois anos depois não 
 > A diferença entre projeto de Salesforce que rende e projeto que sangra raramente está no produto. Está na qualidade do diagnóstico antes da assinatura.
 
 A matriz não garante ROI. Garante que a decisão foi tomada com os números certos — e quando o retorno for menor que o esperado, pelo menos não é surpresa.
+
+## Perguntas que sempre voltam
+
+Antes de fechar, as três dúvidas que mais aparecem quando essa conta entra na mesa.
+
+## Quanto custa Salesforce de verdade, além da licença?
+
+Regra de bolso conservadora: o custo real do primeiro ciclo equivale a 2,5–3x o custo de licença anual. A proposta comercial lista licença, implementação e treinamento — mas omite as três linhas que decidem se a conta fecha em 36 meses: operação contínua (R$ 8.000–25.000/mês em empresa de 30–150 licenças), adaptação organizacional (cerca de 1,5x o custo de implementação, diluído em 12–18 meses) e o custo de oportunidade da alternativa mais barata.
+
+Por isso a conta certa é sempre o total de 36 meses — licença + implementação + operação + adaptação. Se o parceiro de implementação der número menor que esse múltiplo, peça a justificativa detalhada antes de assinar.
+
+## Em quanto tempo o ROI de Salesforce aparece?
+
+Raramente antes de 24 meses de operação estabilizada. O modelo do vendor costuma projetar retorno a partir do mês 6 — mas esse é o mês do go-live, não o mês em que a operação está rodando de verdade com dado limpo e adoção real. Empresa que precisa de retorno em 12 meses vai ter frustração antes de ter ROI.
+
+E adoção real não é login de usuário: é processo registrado, dado útil pra decisão e gestor usando o funil. Quem entra com expectativa calibrada e time com músculo de operação extrai ROI mensurável; quem entra com o modelo do vendor descobre o custo real dois anos depois — e migrar já é caro demais.
+
+## Vale mais a pena Hubspot ou Pipedrive do que Salesforce?
+
+Depende das quatro variáveis da matriz — mas pra boa parte das operações de médio porte, sim. Hubspot ou Pipedrive bem configurados resolvem 60–80% das necessidades por 15–25% do custo total. A diferença entre as duas contas é o prêmio que você paga por Salesforce, e esse prêmio só se justifica pelo ganho diferencial que a alternativa não entrega.
+
+O corte financeiro mais direto: Salesforce começa a fazer sentido quando o cliente médio gera R$ 150k+ de receita anual e o processo comercial é de complexidade alta. Ticket baixo com processo simples em plataforma complexa é equação ruim por design — despesa sem retorno equivalente, independente das features.

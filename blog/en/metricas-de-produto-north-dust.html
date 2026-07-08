@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it worth swapping the north star when it stops working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost never — swapping metrics without fixing the system around it guarantees the same death in six months. The problem is rarely the choice (the new off-site with the new framework produces another metric that dies the same way); the problem is what&#39;s missing underneath: breakdown into operational metrics, review cadence, named owner and an action playbook.\n\nThe honest path is self-diagnosis first: does each operational metric have an owner? Is there a calendared cadence? Is there a playbook when it degrades? Did last quarter&#39;s decisions cite the metric? If the answers reveal a missing system — which is the case almost always — build the system. Swapping the metric is only justified in the rare case where it&#39;s actually wrong."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should you review the north star?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly, with root-cause analysis, in about an hour — not weekly (overkill, it doesn&#39;t move that fast), not quarterly (too late, the problem already grew). What gets looked at weekly are the operational metrics, in a short 15-minute review, because those are what the team actually moves in sprints.\n\nThe cycle closes with a quarterly recalibration review, half a day. Without this three-layer rhythm, on the calendar, the metric gets looked at &quot;when someone remembers&quot; — and nobody remembers. A cadence without a calendar is intention, not a system."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you know if your north star is still alive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most direct test: did last quarter&#39;s product decisions explicitly cite the metric? If someone asks &quot;how does this move our north star?&quot; during roadmap planning and the answer is silence, it became ornament — the terminal symptom.\n\nBefore that, two warning signs show up: the discussion about how to calculate the metric keeps coming back (ambiguous definition, every report measures it differently), and the dashboard stays out of date for more than 2 weeks with nobody fixing it (central metrics get fixed in hours, because someone needs them). When the three signs appear together, the metric is dead regardless of what the dashboard shows — worth formally killing it and rebuilding the system."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -228,6 +261,17 @@
 <li>Did the last quarter&#39;s product decisions explicitly cite the metric? If yes, it&#39;s alive. If no, it&#39;s dying.</li>
 </ol>
 <p>Answering the four honestly clarifies whether the problem is the metric (rare) or the system around it (almost always). A company that accepts this logic spends less time choosing the next perfect north star and more time building the muscle of operating by metric — which is what actually moves the needle. <a href="/blog/en/analise-de-churn.html">The same principle applies to churn analysis</a>: definition before model, system around it before dashboard.</p>
+<h2>Questions that keep coming back</h2>
+<p>Before wrapping up, the questions I hear most whenever this topic comes up.</p>
+<h2>Is it worth swapping the north star when it stops working?</h2>
+<p>Almost never — swapping metrics without fixing the system around it guarantees the same death in six months. The problem is rarely the choice (the new off-site with the new framework produces another metric that dies the same way); the problem is what&#39;s missing underneath: breakdown into operational metrics, review cadence, named owner and an action playbook.</p>
+<p>The honest path is self-diagnosis first: does each operational metric have an owner? Is there a calendared cadence? Is there a playbook when it degrades? Did last quarter&#39;s decisions cite the metric? If the answers reveal a missing system — which is the case almost always — build the system. Swapping the metric is only justified in the rare case where it&#39;s actually wrong.</p>
+<h2>How often should you review the north star?</h2>
+<p>Monthly, with root-cause analysis, in about an hour — not weekly (overkill, it doesn&#39;t move that fast), not quarterly (too late, the problem already grew). What gets looked at weekly are the operational metrics, in a short 15-minute review, because those are what the team actually moves in sprints.</p>
+<p>The cycle closes with a quarterly recalibration review, half a day. Without this three-layer rhythm, on the calendar, the metric gets looked at &quot;when someone remembers&quot; — and nobody remembers. A cadence without a calendar is intention, not a system.</p>
+<h2>How do you know if your north star is still alive?</h2>
+<p>The most direct test: did last quarter&#39;s product decisions explicitly cite the metric? If someone asks &quot;how does this move our north star?&quot; during roadmap planning and the answer is silence, it became ornament — the terminal symptom.</p>
+<p>Before that, two warning signs show up: the discussion about how to calculate the metric keeps coming back (ambiguous definition, every report measures it differently), and the dashboard stays out of date for more than 2 weeks with nobody fixing it (central metrics get fixed in hours, because someone needs them). When the three signs appear together, the metric is dead regardless of what the dashboard shows — worth formally killing it and rebuilding the system.</p>
 
         </div>
       </div>

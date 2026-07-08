@@ -97,3 +97,25 @@ If your company is about to hire a Salesforce partner, three moves:
 **Calculate [honest total cost](/blog/en/salesforce-roi-matriz.html), not proposal price.** A consultancy that charges 40% more but delivers in half the time is cheaper. A cheap consultancy that extends scope doubles the cost in the third month.
 
 The Salesforce Partner Program in 2026 is useful structure — for Salesforce to organize its ecosystem. For the client, it's a starting point. The hiring decision that pays back comes from what's underneath the tier: names, cases, specialization, incentive. A company that looks underneath chooses well. A company that decides by the logo on the consultancy's site discovers what was underneath in the third month of the project — usually in a hard meeting.
+
+## Questions that keep coming back
+
+To wrap up, the questions I hear most often when a client is picking a partner.
+
+## Is a Summit partner always better than Crest?
+
+No. Summit indicates operational volume (50–200+ consultants), a relationship with Salesforce, and minimum aggregate CSAT — which matters for large, complex projects ($1M+, multi-cloud, international). For a mid-sized project ($40k–160k, Sales Cloud or Service Cloud), a Crest consultancy specialized in your sector frequently delivers better than a Summit generalist — and charges 30–50% less.
+
+There's even a classic antipattern here: a mid-sized company hires a big Summit "for guarantee", gets a junior consultant because the seniors are on the big projects, pays a premium, and quality disappoints. Tier is a signal, not a diagnosis.
+
+## How do I vet a Salesforce consultancy before signing?
+
+With five direct questions in the proposal conversation: who nominally will be on the project (role and years of experience), public cases in your sector and size with 2 clients you can call, which specialization covers your scope, what the commission model is (license vs. hour vs. result), and who the responsible partner is and in how many meetings you'll see them.
+
+Whoever answers all five clearly is a serious candidate. Whoever hesitates on two or more is selling pitch — and "we have 200 certifications" without names is marketing, because big companies have good teams *and* not-so-good teams, and you can end up with the second.
+
+## Does the partner's commission model really matter?
+
+It does, and it changes how you read everything they recommend. A consultancy paid per license sold has an incentive to push Industries when plain Sales Cloud would do, push Marketing Cloud and Data Cloud when the case doesn't ask for it, and expand scope when it should close. An hourly model aligns incentives differently.
+
+It's a sensitive question, but a legitimate one — and in the end you should compare honest total cost, not proposal price: a consultancy that charges 40% more and delivers in half the time is cheaper than the cheap one that extends scope and doubles the cost in the third month.

@@ -86,3 +86,25 @@ If your B2B SaaS company has CPQ running as a quoting machine, three moves:
 **Integrate proposal + contract.** Invest in Revenue Cloud or in serious CPQ + Conga/DocuSign integration. Without it, legal remains a permanent bottleneck.
 
 A well-deployed CPQ in B2B SaaS shortens sales cycle by 30–50%, reduces proposal errors by 80%, frees the rep to sell instead of operating a spreadsheet. Badly deployed, it's just a pretty calculator costing a premium Salesforce license. The difference isn't in the product — it's in four architectural decisions made before the first click in Setup.
+
+## Questions that keep coming back
+
+Before wrapping up, the three questions I hear most whenever CPQ comes up.
+
+## Is CPQ worth it for a B2B SaaS company?
+
+Yes — as long as it's implemented as a proposal platform, not a quoting machine. Done well, CPQ shortens the sales cycle by 30–50% (from 60–90 days down to 30–45), cuts proposal errors by 80% and frees reps to sell instead of operating spreadsheets. At volume, that cycle difference is revenue.
+
+Done badly, it's a pretty calculator on a premium Salesforce license: the rep generates a PDF, the customer doesn't understand it, the proposal gets redone in Word and legal builds the contract on the side. The product is the same in both scenarios — what changes are four architectural decisions made before the first click in Setup.
+
+## How do I know if my CPQ is just a quoting machine?
+
+Three symptoms give it away. First: reps redo proposals in Word or Google Docs — if that happens in more than 10% of deals, the CPQ output isn't a proposal, it's raw input. Second: legal asks the rep for data to build the contract, a sign the system stopped in the middle of the process. Third: the pricing committee meets weekly to decide exceptions that should have been automatic approvals.
+
+Any one of the three is a warning. All three combined mean the CPQ exists on the slide, but not in the process.
+
+## What needs to be in place before implementing CPQ?
+
+Five things, starting with a documented pricing policy — not in the CFO's head, in a document. If it doesn't exist, writing it is the first project. Then: knowing how many real commercial bundles exist (past 30, simplify before implementing), a named map of who approves what, the current median sales cycle as an ROI baseline, and a cross-functional sponsor — ideally CFO + CRO together.
+
+Whoever answers all five clearly has a case for serious CPQ. Whoever can't is still building the process — and implementing now will only crystallize the chaos. The most frequent mistake is exactly that: configuring before defining.

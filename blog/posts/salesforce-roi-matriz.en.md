@@ -74,3 +74,25 @@ A company entering with the vendor's model and discovering the real cost two yea
 > The difference between a Salesforce project that pays off and one that bleeds rarely comes down to the product. It comes down to the quality of the diagnosis before signing.
 
 The matrix doesn't guarantee ROI. It guarantees that the decision was made with the right numbers — and when the return is lower than expected, at least it isn't a surprise.
+
+## Questions that keep coming back
+
+Before closing, the three questions that come up most often when this math hits the table.
+
+## What does Salesforce really cost, beyond the license?
+
+Conservative rule of thumb: the real cost of the first cycle equals 2.5–3x the annual license cost. The commercial proposal lists license, implementation, and training — but omits the three lines that decide whether the numbers add up over 36 months: ongoing operations (R$ 8,000–25,000 per month at a company with 30–150 licenses), organizational adaptation (around 1.5x the implementation cost, spread over 12–18 months), and the opportunity cost of the cheaper alternative.
+
+That's why the right math is always the 36-month total — license + implementation + operations + adaptation. If the implementation partner quotes below that multiple, ask for a detailed breakdown before signing.
+
+## How long until Salesforce ROI shows up?
+
+Rarely before 24 months of stabilized operations. The vendor's model typically projects returns starting at month 6 — but that's the go-live month, not the month when operations are actually running with clean data and real adoption. A company that needs return in 12 months will experience frustration before ROI.
+
+And real adoption isn't user logins: it's registered process, data useful for decisions, and management using the pipeline. Whoever enters with calibrated expectations and a team with operational muscle extracts measurable ROI; whoever enters with the vendor's model discovers the real cost two years later — when migrating is already too expensive.
+
+## Is Hubspot or Pipedrive a better deal than Salesforce?
+
+It depends on the matrix's four variables — but for a good share of mid-market operations, yes. Hubspot or Pipedrive, properly configured, solve 60–80% of the needs at 15–25% of the total cost. The difference between the two totals is the premium you pay for Salesforce, and that premium is only justified by the differential gain the alternative can't deliver.
+
+The most direct financial cutoff: Salesforce starts making sense when the average customer generates R$ 150k+ in annual revenue and the sales process is highly complex. Low ticket plus simple process on a complex platform is a bad equation by design — expense without equivalent return, regardless of features.

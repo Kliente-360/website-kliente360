@@ -72,3 +72,25 @@ Las divergencias reales están en tres dimensiones:
 La decisión de BI es, en la práctica, una decisión de arquitectura de datos con interfaz visual. Quien licencia la herramienta sin resolver lo que está por debajo — dato fragmentado, sin capa semántica, sin dueño de métricas — va a cambiar de herramienta en dos años y reproducirá el mismo problema en un stack nuevo.
 
 La pregunta que una consultoría especializada hace antes de recomendar cualquier herramienta: "¿El dato que va a alimentar este BI está modelado, gobernado y con un dueño claro?" Si la respuesta no es sí, esa conversación tiene que ocurrir antes que la conversación con el vendedor de licencias.
+
+## Preguntas que siempre vuelven
+
+Antes de cerrar, las dudas que más aparecen cuando esta decisión llega a la mesa.
+
+## ¿Vale la pena pagar Tableau en una empresa mediana?
+
+En la mayoría de los casos, no — a menos que exista un equipo de BI dedicado y un presupuesto que soporte el contrato. Al tipo de cambio actual, el TCO de Tableau o Looker en empresas medianas de Latinoamérica suma con frecuencia entre USD 50k y USD 100k por año entre licenciamiento y operación. Sin analista de BI para extraer valor de esa flexibilidad visual, pagas precio enterprise por resultado de Metabase.
+
+La excepción: stack mixto o AWS, equipo de BI formado y un problema real de exploración ad hoc. En ese escenario, Tableau tiene la mejor interfaz de las cuatro y el contrato puede justificarse. Fuera de él, Power BI (si el stack es Microsoft) o Metabase cubren la necesidad por una fracción del costo.
+
+## ¿Puedo empezar con Metabase y cambiar de herramienta después?
+
+Sí, y esa es exactamente la trayectoria sana — crecer más allá de Metabase es madurez, no fracaso. Metabase es el camino más rápido hacia BI sin especialista: cualquier analista con SQL básico lo opera, la versión open-source corre en cualquier VM y la versión Cloud comienza en alrededor de USD 500/mes. Para startups y PyMEs, es un punto de entrada difícil de superar.
+
+La señal de que llegó el momento de migrar es clara: por encima de ~200–300 usuarios activos, aparecen fallas de governance, problemas de permisos granulares y consultas lentas. Si el dato de abajo está modelado y con dueño, cambiar la herramienta de arriba es la parte fácil — lo que encarece una migración es la lógica de negocio atrapada dentro de los dashboards.
+
+## ¿Qué necesito resolver antes de elegir la herramienta de BI?
+
+La arquitectura de datos — la herramienta de visualización es la última decisión del stack, no la primera. El orden es: warehouse, capa de transformación (dbt o nativa), capa semántica con definiciones únicas de métricas, y recién entonces el BI. Los proyectos que empiezan con "vamos a usar Tableau" suelen descubrir que el modelo de datos no soporta lo que se espera de él, y se convierten en dos años de correcciones.
+
+La prueba práctica: si cada área ya tiene su propio número para la misma métrica, ninguna de las cuatro herramientas lo resuelve sola. Resuelve primero el modelo, la governance y el dueño de cada métrica; si no, vas a cambiar de herramienta en dos años y reproducir el mismo problema en un stack nuevo.

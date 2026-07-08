@@ -101,6 +101,47 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where do most implementations break?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The protocol itself is simple. The risk surface comes from what it automates: dynamic tool discovery and execution with little human friction between a model&#39;s decision and its effect on the real world. Four failure patterns show up repeatedly.\n\n<strong>Tool poisoning.</strong> A tool&#39;s natural-language description is, itself, a prompt-injection vector — a malicious or compromised server can describe an innocuous-looking tool in a way that instructs the model to do something beyond what&#39;s expected. The model reads the description as an instruction, not just as metadata.\n\n<strong>Confused deputy via OAuth pass-through.</strong> When an MCP server forwards a user&#39;s OAuth token to another downstream system without validating scope, the agent inherits permission beyond what the task requires — and any call to that tool executes with the user&#39;s full privilege, not the minimum needed for that specific action.\n\n<strong>Tool-definition rug-pull.</strong> A client approves using a tool based on the description seen on first connection. Nothing stops the server from altering that description — or the behavior behind it — on a later connection, without the client re-evaluating the original consent.\n\n<strong>Resource content as indirect injection.</strong> A resource returns third-party content — a document, an email, a web page — that enters the model&#39;s context as trusted text. If that content contains a disguised instruction, the model may obey it with the same authority it would give the user.\n\n&gt; The risk with MCP isn&#39;t the protocol — it&#39;s the distance it creates between a model&#39;s decision and a human&#39;s review."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I use stdio versus remote HTTP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use stdio when client and server run on the same machine — developer tools, editors, CLIs; use Streamable HTTP for a remote, multi-tenant server serving agents that don&#39;t share a process or machine. The choice isn&#39;t cosmetic: each transport carries a different risk profile.\n\nWith stdio there&#39;s no network involved, but the server inherits the privileges of the process that invoked it — a path-traversal or command-injection bug becomes direct access to the local filesystem. With remote HTTP, authentication (typically OAuth 2.1), per-request scoping, and session isolation between tenants are mandatory from the first deploy — retrofitting them later is expensive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you trust the tool descriptions a server exposes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not without treating them as potentially hostile content. The model reads a tool&#39;s natural-language description as an instruction, not just as metadata — which is exactly why tool poisoning works: a malicious or compromised server can describe an innocuous-looking tool in a way that nudges the model to do more than expected.\n\nAnd the problem doesn&#39;t end at first connection. Nothing in the protocol prevents a rug-pull: the server can change the description — or the behavior behind it — after the client has already approved the tool. That&#39;s why the checklist calls for explicit contract versioning with a visible changelog, and why risk evaluation needs to be continuous, not done once per integration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which actions can an agent run without human review?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only reversible, low-impact ones. Deleting a record, sending an external communication, and moving money require mandatory human review — it&#39;s one of the six items on the production checklist, and it isn&#39;t bureaucracy: MCP&#39;s core risk is precisely the distance it creates between a model&#39;s decision and a human&#39;s review.\n\nIn practice, that rule pairs with minimum scope per tool (never forwarding the user&#39;s full token to the downstream system) and structured logging of every call. Without logs, an incident isn&#39;t investigable after the fact; without minimum scope, any agent action runs with the full privilege of whoever authorized it."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -170,7 +211,7 @@
           <div class="post-meta-line">
             <time datetime="2026-07-08">8 Jul 2026</time>
             <span class="sep">·</span>
-            <span>6 min read</span>
+            <span>7 min read</span>
             <span class="sep">·</span>
             <span>By Felipe Silva · Kliente 360</span>
           </div>
@@ -224,6 +265,17 @@
 <h2>The architecture decides how much you trust the agent</h2>
 <p>The point that remains after this checklist is that MCP doesn&#39;t introduce a new risk in essence — it introduces speed and scale for risks that already existed in any automated integration. What changes is that, in a world of dynamic tool discovery, those risks stop being evaluated once per integration and start needing continuous evaluation — because the set of tools available to the agent can change without anyone on the team reviewing it again.</p>
 <p>That&#39;s the same argument behind <a href="/blog/en/privacidade-dados-llms.html">treating agent governance as part of the design, not a layer bolted on afterward</a>: whoever publishes an MCP server today is, in fact, deciding how much they&#39;ll trust code they didn&#39;t write to act on behalf of an agent they may not have even maintained.</p>
+<h2>Questions that keep coming back</h2>
+<p>Three doubts that surface in almost every conversation before publishing an MCP server.</p>
+<h2>When should I use stdio versus remote HTTP?</h2>
+<p>Use stdio when client and server run on the same machine — developer tools, editors, CLIs; use Streamable HTTP for a remote, multi-tenant server serving agents that don&#39;t share a process or machine. The choice isn&#39;t cosmetic: each transport carries a different risk profile.</p>
+<p>With stdio there&#39;s no network involved, but the server inherits the privileges of the process that invoked it — a path-traversal or command-injection bug becomes direct access to the local filesystem. With remote HTTP, authentication (typically OAuth 2.1), per-request scoping, and session isolation between tenants are mandatory from the first deploy — retrofitting them later is expensive.</p>
+<h2>Can you trust the tool descriptions a server exposes?</h2>
+<p>Not without treating them as potentially hostile content. The model reads a tool&#39;s natural-language description as an instruction, not just as metadata — which is exactly why tool poisoning works: a malicious or compromised server can describe an innocuous-looking tool in a way that nudges the model to do more than expected.</p>
+<p>And the problem doesn&#39;t end at first connection. Nothing in the protocol prevents a rug-pull: the server can change the description — or the behavior behind it — after the client has already approved the tool. That&#39;s why the checklist calls for explicit contract versioning with a visible changelog, and why risk evaluation needs to be continuous, not done once per integration.</p>
+<h2>Which actions can an agent run without human review?</h2>
+<p>Only reversible, low-impact ones. Deleting a record, sending an external communication, and moving money require mandatory human review — it&#39;s one of the six items on the production checklist, and it isn&#39;t bureaucracy: MCP&#39;s core risk is precisely the distance it creates between a model&#39;s decision and a human&#39;s review.</p>
+<p>In practice, that rule pairs with minimum scope per tool (never forwarding the user&#39;s full token to the downstream system) and structured logging of every call. Without logs, an incident isn&#39;t investigable after the fact; without minimum scope, any agent action runs with the full privilege of whoever authorized it.</p>
 
         </div>
       </div>

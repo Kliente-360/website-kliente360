@@ -94,3 +94,25 @@ Sin sesgo de reventa, la recomendación por contexto:
 **Caso de uso analytical + ML en escala**: Databricks (o BigQuery + Vertex si ya está en Google). Snowflake con Snowpark resuelve sólo parcialmente.
 
 Importante: ninguna de estas recomendaciones viene de [comparativo de mid-market](/blog/es/snowflake-bigquery-databricks.html) puro. Viene de lock-in específico. Para cada caso, la pregunta "¿cuánto cuesta salir?" es tan importante como "¿cuánto cuesta correr?". Partners oficiales responden la segunda. La primera queda para el cliente investigar — o para consultor agnóstico responder. Hay razón estructural para ese arreglo.
+
+## Preguntas que siempre vuelven
+
+Para cerrar, las preguntas que más aparecen cuando esta decisión llega a la mesa.
+
+## ¿Cuánto cuesta migrar de un warehouse a otro?
+
+Depende del vector de lock-in, pero la referencia que asusta: la migración reversa de 50TB saliendo de Snowflake cuesta USD 200k–500k en consultoría especializada, porque exige `COPY INTO` de todas las tablas a Parquet y reingestión en el destino. BigQuery tiene salida parecida (el formato Capacitor es cerrado, extracción completa vía export jobs), con el atenuante de la Storage Read API para lectura externa.
+
+Y el dato es sólo una parte. Si más del 30% de tus queries críticas usa funciones propietarias (Cortex, BQML, JavaScript UDFs), la migración es refactorización, no export. Y si el stack entero vive en una sola cloud — tipo Looker + BigQuery + Vertex AI —, mover el warehouse es mover el stack entero. Por eso la pregunta "¿cuánto cuesta salir?" hay que hacerla antes de firmar, no después.
+
+## ¿Cuál de los tres tiene menos lock-in?
+
+Databricks, en el vector que más pesa: el dato queda en Delta (formato abierto) en el storage del propio cliente, legible por Spark, DuckDB, Trino y otros — cambiar de motor es apuntar el nuevo al mismo bucket. Snowflake y BigQuery guardan el dato en formato propietario, y la salida plena pasa por exportación costosa.
+
+Menos lock-in no es cero lock-in. Databricks te ata por otro camino: notebooks, MLflow, Unity Catalog y Workflows son exclusivos, y un equipo acostumbrado a ellos tiene fricción alta en cualquier otra herramienta. La diferencia es que ese aprisionamiento se resuelve con refactorización de proceso, no con rescate de dato — que es el tipo más caro.
+
+## ¿Se puede confiar en el comparativo del partner oficial?
+
+Como fuente única de decisión, no — y no es cuestión de mala fe. Un partner Databricks Gold, Snowflake Premier o Google Cloud gana ingresos entregando la plataforma que representa; su expertise está toda de un lado de la elección, y estructuralmente no puede recomendar que salgas de ella. El comparativo puede ser técnicamente correcto en la superficie y sesgado en la conclusión.
+
+El uso correcto del partner: hacerle las cuatro preguntas de medición (% de dato en formato abierto, % de SQL ANSI puro, integraciones nativas con la misma cloud, costo estimado de USD/TB para exportación completa) y observar la respuesta. Si no sabe o desvía en la cuarta, es señal roja. La comparación honesta sólo sale de quien no tiene incentivo de reventa.

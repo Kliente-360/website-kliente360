@@ -82,3 +82,25 @@ Se sua empresa está pra começar integração Salesforce-ERP, três movimentos 
 **Decisão arquitetural só depois.** Native, middleware, custom — escolher com base no contexto, não na moda. Volume, skills, ecossistema, tolerância a latência. Cada um pesa diferente em empresa diferente.
 
 Integração Salesforce-ERP bem implantada é uma das peças mais valiosas de arquitetura empresarial moderna — destrava previsibilidade comercial, contábil e operacional. Mal implantada, é a integração que vira projeto vivo por dois anos. A diferença raramente está no MuleSoft escolhido. Está em quem foi dono do quê desde o dia 1.
+
+## Perguntas que sempre voltam
+
+Pra fechar, as três dúvidas que mais aparecem quando esse tema entra na pauta.
+
+## MuleSoft, middleware ou integração custom: qual escolher pra conectar Salesforce ao ERP?
+
+Depende do contexto operacional, não de feature comparison — e três padrões cobrem 90% dos casos. Native (MuleSoft Anypoint, Salesforce Connect, Data Cloud) vale quando a empresa já está investida no ecossistema Salesforce: licença mais cara, implementação mais barata. Middleware genérico (Boomi, Workato, Tray) vale quando a integração precisa servir vários sistemas além do par Salesforce-ERP. Custom (Lambda, API Gateway, mensageria) vale pra volume altíssimo, latência crítica ou lógica que ferramenta padrão não cobre — controle total, manutenção contínua.
+
+O que pesa na escolha são skills do time, ecossistema existente e volume. E o debate só faz sentido depois de resolver as cinco perguntas de governança — antes disso, qualquer arquitetura entrega o mesmo atraso.
+
+## Quanto tempo leva o discovery de uma integração Salesforce-ERP?
+
+Pra empresa de médio porte, um discovery sério exige 4–6 semanas — dedicado às cinco perguntas de governança (quem é dono de cliente, de pedido, de preço, frequência de sync, dono operacional), não à arquitetura nem ao mapa de campos. Quem orça duas semanas entrega superficial e descobre o resto durante a implementação, custando 10× mais.
+
+A conta do lado de lá também é conhecida: time que responde as cinco perguntas antes da sprint entrega no prazo; quem responde durante a construção atrasa 2–4 meses; quem responde depois do go-live entra no projeto vivo eterno.
+
+## Como saber antes de começar se a integração vai atrasar?
+
+Três sinais quase garantem o atraso. Primeiro: sponsor sem autoridade cross-funcional — diretor de vendas patrocinando algo que afeta o financeiro trava, diretor de TI vira projeto técnico sem decisão de negócio. Segundo: discovery orçado em duas semanas. Terceiro: ninguém escreveu as cinco perguntas de governança — se na sprint planning não há resposta documentada, qualquer estimativa é palpite.
+
+Se qualquer um dos três aparecer, o movimento certo é parar e resolver antes da arquitetura. O ideal é sponsor com peso em vendas + ops + finanças, e as decisões de ownership documentadas desde o dia 1.

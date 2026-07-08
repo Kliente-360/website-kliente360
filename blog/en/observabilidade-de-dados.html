@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need to buy an observability tool to get started?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — and buying too early is the most common mistake. A tool without a documented baseline of expected behavior monitors in the dark: it produces either total silence or a cascade of false positives, and a team that gets 50 alerts a day learns to ignore all of them. For smaller teams, dbt with custom tests and SQL checks cover what&#39;s needed without additional licensing.\n\nMonte Carlo, Soda, Acceldata and the like come into play when the operation has dozens of pipelines and distributed teams — and they only deliver real gains if the data&#39;s expected behavior is already documented. The practical paradox: the exercise of documenting that baseline reveals much of the problems on its own, before any purchase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do I start instrumenting data observability?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With freshness and volume — quick to implement and high impact. A freshness check in SQL (<code>MAX(updated_at)</code> against an hours threshold) catches 60% of pipeline problems with no tooling at all, and a volume baseline (30-day median, alert below 70%) costs one metadata table and 10 lines of SQL. If you&#39;re already on dbt, the native tests (<code>not_null</code>, <code>unique</code>, <code>accepted_values</code>) are 80% of the path.\n\nThe sequence that works is incremental: freshness and volume first, then distribution, then schema (with data contracts), then lineage — each axis only once the previous one is stable. Teams that try to cover all five axes at once across all models usually stall in the first month."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know observability is actually working?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When the data team detects the problem before the user does — not when incidents drop to zero. Zero incidents isn&#39;t a realistic goal; the honest metric is the ratio of &quot;we detected first&quot; versus &quot;the user found it through the dashboard&quot;. When the first exceeds the second, the layer is delivering value.\n\nThat simple metric is also the most honest proxy for data maturity in the operation as a whole. And remember: an alert isn&#39;t resolution — without a defined workflow for who receives it, who pauses dependent dashboards, and how status gets communicated, the alert becomes an ignored notification in the first week of silence."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -230,6 +263,17 @@
 <p>The practical paradox: the exercise of documenting expected behavior already reveals, on its own, much of the quality problems. Teams that go through this exercise rarely need to buy a tool at first — they discover the most serious problems during the documentation and resolve them without automated instrumentation. The tool comes later, when data and pipeline volume makes manual checks unviable.</p>
 <p>Most critical data quality problems that reach users are detectable with three simple checks: freshness, volume, and nulls in required fields. The advanced stack matters when the basics are solved and you need statistical coverage of distribution and full lineage. Start with what detects the most failures with the least instrumentation; the rest comes naturally as maturity grows.</p>
 <p>The signal that observability is working is not zero incidents — it&#39;s the team detecting before the user does. When the ratio of &quot;we detected first&quot; exceeds &quot;user found it through the dashboard,&quot; the layer is delivering value. That simple metric is the most honest proxy for data maturity in any operation.</p>
+<h2>Questions that keep coming back</h2>
+<p>To wrap up, the doubts I hear most often when the topic is getting observability off the ground.</p>
+<h2>Do I need to buy an observability tool to get started?</h2>
+<p>No — and buying too early is the most common mistake. A tool without a documented baseline of expected behavior monitors in the dark: it produces either total silence or a cascade of false positives, and a team that gets 50 alerts a day learns to ignore all of them. For smaller teams, dbt with custom tests and SQL checks cover what&#39;s needed without additional licensing.</p>
+<p>Monte Carlo, Soda, Acceldata and the like come into play when the operation has dozens of pipelines and distributed teams — and they only deliver real gains if the data&#39;s expected behavior is already documented. The practical paradox: the exercise of documenting that baseline reveals much of the problems on its own, before any purchase.</p>
+<h2>Where do I start instrumenting data observability?</h2>
+<p>With freshness and volume — quick to implement and high impact. A freshness check in SQL (<code>MAX(updated_at)</code> against an hours threshold) catches 60% of pipeline problems with no tooling at all, and a volume baseline (30-day median, alert below 70%) costs one metadata table and 10 lines of SQL. If you&#39;re already on dbt, the native tests (<code>not_null</code>, <code>unique</code>, <code>accepted_values</code>) are 80% of the path.</p>
+<p>The sequence that works is incremental: freshness and volume first, then distribution, then schema (with data contracts), then lineage — each axis only once the previous one is stable. Teams that try to cover all five axes at once across all models usually stall in the first month.</p>
+<h2>How do I know observability is actually working?</h2>
+<p>When the data team detects the problem before the user does — not when incidents drop to zero. Zero incidents isn&#39;t a realistic goal; the honest metric is the ratio of &quot;we detected first&quot; versus &quot;the user found it through the dashboard&quot;. When the first exceeds the second, the layer is delivering value.</p>
+<p>That simple metric is also the most honest proxy for data maturity in the operation as a whole. And remember: an alert isn&#39;t resolution — without a defined workflow for who receives it, who pauses dependent dashboards, and how status gets communicated, the alert becomes an ignored notification in the first week of silence.</p>
 
         </div>
       </div>

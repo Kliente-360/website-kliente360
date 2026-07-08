@@ -88,3 +88,25 @@ If your company is about to run churn analysis (or has a model running without p
 **Calibrate the model by cost, not accuracy.** A model with 70% accuracy well-calibrated for false negative can pay more than a model with 90% well-calibrated for false positive — depends on the cost of each error to the business.
 
 [As in any 2026 data project](/blog/en/dado-limpo-e-um-mito.html), the problem rarely is the technique. It's what was asked of the technique before applying it. Churn analysis follows this rule: a team that defines loss in alignment with retention strategy delivers a model that reduces cancellation. A team that skips this step delivers an ML exercise that becomes a "lessons learned" slide.
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most whenever this topic hits the table.
+
+## Is a churn model worth it without a retention strategy in place?
+
+No. Without a playbook, an owner, and tested actions, the model is an academic exercise — it generates a list nobody acts on. If your company sits at what we call Level 0 (no operational retention strategy), the right investment is building the strategy first and the model later. Investing in the reverse order is the number-one reason for "churn projects that didn't pay back".
+
+And the inversion isn't cheap: starting with the model and building strategy afterwards typically costs 3 to 9 months of rework. Writing the playbook, naming the owner, and only then modeling is the shorter path, not the slower one.
+
+## How accurate does a churn model need to be to be useful?
+
+Less than you'd think — usefulness comes from calibrating for the cost of errors, not from raw accuracy. A model at 70% accuracy well-calibrated for false negatives can pay back more than one at 90% calibrated for false positives, because a false negative costs lost revenue while a false positive costs CS time. That cost ratio belongs to the business, not the algorithm.
+
+The other variable that outweighs precision is the advance window. If a rep needs 45 days to reverse an exit, a model that predicts 15 days out is useless even when it's mostly right. Calibrate window and cost before optimizing the metric.
+
+## How do you define churn when customers never formally cancel?
+
+With a behavioral proxy specific to your business model. In B2C SaaS, 90 days without login captures the passive churn the user hasn't declared yet. In retail, it's no purchase in N days — with N varying by category (60 for groceries, 365 for electronics), because without segmentation the aggregate model is useless. In non-contractual B2B, the signal is a sharp drop in order volume or a shift in frequency and average ticket.
+
+What doesn't change across contexts: the definition has to be operational, testable, and auditable. "Customer who disappears" doesn't cut it; "customer with no purchase in 180 days in the footwear category" does.

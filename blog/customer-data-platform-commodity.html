@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ainda vale a pena comprar um CDP independente em 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Só em nichos específicos. Empresa multi-cloud sem vendor dominante, operação de marketing com stack heterogêneo que não aceita lock-in, time de dados que precisa de mobilidade entre plataformas — nesses três casos, a neutralidade de um RudderStack ou Tealium ainda paga o custo de integração. Fora deles, CDP independente é resposta pra uma pergunta que seu stack já respondeu.\n\nAntes de olhar fornecedor, vale checar o caso de uso: ativação de marketing em canais, CDP independente resolve bem; contexto em tempo real pra agentes exige arquitetura que o CDP clássico não entrega por design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quem já usa Salesforce precisa de um CDP separado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quase nunca. Empresa Salesforce-first já tem Data Cloud disponível — ou disponível pra negociar — e um CDP independente viraria uma segunda camada de dados de cliente, com custo de integração alto e diferencial pequeno frente ao que já está no contrato. Nesse cenário, a conta de TCO raramente fecha pro CDP separado.\n\nO que essa decisão exige é consciência do horizonte: comprar Data Cloud é apostar no ecossistema Salesforce por no mínimo 3–5 anos. Se esse horizonte é aceitável, a discussão de CDP acabou; se não é, a pergunta certa volta a ser a de mobilidade entre plataformas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que ainda não virou commodity em dados de cliente?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A arquitetura de identidade. A ferramenta virou feature de plataforma, mas decidir qual é a chave canônica de cliente e como resolver conflito de identidade entre Sales Cloud, ERP e plataforma de produto continua exigindo decisão técnica cuidadosa — e ela vem antes de qualquer assinatura de CDP ou Data Cloud.\n\nPor isso a commoditização é boa notícia sem ser o fim do trabalho: o problema resolvido saiu do orçamento, o problema de identidade ficou. Errar essa camada faz qualquer plataforma — comprada ou embutida — entregar visão duplicada de cliente."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -229,6 +262,17 @@
 <p>A função de CDP virou plataforma. A arquitetura de identidade continua sendo trabalho de consultoria especializada.</p>
 </blockquote>
 <p>Em 2026, empresa que ainda pergunta &quot;qual CDP comprar&quot; está na pergunta errada. A pergunta certa é: qual camada de dado de cliente meu stack já tem, e o que ela não cobre ainda? A partir daí, a decisão é de gaps — não de categorias. E fechar gap custa menos do que trocar de plataforma.</p>
+<h2>Perguntas que sempre voltam</h2>
+<p>Pra fechar, as três perguntas que mais escuto quando esse tema aparece.</p>
+<h2>Ainda vale a pena comprar um CDP independente em 2026?</h2>
+<p>Só em nichos específicos. Empresa multi-cloud sem vendor dominante, operação de marketing com stack heterogêneo que não aceita lock-in, time de dados que precisa de mobilidade entre plataformas — nesses três casos, a neutralidade de um RudderStack ou Tealium ainda paga o custo de integração. Fora deles, CDP independente é resposta pra uma pergunta que seu stack já respondeu.</p>
+<p>Antes de olhar fornecedor, vale checar o caso de uso: ativação de marketing em canais, CDP independente resolve bem; contexto em tempo real pra agentes exige arquitetura que o CDP clássico não entrega por design.</p>
+<h2>Quem já usa Salesforce precisa de um CDP separado?</h2>
+<p>Quase nunca. Empresa Salesforce-first já tem Data Cloud disponível — ou disponível pra negociar — e um CDP independente viraria uma segunda camada de dados de cliente, com custo de integração alto e diferencial pequeno frente ao que já está no contrato. Nesse cenário, a conta de TCO raramente fecha pro CDP separado.</p>
+<p>O que essa decisão exige é consciência do horizonte: comprar Data Cloud é apostar no ecossistema Salesforce por no mínimo 3–5 anos. Se esse horizonte é aceitável, a discussão de CDP acabou; se não é, a pergunta certa volta a ser a de mobilidade entre plataformas.</p>
+<h2>O que ainda não virou commodity em dados de cliente?</h2>
+<p>A arquitetura de identidade. A ferramenta virou feature de plataforma, mas decidir qual é a chave canônica de cliente e como resolver conflito de identidade entre Sales Cloud, ERP e plataforma de produto continua exigindo decisão técnica cuidadosa — e ela vem antes de qualquer assinatura de CDP ou Data Cloud.</p>
+<p>Por isso a commoditização é boa notícia sem ser o fim do trabalho: o problema resolvido saiu do orçamento, o problema de identidade ficou. Errar essa camada faz qualquer plataforma — comprada ou embutida — entregar visão duplicada de cliente.</p>
 
         </div>
       </div>

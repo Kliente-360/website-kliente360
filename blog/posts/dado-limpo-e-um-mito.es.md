@@ -62,3 +62,25 @@ Cuando sumás esos tres por seis meses de "limpiemos antes", llegás a un númer
 En la próxima reunión donde alguien diga "antes tenemos que limpiar la base", la pregunta que destraba es simple: *limpiar para qué*. Si la respuesta es vaga ("tener una base confiable", "garantizar calidad"), el proyecto no está listo — no falta limpieza, falta caso de uso. Si la respuesta es específica ("para correr ese dashboard con confianza en el `valor de contrato`"), entonces el alcance de limpieza también es específico: ese campo, en esos registros, con ese umbral.
 
 Dato bueno no es dato limpio. Es dato adecuado al uso. La empresa que entiende esa diferencia mueve el roadmap. La que sigue persiguiendo limpieza universal va a entregar su tercer plan de gobierno en 2027 — y va a seguir tomando decisiones en planilla.
+
+## Preguntas que siempre vuelven
+
+Antes de cerrar, lo que más preguntan cuando este argumento llega a la reunión.
+
+## ¿Se puede empezar un proyecto de datos con la base sucia?
+
+Se puede — y en general es el camino más barato. Es el uso lo que revela qué suciedad importa: quien limpia antes de usar limpia lo que el equipo técnico cree que importa y descubre, meses después, que atacó las cosas equivocadas. Correr el reporte, armar el agente o publicar la campaña con el dato que hay muestra exactamente dónde el ruido molesta — y limpiar desde ahí es diez veces más barato que limpiar a ciegas.
+
+Lo que no se puede es arrancar sin definir el "suficientemente bueno": para esta decisión, qué campos tienen que estar correctos en qué porcentaje de registros. Con ese número escrito, la base sucia deja de ser bloqueo y se vuelve backlog priorizado.
+
+## ¿Cuánta calidad necesita el dato para ser usable?
+
+Depende de la decisión que alimenta — la calidad es siempre relativa al uso, no un atributo absoluto de la base. Un dashboard ejecutivo pide algo como 98% de acierto en `monto` y `fecha de cierre` y tolera ruido en el resto; una campaña de e-mail funciona con 90% en `e-mail principal`; un dashboard de churn exige rigor en la fecha de cancelación e ignora el teléfono secundario.
+
+El error es tratar toda la base con el mismo estándar. El umbral correcto se define campo por campo, caso de uso por caso de uso — antes de que el proyecto arranque, no durante.
+
+## ¿Cuándo se justifica un proyecto de limpieza dedicado?
+
+En tres contextos: migración de sistema, identidad de cliente y exigencia regulatoria. En la migración, no querés cargar basura histórica al sistema nuevo — pero "limpio" ahí significa limpio para los registros que van a operar de ahora en adelante. En identidad, vale un proyecto serio de matching, deduplicación y golden record — en general sobre las 3–5 entidades críticas, no MDM completo. En lo regulatorio, la calidad es compliance y no negocia, pero el alcance es estrecho: los campos que el regulador mira.
+
+Fuera de esos tres, el proyecto de limpieza universal es casi siempre fuga de la decisión de hacer — y el costo invisible de esperar (Excel paralelo, tiempo sénior, credibilidad del equipo de datos) suele superar el costo del propio proyecto que quedó parado.

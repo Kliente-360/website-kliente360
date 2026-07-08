@@ -66,3 +66,25 @@ Executive sponsors usually see discovery as cost, not investment. The conversati
 Another framing: discovery isn't a phase of the Salesforce project, it *is* the project of **defining the process Salesforce will sustain**. If the company decides it's not worth doing, the next question isn't "how do we shorten discovery?", it's "why are we buying licenses for a process no one wants to write down?". That question alone usually unblocks the budget — or opens [the honest conversation about when NOT to use Salesforce](/blog/en/quando-nao-usar-salesforce.html), because a well-done mapping sometimes shows the right tool for this moment is another one.
 
 The best Salesforce project is the one that looks boring in month one — because the team is writing, drawing, validating — and impresses in month four, when go-live happens without the circus of incidents that became normal in the market. Discovery isn't the glamorous part. It's the part that makes configuration predictable, and predictability is what the sponsor is buying when they sign Salesforce. (Together with [a well-designed sandbox strategy](/blog/en/sandbox-strategy.html) and [careful Salesforce partner choice](/blog/en/salesforce-partner-program.html), it closes the trio defining a solid rollout.)
+
+## Questions that keep coming back
+
+Before closing, the questions that come up most whenever this subject hits the table.
+
+## How long does process mapping take before rolling out Salesforce?
+
+Two to four weeks — and the three artifacts that matter (one-page process map, field-by-stage matrix, integration list with owners) fit into two to three weeks of focused work with 4–6 people. It's the cheapest investment in the entire project.
+
+The comparison that settles the argument: mapping after the fact — once users have complained, the sponsor has escalated, and the consultant has already configured — costs three to six months. The hurry to open Setup in month one is exactly what the whole team pays for in rework by month four.
+
+## Is it worth launching the basics and adjusting based on real usage?
+
+Not the way the phrase promises. Three traps repeat themselves: the basics become permanent (users learn the wrong flow, and redoing it costs behavior change, far more expensive than config change); metrics come out distorted from day one (if "Qualification" means different things to different reps, leadership makes decisions on a fictional funnel for six months); and the first integration that breaks makes the team question the entire project, not the specific integration.
+
+Continuous adjustment is healthy — skipping discovery isn't continuous adjustment, it's technical debt being born capitalized. The honest path is an MVP with the process mapped before configuration.
+
+## How do I justify the cost of discovery to the sponsor?
+
+With concrete numbers: every week of solid mapping prevents about four to six weeks of post-go-live rework. The math turns positive at the first alternate path the team avoided discovering in production.
+
+The other framing that works: discovery isn't a phase of the Salesforce project — it is the project of defining the process Salesforce will sustain. If the company decides it's not worth doing, the follow-up question isn't "how do we shorten discovery?" but "why are we buying licenses for a process no one wants to write down?". That question alone usually unblocks the budget.

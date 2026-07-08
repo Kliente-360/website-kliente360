@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I figure out what SLA my operation can actually deliver?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By running the math before promising — five numbers are enough for the floor. Average daily case volume (3–6 months of history, distributed by hour and day of week), average handle time by category (not the overall average — splitting simple, medium, and complex cases makes a 2x difference in the result), real agent productive time (5–6 effective hours per shift, not 8), peak vs. average (size to cover 80–90% of peaks), and the percentage of cases that escalate to L2/L3.\n\nWith those five, you get effective capacity per hour and achievable SLA by category. The number that comes out is typically higher than what was promised — and accepting that before deploying is what avoids the permanently red dashboard later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I set a single SLA or an SLA per category?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Per category, always. A single promise for everything is the fastest path to failure: a simple case can carry a 2-hour SLA, a medium case 8 hours, a complex case 24 — and Entitlements and Milestones support that natively in Service Cloud. Customers rarely need 4 hours on everything; they need 4 hours on critical cases and tolerate 12 on routine ones.\n\nTiering by severity also defuses the commercial tension: instead of refusing the aggressive SLA, you confine it to where it matters — and if the customer genuinely needs aggressive coverage across the board, that changes operations sizing and the price. SLA is a cost, not a free promise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I do when the SLA promised in the contract is impossible to meet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Renegotiate with numbers on the table — don&#39;t pretend the system will catch up. Customers respect math, not excuses: &quot;we operate with X agents, real capacity of Y cases/day, weekly peak of Z, achievable SLA on 90% of cases is W hours, not 4&quot;. A numerical argument is hard to refute — and it&#39;s more honest than configuring Entitlements against a target no one tested against capacity.\n\nLeaving it as-is costs more: chronic violations everyone learns to ignore (so the important one dissolves into the noise), predictable team burnout within 6–12 months, and NPS dropping in the second quarter, because the customer reads a blown SLA as a broken promise, not a configuration issue."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -218,6 +251,17 @@
 <h2>Where Service Cloud doesn&#39;t help</h2>
 <p>Worth saying what a well-configured SLA doesn&#39;t fix. It doesn&#39;t fix a broken process — an agent without authority to resolve keeps escalating, <a href="/blog/en/mapear-processos-antes-do-salesforce.html">as I argued about process before tooling</a>. It doesn&#39;t fix a bad product — if 30% of tickets are about the same bug, a tighter SLA doesn&#39;t change the number of tickets, just makes them arrive faster. It doesn&#39;t replace AI when volume justifies it — in large operations, an automated agent on <a href="/blog/en/quando-agente-e-resposta.html">cases where data is enough</a> absorbs 30–50% of volume and frees capacity.</p>
 <p>A well-deployed Service Cloud is one of the best service platforms on the market. But it&#39;s a platform — and a platform demands numbers before promises. Companies that accept this logic deliver reliable SLA and confident customers. Companies that keep picking SLA in sales meetings will spend the next two years explaining a red dashboard.</p>
+<h2>Questions that keep coming back</h2>
+<p>To close, the questions I hear most often when SLA comes up.</p>
+<h2>How do I figure out what SLA my operation can actually deliver?</h2>
+<p>By running the math before promising — five numbers are enough for the floor. Average daily case volume (3–6 months of history, distributed by hour and day of week), average handle time by category (not the overall average — splitting simple, medium, and complex cases makes a 2x difference in the result), real agent productive time (5–6 effective hours per shift, not 8), peak vs. average (size to cover 80–90% of peaks), and the percentage of cases that escalate to L2/L3.</p>
+<p>With those five, you get effective capacity per hour and achievable SLA by category. The number that comes out is typically higher than what was promised — and accepting that before deploying is what avoids the permanently red dashboard later.</p>
+<h2>Should I set a single SLA or an SLA per category?</h2>
+<p>Per category, always. A single promise for everything is the fastest path to failure: a simple case can carry a 2-hour SLA, a medium case 8 hours, a complex case 24 — and Entitlements and Milestones support that natively in Service Cloud. Customers rarely need 4 hours on everything; they need 4 hours on critical cases and tolerate 12 on routine ones.</p>
+<p>Tiering by severity also defuses the commercial tension: instead of refusing the aggressive SLA, you confine it to where it matters — and if the customer genuinely needs aggressive coverage across the board, that changes operations sizing and the price. SLA is a cost, not a free promise.</p>
+<h2>What do I do when the SLA promised in the contract is impossible to meet?</h2>
+<p>Renegotiate with numbers on the table — don&#39;t pretend the system will catch up. Customers respect math, not excuses: &quot;we operate with X agents, real capacity of Y cases/day, weekly peak of Z, achievable SLA on 90% of cases is W hours, not 4&quot;. A numerical argument is hard to refute — and it&#39;s more honest than configuring Entitlements against a target no one tested against capacity.</p>
+<p>Leaving it as-is costs more: chronic violations everyone learns to ignore (so the important one dissolves into the noise), predictable team burnout within 6–12 months, and NPS dropping in the second quarter, because the customer reads a blown SLA as a broken promise, not a configuration issue.</p>
 
         </div>
       </div>

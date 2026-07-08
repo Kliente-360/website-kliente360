@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a data catalog like Alation or Collibra worth buying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only in three contexts: a large company with 5+ independent data teams, an explicit regulatory requirement for centralized documentation with an approval trail, or lineage crossing 5+ distinct systems. Outside those, a premium catalog tends to be overshoot — you pay USD 200k+/year for a tool whose real usage collapses once the initial enthusiasm fades.\n\nThe prerequisite nobody checks: documentation culture. If your 20 most-used tables aren&#39;t documented today, buying a catalog amplifies absence. The tool doesn&#39;t write descriptions for you, and it doesn&#39;t create discipline that isn&#39;t there."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does dbt replace a data catalog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most mid-market companies, yes — dbt with documentation discipline covers about 80% of what a catalog would try to solve. Descriptions versioned in Git next to the code, <code>dbt docs</code> generating a navigable site with visual lineage, explicit owner in the <code>.yml</code>, source freshness with active alerting. And the infrastructure costs zero, because dbt is open source.\n\nThe honest limitation: dbt only covers what&#39;s in the warehouse. If a good chunk of your critical data lives in external sources (Salesforce, Mixpanel, spreadsheets) or lineage has to cross multiple systems, the catalog covers something dbt alone doesn&#39;t. Catalog is the upgrade once dbt is exhausted — not the other way around."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you know a catalog rollout actually worked?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By usage, not coverage — and the honest checkpoint is at 12 months. A catalog with 100% of tables documented and 5 hits per week is a dead catalog; one with 60% of tables and 500 hits per week is alive. A complete inventory proves nothing if the analyst is still asking on Slack.\n\nThe practical test: how many times did someone query the catalog last week, excluding the governance team checking whether it&#39;s current? If the answer stings, more populating won&#39;t fix it — a named owner, a maintenance process, and a defined primary use case will, and all of that comes before any contract renewal."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -240,6 +273,17 @@
 <p><strong>If you decide to buy, build the team first.</strong> You can&#39;t buy a catalog and expect &quot;the data team to populate&quot;. Named person, deadline, sponsor with authority to push teams to document.</p>
 <p><strong>Reassess at 12 months by usage, not coverage.</strong> Catalog with 100% of tables and 5 hits per week is dead catalog. Catalog with 60% of tables and 500 hits per week is live catalog. Success metric is use, not inventory.</p>
 <p>Data Catalog in 2026 is a legitimate tool — but it&#39;s the last rung of a documentation-culture ladder. Companies skipping rungs pay catalog price and keep asking on Slack. Companies climbing the ladder reach the top rung knowing whether it&#39;s worth it or not.</p>
+<h2>Questions that keep coming back</h2>
+<p>Before wrapping up, the questions that come up most whenever this topic hits the table.</p>
+<h2>Is a data catalog like Alation or Collibra worth buying?</h2>
+<p>Only in three contexts: a large company with 5+ independent data teams, an explicit regulatory requirement for centralized documentation with an approval trail, or lineage crossing 5+ distinct systems. Outside those, a premium catalog tends to be overshoot — you pay USD 200k+/year for a tool whose real usage collapses once the initial enthusiasm fades.</p>
+<p>The prerequisite nobody checks: documentation culture. If your 20 most-used tables aren&#39;t documented today, buying a catalog amplifies absence. The tool doesn&#39;t write descriptions for you, and it doesn&#39;t create discipline that isn&#39;t there.</p>
+<h2>Does dbt replace a data catalog?</h2>
+<p>For most mid-market companies, yes — dbt with documentation discipline covers about 80% of what a catalog would try to solve. Descriptions versioned in Git next to the code, <code>dbt docs</code> generating a navigable site with visual lineage, explicit owner in the <code>.yml</code>, source freshness with active alerting. And the infrastructure costs zero, because dbt is open source.</p>
+<p>The honest limitation: dbt only covers what&#39;s in the warehouse. If a good chunk of your critical data lives in external sources (Salesforce, Mixpanel, spreadsheets) or lineage has to cross multiple systems, the catalog covers something dbt alone doesn&#39;t. Catalog is the upgrade once dbt is exhausted — not the other way around.</p>
+<h2>How do you know a catalog rollout actually worked?</h2>
+<p>By usage, not coverage — and the honest checkpoint is at 12 months. A catalog with 100% of tables documented and 5 hits per week is a dead catalog; one with 60% of tables and 500 hits per week is alive. A complete inventory proves nothing if the analyst is still asking on Slack.</p>
+<p>The practical test: how many times did someone query the catalog last week, excluding the governance team checking whether it&#39;s current? If the answer stings, more populating won&#39;t fix it — a named owner, a maintenance process, and a defined primary use case will, and all of that comes before any contract renewal.</p>
 
         </div>
       </div>

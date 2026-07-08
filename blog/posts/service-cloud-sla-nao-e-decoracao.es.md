@@ -60,3 +60,25 @@ Cuando el cálculo muestra que el SLA prometido es imposible, el camino honesto 
 Vale decir lo que el SLA bien configurado no arregla. No arregla proceso torcido — atendente sin autoridad para resolver sigue escalando, [como argumenté sobre proceso antes de la herramienta](/blog/es/mapear-processos-antes-do-salesforce.html). No arregla producto malo — si el cliente tiene 30% de tickets sobre el mismo bug, SLA más apretado no cambia la cantidad de tickets, solo los hace llegar más rápido. No reemplaza IA cuando el volumen lo justifica — en operación grande, agente automatizado en [casos donde el dato alcanza](/blog/es/quando-agente-e-resposta.html) absorbe 30–50% del volumen y libera capacidad.
 
 Service Cloud bien implantado es una de las mejores plataformas de atención del mercado. Pero es plataforma — y plataforma exige número antes de promesa. Empresa que acepta esa lógica entrega SLA confiable y cliente confiado. Empresa que sigue eligiendo SLA en reunión comercial va a gastar los próximos dos años explicando dashboard rojo.
+
+## Preguntas que siempre vuelven
+
+Para cerrar, las dudas que más escucho cuando el SLA entra en la agenda.
+
+## ¿Cómo sé qué SLA puede cumplir mi operación?
+
+Haciendo la cuenta antes de prometer — cinco números bastan para tener el piso. Volumen medio diario de casos (histórico de 3–6 meses, distribuido por hora y día de la semana), tiempo medio de atención por categoría (no el promedio general — separar caso simple, medio y complejo hace diferencia de dos veces en el cálculo), tiempo productivo real del atendente (5–6 horas efectivas por jornada, no 8), pico vs. promedio (dimensionar para cubrir 80–90% de los picos) y el porcentaje de casos que escalan al nivel 2/3.
+
+Con esos cinco, sale la capacidad efectiva por hora y el SLA alcanzable por categoría. Típicamente el número es más alto que el prometido — y aceptar eso antes de implementar es lo que evita el dashboard rojo permanente después.
+
+## ¿Conviene un SLA único o SLA por categoría?
+
+Por categoría, siempre. Promesa única para todo es el camino más rápido para fallar: el caso simple puede tener SLA de 2 horas, el medio de 8, el complejo de 24 — y Entitlements y Milestones lo soportan nativamente en Service Cloud. El cliente rara vez necesita 4 horas en todo; necesita 4 horas en los casos críticos y tolera 12 en los rutinarios.
+
+El escalonamiento por severidad también desarma la tensión comercial: en vez de rechazar el SLA agresivo, lo restringís a donde importa — y si el cliente realmente necesita agresividad general, eso cambia el dimensionamiento y el precio. SLA es costo, no promesa gratis.
+
+## ¿Qué hago cuando el SLA prometido en el contrato es imposible de cumplir?
+
+Renegociá con el número sobre la mesa, no finjas que el sistema va a alcanzar. El cliente respeta cálculo, no excusa: "operamos con X atendentes, capacidad real de Y casos/día, pico semanal de Z, SLA alcanzable en 90% de los casos es de W horas, no 4". El argumento numérico es difícil de refutar — y es más honesto que configurar Entitlements apuntando a una meta que nadie probó contra la capacidad.
+
+Dejarlo como está sale más caro: violación crónica que todos aprenden a ignorar (y la violación importante se disuelve en el ruido), burnout previsible del equipo en 6–12 meses y NPS cayendo en el segundo trimestre, porque el cliente lee el SLA reventado como ruptura de promesa, no como problema de configuración.

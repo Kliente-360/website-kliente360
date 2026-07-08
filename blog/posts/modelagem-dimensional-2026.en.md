@@ -86,3 +86,25 @@ If your company is debating "lakehouse and modeling is overhead", three honest m
 **Resist "let's model later".** [Same mistake as clean data later](/blog/en/dado-limpo-e-um-mito.html). Modeling when the problem explodes is 5× more expensive than modeling when use begins.
 
 Dimensional modeling in 2026 isn't nostalgia. It's the method tested for 30 years to organize data for analytical consumption — and no storage evolution made it obsolete. Lakehouse is a new piece; dimensional is still the method. Whoever combines the two delivers a solid platform. Whoever tries to substitute one for the other finds the gap in 18 months, usually in a hard meeting about a diverging number.
+
+## Questions that keep coming back
+
+Before wrapping up, the doubts that come up most often when this topic hits the table.
+
+## Is dimensional modeling on top of a lakehouse worth it?
+
+Yes — and it's exactly the architecture that works in 2026: lakehouse as storage, dimensional as the semantic layer. It's not either-or. Bronze and silver live in the lakehouse (raw and cleansed data, open format, cheap storage), and the gold layer gets dimensional modeling via dbt mart — fact + dimension, pre-computed metrics, strong governance.
+
+That's the medallion pattern, and today it's the consensus among teams that have operated both worlds. Implementing only bronze + silver gives you a chaotic warehouse masked as a modern lakehouse. The dimensional gold layer is what turns flexible storage into a platform leadership can trust.
+
+## What happens if a company skips modeling to move faster?
+
+It rebuilds dimensional modeling inside the lakehouse over the next 18 months — under different names, but the same structure. Three problems show up within 12–18 months: every analyst becomes an architect and produces diverging versions of the same analysis; queries that ran in a second start taking 30 seconds and the team reinvents pre-aggregation case by case; and history turns into spaghetti because "customer in March" and "customer today" get mixed up, usually discovered at audit time.
+
+Modeling when the problem explodes is 5× more expensive than modeling when usage begins. The shortcut isn't a shortcut — it's debt with interest.
+
+## When can you skip dimensional modeling?
+
+When the company answers "no" to all five questions in the checklist: fewer than 20 executive dashboards, no need for dimension change history (SCD), fewer than 10 people modeling, no dbt running, and no case where query performance is critical. In that scenario, the cost of maintaining a formal dimensional model may not pay off yet.
+
+But if any of the five turns into "yes" or "it depends", modeling still pays. And the most common pattern is growing companies crossing those thresholds without noticing — and finding the gap in a hard meeting about a diverging number.

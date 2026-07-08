@@ -94,3 +94,25 @@ Si tu empresa está por implementar IA en RH, tres movimientos honestos:
 **Definí lo que NO automatizar.** Política escrita, entrenada con el equipo, comunicada al empleado. Sin eso, el agente se vuelve problema cuando alguien esperaba humano.
 
 La IA generativa para RH en 2026 es una de las mayores oportunidades de productividad silenciosa. Empresa que opera bien en ese caso libera capacidad del RH humano para lo que de hecho exige humano. Empresa que intenta automatizar todo, o salta a reclutamiento sin gobernanza, genera pasivo. La diferencia no está en la tecnología — está en saber qué automatizar y qué no, con la humildad de respetar el límite.
+
+## Preguntas que siempre vuelven
+
+Tres dudas que aparecen en casi toda conversación sobre este tema.
+
+## ¿Cuánto tarda tener un agente de RH funcionando?
+
+Piloto sólido en 8–12 semanas; operación estable en 6 meses. Eso vale cuando los cinco componentes se implementan en orden: alcance limitado a las 25–40 preguntas más frecuentes, base de conocimiento curada, interfaz en Slack o el portal donde el empleado ya está, escalamiento claro a humano y gobernanza de privacidad desde el día 1.
+
+Lo que estira ese plazo es casi siempre la curaduría — y no la podés saltear. Curar 30–50 documentos canónicos bien estructurados es la mitad del esfuerzo, y empresa que le tira 500 docs al agente consigue alucinación, no velocidad. El ROI, por su lado, queda visible en unos 90 días cuando comparás costo por interacción resuelta con el costo del RH humano haciendo el mismo triage.
+
+## ¿Conviene empezar la IA de RH por el reclutamiento?
+
+No — el triage de currículum es el pitch más común y el peor lugar para empezar. Combina riesgo regulatorio (LGPD/GDPR sobre dato de candidato), sesgo algorítmico e impacto directo en la vida de una persona. Es el tipo de error que se vuelve pasivo en vez de aprendizaje.
+
+El camino que rinde es empezar por lo interno: agente de triage respondiendo las dudas repetidas del empleado sobre vacaciones, política de viaje, plan de salud. Riesgo bajo, base documentada, ROI previsible. Cuando la operación interna prueba valor y la gobernanza madura, ahí se discute expandir.
+
+## ¿Hace falta entrenar el modelo con los datos de la empresa?
+
+No — el patrón que funciona es prompt + RAG sobre documentos curados, sin fine-tuning con dato interno. Además de innecesario para responder pregunta de política documentada, entrenar modelo con dato de empleado crea un problema de privacidad que el enfoque de RAG evita por diseño.
+
+Lo que sí necesita existir es gobernanza: logs auditables, política clara de lo que no puede entrar al prompt, y checklist de privacidad aplicada desde el día 1. Dato de empleado es sensible — el esfuerzo va en curaduría y control, no en entrenamiento de modelo.

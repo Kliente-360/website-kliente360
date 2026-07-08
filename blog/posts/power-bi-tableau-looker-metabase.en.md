@@ -72,3 +72,25 @@ The real divergences are in three dimensions:
 The BI decision is, in practice, a data architecture decision with a visual interface. Whoever licenses the tool without solving what sits beneath — fragmented data, no semantic layer, no metric owner — will switch tools in two years and reproduce the same problem on a new stack.
 
 The question a specialized consultancy asks before recommending any tool: "Is the data that will feed this BI modeled, governed, and with a clear owner?" If the answer is not yes, that conversation needs to happen before the conversation with the license vendor.
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most often when this decision hits the table.
+
+## Is Tableau worth it for a mid-size company in Brazil?
+
+In most cases, no — unless you have a dedicated BI team and a budget that supports the contract. At current exchange rates, Tableau Creator runs between R$ 1,500 and R$ 2,500 per user per month in Brazil, and the TCO of Tableau or Looker at mid-market size often adds up to R$ 200–400k per year across licensing and operations. Without a BI analyst to extract value from that visual flexibility, you're paying enterprise prices for Metabase-level results.
+
+The exception: a mixed or AWS stack, an established BI team, and a genuine ad hoc exploration problem. In that scenario, Tableau has the best interface of the four and the contract can justify itself. Outside it, Power BI (if the stack is Microsoft) or Metabase covers the need at a fraction of the cost.
+
+## Can I start with Metabase and switch tools later?
+
+Yes, and that is exactly the healthy trajectory — growing beyond Metabase is maturity, not failure. Metabase is the fastest path to BI without a specialist: any analyst with basic SQL can operate it, the open-source version runs on any VM, and Cloud starts at around USD 500/month. For startups and SMEs, it is a hard entry point to beat.
+
+The signal that it's time to migrate is clear: above ~200–300 active users, governance failures, granular permission issues, and slow queries start appearing. If the data underneath is modeled and owned, swapping the tool on top is the easy part — what makes migrations expensive is business logic trapped inside dashboards.
+
+## What do I need to solve before picking a BI tool?
+
+The data architecture — the visualization tool is the last stack decision, not the first. The order is: warehouse, transformation layer (dbt or native), semantic layer with single metric definitions, and only then the BI tool. Projects that start with "we'll use Tableau" tend to discover the data model can't support what's expected of it, and turn into two years of corrections.
+
+The practical test: if each team already has its own number for the same metric, none of the four tools fixes that alone. Solve the model, governance, and metric ownership first; otherwise you'll switch tools in two years and reproduce the same problem on a new stack.

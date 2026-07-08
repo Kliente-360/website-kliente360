@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you start a data project with a dirty base?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can — and it&#39;s usually the cheaper path. Use is what reveals which dirt matters: teams that clean before using clean what the technical team thinks matters, and discover months later they attacked the wrong things. Running the report, building the agent, or launching the campaign with the data that exists shows exactly where the noise hurts — and cleaning from there is ten times cheaper than cleaning in the dark.\n\nWhat you can&#39;t do is start without defining &quot;good enough&quot;: for this decision, which fields need to be correct in what percentage of records. With that number written down, the dirty base stops being a blocker and becomes a prioritized backlog."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much quality does data need to be usable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the decision it feeds — quality is always relative to use, not an absolute attribute of the base. An executive dashboard needs something like 98% correctness on <code>amount</code> and <code>close date</code> and tolerates noise elsewhere; an email campaign works with 90% on <code>primary email</code>; a churn dashboard demands rigor on the cancellation date and ignores the secondary phone.\n\nThe mistake is holding the entire base to a single standard. The right threshold is set field by field, use case by use case — before the project starts, not during."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does a dedicated cleansing project make sense?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In three contexts: system migration, customer identity, and regulatory requirements. In a migration, you don&#39;t want to carry historical junk into the new system — but &quot;clean&quot; there means clean for the records that will operate from now on. For identity, a serious matching, dedup, and golden-record effort pays off — usually on the 3–5 critical entities, not full MDM. For regulatory, quality is compliance and doesn&#39;t negotiate, but the scope is narrow: the fields the regulator looks at.\n\nOutside those three, a universal cleansing project is almost always an escape from the decision to ship — and the invisible cost of waiting (parallel Excel, senior time, the data team&#39;s credibility) usually exceeds the cost of the project that got parked."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -218,6 +251,17 @@
 <h2>What to change in the next conversation</h2>
 <p>In the next meeting where someone says &quot;we need to clean the base first&quot;, the question that unblocks is simple: <em>clean for what</em>. If the answer is vague (&quot;to have a reliable base&quot;, &quot;to ensure quality&quot;), the project isn&#39;t ready — cleansing isn&#39;t missing, the use case is. If the answer is specific (&quot;to run that dashboard with confidence on <code>contract value</code>&quot;), then the cleansing scope is specific too: that field, in those records, with that threshold.</p>
 <p>Good data isn&#39;t clean data. It&#39;s data fit for use. Companies that understand the difference move the roadmap. Those still chasing universal cleanliness will deliver their third governance plan in 2027 — and keep making decisions in a spreadsheet.</p>
+<h2>Questions that keep coming back</h2>
+<p>Before closing, what people ask most when this argument reaches the meeting room.</p>
+<h2>Can you start a data project with a dirty base?</h2>
+<p>You can — and it&#39;s usually the cheaper path. Use is what reveals which dirt matters: teams that clean before using clean what the technical team thinks matters, and discover months later they attacked the wrong things. Running the report, building the agent, or launching the campaign with the data that exists shows exactly where the noise hurts — and cleaning from there is ten times cheaper than cleaning in the dark.</p>
+<p>What you can&#39;t do is start without defining &quot;good enough&quot;: for this decision, which fields need to be correct in what percentage of records. With that number written down, the dirty base stops being a blocker and becomes a prioritized backlog.</p>
+<h2>How much quality does data need to be usable?</h2>
+<p>It depends on the decision it feeds — quality is always relative to use, not an absolute attribute of the base. An executive dashboard needs something like 98% correctness on <code>amount</code> and <code>close date</code> and tolerates noise elsewhere; an email campaign works with 90% on <code>primary email</code>; a churn dashboard demands rigor on the cancellation date and ignores the secondary phone.</p>
+<p>The mistake is holding the entire base to a single standard. The right threshold is set field by field, use case by use case — before the project starts, not during.</p>
+<h2>When does a dedicated cleansing project make sense?</h2>
+<p>In three contexts: system migration, customer identity, and regulatory requirements. In a migration, you don&#39;t want to carry historical junk into the new system — but &quot;clean&quot; there means clean for the records that will operate from now on. For identity, a serious matching, dedup, and golden-record effort pays off — usually on the 3–5 critical entities, not full MDM. For regulatory, quality is compliance and doesn&#39;t negotiate, but the scope is narrow: the fields the regulator looks at.</p>
+<p>Outside those three, a universal cleansing project is almost always an escape from the decision to ship — and the invisible cost of waiting (parallel Excel, senior time, the data team&#39;s credibility) usually exceeds the cost of the project that got parked.</p>
 
         </div>
       </div>

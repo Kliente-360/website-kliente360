@@ -90,3 +90,25 @@ If your company is evaluating a premium data catalog, three honest moves before 
 **Reassess at 12 months by usage, not coverage.** Catalog with 100% of tables and 5 hits per week is dead catalog. Catalog with 60% of tables and 500 hits per week is live catalog. Success metric is use, not inventory.
 
 Data Catalog in 2026 is a legitimate tool — but it's the last rung of a documentation-culture ladder. Companies skipping rungs pay catalog price and keep asking on Slack. Companies climbing the ladder reach the top rung knowing whether it's worth it or not.
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most whenever this topic hits the table.
+
+## Is a data catalog like Alation or Collibra worth buying?
+
+Only in three contexts: a large company with 5+ independent data teams, an explicit regulatory requirement for centralized documentation with an approval trail, or lineage crossing 5+ distinct systems. Outside those, a premium catalog tends to be overshoot — you pay USD 200k+/year for a tool whose real usage collapses once the initial enthusiasm fades.
+
+The prerequisite nobody checks: documentation culture. If your 20 most-used tables aren't documented today, buying a catalog amplifies absence. The tool doesn't write descriptions for you, and it doesn't create discipline that isn't there.
+
+## Does dbt replace a data catalog?
+
+For most mid-market companies, yes — dbt with documentation discipline covers about 80% of what a catalog would try to solve. Descriptions versioned in Git next to the code, `dbt docs` generating a navigable site with visual lineage, explicit owner in the `.yml`, source freshness with active alerting. And the infrastructure costs zero, because dbt is open source.
+
+The honest limitation: dbt only covers what's in the warehouse. If a good chunk of your critical data lives in external sources (Salesforce, Mixpanel, spreadsheets) or lineage has to cross multiple systems, the catalog covers something dbt alone doesn't. Catalog is the upgrade once dbt is exhausted — not the other way around.
+
+## How do you know a catalog rollout actually worked?
+
+By usage, not coverage — and the honest checkpoint is at 12 months. A catalog with 100% of tables documented and 5 hits per week is a dead catalog; one with 60% of tables and 500 hits per week is alive. A complete inventory proves nothing if the analyst is still asking on Slack.
+
+The practical test: how many times did someone query the catalog last week, excluding the governance team checking whether it's current? If the answer stings, more populating won't fix it — a named owner, a maintenance process, and a defined primary use case will, and all of that comes before any contract renewal.

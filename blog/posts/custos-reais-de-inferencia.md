@@ -80,3 +80,25 @@ Se você está numa empresa que tem LLM em produção, três movimentos prático
 **Trazer FinOps pro stack de IA.** Como já existe FinOps pra cloud, IA precisa do equivalente. Dashboards, alertas, ciclos de revisão. Sem isso, a fatura conta a história depois — sempre tarde demais pra prevenir o impacto desse trimestre. Quando o volume cresce e múltiplos times consomem inferência, [o problema vira alocação de custo entre times — FinOps de IA como disciplina de governança](/blog/finops-de-ia.html).
 
 Custo de LLM em 2026 é controlável. Quem cresce com IA e mantém economics saudável não tem modelo secreto — tem disciplina de cinco padrões. Quem não tem essa disciplina vê o piloto bem-sucedido virar fatura inviável no terceiro mês de produção. A diferença não está no LLM. Está no controle em volta dele.
+
+## Perguntas que sempre voltam
+
+Três dúvidas que aparecem em quase toda conversa sobre custo de LLM em produção.
+
+## Quanto devo orçar pra produção a partir do custo do POC?
+
+Multiplique o número do POC por 5–10× — não por 1.5×. O POC roda em volume baixo, com prompts controlados e casos escolhidos a dedo; produção traz contexto que cresce de 500 pra 3.500 tokens, casos difíceis com 3–5 retries, conversas longas, falhas que custam tokens completos e picos de 10× o tráfego médio.
+
+Quem orça com 1.5× não está errando por descuido — está usando a conta que parecia trivial ("multiplicar tokens por preço") e descobrindo o resto na fatura. O multiplicador de 5–10× não é pessimismo: é o que o POC esconde por desenho.
+
+## Trocar pro modelo mais barato resolve o custo?
+
+Na maioria das vezes, não — é a decisão errada em 70% dos casos. Modelo barato com 60% de acurácia sai mais caro que modelo caro com 90%, porque o usuário volta, refaz e escala pra humano: o custo total (LLM + tempo humano + retrabalho) supera a economia aparente. A métrica certa é custo por interação resolvida com sucesso, não preço por milhão de tokens.
+
+O que funciona é routing por caso de uso: modelo médio pra classificação e summarização curta (90% da qualidade por 10% do preço), modelo caro só onde a geração complexa exige. Sistema que usa o mesmo modelo pra tudo paga 5–10× mais que sistema com routing.
+
+## Quanto tempo leva pra implementar os controles de custo?
+
+Duas a quatro semanas de trabalho — que economizam 50–70% da fatura. São os cinco padrões: truncamento de contexto, routing por caso de uso, caching, batching onde aplicável e retry inteligente. Nenhum exige ferramenta nova; exigem disciplina arquitetural desde o início.
+
+Se precisar priorizar, caching e batching têm o retorno mais direto: prompt cache reduz custo de input em 90% pra contexto repetido (implementar é trabalho de ~2 semanas que paga 50% da fatura), e Batch API cobra metade do preço em workflow que não exige tempo real — economia que quase ninguém captura porque "esquece de implementar".

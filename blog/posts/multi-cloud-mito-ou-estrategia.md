@@ -72,3 +72,25 @@ Se a resposta for "porque o board pediu" ou "porque o concorrente faz" — há u
 Quem está definindo [arquitetura de dados em 2026](/blog/modern-data-stack-2026.html) enfrenta pressão pra adotar o que soa moderno. Multi-cloud soa moderno — e essa é, com frequência, a única razão real por trás da decisão.
 
 Multi-cloud não é errado. É caro — e o custo só se justifica quando o ganho específico (regulação, capacidade técnica comprovada, DR com SLA contratual, ou barganha de contrato real) supera o overhead permanente de operar dois provedores com qualidade. A pergunta certa não é "devemos ser multi-cloud?" mas "qual problema específico estamos resolvendo que single cloud bem operado não resolve?"
+
+## Perguntas que sempre voltam
+
+Pra encerrar, as três dúvidas que mais aparecem quando esse debate chega no comitê.
+
+## Multi-cloud realmente protege contra lock-in?
+
+Não do lock-in que dói. Multi-cloud resolve lock-in de compute e networking — mas o lock-in caro de verdade é o de dados e serviços proprietários: tirar 1 PB do S3 custa na ordem de US$ 20–90 mil de egress, e a dependência de Redshift, BigQuery ou Synapse (SQL dialect, integrações específicas) não some por você ter um segundo provedor.
+
+Pior: usar multi-cloud pra evitar lock-in é contradição. Só funciona se você abrir mão dos serviços proprietários — que são exatamente o que cada provedor tem de melhor. Antes de decidir por esse motivo, calcule o custo de lock-in hipotético contra o overhead de multi-cloud por cinco anos. Em 80% dos casos, o overhead ganha.
+
+## Quanto custa a mais operar em duas clouds?
+
+Na faixa de 30–40% de overhead operacional comparado a um single-cloud equivalente bem configurado — estimativa de times que operaram multi-cloud real por dois ou mais anos. Isso aparece em horas de engenharia, tickets de suporte cruzado, incidentes de permissão em fronteiras de IAM distintas e onboarding de engenheiros que precisam aprender dois mundos.
+
+Some a isso o custo de egress por GB pra tráfego que cruza fronteiras de cloud, 20–100ms de latência extra entre workloads, e dois sets completos de skills de operação. O número relevante é o overhead projetado pra cinco anos — não o custo de setup do primeiro mês.
+
+## Herdamos duas clouds por aquisição — vale consolidar?
+
+A decisão real é consolidar ou coexistir com rigor — o que não vale é fingir que a situação é estratégica. Multi-cloud por herança de aquisição é acidente, não design, e tratá-lo como "estratégia" só adia a escolha.
+
+Se consolidar não compensa (migração cara, workloads estáveis), coexistir é legítimo — desde que operacionalizado de verdade: governança definida, ferramentas de orquestração cross-cloud, observabilidade unificada e contabilização do egress. O que não pode é deixar crescer em silos paralelos sem governança, que é o caminho natural da inércia.

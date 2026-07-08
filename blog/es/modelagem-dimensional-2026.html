@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena hacer modelado dimensional sobre un lakehouse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale — y es exactamente la arquitectura que funciona en 2026: lakehouse como storage, dimensional como capa semántica. No es elegir uno u otro. Bronze y silver viven en el lakehouse (dato crudo y limpio, formato abierto, storage barato), y la capa gold recibe modelado dimensional vía dbt mart — hecho + dimensión, métricas pre-calculadas, gobernanza fuerte.\n\nEse es el patrón medallion, y hoy es consenso entre quienes operaron ambos mundos. Quien implementa solo bronze + silver tiene un warehouse caótico enmascarado de lakehouse moderno. La capa gold dimensional es lo que transforma storage flexible en plataforma en la que la dirección confía."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si la empresa saltea el modelado para ir más rápido?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reconstruye el modelado dimensional dentro del lakehouse en los 18 meses siguientes — con nombres distintos, pero la misma estructura. Tres problemas aparecen en 12–18 meses: cada analista se vuelve arquitecto y produce versiones divergentes del mismo análisis; queries que corrían en segundos pasan a tardar 30 segundos y el equipo reinventa la pre-agregación caso por caso; y el historial se vuelve spaguetti porque &quot;cliente en marzo&quot; y &quot;cliente hoy&quot; se confunden, generalmente descubierto en auditoría.\n\nModelar cuando el problema explota es 5× más caro que modelar cuando el uso empieza. El atajo no es atajo — es deuda con intereses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo podés prescindir del modelado dimensional?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cuando la empresa responde &quot;no&quot; a las cinco preguntas de la regla: menos de 20 dashboards ejecutivos, sin necesidad de historial de dimensión (SCD), menos de 10 personas modelando, sin dbt corriendo y sin ningún caso donde la performance de query sea crítica. En ese escenario, el costo de mantener un modelo dimensional formal puede no pagarse todavía.\n\nPero si cualquiera de las cinco se vuelve &quot;sí&quot; o &quot;depende&quot;, el modelado sigue valiendo. Y lo más común es que empresas en crecimiento crucen esos límites sin darse cuenta — y descubran el gap en reunión difícil sobre número divergente."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -234,6 +267,17 @@
 <p><strong>Identificá los 10 modelos gold críticos.</strong> Las métricas centrales (ingreso, churn, activación, conversión) merecen modelado dimensional cuidadoso, con SCD donde aplique, documentación seria. Los demás pueden quedar más livianos.</p>
 <p><strong>Resistí al &quot;modelamos después&quot;.</strong> <a href="/blog/es/dado-limpo-e-um-mito.html">Mismo error que el dato limpio después</a>. Modelar cuando el problema explota es 5× más caro que modelar cuando el uso empieza.</p>
 <p>El modelado dimensional en 2026 no es nostalgia. Es la forma testeada por 30 años de organizar dato para consumo analítico — y ninguna evolución de storage lo volvió obsoleto. El lakehouse es pieza nueva; el dimensional sigue siendo método. Quien combina los dos entrega plataforma sólida. Quien intenta sustituir uno por el otro descubre el gap en 18 meses, generalmente en reunión difícil sobre número divergente.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las dudas que más aparecen cuando este tema entra a la mesa.</p>
+<h2>¿Vale la pena hacer modelado dimensional sobre un lakehouse?</h2>
+<p>Vale — y es exactamente la arquitectura que funciona en 2026: lakehouse como storage, dimensional como capa semántica. No es elegir uno u otro. Bronze y silver viven en el lakehouse (dato crudo y limpio, formato abierto, storage barato), y la capa gold recibe modelado dimensional vía dbt mart — hecho + dimensión, métricas pre-calculadas, gobernanza fuerte.</p>
+<p>Ese es el patrón medallion, y hoy es consenso entre quienes operaron ambos mundos. Quien implementa solo bronze + silver tiene un warehouse caótico enmascarado de lakehouse moderno. La capa gold dimensional es lo que transforma storage flexible en plataforma en la que la dirección confía.</p>
+<h2>¿Qué pasa si la empresa saltea el modelado para ir más rápido?</h2>
+<p>Reconstruye el modelado dimensional dentro del lakehouse en los 18 meses siguientes — con nombres distintos, pero la misma estructura. Tres problemas aparecen en 12–18 meses: cada analista se vuelve arquitecto y produce versiones divergentes del mismo análisis; queries que corrían en segundos pasan a tardar 30 segundos y el equipo reinventa la pre-agregación caso por caso; y el historial se vuelve spaguetti porque &quot;cliente en marzo&quot; y &quot;cliente hoy&quot; se confunden, generalmente descubierto en auditoría.</p>
+<p>Modelar cuando el problema explota es 5× más caro que modelar cuando el uso empieza. El atajo no es atajo — es deuda con intereses.</p>
+<h2>¿Cuándo podés prescindir del modelado dimensional?</h2>
+<p>Cuando la empresa responde &quot;no&quot; a las cinco preguntas de la regla: menos de 20 dashboards ejecutivos, sin necesidad de historial de dimensión (SCD), menos de 10 personas modelando, sin dbt corriendo y sin ningún caso donde la performance de query sea crítica. En ese escenario, el costo de mantener un modelo dimensional formal puede no pagarse todavía.</p>
+<p>Pero si cualquiera de las cinco se vuelve &quot;sí&quot; o &quot;depende&quot;, el modelado sigue valiendo. Y lo más común es que empresas en crecimiento crucen esos límites sin darse cuenta — y descubran el gap en reunión difícil sobre número divergente.</p>
 
         </div>
       </div>

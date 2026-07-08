@@ -101,6 +101,47 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "MCP substitui function calling nativo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não substitui — resolve um problema diferente. Function calling nativo (o tool use da OpenAI, da Anthropic) já permite que um modelo chame uma função descrita em JSON Schema dentro de uma única aplicação. Isso continua sendo a camada certa quando você controla os dois lados: o agente e a ferramenta vivem no mesmo código, sem necessidade de descoberta dinâmica nem de reuso por terceiros.\n\nMCP entra quando o servidor e o cliente são mantidos por times ou empresas diferentes, ou quando o mesmo servidor precisa atender múltiplos agentes com necessidades distintas ao longo do tempo — sem que o mantenedor do servidor precise saber, de antemão, quem vai consumir. É a diferença entre escrever uma função privada e publicar uma API versionada: as duas resolvem &quot;meu código chama outro código&quot;, mas em escopos de responsabilidade diferentes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vale a pena adotar MCP agora ou ainda dá pra esperar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale adotar agora se você passa nos três critérios de reuso, governança e versionamento — e vale esperar se falha em dois ou mais. A adoção deixou de ser aposta: com mais de 10 mil servidores enterprise e Anthropic, OpenAI, Google, Microsoft e AWS no protocolo, o risco de apostar num padrão que morre praticamente sumiu.\n\nO que continua valendo é a disciplina de escopo. Se hoje só existe um agente e um caso de uso, a integração direta segue mais simples e mais barata de manter. O momento certo é quando aparece o segundo consumidor real — ou um roadmap concreto de dois trimestres que o traga."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais sistemas internos valem a pena expor como servidor MCP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sistemas com dado de alto valor de reuso e mais de um agente candidato a consumidor — CRM, camada de dados, sistema de tickets — são os que justificam o investimento. A régua é reuso real, não hipotético: se ninguém além de um único agente vai chamar aquele sistema, expor um servidor MCP só adiciona manutenção.\n\nTambém pesa a maturidade do time responsável. Servidor MCP em produção é, na prática, uma API pública: precisa de contrato estável, controle de acesso dentro do servidor e capacidade de versionar sem quebrar clientes que você não controla. Sistema cujo schema ainda muda sem aviso não está pronto pra virar superfície de terceiros."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Preciso trocar de framework de agente pra usar MCP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não — o cliente MCP funciona de dentro de qualquer framework. Esse é exatamente o ponto do protocolo: o servidor expõe tools, resources e prompts padronizados, e qualquer agente compatível descobre e consome essas primitivas sem saber nada da implementação interna do sistema.\n\nIsso também reduz o custo de trocar de fornecedor de LLM depois. Antes do MCP, mudar de modelo significava reescrever cada integração bespoke; com o protocolo, a ferramenta aprende a falar MCP uma vez e o agente que a consome pode mudar sem tocar no servidor."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -209,6 +250,17 @@
 <p>Passando nos três, o investimento compensa. Falhando em dois ou mais, vale primeiro arrumar a casa antes de publicar isso como superfície pra terceiros.</p>
 <h2>O padrão que se forma agora é o que vai durar</h2>
 <p>A velocidade de adoção — de zero a 10 mil servidores enterprise em pouco mais de um ano — sugere que MCP virou o vocabulário comum entre agente e ferramenta, do mesmo jeito que REST virou vocabulário comum entre frontend e backend. Quem decide expor um sistema como servidor MCP hoje está, na prática, decidindo o contrato que vai valer pelos próximos anos de integração de agente. Vale o mesmo cuidado que qualquer API pública levaria — porque, efetivamente, é isso que está sendo publicado.</p>
+<h2>Perguntas que sempre voltam</h2>
+<p>Três dúvidas práticas que aparecem em quase toda conversa sobre MCP — respondidas com o que este texto já argumentou.</p>
+<h2>Vale a pena adotar MCP agora ou ainda dá pra esperar?</h2>
+<p>Vale adotar agora se você passa nos três critérios de reuso, governança e versionamento — e vale esperar se falha em dois ou mais. A adoção deixou de ser aposta: com mais de 10 mil servidores enterprise e Anthropic, OpenAI, Google, Microsoft e AWS no protocolo, o risco de apostar num padrão que morre praticamente sumiu.</p>
+<p>O que continua valendo é a disciplina de escopo. Se hoje só existe um agente e um caso de uso, a integração direta segue mais simples e mais barata de manter. O momento certo é quando aparece o segundo consumidor real — ou um roadmap concreto de dois trimestres que o traga.</p>
+<h2>Quais sistemas internos valem a pena expor como servidor MCP?</h2>
+<p>Sistemas com dado de alto valor de reuso e mais de um agente candidato a consumidor — CRM, camada de dados, sistema de tickets — são os que justificam o investimento. A régua é reuso real, não hipotético: se ninguém além de um único agente vai chamar aquele sistema, expor um servidor MCP só adiciona manutenção.</p>
+<p>Também pesa a maturidade do time responsável. Servidor MCP em produção é, na prática, uma API pública: precisa de contrato estável, controle de acesso dentro do servidor e capacidade de versionar sem quebrar clientes que você não controla. Sistema cujo schema ainda muda sem aviso não está pronto pra virar superfície de terceiros.</p>
+<h2>Preciso trocar de framework de agente pra usar MCP?</h2>
+<p>Não — o cliente MCP funciona de dentro de qualquer framework. Esse é exatamente o ponto do protocolo: o servidor expõe tools, resources e prompts padronizados, e qualquer agente compatível descobre e consome essas primitivas sem saber nada da implementação interna do sistema.</p>
+<p>Isso também reduz o custo de trocar de fornecedor de LLM depois. Antes do MCP, mudar de modelo significava reescrever cada integração bespoke; com o protocolo, a ferramenta aprende a falar MCP uma vez e o agente que a consome pode mudar sem tocar no servidor.</p>
 
         </div>
       </div>

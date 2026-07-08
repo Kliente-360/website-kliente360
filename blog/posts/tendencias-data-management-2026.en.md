@@ -105,3 +105,25 @@ The temptation after a trends list is to start ten projects in parallel. The pra
 3. **Choose a stack and commit.** A team evaluating Snowflake, BigQuery, Databricks, and Redshift in parallel for 8 months is paying the cost of indecision disguised as technical rigor. Choosing and going deep returns more than optimizing the choice for another quarter.
 
 The data market will produce more terms in 2027. The filter that works remains the same: does this change solve a real problem you have today, with data you already have, on the team you can actually operate?
+
+## Questions that keep coming back
+
+Before closing, the questions that come up most when this list reaches the committee.
+
+## Where do I start with so many trends at once?
+
+With a diagnosis of your biggest current bottleneck — not with ten fronts in parallel. If pipelines break without warning, start with observability. If the same number diverges across teams, semantic layer. If AI data runs without governance, data contracts plus sensitivity classification. The right trend is the one that solves a problem you already have today, with data that already exists, on a team you can actually operate.
+
+And before any trend, the three fundamentals need to be working: quality with an owner, domain modeling, and clear ownership. A new trend on top of unowned data is investment without return.
+
+## Are data contracts worth the effort, or just another hype cycle?
+
+They're worth it — and in 2026 the cost of not having them is already measurable in silent production incidents: schemas changing without notice, pipelines breaking on Friday night, executive reports with wrong numbers. The practice has moved off the conference stage and into operations.
+
+The effort has also dropped: Snowflake, BigQuery, and Databricks began embedding contract primitives into enterprise plans, turning what was an engineering project into a platform feature. The honest caveat is that a contract without enforcement solves nothing — it needs an owner, and consequences when the producer violates the agreement.
+
+## Do I need to migrate to a lakehouse in 2026?
+
+No, not if your data fits in a relational warehouse and your team masters SQL — in that scenario, a lakehouse adds complexity without proportional return. The architecture has genuinely matured (Delta, Iceberg, and Hudi became de facto formats, ACID transactions at scale became commodity), but maturing doesn't mean it's right for everyone.
+
+The criterion that holds is the usual one: good architecture delivers reliability with the smallest increase in operational complexity. For teams with data at real scale, the lakehouse promise is finally deliverable in production; for everyone else, the simple warehouse keeps winning.

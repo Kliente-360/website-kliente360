@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena comprar Data Cloud solo para usar con Marketing Cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del volumen y del caso de uso — Data Cloud no es barato, y empresa con 50k contactos no tiene ROI; con 500k+ empieza a tener. Además del volumen, la regla tiene cuatro preguntas más: si las fuentes que necesitan volverse contexto ya están accesibles vía APIs maduras, si hay caso de uso claro de personalización contextual, si la identidad entre sistemas está resuelta, y si el equipo de marketing está listo para operar segmentación dinámica.\n\nQuien responde las cinco con sí claro tiene caso fuerte. Quien duda en tres o más todavía no maduró para ese stack — e invertir ahora se vuelve proyecto subutilizado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuáles son los errores más comunes al integrar Marketing Cloud con Data Cloud?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dos errores suman el 80% de las implementaciones que quedan en estado intermedio por dos años. El primero es ingerir todo en Data Cloud sin caso de uso definido — traer todo el dato &quot;para tener futuro&quot; termina en 200 entidades, costo alto y nadie sabiendo usar. Data Cloud crece a partir del caso de uso, no del ingest: empezá con 3–5 entidades que sirvan a jornadas reales.\n\nEl segundo es mantener el sync legado en paralelo &quot;por seguridad&quot;. En 6 meses tenés dos universos divergentes — uno viniendo de Data Cloud, otro del sync directo — y el equipo de campaña no sabe cuál usar. La migración tiene que ser completa, no dual-write."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por dónde empezás la implementación en la práctica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por un caso de uso de marketing específico, no por &quot;vamos a unificar todo el cliente&quot;. Algo como resolver suppression en tiempo real para una campaña concreta: 8 semanas, ROI mensurable, base para expandir. Antes de eso, vale mapear el gap actual — cuántas campañas dependen de dato desactualizado, cuántos errores de &quot;promoción de lo que ya compró&quot; salen por trimestre. Ese diagnóstico justifica o refuta la inversión.\n\nY conforme migrás, apagá el legado: cada caso nuevo en Data Cloud significa apagar el sync viejo correspondiente. Dual-write es deuda que crece."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -235,6 +268,17 @@
 <p><strong>Empezá Data Cloud por un caso de uso de marketing específico.</strong> No &quot;vamos a unificar todo el cliente&quot;. Sino &quot;vamos a resolver suppression en tiempo real para campaña X&quot;. 8 semanas, ROI mensurable, base para expandir.</p>
 <p><strong>Apagá el legado conforme migrás.</strong> Cada caso nuevo en Data Cloud → apagar el sync legado correspondiente. Dual-write es deuda que crece.</p>
 <p>Marketing Cloud solo sigue siendo plataforma poderosa en 2026. Con Data Cloud debajo, se vuelve la activación contextual que el mercado describe en deck y rara vez entrega. La diferencia no es tecnológica — es arquitectónica, y exige decisión consciente desde el inicio. Empresa que lo hace entrega marketing que parece astuto <em>y lo es</em>. Empresa que no lo hace sigue mandando promoción al cliente que compró ayer.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las tres dudas que más escucho cuando este stack entra en discusión.</p>
+<h2>¿Vale la pena comprar Data Cloud solo para usar con Marketing Cloud?</h2>
+<p>Depende del volumen y del caso de uso — Data Cloud no es barato, y empresa con 50k contactos no tiene ROI; con 500k+ empieza a tener. Además del volumen, la regla tiene cuatro preguntas más: si las fuentes que necesitan volverse contexto ya están accesibles vía APIs maduras, si hay caso de uso claro de personalización contextual, si la identidad entre sistemas está resuelta, y si el equipo de marketing está listo para operar segmentación dinámica.</p>
+<p>Quien responde las cinco con sí claro tiene caso fuerte. Quien duda en tres o más todavía no maduró para ese stack — e invertir ahora se vuelve proyecto subutilizado.</p>
+<h2>¿Cuáles son los errores más comunes al integrar Marketing Cloud con Data Cloud?</h2>
+<p>Dos errores suman el 80% de las implementaciones que quedan en estado intermedio por dos años. El primero es ingerir todo en Data Cloud sin caso de uso definido — traer todo el dato &quot;para tener futuro&quot; termina en 200 entidades, costo alto y nadie sabiendo usar. Data Cloud crece a partir del caso de uso, no del ingest: empezá con 3–5 entidades que sirvan a jornadas reales.</p>
+<p>El segundo es mantener el sync legado en paralelo &quot;por seguridad&quot;. En 6 meses tenés dos universos divergentes — uno viniendo de Data Cloud, otro del sync directo — y el equipo de campaña no sabe cuál usar. La migración tiene que ser completa, no dual-write.</p>
+<h2>¿Por dónde empezás la implementación en la práctica?</h2>
+<p>Por un caso de uso de marketing específico, no por &quot;vamos a unificar todo el cliente&quot;. Algo como resolver suppression en tiempo real para una campaña concreta: 8 semanas, ROI mensurable, base para expandir. Antes de eso, vale mapear el gap actual — cuántas campañas dependen de dato desactualizado, cuántos errores de &quot;promoción de lo que ya compró&quot; salen por trimestre. Ese diagnóstico justifica o refuta la inversión.</p>
+<p>Y conforme migrás, apagá el legado: cada caso nuevo en Data Cloud significa apagar el sync viejo correspondiente. Dual-write es deuda que crece.</p>
 
         </div>
       </div>

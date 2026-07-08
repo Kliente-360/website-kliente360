@@ -72,3 +72,25 @@ Si la respuesta es "porque el directorio lo pidió" o "porque el competidor lo h
 Quien está definiendo [arquitectura de datos en 2026](/blog/es/modern-data-stack-2026.html) enfrenta presión para adoptar lo que suena moderno. Multi-cloud suena moderno — y esa es, con frecuencia, la única razón real detrás de la decisión.
 
 Multi-cloud no es incorrecto. Es costoso — y el costo solo se justifica cuando la ganancia específica (regulación, capacidad técnica comprobada, DR con SLA contractual, o apalancamiento real en negociación de contrato) supera el overhead permanente de operar dos proveedores con calidad. La pregunta correcta no es "¿deberíamos ser multi-cloud?" sino "¿qué problema específico estamos resolviendo que una sola nube bien operada no resuelve?"
+
+## Preguntas que siempre vuelven
+
+Para cerrar, las tres dudas que más aparecen cuando este debate llega al comité.
+
+## ¿Multi-cloud realmente protege contra el lock-in?
+
+No del lock-in que duele. Multi-cloud resuelve el lock-in de compute y networking — pero el lock-in verdaderamente costoso es el de datos y servicios propietarios: sacar 1 PB de S3 cuesta del orden de US$ 20.000–90.000 en egress, y la dependencia de Redshift, BigQuery o Synapse (SQL dialect, integraciones específicas) no desaparece por tener un segundo proveedor.
+
+Peor: usar multi-cloud para evitar lock-in es una contradicción. Solo funciona si se renuncia a los servicios propietarios — que son exactamente lo que hace valiosa a cada nube. Antes de decidir por ese motivo, calcule el costo de lock-in hipotético contra el overhead de multi-cloud a cinco años. En el 80% de los casos, gana el overhead.
+
+## ¿Cuánto cuesta de más operar en dos nubes?
+
+En el rango de 30–40% de overhead operativo comparado con un single-cloud equivalente bien configurado — estimación de equipos que operaron multi-cloud real durante dos o más años. Se manifiesta en horas de ingeniería, tickets de soporte cruzado, incidentes de permisos en fronteras de IAM distintas y onboarding de ingenieros que deben aprender dos mundos operativos.
+
+Sume a eso el costo de egress por GB para el tráfico que cruza fronteras de nube, 20–100ms de latencia extra entre cargas de trabajo, y dos conjuntos completos de habilidades operativas. El número relevante es el overhead proyectado a cinco años — no el costo de setup del primer mes.
+
+## Heredamos dos nubes por una adquisición — ¿conviene consolidar?
+
+La decisión real es consolidar o coexistir con rigor — lo que no sirve es fingir que la situación es estratégica. Multi-cloud por herencia de adquisición es un accidente, no un diseño, y llamarlo "estrategia" solo posterga la elección.
+
+Si consolidar no compensa (migración costosa, cargas estables), coexistir es legítimo — siempre que se operacionalice de verdad: gobernanza definida, herramientas de orquestación cross-cloud, observabilidad unificada y contabilización del egress. Lo que no se puede es dejarlo crecer en silos paralelos sin gobernanza, que es el camino natural de la inercia.

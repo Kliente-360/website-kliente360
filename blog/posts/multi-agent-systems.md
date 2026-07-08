@@ -76,3 +76,25 @@ Se sua empresa está discutindo multi-agent, três movimentos honestos antes de 
 **Meça latência e custo desde o primeiro protótipo.** Multi-agent escala mal em ambos. Descobrir isso em produção é caro; descobrir em piloto é barato.
 
 A pior decisão de IA empresarial em 2026 é confundir sofisticação com necessidade. Multi-agent system é poderoso onde encaixa. Aplicar em todo lugar é o jeito mais caro de fazer com cinco agentes o que um faria melhor. (Pra quem quer ver isso na operação real, com 5 agentes em produção por 90 dias e os erros nominados, [o diário de campo está aqui](/blog/multi-agent-em-producao.html).)
+
+## Perguntas que sempre voltam
+
+Três perguntas que aparecem em toda discussão de arquitetura multi-agent — respondidas com a régua deste texto.
+
+## Quando vale usar multi-agent em vez de um agente único?
+
+Vale em três casos: tarefas longas com perspectivas inerentemente diferentes (um agente gera, outro critica), domínios técnicos heterogêneos que exigem expertise distinta, e workflows com decisão humana entre etapas. O que os três têm em comum: o custo de coordenação é menor que o ganho da especialização.
+
+Fora deles, um agente único com tools bem desenhadas cobre 70–80% dos casos que chegam rotulados de "precisamos de multi-agent". A ordem certa é começar pelo agente único e só subir pra orquestração quando ele esgotar — inverter essa ordem custa caro.
+
+## Quanto multi-agent custa a mais que um agente único?
+
+Um sistema multi-agent típico custa 3–10× mais em tokens que o monolito equivalente, e cada agente adiciona 1–5s de latência de inferência. A latência se compõe e o custo se multiplica: cada agente roda um LLM, e a própria coordenação também consome tokens.
+
+Por isso a recomendação de medir latência e custo desde o primeiro protótipo. Um sistema com 5 agentes pode ficar inutilizável em UX síncrona — compensa em workflow assíncrono, mata chatbot em tempo real. Descobrir isso em piloto é barato; em produção, é caro.
+
+## Como saber se meu sistema é multi-agent de verdade ou só prompt chain?
+
+Se não tem especialização real, estado independente e coordenação não-trivial — os três juntos —, é monolito com prompt chain, não multi-agent. Agente que chama outro agente não basta: por essa definição, qualquer LLM com tool use viraria multi-agent e o termo perderia sentido.
+
+Os dois disfarces mais comuns têm nome: dividir uma tarefa única em N agentes "porque parece organizado" (4× mais lento e mais caro, sem ganho de qualidade) e orchestrator com workers idênticos (isso é fan-out, não multi-agent). Se seu sistema cai num dos dois, a versão monolítica é mais barata, mais rápida e mais fácil de debugar.

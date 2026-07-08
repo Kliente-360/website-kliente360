@@ -90,3 +90,25 @@ Si tu empresa está evaluando data catalog premium, tres movimientos honestos an
 **Reevaluá a los 12 meses por el uso, no por la cobertura.** Catalog con 100% de las tablas y 5 accesos por semana es catalog muerto. Catalog con 60% de las tablas y 500 accesos por semana es catalog vivo. La métrica de éxito es uso, no inventario.
 
 Data Catalog en 2026 es herramienta legítima — pero es último escalón de una escalera de cultura de documentación. Empresa que se saltea escalones paga catalog caro y sigue preguntando por Slack. Empresa que sube por la escalera llega al escalón alto sabiendo si vale o no.
+
+## Preguntas que siempre vuelven
+
+Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.
+
+## ¿Vale la pena comprar un data catalog tipo Alation o Collibra?
+
+Solo en tres contextos: empresa grande con 5+ equipos de datos independientes, exigencia regulatoria de documentación centralizada con trazabilidad de aprobación, o lineage que atraviesa 5+ sistemas distintos. Fuera de eso, el catalog premium tiende a ser overshoot — pagás USD 200k+/año por una herramienta cuyo uso real se desploma cuando el entusiasmo inicial pasa.
+
+El prerequisito que nadie chequea: cultura de documentación. Si tus 20 tablas más usadas no están documentadas hoy, comprar catalog es amplificar ausencia. La herramienta no escribe descripciones por vos y no crea disciplina que no existe.
+
+## ¿dbt sustituye a un data catalog?
+
+Para la mayoría de las empresas de tamaño medio, sí — dbt con disciplina de documentación cubre un 80% de lo que el catalog intentaría resolver. Descriptions versionadas en Git al lado del código, `dbt docs` generando sitio navegable con lineage visual, owner explícito en el `.yml`, source freshness con alerta activa. Y la infra cuesta cero, porque dbt es open source.
+
+La limitación honesta: dbt solo cubre lo que está en el warehouse. Si buena parte de tu dato crítico vive en fuentes externas (Salesforce, Mixpanel, planillas) o el lineage necesita cruzar varios sistemas, ahí el catalog cubre algo que dbt solo no cubre. El catalog es el upgrade cuando dbt se agota — no al revés.
+
+## ¿Cómo saber si la implementación del catalog funcionó?
+
+Por el uso, no por la cobertura — y la reevaluación honesta es a los 12 meses. Catalog con 100% de las tablas documentadas y 5 accesos por semana es catalog muerto; catalog con 60% de las tablas y 500 accesos por semana es catalog vivo. Inventario completo no prueba nada si el analista sigue preguntando por Slack.
+
+El test práctico: ¿cuántas veces alguien consultó el catalog en la última semana, descontando al propio equipo de gobernanza verificando si está actualizado? Si la respuesta incomoda, el problema no se resuelve con más población — se resuelve con dueño nominal, proceso de mantenimiento y un caso de uso primario definido antes de cualquier renovación de contrato.

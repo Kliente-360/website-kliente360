@@ -90,3 +90,25 @@ Multi-agent funciona. Pero funciona caro, con fragilidad real, y exigiendo equip
 Casos donde multi-agent compensa: volumen alto (> 5.000 interacciones/mes), valor por interacción alto (cada error es caro), y existencia de equipo técnico dedicado. Fuera de eso, es arquitectura de paper — bonita, citable y cara de mantener.
 
 90 días después, mantenemos los 4 agentes restantes en producción, con costo previsible y métricas confiables. Pero la versión honesta de la historia no es "salió bien" — es "salió bien después de revisar arquitectura 3 veces, matar 1 agente, e invertir en observabilidad que nadie vendió como prioridad". Esa es la manera real de sistemas multi-agent salir adelante.
+
+## Preguntas que siempre vuelven
+
+Tres preguntas que todos hacen después de leer este diario — con las respuestas que dieron los 90 días.
+
+## ¿Cuánto cuesta mantener un sistema multi-agent en producción?
+
+En nuestro caso, cerca de USD 7.700 por mes — más del doble del presupuesto inicial de "unos USD 3k de inferencia". Inferencia fue solo ~2.400; el resto vino de infraestructura (~600), sostenimiento técnico con un ingeniero al 30% del tiempo (~3.500) y gobierno de evals (~1.200). Sostenimiento y gobierno son las líneas que nadie anticipa.
+
+La regla práctica que quedó: presupuesta 3× el costo inicial estimado. Presentar la cuenta llena desde el día 1 es lo que evita renegociación amarga en el mes 6 — en nuestro caso, la ecuación solo cerró porque el ROI mensual estimado (~USD 12k) cubría el total.
+
+## ¿Con cuántos agentes conviene empezar?
+
+Con menos de los que crees — si volviéramos a la semana 1, empezaríamos con 3 en vez de 5. Cada agente extra es presupuesto de coordinación: suma latencia, suma costo y crea un contrato de datos más para fallar silenciosamente. En la semana 4 matamos un agente cuyo output raramente era usado, y el sistema quedó 22% más barato, 4s más rápido y marginalmente más preciso.
+
+El criterio para fundir: cuando dos agentes contiguos tienen la misma "perspectiva mental" — mismo modelo, prompts similares, output de uno entrando directo en el otro —, la especialización es lujo, no arquitectura. Empieza minimal y agrega agente solo cuando el caso de uso pruebe que sin él no funciona.
+
+## ¿Vale la pena multi-agent para mi empresa?
+
+Vale si tienes volumen alto (más de 5.000 interacciones/mes), valor alto por interacción y equipo técnico dedicado que va a cuidar el sistema por 12 meses sin reclamar. Fuera de esas tres condiciones, es arquitectura de paper — bonita, citable y cara de mantener.
+
+Si la respuesta a alguna es no, la recomendación honesta es simplificar: un agente único bien diseñado tiende a entregar 70% del valor con 30% de la complejidad. Multi-agent funciona — pero funciona caro, con fragilidad real, exigiendo observabilidad y músculo de operación continua que ningún white-paper de framework menciona.

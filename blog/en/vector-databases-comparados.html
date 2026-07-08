@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can pgvector handle RAG in production?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — at medium volume, up to ~10M embeddings, Postgres with pgvector + ivfflat or HNSW resolves queries in under 100ms. Above that ceiling it starts to struggle, but most mid-market companies sit below it. If the company already runs Postgres, the incremental operational cost is near zero: same team, same backup, same observability.\n\nThe bonus the competitors don&#39;t have: when embeddings need to be cross-referenced with relational data (customers, products, transactions), pgvector allows native JOIN — Pinecone and Weaviate require external orchestration. In our reading, pgvector solves 70% of mid-market cases; the other 30% justify Pinecone or Weaviate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which of the three is the fastest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "None, in any way that matters — all three benchmark about the same, and all are fast enough at mid-scale. The right question isn&#39;t &quot;which is fastest&quot;, it&#39;s &quot;which fits your operation&quot;: expected volume in 18 months, query pattern, team capacity, and compliance requirements change the answer far more than raw performance.\n\nWhere the difference actually shows is with real data: real queries, real filters, real volume. That&#39;s why the recommendation is a 2-week pilot with 1M real embeddings instead of deciding by synthetic benchmark — and calibrating latency by use case (an internal chatbot tolerates 500ms; sub-50ms global costs a lot)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it worth starting with Pinecone so you don't have to migrate later?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — whoever picks Pinecone &quot;for safety&quot; spends 5–10× more in the first year and rarely uses the capacity. And the &quot;migrate down&quot; that seemed like plan B is the expensive one: reindexing tens of millions of embeddings, validating parity, and redirecting traffic without loss costs 6–12 weeks of senior engineering, on top of cutting features.\n\nThe cheaper path is the opposite: start simple (pgvector, if the 18-month volume fits) and step up to Pinecone or Weaviate when it actually stops fitting. Migrating up is cheaper because the requirements that justify the upgrade are already clear. Pinecone is justified from the start in three contexts: above ~50M embeddings, a team with no appetite for operating vector infra, or multi-region with aggressive SLA."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -235,6 +268,17 @@
 <p><strong>Pilot with real data, not synthetic benchmark.</strong> The three deliver ~similar in benchmark. With real data, real queries, real filters, the differences show. A 2-week pilot with 1M real embeddings already shows which fits.</p>
 <p><strong>Remember vector DB is a piece, not a strategy.</strong> <a href="/blog/en/rag-na-pratica.html">Retrieval is the bottleneck</a>, but inside retrieval, the database choice is one layer. Without good chunking, suitable embedding and reranking, any database will deliver mediocre results.</p>
 <p>The worst decision is to spend three months choosing the perfect vector DB and three weeks implementing bad RAG. The best is to choose a &quot;good enough&quot; database and invest the saved time in pipeline quality.</p>
+<h2>Questions that keep coming back</h2>
+<p>Three questions that surface in every vector database decision — answered with this piece&#39;s ruler.</p>
+<h2>Can pgvector handle RAG in production?</h2>
+<p>Yes — at medium volume, up to ~10M embeddings, Postgres with pgvector + ivfflat or HNSW resolves queries in under 100ms. Above that ceiling it starts to struggle, but most mid-market companies sit below it. If the company already runs Postgres, the incremental operational cost is near zero: same team, same backup, same observability.</p>
+<p>The bonus the competitors don&#39;t have: when embeddings need to be cross-referenced with relational data (customers, products, transactions), pgvector allows native JOIN — Pinecone and Weaviate require external orchestration. In our reading, pgvector solves 70% of mid-market cases; the other 30% justify Pinecone or Weaviate.</p>
+<h2>Which of the three is the fastest?</h2>
+<p>None, in any way that matters — all three benchmark about the same, and all are fast enough at mid-scale. The right question isn&#39;t &quot;which is fastest&quot;, it&#39;s &quot;which fits your operation&quot;: expected volume in 18 months, query pattern, team capacity, and compliance requirements change the answer far more than raw performance.</p>
+<p>Where the difference actually shows is with real data: real queries, real filters, real volume. That&#39;s why the recommendation is a 2-week pilot with 1M real embeddings instead of deciding by synthetic benchmark — and calibrating latency by use case (an internal chatbot tolerates 500ms; sub-50ms global costs a lot).</p>
+<h2>Is it worth starting with Pinecone so you don&#39;t have to migrate later?</h2>
+<p>No — whoever picks Pinecone &quot;for safety&quot; spends 5–10× more in the first year and rarely uses the capacity. And the &quot;migrate down&quot; that seemed like plan B is the expensive one: reindexing tens of millions of embeddings, validating parity, and redirecting traffic without loss costs 6–12 weeks of senior engineering, on top of cutting features.</p>
+<p>The cheaper path is the opposite: start simple (pgvector, if the 18-month volume fits) and step up to Pinecone or Weaviate when it actually stops fitting. Migrating up is cheaper because the requirements that justify the upgrade are already clear. Pinecone is justified from the start in three contexts: above ~50M embeddings, a team with no appetite for operating vector infra, or multi-region with aggressive SLA.</p>
 
         </div>
       </div>

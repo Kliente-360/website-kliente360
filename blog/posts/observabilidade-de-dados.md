@@ -68,3 +68,25 @@ O paradoxo prático: o exercício de documentar o comportamento esperado já rev
 A maioria dos problemas críticos de qualidade que chegam até usuários é detectável com três checks simples: frescor, volume e nulo em campo obrigatório. O stack avançado importa quando o básico está resolvido e você precisa de cobertura estatística sobre distribuição e linhagem completa. Comece pelo que detecta mais falhas com menos instrumentação; o resto vem naturalmente à medida que a maturidade cresce.
 
 O sinal de que a observabilidade está funcionando não é zero incidentes — é o time detectando antes do usuário. Quando a proporção "detectamos primeiro" supera "usuário descobriu pelo dashboard", a camada está entregando valor. Essa métrica simples é o proxy mais honesto de maturidade de dados em qualquer operação.
+
+## Perguntas que sempre voltam
+
+Fechando, as dúvidas que mais escuto quando o assunto é colocar observabilidade de pé.
+
+## Preciso comprar uma ferramenta de observabilidade pra começar?
+
+Não — e comprar antes da hora é o erro mais comum. Ferramenta sem baseline documentado de comportamento esperado monitora no escuro: gera silêncio total ou cascata de falsos positivos, e time que recebe 50 alertas por dia aprende a ignorar todos. Pra times menores, dbt com testes customizados e checks em SQL cobrem o necessário sem licença adicional.
+
+Monte Carlo, Soda, Acceldata e afins entram quando a operação tem dezenas de pipelines e equipes distribuídas — e só trazem ganho real se o comportamento esperado do dado já está documentado. O paradoxo prático: o exercício de documentar esse baseline já revela boa parte dos problemas sozinho, antes de qualquer compra.
+
+## Por onde começo a instrumentar observabilidade de dados?
+
+Por frescor e volume — rápido de implementar e alto impacto. Um freshness check em SQL (`MAX(updated_at)` contra um limite de horas) detecta 60% dos problemas de pipeline sem ferramenta nenhuma, e um baseline de volume (mediana de 30 dias, alerta abaixo de 70%) custa uma tabela de metadados e 10 linhas de SQL. Se já usa dbt, os testes nativos (`not_null`, `unique`, `accepted_values`) são 80% do caminho.
+
+A sequência que funciona é incremental: frescor e volume primeiro, depois distribuição, depois esquema (com data contracts), depois linhagem — cada eixo só quando o anterior está estável. Times que tentam cobrir os cinco eixos de uma vez em todos os modelos costumam travar no primeiro mês.
+
+## Como sei que a observabilidade está funcionando?
+
+Quando o time de dados detecta o problema antes do usuário — não quando os incidentes zeram. Zero incidente não é meta realista; a métrica honesta é a proporção "detectamos primeiro" versus "usuário descobriu pelo dashboard". Quando a primeira supera a segunda, a camada está entregando valor.
+
+Essa métrica simples também é o proxy mais honesto de maturidade de dados da operação como um todo. E lembre: alerta não é resolução — sem fluxo definido de quem recebe, quem pausa dashboards dependentes e como se comunica o status, o alerta vira notificação ignorada na primeira semana de silêncio.

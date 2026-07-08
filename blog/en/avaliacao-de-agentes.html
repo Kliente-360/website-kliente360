@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost and how long does it take to build an eval set?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One to two weeks to assemble — and after that, running it is trivial. The heavy lifting is curating 50–200 questions representative of the use case, with ground truth reviewed by a domain specialist. Once that&#39;s done, every system change (new prompt, new model, tuned RAG) runs against the same baseline in minutes.\n\nIt sounds expensive for a pilot, but it&#39;s the most profitable technical investment in any AI project: without an eval set, every release is a gamble, and regressions only surface when users complain. Worth remembering it doesn&#39;t replace weekly production sampling — the eval set catches regressions, sampling catches drift."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What accuracy rate is good enough for production?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the risk of the use case — and it&#39;s a product decision, not an engineering one. Low-risk support can operate at 70% accuracy, as long as escalation to a human is well designed. Regulated financial customer service demands 95% at minimum. The mistake is defining no floor at all and scaling blind.\n\nAnd a middling number — say 65% — isn&#39;t a final verdict: it&#39;s a starting point. Decomposing the error by category (retrieval, generation or prompt) and iterating in 2–3 week cycles with measurement at the end shows whether the curve is rising. What kills the project isn&#39;t low initial accuracy; it&#39;s not knowing what it is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who should evaluate the agent's responses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A third party with domain expertise — never the team that built it. It&#39;s not about bad faith: builders tend to mark partially correct answers as correct and mentally fill in what the agent didn&#39;t say. The bias is predictable and inflates the number, and an inflated number doesn&#39;t force the next decision.\n\nThe format scales with the project: an operations analyst on a small project, a dedicated review pair (rotating if possible) on a medium one, a separate cell reporting outside the AI team on a large one. The common criterion: the judge has no access to the code or the prompt."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -217,6 +250,17 @@
 <p><strong>Invest in the layer that hurts most.</strong> If the error is in retrieval, improve reranking or expand the corpus. If it&#39;s in generation, tune the prompt or change the model. If it&#39;s in the prompt, refine the agent&#39;s instruction. 2–3 week iterations with measurement at the end show clear trends.</p>
 <p>The combination that works: rigorous measurement + focused iteration + transparency with leadership on the number and the path. That trio separates an AI project that ships from one that lands in the third governance plan in 2027.</p>
 <p>The uncomfortable metric isn&#39;t the problem. It&#39;s the only tool for getting out of it. (Combined with <a href="/blog/en/custos-reais-de-inferencia.html">rigorous inference-cost control</a>, it delivers the complete equation of economic AI in production.)</p>
+<h2>Questions that keep coming back</h2>
+<p>Three doubts that surface in almost every conversation about agent evaluation.</p>
+<h2>How much does it cost and how long does it take to build an eval set?</h2>
+<p>One to two weeks to assemble — and after that, running it is trivial. The heavy lifting is curating 50–200 questions representative of the use case, with ground truth reviewed by a domain specialist. Once that&#39;s done, every system change (new prompt, new model, tuned RAG) runs against the same baseline in minutes.</p>
+<p>It sounds expensive for a pilot, but it&#39;s the most profitable technical investment in any AI project: without an eval set, every release is a gamble, and regressions only surface when users complain. Worth remembering it doesn&#39;t replace weekly production sampling — the eval set catches regressions, sampling catches drift.</p>
+<h2>What accuracy rate is good enough for production?</h2>
+<p>It depends on the risk of the use case — and it&#39;s a product decision, not an engineering one. Low-risk support can operate at 70% accuracy, as long as escalation to a human is well designed. Regulated financial customer service demands 95% at minimum. The mistake is defining no floor at all and scaling blind.</p>
+<p>And a middling number — say 65% — isn&#39;t a final verdict: it&#39;s a starting point. Decomposing the error by category (retrieval, generation or prompt) and iterating in 2–3 week cycles with measurement at the end shows whether the curve is rising. What kills the project isn&#39;t low initial accuracy; it&#39;s not knowing what it is.</p>
+<h2>Who should evaluate the agent&#39;s responses?</h2>
+<p>A third party with domain expertise — never the team that built it. It&#39;s not about bad faith: builders tend to mark partially correct answers as correct and mentally fill in what the agent didn&#39;t say. The bias is predictable and inflates the number, and an inflated number doesn&#39;t force the next decision.</p>
+<p>The format scales with the project: an operations analyst on a small project, a dedicated review pair (rotating if possible) on a medium one, a separate cell reporting outside the AI team on a large one. The common criterion: the judge has no access to the code or the prompt.</p>
 
         </div>
       </div>

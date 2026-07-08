@@ -64,3 +64,25 @@ A resposta não é uma só. Depende do cenário:
 A pergunta certa antes de comprar Salesforce não é "Salesforce é bom?" — é "Salesforce resolve o meu problema melhor que a alternativa de 10% do custo, considerando que vou pagar pela diferença por 5–10 anos?". Pra grande parte do mercado mid-market e enterprise complexo, a resposta é sim, sem discussão. Pra muita empresa que chega achando que precisa, a resposta é não — e quem vende Salesforce profissionalmente deveria dizer isso primeiro.
 
 Não vender Salesforce quando ele não é a resposta é o que constrói relação de longo prazo. Cliente que comprou ferramenta errada nunca esquece quem vendeu. Cliente que ouviu "agora não" volta quando a hora chegar — e volta pra quem foi honesto na primeira conversa. Quando a decisão de implementar é correta, [um MVP de Salesforce em seis semanas com escopo honesto](/blog/implementacao-salesforce-seis-semanas.html) é o ponto de partida: não uma entrega completa em 14 dias, mas a fundação que resiste ao uso real.
+
+## Perguntas que sempre voltam
+
+Pra fechar, as três perguntas que mais escutamos quando esse assunto aparece.
+
+## Salesforce vale a pena pra empresa pequena?
+
+Na maioria dos casos, não — Salesforce entrega valor proporcional ao tamanho e à maturidade da operação. Se o ICP é PME de ticket baixo, a conta não fecha: uma empresa vendendo SaaS de R$ 800/mês com 200 clientes não justifica Sales Cloud Enterprise a US$ 165/usuário/mês, quando um Hubspot Sales Hub ou Pipedrive bem configurado devolve 80% do valor por 20% do custo. E se o time comercial tem 3 pessoas e zero gente dedicada a CRM, a plataforma vira fonte de débito técnico em vez de ativo.
+
+O teste prático: se o LTV/CAC ainda não comporta um time de RevOps dedicado, e se não existe (nem está planejado) um admin certificado pros próximos 6 meses, Salesforce está em estágio errado da maturidade comercial. Adotar antes da hora é desperdício que ninguém percebe porque fica embutido no orçamento de TI.
+
+## Quanto custa Salesforce de verdade, além da licença?
+
+O custo total é licença + implementação + sustentação contínua — e é a operação, não a licença, o ponto cego mais comum. Salesforce premia operação madura: admin certificado, processo de release, governança de campos customizados, gestão de Flow e Apex. Sem esse músculo, em 18 meses a empresa acumula 400 campos customizados sem dono, 60 Flows que ninguém entende e um contrato de sustentação fora do orçamento original.
+
+A régua que usamos pra saber se a conta fecha: o custo anual total dividido pela margem por cliente novo que o CRM ajuda a converter precisa caber em 6–10% do ticket médio anual. Se não cabe, a plataforma é desproporcional pro negócio — independente de quão boa ela seja.
+
+## Quando é a hora certa de sair da planilha e adotar um CRM?
+
+Quando o crescimento tornar a planilha inviável — e não antes. Com 3–8 vendedores, ciclo de venda curto, pipeline simples e um gestor que enxerga todos os deals abertos de cabeça, CRM não automatiza nada: só formaliza, e formalizar processo simples é overhead. O sintoma clássico de adoção prematura é o double entry — vendedor anota no WhatsApp e transcreve pro CRM porque o gestor exige, gerando dado ruim enquanto a decisão real acontece fora da ferramenta.
+
+O caminho honesto: manter a planilha colaborativa por mais uns 12 meses e investir a energia em definir bem o processo comercial — estágios, critérios de avanço, gatilhos de qualificação. Implementar CRM antes de ter processo é eternizar caos com interface bonita.

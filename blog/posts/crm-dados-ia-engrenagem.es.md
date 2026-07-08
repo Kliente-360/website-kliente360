@@ -70,3 +70,25 @@ La decisión de operar CRM, datos e IA como sistema integrado no es sobre tecnol
 Cada proyecto aislado tiene ROI medible y localizado: tiempo de implementación, adopción, automatización de una tarea específica. El ROI del sistema es diferente — aparece en los intervalos. En el lead que no habría sido calificado, pero el modelo de propensión identificó la ventana correcta. En el churn que no ocurrió porque el agente tuvo contexto para ofrecer una solución antes de la cancelación. En la renovación que cerró en una llamada porque el vendedor ya tenía el historial completo.
 
 Esos resultados no aparecen en ninguno de los tres proyectos aislados. Aparecen cuando los tres operan juntos — y cuando hay una consultoría especializada capaz de conectar las tres capas sin tratar cada una como territorio separado.
+
+## Preguntas que siempre vuelven
+
+Tres dudas que aparecen en casi toda conversación sobre conectar estas capas.
+
+## ¿Por dónde empezar: CRM, datos o IA?
+
+Por el diagnóstico de las conexiones, no por una capa elegida de antemano. Las tres preguntas del texto — ¿ventas decide con datos del warehouse? ¿el analista sabe qué insights se convirtieron en acción? ¿el agente tiene acceso al historial del cliente en el CRM? — muestran exactamente dónde está trabado el sistema, y ahí es donde la inversión rinde primero.
+
+Dicho eso, el sistema tiene un punto de partida estructural: el CRM es la superficie de contacto con el cliente real, y sin él como ancla estructurada, el dato no tiene fundamento de negocio. La IA es la última pieza en tener sentido — sin datos confiables y contexto del cliente debajo, el agente actúa con contexto sintético.
+
+## ¿Conviene contratar un proveedor distinto para cada capa?
+
+En general, no — ese es justamente el patrón que produce los silos descritos en el texto. Cada pedido con su propio presupuesto, su propio sponsor y su propio proveedor optimiza la métrica de su capa (usuarios que inician sesión, dashboards accedidos, tasa de automatización), y nadie responde por la métrica que importa: cliente mejor atendido, mejores decisiones, operación que escala sin crecer en headcount en la misma proporción.
+
+El resultado predecible son tres informes de éxito y un negocio que no cambia. El ROI del sistema aparece en los intervalos entre capas — y el intervalo entre capas es exactamente lo que ningún proveedor de una sola capa tiene incentivo para resolver.
+
+## ¿Por qué mi piloto de IA impresiona en la demo y se atasca en producción?
+
+Casi siempre porque el agente no tiene datos confiables y actualizados del cliente específico. En la demo, el contexto es controlado; en producción, el agente necesita saber qué compró el cliente, cuándo renovó, qué tickets tuvo abiertos — y sin conexión con el CRM y la capa de datos, responde de forma genérica. Una respuesta genérica con interfaz de IA no es mejor que sin ella — solo más rápida y más cara de mantener.
+
+Ese es el techo predecible del proyecto de IA aislado, y la salida no es más contexto en el prompt — eso es retrabajo localizado que no resuelve el problema estructural. La salida es conectar el agente al historial real: perfil enriquecido desde la capa de datos, anclado en el CRM, con el resultado de cada interacción volviendo como dato nuevo.

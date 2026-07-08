@@ -101,6 +101,39 @@
   ]
 }
   </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo saber si un dashboard ejecutivo está funcionando?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contando cuántas decisiones reales salieron de él en el último trimestre — esa es la métrica, no accesos ni tiempo de pantalla. Un dashboard que generó cero decisiones es decoración, por más bonito que sea, y lo honesto es matarlo y rehacerlo a partir de la decisión que el directorio necesita tomar.\n\nUn atajo para diagnosticar: ¿responde alguna de las tres preguntas que justifican su existencia? Qué decidir esta semana, qué tendencia afecta el próximo trimestre, o dónde está equivocada la intuición del ejecutivo. Si no responde ninguna, el problema no es de diseño — es de propósito."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántos KPIs debe mostrar un dashboard ejecutivo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Muchos menos que el estándar del mercado — y la pantalla debe abrir con un único titular numérico, no con quince indicadores. Quince KPIs, tres colores y cuatro filtros en la misma pantalla es la marca registrada del dashboard de vanidad: todo &quot;importante&quot;, nada accionable.\n\nEl patrón que activa decisión es magro: el número que importa en palabras claras (tipo &quot;3 cuentas estratégicas en riesgo de churn en las próximas 4 semanas&quot;), una línea de contexto comparativo justo debajo, y un drill que termina en próximo paso recomendado. Cada vista extra necesita ganar su espacio — no ocuparlo por inercia."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Tableau es mejor que Power BI o Looker para el directorio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La herramienta importa menos de lo que parece — las tres entregan bien el patrón ejecutivo cuando lo construyes. La elección entre ellas (y Metabase) sigue criterios de porte y stack de nube, y es una decisión anterior al dashboard en sí.\n\nLo que ninguna sustituye es lo que suele faltar: modelado de datos sólido abajo, discovery serio con quien va a decidir, y recomendación — que es trabajo de personas o de ML, no de la capa de visualización. Un modelo malo hace a cualquier BI bonito e impreciso; la combinación que funciona es warehouse suficientemente limpio, modelo de negocio bien definido y el BI como capa de lectura."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Pular para o conteúdo</a>
@@ -228,6 +261,17 @@
 <h2>El dashboard final</h2>
 <p>La mejor métrica de calidad para un dashboard: <em>cuántas decisiones reales salieron de él en el último trimestre</em>. No accesos, no tiempo de pantalla. Decisiones. Si cero, mátalo y rehazlo. <a href="/blog/es/metricas-de-produto-north-dust.html">El mismo principio vale para métricas de producto que se vuelven &quot;north dust&quot;</a> — el problema rara vez es la métrica, es el sistema alrededor.</p>
 <p>Empresas que adoptan esta regla reducen 60–80% del número de dashboards y — no por casualidad — pasan a confiar en lo que sobra. Una consultoría de datos decente entrega eso, no reportes.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Para terminar, las dudas que más aparecen cuando este tema llega a la sala de reunión.</p>
+<h2>¿Cómo saber si un dashboard ejecutivo está funcionando?</h2>
+<p>Contando cuántas decisiones reales salieron de él en el último trimestre — esa es la métrica, no accesos ni tiempo de pantalla. Un dashboard que generó cero decisiones es decoración, por más bonito que sea, y lo honesto es matarlo y rehacerlo a partir de la decisión que el directorio necesita tomar.</p>
+<p>Un atajo para diagnosticar: ¿responde alguna de las tres preguntas que justifican su existencia? Qué decidir esta semana, qué tendencia afecta el próximo trimestre, o dónde está equivocada la intuición del ejecutivo. Si no responde ninguna, el problema no es de diseño — es de propósito.</p>
+<h2>¿Cuántos KPIs debe mostrar un dashboard ejecutivo?</h2>
+<p>Muchos menos que el estándar del mercado — y la pantalla debe abrir con un único titular numérico, no con quince indicadores. Quince KPIs, tres colores y cuatro filtros en la misma pantalla es la marca registrada del dashboard de vanidad: todo &quot;importante&quot;, nada accionable.</p>
+<p>El patrón que activa decisión es magro: el número que importa en palabras claras (tipo &quot;3 cuentas estratégicas en riesgo de churn en las próximas 4 semanas&quot;), una línea de contexto comparativo justo debajo, y un drill que termina en próximo paso recomendado. Cada vista extra necesita ganar su espacio — no ocuparlo por inercia.</p>
+<h2>¿Tableau es mejor que Power BI o Looker para el directorio?</h2>
+<p>La herramienta importa menos de lo que parece — las tres entregan bien el patrón ejecutivo cuando lo construyes. La elección entre ellas (y Metabase) sigue criterios de porte y stack de nube, y es una decisión anterior al dashboard en sí.</p>
+<p>Lo que ninguna sustituye es lo que suele faltar: modelado de datos sólido abajo, discovery serio con quien va a decidir, y recomendación — que es trabajo de personas o de ML, no de la capa de visualización. Un modelo malo hace a cualquier BI bonito e impreciso; la combinación que funciona es warehouse suficientemente limpio, modelo de negocio bien definido y el BI como capa de lectura.</p>
 
         </div>
       </div>

@@ -81,6 +81,18 @@ Numeração sequencial pela ordem cronológica de publicação. Quando duas entr
 | 65 | 2026-08-11 | ter | ai | "Dono do agente": o cargo que virou padrão em 2026 e o que ele resolve | Sim | Mercado 2026 — 56% das empresas já nomeiam um agentic ops lead | [ ] | [ ] |
 | 66 | 2026-08-12 | qua | sf | Salesforce Foundations: o que o pacote gratuito cobre de verdade (e onde ele para) | Sim | Mercado 2026 — add-on $0 com Agentforce incluso, mas com limites de uso reais | [ ] | [ ] |
 | 67 | 2026-08-18 | ter | data | Governança de dados como código: o fim da checklist manual de compliance | Sim | Mercado 2026 — DataGovOps, lineage e trilha de auditoria automatizados | [ ] | [ ] |
+| 68 | 2026-08-19 | qua | ai | Observabilidade de agentes: quem responde quando o agente erra sozinho | Sim | GEO 2026 — 48% dos agentes em produção sem monitoramento; só 7% das empresas têm responsável nomeado (Gravitee/Atlan). Pergunta viva: "quem é o dono quando o agente erra?" | [ ] | [ ] |
+| 69 | 2026-08-25 | ter | sf | Agentforce: quanto custa de verdade — conversas, Flex Credits e os seis modelos de pricing | Sim | GEO 2026 — pricing é a dúvida nº1 sobre Agentforce em LLMs ($2/conversa, 6 modelos que não se misturam). Complementa #60 (Data Cloud pricing) | [ ] | [ ] |
+| 70 | 2026-08-26 | qua | data | Dado pronto pra IA: o que muda na arquitetura quando o consumidor é um agente | Sim | GEO 2026 — "AI-ready data" é o mandato do ano (IBM/Gartner); clean, contextualizado, rastreável. Ponte com camada semântica (#64) sem duplicar | [ ] | [ ] |
+| 71 | 2026-09-01 | ter | ai | Segurança de agentes: prompt injection, tool poisoning e o que o piloto não revela | Sim | GEO 2026 — gap executivo entre confiança e controles (AGAT/TechRepublic); MCP não impõe segurança no protocolo. Aprofunda o que arquitetura-servidor-mcp só tangencia | [ ] | [ ] |
+| 72 | 2026-09-02 | qua | sf | WhatsApp e Salesforce no Brasil: o canal que decide a compra do CRM | Sim | GEO 2026 — a pergunta do decisor BR mudou pra "meu CRM fala com o WhatsApp?"; zero cobertura nossa no tema até hoje | [ ] | [ ] |
+| 73 | 2026-09-08 | ter | data | Governança de IA e governança de dados: um programa ou dois? | Sim | GEO 2026 — debate aberto no Gartner D&A Summit; gasto em plataformas de AI governance projetado em US$ 492M em 2026. Pergunta de estrutura organizacional, não de ferramenta | [ ] | [ ] |
+| 74 | 2026-09-09 | qua | ai | ROI de agente de IA: as métricas que o board aceita — e as de vaidade | Sim | GEO 2026 — "qual o ROI de agente?" entre as perguntas mais feitas a LLMs; eficiência operacional + redução de risco, não headcount. Complementa custos-reais-de-inferencia e finops-de-ia sem duplicar | [ ] | [ ] |
+| 75 | 2026-09-15 | ter | sf | Piloto de Agentforce que não vira produção: onde 90% param — e o que os 10% fazem | Sim | GEO 2026 — <10% dos clientes escalaram além do piloto; 5–11 meses até produção (myaskai/Cyntexa). Pergunta recorrente: "por que meu piloto não escala?" | [ ] | [ ] |
+| 76 | 2026-09-16 | qua | data | Dados sintéticos: onde aceleram um projeto e onde enganam | Sim | GEO 2026 — pergunta crescente em teste/treino com LGPD no meio; gap total no nosso catálogo | [ ] | [ ] |
+| 77 | 2026-09-22 | ter | ai | Lock-in em plataforma de agentes: o aprisionamento que ninguém está precificando | Sim | GEO 2026 — trust/flexibility/lock-in como eixo da decisão agentic (Kai Waehner); espelha databricks-snowflake-bigquery-lock-in pro mundo de agentes | [ ] | [ ] |
+| 78 | 2026-09-23 | qua | sf | AgentExchange e MCP no Salesforce: o marketplace virou camada de arquitetura | Sim | GEO 2026 — TDX consolidou 10k apps + 1k agentes/MCP servers num marketplace só; decisor pergunta "compro pronto ou construo?" | [ ] | [ ] |
+| 79 | 2026-09-29 | ter | data | Analytics conversacional: quando o chat substitui o dashboard — e quando não | Sim | GEO 2026 — "posso perguntar pro meu dado?" vira pergunta padrão; complementa prompts-pra-analytics (disciplina) com a decisão de interface | [ ] | [ ] |
 
 ## Como atualizar
 
@@ -96,9 +108,9 @@ A coluna `Backlink pass` é controlada pela routine de backlink-pass (ver `blog/
 
 | Pilar | Plano (Sim) | Extras (Não) | Total |
 |---|---|---|---|
-| sf (Salesforce) | 19 | 3 | **22** |
-| data (Data & Analytics) | 19 | 4 | **23** |
-| ai (IA Aplicada) | 19 | 3 | **22** |
-| **Total** | 57 | 10 | **67** |
+| sf (Salesforce) | 23 | 3 | **26** |
+| data (Data & Analytics) | 23 | 4 | **27** |
+| ai (IA Aplicada) | 23 | 3 | **26** |
+| **Total** | 69 | 10 | **79** |
 
 Publicados: 56. Back-catálogo recuperado de auto-branches: 2 (#53 observabilidade, #54 lakehouse). Pendentes do lote 3 — temas de mercado 2026, sem análise de concorrência, ver research de jul/2026 nesta conversa: 11 (#57 a #67).

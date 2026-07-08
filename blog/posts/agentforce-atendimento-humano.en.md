@@ -76,3 +76,25 @@ Without these four, the Agentforce dashboard will show high usage and mask exper
 As in [any serious agent project](/blog/en/quando-agente-e-resposta.html), what separates Agentforce that pays back from Agentforce theater is discipline on basics: defined use case, structured knowledge base, clear scope of what not to automate, ongoing operational governance, quality metric next to usage metric.
 
 Agentforce in customer service is, in 2026, one of the best operational efficiency opportunities available to a Salesforce-first company. But like every good tool, it requires knowing where *not* to use it. The boundary isn't technical — it's a product one. Whoever accepts this logic delivers more efficient operations. Whoever treats it as "automate service" without that mindset will be explaining NPS drops by Q3.
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most often when this topic hits the table.
+
+## What can I automate with Agentforce in customer service?
+
+Five patterns deliver operational savings without hurting experience: status lookups ("where's my order?"), product and policy FAQ over a structured knowledge base, initial triage before the human, proactive follow-up with structured options, and guided self-service (change address, update card). Together they cover 50–70% of the typical volume in a mid-market operation.
+
+The common thread across the five: repetitive, factual, low-risk cases whose answer lives in a system or a document. Well implemented within that scope, Agentforce absorbs 30–50% of volume and frees the team for cases that need people.
+
+## When does service still need to be human?
+
+In three contexts — and these are product boundaries, not technical limitations to be fixed in a future release. A customer in an emotional moment (serious complaint, lost money, health incident): they want to be heard by a person, and an agent replying "sorry to hear that" makes it worse and drags NPS down. Rules that change every week: the agent answers with the old rule, and the cost of keeping it current outweighs the gain. And decisions with regulatory weight (credit, clinical guidance, legal): an agent's error becomes legal liability, so the human decides and Agentforce acts as copilot.
+
+Mistaking these boundaries for "limitations to be solved" is the most expensive implementation error.
+
+## How do I know if Agentforce is paying off?
+
+By measuring four things the default dashboard doesn't show: real containment (% of cases resolved by the agent without escalation and without the customer reopening within 7 days), CSAT segmented by path (if the agent's is more than 5 points below the human's, the scope is wrong), total time to resolution instead of first-response time, and volume reabsorbed by humans in the following 48h (above 15%, the agent is closing interactions that resolved nothing).
+
+Without those four, the dashboard shows high usage and masks an experience problem — the most common error in rollouts in 2026. Usage isn't value; sustained resolution is.

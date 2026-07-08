@@ -76,3 +76,25 @@ Operacionalmente, isso significa: comece com o caso de uso, monte o conjunto de 
 Porque parece simples na demo. Na demo o usuário pergunta o que o engenheiro testou; o sistema acerta. Em produção, a distribuição de perguntas é mais ampla, os documentos são mais sujos, e cada modo de falha aparece. RAG bem feito não é mais caro que RAG mal feito — só é distribuído diferente no tempo. Time que investe duas a três semanas em retrieval evita seis meses de "por que essa resposta tá errada?".
 
 A boa notícia: as cinco razões de falha são conhecidas, as três métricas são padrão, a pipeline em cinco camadas cabe em qualquer projeto sério. O que separa quem entrega de quem fica em piloto é tratar retrieval como produto, não como detalhe de implementação.
+
+## Perguntas que sempre voltam
+
+Antes de fechar, as dúvidas que mais aparecem quando esse assunto entra na mesa.
+
+## Por que meu RAG responde errado se o LLM é bom?
+
+Porque o problema quase nunca está na geração — está na recuperação. O modelo responde bem sobre o contexto que recebe; se o retrieval entrega o documento errado, o trecho cortado no lugar errado, ou deixa de fora o trecho que muda a resposta, a saída sai errada com aparência de certa. Trocar de modelo ou refinar o prompt não conserta isso.
+
+Os modos de falha mais comuns são conhecidos: chunking ingênuo, embeddings genéricos sobre vocabulário de domínio, top-k sem reranking, falta de query rewriting e avaliação feita só sobre a resposta final. Juntos, respondem por 80% dos pilotos que ficam presos no "quase funciona".
+
+## O que medir pra saber se o retrieval está funcionando?
+
+Três métricas resolvem 90% dos casos: recall@k, MRR e faithfulness. Recall@k diz se os documentos necessários estão chegando ao contexto (abaixo de 80% em recall@10, o sistema deixa contexto crítico de fora). MRR diz em que posição o trecho certo aparece — se está baixo, o LLM lê o contexto errado primeiro. Faithfulness mede quanto da resposta tem suporte direto no que foi recuperado.
+
+O pré-requisito é um conjunto de avaliação com gabarito — algo entre 10 e 50 perguntas com os documentos corretos marcados. Sem ele, qualquer ajuste é otimização no escuro; medir só "satisfação do usuário" não separa problema de corpus de problema de busca.
+
+## Vale a pena investir em reranking?
+
+Sim — é o melhor retorno por hora de engenharia em quase todo projeto de RAG. Rodar um reranker (cross-encoder ou LLM com prompt de scoring) sobre o top-30 da busca inicial e reordenar pros 5–10 mais relevantes sobe o MRR de 0.3 pra 0.6+ na maioria dos domínios — mais do que trocar o modelo de embedding conseguiria.
+
+O motivo: top-k por similaridade vetorial pura é loteria. Trechos quase idênticos ocupam posições, e o trecho que importa pode estar em 12º lugar. Reranking corrige exatamente isso, sem mexer no resto da pipeline.

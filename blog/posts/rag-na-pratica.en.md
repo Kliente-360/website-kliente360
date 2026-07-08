@@ -76,3 +76,25 @@ Operationally, that means: start with the use case, build the eval set (50 quest
 Because it looks simple in the demo. In the demo the user asks what the engineer tested; the system gets it right. In production, the question distribution is broader, the documents are dirtier, and each failure mode shows up. Well-built RAG isn't more expensive than badly-built RAG — it's just distributed differently in time. A team that invests two to three weeks in retrieval avoids six months of "why is this answer wrong?".
 
 The good news: the five failure reasons are known, the three metrics are standard, the five-layer pipeline fits any serious project. What separates teams that ship from teams stuck in pilot is treating retrieval as product, not as implementation detail.
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most often when this topic hits the table.
+
+## Why does my RAG system answer wrong if the LLM is good?
+
+Because the problem is almost never in generation — it's in retrieval. The model answers well about whatever context it receives; if retrieval delivers the wrong document, a chunk cut in the wrong place, or leaves out the passage that changes the answer, the output comes out wrong while looking right. Swapping models or polishing the prompt won't fix that.
+
+The most common failure modes are well known: naive chunking, generic embeddings over domain vocabulary, blind top-k without reranking, missing query rewriting, and evaluation done only on the final answer. Together they account for 80% of pilots stuck at "almost works".
+
+## What should I measure to know if retrieval is working?
+
+Three metrics cover 90% of cases: recall@k, MRR, and faithfulness. Recall@k tells you whether the necessary documents are reaching the context (below 80% at recall@10, the system is leaving critical context out). MRR tells you where the right passage lands in the ranking — if it's low, the LLM reads the wrong context first. Faithfulness measures how much of the answer has direct support in what was retrieved.
+
+The prerequisite is an evaluation set with ground truth — somewhere between 10 and 50 questions with the correct documents marked. Without it, every tweak is optimizing in the dark; measuring only "user satisfaction" can't separate a corpus problem from a search problem.
+
+## Is reranking worth the investment?
+
+Yes — it's the best return per engineering hour in almost any RAG project. Running a reranker (cross-encoder or an LLM with a scoring prompt) over the top-30 from the initial search and reordering to the 5–10 most relevant raises MRR from 0.3 to 0.6+ in most domains — more than switching embedding models would.
+
+The reason: top-k by pure vector similarity is a lottery. Near-identical passages eat up positions, and the passage that matters may sit in 12th place. Reranking fixes exactly that, without touching the rest of the pipeline.

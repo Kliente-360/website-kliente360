@@ -42,6 +42,7 @@
   "headline": "Fine-tuning vs RAG vs prompt engineering: cómo decidir sin quemar caja",
   "description": "Tres caminos para adaptar un LLM a tu negocio. Costos, plazos y riesgos distintos — y la elección equivocada se paga en tres a seis meses de retrabajo.",
   "datePublished": "2026-02-11",
+  "dateModified": "2026-05-25",
   "inLanguage": "es-ES",
   "image": "https://kliente360.com/assets/img/og/fine-tuning-vs-rag-vs-prompt-es.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/es/fine-tuning-vs-rag-vs-prompt.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -88,6 +97,39 @@
       "position": 3,
       "name": "Fine-tuning vs RAG vs prompt engineering: cómo decidir sin quemar caja",
       "item": "https://kliente360.com/blog/es/fine-tuning-vs-rag-vs-prompt.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena entrenar un modelo propio para mi empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En casi todos los casos, todavía no — y quizás nunca. El fine-tuning resuelve el 5–10% de los casos, los específicos de estilo, formato o dominio muy cerrado. El prompt engineering resuelve el 60%, RAG resuelve otro 30%, y la mayoría de las empresas intenta fine-tuning antes de agotar los dos anteriores — y quema caja en el intento.\n\nLa regla es subir de escalón solo cuando agotaste el actual: instrucciones y few-shot primero; RAG cuando el modelo falla por falta de conocimiento; fine-tuning solo cuando el problema es cómo escribe el modelo después de recibir el contexto correcto, tenés 5 mil+ ejemplos etiquetados de calidad y un protocolo de evaluación serio. Sin esos tres, el fine-tuning es fe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta cada enfoque?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En orden de magnitud: prompt engineering sale R$ 5–20 mil para correr un caso de uso decente en piloto, en días. RAG cuesta típicamente R$ 80–250 mil hasta producción, más R$ 10–30 mil/mes, en 4–8 semanas. Fine-tuning queda entre R$ 200 mil y R$ 1 millón hasta modelo en producción, lleva 2–6 meses, y el modelo necesita reentrenarse cada 6–12 meses.\n\nEl ratio práctico: fine-tuning cuesta 5–20× más que RAG, que cuesta 5–15× más que prompt engineering. Y la diferencia no es solo plata — es cuánto invertís antes de saber si funciona. El prompt falla barato; el fine-tuning falla caro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuándo usar RAG en vez de fine-tuning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cuando el problema es conocimiento, no comportamiento. Si el modelo falla porque no tiene acceso a documentos internos, políticas de la empresa o historial del cliente, RAG es el camino — el fine-tuning enseña patrones, no hechos. Un modelo fine-tuned olvida la mitad de las reglas o alucina sobre reglas que cambiaron.\n\nEl test rápido: &quot;¿el modelo fallaría menos si pegara el documento correcto en el contexto?&quot;. Si la respuesta es sí, RAG. El fine-tuning recién entra cuando el retrieval ya funciona bien (recall@k arriba de 80%) y lo que falta es estilo, jerga o formato — e incluso ahí, solo con datos de entrenamiento y evaluación a la altura."
+      }
     }
   ]
 }
@@ -163,7 +205,9 @@
             <span class="sep">·</span>
             <span>6 min de lectura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Actualizado el <time datetime="2026-05-25">25 may 2026</time></span>
           </div>
         </div>
       </header>
@@ -212,6 +256,17 @@
 <h2>La decisión de quien decide</h2>
 <p>Si estás en un comité discutiendo &quot;fine-tuning o no&quot;, la pregunta correcta para hacerle al equipo técnico no es &quot;cuál es mejor&quot;. Es: <em>¿ya agotamos prompt engineering? ¿ya probamos RAG?</em>. En el 80% de los casos, la respuesta va a ser &quot;no en la profundidad necesaria&quot;. Ahí volvés un escalón, lo hacés bien, y la mayoría de los casos para ahí — con 1/10 del costo y en 1/4 del tiempo.</p>
 <p>Fine-tuning es la herramienta correcta para casos específicos. Solo no es el default — y tratarlo como default es la forma más cara de demorar la entrega de valor de IA en tu empresa. (Cuando se justifica, <a href="/blog/es/open-source-vs-proprietary-llms.html">la elección entre open source self-hosted y proprietary cambia la ecuación de costo</a> — vale calcular antes de comprometerse.)</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.</p>
+<h2>¿Vale la pena entrenar un modelo propio para mi empresa?</h2>
+<p>En casi todos los casos, todavía no — y quizás nunca. El fine-tuning resuelve el 5–10% de los casos, los específicos de estilo, formato o dominio muy cerrado. El prompt engineering resuelve el 60%, RAG resuelve otro 30%, y la mayoría de las empresas intenta fine-tuning antes de agotar los dos anteriores — y quema caja en el intento.</p>
+<p>La regla es subir de escalón solo cuando agotaste el actual: instrucciones y few-shot primero; RAG cuando el modelo falla por falta de conocimiento; fine-tuning solo cuando el problema es cómo escribe el modelo después de recibir el contexto correcto, tenés 5 mil+ ejemplos etiquetados de calidad y un protocolo de evaluación serio. Sin esos tres, el fine-tuning es fe.</p>
+<h2>¿Cuánto cuesta cada enfoque?</h2>
+<p>En orden de magnitud: prompt engineering sale R$ 5–20 mil para correr un caso de uso decente en piloto, en días. RAG cuesta típicamente R$ 80–250 mil hasta producción, más R$ 10–30 mil/mes, en 4–8 semanas. Fine-tuning queda entre R$ 200 mil y R$ 1 millón hasta modelo en producción, lleva 2–6 meses, y el modelo necesita reentrenarse cada 6–12 meses.</p>
+<p>El ratio práctico: fine-tuning cuesta 5–20× más que RAG, que cuesta 5–15× más que prompt engineering. Y la diferencia no es solo plata — es cuánto invertís antes de saber si funciona. El prompt falla barato; el fine-tuning falla caro.</p>
+<h2>¿Cuándo usar RAG en vez de fine-tuning?</h2>
+<p>Cuando el problema es conocimiento, no comportamiento. Si el modelo falla porque no tiene acceso a documentos internos, políticas de la empresa o historial del cliente, RAG es el camino — el fine-tuning enseña patrones, no hechos. Un modelo fine-tuned olvida la mitad de las reglas o alucina sobre reglas que cambiaron.</p>
+<p>El test rápido: &quot;¿el modelo fallaría menos si pegara el documento correcto en el contexto?&quot;. Si la respuesta es sí, RAG. El fine-tuning recién entra cuando el retrieval ya funciona bien (recall@k arriba de 80%) y lo que falta es estilo, jerga o formato — e incluso ahí, solo con datos de entrenamiento y evaluación a la altura.</p>
 
         </div>
       </div>
@@ -251,28 +306,28 @@
         <div class="container">
           <h2>Próximas lecturas</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="ai" href="/blog/es/quando-fine-tuning-supera-rag.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/arquitetura-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">27 may 2026</span>
+                <span class="post-date">8 jul 2026</span>
               </div>
-              <h3>RAG no es la respuesta — 6 patrones donde el fine-tuning gana</h3>
+              <h3>Arquitectura de un servidor MCP: transporte, autenticación y dónde se rompe</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/es/finops-de-ia.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/model-context-protocol-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">24 may 2026</span>
+                <span class="post-date">7 jul 2026</span>
               </div>
-              <h3>FinOps de IA: cómo cobrar inferencia de LLM al cliente interno sin pelear con TI</h3>
+              <h3>Model Context Protocol: qué cambia cuando cada herramienta expone MCP</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/es/quando-agente-e-resposta.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/vector-database-ou-search-engine.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">20 may 2026</span>
+                <span class="post-date">17 jun 2026</span>
               </div>
-              <h3>Cuándo un agente es la respuesta — y cuándo es huida de un problema mal modelado</h3>
+              <h3>Vector database no es obligatorio en RAG — cuando el índice clásico gana</h3>
               <div class="read">Leer →</div>
             </a>
           </div>

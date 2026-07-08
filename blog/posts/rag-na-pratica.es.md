@@ -76,3 +76,25 @@ Operativamente, eso significa: empezá por el caso de uso, armá el conjunto de 
 Porque parece simple en la demo. En la demo el usuario pregunta lo que el ingeniero probó; el sistema acierta. En producción, la distribución de preguntas es más amplia, los documentos están más sucios, y cada modo de falla aparece. RAG bien hecho no es más caro que RAG mal hecho — solo está distribuido distinto en el tiempo. El equipo que invierte dos o tres semanas en retrieval evita seis meses de "¿por qué esta respuesta está mal?".
 
 La buena noticia: las cinco razones de falla son conocidas, las tres métricas son estándar, la pipeline en cinco capas entra en cualquier proyecto serio. Lo que separa a quien entrega de quien queda en piloto es tratar el retrieval como producto, no como detalle de implementación.
+
+## Preguntas que siempre vuelven
+
+Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.
+
+## ¿Por qué mi RAG responde mal si el LLM es bueno?
+
+Porque el problema casi nunca está en la generación — está en la recuperación. El modelo responde bien sobre el contexto que recibe; si el retrieval entrega el documento equivocado, el fragmento cortado en el lugar equivocado, o deja afuera el fragmento que cambia la respuesta, la salida sale mal con apariencia de correcta. Cambiar de modelo o pulir el prompt no arregla eso.
+
+Los modos de falla más comunes son conocidos: chunking ingenuo, embeddings genéricos sobre vocabulario de dominio, top-k sin reranking, falta de query rewriting y evaluación hecha solo sobre la respuesta final. Juntos explican el 80% de los pilotos que quedan trabados en el "casi funciona".
+
+## ¿Qué medir para saber si el retrieval está funcionando?
+
+Tres métricas resuelven el 90% de los casos: recall@k, MRR y faithfulness. Recall@k dice si los documentos necesarios están llegando al contexto (abajo de 80% en recall@10, el sistema deja contexto crítico afuera). MRR dice en qué posición aparece el fragmento correcto — si está bajo, el LLM lee primero el contexto equivocado. Faithfulness mide cuánto de la respuesta tiene soporte directo en lo recuperado.
+
+El prerrequisito es un conjunto de evaluación con respuestas correctas marcadas — entre 10 y 50 preguntas con sus documentos correctos. Sin eso, cualquier ajuste es optimizar a ciegas; medir solo "satisfacción del usuario" no separa problema de corpus de problema de búsqueda.
+
+## ¿Vale la pena invertir en reranking?
+
+Sí — es el mejor retorno por hora de ingeniería en casi todo proyecto de RAG. Correr un reranker (cross-encoder o LLM con prompt de scoring) sobre el top-30 de la búsqueda inicial y reordenar a los 5–10 más relevantes sube el MRR de 0.3 a 0.6+ en la mayoría de los dominios — más de lo que lograría cambiar el modelo de embedding.
+
+El motivo: el top-k por similitud vectorial pura es una lotería. Fragmentos casi idénticos ocupan posiciones, y el que importa puede estar en el puesto 12. El reranking corrige exactamente eso, sin tocar el resto de la pipeline.

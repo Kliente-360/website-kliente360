@@ -90,3 +90,25 @@ Se sua empresa tem time de dados que apaga incêndio com frequência, e a causa 
 Se sua empresa não tem time de dados maduro ainda, contract é pré-maturo. Outras disciplinas precisam vir antes — [observabilidade de dados](/blog/observabilidade-de-dados.html), ownership claro de modelo, eval set de qualidade. Implementar contract em cima de caos só formaliza o caos.
 
 Contract não cria cultura de qualidade — só cristaliza a que já existe ou começou a existir. Esse é o teste real antes de adotar.
+
+## Perguntas que sempre voltam
+
+Antes de fechar, as dúvidas que mais aparecem quando esse assunto entra na mesa.
+
+## Vale a pena implementar data contracts na minha empresa?
+
+Vale se o seu time de dados apaga incêndio com frequência e a causa raiz costuma ser "mudança no schema fonte". Nesse cenário, contract aplicado às 3–5 entidades críticas evita 80% dos incidentes de pipeline e paga o ROI de seis meses no primeiro incidente evitado.
+
+Se o time de dados ainda não é maduro, contract é prematuro — observabilidade, ownership claro de modelo e disciplina de qualidade precisam vir antes. Contract não cria cultura de qualidade; só cristaliza a que já existe. Implementar em cima de caos só formaliza o caos.
+
+## Quantas entidades devem ter contrato?
+
+Três a cinco entidades críticas — não os 200 modelos do warehouse. Aplicar contract a tudo é o erro que mata o projeto: vira overhead pesado que ninguém mantém. Os critérios pra escolher: a quebra causa dashboard executivo errado (entidades como `customer`, `order`, `subscription`), há múltiplos consumidores downstream (5+ dashboards, modelos de ML, integração externa), e produtor e consumidor moram em times que se falam pouco.
+
+Dentro desses critérios, ignorar contract é aceitar incidente recorrente sem causa clara. Fora deles, é sobre-engenharia — no mesmo squad, conversa resolve mais barato que contrato. A expansão vem depois, uma entidade por vez, conforme a dor aparece.
+
+## Quanto tempo leva pra implementar data contracts?
+
+Cerca de 12 semanas pra sair do zero a operação rodando — não é projeto de 12 meses. A sequência: 2 semanas pra escolher as 3 entidades críticas, 2 semanas pra escrever os contratos (schema, semântica, SLO, política de mudança — cada um cabe num arquivo de 30–80 linhas), 4 semanas pra colocar o CI bloqueando mudança breaking sem bump de versão, e 4 semanas pro dashboard de freshness e violations.
+
+A ferramenta deixou de ser bloqueio: schema registry, validators e o `contract: true` nativo do dbt já cobrem o stack. O que define sucesso é escopo — quem tenta 50 entidades de uma vez falha; quem faz 3 bem atinge cobertura útil em 6 meses.

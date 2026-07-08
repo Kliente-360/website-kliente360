@@ -72,3 +72,25 @@ This case is avoidable with the simple rule above. It's not lack of technical sk
 If you're on a committee debating "fine-tuning or not", the right question to ask the technical team isn't "which is better". It's: *have we exhausted prompt engineering? have we tried RAG?*. In 80% of cases, the answer will be "not to the needed depth". Then you step back a rung, do it right, and most cases stop there — with 1/10 of the cost and 1/4 of the time.
 
 Fine-tuning is the right tool for specific cases. It just isn't the default — and treating it as the default is the most expensive way to delay your company's AI value delivery. (When justifiable, [the choice between self-hosted open source and proprietary changes the cost equation](/blog/en/open-source-vs-proprietary-llms.html) — worth calculating before committing.)
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most often when this topic hits the table.
+
+## Is it worth training a custom model for my company?
+
+In almost every case, not yet — and maybe never. Fine-tuning solves 5–10% of cases, the specific ones about style, format, or a very closed domain. Prompt engineering solves 60%, RAG solves another 30%, and most companies attempt fine-tuning before exhausting the previous two — and burn cash doing it.
+
+The rule is to climb a rung only when the current one is exhausted: instructions and few-shot first; RAG when the model fails for lack of knowledge; fine-tuning only when the problem is how the model writes after receiving the right context, you have 5,000+ quality labeled examples, and a serious evaluation protocol. Without those three, fine-tuning is faith.
+
+## How much does each approach cost?
+
+As an order of magnitude: prompt engineering runs R$ 5–20K to get a decent use case through pilot, in days. RAG typically costs R$ 80–250K to production, plus R$ 10–30K/month, over 4–8 weeks. Fine-tuning lands between R$ 200K and R$ 1 million to a production model, takes 2–6 months, and the model needs retraining every 6–12 months.
+
+The practical ratio: fine-tuning costs 5–20× more than RAG, which costs 5–15× more than prompt engineering. And the difference isn't just money — it's how much you invest before knowing whether it works. Prompting fails cheap; fine-tuning fails expensive.
+
+## When should I use RAG instead of fine-tuning?
+
+When the problem is knowledge, not behavior. If the model fails because it has no access to internal documents, company policy, or customer history, RAG is the path — fine-tuning teaches patterns, not facts. A fine-tuned model forgets half the rules or hallucinates about rules that changed.
+
+The quick test: "would the model fail less if I pasted the right document into the context?". If yes, RAG. Fine-tuning only enters when retrieval already works well (recall@k above 80%) and what's missing is style, jargon, or format — and even then, only with training data and evaluation to match.

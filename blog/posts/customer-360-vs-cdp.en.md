@@ -74,3 +74,25 @@ If you're stuck on this decision today, three practical moves before signing any
 **Decide with a 3-year TCO mindset.** License cost + integration cost + operations cost + migration cost. That math typically changes the decision in 30–40% of companies that do it before the purchase.
 
 The unified customer layer is one of the most important pieces of a modern stack. But it's a piece — not a strategy. Buying a platform without the rest of the roadmap clear is the most expensive way to push the decision forward without solving it.
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most often when this topic hits the table.
+
+## Do I need a CDP if I already use Salesforce?
+
+Probably not as a separate product. If you already pay for Sales, Service, and Marketing Cloud, Data Cloud delivers all three layers — unified identity, operational activation, and context for agents — as part of the platform, with no custom integration. Since you'd pay for integration with the Salesforce ecosystem anyway, the TCO usually tips toward Data Cloud.
+
+The equation changes if you're not Salesforce-first. A company on HubSpot or a homegrown CRM still finds real value in an external CDP — or treats Customer 360 as the integration project it always was. The answer depends on your stack, not the brochure.
+
+## What's the real difference between Customer 360 and a CDP?
+
+They were born from different problems: Customer 360 is a goal — the same person recognized as a single customer across all systems, with unified history visible where each operator works. CDP was born operational for marketing: pulling data from multiple channels, normalizing identity, and activating campaigns at low latency.
+
+By 2026 that boundary has blurred — Salesforce consolidated both under Data Cloud, and competitors made similar moves. The useful distinction today isn't between acronyms but between three layers: unified identity and profile, operational activation, and context for agents and applications. The real roadmap decision is which layer you need first.
+
+## How do I decide between Data Cloud and an external CDP?
+
+By answering five questions before signing anything: what's the primary use case, what stack already exists, what's the AI roadmap, who sponsors the project, and what level of identity unification the operation requires (probabilistic works for marketing; service and sales demand deterministic). If you answer "it depends" to three or more, you don't have a defined use case yet — and any platform will turn into a never-ending project.
+
+In practice: map it use case by use case, pilot with real volume for 30–60 days instead of deciding on a demo, and close the math with a 3-year TCO — license, integration, operations, and migration. That math changes the decision in 30–40% of companies that do it before purchase.

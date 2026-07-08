@@ -70,3 +70,25 @@ In specialized consultancy practice, most mid-market companies that honestly ans
 A well-operated warehouse, with [dbt for versioning, documentation, and model testing](/blog/en/dbt-na-pratica.html), covers mid-market analytics for years. Lakehouse has its place — in event-intensive data environments, in operations with mature ML, in teams with solid engineering that needs what managed warehouses don't deliver well.
 
 The conversation that matters isn't which architecture has more conference slides. It's who owns the data, how modeling is versioned, and which use cases the platform serves today. Buying lakehouse without the workload that justifies it is paying for a jet engine in a city car — the car moves, the engine doesn't help, and the maintenance bill shows up at the next service.
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most often when this topic hits the table.
+
+## When is migrating to a lakehouse actually worth it?
+
+When three conditions hold at the same time: volume and variety a managed warehouse can't handle at reasonable cost (industrial IoT, hundreds of millions of events per day, continuous streaming); ML running in production — not in pilot, not in plans; and engineering mature enough to operate compaction, Z-ordering, vacuum, and schema evolution as a weekly routine.
+
+If any of the three is missing, you're adding complexity without the gain that justifies it. "ML plans" and "being more modern" don't define a workload — and a new platform doesn't define your problem, it only amplifies what already exists.
+
+## Can a managed warehouse handle a mid-market company?
+
+In the vast majority of cases, yes — and for years. The typical mid-market profile is transactional, structured data (CRM, ERP, e-commerce, SaaS) in the range of a few terabytes, a scope where Snowflake, BigQuery, or Databricks SQL operate comfortably, with standard SQL and essentially zero operations. Well-built dimensional modeling on top covers 90% of analytical cases.
+
+At terabyte scale, a managed warehouse usually has lower TCO than a lakehouse once you add operations engineering to the math — vacuum, compaction, and upgrades come with the license, and a functional business analyst learns to operate it in days. Lakehouse only becomes cost-competitive near petabyte scale.
+
+## How long does it take to get analytics running on each architecture?
+
+With a managed warehouse, ELT, and dbt, a team delivers reliable analytics in four to six weeks. The same setup on a lakehouse takes three to four months, requires an engineer familiar with Iceberg or Delta — a profile with its own cost and hiring lead time — and demands compaction governance from day 1.
+
+The analytical result is equivalent; the cost of getting there is not. And migrating from warehouse to lakehouse isn't lift-and-shift: it's pipeline rewrites, a new stack's learning curve, and a different observability layer — a cost that rarely shows up in the vendor's deck.

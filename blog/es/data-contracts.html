@@ -42,6 +42,7 @@
   "headline": "Data contracts: la forma menos dolorosa de no romper producción",
   "description": "El pipeline se rompe el miércoles a las 17h porque un ingeniero de backend renombró un campo el lunes. Los data contracts existen para cerrar ese loop — y casi nadie los implementa.",
   "datePublished": "2026-02-25",
+  "dateModified": "2026-05-25",
   "inLanguage": "es-ES",
   "image": "https://kliente360.com/assets/img/og/data-contracts-es.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/es/data-contracts.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -88,6 +97,39 @@
       "position": 3,
       "name": "Data contracts: la forma menos dolorosa de no romper producción",
       "item": "https://kliente360.com/blog/es/data-contracts.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena implementar data contracts en mi empresa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale si tu equipo de datos apaga incendios seguido y la causa raíz suele ser &quot;cambio en el schema fuente&quot;. En ese escenario, contracts aplicados a las 3–5 entidades críticas evitan el 80% de los incidentes de pipeline y pagan el ROI de seis meses con el primer incidente evitado.\n\nSi el equipo de datos todavía no es maduro, el contract es prematuro — observabilidad, ownership claro de modelos y disciplina de calidad tienen que venir antes. El contract no crea cultura de calidad; solo cristaliza la que ya existe. Implementarlo sobre el caos solo formaliza el caos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántas entidades deberían tener contrato?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tres a cinco entidades críticas — no los 200 modelos del warehouse. Aplicar contracts a todo es el error que mata el proyecto: se vuelve overhead pesado que nadie mantiene. Los criterios para elegir: la rotura causa un dashboard ejecutivo equivocado (entidades como <code>customer</code>, <code>order</code>, <code>subscription</code>), hay múltiples consumidores downstream (5+ dashboards, modelos de ML, integración externa), y productor y consumidor viven en equipos que se hablan poco.\n\nDentro de esos criterios, ignorar el contract es aceptar incidentes recurrentes sin causa clara. Fuera de ellos, es sobre-ingeniería — en el mismo squad, la conversación sale más barata que el contrato. La expansión viene después, una entidad por vez, según aparece el dolor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo lleva implementar data contracts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cerca de 12 semanas para pasar de cero a operación corriendo — no es un proyecto de 12 meses. La secuencia: 2 semanas para elegir las 3 entidades críticas, 2 semanas para escribir los contratos (schema, semántica, SLO, política de cambio — cada uno entra en un archivo de 30–80 líneas), 4 semanas para poner el CI bloqueando cambios breaking sin bump de versión, y 4 semanas para el dashboard de freshness y violaciones.\n\nLa herramienta dejó de ser el bloqueo: schema registries, validators y el <code>contract: true</code> nativo de dbt ya cubren el stack. Lo que define el éxito es el alcance — quien intenta 50 entidades de una vez falla; quien hace 3 bien alcanza cobertura útil en 6 meses."
+      }
     }
   ]
 }
@@ -163,7 +205,9 @@
             <span class="sep">·</span>
             <span>6 min de lectura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Actualizado el <time datetime="2026-05-25">25 may 2026</time></span>
           </div>
         </div>
       </header>
@@ -224,6 +268,17 @@
 <p>Si tu empresa tiene equipo de datos que apaga incendios con frecuencia, y la causa raíz aparece en &quot;cambio en el schema fuente&quot;, los data contracts son el camino. No como proyecto de 12 meses; como adopción incremental sobre 3 entidades críticas, con herramienta que <a href="/blog/es/dbt-na-pratica.html">dbt ya ofrece nativamente</a>.</p>
 <p>Si tu empresa no tiene equipo de datos maduro todavía, el contract es prematuro. Otras disciplinas necesitan venir antes — <a href="/blog/es/observabilidade-de-dados.html">observabilidad de datos</a>, ownership claro de modelo, eval set de calidad. Implementar contract sobre caos solo formaliza el caos.</p>
 <p>Los contracts no crean cultura de calidad — solo cristalizan la que ya existe o empezó a existir. Esa es la prueba real antes de adoptar.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.</p>
+<h2>¿Vale la pena implementar data contracts en mi empresa?</h2>
+<p>Vale si tu equipo de datos apaga incendios seguido y la causa raíz suele ser &quot;cambio en el schema fuente&quot;. En ese escenario, contracts aplicados a las 3–5 entidades críticas evitan el 80% de los incidentes de pipeline y pagan el ROI de seis meses con el primer incidente evitado.</p>
+<p>Si el equipo de datos todavía no es maduro, el contract es prematuro — observabilidad, ownership claro de modelos y disciplina de calidad tienen que venir antes. El contract no crea cultura de calidad; solo cristaliza la que ya existe. Implementarlo sobre el caos solo formaliza el caos.</p>
+<h2>¿Cuántas entidades deberían tener contrato?</h2>
+<p>Tres a cinco entidades críticas — no los 200 modelos del warehouse. Aplicar contracts a todo es el error que mata el proyecto: se vuelve overhead pesado que nadie mantiene. Los criterios para elegir: la rotura causa un dashboard ejecutivo equivocado (entidades como <code>customer</code>, <code>order</code>, <code>subscription</code>), hay múltiples consumidores downstream (5+ dashboards, modelos de ML, integración externa), y productor y consumidor viven en equipos que se hablan poco.</p>
+<p>Dentro de esos criterios, ignorar el contract es aceptar incidentes recurrentes sin causa clara. Fuera de ellos, es sobre-ingeniería — en el mismo squad, la conversación sale más barata que el contrato. La expansión viene después, una entidad por vez, según aparece el dolor.</p>
+<h2>¿Cuánto tiempo lleva implementar data contracts?</h2>
+<p>Cerca de 12 semanas para pasar de cero a operación corriendo — no es un proyecto de 12 meses. La secuencia: 2 semanas para elegir las 3 entidades críticas, 2 semanas para escribir los contratos (schema, semántica, SLO, política de cambio — cada uno entra en un archivo de 30–80 líneas), 4 semanas para poner el CI bloqueando cambios breaking sin bump de versión, y 4 semanas para el dashboard de freshness y violaciones.</p>
+<p>La herramienta dejó de ser el bloqueo: schema registries, validators y el <code>contract: true</code> nativo de dbt ya cubren el stack. Lo que define el éxito es el alcance — quien intenta 50 entidades de una vez falla; quien hace 3 bien alcanza cobertura útil en 6 meses.</p>
 
         </div>
       </div>
@@ -263,18 +318,10 @@
         <div class="container">
           <h2>Próximas lecturas</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/es/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">26 may 2026</span>
-              </div>
-              <h3>Tendencias de data management 2026: 5 que cambian, 3 que no</h3>
-              <div class="read">Leer →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/es/lakehouse-vs-warehouse.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">25 may 2026</span>
+                <span class="post-date">1 jul 2026</span>
               </div>
               <h3>Lakehouse no es la bala de plata: cuándo el warehouse sencillo sigue ganando</h3>
               <div class="read">Leer →</div>
@@ -282,9 +329,17 @@
             <a class="card post-card" data-pillar="data" href="/blog/es/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">22 may 2026</span>
+                <span class="post-date">30 jun 2026</span>
               </div>
               <h3>Observabilidad de datos: detectar fallos antes que el stakeholder</h3>
+              <div class="read">Leer →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/es/customer-data-platform-commodity.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 02 · Data</span>
+                <span class="post-date">24 jun 2026</span>
+              </div>
+              <h3>Customer Data Platform se volvió commodity — qué queda</h3>
               <div class="read">Leer →</div>
             </a>
           </div>

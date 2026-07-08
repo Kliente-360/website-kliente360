@@ -42,6 +42,7 @@
   "headline": "dbt in practice: documentation is the real win, not the model",
   "description": "Teams adopt dbt for versioned SQL and tests — and discover six months later that the real value lives elsewhere: in the documentation that keeps the warehouse alive.",
   "datePublished": "2026-01-20",
+  "dateModified": "2026-07-02",
   "inLanguage": "en-US",
   "image": "https://kliente360.com/assets/img/og/dbt-na-pratica-en.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/en/dbt-na-pratica.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -88,6 +97,39 @@
       "position": 3,
       "name": "dbt in practice: documentation is the real win, not the model",
       "item": "https://kliente360.com/blog/en/dbt-na-pratica.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is dbt worth adopting just for versioning and tests?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is — but that&#39;s the floor, not the ceiling. SQL versioned in Git, declarative tests in CI, automatic lineage, and <code>ref()</code> resolving dependencies already justify adoption on their own. But a team that stops at that package ends up with a better version of the same ETL it had before.\n\nThe game-changing gain shows up in documentation: schema YAML with model and column descriptions, explicit owners, <code>dbt docs</code> as the warehouse&#39;s canonical dictionary. That&#39;s the usage that lets a new analyst walk in and understand the warehouse alone, and a diverging metric get resolved in minutes on the lineage instead of in a meeting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we document after the models are built?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In practice, no — &quot;document later&quot; is the pattern that never happens. In three months nobody has documented, in six the team has forgotten why the model exists, in twelve the new analyst rebuilds a parallel model because they don&#39;t trust the existing one. Documentation is continuous work, not a phase with an end.\n\nThe antidote is making descriptions a PR-blocker from day 1: a model without a description doesn&#39;t pass CI, and neither does an undescribed column in a <code>mart</code> model. It&#39;s rigid on purpose — five minutes in the PR save three months next quarter, and fighting with the team once at the start is cheaper than recovering documentation six months later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does dbt replace a data catalog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For most mid-market companies, yes — a filled-in <code>dbt docs</code> covers 80% of what a premium data catalog would try to deliver, without the annual license. Visual lineage, descriptions, tests, and freshness in a navigable site cover the real usage: finding out what each table means and what breaks downstream of a change.\n\nThe condition is the word &quot;filled-in&quot;. <code>dbt docs</code> with empty descriptions is as useless as a catalog nobody opens. The value comes from discipline — mandatory descriptions, an owner per model, documented exposures — and from treating the site as an internal product, presented to and used by the team, not as a technical byproduct."
+      }
     }
   ]
 }
@@ -163,7 +205,9 @@
             <span class="sep">·</span>
             <span>6 min read</span>
             <span class="sep">·</span>
-            <span>By Kliente 360</span>
+            <span>By Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Updated <time datetime="2026-07-02">2 Jul 2026</time></span>
           </div>
         </div>
       </header>
@@ -192,7 +236,7 @@
 <ol>
 <li><strong>Description is a PR blocker.</strong> A model without a description doesn&#39;t pass CI. A column without a description in a <code>mart</code> model (the layer the business consumes) doesn&#39;t pass CI. Sounds rigid — it&#39;s rigid on purpose. Without this rule, description becomes a perpetual backlog.</li>
 <li><strong>Explicit owner in the <code>.yml</code>.</strong> Each model has a human responsible (tag <code>owner</code> in <code>meta</code>). When something breaks, it&#39;s clear who to call. Without owners, an orphan model becomes an abandoned model in 6 months.</li>
-<li><strong>Source freshness as a test.</strong> Set <code>freshness</code> on each <code>source</code> (Salesforce, Stripe, Segment, etc.) with an explicit SLA. When the source falls behind, the team knows before the dashboard goes wrong. This is one of dbt&#39;s most undervalued tests.</li>
+<li><strong>Source freshness as a test.</strong> Set <code>freshness</code> on each <code>source</code> (Salesforce, Stripe, Segment, etc.) with an explicit SLA. When the source falls behind, the team knows before the dashboard goes wrong. This is one of dbt&#39;s most undervalued tests — the simplest foundation of the <a href="/blog/en/observabilidade-de-dados.html">five axes of data observability</a>: freshness catches the largest share of pipeline failures with the least instrumentation effort.</li>
 <li><strong>Explicit layers: staging / intermediate / marts.</strong> Staging is raw renamed and typed. Intermediate is reusable logic. Marts is what the business consumes. Mixing layers is the fastest way for the warehouse to become a mess. dbt makes separation easy — using it is discipline.</li>
 <li><strong>Documented exposures.</strong> The <code>exposure</code> tag points to the dashboard or app that consumes the model. When someone is about to change the model, they see what will break downstream. Combined with lineage, it closes the loop between warehouse and <a href="/blog/en/tableau-linguagem-executiva.html">BI that drives decisions</a>.</li>
 </ol>
@@ -206,6 +250,17 @@
 <p><strong>Start from marts, not staging.</strong> Define what the business needs to consume, write the description before creating the model, then build the layers feeding it. Disciplinarily backward is cheaper than technically forward.</p>
 <p><strong>Treat <code>dbt docs</code> as an internal product.</strong> Present it in team meetings, put the link on the intranet, train analysts to use it before the warehouse. Documentation no one opens is overhead. Documentation that becomes the first lookup pays six times the effort to keep.</p>
 <p>dbt without that discipline is just a better version of the old ETL — and better ETL is already something. With that discipline, it becomes the piece that stops the warehouse from being a black box. The difference between the two uses is a culture, not a feature. (<a href="/blog/en/modern-data-stack-2026.html">On the map of what survived from the Modern Data Stack in 2026</a>, versioned transformation as code is one of three pieces that passed the test — and dbt was the one that proved the thesis.)</p>
+<h2>Questions that keep coming back</h2>
+<p>Before wrapping up, the questions that come up most often when this topic hits the table.</p>
+<h2>Is dbt worth adopting just for versioning and tests?</h2>
+<p>It is — but that&#39;s the floor, not the ceiling. SQL versioned in Git, declarative tests in CI, automatic lineage, and <code>ref()</code> resolving dependencies already justify adoption on their own. But a team that stops at that package ends up with a better version of the same ETL it had before.</p>
+<p>The game-changing gain shows up in documentation: schema YAML with model and column descriptions, explicit owners, <code>dbt docs</code> as the warehouse&#39;s canonical dictionary. That&#39;s the usage that lets a new analyst walk in and understand the warehouse alone, and a diverging metric get resolved in minutes on the lineage instead of in a meeting.</p>
+<h2>Can we document after the models are built?</h2>
+<p>In practice, no — &quot;document later&quot; is the pattern that never happens. In three months nobody has documented, in six the team has forgotten why the model exists, in twelve the new analyst rebuilds a parallel model because they don&#39;t trust the existing one. Documentation is continuous work, not a phase with an end.</p>
+<p>The antidote is making descriptions a PR-blocker from day 1: a model without a description doesn&#39;t pass CI, and neither does an undescribed column in a <code>mart</code> model. It&#39;s rigid on purpose — five minutes in the PR save three months next quarter, and fighting with the team once at the start is cheaper than recovering documentation six months later.</p>
+<h2>Does dbt replace a data catalog?</h2>
+<p>For most mid-market companies, yes — a filled-in <code>dbt docs</code> covers 80% of what a premium data catalog would try to deliver, without the annual license. Visual lineage, descriptions, tests, and freshness in a navigable site cover the real usage: finding out what each table means and what breaks downstream of a change.</p>
+<p>The condition is the word &quot;filled-in&quot;. <code>dbt docs</code> with empty descriptions is as useless as a catalog nobody opens. The value comes from discipline — mandatory descriptions, an owner per model, documented exposures — and from treating the site as an internal product, presented to and used by the team, not as a technical byproduct.</p>
 
         </div>
       </div>
@@ -245,18 +300,10 @@
         <div class="container">
           <h2>Further reading</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/en/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">26 May 2026</span>
-              </div>
-              <h3>Data management trends 2026: 5 that are changing, 3 that aren&#39;t</h3>
-              <div class="read">Read →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/en/lakehouse-vs-warehouse.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">25 May 2026</span>
+                <span class="post-date">1 Jul 2026</span>
               </div>
               <h3>Lakehouse Is Not a Silver Bullet: When Plain Warehouse Still Wins</h3>
               <div class="read">Read →</div>
@@ -264,9 +311,17 @@
             <a class="card post-card" data-pillar="data" href="/blog/en/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">22 May 2026</span>
+                <span class="post-date">30 Jun 2026</span>
               </div>
               <h3>Data observability: catching pipeline failures before stakeholders do</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/en/customer-data-platform-commodity.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">24 Jun 2026</span>
+              </div>
+              <h3>Customer Data Platform became a commodity — what&#39;s left</h3>
               <div class="read">Read →</div>
             </a>
           </div>

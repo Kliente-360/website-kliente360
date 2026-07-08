@@ -42,6 +42,7 @@
   "headline": "Data contracts: the least painful way to not break production",
   "description": "Pipeline breaks Wednesday at 5pm because a backend engineer renamed a field on Monday. Data contracts exist to close this loop — and almost no one implements them.",
   "datePublished": "2026-02-25",
+  "dateModified": "2026-05-25",
   "inLanguage": "en-US",
   "image": "https://kliente360.com/assets/img/og/data-contracts-en.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/en/data-contracts.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -88,6 +97,39 @@
       "position": 3,
       "name": "Data contracts: the least painful way to not break production",
       "item": "https://kliente360.com/blog/en/data-contracts.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are data contracts worth implementing at my company?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are if your data team firefights frequently and the root cause tends to be &quot;a change in the source schema&quot;. In that scenario, contracts applied to the 3–5 critical entities prevent 80% of pipeline incidents and pay back six months of ROI on the first incident avoided.\n\nIf the data team isn&#39;t mature yet, contracts are premature — observability, clear model ownership, and quality discipline need to come first. Contracts don&#39;t create a quality culture; they only crystallize the one that already exists. Implementing them on top of chaos just formalizes the chaos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many entities should have a contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three to five critical entities — not the 200 models in the warehouse. Applying contracts to everything is the mistake that kills the project: it becomes heavy overhead nobody maintains. The selection criteria: a break causes a wrong executive dashboard (entities like <code>customer</code>, <code>order</code>, <code>subscription</code>), there are multiple downstream consumers (5+ dashboards, ML models, external integrations), and producer and consumer live in teams that barely talk.\n\nWithin those criteria, skipping contracts means accepting recurring incidents with no clear cause. Outside them, it&#39;s over-engineering — within the same squad, conversation is cheaper than a contract. Expansion comes later, one entity at a time, as the pain shows up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to implement data contracts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About 12 weeks from zero to running operation — it is not a 12-month project. The sequence: 2 weeks to pick the 3 critical entities, 2 weeks to write the contracts (schema, semantics, SLO, change policy — each fits in a 30–80 line file), 4 weeks to get CI blocking breaking changes without a version bump, and 4 weeks for the freshness and violations dashboard.\n\nTooling stopped being the blocker: schema registries, validators, and dbt&#39;s native <code>contract: true</code> already cover the stack. What defines success is scope — teams that attempt 50 entities at once fail; teams that do 3 well reach useful coverage in 6 months."
+      }
     }
   ]
 }
@@ -163,7 +205,9 @@
             <span class="sep">·</span>
             <span>6 min read</span>
             <span class="sep">·</span>
-            <span>By Kliente 360</span>
+            <span>By Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Updated <time datetime="2026-05-25">25 May 2026</time></span>
           </div>
         </div>
       </header>
@@ -224,6 +268,17 @@
 <p>If your company has a data team that fights fires often, and the root cause shows up in &quot;change to source schema&quot;, data contracts are the path. Not as a 12-month project; as incremental adoption over 3 critical entities, with tooling <a href="/blog/en/dbt-na-pratica.html">dbt already offers natively</a>.</p>
 <p>If your company doesn&#39;t have a mature data team yet, contract is premature. Other disciplines need to come first — <a href="/blog/en/observabilidade-de-dados.html">data observability</a>, clear model ownership, quality eval set. Implementing contract on top of chaos just formalizes the chaos.</p>
 <p>Contracts don&#39;t create a quality culture — they only crystallize the one that already exists or has started to. That&#39;s the real test before adopting.</p>
+<h2>Questions that keep coming back</h2>
+<p>Before wrapping up, the questions that come up most often when this topic hits the table.</p>
+<h2>Are data contracts worth implementing at my company?</h2>
+<p>They are if your data team firefights frequently and the root cause tends to be &quot;a change in the source schema&quot;. In that scenario, contracts applied to the 3–5 critical entities prevent 80% of pipeline incidents and pay back six months of ROI on the first incident avoided.</p>
+<p>If the data team isn&#39;t mature yet, contracts are premature — observability, clear model ownership, and quality discipline need to come first. Contracts don&#39;t create a quality culture; they only crystallize the one that already exists. Implementing them on top of chaos just formalizes the chaos.</p>
+<h2>How many entities should have a contract?</h2>
+<p>Three to five critical entities — not the 200 models in the warehouse. Applying contracts to everything is the mistake that kills the project: it becomes heavy overhead nobody maintains. The selection criteria: a break causes a wrong executive dashboard (entities like <code>customer</code>, <code>order</code>, <code>subscription</code>), there are multiple downstream consumers (5+ dashboards, ML models, external integrations), and producer and consumer live in teams that barely talk.</p>
+<p>Within those criteria, skipping contracts means accepting recurring incidents with no clear cause. Outside them, it&#39;s over-engineering — within the same squad, conversation is cheaper than a contract. Expansion comes later, one entity at a time, as the pain shows up.</p>
+<h2>How long does it take to implement data contracts?</h2>
+<p>About 12 weeks from zero to running operation — it is not a 12-month project. The sequence: 2 weeks to pick the 3 critical entities, 2 weeks to write the contracts (schema, semantics, SLO, change policy — each fits in a 30–80 line file), 4 weeks to get CI blocking breaking changes without a version bump, and 4 weeks for the freshness and violations dashboard.</p>
+<p>Tooling stopped being the blocker: schema registries, validators, and dbt&#39;s native <code>contract: true</code> already cover the stack. What defines success is scope — teams that attempt 50 entities at once fail; teams that do 3 well reach useful coverage in 6 months.</p>
 
         </div>
       </div>
@@ -263,18 +318,10 @@
         <div class="container">
           <h2>Further reading</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/en/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">26 May 2026</span>
-              </div>
-              <h3>Data management trends 2026: 5 that are changing, 3 that aren&#39;t</h3>
-              <div class="read">Read →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/en/lakehouse-vs-warehouse.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">25 May 2026</span>
+                <span class="post-date">1 Jul 2026</span>
               </div>
               <h3>Lakehouse Is Not a Silver Bullet: When Plain Warehouse Still Wins</h3>
               <div class="read">Read →</div>
@@ -282,9 +329,17 @@
             <a class="card post-card" data-pillar="data" href="/blog/en/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">22 May 2026</span>
+                <span class="post-date">30 Jun 2026</span>
               </div>
               <h3>Data observability: catching pipeline failures before stakeholders do</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/en/customer-data-platform-commodity.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">24 Jun 2026</span>
+              </div>
+              <h3>Customer Data Platform became a commodity — what&#39;s left</h3>
               <div class="read">Read →</div>
             </a>
           </div>

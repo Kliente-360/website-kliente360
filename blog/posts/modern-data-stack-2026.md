@@ -76,3 +76,25 @@ Três coisas que ainda aparecem em pitch de fornecedor e não fazem sentido inve
 **"Modern Data Stack consultancy"** que vende a etiqueta. Em 2026, ou o consultor entende a arquitetura técnica peça por peça, ou está vendendo brand morta.
 
 Quem monta stack de dados em 2026 escolhe pelo encaixe organizacional, custo total e capacidade de operação contínua. O termo Modern Data Stack pode aparecer no slide do pitch, mas a decisão acontece num nível abaixo — e quem decide bem nesse nível abaixo entrega projeto que vinga; quem compra o slide entrega projeto que vira mais um item no catálogo de ferramentas pagas e subutilizadas.
+
+## Perguntas que sempre voltam
+
+Antes de fechar, as dúvidas que mais aparecem quando esse assunto entra na mesa.
+
+## O Modern Data Stack morreu?
+
+Como brand, sim; como arquitetura, as teses centrais venceram e viraram default. Warehouse separado do banco transacional, transformação como código versionado (a abordagem que o dbt provou) e a camada semântica sobreviveram ao teste de mercado. O que morreu foi o rótulo — e categorias inteiras que ele carregava: reverse ETL standalone foi dissolvido pelas plataformas, ETL clássico empacotado saiu do mainstream, data catalog standalone perdeu pra descoberta dentro do próprio warehouse.
+
+Quem monta stack em 2026 não compra "Modern Data Stack" — compra peças, com critério técnico. Quem ainda vende a etiqueta está vendendo 2021.
+
+## Ainda vale a pena comprar reverse ETL ou data catalog separado?
+
+Na maioria dos casos, não. Reverse ETL standalone só faz sentido em arquitetura legacy onde Salesforce, HubSpot ou Customer.io não chegaram — Data Cloud absorveu a parte de CRM, e as ferramentas de engajamento absorveram a de marketing. Data catalog separado só se justifica em ambiente multi-cloud com vários warehouses, cenário raro: Unity Catalog, Horizon e Dataplex cobrem 80% do uso real dentro do próprio warehouse.
+
+A exceção que merece investimento arquitetural sério é outra: a camada semântica. É a única peça com tese viva em 2026 — sem definição canônica de métrica, a stack entrega dashboards conflitantes em 18 meses, e LLM consumindo dado inventa métrica.
+
+## Como escolher o stack de dados em 2026?
+
+Pelo encaixe organizacional, não pela tendência. Cinco perguntas orientam: onde já mora o resto da operação (cloud principal define warehouse natural — não brigue contra gravidade organizacional), qual o volume real e não o projetado, se o time tem músculo de operação contínua, se a camada semântica é tratada como cidadão de primeira classe, e quem responde por governança em 2 anos — pessoa, não ferramenta.
+
+ELT, warehouse e BI viraram commodity em paridade ampla; a escolha entre eles é exercício de TCO e contexto, não de arquitetura. A decisão que separa projeto que vinga de ferramenta subutilizada acontece um nível abaixo do slide.

@@ -23,7 +23,7 @@
   <meta property="og:image" content="https://kliente360.com/assets/img/og/lakehouse-vs-warehouse-es.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="article:published_time" content="2026-05-25" />
+  <meta property="article:published_time" content="2026-07-01" />
   <meta property="article:section" content="Data &amp; Analytics" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lakehouse no es la bala de plata: cuándo el warehouse sencillo sigue ganando | Kliente 360" />
@@ -41,7 +41,8 @@
   "@type": "Article",
   "headline": "Lakehouse no es la bala de plata: cuándo el warehouse sencillo sigue ganando",
   "description": "¿Lakehouse o warehouse sencillo? La respuesta depende del volumen, la variedad del dato y la madurez del equipo — no del discurso del vendor.",
-  "datePublished": "2026-05-25",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
   "inLanguage": "es-ES",
   "image": "https://kliente360.com/assets/img/og/lakehouse-vs-warehouse-es.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/es/lakehouse-vs-warehouse.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -88,6 +97,39 @@
       "position": 3,
       "name": "Lakehouse no es la bala de plata: cuándo el warehouse sencillo sigue ganando",
       "item": "https://kliente360.com/blog/es/lakehouse-vs-warehouse.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuándo vale la pena migrar a lakehouse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cuando tres condiciones existen al mismo tiempo: volumen y variedad que un warehouse gestionado no soporta con costo razonable (IoT industrial, cientos de millones de eventos por día, streaming continuo); ML corriendo en producción — no en piloto, no en planes; e ingeniería madura para operar compaction, Z-ordering, vacuum y schema evolution como rutina semanal.\n\nSi falta una de las tres, estás agregando complejidad sin la ganancia que la justifica. &quot;Planes de ML&quot; y &quot;ser más moderno&quot; no definen workload — y una plataforma nueva no define el problema, solo amplifica lo que ya existe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Un warehouse gestionado alcanza para una empresa mediana?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En la gran mayoría de los casos, sí — y por años. El perfil típico de empresa mediana es dato transaccional y estructurado (CRM, ERP, e-commerce, SaaS) en el rango de algunos terabytes, un alcance donde Snowflake, BigQuery o Databricks SQL operan con holgura, con SQL estándar y operación esencialmente cero. Un modelado dimensional bien hecho encima cubre el 90% de los casos analíticos.\n\nEn escala de terabytes, el warehouse gestionado suele tener menor TCO que el lakehouse cuando sumás la ingeniería de operación a la cuenta — vacuum, compaction y upgrades vienen en la licencia, y un analista funcional aprende a operarlo en días. El lakehouse recién se vuelve competitivo en costo cerca del petabyte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto demora tener analytics corriendo en cada arquitectura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Con warehouse gestionado, ELT y dbt, un equipo entrega analytics confiable en cuatro a seis semanas. El mismo setup en lakehouse lleva de tres a cuatro meses, exige un ingeniero familiarizado con Iceberg o Delta — un perfil con costo y tiempos de contratación propios — y requiere gobernanza de compaction desde el día 1.\n\nEl resultado analítico es equivalente; el costo de llegar ahí no lo es. Y migrar de warehouse a lakehouse no es lift-and-shift: es reescritura de pipelines, curva de aprendizaje de un stack nuevo y una capa de observabilidad distinta — un costo que rara vez aparece en el deck del vendor."
+      }
     }
   ]
 }
@@ -159,11 +201,11 @@
           </div>
           <h1 data-pagefind-meta="title">Lakehouse no es la bala de plata: cuándo el warehouse sencillo sigue ganando</h1>
           <div class="post-meta-line">
-            <time datetime="2026-05-25">25 may 2026</time>
+            <time datetime="2026-07-01">1 jul 2026</time>
             <span class="sep">·</span>
             <span>7 min de lectura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
           </div>
         </div>
       </header>
@@ -217,6 +259,17 @@
 <h2>La decisión correcta es menos elegante</h2>
 <p>Un warehouse bien operado, con <a href="/blog/es/dbt-na-pratica.html">dbt para versionado, documentación y tests de modelos</a>, cubre el analítico de empresas medianas por años. Lakehouse tiene su lugar — en datos intensivos de eventos, en operaciones con ML maduro, en equipos con ingeniería sólida que necesita lo que los warehouses gestionados no entregan bien.</p>
 <p>La conversación que importa no es qué arquitectura tiene más slides en conferencias. Es quién es dueño del dato, cómo está versionado el modelado, y qué casos de uso sirve la plataforma hoy. Comprar lakehouse sin el workload que lo justifica es pagar por motor de avión en un auto de ciudad — el auto anda, el motor no ayuda, y el mantenimiento aparece en la próxima revisión.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.</p>
+<h2>¿Cuándo vale la pena migrar a lakehouse?</h2>
+<p>Cuando tres condiciones existen al mismo tiempo: volumen y variedad que un warehouse gestionado no soporta con costo razonable (IoT industrial, cientos de millones de eventos por día, streaming continuo); ML corriendo en producción — no en piloto, no en planes; e ingeniería madura para operar compaction, Z-ordering, vacuum y schema evolution como rutina semanal.</p>
+<p>Si falta una de las tres, estás agregando complejidad sin la ganancia que la justifica. &quot;Planes de ML&quot; y &quot;ser más moderno&quot; no definen workload — y una plataforma nueva no define el problema, solo amplifica lo que ya existe.</p>
+<h2>¿Un warehouse gestionado alcanza para una empresa mediana?</h2>
+<p>En la gran mayoría de los casos, sí — y por años. El perfil típico de empresa mediana es dato transaccional y estructurado (CRM, ERP, e-commerce, SaaS) en el rango de algunos terabytes, un alcance donde Snowflake, BigQuery o Databricks SQL operan con holgura, con SQL estándar y operación esencialmente cero. Un modelado dimensional bien hecho encima cubre el 90% de los casos analíticos.</p>
+<p>En escala de terabytes, el warehouse gestionado suele tener menor TCO que el lakehouse cuando sumás la ingeniería de operación a la cuenta — vacuum, compaction y upgrades vienen en la licencia, y un analista funcional aprende a operarlo en días. El lakehouse recién se vuelve competitivo en costo cerca del petabyte.</p>
+<h2>¿Cuánto demora tener analytics corriendo en cada arquitectura?</h2>
+<p>Con warehouse gestionado, ELT y dbt, un equipo entrega analytics confiable en cuatro a seis semanas. El mismo setup en lakehouse lleva de tres a cuatro meses, exige un ingeniero familiarizado con Iceberg o Delta — un perfil con costo y tiempos de contratación propios — y requiere gobernanza de compaction desde el día 1.</p>
+<p>El resultado analítico es equivalente; el costo de llegar ahí no lo es. Y migrar de warehouse a lakehouse no es lift-and-shift: es reescritura de pipelines, curva de aprendizaje de un stack nuevo y una capa de observabilidad distinta — un costo que rara vez aparece en el deck del vendor.</p>
 
         </div>
       </div>
@@ -256,28 +309,28 @@
         <div class="container">
           <h2>Próximas lecturas</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/es/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">26 may 2026</span>
-              </div>
-              <h3>Tendencias de data management 2026: 5 que cambian, 3 que no</h3>
-              <div class="read">Leer →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/es/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">22 may 2026</span>
+                <span class="post-date">30 jun 2026</span>
               </div>
               <h3>Observabilidad de datos: detectar fallos antes que el stakeholder</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="card post-card" data-pillar="data" href="/blog/es/modern-data-stack-2026.html">
+            <a class="card post-card" data-pillar="data" href="/blog/es/customer-data-platform-commodity.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">13 may 2026</span>
+                <span class="post-date">24 jun 2026</span>
               </div>
-              <h3>Modern Data Stack en 2026: qué sobrevivió, qué murió, qué se volvió commodity</h3>
+              <h3>Customer Data Platform se volvió commodity — qué queda</h3>
+              <div class="read">Leer →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/es/multi-cloud-mito-ou-estrategia.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 02 · Data</span>
+                <span class="post-date">16 jun 2026</span>
+              </div>
+              <h3>Multi-cloud: mito o estrategia — criterio honesto para decidir</h3>
               <div class="read">Leer →</div>
             </a>
           </div>

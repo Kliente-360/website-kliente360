@@ -90,3 +90,25 @@ Si tu empresa tiene equipo de datos que apaga incendios con frecuencia, y la cau
 Si tu empresa no tiene equipo de datos maduro todavía, el contract es prematuro. Otras disciplinas necesitan venir antes — [observabilidad de datos](/blog/es/observabilidade-de-dados.html), ownership claro de modelo, eval set de calidad. Implementar contract sobre caos solo formaliza el caos.
 
 Los contracts no crean cultura de calidad — solo cristalizan la que ya existe o empezó a existir. Esa es la prueba real antes de adoptar.
+
+## Preguntas que siempre vuelven
+
+Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.
+
+## ¿Vale la pena implementar data contracts en mi empresa?
+
+Vale si tu equipo de datos apaga incendios seguido y la causa raíz suele ser "cambio en el schema fuente". En ese escenario, contracts aplicados a las 3–5 entidades críticas evitan el 80% de los incidentes de pipeline y pagan el ROI de seis meses con el primer incidente evitado.
+
+Si el equipo de datos todavía no es maduro, el contract es prematuro — observabilidad, ownership claro de modelos y disciplina de calidad tienen que venir antes. El contract no crea cultura de calidad; solo cristaliza la que ya existe. Implementarlo sobre el caos solo formaliza el caos.
+
+## ¿Cuántas entidades deberían tener contrato?
+
+Tres a cinco entidades críticas — no los 200 modelos del warehouse. Aplicar contracts a todo es el error que mata el proyecto: se vuelve overhead pesado que nadie mantiene. Los criterios para elegir: la rotura causa un dashboard ejecutivo equivocado (entidades como `customer`, `order`, `subscription`), hay múltiples consumidores downstream (5+ dashboards, modelos de ML, integración externa), y productor y consumidor viven en equipos que se hablan poco.
+
+Dentro de esos criterios, ignorar el contract es aceptar incidentes recurrentes sin causa clara. Fuera de ellos, es sobre-ingeniería — en el mismo squad, la conversación sale más barata que el contrato. La expansión viene después, una entidad por vez, según aparece el dolor.
+
+## ¿Cuánto tiempo lleva implementar data contracts?
+
+Cerca de 12 semanas para pasar de cero a operación corriendo — no es un proyecto de 12 meses. La secuencia: 2 semanas para elegir las 3 entidades críticas, 2 semanas para escribir los contratos (schema, semántica, SLO, política de cambio — cada uno entra en un archivo de 30–80 líneas), 4 semanas para poner el CI bloqueando cambios breaking sin bump de versión, y 4 semanas para el dashboard de freshness y violaciones.
+
+La herramienta dejó de ser el bloqueo: schema registries, validators y el `contract: true` nativo de dbt ya cubren el stack. Lo que define el éxito es el alcance — quien intenta 50 entidades de una vez falla; quien hace 3 bien alcanza cobertura útil en 6 meses.

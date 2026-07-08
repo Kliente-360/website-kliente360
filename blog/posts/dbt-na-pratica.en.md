@@ -58,3 +58,25 @@ If you're adopting dbt now, three practical moves that pay back more than pickin
 **Treat `dbt docs` as an internal product.** Present it in team meetings, put the link on the intranet, train analysts to use it before the warehouse. Documentation no one opens is overhead. Documentation that becomes the first lookup pays six times the effort to keep.
 
 dbt without that discipline is just a better version of the old ETL — and better ETL is already something. With that discipline, it becomes the piece that stops the warehouse from being a black box. The difference between the two uses is a culture, not a feature. ([On the map of what survived from the Modern Data Stack in 2026](/blog/en/modern-data-stack-2026.html), versioned transformation as code is one of three pieces that passed the test — and dbt was the one that proved the thesis.)
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most often when this topic hits the table.
+
+## Is dbt worth adopting just for versioning and tests?
+
+It is — but that's the floor, not the ceiling. SQL versioned in Git, declarative tests in CI, automatic lineage, and `ref()` resolving dependencies already justify adoption on their own. But a team that stops at that package ends up with a better version of the same ETL it had before.
+
+The game-changing gain shows up in documentation: schema YAML with model and column descriptions, explicit owners, `dbt docs` as the warehouse's canonical dictionary. That's the usage that lets a new analyst walk in and understand the warehouse alone, and a diverging metric get resolved in minutes on the lineage instead of in a meeting.
+
+## Can we document after the models are built?
+
+In practice, no — "document later" is the pattern that never happens. In three months nobody has documented, in six the team has forgotten why the model exists, in twelve the new analyst rebuilds a parallel model because they don't trust the existing one. Documentation is continuous work, not a phase with an end.
+
+The antidote is making descriptions a PR-blocker from day 1: a model without a description doesn't pass CI, and neither does an undescribed column in a `mart` model. It's rigid on purpose — five minutes in the PR save three months next quarter, and fighting with the team once at the start is cheaper than recovering documentation six months later.
+
+## Does dbt replace a data catalog?
+
+For most mid-market companies, yes — a filled-in `dbt docs` covers 80% of what a premium data catalog would try to deliver, without the annual license. Visual lineage, descriptions, tests, and freshness in a navigable site cover the real usage: finding out what each table means and what breaks downstream of a change.
+
+The condition is the word "filled-in". `dbt docs` with empty descriptions is as useless as a catalog nobody opens. The value comes from discipline — mandatory descriptions, an owner per model, documented exposures — and from treating the site as an internal product, presented to and used by the team, not as a technical byproduct.

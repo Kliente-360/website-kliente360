@@ -42,6 +42,7 @@
   "headline": "RAG en la práctica: la recuperación es el cuello de botella, no el LLM",
   "description": "Los equipos gastan meses afinando prompt y modelo mientras el retrieval entrega el documento equivocado. Por qué recuperar es más difícil que generar — y qué medir.",
   "datePublished": "2026-01-13",
+  "dateModified": "2026-06-25",
   "inLanguage": "es-ES",
   "image": "https://kliente360.com/assets/img/og/rag-na-pratica-es.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/es/rag-na-pratica.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -88,6 +97,39 @@
       "position": 3,
       "name": "RAG en la práctica: la recuperación es el cuello de botella, no el LLM",
       "item": "https://kliente360.com/blog/es/rag-na-pratica.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Por qué mi RAG responde mal si el LLM es bueno?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque el problema casi nunca está en la generación — está en la recuperación. El modelo responde bien sobre el contexto que recibe; si el retrieval entrega el documento equivocado, el fragmento cortado en el lugar equivocado, o deja afuera el fragmento que cambia la respuesta, la salida sale mal con apariencia de correcta. Cambiar de modelo o pulir el prompt no arregla eso.\n\nLos modos de falla más comunes son conocidos: chunking ingenuo, embeddings genéricos sobre vocabulario de dominio, top-k sin reranking, falta de query rewriting y evaluación hecha solo sobre la respuesta final. Juntos explican el 80% de los pilotos que quedan trabados en el &quot;casi funciona&quot;."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué medir para saber si el retrieval está funcionando?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tres métricas resuelven el 90% de los casos: recall@k, MRR y faithfulness. Recall@k dice si los documentos necesarios están llegando al contexto (abajo de 80% en recall@10, el sistema deja contexto crítico afuera). MRR dice en qué posición aparece el fragmento correcto — si está bajo, el LLM lee primero el contexto equivocado. Faithfulness mide cuánto de la respuesta tiene soporte directo en lo recuperado.\n\nEl prerrequisito es un conjunto de evaluación con respuestas correctas marcadas — entre 10 y 50 preguntas con sus documentos correctos. Sin eso, cualquier ajuste es optimizar a ciegas; medir solo &quot;satisfacción del usuario&quot; no separa problema de corpus de problema de búsqueda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena invertir en reranking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí — es el mejor retorno por hora de ingeniería en casi todo proyecto de RAG. Correr un reranker (cross-encoder o LLM con prompt de scoring) sobre el top-30 de la búsqueda inicial y reordenar a los 5–10 más relevantes sube el MRR de 0.3 a 0.6+ en la mayoría de los dominios — más de lo que lograría cambiar el modelo de embedding.\n\nEl motivo: el top-k por similitud vectorial pura es una lotería. Fragmentos casi idénticos ocupan posiciones, y el que importa puede estar en el puesto 12. El reranking corrige exactamente eso, sin tocar el resto de la pipeline."
+      }
     }
   ]
 }
@@ -163,7 +205,9 @@
             <span class="sep">·</span>
             <span>7 min de lectura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Actualizado el <time datetime="2026-06-25">25 jun 2026</time></span>
           </div>
         </div>
       </header>
@@ -189,7 +233,7 @@
 <p>Son los modos de falla que aparecen en casi todo proyecto. Vale catalogarlos antes de empezar.</p>
 <ol>
 <li><strong>Chunking ingenuo.</strong> Partir el documento en pedazos de 500 tokens por ventana deslizante es el default y rara vez lo correcto. El pedazo corta a la mitad la definición, pierde el título de la sección, separa la pregunta de la respuesta. El chunking tiene que respetar la estructura semántica del documento — capítulos, secciones, bloques lógicos — no el reloj de tokens.</li>
-<li><strong>Embeddings genéricos sobre vocabulario específico.</strong> Los modelos de embedding pre-entrenados son buenos en lenguaje general. En dominios técnicos (jurídico, médico, financiero, código), la distancia vectorial entre &quot;rescisión&quot; y &quot;terminación&quot; puede no capturar el matiz que cambia la respuesta. Sin fine-tuning o modelos de dominio, el ranking sale sesgado.</li>
+<li><strong>Embeddings genéricos sobre vocabulario específico.</strong> Los modelos de embedding pre-entrenados son buenos en lenguaje general. En dominios técnicos (jurídico, médico, financiero, código), la distancia vectorial entre &quot;rescisión&quot; y &quot;terminación&quot; puede no capturar el matiz que cambia la respuesta. Sin fine-tuning o modelos de dominio, el ranking sale sesgado — y <a href="/blog/es/quando-fine-tuning-supera-rag.html">el fine-tuning en corpus de dominio es exactamente el patrón que supera a RAG en terminología técnica cerrada</a>.</li>
 <li><strong>Top-k a ciegas.</strong> Tomar los 5 o 10 fragmentos más cercanos por similitud vectorial suena razonable, pero ignora dos hechos: los fragmentos pueden ser casi idénticos (redundancia) y el que importa puede estar en el puesto 12 (pérdida). Sin reranking, el top-k es lotería.</li>
 <li><strong>Falta de query rewriting.</strong> La pregunta que el usuario hace rara vez es la pregunta que recupera bien. &quot;¿Qué cambió en el contrato?&quot; es vaga, corta, sin términos técnicos. El sistema tiene que reformular la consulta — expandir, descomponer, reescribir en el vocabulario del corpus — antes de buscar. Saltarse ese paso es entregar búsqueda mala por diseño.</li>
 <li><strong>Evaluación solo en la generación.</strong> El equipo mide calidad por la respuesta final del LLM e intenta optimizar el sistema entero por el output. Es como evaluar un auto entero solo por el color: nunca descubrís si el motor es bueno. El retrieval tiene que evaluarse <em>aparte</em> de la generación — con métricas propias.</li>
@@ -204,7 +248,7 @@
 <h2>Anatomía de una pipeline que funciona</h2>
 <p>La consultoría decente arma RAG en capas, no como una llamada de API. El esqueleto que entregamos en proyecto serio tiene cinco pasos, cada uno instrumentado.</p>
 <p><strong>Chunking informado por la estructura.</strong> Cortar respetando headings, párrafos, bloques lógicos. Superposición del 10–20% entre chunks adyacentes para evitar pérdida de contexto en el borde. Metadatos embebidos: título de la sección, jerarquía, fuente, fecha.</p>
-<p><strong>Indexación híbrida.</strong> Vector (embedding) + texto (BM25 o similar). El vector capta semántica; el texto capta términos exactos (nombre de producto, código, número de cláusula). El top-k combinado cubre más que cada uno por separado. <a href="/blog/es/vector-databases-comparados.html">La elección del vector database — Pinecone, Weaviate o pgvector — depende más del contexto operativo que de la performance bruta</a>.</p>
+<p><strong>Indexación híbrida.</strong> Vector (embedding) + texto (<a href="/blog/es/vector-database-ou-search-engine.html">BM25 o similar</a>). El vector capta semántica; el texto capta términos exactos (nombre de producto, código, número de cláusula). El top-k combinado cubre más que cada uno por separado. <a href="/blog/es/vector-databases-comparados.html">La elección del vector database — Pinecone, Weaviate o pgvector — depende más del contexto operativo que de la performance bruta</a>.</p>
 <p><strong>Query rewriting antes de la búsqueda.</strong> El mismo LLM que va a generar la respuesta — o un modelo más chico dedicado — reformula la pregunta del usuario en 2–3 variantes, expande términos, descompone preguntas compuestas. Cada variante busca; los resultados se combinan.</p>
 <p><strong>Reranking sobre el top-k expandido.</strong> Tomar top-30 de la búsqueda inicial y correr un reranker (cross-encoder o LLM con prompt de scoring) que reordena por los 5–10 más relevantes para esa pregunta específica. Ese paso sube el MRR de 0.3 a 0.6+ en la mayoría de los dominios. Es el mejor retorno por hora de ingeniería.</p>
 <p><strong>Generación con cita de fuente.</strong> El LLM responde <em>y cita el fragmento exacto</em> que sustenta cada afirmación. No es solo UX — es lo que permite medir faithfulness después. Sin cita, no hay auditoría.</p>
@@ -215,6 +259,17 @@
 <h2>Para el sponsor que pregunta &quot;¿por qué tan complicado?&quot;</h2>
 <p>Porque parece simple en la demo. En la demo el usuario pregunta lo que el ingeniero probó; el sistema acierta. En producción, la distribución de preguntas es más amplia, los documentos están más sucios, y cada modo de falla aparece. RAG bien hecho no es más caro que RAG mal hecho — solo está distribuido distinto en el tiempo. El equipo que invierte dos o tres semanas en retrieval evita seis meses de &quot;¿por qué esta respuesta está mal?&quot;.</p>
 <p>La buena noticia: las cinco razones de falla son conocidas, las tres métricas son estándar, la pipeline en cinco capas entra en cualquier proyecto serio. Lo que separa a quien entrega de quien queda en piloto es tratar el retrieval como producto, no como detalle de implementación.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.</p>
+<h2>¿Por qué mi RAG responde mal si el LLM es bueno?</h2>
+<p>Porque el problema casi nunca está en la generación — está en la recuperación. El modelo responde bien sobre el contexto que recibe; si el retrieval entrega el documento equivocado, el fragmento cortado en el lugar equivocado, o deja afuera el fragmento que cambia la respuesta, la salida sale mal con apariencia de correcta. Cambiar de modelo o pulir el prompt no arregla eso.</p>
+<p>Los modos de falla más comunes son conocidos: chunking ingenuo, embeddings genéricos sobre vocabulario de dominio, top-k sin reranking, falta de query rewriting y evaluación hecha solo sobre la respuesta final. Juntos explican el 80% de los pilotos que quedan trabados en el &quot;casi funciona&quot;.</p>
+<h2>¿Qué medir para saber si el retrieval está funcionando?</h2>
+<p>Tres métricas resuelven el 90% de los casos: recall@k, MRR y faithfulness. Recall@k dice si los documentos necesarios están llegando al contexto (abajo de 80% en recall@10, el sistema deja contexto crítico afuera). MRR dice en qué posición aparece el fragmento correcto — si está bajo, el LLM lee primero el contexto equivocado. Faithfulness mide cuánto de la respuesta tiene soporte directo en lo recuperado.</p>
+<p>El prerrequisito es un conjunto de evaluación con respuestas correctas marcadas — entre 10 y 50 preguntas con sus documentos correctos. Sin eso, cualquier ajuste es optimizar a ciegas; medir solo &quot;satisfacción del usuario&quot; no separa problema de corpus de problema de búsqueda.</p>
+<h2>¿Vale la pena invertir en reranking?</h2>
+<p>Sí — es el mejor retorno por hora de ingeniería en casi todo proyecto de RAG. Correr un reranker (cross-encoder o LLM con prompt de scoring) sobre el top-30 de la búsqueda inicial y reordenar a los 5–10 más relevantes sube el MRR de 0.3 a 0.6+ en la mayoría de los dominios — más de lo que lograría cambiar el modelo de embedding.</p>
+<p>El motivo: el top-k por similitud vectorial pura es una lotería. Fragmentos casi idénticos ocupan posiciones, y el que importa puede estar en el puesto 12. El reranking corrige exactamente eso, sin tocar el resto de la pipeline.</p>
 
         </div>
       </div>
@@ -254,28 +309,28 @@
         <div class="container">
           <h2>Próximas lecturas</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="ai" href="/blog/es/quando-fine-tuning-supera-rag.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/arquitetura-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">27 may 2026</span>
+                <span class="post-date">8 jul 2026</span>
               </div>
-              <h3>RAG no es la respuesta — 6 patrones donde el fine-tuning gana</h3>
+              <h3>Arquitectura de un servidor MCP: transporte, autenticación y dónde se rompe</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/es/finops-de-ia.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/model-context-protocol-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">24 may 2026</span>
+                <span class="post-date">7 jul 2026</span>
               </div>
-              <h3>FinOps de IA: cómo cobrar inferencia de LLM al cliente interno sin pelear con TI</h3>
+              <h3>Model Context Protocol: qué cambia cuando cada herramienta expone MCP</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/es/quando-agente-e-resposta.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/vector-database-ou-search-engine.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">20 may 2026</span>
+                <span class="post-date">17 jun 2026</span>
               </div>
-              <h3>Cuándo un agente es la respuesta — y cuándo es huida de un problema mal modelado</h3>
+              <h3>Vector database no es obligatorio en RAG — cuando el índice clásico gana</h3>
               <div class="read">Leer →</div>
             </a>
           </div>

@@ -42,6 +42,7 @@
   "headline": "ELT vs ETL: por qué cambió la moda y qué importa de verdad",
   "description": "ELT se volvió consenso en casi todo deck de arquitectura. Pero el cambio de letras no es la ganancia real — y copiar el patrón sin entender el motivo traba más proyectos de los que destraba.",
   "datePublished": "2026-01-28",
+  "dateModified": "2026-05-25",
   "inLanguage": "es-ES",
   "image": "https://kliente360.com/assets/img/og/elt-vs-etl-es.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/es/elt-vs-etl.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -88,6 +97,39 @@
       "position": 3,
       "name": "ELT vs ETL: por qué cambió la moda y qué importa de verdad",
       "item": "https://kliente360.com/blog/es/elt-vs-etl.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿ETL todavía tiene sentido en 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, en tres contextos específicos. Compliance restrictivo donde el dato sensible no puede circular (salud, financiero con reglas propias) — ahí filtrar antes de la carga es diseño, no preferencia técnica. Volumen tan grande que el storage cloud crudo se vuelve caro (IoT industrial, logs de transacciones en millones de TPS), donde agregar antes cambia el orden de magnitud del costo. Y sistemas fuente legados con latencia alta, donde transformar en el camino ahorra un paso.\n\nFuera de esos tres, ELT es el default razonable. Pero ETL bien hecho todavía existe y funciona en esos nichos — la narrativa de que &quot;ETL murió&quot; es simplista."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué ELT se volvió el estándar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque el costo relativo del compute se invirtió, no porque transformar después sea virtud. ETL nació cuando almacenar era barato y procesar era caro; el warehouse cloud hizo el storage casi gratis y el compute elástico bajo demanda, así que transformar antes de la carga pasó a ser pagar dos veces para ahorrar lo que ya no cuesta.\n\nLa ganancia real está en otro lado: ELT permite separar la ingesta (commodity — Fivetran, Airbyte, Meltano la resuelven) de la modelación (donde vive el valor, con dbt, SQL versionado y tests). En ETL, las dos quedaban acopladas en el mismo job — romper una rompía la otra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuáles son los riesgos de adoptar ELT sin criterio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tres aparecen seguido: cargar todo &quot;porque el storage es barato&quot; y terminar con 800 tablas crudas que nadie sabe usar; transformar dentro del warehouse sin dbt — <code>CREATE TABLE AS SELECT</code> suelto, sin versionado ni tests, que es solo ETL peor; y olvidar compliance, porque en ELT el dato sensible llega crudo al warehouse y, sin masking y tagging desde el día 1, se vuelve un pasivo de privacidad que ETL evitaba por diseño.\n\nNinguno de esos invalida ELT — invalidan ELT mal hecho. La pregunta que importa sigue siendo quién es dueño de la modelación y cómo está versionada, independiente de la sigla."
+      }
     }
   ]
 }
@@ -163,7 +205,9 @@
             <span class="sep">·</span>
             <span>6 min de lectura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Actualizado el <time datetime="2026-05-25">25 may 2026</time></span>
           </div>
         </div>
       </header>
@@ -205,6 +249,17 @@
 <p>La conversación que importa no es &quot;qué sigla&quot;. Es: <strong>quién es dueño de la modelación, y cómo está versionada</strong>. Eso vale tanto en ETL como en ELT. Equipo que tiene dueño claro, transformación en Git, tests automatizados y documentación viva entrega valor. Equipo que no lo tiene va a entregar quilombo — independiente de la sigla en la arquitectura.</p>
 <p><a href="/blog/es/dado-limpo-e-um-mito.html">El mito del dato limpio sigue valiendo en ambos</a> — la calidad es relativa al uso, no absoluta. ELT facilita iterar (podés remodelar sin rehacer la ingesta), pero no cambia la regla fundamental.</p>
 <p>Si tu empresa está discutiendo ELT vs ETL como decisión estratégica, probablemente está en la pregunta equivocada. La decisión estratégica es cómo organizar la ingesta (comprá, no construyas) y la modelación (versionada, testeada, documentada). La sigla es detalle.</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.</p>
+<h2>¿ETL todavía tiene sentido en 2026?</h2>
+<p>Sí, en tres contextos específicos. Compliance restrictivo donde el dato sensible no puede circular (salud, financiero con reglas propias) — ahí filtrar antes de la carga es diseño, no preferencia técnica. Volumen tan grande que el storage cloud crudo se vuelve caro (IoT industrial, logs de transacciones en millones de TPS), donde agregar antes cambia el orden de magnitud del costo. Y sistemas fuente legados con latencia alta, donde transformar en el camino ahorra un paso.</p>
+<p>Fuera de esos tres, ELT es el default razonable. Pero ETL bien hecho todavía existe y funciona en esos nichos — la narrativa de que &quot;ETL murió&quot; es simplista.</p>
+<h2>¿Por qué ELT se volvió el estándar?</h2>
+<p>Porque el costo relativo del compute se invirtió, no porque transformar después sea virtud. ETL nació cuando almacenar era barato y procesar era caro; el warehouse cloud hizo el storage casi gratis y el compute elástico bajo demanda, así que transformar antes de la carga pasó a ser pagar dos veces para ahorrar lo que ya no cuesta.</p>
+<p>La ganancia real está en otro lado: ELT permite separar la ingesta (commodity — Fivetran, Airbyte, Meltano la resuelven) de la modelación (donde vive el valor, con dbt, SQL versionado y tests). En ETL, las dos quedaban acopladas en el mismo job — romper una rompía la otra.</p>
+<h2>¿Cuáles son los riesgos de adoptar ELT sin criterio?</h2>
+<p>Tres aparecen seguido: cargar todo &quot;porque el storage es barato&quot; y terminar con 800 tablas crudas que nadie sabe usar; transformar dentro del warehouse sin dbt — <code>CREATE TABLE AS SELECT</code> suelto, sin versionado ni tests, que es solo ETL peor; y olvidar compliance, porque en ELT el dato sensible llega crudo al warehouse y, sin masking y tagging desde el día 1, se vuelve un pasivo de privacidad que ETL evitaba por diseño.</p>
+<p>Ninguno de esos invalida ELT — invalidan ELT mal hecho. La pregunta que importa sigue siendo quién es dueño de la modelación y cómo está versionada, independiente de la sigla.</p>
 
         </div>
       </div>
@@ -244,18 +299,10 @@
         <div class="container">
           <h2>Próximas lecturas</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/es/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">26 may 2026</span>
-              </div>
-              <h3>Tendencias de data management 2026: 5 que cambian, 3 que no</h3>
-              <div class="read">Leer →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/es/lakehouse-vs-warehouse.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">25 may 2026</span>
+                <span class="post-date">1 jul 2026</span>
               </div>
               <h3>Lakehouse no es la bala de plata: cuándo el warehouse sencillo sigue ganando</h3>
               <div class="read">Leer →</div>
@@ -263,9 +310,17 @@
             <a class="card post-card" data-pillar="data" href="/blog/es/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">22 may 2026</span>
+                <span class="post-date">30 jun 2026</span>
               </div>
               <h3>Observabilidad de datos: detectar fallos antes que el stakeholder</h3>
+              <div class="read">Leer →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/es/customer-data-platform-commodity.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 02 · Data</span>
+                <span class="post-date">24 jun 2026</span>
+              </div>
+              <h3>Customer Data Platform se volvió commodity — qué queda</h3>
               <div class="read">Leer →</div>
             </a>
           </div>

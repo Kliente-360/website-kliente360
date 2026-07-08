@@ -64,3 +64,25 @@ The conversation that matters isn't "which acronym". It's: **who owns the modeli
 [The clean-data myth still applies to both](/blog/en/dado-limpo-e-um-mito.html) — quality is relative to use, not absolute. ELT makes iteration easier (you can remodel without redoing ingestion), but it doesn't change the fundamental rule.
 
 If your company is discussing ELT vs ETL as a strategic decision, it's probably on the wrong question. The strategic decision is how to organize ingestion (buy, don't build) and modeling (versioned, tested, documented). The acronym is a detail.
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most often when this topic hits the table.
+
+## Does ETL still make sense in 2026?
+
+Yes, in three specific contexts. Restrictive compliance where sensitive data can't travel (healthcare, finance with specific rules) — there, filtering before load is design, not a technical preference. Volume so large that raw cloud storage gets expensive (industrial IoT, transaction logs at millions of TPS), where aggregating first changes the order of magnitude of the cost. And legacy source systems with high latency, where transforming in transit saves a step.
+
+Outside those three, ELT is the reasonable default. But well-built ETL still exists and works in those niches — the "ETL is dead" narrative is simplistic.
+
+## Why did ELT become the standard?
+
+Because the relative cost of compute flipped, not because transforming later is a virtue. ETL was born when storing was cheap and processing was expensive; cloud warehouses made storage nearly free and compute elastic on demand, so transforming before load became paying twice to save on something that no longer costs much.
+
+The real gain lives elsewhere: ELT lets you separate ingestion (a commodity — Fivetran, Airbyte, Meltano handle it) from modeling (where the value lives, with dbt, versioned SQL, and tests). In ETL, the two were coupled in the same job — breaking one broke the other.
+
+## What are the risks of adopting ELT blindly?
+
+Three show up often: loading everything "because storage is cheap" and ending up with 800 raw tables nobody knows how to use; transforming inside the warehouse without dbt — loose `CREATE TABLE AS SELECT`, no versioning, no tests, which is just worse ETL; and forgetting compliance, because in ELT sensitive data lands raw in the warehouse and, without masking and tagging from day 1, becomes a privacy liability that ETL avoided by design.
+
+None of these invalidates ELT — they invalidate ELT done badly. The question that matters is still who owns the modeling and how it's versioned, regardless of the acronym.

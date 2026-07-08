@@ -23,7 +23,7 @@
   <meta property="og:image" content="https://kliente360.com/assets/img/og/lakehouse-vs-warehouse-pt.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="article:published_time" content="2026-05-25" />
+  <meta property="article:published_time" content="2026-07-01" />
   <meta property="article:section" content="Data &amp; Analytics" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lakehouse não é silver bullet: quando warehouse simples ainda ganha | Kliente 360" />
@@ -41,7 +41,8 @@
   "@type": "Article",
   "headline": "Lakehouse não é silver bullet: quando warehouse simples ainda ganha",
   "description": "Lakehouse ou warehouse simples? A resposta depende de volume, diversidade de dado e maturidade de time — não da conversa do vendor.",
-  "datePublished": "2026-05-25",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
   "inLanguage": "pt-BR",
   "image": "https://kliente360.com/assets/img/og/lakehouse-vs-warehouse-pt.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/lakehouse-vs-warehouse.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -88,6 +97,39 @@
       "position": 3,
       "name": "Lakehouse não é silver bullet: quando warehouse simples ainda ganha",
       "item": "https://kliente360.com/blog/lakehouse-vs-warehouse.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quando vale a pena migrar pra lakehouse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quando três condições existem ao mesmo tempo: volume e variedade que warehouse gerenciado não comporta com custo razoável (IoT industrial, centenas de milhões de eventos por dia, streaming contínuo); ML rodando em produção — não em piloto, não em plano; e engenharia madura pra operar compaction, Z-ordering, vacuum e schema evolution como rotina semanal.\n\nSe uma das três falta, você está adicionando complexidade sem o ganho que a justifica. &quot;Planos de ML&quot; e &quot;ser mais moderno&quot; não definem workload — e plataforma nova não define problema, só amplifica o que já existe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warehouse gerenciado dá conta de uma empresa de médio porte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Na grande maioria dos casos, sim — e por anos. O perfil típico de médio porte é dado transacional e estruturado (CRM, ERP, e-commerce, SaaS) na casa de alguns terabytes, escopo em que Snowflake, BigQuery ou Databricks SQL operam com folga, SQL padrão e operação essencialmente zero. Modelagem dimensional bem feita em cima disso cobre 90% dos casos analíticos.\n\nEm escala de terabytes, o warehouse gerenciado costuma ter TCO menor que lakehouse quando se soma a engenharia de operação à conta — vacuum, compaction e upgrades vêm na licença, e analista funcional aprende a operar em dias. Lakehouse só fica competitivo em custo lá perto do petabyte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo leva pra ter analytics rodando em cada arquitetura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Com warehouse gerenciado, ELT e dbt, um time entrega analytics confiável em quatro a seis semanas. O mesmo setup em lakehouse leva de três a quatro meses, exige engenheiro familiarizado com Iceberg ou Delta — perfil com custo e lead time próprios no mercado brasileiro — e requer governança de compaction desde o dia 1.\n\nO resultado analítico é equivalente; o custo de chegar lá não é. E migração de warehouse pra lakehouse não é lift-and-shift: é reescrita de pipeline, curva de aprendizado de stack nova e camada de observabilidade diferente — custo que raramente aparece no deck do vendor."
+      }
     }
   ]
 }
@@ -159,11 +201,11 @@
           </div>
           <h1 data-pagefind-meta="title">Lakehouse não é silver bullet: quando warehouse simples ainda ganha</h1>
           <div class="post-meta-line">
-            <time datetime="2026-05-25">25 mai 2026</time>
+            <time datetime="2026-07-01">1 jul 2026</time>
             <span class="sep">·</span>
             <span>7 min de leitura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
           </div>
         </div>
       </header>
@@ -217,6 +259,17 @@
 <h2>A decisão certa é menos elegante</h2>
 <p>Warehouse bem operado, com <a href="/blog/dbt-na-pratica.html">dbt para versionamento, documentação e testes de modelo</a>, cobre o analítico de médio porte por anos. Lakehouse tem lugar — em dado intensivo de evento, em operação com ML maduro, em times com engenharia sólida que precisa do que warehouses gerenciados não entregam bem.</p>
 <p>A conversa que importa não é qual arquitetura tem mais slides em conferência. É quem é dono do dado, como a modelagem está versionada, e quais casos de uso a plataforma serve hoje. Comprar lakehouse sem o workload que o justifica é pagar por motor de avião num carro de cidade — o carro anda, o motor não ajuda, e a manutenção aparece na próxima revisão.</p>
+<h2>Perguntas que sempre voltam</h2>
+<p>Antes de fechar, as dúvidas que mais aparecem quando esse assunto entra na mesa.</p>
+<h2>Quando vale a pena migrar pra lakehouse?</h2>
+<p>Quando três condições existem ao mesmo tempo: volume e variedade que warehouse gerenciado não comporta com custo razoável (IoT industrial, centenas de milhões de eventos por dia, streaming contínuo); ML rodando em produção — não em piloto, não em plano; e engenharia madura pra operar compaction, Z-ordering, vacuum e schema evolution como rotina semanal.</p>
+<p>Se uma das três falta, você está adicionando complexidade sem o ganho que a justifica. &quot;Planos de ML&quot; e &quot;ser mais moderno&quot; não definem workload — e plataforma nova não define problema, só amplifica o que já existe.</p>
+<h2>Warehouse gerenciado dá conta de uma empresa de médio porte?</h2>
+<p>Na grande maioria dos casos, sim — e por anos. O perfil típico de médio porte é dado transacional e estruturado (CRM, ERP, e-commerce, SaaS) na casa de alguns terabytes, escopo em que Snowflake, BigQuery ou Databricks SQL operam com folga, SQL padrão e operação essencialmente zero. Modelagem dimensional bem feita em cima disso cobre 90% dos casos analíticos.</p>
+<p>Em escala de terabytes, o warehouse gerenciado costuma ter TCO menor que lakehouse quando se soma a engenharia de operação à conta — vacuum, compaction e upgrades vêm na licença, e analista funcional aprende a operar em dias. Lakehouse só fica competitivo em custo lá perto do petabyte.</p>
+<h2>Quanto tempo leva pra ter analytics rodando em cada arquitetura?</h2>
+<p>Com warehouse gerenciado, ELT e dbt, um time entrega analytics confiável em quatro a seis semanas. O mesmo setup em lakehouse leva de três a quatro meses, exige engenheiro familiarizado com Iceberg ou Delta — perfil com custo e lead time próprios no mercado brasileiro — e requer governança de compaction desde o dia 1.</p>
+<p>O resultado analítico é equivalente; o custo de chegar lá não é. E migração de warehouse pra lakehouse não é lift-and-shift: é reescrita de pipeline, curva de aprendizado de stack nova e camada de observabilidade diferente — custo que raramente aparece no deck do vendor.</p>
 
         </div>
       </div>
@@ -256,28 +309,28 @@
         <div class="container">
           <h2>Próximas leituras</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">26 mai 2026</span>
-              </div>
-              <h3>Tendências de data management 2026: 5 que mudam, 3 que não</h3>
-              <div class="read">Ler →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">22 mai 2026</span>
+                <span class="post-date">30 jun 2026</span>
               </div>
               <h3>Observabilidade de dados: detectar falhas antes do stakeholder</h3>
               <div class="read">Ler →</div>
             </a>
-            <a class="card post-card" data-pillar="data" href="/blog/modern-data-stack-2026.html">
+            <a class="card post-card" data-pillar="data" href="/blog/customer-data-platform-commodity.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">13 mai 2026</span>
+                <span class="post-date">24 jun 2026</span>
               </div>
-              <h3>Modern Data Stack em 2026: o que sobreviveu, o que morreu, o que virou commodity</h3>
+              <h3>Customer Data Platform virou commodity — o que sobrou</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/multi-cloud-mito-ou-estrategia.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 02 · Data</span>
+                <span class="post-date">16 jun 2026</span>
+              </div>
+              <h3>Multi-cloud: mito ou estratégia — critério honesto pra decidir</h3>
               <div class="read">Ler →</div>
             </a>
           </div>

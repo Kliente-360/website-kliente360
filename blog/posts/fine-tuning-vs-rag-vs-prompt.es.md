@@ -72,3 +72,25 @@ Ese caso es evitable con la regla simple de arriba. No es falta de competencia t
 Si estás en un comité discutiendo "fine-tuning o no", la pregunta correcta para hacerle al equipo técnico no es "cuál es mejor". Es: *¿ya agotamos prompt engineering? ¿ya probamos RAG?*. En el 80% de los casos, la respuesta va a ser "no en la profundidad necesaria". Ahí volvés un escalón, lo hacés bien, y la mayoría de los casos para ahí — con 1/10 del costo y en 1/4 del tiempo.
 
 Fine-tuning es la herramienta correcta para casos específicos. Solo no es el default — y tratarlo como default es la forma más cara de demorar la entrega de valor de IA en tu empresa. (Cuando se justifica, [la elección entre open source self-hosted y proprietary cambia la ecuación de costo](/blog/es/open-source-vs-proprietary-llms.html) — vale calcular antes de comprometerse.)
+
+## Preguntas que siempre vuelven
+
+Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.
+
+## ¿Vale la pena entrenar un modelo propio para mi empresa?
+
+En casi todos los casos, todavía no — y quizás nunca. El fine-tuning resuelve el 5–10% de los casos, los específicos de estilo, formato o dominio muy cerrado. El prompt engineering resuelve el 60%, RAG resuelve otro 30%, y la mayoría de las empresas intenta fine-tuning antes de agotar los dos anteriores — y quema caja en el intento.
+
+La regla es subir de escalón solo cuando agotaste el actual: instrucciones y few-shot primero; RAG cuando el modelo falla por falta de conocimiento; fine-tuning solo cuando el problema es cómo escribe el modelo después de recibir el contexto correcto, tenés 5 mil+ ejemplos etiquetados de calidad y un protocolo de evaluación serio. Sin esos tres, el fine-tuning es fe.
+
+## ¿Cuánto cuesta cada enfoque?
+
+En orden de magnitud: prompt engineering sale R$ 5–20 mil para correr un caso de uso decente en piloto, en días. RAG cuesta típicamente R$ 80–250 mil hasta producción, más R$ 10–30 mil/mes, en 4–8 semanas. Fine-tuning queda entre R$ 200 mil y R$ 1 millón hasta modelo en producción, lleva 2–6 meses, y el modelo necesita reentrenarse cada 6–12 meses.
+
+El ratio práctico: fine-tuning cuesta 5–20× más que RAG, que cuesta 5–15× más que prompt engineering. Y la diferencia no es solo plata — es cuánto invertís antes de saber si funciona. El prompt falla barato; el fine-tuning falla caro.
+
+## ¿Cuándo usar RAG en vez de fine-tuning?
+
+Cuando el problema es conocimiento, no comportamiento. Si el modelo falla porque no tiene acceso a documentos internos, políticas de la empresa o historial del cliente, RAG es el camino — el fine-tuning enseña patrones, no hechos. Un modelo fine-tuned olvida la mitad de las reglas o alucina sobre reglas que cambiaron.
+
+El test rápido: "¿el modelo fallaría menos si pegara el documento correcto en el contexto?". Si la respuesta es sí, RAG. El fine-tuning recién entra cuando el retrieval ya funciona bien (recall@k arriba de 80%) y lo que falta es estilo, jerga o formato — e incluso ahí, solo con datos de entrenamiento y evaluación a la altura.

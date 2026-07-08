@@ -74,3 +74,25 @@ Si estás trabado en esta decisión hoy, tres movimientos prácticos antes de cu
 **Decidir con cabeza de TCO de 3 años.** Costo de licencia + costo de integración + costo de operación + costo de migración. Esa cuenta suele cambiar la decisión en 30–40% de las empresas que la hacen antes de la compra.
 
 La capa de cliente unificado es una de las piezas más importantes del stack moderno. Pero es pieza — no estrategia. Comprar plataforma sin el resto del roadmap claro es la forma más cara de empujar la decisión hacia adelante sin resolverla.
+
+## Preguntas que siempre vuelven
+
+Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.
+
+## ¿Necesito un CDP si ya uso Salesforce?
+
+Probablemente no como producto separado. Si ya pagás Sales, Service y Marketing Cloud, Data Cloud entrega las tres capas — identidad unificada, activación operacional y contexto para agentes — como parte de la plataforma, sin integración custom. Como la integración con el ecosistema Salesforce la pagarías de todos modos, el TCO suele inclinarse hacia Data Cloud.
+
+La ecuación cambia si no sos Salesforce-first. Una empresa en HubSpot o con CRM propio todavía encuentra sentido en un CDP externo — o trata Customer 360 como el proyecto de integración que siempre fue. La respuesta depende del stack, no del folleto.
+
+## ¿Cuál es la diferencia real entre Customer 360 y un CDP?
+
+Nacieron de problemas distintos: Customer 360 es un objetivo — la misma persona reconocida como cliente único en todos los sistemas, con historial unificado visible donde trabaja cada operador. El CDP nació operacional para marketing: juntar datos de varios canales, normalizar identidad y activar campañas con latencia baja.
+
+En 2026 esa frontera se desdibujó — Salesforce consolidó ambos bajo Data Cloud, y los competidores hicieron movimientos similares. La distinción útil hoy no es entre siglas sino entre tres capas: identidad y perfil unificado, activación operacional, y contexto para agentes y aplicaciones. La decisión de roadmap real es qué capa necesitás primero.
+
+## ¿Cómo decidir entre Data Cloud y un CDP externo?
+
+Respondiendo cinco preguntas antes de firmar nada: cuál es el caso de uso primario, qué stack ya existe, cuál es el roadmap de IA, quién es el sponsor del proyecto, y qué nivel de unificación de identidad exige la operación (el probabilístico sirve para marketing; atención y ventas piden determinístico). Quien responde "depende" en tres o más todavía no tiene caso de uso definido — y cualquier plataforma va a volverse proyecto eterno.
+
+En la práctica: mapeá caso de uso por caso de uso, pilotá con volumen real por 30–60 días en vez de decidir por demo, y cerrá la cuenta con TCO de 3 años — licencia, integración, operación y migración. Esa cuenta cambia la decisión en el 30–40% de las empresas que la hacen antes de la compra.

@@ -64,3 +64,25 @@ A conversa que importa não é "qual sigla". É: **quem é dono da modelagem, e 
 [O mito do dado limpo segue valendo em ambos](/blog/dado-limpo-e-um-mito.html) — qualidade é relativa ao uso, não absoluta. ELT facilita iterar (você pode remodelar sem refazer a ingestão), mas não muda a regra fundamental.
 
 Se a sua empresa está discutindo ELT vs ETL como decisão estratégica, provavelmente está na pergunta errada. A decisão estratégica é como organizar ingestão (compre, não construa) e modelagem (versionada, testada, documentada). A sigla é detalhe.
+
+## Perguntas que sempre voltam
+
+Antes de fechar, as dúvidas que mais aparecem quando esse assunto entra na mesa.
+
+## ETL ainda faz sentido em 2026?
+
+Sim, em três contextos específicos. Compliance restritivo onde dado sensível não pode trafegar (saúde, financeiro com regras próprias) — aí filtrar antes da carga é design, não escolha técnica. Volume tão grande que storage cloud bruto fica caro (IoT industrial, log de transação em milhões de TPS), onde agregar antes muda a ordem de grandeza do custo. E sistema fonte legado com latência alta, onde transformar no caminho economiza um passo.
+
+Fora desses três, ELT é o default razoável. Mas ETL bem feito ainda existe e funciona nesses nichos — a narrativa de que "ETL morreu" é simplista.
+
+## Por que ELT virou o padrão?
+
+Porque o custo relativo do compute inverteu, não porque transformar depois é virtude. ETL nasceu quando armazenar era barato e processar era caro; warehouse cloud tornou storage quase gratuito e compute elástico sob demanda, então transformar antes da carga virou pagar duas vezes pra economizar o que já não custa.
+
+O ganho real está em outro lugar: ELT permite separar ingestão (commodity — Fivetran, Airbyte, Meltano resolvem) de modelagem (onde o valor mora, com dbt, SQL versionado e testes). Em ETL, as duas ficavam acopladas no mesmo job — quebrar uma quebrava a outra.
+
+## Quais os riscos de adotar ELT sem critério?
+
+Três aparecem com frequência: carregar tudo "porque storage é barato" e acabar com 800 tabelas brutas que ninguém sabe usar; transformar dentro do warehouse sem dbt — `CREATE TABLE AS SELECT` solto, sem versionamento nem teste, que é só ETL pior; e esquecer compliance, porque em ELT o dado sensível vai bruto pro warehouse e, sem masking e tagging desde o dia 1, vira passivo de LGPD que o ETL evitava por design.
+
+Nenhum desses invalida ELT — invalida ELT mal feito. A pergunta que importa segue sendo quem é dono da modelagem e como ela é versionada, independente da sigla.

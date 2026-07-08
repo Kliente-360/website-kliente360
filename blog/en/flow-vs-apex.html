@@ -42,6 +42,7 @@
   "headline": "Salesforce Flow vs Apex: when code is worth more than clicks",
   "description": "Salesforce says to use Flow whenever possible. The rule is good — until it becomes dogma and the team configures a giant Flow where 30 lines of Apex would solve it in half the time.",
   "datePublished": "2026-03-04",
+  "dateModified": "2026-05-25",
   "inLanguage": "en-US",
   "image": "https://kliente360.com/assets/img/og/flow-vs-apex-en.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/en/flow-vs-apex.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -88,6 +97,39 @@
       "position": 3,
       "name": "Salesforce Flow vs Apex: when code is worth more than clicks",
       "item": "https://kliente360.com/blog/en/flow-vs-apex.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When should I use Apex instead of Flow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In four patterns: complex logic with many conditional paths (from 8–15 branches on, the Flow becomes a 40+ element tree nobody understands, while the same logic fits in 80–150 readable lines of Apex); mass operations with critical performance; external integrations that demand retry, complex OAuth, or heavy parsing; and logic that multiple systems will consume — Apex with Invocable Methods avoids the duplication of three Flows drifting apart over time.\n\nOutside those patterns, Flow remains the right choice for 60–70% of typical automation. The quick rule: if the estimate passes 20 elements, consider Apex; past 35, it&#39;s almost always Apex."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can Flow handle processing thousands of records?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not well. Flow is optimized for single or few records — up to around 200 per execution works; beyond that, it&#39;s time to evaluate serious bulkification. On batches of 10K+ records, Apex with optimized SOQL is 10–50× faster and fits within governor limits without hacks. Large batches in Flow are the number one source of &quot;Too many SOQL queries&quot; in production.\n\nThere&#39;s an aggravating factor: Flow counts SOQL, DML, and CPU exactly like Apex, but without transparency — you don&#39;t know how many queries your Flow is running until the error hits production. Apex forces you to be explicit; Flow hides it until it breaks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I start with Flow and migrate to Apex later if it grows?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can, but it&#39;s expensive — and &quot;if it gets big we&#39;ll migrate&quot; tends to be the expensive part of the project. Migrating a production Flow to Apex means rewriting the logic, updating every invocation point, testing parity, and freezing changes during the transition: typically 4–8 weeks for a Flow of average complexity.\n\nThe cheaper path is deciding in the initial architecture, based on five criteria: how many elements, how many records per execution, whether there&#39;s external integration, how fast the rule changes, and who maintains it in 12 months. Choosing Apex from the start costs only the development — without the migration liability."
+      }
     }
   ]
 }
@@ -163,7 +205,9 @@
             <span class="sep">·</span>
             <span>6 min read</span>
             <span class="sep">·</span>
-            <span>By Kliente 360</span>
+            <span>By Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Updated <time datetime="2026-05-25">25 May 2026</time></span>
           </div>
         </div>
       </header>
@@ -222,6 +266,17 @@
 <p>A mature Salesforce architect chooses by need, not by guideline. Flow earned its place — in 60–70% of cases it&#39;s the right choice. But treating &quot;Flow first&quot; as dogma is the slowest way to discover those other 30–40% were calling for Apex from the start.</p>
 <p>The right question isn&#39;t &quot;Flow or Apex&quot;. It&#39;s: <em>what&#39;s the logic, what&#39;s the volume, what&#39;s the change cycle, who maintains</em>. Answered, the choice appears. Without answering, the choice becomes religion — and religion in Salesforce becomes an eternal project.</p>
 <p><a href="/blog/en/mapear-processos-antes-do-salesforce.html">As in any serious rollout</a>, discovery is worth more than the technical choice. A team that does discovery right rarely errs on Flow vs Apex. A team that jumps to implementation discovers the mistake in the third month of production.</p>
+<h2>Questions that keep coming back</h2>
+<p>Before wrapping up, the questions that come up most often when this topic hits the table.</p>
+<h2>When should I use Apex instead of Flow?</h2>
+<p>In four patterns: complex logic with many conditional paths (from 8–15 branches on, the Flow becomes a 40+ element tree nobody understands, while the same logic fits in 80–150 readable lines of Apex); mass operations with critical performance; external integrations that demand retry, complex OAuth, or heavy parsing; and logic that multiple systems will consume — Apex with Invocable Methods avoids the duplication of three Flows drifting apart over time.</p>
+<p>Outside those patterns, Flow remains the right choice for 60–70% of typical automation. The quick rule: if the estimate passes 20 elements, consider Apex; past 35, it&#39;s almost always Apex.</p>
+<h2>Can Flow handle processing thousands of records?</h2>
+<p>Not well. Flow is optimized for single or few records — up to around 200 per execution works; beyond that, it&#39;s time to evaluate serious bulkification. On batches of 10K+ records, Apex with optimized SOQL is 10–50× faster and fits within governor limits without hacks. Large batches in Flow are the number one source of &quot;Too many SOQL queries&quot; in production.</p>
+<p>There&#39;s an aggravating factor: Flow counts SOQL, DML, and CPU exactly like Apex, but without transparency — you don&#39;t know how many queries your Flow is running until the error hits production. Apex forces you to be explicit; Flow hides it until it breaks.</p>
+<h2>Can I start with Flow and migrate to Apex later if it grows?</h2>
+<p>You can, but it&#39;s expensive — and &quot;if it gets big we&#39;ll migrate&quot; tends to be the expensive part of the project. Migrating a production Flow to Apex means rewriting the logic, updating every invocation point, testing parity, and freezing changes during the transition: typically 4–8 weeks for a Flow of average complexity.</p>
+<p>The cheaper path is deciding in the initial architecture, based on five criteria: how many elements, how many records per execution, whether there&#39;s external integration, how fast the rule changes, and who maintains it in 12 months. Choosing Apex from the start costs only the development — without the migration liability.</p>
 
         </div>
       </div>
@@ -261,28 +316,28 @@
         <div class="container">
           <h2>Further reading</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="sf" href="/blog/en/quando-nao-usar-salesforce.html">
+            <a class="card post-card" data-pillar="sf" href="/blog/en/salesforce-roi-matriz.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 01 · Salesforce</span>
-                <span class="post-date">24 May 2026</span>
+                <span class="post-date">23 Jun 2026</span>
               </div>
-              <h3>When NOT to use Salesforce: 4 scenarios where license cost beats ROI</h3>
+              <h3>Salesforce ROI — the matrix your license rep never shows</h3>
               <div class="read">Read →</div>
             </a>
-            <a class="card post-card" data-pillar="sf" href="/blog/en/data-cloud-nervo-central.html">
+            <a class="card post-card" data-pillar="sf" href="/blog/en/migracao-pardot-marketing-cloud.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 01 · Salesforce</span>
-                <span class="post-date">19 May 2026</span>
+                <span class="post-date">10 Jun 2026</span>
               </div>
-              <h3>Data Cloud is no longer a CDP — it&#39;s the central nervous system of Salesforce</h3>
+              <h3>Pardot to Marketing Cloud Engagement Migration: What the Project Won&#39;t Tell You</h3>
               <div class="read">Read →</div>
             </a>
-            <a class="card post-card" data-pillar="sf" href="/blog/en/salesforce-partner-program.html">
+            <a class="card post-card" data-pillar="sf" href="/blog/en/implementacao-salesforce-seis-semanas.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 01 · Salesforce</span>
-                <span class="post-date">12 May 2026</span>
+                <span class="post-date">2 Jun 2026</span>
               </div>
-              <h3>Salesforce Partner Program: what the client never tells you</h3>
+              <h3>Salesforce in 6 Weeks: What Actually Fits in an MVP</h3>
               <div class="read">Read →</div>
             </a>
           </div>

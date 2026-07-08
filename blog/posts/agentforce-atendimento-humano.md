@@ -76,3 +76,25 @@ Sem essas quatro, o dashboard de Agentforce vai mostrar uso alto e mascarar prob
 Como em [qualquer projeto de agente sério](/blog/quando-agente-e-resposta.html), o que separa Agentforce que rende de Agentforce teatro é disciplina nos básicos: caso de uso definido, base de conhecimento estruturada, escopo claro do que não automatizar, governança operacional contínua, métrica de qualidade ao lado da métrica de uso.
 
 Agentforce em atendimento humano é, em 2026, uma das melhores oportunidades de eficiência operacional disponíveis pra empresa Salesforce-first. Mas como toda boa ferramenta, exige saber onde *não* usar. A fronteira não é técnica — é de produto. Quem aceita essa lógica entrega operação mais eficiente. Quem trata como "automatizar atendimento" sem essa cabeça vai estar explicando NPS em queda no terceiro trimestre.
+
+## Perguntas que sempre voltam
+
+Antes de fechar, as dúvidas que mais aparecem quando esse assunto entra na mesa.
+
+## O que dá pra automatizar com Agentforce no atendimento?
+
+Cinco padrões geram economia sem prejuízo de experiência: consulta de status ("cadê meu pedido?"), FAQ de produto e política sobre base de conhecimento estruturada, triagem inicial antes do humano, acompanhamento proativo com opções estruturadas, e auto-serviço guiado (mudar endereço, atualizar cartão). Juntos, cobrem 50–70% do volume típico de uma operação de médio porte.
+
+O ponto comum entre os cinco: caso repetitivo, factual, de baixo risco, com resposta que mora em sistema ou documento. Bem implementado nesse escopo, Agentforce absorve 30–50% do volume e libera o time pros casos que precisam de gente.
+
+## Quando o atendimento precisa continuar humano?
+
+Em três contextos — e são fronteiras de produto, não limitações técnicas a resolver em versão futura. Cliente em momento emocional (reclamação grave, perda de dinheiro, incidente de saúde): ele quer ser ouvido por gente, e agente respondendo "lamento ouvir isso" agrava e derruba NPS. Regra que muda toda semana: o agente responde com regra antiga e o custo de manter atualizado supera o ganho. E decisão com peso regulatório (crédito, orientação clínica, jurídico): erro do agente vira passivo legal, então o humano decide e o Agentforce fica de copiloto.
+
+Confundir essas fronteiras com "limitação a ser resolvida" é o erro mais caro de implementação.
+
+## Como saber se o Agentforce está dando resultado?
+
+Medindo quatro coisas que o dashboard padrão não mostra: contenção real (% de casos resolvidos no agente sem escalonamento e sem o cliente reabrir em 7 dias), CSAT segmentado por caminho (se o do agente está mais de 5 pontos abaixo do humano, o escopo está errado), tempo total até resolução em vez de tempo de primeira resposta, e volume reabsorvido por humano nas 48h seguintes (acima de 15%, o agente está encerrando interações que não resolveram nada).
+
+Sem essas quatro, o dashboard mostra uso alto e mascara problema de experiência — o erro mais comum dos rollouts brasileiros em 2026. Uso não é valor; resolução sustentada é.

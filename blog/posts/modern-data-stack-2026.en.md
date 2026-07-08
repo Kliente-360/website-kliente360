@@ -76,3 +76,25 @@ Three things that still appear in vendor pitches and aren't worth investing in:
 **"Modern Data Stack consultancy"** that sells the label. In 2026, either the consultant understands technical architecture piece by piece, or they're selling a dead brand.
 
 Whoever assembles a data stack in 2026 chooses by organizational fit, total cost and continuous operation capacity. The Modern Data Stack term may show up in the pitch slide, but the decision happens one level below — and whoever decides well at that level below delivers a project that thrives; whoever buys the slide delivers another item in the catalog of paid and underused tools.
+
+## Questions that keep coming back
+
+Before wrapping up, the questions that come up most often when this topic hits the table.
+
+## Is the Modern Data Stack dead?
+
+As a brand, yes; as architecture, its core theses won and became the default. Warehouse separated from the transactional database, transformation as versioned code (the approach dbt proved), and the semantic layer survived the market test. What died was the label — and entire categories it carried: standalone reverse ETL was dissolved into the platforms, packaged classic ETL left the mainstream, standalone data catalogs lost to discovery inside the warehouse itself.
+
+Whoever builds a stack in 2026 doesn't buy "Modern Data Stack" — they buy pieces, on technical criteria. Whoever is still selling the label is selling 2021.
+
+## Is standalone reverse ETL or a separate data catalog still worth buying?
+
+In most cases, no. Standalone reverse ETL only makes sense in legacy architectures where Salesforce, HubSpot, or Customer.io haven't reached — Data Cloud absorbed the CRM side, and engagement tools absorbed the marketing side. A separate data catalog is only justified in multi-cloud environments with several warehouses, a rare scenario: Unity Catalog, Horizon, and Dataplex cover 80% of real usage inside the warehouse itself.
+
+The exception that deserves serious architectural investment is elsewhere: the semantic layer. It's the only piece with a living thesis in 2026 — without a canonical metric definition, the stack delivers conflicting dashboards within 18 months, and an LLM consuming the data invents metrics.
+
+## How should I choose a data stack in 2026?
+
+By organizational fit, not by trend. Five questions guide it: where the rest of the operation already lives (your main cloud defines the natural warehouse — don't fight organizational gravity), what the real volume is rather than the projected one, whether the team has muscle for continuous operation, whether the semantic layer is treated as a first-class citizen, and who answers for governance in 2 years — a person, not a tool.
+
+ELT, warehouse, and BI became commodities in broad parity; choosing among them is a TCO and context exercise, not an architecture one. The decision that separates a project that lasts from another underused tool happens one level below the slide.

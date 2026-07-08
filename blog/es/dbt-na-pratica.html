@@ -42,6 +42,7 @@
   "headline": "dbt en la práctica: el truco es la documentación, no el modelo",
   "description": "Los equipos adoptan dbt por el SQL versionado y los tests — y descubren seis meses después que el valor real vive en otro lado: en la documentación que mantiene vivo al warehouse.",
   "datePublished": "2026-01-20",
+  "dateModified": "2026-07-02",
   "inLanguage": "es-ES",
   "image": "https://kliente360.com/assets/img/og/dbt-na-pratica-es.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/es/dbt-na-pratica.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -88,6 +97,39 @@
       "position": 3,
       "name": "dbt en la práctica: el truco es la documentación, no el modelo",
       "item": "https://kliente360.com/blog/es/dbt-na-pratica.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "es-ES",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Vale la pena adoptar dbt solo por el versionado y los tests?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale — pero eso es el piso, no el techo. SQL versionado en Git, tests declarativos en el CI, lineage automático y <code>ref()</code> resolviendo dependencias ya justifican la adopción por sí solos. Pero el equipo que se queda en ese paquete termina con una versión mejor del mismo ETL que tenía antes.\n\nLa ganancia que cambia el juego aparece en la documentación: schema YAML con descripción de modelo y columna, owner explícito, <code>dbt docs</code> como diccionario canónico del warehouse. Ese es el uso que hace que un analista nuevo entre y entienda el warehouse solo, y que una métrica divergente se resuelva en minutos en el lineage en vez de en una reunión."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede documentar después de que los modelos estén listos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En la práctica, no — &quot;documentar después&quot; es el patrón que nunca ocurre. En tres meses nadie documentó, en seis el equipo olvidó por qué existe el modelo, en doce el analista nuevo recrea un modelo paralelo porque no confía en el existente. La documentación es trabajo continuo, no una fase con final.\n\nEl antídoto es hacer del description un PR-blocker desde el día 1: modelo sin descripción no pasa el CI, y columna sin descripción en modelo <code>mart</code> tampoco. Es rígido a propósito — cinco minutos en el PR ahorran tres meses el trimestre siguiente, y pelear con el equipo una vez al inicio es más barato que recuperar documentación seis meses después."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿dbt reemplaza a un data catalog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para la mayoría de las empresas medianas, sí — un <code>dbt docs</code> completo resuelve el 80% de lo que un Data Catalog premium intentaría entregar, sin la licencia anual. Lineage visual, descripciones, tests y freshness en un sitio navegable cubren el uso real: descubrir qué significa cada tabla y qué se rompe aguas abajo de un cambio.\n\nLa condición es la palabra &quot;completo&quot;. Un <code>dbt docs</code> con descripciones vacías es tan inútil como un catálogo que nadie abre. El valor viene de la disciplina — description obligatorio, owner por modelo, exposures documentadas — y de tratar el sitio como producto interno, presentado y usado por el equipo, no como subproducto técnico."
+      }
     }
   ]
 }
@@ -163,7 +205,9 @@
             <span class="sep">·</span>
             <span>6 min de lectura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Actualizado el <time datetime="2026-07-02">2 jul 2026</time></span>
           </div>
         </div>
       </header>
@@ -192,7 +236,7 @@
 <ol>
 <li><strong>Description bloquea el PR.</strong> Modelo sin descripción no pasa el CI. Columna sin descripción en modelo <code>mart</code> (la capa que el negocio consume) no pasa el CI. Suena rígido — es rígido a propósito. Sin esa regla, la descripción se vuelve backlog perpetuo.</li>
 <li><strong>Owner explícito en el <code>.yml</code>.</strong> Cada modelo tiene un humano responsable (tag <code>owner</code> en <code>meta</code>). Cuando algo se rompe, está claro a quién llamar. Sin owner, un modelo huérfano se vuelve modelo abandonado en 6 meses.</li>
-<li><strong>Source freshness como test.</strong> Definir <code>freshness</code> en cada <code>source</code> (Salesforce, Stripe, Segment, etc.) con SLA explícito. Cuando la fuente atrasa, el equipo se entera antes de que el dashboard salga mal. Es uno de los tests más subvalorados de dbt.</li>
+<li><strong>Source freshness como test.</strong> Definir <code>freshness</code> en cada <code>source</code> (Salesforce, Stripe, Segment, etc.) con SLA explícito. Cuando la fuente atrasa, el equipo se entera antes de que el dashboard salga mal. Es uno de los tests más subvalorados de dbt — la base más simple de los <a href="/blog/es/observabilidade-de-dados.html">cinco ejes de observabilidad de datos</a>: el frescor detecta la mayor parte de las fallas de pipeline con el menor esfuerzo de instrumentación.</li>
 <li><strong>Capas explícitas: staging / intermediate / marts.</strong> Staging es raw renombrado y tipado. Intermediate es lógica reutilizable. Marts es lo que el negocio consume. Mezclar capas es la forma más rápida de que el warehouse se vuelva un quilombo. dbt facilita la separación — usarla es disciplina.</li>
 <li><strong>Exposures documentadas.</strong> El tag <code>exposure</code> apunta al dashboard o aplicación que consume el modelo. Cuando alguien va a cambiar el modelo, ve qué va a romper aguas abajo. Combinado con lineage, cierra el ciclo entre warehouse y <a href="/blog/es/tableau-linguagem-executiva.html">BI que activa decisión</a>.</li>
 </ol>
@@ -206,6 +250,17 @@
 <p><strong>Empezá por mart, no por staging.</strong> Definí qué necesita consumir el negocio, escribí la descripción antes de crear el modelo, después construí las capas que lo alimentan. Disciplinariamente hacia atrás es más barato que técnicamente hacia adelante.</p>
 <p><strong>Tratá <code>dbt docs</code> como producto interno.</strong> Presentalo en reunión de área, dejá el link en la intranet, capacitá al analista para usarlo antes del warehouse. Documentación que nadie abre es overhead. Documentación que se vuelve primer recurso de consulta paga seis veces el esfuerzo de mantener.</p>
 <p>dbt sin esa disciplina es solo una versión mejor del ETL viejo — y mejor ETL ya es algo. Con esa disciplina, se vuelve la pieza que hace que el warehouse deje de ser una caja negra. La diferencia entre los dos usos es una cultura, no una feature. (<a href="/blog/es/modern-data-stack-2026.html">En el mapa de qué sobrevivió del Modern Data Stack en 2026</a>, transformación versionada como código es una de las tres piezas que pasaron la prueba — y dbt fue quien probó la tesis.)</p>
+<h2>Preguntas que siempre vuelven</h2>
+<p>Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.</p>
+<h2>¿Vale la pena adoptar dbt solo por el versionado y los tests?</h2>
+<p>Vale — pero eso es el piso, no el techo. SQL versionado en Git, tests declarativos en el CI, lineage automático y <code>ref()</code> resolviendo dependencias ya justifican la adopción por sí solos. Pero el equipo que se queda en ese paquete termina con una versión mejor del mismo ETL que tenía antes.</p>
+<p>La ganancia que cambia el juego aparece en la documentación: schema YAML con descripción de modelo y columna, owner explícito, <code>dbt docs</code> como diccionario canónico del warehouse. Ese es el uso que hace que un analista nuevo entre y entienda el warehouse solo, y que una métrica divergente se resuelva en minutos en el lineage en vez de en una reunión.</p>
+<h2>¿Se puede documentar después de que los modelos estén listos?</h2>
+<p>En la práctica, no — &quot;documentar después&quot; es el patrón que nunca ocurre. En tres meses nadie documentó, en seis el equipo olvidó por qué existe el modelo, en doce el analista nuevo recrea un modelo paralelo porque no confía en el existente. La documentación es trabajo continuo, no una fase con final.</p>
+<p>El antídoto es hacer del description un PR-blocker desde el día 1: modelo sin descripción no pasa el CI, y columna sin descripción en modelo <code>mart</code> tampoco. Es rígido a propósito — cinco minutos en el PR ahorran tres meses el trimestre siguiente, y pelear con el equipo una vez al inicio es más barato que recuperar documentación seis meses después.</p>
+<h2>¿dbt reemplaza a un data catalog?</h2>
+<p>Para la mayoría de las empresas medianas, sí — un <code>dbt docs</code> completo resuelve el 80% de lo que un Data Catalog premium intentaría entregar, sin la licencia anual. Lineage visual, descripciones, tests y freshness en un sitio navegable cubren el uso real: descubrir qué significa cada tabla y qué se rompe aguas abajo de un cambio.</p>
+<p>La condición es la palabra &quot;completo&quot;. Un <code>dbt docs</code> con descripciones vacías es tan inútil como un catálogo que nadie abre. El valor viene de la disciplina — description obligatorio, owner por modelo, exposures documentadas — y de tratar el sitio como producto interno, presentado y usado por el equipo, no como subproducto técnico.</p>
 
         </div>
       </div>
@@ -245,18 +300,10 @@
         <div class="container">
           <h2>Próximas lecturas</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/es/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">26 may 2026</span>
-              </div>
-              <h3>Tendencias de data management 2026: 5 que cambian, 3 que no</h3>
-              <div class="read">Leer →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/es/lakehouse-vs-warehouse.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">25 may 2026</span>
+                <span class="post-date">1 jul 2026</span>
               </div>
               <h3>Lakehouse no es la bala de plata: cuándo el warehouse sencillo sigue ganando</h3>
               <div class="read">Leer →</div>
@@ -264,9 +311,17 @@
             <a class="card post-card" data-pillar="data" href="/blog/es/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">22 may 2026</span>
+                <span class="post-date">30 jun 2026</span>
               </div>
               <h3>Observabilidad de datos: detectar fallos antes que el stakeholder</h3>
+              <div class="read">Leer →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/es/customer-data-platform-commodity.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 02 · Data</span>
+                <span class="post-date">24 jun 2026</span>
+              </div>
+              <h3>Customer Data Platform se volvió commodity — qué queda</h3>
               <div class="read">Leer →</div>
             </a>
           </div>

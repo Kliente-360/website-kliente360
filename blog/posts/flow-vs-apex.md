@@ -76,3 +76,25 @@ Salesforce Architect maduro escolhe pela necessidade, não pela diretriz. Flow g
 A pergunta certa não é "Flow ou Apex". É: *qual é a lógica, qual o volume, qual o ciclo de mudança, quem mantém*. Respondidas essas, a escolha aparece. Sem responder, a escolha vira religião — e religião em Salesforce vira projeto eterno.
 
 [Como em qualquer rollout sério](/blog/mapear-processos-antes-do-salesforce.html), o discovery vale mais que a escolha técnica. Time que faz discovery direito raramente erra em Flow vs Apex. Time que pula pra implementação descobre o erro no terceiro mês de produção.
+
+## Perguntas que sempre voltam
+
+Antes de fechar, as dúvidas que mais aparecem quando esse assunto entra na mesa.
+
+## Quando usar Apex em vez de Flow?
+
+Em quatro padrões: lógica complexa com muitos caminhos condicionais (a partir de 8–15 ramificações, o Flow vira árvore de 40+ elementos que ninguém entende, enquanto o mesmo em Apex cabe em 80–150 linhas legíveis); operação em massa com performance crítica; integração externa que exige retry, OAuth complexo ou parsing pesado; e lógica que vários sistemas vão consumir — Apex com Invocable Methods evita a duplicação em três Flows que divergem com o tempo.
+
+Fora desses padrões, Flow segue sendo a escolha certa em 60–70% da automação típica. A régua rápida: se a estimativa passa de 20 elementos, considere Apex; se passa de 35, é quase sempre Apex.
+
+## Flow aguenta processar milhares de registros?
+
+Não bem. Flow é otimizado pra registros únicos ou poucos — até uns 200 por execução funciona; acima disso, é hora de avaliar bulkificação séria. Em batch de 10k+ registros, Apex com SOQL otimizado é 10–50× mais rápido e cabe nos limites de governor sem hack. Batch grande em Flow é a fonte número um de "Too many SOQL queries" em produção.
+
+Tem um agravante: Flow conta SOQL, DML e CPU exatamente como Apex, mas sem transparência — você não sabe quantas queries está fazendo até o erro chegar em produção. Apex te força a ser explícito; Flow esconde até quebrar.
+
+## Dá pra começar com Flow e migrar pra Apex depois se crescer?
+
+Dá, mas sai caro — e a frase "se ficar grande a gente migra" costuma ser a parte cara do projeto. Migrar Flow em produção pra Apex significa reescrever a lógica, atualizar todos os pontos de invocação, testar paridade e congelar mudanças durante a transição: tipicamente 4–8 semanas pra um Flow de complexidade média.
+
+O caminho mais barato é decidir na arquitetura inicial, com base em cinco critérios: quantos elementos, quantos registros por execução, se há integração externa, qual a velocidade de mudança da regra e quem mantém em 12 meses. Escolher Apex desde o início custa só o desenvolvimento — sem o passivo de migração.

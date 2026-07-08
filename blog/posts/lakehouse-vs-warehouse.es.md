@@ -70,3 +70,25 @@ En la práctica de consultoría especializada, la mayoría de las empresas media
 Un warehouse bien operado, con [dbt para versionado, documentación y tests de modelos](/blog/es/dbt-na-pratica.html), cubre el analítico de empresas medianas por años. Lakehouse tiene su lugar — en datos intensivos de eventos, en operaciones con ML maduro, en equipos con ingeniería sólida que necesita lo que los warehouses gestionados no entregan bien.
 
 La conversación que importa no es qué arquitectura tiene más slides en conferencias. Es quién es dueño del dato, cómo está versionado el modelado, y qué casos de uso sirve la plataforma hoy. Comprar lakehouse sin el workload que lo justifica es pagar por motor de avión en un auto de ciudad — el auto anda, el motor no ayuda, y el mantenimiento aparece en la próxima revisión.
+
+## Preguntas que siempre vuelven
+
+Antes de cerrar, las dudas que más aparecen cuando este tema entra en la mesa.
+
+## ¿Cuándo vale la pena migrar a lakehouse?
+
+Cuando tres condiciones existen al mismo tiempo: volumen y variedad que un warehouse gestionado no soporta con costo razonable (IoT industrial, cientos de millones de eventos por día, streaming continuo); ML corriendo en producción — no en piloto, no en planes; e ingeniería madura para operar compaction, Z-ordering, vacuum y schema evolution como rutina semanal.
+
+Si falta una de las tres, estás agregando complejidad sin la ganancia que la justifica. "Planes de ML" y "ser más moderno" no definen workload — y una plataforma nueva no define el problema, solo amplifica lo que ya existe.
+
+## ¿Un warehouse gestionado alcanza para una empresa mediana?
+
+En la gran mayoría de los casos, sí — y por años. El perfil típico de empresa mediana es dato transaccional y estructurado (CRM, ERP, e-commerce, SaaS) en el rango de algunos terabytes, un alcance donde Snowflake, BigQuery o Databricks SQL operan con holgura, con SQL estándar y operación esencialmente cero. Un modelado dimensional bien hecho encima cubre el 90% de los casos analíticos.
+
+En escala de terabytes, el warehouse gestionado suele tener menor TCO que el lakehouse cuando sumás la ingeniería de operación a la cuenta — vacuum, compaction y upgrades vienen en la licencia, y un analista funcional aprende a operarlo en días. El lakehouse recién se vuelve competitivo en costo cerca del petabyte.
+
+## ¿Cuánto demora tener analytics corriendo en cada arquitectura?
+
+Con warehouse gestionado, ELT y dbt, un equipo entrega analytics confiable en cuatro a seis semanas. El mismo setup en lakehouse lleva de tres a cuatro meses, exige un ingeniero familiarizado con Iceberg o Delta — un perfil con costo y tiempos de contratación propios — y requiere gobernanza de compaction desde el día 1.
+
+El resultado analítico es equivalente; el costo de llegar ahí no lo es. Y migrar de warehouse a lakehouse no es lift-and-shift: es reescritura de pipelines, curva de aprendizaje de un stack nuevo y una capa de observabilidad distinta — un costo que rara vez aparece en el deck del vendor.

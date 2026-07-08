@@ -5,7 +5,7 @@ pillar: "ai"
 date: "2026-03-03"
 readMinutes: 6
 excerpt: "Toda discusión de RAG apunta al LLM. Pero dónde viven los embeddings decide latencia, costo y escala. Comparación honesta de los tres caminos populares en 2026."
-tldr: "Pinecone optimiza para operación grande gestionada. Weaviate entrega flexibilidad open-source con features de RAG nativas. pgvector es la opción que nadie quiere admitir que alcanza en el 70% de los casos. Criterios de elección que dependen más del contexto operativo que de la performance bruta."
+tldr: "La elección entre Pinecone, Weaviate y pgvector se decide por el contexto operativo, no por la performance bruta — en benchmark los tres entregan resultados parecidos. Pinecone optimiza para operación grande y gestionada, por encima de ~50M de embeddings o multi-región. Weaviate entrega flexibilidad open-source con RAG nativo y filtrado híbrido pesado. pgvector es la opción que nadie quiere admitir que alcanza en el 70% de los casos de tamaño medio, hasta ~10M de embeddings."
 keywords: ["vector database", "Pinecone", "Weaviate", "pgvector", "RAG"]
 ---
 

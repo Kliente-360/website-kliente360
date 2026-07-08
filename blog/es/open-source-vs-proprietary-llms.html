@@ -42,6 +42,7 @@
   "headline": "Open source vs proprietary LLMs: criterios honestos para elegir sin ideología",
   "description": "Un equipo defiende Llama \"porque es open\". Otro defiende GPT \"porque es mejor\". Los dos tienen razón en parte — y se equivocan al medir solo una dimensión. Cómo decidir por la necesidad, no por la ideología.",
   "datePublished": "2026-04-28",
+  "dateModified": "2026-06-18",
   "inLanguage": "es-ES",
   "image": "https://kliente360.com/assets/img/og/open-source-vs-proprietary-llms-es.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/es/open-source-vs-proprietary-llms.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -164,7 +173,9 @@
             <span class="sep">·</span>
             <span>6 min de lectura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Actualizado el <time datetime="2026-06-18">18 jun 2026</time></span>
           </div>
         </div>
       </header>
@@ -199,7 +210,7 @@
 <h2>Dónde open source tiene más sentido</h2>
 <p>Cuatro contextos donde la balanza pende claramente hacia open source self-hosted:</p>
 <p><strong>Volumen alto previsible.</strong> SaaS con 50M+ inferencias/mes. La diferencia de costo justifica inversión en infra propia — payback en 6–12 meses.</p>
-<p><strong>Dato sensible que no puede salir.</strong> Salud, dato financiero regulado, dato personal bajo jurisdicción estricta. No hay forma de hacerlo con proprietary que envía a cloud externa.</p>
+<p><strong>Dato sensible que no puede salir.</strong> Salud, dato financiero regulado, dato personal bajo jurisdicción estricta. No hay forma de hacerlo con proprietary que envía a cloud externa. En esos casos, <a href="/blog/es/quando-fine-tuning-supera-rag.html">hacer fine-tuning en modelo open source remueve dato sensible del ciclo de inferencia en producción</a> — el conocimiento queda en los pesos tras el entrenamiento, sin necesitar índice persistente accesible en tiempo de ejecución.</p>
 <p><strong>Necesidad de fine-tuning custom y barato.</strong> Open source permite <a href="/blog/es/fine-tuning-vs-rag-vs-prompt.html">fine-tuning serio con control total</a> — útil cuando el caso de uso exige especialización. Proprietary tiene fine-tuning, pero más restringido y caro.</p>
 <p><strong>Investigación y experimentación.</strong> Equipo que necesita probar variantes, modificar arquitectura, experimentar con hiperparámetros. Open source da acceso. Proprietary es caja negra.</p>
 <p>Esos cuatro casos justifican la inversión en capacidad operativa. Fuera de ellos, proprietary gana en time-to-value.</p>
@@ -275,28 +286,28 @@
         <div class="container">
           <h2>Próximas lecturas</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="ai" href="/blog/es/quando-fine-tuning-supera-rag.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/arquitetura-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">27 may 2026</span>
+                <span class="post-date">8 jul 2026</span>
               </div>
-              <h3>RAG no es la respuesta — 6 patrones donde el fine-tuning gana</h3>
+              <h3>Arquitectura de un servidor MCP: transporte, autenticación y dónde se rompe</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/es/finops-de-ia.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/model-context-protocol-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">24 may 2026</span>
+                <span class="post-date">7 jul 2026</span>
               </div>
-              <h3>FinOps de IA: cómo cobrar inferencia de LLM al cliente interno sin pelear con TI</h3>
+              <h3>Model Context Protocol: qué cambia cuando cada herramienta expone MCP</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/es/quando-agente-e-resposta.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/vector-database-ou-search-engine.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">20 may 2026</span>
+                <span class="post-date">17 jun 2026</span>
               </div>
-              <h3>Cuándo un agente es la respuesta — y cuándo es huida de un problema mal modelado</h3>
+              <h3>Vector database no es obligatorio en RAG — cuando el índice clásico gana</h3>
               <div class="read">Leer →</div>
             </a>
           </div>

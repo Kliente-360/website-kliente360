@@ -42,6 +42,7 @@
   "headline": "Does dimensional modeling still matter in 2026? Yes — a defense against lakehouse-for-everything",
   "description": "Lakehouse became the standard of the moment. But dimensional modeling (Kimball) hasn't died — it's more relevant than ever. Where it beats raw lakehouse.",
   "datePublished": "2026-04-22",
+  "dateModified": "2026-05-25",
   "inLanguage": "en-US",
   "image": "https://kliente360.com/assets/img/og/modelagem-dimensional-2026-en.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/en/modelagem-dimensional-2026.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -163,7 +172,9 @@
             <span class="sep">·</span>
             <span>6 min read</span>
             <span class="sep">·</span>
-            <span>By Kliente 360</span>
+            <span>By Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Updated <time datetime="2026-05-25">25 May 2026</time></span>
           </div>
         </div>
       </header>
@@ -172,7 +183,7 @@
         <div class="post-body">
           <aside class="post-tldr">
             <div class="label">TL;DR</div>
-            <p>Lakehouse solves storage and flexibility. It doesn&#39;t solve semantic modeling. Dimensional modeling is still the best way to organize data for analytical consumption — in 2026 too. Four situations where dimensional beats lakehouse-for-everything, and why the anti-modeling fashion costs dearly in 18 months.</p>
+            <p>Dimensional modeling (Kimball, star schema) is still the best way to organize data for analytical consumption in 2026 — because lakehouse solved storage and format, not semantic modeling. Dimensional wins in four situations: metrics reused across executive BI, predictable performance (5–50× faster than raw lakehouse), dimension history (SCD) and semantic governance. Teams that skip modeling to move faster spend the next 18 months rebuilding it inside the lakehouse. The architecture that works: lakehouse as storage, dimensional in the gold layer.</p>
           </aside>
 
           <p class="post-intro">The question showing up in data committees in 2026: &quot;is dimensional modeling still worth it? doesn&#39;t lakehouse solve everything?&quot;. The honest answer — yes, it&#39;s still worth it — goes against some of the fashion. But the fashion is wrong, or at least selling lakehouse for a problem that isn&#39;t a lakehouse one. Dimensional modeling (Kimball, star schema, fact + dimension) continues to be the best way to organize data for analytical consumption — and confusing &quot;store data anyhow&quot; with &quot;model for use&quot; costs dearly for companies that haven&#39;t lived the full cycle yet.</p>
@@ -262,18 +273,10 @@
         <div class="container">
           <h2>Further reading</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/en/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">26 May 2026</span>
-              </div>
-              <h3>Data management trends 2026: 5 that are changing, 3 that aren&#39;t</h3>
-              <div class="read">Read →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/en/lakehouse-vs-warehouse.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">25 May 2026</span>
+                <span class="post-date">1 Jul 2026</span>
               </div>
               <h3>Lakehouse Is Not a Silver Bullet: When Plain Warehouse Still Wins</h3>
               <div class="read">Read →</div>
@@ -281,9 +284,17 @@
             <a class="card post-card" data-pillar="data" href="/blog/en/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">22 May 2026</span>
+                <span class="post-date">30 Jun 2026</span>
               </div>
               <h3>Data observability: catching pipeline failures before stakeholders do</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/en/customer-data-platform-commodity.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">24 Jun 2026</span>
+              </div>
+              <h3>Customer Data Platform became a commodity — what&#39;s left</h3>
               <div class="read">Read →</div>
             </a>
           </div>

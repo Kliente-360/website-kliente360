@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Arquitetura de um servidor MCP: transporte, autenticação e onde ele quebra | Kliente 360</title>
+  <meta name="description" content="Por dentro de um servidor MCP: as três primitivas do protocolo, stdio vs HTTP remoto, e os riscos de segurança que checklist de integração costuma ignorar." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <link rel="canonical" href="https://kliente360.com/blog/arquitetura-servidor-mcp.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://kliente360.com/blog/arquitetura-servidor-mcp.html" />
+  <link rel="alternate" hreflang="en-US" href="https://kliente360.com/blog/en/arquitetura-servidor-mcp.html" />
+  <link rel="alternate" hreflang="es-ES" href="https://kliente360.com/blog/es/arquitetura-servidor-mcp.html" />
+  <link rel="alternate" hreflang="x-default" href="https://kliente360.com/blog/arquitetura-servidor-mcp.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Arquitetura de um servidor MCP: transporte, autenticação e onde ele quebra | Kliente 360" />
+  <meta property="og:description" content="Por dentro de um servidor MCP: as três primitivas do protocolo, stdio vs HTTP remoto, e os riscos de segurança que checklist de integração costuma ignorar." />
+  <meta property="og:url" content="https://kliente360.com/blog/arquitetura-servidor-mcp.html" />
+  <meta property="og:image" content="https://kliente360.com/assets/img/og/arquitetura-servidor-mcp-pt.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-07-08" />
+  <meta property="article:section" content="IA Aplicada" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Arquitetura de um servidor MCP: transporte, autenticação e onde ele quebra | Kliente 360" />
+  <meta name="twitter:description" content="Por dentro de um servidor MCP: as três primitivas do protocolo, stdio vs HTTP remoto, e os riscos de segurança que checklist de integração costuma ignorar." />
+
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=9fdda3cc01" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=9fdda3cc01" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=9fdda3cc01" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Arquitetura de um servidor MCP: transporte, autenticação e onde ele quebra",
+  "description": "Por dentro de um servidor MCP: as três primitivas do protocolo, stdio vs HTTP remoto, e os riscos de segurança que checklist de integração costuma ignorar.",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "inLanguage": "pt-BR",
+  "image": "https://kliente360.com/assets/img/og/arquitetura-servidor-mcp-pt.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kliente360.com/blog/arquitetura-servidor-mcp.html"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "IA Aplicada",
+  "keywords": [
+    "MCP",
+    "arquitetura MCP",
+    "segurança de agentes",
+    "Model Context Protocol",
+    "JSON-RPC"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Blog",
+      "item": "https://kliente360.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "IA Aplicada",
+      "item": "https://kliente360.com/pilares/ia/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Arquitetura de um servidor MCP: transporte, autenticação e onde ele quebra",
+      "item": "https://kliente360.com/blog/arquitetura-servidor-mcp.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/como-trabalhamos/" data-i18n="nav.howWeWork">Como trabalhamos</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+        <a href="/como-trabalhamos/">Como trabalhamos</a>
+        <a href="/glossario/">Glossário</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="ai" data-pagefind-body data-pagefind-filter="pillar:ai">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Pilar 03 · IA</span>
+            <a class="post-back" href="https://kliente360.com/blog/">Blog</a>
+          </div>
+          <h1 data-pagefind-meta="title">Arquitetura de um servidor MCP: transporte, autenticação e onde ele quebra</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-07-08">8 jul 2026</time>
+            <span class="sep">·</span>
+            <span>8 min de leitura</span>
+            <span class="sep">·</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Um servidor MCP expõe tools, resources e prompts via JSON-RPC, com dois transportes principais — stdio local e HTTP remoto com streaming. A superfície de risco real não é o protocolo em si, é o que ele automatiza: descoberta dinâmica de ferramenta e execução com pouca fricção humana. Este texto detalha a arquitetura e o checklist de segurança antes de ir pra produção.</p>
+          </aside>
+
+          <p class="post-intro">Como <a href="/blog/model-context-protocol-servidor-mcp.html">já vimos ao mapear a adoção do MCP em escala enterprise</a>, o protocolo passou de curiosidade técnica a infraestrutura padrão em pouco mais de um ano. O que a conversa sobre adoção não cobre é a parte que decide se um servidor MCP é seguro de publicar ou é uma porta aberta: a arquitetura por dentro, o transporte escolhido, e a superfície de ataque que o protocolo introduz por automatizar o que antes exigia fricção humana.</p>
+<p>Publicar um servidor MCP parece, na documentação oficial, tão simples quanto expor um endpoint REST com decorator. Na prática, um servidor mal desenhado transforma qualquer agente conectado num vetor de execução com acesso amplo e pouca auditoria. Esse texto entra na camada de implementação: as três primitivas do protocolo, os dois transportes disponíveis, e o checklist de segurança antes de ir pra produção.</p>
+<h2>As três primitivas que todo servidor MCP expõe</h2>
+<p>Um servidor MCP não expõe &quot;uma API&quot; — expõe três tipos de capacidade, cada um com semântica própria que o cliente descobre em tempo de execução.</p>
+<ul>
+<li><strong>Tools.</strong> Funções que o modelo pode invocar com efeito colateral — criar um chamado, atualizar um registro, disparar um workflow. Cada tool é descrita em JSON Schema (nome, parâmetros, descrição em linguagem natural). É a descrição em linguagem natural, não o schema, que o modelo usa pra decidir quando chamar — e é justamente aí que entra o primeiro vetor de risco descrito mais abaixo.</li>
+<li><strong>Resources.</strong> Dados que o cliente pode ler — um documento, uma linha de banco, um arquivo de log — endereçados por URI própria do servidor. Diferente de tool, resource não executa ação; só devolve conteúdo, que entra no contexto do modelo como qualquer outro texto.</li>
+<li><strong>Prompts.</strong> Templates parametrizados que o servidor oferece pro cliente montar uma instrução completa — útil quando o mantenedor do sistema quer padronizar como o agente pergunta algo específico daquele domínio, em vez de deixar cada cliente reinventar o prompt.</li>
+</ul>
+<p>Um servidor não precisa expor as três. Um servidor de leitura de documentação, por exemplo, só expõe resources; um servidor de automação de CRM expõe majoritariamente tools.</p>
+<h2>JSON-RPC por baixo do capô</h2>
+<p>Toda comunicação MCP roda sobre JSON-RPC 2.0. A sessão começa com um handshake <code>initialize</code>, onde cliente e servidor trocam versão do protocolo suportada e capacidades — o servidor declara se suporta tools, resources, prompts, subscrições a mudança de recurso. Depois do handshake, o cliente lista o que está disponível (<code>tools/list</code>, <code>resources/list</code>) e invoca (<code>tools/call</code>, <code>resources/read</code>).</p>
+<p>Essa negociação de capacidade é o que permite versionar sem quebrar cliente antigo: um servidor pode adicionar uma tool nova numa versão, e cliente que não conhece essa tool simplesmente não a lista. O problema aparece quando o servidor <em>muda o comportamento</em> de uma tool existente sem mudar o nome — cliente que aprendeu o contrato antigo continua chamando, agora com resultado diferente do esperado. Não há verificação de versão semântica embutida no protocolo; é responsabilidade de quem mantém o servidor.</p>
+<h2>Stdio local ou HTTP remoto — dois transportes, dois riscos</h2>
+<p>MCP define transporte separado da semântica da mensagem — a mesma primitiva <code>tools/call</code> funciona sobre dois canais bem diferentes.</p>
+<p><strong>Stdio</strong> conecta cliente e servidor no mesmo processo local, via stdin/stdout. É o transporte padrão pra ferramentas de desenvolvedor (editor, CLI) rodando na mesma máquina que o agente. Não há rede envolvida — o risco de interceptação é baixo, mas o servidor herda os mesmos privilégios do processo que o invocou, o que significa que um bug de path traversal ou de injeção de comando no servidor tem acesso direto ao sistema de arquivos local.</p>
+<p><strong>Streamable HTTP</strong> (que substituiu a combinação HTTP+SSE da revisão anterior da especificação) é o transporte pra servidor remoto, multi-tenant, atendendo clientes que não compartilham processo nem máquina. Aqui a superfície muda: autenticação vira obrigatória (tipicamente OAuth 2.1), cada requisição precisa de escopo e rate limit, e o servidor precisa isolar sessão de cliente A de sessão de cliente B — sem isso, um bug de vazamento de contexto entre sessões expõe dado de um tenant pro outro.</p>
+<p>A escolha não é estética. Servidor que só vai ser consumido localmente não precisa da complexidade de OAuth e multi-tenência. Servidor que vai ser consumido por agentes de clientes diferentes precisa, desde o primeiro deploy, de isolamento de sessão e autenticação real — retrofit depois é caro.</p>
+<h2>Onde a maioria das implementações quebra?</h2>
+<p>O protocolo em si é simples. A superfície de risco vem do que ele automatiza: descoberta dinâmica de ferramenta e execução com pouca fricção humana entre a decisão do modelo e o efeito no mundo real. Quatro padrões de falha aparecem com frequência.</p>
+<p><strong>Tool poisoning.</strong> A descrição em linguagem natural de uma tool é, ela mesma, um vetor de prompt injection — um servidor malicioso, ou comprometido, pode descrever uma tool inofensiva de um jeito que instrui o modelo a fazer algo além do esperado. O modelo lê a descrição como instrução, não só como metadado.</p>
+<p><strong>Confused deputy via OAuth pass-through.</strong> Quando um servidor MCP repassa um token OAuth do usuário pra outro sistema downstream sem validar escopo, o agente herda permissão além do que a tarefa exige — e qualquer chamada da tool executa com privilégio total do usuário, não com o mínimo necessário pra aquela ação específica.</p>
+<p><strong>Rug-pull de definição de tool.</strong> Um cliente aprova o uso de uma tool com base na descrição vista na primeira conexão. Nada impede o servidor de alterar essa descrição — ou o comportamento por trás dela — numa conexão seguinte, sem que o cliente reavalie o consentimento original.</p>
+<p><strong>Conteúdo de resource como injeção indireta.</strong> Um resource devolve conteúdo de terceiro — um documento, um e-mail, uma página web — que entra no contexto do modelo como texto confiável. Se esse conteúdo contém instrução disfarçada, o modelo pode obedecer a ela com a mesma autoridade que obedeceria ao usuário.</p>
+<blockquote>
+<p>O risco do MCP não é o protocolo — é a distância que ele cria entre a decisão de um modelo e a revisão de um humano.</p>
+</blockquote>
+<h2>Checklist antes de produção</h2>
+<p>Nenhum desses riscos é motivo pra não publicar um servidor MCP. São motivo pra publicar com controle. Seis itens separam implementação amadora de implementação pronta pra produção:</p>
+<ol>
+<li><strong>Escopo mínimo por tool, nunca token de usuário completo.</strong> Cada chamada deve carregar só a permissão necessária pra aquela ação específica — nunca repassar o token de sessão inteiro pro sistema downstream.</li>
+<li><strong>Allow-list de clientes conhecidos</strong>, especialmente em servidor remoto multi-tenant. Cliente novo entra em modo de observação antes de ganhar acesso a tools com efeito colateral real.</li>
+<li><strong>Log estruturado de toda chamada de tool</strong> — argumento, cliente, timestamp, resultado. Sem isso, um incidente não é investigável depois do fato.</li>
+<li><strong>Revisão humana obrigatória em ações destrutivas ou irreversíveis</strong> — deletar registro, enviar comunicação externa, mover dinheiro. Ação reversível e de baixo impacto pode rodar autônoma; o resto, não.</li>
+<li><strong>Versionamento explícito de contrato de tool</strong>, com changelog visível — mudança de comportamento sem mudança de identificador quebra o consentimento implícito do cliente que já aprovou aquela tool.</li>
+<li><strong>Sanitização de conteúdo de resource antes de entrar no contexto</strong>, tratando qualquer dado externo como não confiável até prova em contrário — o mesmo princípio que já vale pra <a href="/blog/rag-na-pratica.html">qualquer pipeline de RAG que lida com documento de terceiro</a>.</li>
+</ol>
+<h2>A arquitetura decide o quanto você confia no agente</h2>
+<p>O ponto que fica depois desse checklist é que MCP não introduz um risco novo em essência — introduz velocidade e escala pra riscos que já existiam em qualquer integração automatizada. O que muda é que, num mundo de descoberta dinâmica de ferramenta, esses riscos deixam de ser avaliados uma vez por integração e passam a precisar de avaliação contínua — porque o conjunto de tools disponíveis pro agente pode mudar sem que ninguém do time revise de novo.</p>
+<p>Isso é o mesmo argumento por trás de <a href="/blog/privacidade-dados-llms.html">tratar governança de agente como parte do design, não como camada posterior</a>: quem publica um servidor MCP hoje está decidindo, de fato, o quanto vai confiar em código que não escreveu pra agir em nome de um agente que talvez nem tenha mantido.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Continuar a conversa</div>
+            <h3>Quer discutir esse tema com um sócio?</h3>
+            <p>Diagnóstico inicial sem compromisso. Levamos uma primeira leitura do seu cenário em uma semana e devolvemos um relatório.</p>
+            <a class="btn-link" href="/#contato">Conversar com um sócio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-explore">
+        <div class="container">
+          <div class="label">Continue explorando</div>
+          <div class="grid-cards cols-2-3">
+            <a class="card explore-card" data-pillar="ai" href="/pilares/ia/">
+              <div class="explore-kind">Pilar · IA Aplicada</div>
+              <p>Como entregamos IA Aplicada na prática — escopo, riscos típicos, sinais de saúde.</p>
+            </a>
+            <a class="card explore-card" href="/como-trabalhamos/">
+              <div class="explore-kind">Como trabalhamos</div>
+              <p>Trilha 360 — os cinco verbos da nossa prática: mapear, prototipar, validar, implantar, sustentar.</p>
+            </a>
+            <a class="card explore-card" href="/glossario/?pilar=ai">
+              <div class="explore-kind">Glossário</div>
+              <p>Vocabulário de CRM com Salesforce, Dados e IA. Direto ao ponto, com link pro post canônico.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Próximas leituras</h2>
+          <div class="grid-cards cols-2-3">
+            <a class="card post-card" data-pillar="ai" href="/blog/model-context-protocol-servidor-mcp.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 03 · IA</span>
+                <span class="post-date">7 jul 2026</span>
+              </div>
+              <h3>Model Context Protocol: o que muda quando toda ferramenta expõe um servidor MCP</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="card post-card" data-pillar="ai" href="/blog/vector-database-ou-search-engine.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 03 · IA</span>
+                <span class="post-date">17 jun 2026</span>
+              </div>
+              <h3>Vector database não é obrigatório em RAG — quando o índice clássico ganha</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="card post-card" data-pillar="ai" href="/blog/crm-dados-ia-engrenagem.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 03 · IA</span>
+                <span class="post-date">9 jun 2026</span>
+              </div>
+              <h3>CRM, dados e IA não são projetos separados — são uma engrenagem</h3>
+              <div class="read">Ler →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM com Salesforce, Dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
+            <li><a href="/glossario/">Glossário</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://wa.me/5511930488622" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=9fdda3cc01"></script>
+  <script src="/assets/js/main.js?v=9fdda3cc01" type="module"></script>
+</body>
+</html>

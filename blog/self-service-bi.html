@@ -42,6 +42,7 @@
   "headline": "Self-service BI: por que cada departamento tem seu \"rascunho final\"",
   "description": "A promessa do self-service BI era democratizar dado. Em quase toda empresa, virou o oposto: 12 versões da mesma métrica, cada área com seu número favorito.",
   "datePublished": "2026-03-18",
+  "dateModified": "2026-06-18",
   "inLanguage": "pt-BR",
   "image": "https://kliente360.com/assets/img/og/self-service-bi-pt.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/self-service-bi.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -163,7 +172,9 @@
             <span class="sep">·</span>
             <span>6 min de leitura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Atualizado em <time datetime="2026-06-18">18 jun 2026</time></span>
           </div>
         </div>
       </header>
@@ -204,7 +215,7 @@
 <p>A implementação prática da separação acima exige quatro guardrails concretos.</p>
 <ol>
 <li><strong>Workspace separado por nível de oficialidade.</strong> Pastas, espaços, ou áreas no Tableau/Power BI/Looker com nomes claros: &quot;exploração&quot;, &quot;oficial&quot;, &quot;obsoleto&quot;. Usuário sabe o que está olhando.</li>
-<li><strong>Layer de métricas semânticas.</strong> dbt mart, dbt semantic layer, Looker LookML, Power BI dataset. Define as 20–30 métricas que importam, com lógica única, reutilizável. Dashboard oficial <em>usa</em> essa camada — não cria lógica nova. Dashboard de exploração pode quebrar regra, mas vive em outro workspace.</li>
+<li><strong>Layer de métricas semânticas.</strong> dbt mart, dbt semantic layer, Looker LookML, Power BI dataset. Define as 20–30 métricas que importam, com lógica única, reutilizável. Dashboard oficial <em>usa</em> essa camada — não cria lógica nova. Dashboard de exploração pode quebrar regra, mas vive em outro workspace. A <a href="/blog/power-bi-tableau-looker-metabase.html">escolha da ferramenta de BI que vai consumir essa camada — Power BI, Tableau, Looker ou Metabase por porte e contexto</a> — vem depois de resolver a semântica, não antes.</li>
 <li><strong>Ciclo de revisão pra dashboards oficiais.</strong> Mudança em dashboard oficial passa por revisão (time de dados + sponsor da métrica). Não burocrático — passo de 30 minutos por mudança, com objetivo de manter consistência semântica.</li>
 <li><strong>Limpeza de cemitério a cada 6 meses.</strong> Dashboards não acessados em 90 dias entram em quarentena. Em 6 meses, vão pra obsoleto. Empresa que não faz isso acumula 5.000 dashboards e ninguém entende o que existe.</li>
 </ol>
@@ -260,18 +271,10 @@
         <div class="container">
           <h2>Próximas leituras</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">26 mai 2026</span>
-              </div>
-              <h3>Tendências de data management 2026: 5 que mudam, 3 que não</h3>
-              <div class="read">Ler →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/lakehouse-vs-warehouse.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">25 mai 2026</span>
+                <span class="post-date">1 jul 2026</span>
               </div>
               <h3>Lakehouse não é silver bullet: quando warehouse simples ainda ganha</h3>
               <div class="read">Ler →</div>
@@ -279,9 +282,17 @@
             <a class="card post-card" data-pillar="data" href="/blog/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">22 mai 2026</span>
+                <span class="post-date">30 jun 2026</span>
               </div>
               <h3>Observabilidade de dados: detectar falhas antes do stakeholder</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/customer-data-platform-commodity.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 02 · Data</span>
+                <span class="post-date">24 jun 2026</span>
+              </div>
+              <h3>Customer Data Platform virou commodity — o que sobrou</h3>
               <div class="read">Ler →</div>
             </a>
           </div>

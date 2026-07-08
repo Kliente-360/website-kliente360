@@ -42,6 +42,7 @@
   "headline": "Databricks vs Snowflake vs BigQuery: lock-in, exit costs and what the official partner doesn't say",
   "description": "The three warehouses deliver equivalent performance. The real difference is what each costs to abandon — and no official partner will tell you that in the proposal.",
   "datePublished": "2026-05-06",
+  "dateModified": "2026-06-16",
   "inLanguage": "en-US",
   "image": "https://kliente360.com/assets/img/og/databricks-snowflake-bigquery-lock-in-en.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/en/databricks-snowflake-bigquery-lock-in.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -163,7 +172,9 @@
             <span class="sep">·</span>
             <span>8 min read</span>
             <span class="sep">·</span>
-            <span>By Kliente 360</span>
+            <span>By Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Updated <time datetime="2026-06-16">16 Jun 2026</time></span>
           </div>
         </div>
       </header>
@@ -172,7 +183,7 @@
         <div class="post-body">
           <aside class="post-tldr">
             <div class="label">TL;DR</div>
-            <p>Public comparisons of Databricks, Snowflake and BigQuery talk about performance, price and features. They don&#39;t talk about what matters in 5 years: technical lock-in, reverse migration cost, subtle dependencies (proprietary format, specific UDFs, native integrations). Three concrete lock-in vectors, how to measure before signing, and why an official partner can never be the source of the answer.</p>
+            <p>The choice between Databricks, Snowflake and BigQuery comes down less to performance — the three are in broad technical parity — and more to lock-in: storage format, processing layer and cloud ecosystem integration. Databricks uses an open format (Delta) but locks you in via notebooks, MLflow and Unity Catalog; Snowflake and BigQuery use proprietary formats — reverse-migrating 50TB out of Snowflake costs US$ 200k–500k in consulting. How to measure the three vectors before signing, and why an official partner can never be the source of the answer.</p>
           </aside>
 
           <p class="post-intro"><strong>T</strong>he question every company asks before choosing a warehouse is &quot;which is best?&quot;. The question no one asks, but should, is &quot;which is most expensive to abandon?&quot;. In 2026, with Databricks, Snowflake and BigQuery in broad technical parity, the practical difference that will matter over the next 5–10 years is lock-in — and each of the three has a different aprisonment pattern, with a different exit cost, and a different marketing layer to obscure it.</p>
@@ -209,7 +220,7 @@
 <h2>Vector 3 — Integration with the cloud ecosystem</h2>
 <p>The most underestimated lock-in: how much the warehouse is sewn together with other services from the same cloud.</p>
 <p><strong>BigQuery</strong> lives inside Google Cloud. Native integration with Looker, Vertex AI, Pub/Sub, Dataflow, Cloud Storage. Reverse migration is not just warehouse — it&#39;s renegotiating the entire data stack that grew around it. A company with Looker + BigQuery + Vertex AI must migrate three products together. Exit cost grows exponentially with time inside GCP.</p>
-<p><strong>Snowflake</strong> runs multi-cloud (AWS, Azure, GCP). That&#39;s the main marketing argument — &quot;Snowflake is neutral between clouds&quot;. True at compute. Not true at integrations: Snowflake Native Apps, Snowpark Container Services, Streamlit, Cortex are exclusive. A team adopting those layers re-creates lock-in at another level.</p>
+<p><strong>Snowflake</strong> runs multi-cloud (AWS, Azure, GCP). That&#39;s the main marketing argument — &quot;Snowflake is neutral between clouds&quot;. True at compute — but <a href="/blog/en/multi-cloud-mito-ou-estrategia.html">intentional multi-cloud architecture carries operational overhead that goes well beyond choosing a cloud-neutral warehouse</a>. Not true at integrations: Snowflake Native Apps, Snowpark Container Services, Streamlit, Cortex are exclusive. A team adopting those layers re-creates lock-in at another level.</p>
 <p><strong>Databricks</strong> runs on AWS, Azure and GCP natively. Has deep integrations with each (especially Azure, via Microsoft partnership), but the engine is portable between clouds — workspace in AWS migrates to Azure with lower cost than other options. Real lock-in is in Unity Catalog (governance layer) and Workflows (orchestration) — those migrate with refactoring, not simple export.</p>
 <p>Practical scoring:</p>
 <ol>
@@ -273,18 +284,10 @@
         <div class="container">
           <h2>Further reading</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/en/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">26 May 2026</span>
-              </div>
-              <h3>Data management trends 2026: 5 that are changing, 3 that aren&#39;t</h3>
-              <div class="read">Read →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/en/lakehouse-vs-warehouse.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">25 May 2026</span>
+                <span class="post-date">1 Jul 2026</span>
               </div>
               <h3>Lakehouse Is Not a Silver Bullet: When Plain Warehouse Still Wins</h3>
               <div class="read">Read →</div>
@@ -292,9 +295,17 @@
             <a class="card post-card" data-pillar="data" href="/blog/en/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">22 May 2026</span>
+                <span class="post-date">30 Jun 2026</span>
               </div>
               <h3>Data observability: catching pipeline failures before stakeholders do</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/en/customer-data-platform-commodity.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">24 Jun 2026</span>
+              </div>
+              <h3>Customer Data Platform became a commodity — what&#39;s left</h3>
               <div class="read">Read →</div>
             </a>
           </div>

@@ -42,6 +42,7 @@
   "headline": "Snowflake vs BigQuery vs Databricks: an honest mid-market comparison",
   "description": "The three warehouses of the moment are good. The decision depends more on what surrounds them — stack, team, use cases — than on the query benchmark.",
   "datePublished": "2026-02-10",
+  "dateModified": "2026-06-18",
   "inLanguage": "en-US",
   "image": "https://kliente360.com/assets/img/og/snowflake-bigquery-databricks-en.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/en/snowflake-bigquery-databricks.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -163,7 +172,9 @@
             <span class="sep">·</span>
             <span>7 min read</span>
             <span class="sep">·</span>
-            <span>By Kliente 360</span>
+            <span>By Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Updated <time datetime="2026-06-18">18 Jun 2026</time></span>
           </div>
         </div>
       </header>
@@ -196,7 +207,7 @@
 <h2>Where each really shines (and really hurts)</h2>
 <p>Three honest sentences about each:</p>
 <p><strong>Snowflake.</strong> Shines in pure SQL operations with a mature BI/analytics team. UX, per-workload warehouse separation, time travel are best-in-class. Hurts in native ML/data-science workloads (needs external integrations to do what Databricks does at home) and in heavy query federation.</p>
-<p><strong>BigQuery.</strong> Shines in Google ecosystem (GA4, Vertex, Looker integration) and a truly serverless model — you don&#39;t size clusters. Hurts in cost predictability (per-query-scanned model punishes badly written queries) and in less polished UX than Snowflake for teams coming from classic SQL.</p>
+<p><strong>BigQuery.</strong> Shines in Google ecosystem (GA4, Vertex, Looker integration) and a truly serverless model — you don&#39;t size clusters. The BigQuery + Looker combination is the most integrated on public cloud, but <a href="/blog/en/power-bi-tableau-looker-metabase.html">the BI tool choice — Looker, Power BI, Tableau or Metabase — follows size and stack criteria separate from the warehouse</a>. Hurts in cost predictability (per-query-scanned model punishes badly written queries) and in less polished UX than Snowflake for teams coming from classic SQL.</p>
 <p><strong>Databricks.</strong> Shines in native ML/data science, Delta/Iceberg support, streaming pipelines, collaborative notebooks. Hurts in complexity — requires a more technical team, and purely analytical operations (BI + dashboards) can be overkill. Steepest learning curve of the three.</p>
 <p>None of these &quot;hurts&quot; is a deal-breaker if the rest of the equation fits. But knowing where it hurts before signing is part of the decision work.</p>
 <h2>The decision nobody wants to make — staying put</h2>
@@ -248,18 +259,10 @@
         <div class="container">
           <h2>Further reading</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/en/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">26 May 2026</span>
-              </div>
-              <h3>Data management trends 2026: 5 that are changing, 3 that aren&#39;t</h3>
-              <div class="read">Read →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/en/lakehouse-vs-warehouse.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">25 May 2026</span>
+                <span class="post-date">1 Jul 2026</span>
               </div>
               <h3>Lakehouse Is Not a Silver Bullet: When Plain Warehouse Still Wins</h3>
               <div class="read">Read →</div>
@@ -267,9 +270,17 @@
             <a class="card post-card" data-pillar="data" href="/blog/en/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">22 May 2026</span>
+                <span class="post-date">30 Jun 2026</span>
               </div>
               <h3>Data observability: catching pipeline failures before stakeholders do</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/en/customer-data-platform-commodity.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">24 Jun 2026</span>
+              </div>
+              <h3>Customer Data Platform became a commodity — what&#39;s left</h3>
               <div class="read">Read →</div>
             </a>
           </div>

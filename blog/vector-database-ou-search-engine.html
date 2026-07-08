@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Vector database não é obrigatório em RAG — quando o índice clássico ganha | Kliente 360</title>
+  <meta name="description" content="RAG não exige vector database. BM25 e busca híbrida ganham em queries exatas e docs estruturados — com menos custo e complexidade operacional." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <link rel="canonical" href="https://kliente360.com/blog/vector-database-ou-search-engine.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://kliente360.com/blog/vector-database-ou-search-engine.html" />
+  <link rel="alternate" hreflang="en-US" href="https://kliente360.com/blog/en/vector-database-ou-search-engine.html" />
+  <link rel="alternate" hreflang="es-ES" href="https://kliente360.com/blog/es/vector-database-ou-search-engine.html" />
+  <link rel="alternate" hreflang="x-default" href="https://kliente360.com/blog/vector-database-ou-search-engine.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Vector database não é obrigatório em RAG — quando o índice clássico ganha | Kliente 360" />
+  <meta property="og:description" content="RAG não exige vector database. BM25 e busca híbrida ganham em queries exatas e docs estruturados — com menos custo e complexidade operacional." />
+  <meta property="og:url" content="https://kliente360.com/blog/vector-database-ou-search-engine.html" />
+  <meta property="og:image" content="https://kliente360.com/assets/img/og/vector-database-ou-search-engine-pt.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-06-17" />
+  <meta property="article:section" content="IA Aplicada" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vector database não é obrigatório em RAG — quando o índice clássico ganha | Kliente 360" />
+  <meta name="twitter:description" content="RAG não exige vector database. BM25 e busca híbrida ganham em queries exatas e docs estruturados — com menos custo e complexidade operacional." />
+
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=9fdda3cc01" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=9fdda3cc01" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=9fdda3cc01" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Vector database não é obrigatório em RAG — quando o índice clássico ganha",
+  "description": "RAG não exige vector database. BM25 e busca híbrida ganham em queries exatas e docs estruturados — com menos custo e complexidade operacional.",
+  "datePublished": "2026-06-17",
+  "dateModified": "2026-06-17",
+  "inLanguage": "pt-BR",
+  "image": "https://kliente360.com/assets/img/og/vector-database-ou-search-engine-pt.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kliente360.com/blog/vector-database-ou-search-engine.html"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "IA Aplicada",
+  "keywords": [
+    "vector database",
+    "RAG",
+    "BM25",
+    "busca híbrida",
+    "search engine",
+    "recuperação semântica"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Blog",
+      "item": "https://kliente360.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "IA Aplicada",
+      "item": "https://kliente360.com/pilares/ia/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Vector database não é obrigatório em RAG — quando o índice clássico ganha",
+      "item": "https://kliente360.com/blog/vector-database-ou-search-engine.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Quando BM25 recupera melhor que embedding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BM25 (Best Match 25) é o algoritmo de relevância padrão do Elasticsearch, OpenSearch e da maioria dos sistemas de busca maduros. É aperfeiçoamento de TF-IDF: ranqueia documentos pela frequência dos termos da query, ajustada pela raridade do termo no corpus e pelo tamanho do documento.\n\nParece simples. E é — o que é uma vantagem, não um defeito. Quatro cenários específicos em que BM25 ganha:\n\n1. <strong>Queries com termos exatos e raros.</strong> Número de pedido, código de produto, referência legal (&quot;art. 5º, §2º&quot;), identificador técnico. A raridade do termo no corpus já é sinal forte de relevância — vetor não adiciona nada sobre &quot;qual chunk menciona exatamente esse código&quot;.\n2. <strong>Corpus com vocabulário controlado.</strong> Documentos técnicos onde os autores usam terminologia padronizada: manual do fabricante, regras de negócio documentadas, procedimento operacional padrão. O usuário que conhece o vocabulário busca exatamente os termos certos. Matching direto supera similaridade cossenoidal aqui.\n3. <strong>Latência crítica.</strong> Gerar embedding da query em tempo real adiciona 100–300ms com modelo hosted, mais com on-premise. BM25 sobre índice invertido é sub-milissegundo. Em chatbots de alta carga ou aplicações conversacionais de voz, a diferença é percebida diretamente pelo usuário.\n4. <strong>Corpus pequeno e estável.</strong> Reindexar vector store quando documentos mudam tem custo real — é necessário re-embedar os chunks alterados, versionando o modelo de embedding. Para corpus de 200 documentos com baixo turnover, um índice Elasticsearch é operacionalmente mais simples e igualmente eficaz.\n\n&gt; Vetor resolve o que keyword não alcança. Keyword resolve o que vetor complica. Misturar os dois é a arquitetura que cobre os dois casos sem escolher um único vencedor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais perguntas decidem a arquitetura de recuperação?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Antes de escolher vector database, busca clássica ou híbrido, cinco perguntas posicionam o projeto corretamente:\n\n1. <strong>Os documentos têm identificadores ou campos exatos que as queries vão referenciar?</strong> SKUs, CPFs, códigos, datas, referências contratuais. Se sim, BM25 precisa estar no pipeline — sem ele, queries com esses termos recuperam sistematicamente mal.\n2. <strong>O vocabulário do corpus é controlado ou varia livremente?</strong> Manual técnico padronizado → BM25 forte. Corpus de e-mails, notas de reunião, textos livres → embedding é necessário para capturar variação semântica entre termos.\n3. <strong>Qual é a frequência de atualização do corpus?</strong> Alto turnover de documentos → custo de re-embedding é real; considerar se BM25 puro não atende. Corpus estável → vector store se justifica mais com menor custo de manutenção.\n4. <strong>Há requisito de latência que o pipeline precisa atender?</strong> Sub-200ms por resposta → eliminar ou minimizar etapas de embedding em tempo de execução. Latência relaxada → híbrido completo sem concessões.\n5. <strong>O time tem capacidade operacional de manter vector store em produção?</strong> Infra de vector database exige versionamento de embeddings, monitoramento de drift semântico e atualização do modelo quando versão descontinua. Sem equipe com essa especialidade, pgvector no banco existente ou Elasticsearch puro é decisão técnica defensável.\n\nEssas perguntas também protegem de um erro adjacente: escalar para vector database em projeto pequeno onde nenhuma das condições que justificam o investimento está presente."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/como-trabalhamos/" data-i18n="nav.howWeWork">Como trabalhamos</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+        <a href="/como-trabalhamos/">Como trabalhamos</a>
+        <a href="/glossario/">Glossário</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="ai" data-pagefind-body data-pagefind-filter="pillar:ai">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Pilar 03 · IA</span>
+            <a class="post-back" href="https://kliente360.com/blog/">Blog</a>
+          </div>
+          <h1 data-pagefind-meta="title">Vector database não é obrigatório em RAG — quando o índice clássico ganha</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-06-17">17 jun 2026</time>
+            <span class="sep">·</span>
+            <span>7 min de leitura</span>
+            <span class="sep">·</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Vector database virou pressuposto padrão em arquiteturas RAG, mas não é requisito. Quando o corpus tem identificadores exatos, campos estruturados ou queries de termos específicos, BM25 e busca híbrida recuperam melhor — com latência menor e infra mais simples. Cinco perguntas decidem qual arquitetura usar.</p>
+          </aside>
+
+          <p class="post-intro">O tutorial padrão de RAG tem sempre o mesmo pipeline: divide o documento em chunks, gera embedding de cada chunk, guarda no vector database, busca por similaridade semântica, injeta o resultado no prompt. O pipeline funciona bem o suficiente pra demo. Em produção, o pressuposto de que &quot;RAG = vector database&quot; produz complexidade operacional desnecessária e, em muitos casos, recuperação pior do que um índice simples de texto entregaria.</p>
+<p>Vector database é uma ferramenta excelente — para o problema certo. O problema é quando vira ferramenta padrão antes de qualquer análise do tipo de documentos e do tipo de consultas. Esse texto é sobre quando o índice clássico — BM25, Elasticsearch, índice invertido — faz mais sentido que embedding semântico, e como busca híbrida captura o melhor dos dois mundos na maioria dos casos corporativos.</p>
+<h2>O que vector database resolve — e onde o pressuposto quebra</h2>
+<p>Vector database armazena representações matemáticas (embeddings) de trechos de texto e busca por proximidade semântica: &quot;qual chunk é mais <em>parecido</em> com o que o usuário perguntou?&quot;. Funciona excepcionalmente bem quando a pergunta e a resposta usam vocabulários diferentes que expressam a mesma ideia. &quot;Como cancelar meu plano?&quot; deve recuperar documentos que descrevem &quot;procedimento de rescisão&quot; — sem vetor, o match por keyword falharia.</p>
+<p>Mas há uma classe grande de consultas corporativas que não funciona assim. O usuário pergunta &quot;qual é o prazo de garantia do produto X47-BR?&quot; — e a resposta está literalmente escrita como &quot;produto X47-BR: garantia de 12 meses&quot;. Aqui, similaridade semântica não adiciona nada. O que importa é que o documento <em>contém exatamente</em> os termos da query. Busca por palavra-chave resolve isso melhor e mais rápido.</p>
+<p>O pressuposto desmorona quando você olha para o corpus real das empresas:</p>
+<ul>
+<li><strong>Documentos técnicos</strong> com codificação específica: SKUs, CNPJ, número de contrato, referência de cláusula.</li>
+<li><strong>Bases de FAQ</strong> com pergunta e resposta padronizadas e vocabulário controlado.</li>
+<li><strong>Manuais de produto</strong> onde o título da seção já mapeia diretamente para a query possível.</li>
+<li><strong>Tabelas regulatórias</strong> onde &quot;alíquota para serviço X&quot; é dado exato, não semântico.</li>
+</ul>
+<p>Nesses casos, embedding adiciona latência (gerar vetor da query em cada requisição), custo (modelo de embedding mais infra do vector store) sem entregar vantagem de recuperação. <a href="/blog/rag-na-pratica.html">A recuperação é o gargalo em RAG, não o LLM</a> — e escolher o método de recuperação errado é o modo de falha mais subestimado em projetos que ficam presos em &quot;quase funcionando&quot;.</p>
+<h2>Quando BM25 recupera melhor que embedding?</h2>
+<p>BM25 (Best Match 25) é o algoritmo de relevância padrão do Elasticsearch, OpenSearch e da maioria dos sistemas de busca maduros. É aperfeiçoamento de TF-IDF: ranqueia documentos pela frequência dos termos da query, ajustada pela raridade do termo no corpus e pelo tamanho do documento.</p>
+<p>Parece simples. E é — o que é uma vantagem, não um defeito. Quatro cenários específicos em que BM25 ganha:</p>
+<ol>
+<li><strong>Queries com termos exatos e raros.</strong> Número de pedido, código de produto, referência legal (&quot;art. 5º, §2º&quot;), identificador técnico. A raridade do termo no corpus já é sinal forte de relevância — vetor não adiciona nada sobre &quot;qual chunk menciona exatamente esse código&quot;.</li>
+<li><strong>Corpus com vocabulário controlado.</strong> Documentos técnicos onde os autores usam terminologia padronizada: manual do fabricante, regras de negócio documentadas, procedimento operacional padrão. O usuário que conhece o vocabulário busca exatamente os termos certos. Matching direto supera similaridade cossenoidal aqui.</li>
+<li><strong>Latência crítica.</strong> Gerar embedding da query em tempo real adiciona 100–300ms com modelo hosted, mais com on-premise. BM25 sobre índice invertido é sub-milissegundo. Em chatbots de alta carga ou aplicações conversacionais de voz, a diferença é percebida diretamente pelo usuário.</li>
+<li><strong>Corpus pequeno e estável.</strong> Reindexar vector store quando documentos mudam tem custo real — é necessário re-embedar os chunks alterados, versionando o modelo de embedding. Para corpus de 200 documentos com baixo turnover, um índice Elasticsearch é operacionalmente mais simples e igualmente eficaz.</li>
+</ol>
+<blockquote>
+<p>Vetor resolve o que keyword não alcança. Keyword resolve o que vetor complica. Misturar os dois é a arquitetura que cobre os dois casos sem escolher um único vencedor.</p>
+</blockquote>
+<h2>Busca híbrida — o terceiro caminho</h2>
+<p>A boa notícia: em sistemas de produção modernos a escolha não precisa ser exclusiva. <strong>Busca híbrida</strong> combina ranking de keyword (BM25) com ranking de embedding (vetorial) e mescla os resultados via Reciprocal Rank Fusion (RRF) ou weighted blending.</p>
+<p>Elasticsearch e OpenSearch têm busca híbrida nativa desde 2023–2024. pgvector combinado com <code>pg_trgm</code> implementa a mesma lógica sem sair do PostgreSQL. Pinecone e Weaviate têm sparse/dense hybrid mode. A maioria das stacks de RAG corporativo madura hoje usa híbrido como default — não por moda, mas porque cobre mais casos sem abrir mão de latência aceitável.</p>
+<p>O padrão que recomendamos em projetos corporativos:</p>
+<ol>
+<li><strong>BM25 como âncora.</strong> Executa primeiro, traz os candidatos com alto match de keyword — especialmente crítico para queries com termos exatos ou identificadores.</li>
+<li><strong>Embedding como re-ranker semântico.</strong> Sobre o top-50 do BM25, aplica similaridade vetorial para reordenar os 10–15 candidatos finais — captura a variação semântica que BM25 perderia.</li>
+<li><strong>Cross-encoder opcional.</strong> Em domínios de alta precisão (compliance, suporte técnico especializado, jurídico), adicionar um reranker cross-encoder sobre o top-15 final sobe qualidade de forma significativa — ao custo de 150–400ms extras.</li>
+</ol>
+<p>Esse desenho usa vector database onde ele é bom (reordenação semântica fina) e BM25 onde ele é superior (filtragem por termo exato e escala). <a href="/blog/vector-databases-comparados.html">A escolha entre Pinecone, Weaviate e pgvector impacta mais custo operacional e modelo de deploy do que performance bruta de recall</a> — e em muitos casos, o pgvector dentro do PostgreSQL existente já é suficiente para o componente vetorial do híbrido, sem infra adicional.</p>
+<h2>Quais perguntas decidem a arquitetura de recuperação?</h2>
+<p>Antes de escolher vector database, busca clássica ou híbrido, cinco perguntas posicionam o projeto corretamente:</p>
+<ol>
+<li><strong>Os documentos têm identificadores ou campos exatos que as queries vão referenciar?</strong> SKUs, CPFs, códigos, datas, referências contratuais. Se sim, BM25 precisa estar no pipeline — sem ele, queries com esses termos recuperam sistematicamente mal.</li>
+<li><strong>O vocabulário do corpus é controlado ou varia livremente?</strong> Manual técnico padronizado → BM25 forte. Corpus de e-mails, notas de reunião, textos livres → embedding é necessário para capturar variação semântica entre termos.</li>
+<li><strong>Qual é a frequência de atualização do corpus?</strong> Alto turnover de documentos → custo de re-embedding é real; considerar se BM25 puro não atende. Corpus estável → vector store se justifica mais com menor custo de manutenção.</li>
+<li><strong>Há requisito de latência que o pipeline precisa atender?</strong> Sub-200ms por resposta → eliminar ou minimizar etapas de embedding em tempo de execução. Latência relaxada → híbrido completo sem concessões.</li>
+<li><strong>O time tem capacidade operacional de manter vector store em produção?</strong> Infra de vector database exige versionamento de embeddings, monitoramento de drift semântico e atualização do modelo quando versão descontinua. Sem equipe com essa especialidade, pgvector no banco existente ou Elasticsearch puro é decisão técnica defensável.</li>
+</ol>
+<p>Essas perguntas também protegem de um erro adjacente: escalar para vector database em projeto pequeno onde nenhuma das condições que justificam o investimento está presente.</p>
+<h2>Quando a escolha vira reflexo, não decisão</h2>
+<p>Uma observação sobre o que costuma andar errado. A escolha de vector database versus search engine clássico frequentemente não é decisão técnica — é decisão de referência. O tutorial usou Pinecone; o notebook de exemplo usou ChromaDB; o default do LangChain era FAISS. Ninguém parou para perguntar se é o certo para o corpus específico em questão.</p>
+<p>O resultado: projetos de RAG em produção com vector database rodando sobre corpus de 300 documentos técnicos com campos exatos, onde Elasticsearch com BM25 teria entregado recall 15% melhor, latência 5× menor e zero infra adicional. Esse custo técnico não aparece no piloto — aparece na primeira semana de produção quando o agente não encontra &quot;produto X47-BR&quot; e o time de dados não sabe explicar por quê.</p>
+<p><a href="/blog/quando-fine-tuning-supera-rag.html">A decisão entre RAG e fine-tuning tem um framework estruturado</a> que cobre a escolha arquitetural no nível mais alto. A decisão dentro de RAG — qual mecanismo de recuperação usar — merece o mesmo rigor. Vector database é uma peça excelente de infraestrutura. Não é a única peça, e raramente deve ser a primeira escolha sem análise do que o corpus e as queries realmente exigem.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Continuar a conversa</div>
+            <h3>Quer discutir esse tema com um sócio?</h3>
+            <p>Diagnóstico inicial sem compromisso. Levamos uma primeira leitura do seu cenário em uma semana e devolvemos um relatório.</p>
+            <a class="btn-link" href="/#contato">Conversar com um sócio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-explore">
+        <div class="container">
+          <div class="label">Continue explorando</div>
+          <div class="grid-cards cols-2-3">
+            <a class="card explore-card" data-pillar="ai" href="/pilares/ia/">
+              <div class="explore-kind">Pilar · IA Aplicada</div>
+              <p>Como entregamos IA Aplicada na prática — escopo, riscos típicos, sinais de saúde.</p>
+            </a>
+            <a class="card explore-card" href="/como-trabalhamos/">
+              <div class="explore-kind">Como trabalhamos</div>
+              <p>Trilha 360 — os cinco verbos da nossa prática: mapear, prototipar, validar, implantar, sustentar.</p>
+            </a>
+            <a class="card explore-card" href="/glossario/?pilar=ai">
+              <div class="explore-kind">Glossário</div>
+              <p>Vocabulário de CRM com Salesforce, Dados e IA. Direto ao ponto, com link pro post canônico.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Próximas leituras</h2>
+          <div class="grid-cards cols-2-3">
+            <a class="card post-card" data-pillar="ai" href="/blog/arquitetura-servidor-mcp.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 03 · IA</span>
+                <span class="post-date">8 jul 2026</span>
+              </div>
+              <h3>Arquitetura de um servidor MCP: transporte, autenticação e onde ele quebra</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="card post-card" data-pillar="ai" href="/blog/model-context-protocol-servidor-mcp.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 03 · IA</span>
+                <span class="post-date">7 jul 2026</span>
+              </div>
+              <h3>Model Context Protocol: o que muda quando toda ferramenta expõe um servidor MCP</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="card post-card" data-pillar="ai" href="/blog/crm-dados-ia-engrenagem.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 03 · IA</span>
+                <span class="post-date">9 jun 2026</span>
+              </div>
+              <h3>CRM, dados e IA não são projetos separados — são uma engrenagem</h3>
+              <div class="read">Ler →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM com Salesforce, Dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
+            <li><a href="/glossario/">Glossário</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://wa.me/5511930488622" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=9fdda3cc01"></script>
+  <script src="/assets/js/main.js?v=9fdda3cc01" type="module"></script>
+</body>
+</html>

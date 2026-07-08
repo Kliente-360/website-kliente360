@@ -42,6 +42,7 @@
   "headline": "Vector databases comparados: Pinecone, Weaviate, pgvector — cuándo sirve cada uno",
   "description": "Toda discusión de RAG apunta al LLM. Pero dónde viven los embeddings decide latencia, costo y escala. Comparación honesta de los tres caminos populares en 2026.",
   "datePublished": "2026-03-03",
+  "dateModified": "2026-05-25",
   "inLanguage": "es-ES",
   "image": "https://kliente360.com/assets/img/og/vector-databases-comparados-es.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/es/vector-databases-comparados.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -163,7 +172,9 @@
             <span class="sep">·</span>
             <span>6 min de lectura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Actualizado el <time datetime="2026-05-25">25 may 2026</time></span>
           </div>
         </div>
       </header>
@@ -172,7 +183,7 @@
         <div class="post-body">
           <aside class="post-tldr">
             <div class="label">TL;DR</div>
-            <p>Pinecone optimiza para operación grande gestionada. Weaviate entrega flexibilidad open-source con features de RAG nativas. pgvector es la opción que nadie quiere admitir que alcanza en el 70% de los casos. Criterios de elección que dependen más del contexto operativo que de la performance bruta.</p>
+            <p>La elección entre Pinecone, Weaviate y pgvector se decide por el contexto operativo, no por la performance bruta — en benchmark los tres entregan resultados parecidos. Pinecone optimiza para operación grande y gestionada, por encima de ~50M de embeddings o multi-región. Weaviate entrega flexibilidad open-source con RAG nativo y filtrado híbrido pesado. pgvector es la opción que nadie quiere admitir que alcanza en el 70% de los casos de tamaño medio, hasta ~10M de embeddings.</p>
           </aside>
 
           <p class="post-intro">La reunión de arquitectura de RAG casi siempre tiene el mismo desvío: 80% del tiempo discutiendo qué LLM usar, 20% qué vector database. La proporción debería ser inversa. <a href="/blog/es/rag-na-pratica.html">En RAG, la recuperación es el cuello de botella</a>, y dónde viven los embeddings decide latencia, costo, escala y operabilidad en producción. Cambiar de LLM en 2026 es commodity; cambiar de vector DB después de tener 50 millones de embeddings indexados no.</p>
@@ -263,28 +274,28 @@
         <div class="container">
           <h2>Próximas lecturas</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="ai" href="/blog/es/quando-fine-tuning-supera-rag.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/arquitetura-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">27 may 2026</span>
+                <span class="post-date">8 jul 2026</span>
               </div>
-              <h3>RAG no es la respuesta — 6 patrones donde el fine-tuning gana</h3>
+              <h3>Arquitectura de un servidor MCP: transporte, autenticación y dónde se rompe</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/es/finops-de-ia.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/model-context-protocol-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">24 may 2026</span>
+                <span class="post-date">7 jul 2026</span>
               </div>
-              <h3>FinOps de IA: cómo cobrar inferencia de LLM al cliente interno sin pelear con TI</h3>
+              <h3>Model Context Protocol: qué cambia cuando cada herramienta expone MCP</h3>
               <div class="read">Leer →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/es/quando-agente-e-resposta.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/es/vector-database-ou-search-engine.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">20 may 2026</span>
+                <span class="post-date">17 jun 2026</span>
               </div>
-              <h3>Cuándo un agente es la respuesta — y cuándo es huida de un problema mal modelado</h3>
+              <h3>Vector database no es obligatorio en RAG — cuando el índice clásico gana</h3>
               <div class="read">Leer →</div>
             </a>
           </div>

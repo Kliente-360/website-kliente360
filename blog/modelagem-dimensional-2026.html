@@ -42,6 +42,7 @@
   "headline": "Modelagem dimensional ainda vale em 2026? Sim — defesa contra o lakehouse-pra-tudo",
   "description": "Lakehouse virou o padrão do momento. Mas modelagem dimensional (Kimball) não morreu — está mais relevante que nunca. Onde ela ganha do lakehouse cru.",
   "datePublished": "2026-04-22",
+  "dateModified": "2026-05-25",
   "inLanguage": "pt-BR",
   "image": "https://kliente360.com/assets/img/og/modelagem-dimensional-2026-pt.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/modelagem-dimensional-2026.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -163,7 +172,9 @@
             <span class="sep">·</span>
             <span>6 min de leitura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Atualizado em <time datetime="2026-05-25">25 mai 2026</time></span>
           </div>
         </div>
       </header>
@@ -172,7 +183,7 @@
         <div class="post-body">
           <aside class="post-tldr">
             <div class="label">TL;DR</div>
-            <p>Lakehouse resolve storage e flexibilidade. Não resolve modelagem semântica. Modelagem dimensional ainda é a melhor forma de organizar dado pra consumo analítico — em 2026 inclusive. Quatro situações onde dimensional ganha do lakehouse-pra-tudo, e por que a moda anti-modelagem custa caro em 18 meses.</p>
+            <p>Modelagem dimensional (Kimball, star schema) continua sendo a melhor forma de organizar dado pra consumo analítico em 2026 — porque lakehouse resolveu storage e formato, não modelagem semântica. Dimensional ganha em quatro situações: métricas reutilizadas em BI executivo, performance previsível (5–50× mais rápido que lakehouse cru), histórico de dimensão (SCD) e governança semântica. Quem pula modelagem pra ir mais rápido gasta os 18 meses seguintes reconstruindo-a dentro do lakehouse. A arquitetura que funciona: lakehouse como storage, dimensional na camada gold.</p>
           </aside>
 
           <p class="post-intro">A pergunta que aparece em comitê de dados em 2026: &quot;ainda vale fazer modelagem dimensional? lakehouse não resolve tudo?&quot;. A resposta honesta — sim, ainda vale — vai contra um pouco da moda. Mas a moda está errada, ou pelo menos vendendo lakehouse pra problema que não é de lakehouse. Modelagem dimensional (Kimball, star schema, fato + dimensão) continua sendo a melhor forma de organizar dado pra consumo analítico — e a confusão entre &quot;armazenar dado de qualquer jeito&quot; e &quot;modelar pra uso&quot; custa caro pra empresas que ainda não viveram o ciclo completo.</p>
@@ -262,18 +273,10 @@
         <div class="container">
           <h2>Próximas leituras</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">26 mai 2026</span>
-              </div>
-              <h3>Tendências de data management 2026: 5 que mudam, 3 que não</h3>
-              <div class="read">Ler →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/lakehouse-vs-warehouse.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">25 mai 2026</span>
+                <span class="post-date">1 jul 2026</span>
               </div>
               <h3>Lakehouse não é silver bullet: quando warehouse simples ainda ganha</h3>
               <div class="read">Ler →</div>
@@ -281,9 +284,17 @@
             <a class="card post-card" data-pillar="data" href="/blog/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 02 · Data</span>
-                <span class="post-date">22 mai 2026</span>
+                <span class="post-date">30 jun 2026</span>
               </div>
               <h3>Observabilidade de dados: detectar falhas antes do stakeholder</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/customer-data-platform-commodity.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 02 · Data</span>
+                <span class="post-date">24 jun 2026</span>
+              </div>
+              <h3>Customer Data Platform virou commodity — o que sobrou</h3>
               <div class="read">Ler →</div>
             </a>
           </div>

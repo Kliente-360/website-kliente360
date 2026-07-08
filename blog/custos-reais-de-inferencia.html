@@ -42,6 +42,7 @@
   "headline": "Custos reais de inferência: como evitar surpresa de US$ no fim do mês",
   "description": "POC de LLM custou US$ 200 no mês. Produção chegou em US$ 18.000 no terceiro mês. A diferença raramente é volume — é arquitetura que ninguém calibrou.",
   "datePublished": "2026-03-24",
+  "dateModified": "2026-06-18",
   "inLanguage": "pt-BR",
   "image": "https://kliente360.com/assets/img/og/custos-reais-de-inferencia-pt.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/custos-reais-de-inferencia.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -163,7 +172,9 @@
             <span class="sep">·</span>
             <span>6 min de leitura</span>
             <span class="sep">·</span>
-            <span>Por Kliente 360</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Atualizado em <time datetime="2026-06-18">18 jun 2026</time></span>
           </div>
         </div>
       </header>
@@ -201,7 +212,7 @@
 </ol>
 <p>Esses cinco padrões implementados de forma disciplinada controlam 80% do custo. Sem eles, qualquer escolha de modelo &quot;barato&quot; vira caro no agregado.</p>
 <h2>A relação custo × qualidade que ninguém calcula</h2>
-<p>A discussão de custo de LLM costuma terminar em &quot;vamos trocar pro modelo mais barato&quot;. Decisão errada em 70% dos casos. O cálculo certo é custo <em>por interação resolvida com sucesso</em>, não custo por token.</p>
+<p>A discussão de custo de LLM costuma terminar em &quot;vamos trocar pro modelo mais barato&quot;. Decisão errada em 70% dos casos. <a href="/blog/quando-fine-tuning-supera-rag.html">Incorporar comportamento via fine-tuning em vez de injetar contexto via RAG</a> é outra alavanca que reduz custo por interação sem trocar de provider — prompt menor mais comportamento treinado substituem instrução longa repetida em cada chamada. O cálculo certo é custo <em>por interação resolvida com sucesso</em>, não custo por token.</p>
 <p>Modelo barato com acurácia de 60% custa mais que modelo caro com acurácia de 90% — porque o usuário volta, refaz, escala pra humano. Custo total (LLM + tempo humano + retrabalho) supera o que parecia economia.</p>
 <p><a href="/blog/fine-tuning-vs-rag-vs-prompt.html">Como argumentei sobre fine-tuning vs RAG vs prompt</a>, a métrica que importa é total cost of ownership do caso de uso. Não preço por milhão de tokens.</p>
 <h2>O que medir desde o dia 1</h2>
@@ -260,28 +271,28 @@
         <div class="container">
           <h2>Próximas leituras</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="ai" href="/blog/quando-fine-tuning-supera-rag.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/arquitetura-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">27 mai 2026</span>
+                <span class="post-date">8 jul 2026</span>
               </div>
-              <h3>RAG não é a resposta — 6 padrões em que fine-tuning ganha</h3>
+              <h3>Arquitetura de um servidor MCP: transporte, autenticação e onde ele quebra</h3>
               <div class="read">Ler →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/finops-de-ia.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/model-context-protocol-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">24 mai 2026</span>
+                <span class="post-date">7 jul 2026</span>
               </div>
-              <h3>FinOps de IA: como cobrar inferência de LLM do cliente interno sem brigar com a TI</h3>
+              <h3>Model Context Protocol: o que muda quando toda ferramenta expõe um servidor MCP</h3>
               <div class="read">Ler →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/quando-agente-e-resposta.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/vector-database-ou-search-engine.html">
               <div class="post-meta">
                 <span class="pill-pillar">Pilar 03 · IA</span>
-                <span class="post-date">20 mai 2026</span>
+                <span class="post-date">17 jun 2026</span>
               </div>
-              <h3>Quando um agente é a resposta — e quando ele é fuga de problema mal modelado</h3>
+              <h3>Vector database não é obrigatório em RAG — quando o índice clássico ganha</h3>
               <div class="read">Ler →</div>
             </a>
           </div>

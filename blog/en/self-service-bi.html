@@ -42,6 +42,7 @@
   "headline": "Self-service BI: why every department has its own \"final draft\"",
   "description": "Self-service BI promised to democratize data. In almost every company, it became the opposite: 12 versions of the same metric, each team with their favorite number.",
   "datePublished": "2026-03-18",
+  "dateModified": "2026-06-18",
   "inLanguage": "en-US",
   "image": "https://kliente360.com/assets/img/og/self-service-bi-en.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/en/self-service-bi.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -163,7 +172,9 @@
             <span class="sep">·</span>
             <span>6 min read</span>
             <span class="sep">·</span>
-            <span>By Kliente 360</span>
+            <span>By Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Updated <time datetime="2026-06-18">18 Jun 2026</time></span>
           </div>
         </div>
       </header>
@@ -204,7 +215,7 @@
 <p>The practical implementation of the separation above requires four concrete guardrails.</p>
 <ol>
 <li><strong>Workspace separated by official level.</strong> Folders, spaces, or areas in Tableau/Power BI/Looker with clear names: &quot;exploration&quot;, &quot;official&quot;, &quot;obsolete&quot;. User knows what they&#39;re looking at.</li>
-<li><strong>Semantic metrics layer.</strong> dbt mart, dbt semantic layer, Looker LookML, Power BI dataset. Defines the 20–30 metrics that matter, with unique reusable logic. Official dashboards <em>use</em> this layer — don&#39;t create new logic. Exploration dashboards can break rules, but live in another workspace.</li>
+<li><strong>Semantic metrics layer.</strong> dbt mart, dbt semantic layer, Looker LookML, Power BI dataset. Defines the 20–30 metrics that matter, with unique reusable logic. Official dashboards <em>use</em> this layer — don&#39;t create new logic. Exploration dashboards can break rules, but live in another workspace. The <a href="/blog/en/power-bi-tableau-looker-metabase.html">choice of BI tool that will consume this layer — Power BI, Tableau, Looker or Metabase by size and context</a> — comes after solving the semantics, not before.</li>
 <li><strong>Review cycle for official dashboards.</strong> Changes to official dashboards go through review (data team + metric sponsor). Not bureaucratic — a 30-minute step per change, aimed at keeping semantic consistency.</li>
 <li><strong>Cemetery cleanup every 6 months.</strong> Dashboards not accessed for 90 days enter quarantine. In 6 months, they go to obsolete. Companies that don&#39;t do this accumulate 5,000 dashboards and nobody knows what exists.</li>
 </ol>
@@ -260,18 +271,10 @@
         <div class="container">
           <h2>Further reading</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="data" href="/blog/en/tendencias-data-management-2026.html">
-              <div class="post-meta">
-                <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">26 May 2026</span>
-              </div>
-              <h3>Data management trends 2026: 5 that are changing, 3 that aren&#39;t</h3>
-              <div class="read">Read →</div>
-            </a>
             <a class="card post-card" data-pillar="data" href="/blog/en/lakehouse-vs-warehouse.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">25 May 2026</span>
+                <span class="post-date">1 Jul 2026</span>
               </div>
               <h3>Lakehouse Is Not a Silver Bullet: When Plain Warehouse Still Wins</h3>
               <div class="read">Read →</div>
@@ -279,9 +282,17 @@
             <a class="card post-card" data-pillar="data" href="/blog/en/observabilidade-de-dados.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 02 · Data</span>
-                <span class="post-date">22 May 2026</span>
+                <span class="post-date">30 Jun 2026</span>
               </div>
               <h3>Data observability: catching pipeline failures before stakeholders do</h3>
+              <div class="read">Read →</div>
+            </a>
+            <a class="card post-card" data-pillar="data" href="/blog/en/customer-data-platform-commodity.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Practice 02 · Data</span>
+                <span class="post-date">24 Jun 2026</span>
+              </div>
+              <h3>Customer Data Platform became a commodity — what&#39;s left</h3>
               <div class="read">Read →</div>
             </a>
           </div>

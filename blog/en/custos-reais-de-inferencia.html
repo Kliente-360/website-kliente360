@@ -42,6 +42,7 @@
   "headline": "Real inference cost: how to avoid the end-of-month USD surprise",
   "description": "POC cost USD 200/month. Production hit USD 18,000 in the third month. The difference rarely is volume — it's architecture nobody calibrated.",
   "datePublished": "2026-03-24",
+  "dateModified": "2026-06-18",
   "inLanguage": "en-US",
   "image": "https://kliente360.com/assets/img/og/custos-reais-de-inferencia-en.png",
   "mainEntityOfPage": {
@@ -49,8 +50,16 @@
     "@id": "https://kliente360.com/blog/en/custos-reais-de-inferencia.html"
   },
   "author": {
-    "@type": "Organization",
-    "name": "Kliente 360"
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -163,7 +172,9 @@
             <span class="sep">·</span>
             <span>6 min read</span>
             <span class="sep">·</span>
-            <span>By Kliente 360</span>
+            <span>By Felipe Silva · Kliente 360</span>
+            <span class="sep">·</span>
+            <span>Updated <time datetime="2026-06-18">18 Jun 2026</time></span>
           </div>
         </div>
       </header>
@@ -201,7 +212,7 @@
 </ol>
 <p>These five implemented with discipline control 80% of cost. Without them, any &quot;cheap&quot; model choice becomes expensive in aggregate.</p>
 <h2>The cost × quality relation nobody calculates</h2>
-<p>The LLM cost discussion usually ends in &quot;let&#39;s switch to the cheaper model&quot;. Wrong call in 70% of cases. The right math is cost <em>per successfully resolved interaction</em>, not cost per token.</p>
+<p>The LLM cost discussion usually ends in &quot;let&#39;s switch to the cheaper model&quot;. Wrong call in 70% of cases. <a href="/blog/en/quando-fine-tuning-supera-rag.html">Baking behavior into the model via fine-tuning instead of injecting context via RAG</a> is another lever that lowers cost per interaction without switching providers — shorter prompts plus trained behavior replace long instructions repeated on every call. The right math is cost <em>per successfully resolved interaction</em>, not cost per token.</p>
 <p>Cheap model with 60% accuracy costs more than expensive model with 90% — because the user comes back, redoes, escalates to human. Total cost (LLM + human time + rework) exceeds the apparent savings.</p>
 <p><a href="/blog/en/fine-tuning-vs-rag-vs-prompt.html">As I argued about fine-tuning vs RAG vs prompt</a>, the metric that matters is total cost of ownership for the use case. Not price per million tokens.</p>
 <h2>What to measure from day 1</h2>
@@ -260,28 +271,28 @@
         <div class="container">
           <h2>Further reading</h2>
           <div class="grid-cards cols-2-3">
-            <a class="card post-card" data-pillar="ai" href="/blog/en/quando-fine-tuning-supera-rag.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/en/arquitetura-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 03 · AI</span>
-                <span class="post-date">27 May 2026</span>
+                <span class="post-date">8 Jul 2026</span>
               </div>
-              <h3>RAG Is Not the Answer — 6 Patterns Where Fine-Tuning Wins</h3>
+              <h3>Architecture of an MCP server: transport, authentication, and where it breaks</h3>
               <div class="read">Read →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/en/finops-de-ia.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/en/model-context-protocol-servidor-mcp.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 03 · AI</span>
-                <span class="post-date">24 May 2026</span>
+                <span class="post-date">7 Jul 2026</span>
               </div>
-              <h3>AI FinOps: how to charge LLM inference back to internal customers without fighting IT</h3>
+              <h3>Model Context Protocol: what changes when every tool exposes an MCP server</h3>
               <div class="read">Read →</div>
             </a>
-            <a class="card post-card" data-pillar="ai" href="/blog/en/quando-agente-e-resposta.html">
+            <a class="card post-card" data-pillar="ai" href="/blog/en/vector-database-ou-search-engine.html">
               <div class="post-meta">
                 <span class="pill-pillar">Practice 03 · AI</span>
-                <span class="post-date">20 May 2026</span>
+                <span class="post-date">17 Jun 2026</span>
               </div>
-              <h3>When an agent is the answer — and when it&#39;s an escape from a poorly modeled problem</h3>
+              <h3>Vector database is not mandatory in RAG — when the classic index wins</h3>
               <div class="read">Read →</div>
             </a>
           </div>

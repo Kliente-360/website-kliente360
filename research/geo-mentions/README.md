@@ -32,23 +32,58 @@ Rodar **sempre os mesmos prompts**, sem personalização, em janela anônima/sem
 | P14 | pt | Kliente 360 | marca |
 | P15 | pt | Kliente 360 consultoria | marca |
 
-## Processo mensal (1ª segunda-feira do mês)
+## Processo mensal (1ª segunda-feira do mês) — automatizado
 
-1. **Automatizado (sessão Claude Code)**: rodar os 15 prompts via busca web, registrar `searchVisible` (kliente360.com no top-10) e notas (quem aparece no lugar). Salvar em `research/geo-mentions/YYYY-MM.json` (schema abaixo).
-2. **Manual (Felipe, ~15 min)**: rodar os 15 prompts em ChatGPT, Gemini e Perplexity (janela anônima), anotar menção/citação/posição. Claude pode ser sondado pela própria sessão. Preencher os campos `engines` do JSON (ou colar o resultado bruto na sessão, que ela preenche).
-3. A sessão atualiza o dashboard (artefato "GEO Mentions — Kliente 360") e commita o JSON.
+A bateria vive em `prompts.json` (fonte única). Dois mecanismos:
+
+1. **Engines LLM via API — `scripts/geo-probe.mjs`**: roda os 15 prompts
+   contra as APIs com busca/grounding dos 4 engines e grava
+   menção/citação no JSON do mês (merge, preserva o que já existe):
+
+   | Engine | API usada | Env var necessária |
+   |---|---|---|
+   | Perplexity | `sonar` (busca nativa) | `PERPLEXITY_API_KEY` |
+   | ChatGPT | Responses API + `web_search` | `OPENAI_API_KEY` |
+   | Gemini | `generateContent` + `google_search` | `GEMINI_API_KEY` |
+   | Claude | Messages API + `web_search` server tool | `ANTHROPIC_API_KEY` |
+
+   ```bash
+   node scripts/geo-probe.mjs                 # mês corrente (BRT)
+   node scripts/geo-probe.mjs --month 2026-08 # mês específico
+   node scripts/geo-probe.mjs --only P01,P15  # subset
+   ```
+
+   Engine sem chave → `no-key` (não é erro). **Configurar as chaves como
+   env vars do environment do Claude Code** (claude.ai → environment →
+   variáveis) pra rodada agendada funcionar. Custo por rodada completa:
+   centavos (60 chamadas curtas).
+
+   *Limitação honesta*: API com busca é um proxy do produto consumer
+   (ChatGPT web ≠ API; personalização e memória não entram). Pra
+   tendência mês a mês, o proxy é consistente e suficiente. Um spot-check
+   manual trimestral no produto real continua valendo.
+
+2. **Search visibility (sessão Claude Code)**: a sessão do trigger roda
+   os 15 prompts via busca web e preenche `searchVisible`/`searchNotes`.
+
+3. A sessão atualiza o dashboard (artefato "GEO Mentions — Kliente 360"),
+   commita e pusha o JSON.
 
 ### Prompt pronto pro trigger agendado (colar no scheduler do claude.ai)
 
 ```
 Rotina mensal de GEO mention tracking da Kliente 360. Leia
-research/geo-mentions/README.md e siga o processo: rode a bateria de
-15 prompts via busca web, registre searchVisible + notas em
-research/geo-mentions/<ano>-<mês>.json (schema do README, engines
-LLM como "pending-manual"), compare com o mês anterior, atualize o
-artefato "GEO Mentions — Kliente 360" com os dados novos, commite e
-push. Ao final, me avise o delta de search visibility e me lembre de
-preencher a parte manual (ChatGPT/Gemini/Perplexity).
+research/geo-mentions/README.md e siga o processo:
+1. Rode `node scripts/geo-probe.mjs` (usa as env vars de API do
+   environment; engines sem chave ficam no-key — não é erro).
+2. Rode os 15 prompts de research/geo-mentions/prompts.json via busca
+   web e preencha searchVisible + searchNotes no JSON do mês.
+3. Recalcule o summary, compare com o mês anterior e atualize o
+   artefato "GEO Mentions — Kliente 360" (research/geo-mentions/
+   dashboard.html, republish com a URL existente).
+4. Commit + push (mensagem: "geo: rodada mention tracking <YYYY-MM>").
+5. Reporte: mention rate, citation rate, search visibility e os deltas
+   vs mês anterior; destaque qualquer primeira menção/citação.
 ```
 
 ## Schema do JSON mensal

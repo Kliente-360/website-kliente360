@@ -1,0 +1,21 @@
+{
+  "brand": "Kliente 360",
+  "domain": "kliente360.com",
+  "probes": [
+    { "id": "P01", "lang": "pt", "type": "categoria", "prompt": "melhores consultorias Salesforce no Brasil" },
+    { "id": "P02", "lang": "pt", "type": "categoria", "prompt": "consultoria especializada em CRM, dados e IA no Brasil" },
+    { "id": "P03", "lang": "pt", "type": "categoria", "prompt": "consultoria dados e IA para empresas médio porte Brasil" },
+    { "id": "P04", "lang": "pt", "type": "categoria", "prompt": "consultoria para implementar Agentforce e Data Cloud" },
+    { "id": "P05", "lang": "pt", "type": "categoria", "prompt": "consultoria para colocar agentes de IA em produção" },
+    { "id": "P06", "lang": "pt", "type": "topico", "prompt": "Customer 360 vs CDP diferença" },
+    { "id": "P07", "lang": "pt", "type": "topico", "prompt": "data contracts o que são como implementar" },
+    { "id": "P08", "lang": "pt", "type": "topico", "prompt": "por que projetos de RAG falham" },
+    { "id": "P09", "lang": "pt", "type": "topico", "prompt": "lakehouse vs warehouse qual escolher" },
+    { "id": "P10", "lang": "pt", "type": "topico", "prompt": "quando usar Flow vs Apex no Salesforce" },
+    { "id": "P11", "lang": "en", "type": "categoria", "prompt": "best Salesforce consultancies in Brazil" },
+    { "id": "P12", "lang": "en", "type": "categoria", "prompt": "CRM data and AI consultancy Brazil" },
+    { "id": "P13", "lang": "es", "type": "categoria", "prompt": "consultoría Salesforce datos e IA Brasil" },
+    { "id": "P14", "lang": "pt", "type": "marca", "prompt": "Kliente 360" },
+    { "id": "P15", "lang": "pt", "type": "marca", "prompt": "Kliente 360 consultoria" }
+  ]
+}

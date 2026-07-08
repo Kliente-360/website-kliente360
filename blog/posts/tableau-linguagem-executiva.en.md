@@ -5,7 +5,7 @@ pillar: "data"
 date: "2026-05-13"
 readMinutes: 5
 excerpt: "A good executive dashboard is the one that turns into a decision in the room. Stop measuring, start recommending."
-tldr: "Most executive dashboards don't change any decision. They cost build time, board attention, and create a false sense of data-driven management. How to leave that pattern in three moves."
+tldr: "Most executive dashboards don't change a single decision: they cost build time, board attention, and create a false sense of data-driven management. A good dashboard answers one of three questions — what to decide this week, which trend affects next quarter, where intuition is wrong — and ends in a recommended action, not a chart. In Tableau or any BI tool, the pattern that drives decisions is a numeric headline, one line of comparative context, and a drill-down that ends in a next step."
 keywords: ["Tableau", "BI", "dashboards", "data-driven", "decision"]
 ---
 

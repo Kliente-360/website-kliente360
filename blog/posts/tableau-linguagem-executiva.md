@@ -5,7 +5,7 @@ pillar: "data"
 date: "2026-05-13"
 readMinutes: 5
 excerpt: "Dashboard executivo bom é o que vira decisão na sala. Pare de medir, comece a recomendar."
-tldr: "A maioria dos dashboards executivos não muda decisão alguma. Custam tempo de construção, atenção da diretoria, e dão a falsa sensação de gestão data-driven. Como sair desse padrão em três movimentos."
+tldr: "A maioria dos dashboards executivos não muda decisão alguma: custa tempo de construção, atenção da diretoria e dá falsa sensação de gestão data-driven. Dashboard bom responde uma de três perguntas — o que decidir essa semana, qual tendência afeta o próximo trimestre, onde a intuição está errada — e termina em ação recomendada, não em gráfico. No Tableau ou em qualquer BI, o padrão que ativa decisão é headline numérico, contexto comparativo de uma linha e drill que termina em próximo passo."
 keywords: ["Tableau", "BI", "dashboards", "data-driven", "decisão"]
 ---
 

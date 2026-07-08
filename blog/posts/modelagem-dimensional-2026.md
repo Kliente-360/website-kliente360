@@ -5,7 +5,7 @@ pillar: "data"
 date: "2026-04-22"
 readMinutes: 6
 excerpt: "Lakehouse virou o padrão do momento. Mas modelagem dimensional (Kimball) não morreu — está mais relevante que nunca. Onde ela ganha do lakehouse cru."
-tldr: "Lakehouse resolve storage e flexibilidade. Não resolve modelagem semântica. Modelagem dimensional ainda é a melhor forma de organizar dado pra consumo analítico — em 2026 inclusive. Quatro situações onde dimensional ganha do lakehouse-pra-tudo, e por que a moda anti-modelagem custa caro em 18 meses."
+tldr: "Modelagem dimensional (Kimball, star schema) continua sendo a melhor forma de organizar dado pra consumo analítico em 2026 — porque lakehouse resolveu storage e formato, não modelagem semântica. Dimensional ganha em quatro situações: métricas reutilizadas em BI executivo, performance previsível (5–50× mais rápido que lakehouse cru), histórico de dimensão (SCD) e governança semântica. Quem pula modelagem pra ir mais rápido gasta os 18 meses seguintes reconstruindo-a dentro do lakehouse. A arquitetura que funciona: lakehouse como storage, dimensional na camada gold."
 keywords: ["modelagem dimensional", "Kimball", "lakehouse", "data warehouse", "dimensional"]
 ---
 

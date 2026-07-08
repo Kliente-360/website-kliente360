@@ -5,7 +5,7 @@ pillar: "data"
 date: "2026-05-06"
 readMinutes: 8
 excerpt: "Os três warehouses entregam performance equivalente. A diferença real está no que cada um custa pra abandonar — e nenhum parceiro oficial vai te contar isso na proposta."
-tldr: "Comparativos públicos de Databricks, Snowflake e BigQuery falam de performance, preço e features. Não falam do que importa em 5 anos: lock-in técnico, custo de migração reversa, dependências sutis (formato proprietário, UDFs específicos, integrações nativas). Três vetores de lock-in concretos, como medir antes de assinar, e por que um parceiro oficial nunca pode ser a fonte da resposta."
+tldr: "A escolha entre Databricks, Snowflake e BigQuery se decide menos por performance — os três estão em paridade técnica ampla — e mais por lock-in: formato de armazenamento, camada de processamento e integração com o ecossistema da cloud. Databricks usa formato aberto (Delta), mas prende via notebooks, MLflow e Unity Catalog; Snowflake e BigQuery usam formato proprietário — migração reversa de 50TB do Snowflake custa US$ 200k–500k em consultoria. Como medir os três vetores antes de assinar, e por que parceiro oficial nunca pode ser a fonte da resposta."
 keywords: ["Databricks", "Snowflake", "BigQuery", "lock-in", "data warehouse"]
 ---
 

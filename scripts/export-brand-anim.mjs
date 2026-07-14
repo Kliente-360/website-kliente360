@@ -4,17 +4,16 @@
 //  - GIF 200×200, fundo BRANCO sólido (#fff), 64 frames × 50ms = loop 3.2s
 //  - SVG (SMIL) equivalente, fundo transparente (uso web)
 //
-// Animação — padrão "cometa" (LED chase), sentido HORÁRIO
-// (topo → direita → base → esquerda):
-//   cada círculo sobe rápido de 0.45 a 1.0 (attack = 12% do ciclo,
-//   suavizado com smoothstep) e decai linearmente de volta a 0.45 no
-//   resto do ciclo. Fases defasadas ¼ de ciclo. Em qualquer instante
-//   há UMA líder clara com rastro decrescente — leitura de giro
-//   inequívoca, sem pisca.
+// Animação v6 — forma de onda MEDIDA da referência CSS aprovada
+// (frame a frame, vídeo de 2026-07-14): cada círculo SOBE DEVAGAR
+// (72% do ciclo, smoothstep) de 0.45 até 1.0 e DESCE RÁPIDO (28%).
+// Fases ¼ de ciclo em ordem HORÁRIA (picos: topo → direita → base →
+// esquerda). A subida lenta é o que elimina o pisca: nenhuma bolinha
+// "acende" — ela amanhece.
 //
-// Histórico: v1 rampa crescente com wrap = aleatório; v2 degraus =
-// enrosco; v3 senoide plena = pares opostos em anti-fase piscavam
-// (e girava anti-horário — o sentido certo é horário).
+// Histórico: v1 rampa+wrap = aleatório · v2 degraus = enrosco ·
+// v3 senoide = gangorra anti-fase · v4 attack rápido = flash ·
+// v5 rotação física = rejeitada (logo não gira).
 import { Resvg } from '@resvg/resvg-js';
 import gifenc from 'gifenc';
 const { GIFEncoder, quantize, applyPalette } = gifenc;
@@ -23,10 +22,10 @@ import { writeFileSync } from 'node:fs';
 const T = 3.2;              // ciclo (s)
 const FRAMES = 64;          // 64 × 50ms = 3.2s exatos
 const DELAY_MS = 50;
-const ATTACK = 0.12;        // fração do ciclo subindo (rápido)
+const FALL = 0.28;          // fração do ciclo descendo (rápido)
 const LO = 0.45, HI = 1.0;
 
-// Ordem de fase HORÁRIA a partir do topo.
+// Fase = instante do PICO (fração do ciclo), ordem HORÁRIA.
 const CIRCLES = [
   { cx: 40, cy: 22, phase: 0.00 }, // topo     (12h)
   { cx: 58, cy: 40, phase: 0.25 }, // direita  (3h)
@@ -35,10 +34,11 @@ const CIRCLES = [
 ];
 
 const smooth = (x) => x * x * (3 - 2 * x); // smoothstep
+// u = distância (em fração de ciclo) desde o pico deste círculo.
 const op = (phase, t) => {
   const u = (((t / T - phase) % 1) + 1) % 1;
-  if (u < ATTACK) return LO + (HI - LO) * smooth(u / ATTACK);          // sobe rápido
-  return HI - (HI - LO) * ((u - ATTACK) / (1 - ATTACK));               // decai linear
+  if (u < FALL) return HI - (HI - LO) * smooth(u / FALL);        // desce rápido
+  return LO + (HI - LO) * smooth((u - FALL) / (1 - FALL));       // sobe devagar
 };
 
 // ---------- SVG animado (SMIL) — forma amostrada em 32 pontos ----------
@@ -81,4 +81,4 @@ ${CIRCLES.map((c) => `  <circle cx="${c.cx}" cy="${c.cy}" r="11" fill="#009900" 
 }
 gif.finish();
 writeFileSync('assets/img/brand/mark-aperture-anim.gif', gif.bytes());
-console.log(`✓ mark-aperture-anim.gif (${FRAMES} frames × ${DELAY_MS}ms, ${SIZE}×${SIZE}, fundo branco)`);
+console.log(`✓ mark-aperture-anim.gif (${FRAMES} frames × ${DELAY_MS}ms — onda medida da referência CSS)`);

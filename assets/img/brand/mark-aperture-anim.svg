@@ -1,31 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="200" height="200">
   <title>Kliente 360 — Mark Aperture (animado)</title>
-  <circle cx="40" cy="22" r="11" fill="#009900" opacity="0.45">
+  <circle cx="40" cy="22" r="11" fill="#009900" opacity="0.725">
     <animate attributeName="opacity"
-      values="0.45;1;0.85;0.65"
-      keyTimes="0;0.25;0.5;0.75"
-      calcMode="discrete"
+      values="0.725;0.830;0.919;0.979;1.000;0.979;0.919;0.830;0.725;0.620;0.531;0.471;0.450;0.471;0.531;0.620;0.725"
+      keyTimes="0.0000;0.0625;0.1250;0.1875;0.2500;0.3125;0.3750;0.4375;0.5000;0.5625;0.6250;0.6875;0.7500;0.8125;0.8750;0.9375;1.0000"
+      calcMode="linear"
       dur="3.2s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="58" cy="40" r="11" fill="#009900" opacity="0.65">
+  <circle cx="22" cy="40" r="11" fill="#009900" opacity="0.450">
     <animate attributeName="opacity"
-      values="0.65;0.45;1;0.85"
-      keyTimes="0;0.25;0.5;0.75"
-      calcMode="discrete"
+      values="0.450;0.471;0.531;0.620;0.725;0.830;0.919;0.979;1.000;0.979;0.919;0.830;0.725;0.620;0.531;0.471;0.450"
+      keyTimes="0.0000;0.0625;0.1250;0.1875;0.2500;0.3125;0.3750;0.4375;0.5000;0.5625;0.6250;0.6875;0.7500;0.8125;0.8750;0.9375;1.0000"
+      calcMode="linear"
       dur="3.2s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="40" cy="58" r="11" fill="#009900" opacity="0.85">
+  <circle cx="40" cy="58" r="11" fill="#009900" opacity="0.725">
     <animate attributeName="opacity"
-      values="0.85;0.65;0.45;1"
-      keyTimes="0;0.25;0.5;0.75"
-      calcMode="discrete"
+      values="0.725;0.620;0.531;0.471;0.450;0.471;0.531;0.620;0.725;0.830;0.919;0.979;1.000;0.979;0.919;0.830;0.725"
+      keyTimes="0.0000;0.0625;0.1250;0.1875;0.2500;0.3125;0.3750;0.4375;0.5000;0.5625;0.6250;0.6875;0.7500;0.8125;0.8750;0.9375;1.0000"
+      calcMode="linear"
       dur="3.2s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="22" cy="40" r="11" fill="#009900" opacity="1">
+  <circle cx="58" cy="40" r="11" fill="#009900" opacity="1.000">
     <animate attributeName="opacity"
-      values="1;0.85;0.65;0.45"
-      keyTimes="0;0.25;0.5;0.75"
-      calcMode="discrete"
+      values="1.000;0.979;0.919;0.830;0.725;0.620;0.531;0.471;0.450;0.471;0.531;0.620;0.725;0.830;0.919;0.979;1.000"
+      keyTimes="0.0000;0.0625;0.1250;0.1875;0.2500;0.3125;0.3750;0.4375;0.5000;0.5625;0.6250;0.6875;0.7500;0.8125;0.8750;0.9375;1.0000"
+      calcMode="linear"
       dur="3.2s" repeatCount="indefinite"/>
   </circle>
 </svg>

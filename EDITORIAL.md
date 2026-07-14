@@ -70,7 +70,7 @@ Numeração sequencial pela ordem cronológica de publicação. Quando duas entr
 | 54 | 2026-07-01 | qua | data | [Lakehouse não é silver bullet: quando warehouse simples ainda ganha](blog/posts/lakehouse-vs-warehouse.md) | Não | Back-catálogo recuperado de auto-branch (gerado 2026-05-24, nunca mergeado) | [x] | [x] |
 | 55 | 2026-07-07 | ter | ai | [Model Context Protocol: o que muda quando toda ferramenta expõe um servidor MCP](blog/posts/model-context-protocol-servidor-mcp.md) | Sim | Mercado 2026 — MCP passou de 9.400 para 10k+ servidores enterprise; parte 1/2 (panorama). Dupla MCP na mesma semana por decisão editorial (justifica pilar `ai` repetido em ter+qua) | [x] | [x] |
 | 56 | 2026-07-08 | qua | ai | [Arquitetura de um servidor MCP: transporte, autenticação e onde ele quebra](blog/posts/arquitetura-servidor-mcp.md) | Sim | Mercado 2026 — parte 2/2, profundidade técnica (JSON-RPC, transporte, riscos de segurança) | [x] | [x] |
-| 57 | 2026-07-14 | ter | sf | Agentforce Commerce: quando vale um agente vender sem humano no loop | Sim | Mercado 2026 — lançamento jul/2026 (Shopper/Buyer/Merchant Agent), onde funciona e onde é cedo demais | [ ] | [ ] |
+| 57 | 2026-07-14 | ter | sf | [Agentforce Commerce: quando vale um agente vender sem humano no loop](blog/posts/agentforce-commerce-vender-sem-humano.md) | Sim | Mercado 2026 — lançamento jul/2026 (Shopper/Buyer/Merchant Agent), onde funciona e onde é cedo demais | [x] | [ ] |
 | 58 | 2026-07-15 | qua | data | Apache Iceberg venceu a disputa de table format — o que muda no lakehouse | Sim | Mercado 2026 — Databricks, Snowflake e BigQuery convergiram em Iceberg como padrão | [ ] | [ ] |
 | 59 | 2026-07-21 | ter | ai | Regulação de IA no Brasil: o que a ANPD já sinalizou pra quem treina modelo com dado de cliente | Sim | Mercado 2026 — PL 2338 travado no Congresso, mas ANPD elencou IA como eixo de fiscalização 2026-2027 | [ ] | [ ] |
 | 60 | 2026-07-22 | qua | sf | Data Cloud pricing 2026: o novo modelo de créditos e o que muda no orçamento | Sim | Mercado 2026 — consolidação de créditos + SKU por perfil (overhaul de mar/2026) | [ ] | [ ] |
@@ -113,4 +113,4 @@ A coluna `Backlink pass` é controlada pela routine de backlink-pass (ver `blog/
 | ai (IA Aplicada) | 23 | 3 | **26** |
 | **Total** | 69 | 10 | **79** |
 
-Publicados: 56. Back-catálogo recuperado de auto-branches: 2 (#53 observabilidade, #54 lakehouse). Pendentes do lote 3 — temas de mercado 2026, sem análise de concorrência, ver research de jul/2026 nesta conversa: 11 (#57 a #67).
+Publicados: 57. Back-catálogo recuperado de auto-branches: 2 (#53 observabilidade, #54 lakehouse). Pendentes do lote 3 — temas de mercado 2026, sem análise de concorrência, ver research de jul/2026 nesta conversa: 10 (#58 a #67).

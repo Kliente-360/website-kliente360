@@ -1,5 +1,27 @@
 [
   {
+    "slug": "agentforce-commerce-vender-sem-humano",
+    "pillar": "sf",
+    "date": "2026-07-14",
+    "translations": {
+      "pt": {
+        "title": "Agentforce Commerce: quando vale um agente vender sem humano no loop",
+        "url": "/blog/agentforce-commerce-vender-sem-humano.html",
+        "date": "14 jul 2026"
+      },
+      "en": {
+        "title": "Agentforce Commerce: when it's worth selling without a human in the loop",
+        "url": "/blog/en/agentforce-commerce-vender-sem-humano.html",
+        "date": "14 Jul 2026"
+      },
+      "es": {
+        "title": "Agentforce Commerce: cuándo vale vender sin humano en el loop",
+        "url": "/blog/es/agentforce-commerce-vender-sem-humano.html",
+        "date": "14 jul 2026"
+      }
+    }
+  },
+  {
     "slug": "arquitetura-servidor-mcp",
     "pillar": "ai",
     "date": "2026-07-08",

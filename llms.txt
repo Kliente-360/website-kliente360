@@ -16,6 +16,7 @@ Método de entrega: Trilha 360 — mapear, prototipar, validar, implantar, suste
 
 ## Blog — Salesforce
 
+- [Agentforce Commerce: quando vale um agente vender sem humano no loop](https://kliente360.com/blog/agentforce-commerce-vender-sem-humano.html): Agentforce Commerce chegou à disponibilidade geral com Shopper, Buyer e Merchant Agent. Onde vender sem humano no loop já funciona — e onde ainda é cedo.
 - [Salesforce ROI — a matriz que vendedor de licença não mostra](https://kliente360.com/blog/salesforce-roi-matriz.html): ROI de Salesforce tem três custos que a proposta comercial omite. A matriz que separa investimento que rende de investimento que sangra.
 - [Migração Pardot para Marketing Cloud Engagement: o que o projeto não revela](https://kliente360.com/blog/migracao-pardot-marketing-cloud.html): Pardot e Marketing Cloud Engagement não são o mesmo produto. O que muda, o que precisa ser refeito e quando migrar não compensa.
 - [Salesforce em 6 semanas: o que cabe de verdade num MVP](https://kliente360.com/blog/implementacao-salesforce-seis-semanas.html): Seis semanas é o mínimo honesto para um MVP de Salesforce funcional. O que cabe, o que não cabe, e como validar escopo antes de assinar.
@@ -27,7 +28,6 @@ Método de entrega: Trilha 360 — mapear, prototipar, validar, implantar, suste
 - [Marketing Cloud + Data Cloud: a stack que devia ter nascido junta](https://kliente360.com/blog/marketing-cloud-data-cloud.html): Marketing Cloud sozinho é jornadas isoladas. Com Data Cloud por baixo, vira ativação contextual real. A combinação que muita empresa ignora — e perde tempo replicando dado pelo caminho.
 - [Sandbox strategy: como evitar "a última sandbox foi há 4 meses"](https://kliente360.com/blog/sandbox-strategy.html): Sandbox no Salesforce é grátis — em licença. Caro em disciplina. Empresa que não trata sandbox como produto entrega bug em produção e descobre que ninguém atualiza ambiente há meses.
 - [Integração Salesforce ↔ ERP: por que projetos travam no contrato, não na arquitetura](https://kliente360.com/blog/integracao-salesforce-erp.html): Quase toda integração Salesforce-ERP que atrasa atrasou no acordo de quem responde pelo dado — não no técnico. O fracasso é organizacional, vestido de arquitetura.
-- [Salesforce Flow vs Apex: quando código vale mais que clique](https://kliente360.com/blog/flow-vs-apex.html): Salesforce diz pra usar Flow sempre que possível. A regra é boa — até virar dogma e o time configurar Flow gigante onde 30 linhas de Apex resolveriam em metade do tempo.
 
 ## Blog — Data & Analytics
 
@@ -61,5 +61,5 @@ Método de entrega: Trilha 360 — mapear, prototipar, validar, implantar, suste
 
 ## Optional
 
-- [Sitemap completo](https://kliente360.com/sitemap.xml): todas as 187 URLs, PT/EN/ES
+- [Sitemap completo](https://kliente360.com/sitemap.xml): todas as 190 URLs, PT/EN/ES
 - [Versões EN](https://kliente360.com/blog/en/) e [ES](https://kliente360.com/blog/es/) do blog

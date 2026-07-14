@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Agentforce Commerce: quando vale um agente vender sem humano no loop | Kliente 360</title>
+  <meta name="description" content="Agentforce Commerce chegou à disponibilidade geral com Shopper, Buyer e Merchant Agent. Onde vender sem humano no loop já funciona — e onde ainda é cedo." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <link rel="canonical" href="https://kliente360.com/blog/agentforce-commerce-vender-sem-humano.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://kliente360.com/blog/agentforce-commerce-vender-sem-humano.html" />
+  <link rel="alternate" hreflang="en-US" href="https://kliente360.com/blog/en/agentforce-commerce-vender-sem-humano.html" />
+  <link rel="alternate" hreflang="es-ES" href="https://kliente360.com/blog/es/agentforce-commerce-vender-sem-humano.html" />
+  <link rel="alternate" hreflang="x-default" href="https://kliente360.com/blog/agentforce-commerce-vender-sem-humano.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kliente 360" />
+  <meta property="og:title" content="Agentforce Commerce: quando vale um agente vender sem humano no loop | Kliente 360" />
+  <meta property="og:description" content="Agentforce Commerce chegou à disponibilidade geral com Shopper, Buyer e Merchant Agent. Onde vender sem humano no loop já funciona — e onde ainda é cedo." />
+  <meta property="og:url" content="https://kliente360.com/blog/agentforce-commerce-vender-sem-humano.html" />
+  <meta property="og:image" content="https://kliente360.com/assets/img/og/agentforce-commerce-vender-sem-humano-pt.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="article:published_time" content="2026-07-14" />
+  <meta property="article:section" content="Salesforce" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agentforce Commerce: quando vale um agente vender sem humano no loop | Kliente 360" />
+  <meta name="twitter:description" content="Agentforce Commerce chegou à disponibilidade geral com Shopper, Buyer e Merchant Agent. Onde vender sem humano no loop já funciona — e onde ainda é cedo." />
+
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=9fdda3cc01" />
+  <link rel="stylesheet" href="/assets/css/reset.css?v=9fdda3cc01" />
+  <link rel="stylesheet" href="/assets/css/main.css?v=9fdda3cc01" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Agentforce Commerce: quando vale um agente vender sem humano no loop",
+  "description": "Agentforce Commerce chegou à disponibilidade geral com Shopper, Buyer e Merchant Agent. Onde vender sem humano no loop já funciona — e onde ainda é cedo.",
+  "datePublished": "2026-07-14",
+  "dateModified": "2026-07-14",
+  "inLanguage": "pt-BR",
+  "image": "https://kliente360.com/assets/img/og/agentforce-commerce-vender-sem-humano-pt.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kliente360.com/blog/agentforce-commerce-vender-sem-humano.html"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Felipe Silva",
+    "url": "https://www.linkedin.com/in/flpgonzaga/",
+    "sameAs": [
+      "https://www.linkedin.com/in/flpgonzaga/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Kliente 360"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Kliente 360"
+  },
+  "articleSection": "Salesforce",
+  "keywords": [
+    "Agentforce Commerce",
+    "Shopper Agent",
+    "Buyer Agent",
+    "Merchant Agent",
+    "agente de IA em vendas",
+    "Salesforce Commerce Cloud"
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Blog",
+      "item": "https://kliente360.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Salesforce",
+      "item": "https://kliente360.com/pilares/salesforce/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Agentforce Commerce: quando vale um agente vender sem humano no loop",
+      "item": "https://kliente360.com/blog/agentforce-commerce-vender-sem-humano.html"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "pt-BR",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "O que é o Agentforce Commerce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Agentforce Commerce é a arquitetura de comércio agentic da Salesforce lançada em disponibilidade geral em julho de 2026, com três agentes especializados: Shopper Agent (atende o comprador final do descobrimento ao pós-venda), Buyer Agent (procurement B2B via WhatsApp e SMS) e Merchant Agent (gestão de catálogo por linguagem natural). Os três têm conexão nativa com estoque, gestão de pedidos e dado de cliente — o que os diferencia de um chatbot genérico é justamente essa integração, que permite ao agente prometer prazo de entrega, honrar preço de contrato e manter contexto sem transferir o comprador entre sistemas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dá pra deixar o Agentforce Commerce vender sem revisão humana?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende do agente e da transação, não é resposta única. Três variáveis decidem: reversibilidade da transação, complexidade de exceção (negociação, desconto, contrato fora de tabela) e ticket/frequência da compra. Shopper Agent em catálogo padrão de ticket baixo cumpre as três condições de baixo risco — autonomia total já faz sentido. Buyer Agent fechando pedido B2B com preço de contrato falha em pelo menos duas — reversão cara, exceção frequente — e por isso pede aprovação automática só dentro de uma faixa de valor pré-definida, com escalonamento pra humano fora dela."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Por que a Salesforce não fala sobre guardrails no lançamento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque o material de lançamento — press release, cobertura especializada, análise de mercado — foi construído pra vender capacidade e velocidade de adoção, não pra desenhar controle de risco. Nenhuma das fontes do anúncio menciona teto de aprovação, limite de transação ou o que acontece quando o agente confirma um SKU errado antes do comprador perceber. Isso não é falha de produto: é decisão de configuração que cabe ao cliente, do mesmo jeito que qualquer sistema que automatiza decisão com efeito real no mundo — quanto mais perto a ação chega de gerar fatura ou mover estoque, mais perto precisa estar de uma revisão humana antes de completar."
+      }
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <header class="nav" role="banner">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="Kliente 360 — início">
+        <svg class="mark-aperture" viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="22" r="11"/>
+          <circle cx="58" cy="40" r="11"/>
+          <circle cx="40" cy="58" r="11"/>
+          <circle cx="22" cy="40" r="11"/>
+        </svg>
+        <span>kliente 360</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="/#pilares" data-i18n="nav.pillars">Pilares</a>
+        <a href="/como-trabalhamos/" data-i18n="nav.howWeWork">Como trabalhamos</a>
+        <a href="/blog/" data-i18n="nav.blog" aria-current="page">Blog</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" data-lang="pt" aria-current="true">PT</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" data-nav-toggle data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-menu" id="nav-menu" data-open="false">
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.pillars">Pilares</div>
+        <a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a>
+        <a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a>
+        <a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a>
+      </div>
+      <div class="group">
+        <div class="group-label" data-i18n="nav.mobile.empresa">Empresa</div>
+        <a href="/#trilha" data-i18n="nav.mobile.trilha">Trilha 360</a>
+        <a href="/blog/" data-i18n="nav.mobile.blog">Blog</a>
+        <a href="/como-trabalhamos/">Como trabalhamos</a>
+        <a href="/glossario/">Glossário</a>
+        <a href="/#contato" data-i18n="nav.contact">Contato</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="/#contato" data-i18n="nav.cta">Falar com um sócio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="post-article" data-pillar="sf" data-pagefind-body data-pagefind-filter="pillar:sf">
+
+      <header class="post-header">
+        <div class="container container-narrow">
+          <div class="post-header-top">
+            <span class="pill-pillar">Pilar 01 · Salesforce</span>
+            <a class="post-back" href="https://kliente360.com/blog/">Blog</a>
+          </div>
+          <h1 data-pagefind-meta="title">Agentforce Commerce: quando vale um agente vender sem humano no loop</h1>
+          <div class="post-meta-line">
+            <time datetime="2026-07-14">14 jul 2026</time>
+            <span class="sep">·</span>
+            <span>7 min de leitura</span>
+            <span class="sep">·</span>
+            <span>Por Felipe Silva · Kliente 360</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-body">
+          <aside class="post-tldr">
+            <div class="label">TL;DR</div>
+            <p>Agentforce Commerce é a arquitetura de comércio agentic da Salesforce, com três agentes especializados — Shopper Agent (atende o comprador final), Buyer Agent (compra B2B via WhatsApp/SMS) e Merchant Agent (gerencia catálogo) — que chegou à disponibilidade geral em julho de 2026. O material de lançamento mostra ganho de conversão e velocidade, mas não trata de guardrails: quando o agente pode fechar a venda sozinho e quando a transação exige revisão humana antes de completar. Este texto propõe um critério prático pra essa decisão, agente por agente.</p>
+          </aside>
+
+          <p class="post-intro"><strong>Agentforce</strong> Commerce chegou à disponibilidade geral no início de julho de 2026 com três agentes especializados: Shopper Agent, Buyer Agent e Merchant Agent. É o maior lançamento de comércio agentic que a Salesforce já fez — e o material de anúncio é generoso em número de conversão, escasso em guardrail.</p>
+<p>Isso não é acidente de comunicação. É uma escolha de ênfase que qualquer decisor precisa reconhecer antes de ligar o agente na própria loja: o vendor mostra o que o agente ganha em velocidade e conversão, mas deixa pra o cliente decidir onde a venda precisa de um humano por perto antes de fechar.</p>
+<h2>O que o Agentforce Commerce lançou de fato</h2>
+<p>Os três agentes cobrem papéis diferentes na cadeia de venda, e entender a divisão evita tratar &quot;Agentforce Commerce&quot; como um produto único.</p>
+<p><strong>Shopper Agent</strong> conduz a conversa do comprador final do início ao fim — descoberta de produto, checkout, e serviço pós-compra — mantendo a voz da marca na loja própria do cliente. Ele checa estoque, prazo de transportadora e opção de retirada em loja dentro da mesma conversa, sem transferir o comprador entre sistemas.</p>
+<p><strong>Buyer Agent</strong> ataca o outro lado do comércio: procurement B2B via WhatsApp e SMS. O exemplo que a Salesforce usa é direto — um comprador manda &quot;preciso de 40 caixas do parafuso de 16oz, igual ao pedido de março&quot;, o agente devolve imagem do produto pra confirmar o SKU, mostra o preço de contrato vigente e fecha o pedido, sem login em portal nem ligação.</p>
+<p><strong>Merchant Agent</strong> fica do lado da operação: o time de catálogo organiza produtos, cria regra de &quot;boost and bury&quot; e ajusta ordem de exibição descrevendo o que quer, em vez de navegar menu de admin.</p>
+<p>Os números do lançamento reforçam a narrativa de urgência: durante a última temporada de fim de ano, IA influenciou 20% das vendas online globais — cerca de US$ 262 bilhões — e varejistas que já rodam shopper agent próprio cresceram vendas 59% mais rápido que quem ainda não adotou. Tráfego vindo de referência de IA converte a 8x a taxa do tráfego social. Clientes iniciais do Merchant Agent relatam redução de 88% no tempo de conclusão de tarefa de catálogo.</p>
+<h2>O que a cobertura de lançamento não menciona</h2>
+<p>Nenhuma das fontes que cobriram o anúncio — press release, imprensa especializada, análise de mercado — trouxe uma linha sobre limite de aprovação, teto de valor de transação, ou o que acontece quando o Buyer Agent confirma um SKU errado antes do comprador perceber. A ênfase é 100% capacidade e adoção, 0% risco.</p>
+<p>Isso não significa que o risco não exista — significa que a Salesforce está vendendo a plataforma, e cabe ao cliente desenhar o controle. É o mesmo padrão que já discutimos <a href="/blog/arquitetura-servidor-mcp.html">ao mapear onde MCP quebra</a>: o protocolo em si não é o problema, é a distância que ele cria entre a decisão automatizada e a revisão humana — e essa distância é decisão de configuração, não de produto.</p>
+<p>É também a mesma pergunta que já fizemos <a href="/blog/agentforce-atendimento-humano.html">sobre Agentforce em atendimento humano</a>: o que automatizar e o que não. Lá o critério era capacidade emocional e ambiguidade do caso; aqui é reversibilidade financeira e exceção de contrato — o framework muda de eixo, mas a lógica de fundo é a mesma.</p>
+<blockquote>
+<p>O lançamento vende autonomia. O guardrail contra erro caro ainda é trabalho do cliente, não do produto.</p>
+</blockquote>
+<p>O Buyer Agent é o caso mais claro. Confirmar SKU por imagem reduz fricção — mas também reduz o número de pontos onde um humano intercepta um pedido errado antes de ele virar fatura. Preço de contrato exibido automaticamente é conveniência real, até o contrato ter uma exceção que o agente não foi treinado pra reconhecer.</p>
+<h2>Três variáveis que decidem se o agente pode vender sozinho</h2>
+<p>A pergunta certa não é &quot;o agente pode vender sozinho&quot; — é &quot;sob quais condições&quot;. Três variáveis, na ordem em que valem a pena checar:</p>
+<ol>
+<li><strong>Reversibilidade da transação.</strong> Uma troca de item de baixo valor é barata de desfazer. Um pedido B2B de 40 caixas com preço de contrato errado gera nota fiscal, frete e retrabalho de conciliação — reversão cara, não trivial.</li>
+<li><strong>Complexidade de exceção.</strong> Quanto do processo de venda depende de negociação, desconto fora de tabela ou condição de contrato não padronizada? Catálogo com preço fixo tolera automação total. Contrato com cláusula específica por cliente não tolera.</li>
+<li><strong>Ticket e frequência.</strong> Compra recorrente de baixo valor — a mesma lógica de risco que já vale <a href="/blog/salesforce-roi-matriz.html">na matriz de ROI de Salesforce</a>, onde ticket médio decide se a plataforma se paga — tolera decisão automática. Compra pontual de alto valor pede aprovação antes de completar.</li>
+</ol>
+<p>Nenhuma das três variáveis, isolada, decide sozinha. Um Shopper Agent vendendo item de catálogo padrão, ticket baixo, transação reversível, cumpre as três — autonomia total é decisão de baixo risco. Um Buyer Agent fechando pedido B2B com preço de contrato, ticket alto, reversão cara, falha em pelo menos duas — aí o desenho certo é aprovação automática dentro de faixa pré-definida, e escalonamento pra humano fora dela.</p>
+<h2>Onde autonomia total já faz sentido — e onde ainda é cedo</h2>
+<p>Aplicando o critério aos três agentes:</p>
+<p><strong>Shopper Agent em B2C de catálogo padrão</strong> já está maduro pra autonomia completa. Item com preço fixo, estoque visível, política de troca clara — as três variáveis do critério apontam pra baixo risco. É onde o ganho de conversão citado no lançamento (8x no tráfego referenciado por IA) faz mais sentido capturar rápido.</p>
+<p><strong>Buyer Agent em B2B com preço de contrato</strong> ainda pede desenho de aprovação — não porque o agente seja ruim, mas porque a exceção de contrato é a norma em procurement B2B, não o caso raro. Faixa de valor com aprovação automática, e qualquer coisa fora da faixa (SKU novo, desconto além do combinado, primeiro pedido de um cliente novo) indo pra revisão humana antes de completar, é o desenho que evita o erro caro sem devolver a fricção que o agente veio resolver.</p>
+<p><strong>Merchant Agent</strong> fica no meio: a ação em si (mudar regra de sort, ajustar boost/bury) é interna e reversível — não fecha venda, não gera fatura. O risco real aqui não é financeiro, é operacional: uma regra malfeita pode esconder produto certo ou destacar produto errado por dias antes de alguém notar. Log de mudança e rollback fácil resolvem esse risco sem exigir aprovação prévia de cada ajuste.</p>
+<ol>
+<li><strong>Shopper Agent, catálogo padrão, ticket baixo:</strong> autonomia total, sem aprovação humana no fluxo.</li>
+<li><strong>Buyer Agent, contrato B2B, exceção de preço:</strong> aprovação automática dentro de faixa definida; fora dela, humano antes de completar.</li>
+<li><strong>Merchant Agent, regra de catálogo:</strong> sem aprovação prévia, mas com log de mudança e rollback rápido disponível.</li>
+</ol>
+<blockquote>
+<p>Ticket baixo e SKU padrão toleram autonomia total; contrato e exceção de preço exigem humano no loop.</p>
+</blockquote>
+<h2>A adoção rápida não dispensa o desenho de controle</h2>
+<p>Os números do lançamento são reais e o incentivo pra adotar rápido também é — quem espera perde a janela de tráfego referenciado por ChatGPT, Google AI Mode e Gemini app que a Salesforce está conectando nativamente ao longo do segundo semestre de 2026. Mas adotar rápido e adotar sem desenho de controle são decisões diferentes, e o material de lançamento não separa as duas.</p>
+<p>O trabalho que fica pro cliente — porque nenhuma cobertura do lançamento tratou disso — é decidir, agente por agente, onde a transação é reversível o bastante pra rodar sozinha e onde a exceção de contrato ainda pede um humano antes de completar. Quem pula esse desenho não descobre o erro no dia do lançamento. Descobre na primeira exceção que o agente tratou como regra.</p>
+<h2>Perguntas que sempre voltam</h2>
+<p>Antes de fechar, as três dúvidas mais comuns sobre o lançamento.</p>
+<h2>O que é o Agentforce Commerce?</h2>
+<p>Agentforce Commerce é a arquitetura de comércio agentic da Salesforce lançada em disponibilidade geral em julho de 2026, com três agentes especializados: Shopper Agent (atende o comprador final do descobrimento ao pós-venda), Buyer Agent (procurement B2B via WhatsApp e SMS) e Merchant Agent (gestão de catálogo por linguagem natural). Os três têm conexão nativa com estoque, gestão de pedidos e dado de cliente — o que os diferencia de um chatbot genérico é justamente essa integração, que permite ao agente prometer prazo de entrega, honrar preço de contrato e manter contexto sem transferir o comprador entre sistemas.</p>
+<h2>Dá pra deixar o Agentforce Commerce vender sem revisão humana?</h2>
+<p>Depende do agente e da transação, não é resposta única. Três variáveis decidem: reversibilidade da transação, complexidade de exceção (negociação, desconto, contrato fora de tabela) e ticket/frequência da compra. Shopper Agent em catálogo padrão de ticket baixo cumpre as três condições de baixo risco — autonomia total já faz sentido. Buyer Agent fechando pedido B2B com preço de contrato falha em pelo menos duas — reversão cara, exceção frequente — e por isso pede aprovação automática só dentro de uma faixa de valor pré-definida, com escalonamento pra humano fora dela.</p>
+<h2>Por que a Salesforce não fala sobre guardrails no lançamento?</h2>
+<p>Porque o material de lançamento — press release, cobertura especializada, análise de mercado — foi construído pra vender capacidade e velocidade de adoção, não pra desenhar controle de risco. Nenhuma das fontes do anúncio menciona teto de aprovação, limite de transação ou o que acontece quando o agente confirma um SKU errado antes do comprador perceber. Isso não é falha de produto: é decisão de configuração que cabe ao cliente, do mesmo jeito que qualquer sistema que automatiza decisão com efeito real no mundo — quanto mais perto a ação chega de gerar fatura ou mover estoque, mais perto precisa estar de uma revisão humana antes de completar.</p>
+
+        </div>
+      </div>
+
+      <section class="post-end">
+        <div class="container">
+          <div class="post-end-cta">
+            <div class="label">Continuar a conversa</div>
+            <h3>Quer discutir esse tema com um sócio?</h3>
+            <p>Diagnóstico inicial sem compromisso. Levamos uma primeira leitura do seu cenário em uma semana e devolvemos um relatório.</p>
+            <a class="btn-link" href="/#contato">Conversar com um sócio</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-explore">
+        <div class="container">
+          <div class="label">Continue explorando</div>
+          <div class="grid-cards cols-2-3">
+            <a class="card explore-card" data-pillar="sf" href="/pilares/salesforce/">
+              <div class="explore-kind">Pilar · Salesforce</div>
+              <p>Como entregamos Salesforce na prática — escopo, riscos típicos, sinais de saúde.</p>
+            </a>
+            <a class="card explore-card" href="/como-trabalhamos/">
+              <div class="explore-kind">Como trabalhamos</div>
+              <p>Trilha 360 — os cinco verbos da nossa prática: mapear, prototipar, validar, implantar, sustentar.</p>
+            </a>
+            <a class="card explore-card" href="/glossario/?pilar=sf">
+              <div class="explore-kind">Glossário</div>
+              <p>Vocabulário de CRM com Salesforce, Dados e IA. Direto ao ponto, com link pro post canônico.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="post-related">
+        <div class="container">
+          <h2>Próximas leituras</h2>
+          <div class="grid-cards cols-2-3">
+            <a class="card post-card" data-pillar="sf" href="/blog/salesforce-roi-matriz.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">23 jun 2026</span>
+              </div>
+              <h3>Salesforce ROI — a matriz que vendedor de licença não mostra</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="card post-card" data-pillar="sf" href="/blog/migracao-pardot-marketing-cloud.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">10 jun 2026</span>
+              </div>
+              <h3>Migração Pardot para Marketing Cloud Engagement: o que o projeto não revela</h3>
+              <div class="read">Ler →</div>
+            </a>
+            <a class="card post-card" data-pillar="sf" href="/blog/implementacao-salesforce-seis-semanas.html">
+              <div class="post-meta">
+                <span class="pill-pillar">Pilar 01 · Salesforce</span>
+                <span class="post-date">2 jun 2026</span>
+              </div>
+              <h3>Salesforce em 6 semanas: o que cabe de verdade num MVP</h3>
+              <div class="read">Ler →</div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href="/" aria-label="Kliente 360">
+            <svg viewBox="0 0 80 80" aria-hidden="true">
+              <circle cx="40" cy="22" r="11" opacity="0.45"/>
+              <circle cx="58" cy="40" r="11" opacity="0.65"/>
+              <circle cx="40" cy="58" r="11" opacity="0.85"/>
+              <circle cx="22" cy="40" r="11"/>
+            </svg>
+            <span>kliente 360</span>
+          </a>
+          <p data-i18n="footer.tagline">Consultoria especializada em CRM com Salesforce, Dados e IA. Conhecimento aplicado, como serviço.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.pillarsTitle">Pilares</h4>
+          <ul>
+            <li><a href="/pilares/salesforce/" data-i18n="nav.mobile.salesforce">Salesforce</a></li>
+            <li><a href="/pilares/data/" data-i18n="nav.mobile.data">Data &amp; Analytics</a></li>
+            <li><a href="/pilares/ia/" data-i18n="nav.mobile.ai">IA Aplicada</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.empresaTitle">Empresa</h4>
+          <ul>
+            <li><a href="/#trilha" data-i18n="nav.trilha">Trilha 360</a></li>
+            <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
+            <li><a href="/glossario/">Glossário</a></li>
+            <li><a href="/#contato" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contactTitle">Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@kliente360.com">contato@kliente360.com</a></li>
+            <li><a href="https://www.linkedin.com/company/kliente360/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://wa.me/5511930488622" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div data-i18n="footer.rights">© 2026 Kliente 360. Todos os direitos reservados.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/i18n.js?v=9fdda3cc01"></script>
+  <script src="/assets/js/main.js?v=9fdda3cc01" type="module"></script>
+</body>
+</html>

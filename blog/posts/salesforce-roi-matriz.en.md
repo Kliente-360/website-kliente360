@@ -29,7 +29,7 @@ A typical Salesforce commercial proposal lists three lines of cost: annual licen
 
 There's a structured way to decide whether ROI closes — without relying on the vendor's model. Four variables determine the outcome:
 
-1. **Average annual ticket per customer.** Salesforce starts making financial sense when the average customer generates R$ 150k+ in annual revenue. Below that, the ratio between platform cost and generated margin rarely closes within 36 months. Low-ticket SMBs, as detailed in the analysis of [when NOT to use Salesforce](/blog/en/quando-nao-usar-salesforce.html), become a bad equation by design — regardless of how many features the platform offers.
+1. **Average annual ticket per customer.** Salesforce starts making financial sense when the average customer generates R$ 150k+ in annual revenue. Below that, the ratio between platform cost and generated margin rarely closes within 36 months. Low-ticket SMBs, as detailed in the analysis of [when NOT to use Salesforce](/blog/en/quando-nao-usar-salesforce.html), become a bad equation by design — regardless of how many features the platform offers. The same variable decides a more recent question: [whether an agent can close a sale without human review](/blog/en/agentforce-commerce-vender-sem-humano.html) shifts with ticket size and transaction reversibility, not just the platform's own ROI.
 
 2. **Process complexity.** Number of sales stages, number of decision-makers at the customer, average cycle length in days, distinct pricing rules per product. Salesforce excels at high complexity — but carries operating costs proportional to the complexity you brought in. Simple process on a complex platform generates expense without equivalent return.
 

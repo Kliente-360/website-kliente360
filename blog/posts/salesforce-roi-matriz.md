@@ -29,7 +29,7 @@ A proposta comercial típica de Salesforce lista três linhas de custo: licença
 
 Existe uma forma estruturada de decidir se o ROI fecha — sem depender do modelo do vendor. Quatro variáveis determinam o resultado:
 
-1. **Ticket médio anual por cliente.** Salesforce começa a fazer sentido financeiro quando o cliente médio gera R$ 150k+ em receita anual. Abaixo disso, a proporção entre custo da plataforma e margem gerada raramente fecha em 36 meses. PME de ticket baixo, como detalhado na análise de [quando NÃO usar Salesforce](/blog/quando-nao-usar-salesforce.html), vira equação ruim por design — independente de quantas features a plataforma oferece.
+1. **Ticket médio anual por cliente.** Salesforce começa a fazer sentido financeiro quando o cliente médio gera R$ 150k+ em receita anual. Abaixo disso, a proporção entre custo da plataforma e margem gerada raramente fecha em 36 meses. PME de ticket baixo, como detalhado na análise de [quando NÃO usar Salesforce](/blog/quando-nao-usar-salesforce.html), vira equação ruim por design — independente de quantas features a plataforma oferece. A mesma variável decide um problema mais recente: [se um agente pode fechar venda sem revisão humana](/blog/agentforce-commerce-vender-sem-humano.html) muda com o ticket e a reversibilidade da transação, não só com o ROI da plataforma que a hospeda.
 
 2. **Complexidade do processo comercial.** Número de estágios de venda, quantidade de tomadores de decisão no cliente, ciclo médio em dias, regras de precificação distintas por produto. Salesforce é excelente em complexidade alta — mas carrega custo de operação proporcional à complexidade que você trouxe pra dentro. Processo simples em plataforma complexa gera despesa sem retorno equivalente.
 

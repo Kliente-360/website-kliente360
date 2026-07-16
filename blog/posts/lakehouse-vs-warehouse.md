@@ -15,7 +15,7 @@ Se você é CTO ou decisor técnico de médio porte, provavelmente recebeu a pro
 
 ## O que lakehouse resolve — e o que não resolve
 
-Lakehouse nasceu de um problema legítimo: data lakes em S3 armazenam dado barato e em qualquer formato, mas não fazem query SQL bem. Warehouses como BigQuery e Snowflake fazem query excelente, mas são caros para armazenar dado bruto volumoso e não suportam ML workload nativamente. A arquitetura lakehouse, popularizada pelo Delta Lake do Databricks e depois pelo Apache Iceberg, propõe uma camada transacional sobre armazenamento de objeto — ACID, schema enforcement, SQL sobre Parquet no mesmo lugar que notebooks de ML.
+Lakehouse nasceu de um problema legítimo: data lakes em S3 armazenam dado barato e em qualquer formato, mas não fazem query SQL bem. Warehouses como BigQuery e Snowflake fazem query excelente, mas são caros para armazenar dado bruto volumoso e não suportam ML workload nativamente. A arquitetura lakehouse, popularizada pelo Delta Lake do Databricks e depois pelo Apache Iceberg, propõe uma camada transacional sobre armazenamento de objeto — ACID, schema enforcement, SQL sobre Parquet no mesmo lugar que notebooks de ML. Essa disputa entre formatos, aliás, [já convergiu — Iceberg virou o padrão de fato do table format em 2026](/blog/apache-iceberg-table-format-lakehouse.html), o que muda onde a due diligence de arquitetura precisa mirar.
 
 Para quem tem os três problemas simultaneamente — volume industrial, workload analítico *e* ML em produção, time misto de engenheiros e cientistas — lakehouse é a resposta certa. O erro está em assumir que "o que funciona pra empresa com dezenas de engenheiros de dados é o que funciona pra empresa com dois".
 

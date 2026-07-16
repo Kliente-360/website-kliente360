@@ -66,7 +66,7 @@ Times que ignoram esse checklist constroem IA com dado que não consegue auditar
 
 ### Arquitetura lakehouse amadureceu — mas não para todos
 
-A promessa do lakehouse (escalabilidade do data lake + confiabilidade do warehouse) finalmente está entregável em produção para times com dado em escala. Delta Lake, Iceberg, Hudi tornaram-se formatos de fato no ecossistema Databricks, Snowflake e BigQuery. Transação ACID em dado de larga escala virou commodity.
+A promessa do lakehouse (escalabilidade do data lake + confiabilidade do warehouse) finalmente está entregável em produção para times com dado em escala. Delta Lake, Iceberg, Hudi tornaram-se formatos de fato no ecossistema Databricks, Snowflake e BigQuery. Transação ACID em dado de larga escala virou commodity. Essa disputa de table format, aliás, [já tem vencedor definido — e a decisão migrou pro catálogo](/blog/apache-iceberg-table-format-lakehouse.html): não é mais "qual formato escolher", é "qual catálogo opera esse formato melhor pro seu caso".
 
 O ponto que [ainda merece debate é quando warehouse simples ainda ganha](/blog/lakehouse-vs-warehouse.html): se seu dado cabe em warehouse relacional e sua equipe domina SQL, lakehouse adiciona complexidade sem proporcional retorno. Arquitetura boa é a que entrega confiabilidade com o menor acréscimo de complexidade operacional.
 

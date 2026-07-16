@@ -66,7 +66,7 @@ Teams that ignore this checklist build AI on data they can't audit afterward. Th
 
 ### Lakehouse architecture has matured — but not for everyone
 
-The lakehouse promise (data lake scalability + warehouse reliability) is finally deliverable in production for teams with data at scale. Delta Lake, Iceberg, Hudi have become de facto formats in the Databricks, Snowflake, and BigQuery ecosystem. ACID transactions at large scale have become commodity.
+The lakehouse promise (data lake scalability + warehouse reliability) is finally deliverable in production for teams with data at scale. Delta Lake, Iceberg, Hudi have become de facto formats in the Databricks, Snowflake, and BigQuery ecosystem. ACID transactions at large scale have become commodity. That table format dispute, in fact, [already has a clear winner — and the decision moved to the catalog layer](/blog/en/apache-iceberg-table-format-lakehouse.html): it's no longer "which format to pick," it's "which catalog operates that format best for your case."
 
 The point that [still deserves debate is when a simple warehouse still wins](/blog/en/lakehouse-vs-warehouse.html): if your data fits in a relational warehouse and your team masters SQL, lakehouse adds complexity without proportional return. Good architecture is the one that delivers reliability with the smallest increase in operational complexity.
 

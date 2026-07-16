@@ -45,7 +45,7 @@ Esos cuatro patrones comparten característica: la IA agarra trabajo que el vend
 
 Donde la IA generativa en ventas se vuelve pasivo, con nombre:
 
-**Antipatrón 1: agente que decide precio o descuento.** Forzar a la IA a decidir "qué descuento ofrecer a este cliente" parece eficiente. En producción, genera incidente — el agente ofrece descuento inadecuado, el cliente asume que vale para la empresa toda, el vendedor sénior tiene que volver atrás. Confianza rota. La decisión de precio sigue siendo humana sénior. La IA puede *sugerir* en base a dato, pero no decidir.
+**Antipatrón 1: agente que decide precio o descuento.** Forzar a la IA a decidir "qué descuento ofrecer a este cliente" parece eficiente. En producción, genera incidente — el agente ofrece descuento inadecuado, el cliente asume que vale para la empresa toda, el vendedor sénior tiene que volver atrás. Confianza rota. La decisión de precio sigue siendo humana sénior. La IA puede *sugerir* en base a dato, pero no decidir. Es la misma lógica que separa, [con la llegada de Agentforce Commerce, dónde la venta puede correr sin humano en el loop](/blog/es/agentforce-commerce-vender-sem-humano.html): cuanto más reversible la transacción, más fácil liberar autonomía; precio fuera de tabla pide aprobación antes de completarse.
 
 **Antipatrón 2: SDR reemplazado por agente outbound automático.** Tentación: el agente envía mails de prospección en volumen, califica respuestas, agenda calls. En escala, se vuelve spam. El proveedor de mail degrada el dominio. La reputación de marca cae. ROI negativo a pesar del "volumen generado". El punto no es técnico — es que prospección en escala necesita discriminación humana, no volumen automático.
 

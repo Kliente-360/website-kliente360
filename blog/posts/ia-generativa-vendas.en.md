@@ -45,7 +45,7 @@ These four share a trait: AI takes work the rep already did, does part of it or 
 
 Where generative AI in sales becomes liability, with names:
 
-**Antipattern 1: agent that decides price or discount.** Forcing AI to decide "what discount to offer this customer" looks efficient. In production, it generates incidents — agent offers an inappropriate discount, customer assumes it applies company-wide, senior rep has to walk it back. Trust broken. Pricing decisions remain senior human. AI can *suggest* based on data, but not decide.
+**Antipattern 1: agent that decides price or discount.** Forcing AI to decide "what discount to offer this customer" looks efficient. In production, it generates incidents — agent offers an inappropriate discount, customer assumes it applies company-wide, senior rep has to walk it back. Trust broken. Pricing decisions remain senior human. AI can *suggest* based on data, but not decide. It's the same logic that separates, [as Agentforce Commerce arrives, where a sale can run without a human in the loop](/blog/en/agentforce-commerce-vender-sem-humano.html): the more reversible the transaction, the easier it is to grant autonomy; off-catalog pricing needs approval before completing.
 
 **Antipattern 2: SDR replaced by automated outbound agent.** Temptation: agent sends prospecting emails at volume, qualifies replies, books calls. At scale, it becomes spam. Email provider downgrades the domain. Brand reputation drops. Negative ROI despite "volume generated". The point isn't technical — it's that prospecting at scale needs human discrimination, not automated volume.
 

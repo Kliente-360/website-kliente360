@@ -45,7 +45,7 @@ Esses quatro padrões compartilham característica: IA pega trabalho que vendedo
 
 Onde IA generativa em vendas vira passivo, com nome:
 
-**Antipadrão 1: agente que decide preço ou desconto.** Forçar IA a decidir "qual desconto oferecer pra esse cliente" parece eficiente. Em produção, gera incidente — agente oferece desconto inadequado, cliente assume que vale pra empresa toda, vendedor sênior tem que voltar atrás. Confiança quebrada. Decisão de preço continua sendo humana sênior. IA pode *sugerir* baseada em dado, mas não decidir.
+**Antipadrão 1: agente que decide preço ou desconto.** Forçar IA a decidir "qual desconto oferecer pra esse cliente" parece eficiente. Em produção, gera incidente — agente oferece desconto inadequado, cliente assume que vale pra empresa toda, vendedor sênior tem que voltar atrás. Confiança quebrada. Decisão de preço continua sendo humana sênior. IA pode *sugerir* baseada em dado, mas não decidir. É a mesma lógica que separa, [na chegada do Agentforce Commerce, onde a venda pode rodar sem humano no loop](/blog/agentforce-commerce-vender-sem-humano.html): quanto mais reversível a transação, mais fácil liberar autonomia; preço fora de tabela pede aprovação antes de completar.
 
 **Antipadrão 2: SDR substituído por agente outbound automático.** Tentação: agente envia e-mails de prospecção em volume, qualifica respostas, agenda calls. Em escala, vira spam. Provedor de e-mail rebaixa domínio. Reputação da marca cai. ROI negativo apesar de "volume gerado". O ponto não é técnico — é que prospecção em escala precisa de discriminação humana, não de volume automático.
 

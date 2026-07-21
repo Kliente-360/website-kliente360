@@ -57,7 +57,7 @@ For companies running their own LLM (on-prem, [self-hosted open model](/blog/en/
 
 The phrase that kills governance: "it's just a pilot, we'll formalize later". In 2025 it still passed at some companies. In 2026 it doesn't. Three reasons:
 
-**Regulators started inspecting AI specifically.** Not a hypothetical threat anymore. Companies have been fined for LLM use with personal data without legal basis. Public cases. The thing became real.
+**[Regulators started inspecting AI specifically](/blog/en/anpd-fiscalizacao-ia-brasil.html).** Not a hypothetical threat anymore. Companies have been fined for LLM use with personal data without legal basis. Public cases. The thing became real.
 
 **Customers started asking.** In B2B contracts, explicit clauses about AI use, sub-processors, retention. Companies that don't answer lose business before getting fined.
 

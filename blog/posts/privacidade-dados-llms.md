@@ -57,7 +57,7 @@ Pra empresas que rodam LLM próprio (on-prem, [modelo aberto auto-hospedado](/bl
 
 A frase que mata governança: "é só um piloto, depois a gente formaliza". Em 2025 ainda passava em algumas empresas. Em 2026 não passa mais. Três motivos:
 
-**ANPD começou a fiscalizar IA especificamente.** Não é mais ameaça hipotética. Empresas no Brasil já tomaram multa por uso de LLM com dado pessoal sem base legal. A norma alemã equivalente teve casos públicos. A coisa virou real.
+**[ANPD começou a fiscalizar IA especificamente](/blog/anpd-fiscalizacao-ia-brasil.html).** Não é mais ameaça hipotética. Empresas no Brasil já tomaram multa por uso de LLM com dado pessoal sem base legal. A norma alemã equivalente teve casos públicos. A coisa virou real.
 
 **Cliente começou a perguntar.** Em contratos B2B, cláusulas explícitas sobre uso de IA, sub-processadores, retenção. Empresa que não responde perde negócio antes de tomar multa.
 

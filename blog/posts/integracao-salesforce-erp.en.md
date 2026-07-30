@@ -53,7 +53,7 @@ Whoever answers the five before the sprint starts delivers on time. Whoever answ
 
 Once the five are answered, the technical architecture discussion gets trivial. Three patterns cover 90% of cases:
 
-**Native integration (MuleSoft Anypoint, Salesforce Connect, Data Cloud).** Worth it when the company is invested in the Salesforce ecosystem. Higher license cost, lower implementation. [Data Cloud in 2026 absorbs part of what MuleSoft used to do](/blog/en/data-cloud-nervo-central.html), simplifying the architecture.
+**Native integration (MuleSoft Anypoint, Salesforce Connect, Data Cloud).** Worth it when the company is invested in the Salesforce ecosystem. Higher license cost, lower implementation. [Data Cloud in 2026 absorbs part of what MuleSoft used to do](/blog/en/data-cloud-nervo-central.html), simplifying the architecture. That higher license cost changed shape in March 2026 — [Data Cloud's new credit model](/blog/en/data-cloud-pricing-creditos-2026.html) trades locked categories for a single pool, but the operation multiplier (identity resolution costs far more than a simple query) still decides whether the bill fits the budget.
 
 **Generic middleware (Boomi, Workato, Tray).** Worth it when integration needs to serve multiple systems beyond the Salesforce-ERP pair. Agnostic stack, recurring cost, shared maintenance.
 

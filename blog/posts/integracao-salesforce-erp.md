@@ -53,7 +53,7 @@ Quem responde os cinco antes de a sprint começar entrega em prazo. Quem respond
 
 Depois das cinco respondidas, a discussão de arquitetura técnica fica trivial. Três padrões cobrem 90% dos casos:
 
-**Integração native (MuleSoft Anypoint, Salesforce Connect, Data Cloud).** Vale quando empresa já está investida no ecossistema Salesforce. Custo mais alto de licença, menor de implementação. [Data Cloud em 2026 absorve parte do que MuleSoft fazia](/blog/data-cloud-nervo-central.html), simplificando arquitetura.
+**Integração native (MuleSoft Anypoint, Salesforce Connect, Data Cloud).** Vale quando empresa já está investida no ecossistema Salesforce. Custo mais alto de licença, menor de implementação. [Data Cloud em 2026 absorve parte do que MuleSoft fazia](/blog/data-cloud-nervo-central.html), simplificando arquitetura. Esse custo mais alto de licença mudou de forma em março de 2026 — [o novo modelo de créditos do Data Cloud](/blog/data-cloud-pricing-creditos-2026.html) troca categoria travada por pool único, mas o multiplicador de operação (resolução de identidade custa muito mais que consulta simples) ainda decide se a conta cabe no orçamento.
 
 **Middleware genérico (Boomi, Workato, Tray).** Vale quando integração precisa servir múltiplos sistemas além do par Salesforce-ERP. Stack agnóstica, custo recorrente, manutenção compartilhada.
 

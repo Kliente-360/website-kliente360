@@ -53,7 +53,7 @@ Four questions that usefully reformulate the decision.
 
 3. **Is the primary use case marketing activation or agent context?** Marketing activation for channels: independent CDP solves it well. Real-time agent context: requires an architecture that classic CDP doesn't deliver by design. Data Cloud or equivalent.
 
-4. **What's the acceptable dependency horizon?** Buying Data Cloud means betting on the Salesforce ecosystem for at least 3–5 years. Buying Tealium means betting that the independent category survives consolidation. Both bets carry different risks. A company that doesn't think through this horizon switches customer data platforms every two years and pays integration tax every cycle — a cost that rarely appears in the technology budget, but always appears on the data team's calendar.
+4. **What's the acceptable dependency horizon?** Buying Data Cloud means betting on the Salesforce ecosystem for at least 3–5 years. Buying Tealium means betting that the independent category survives consolidation. Both bets carry different risks. A company that doesn't think through this horizon switches customer data platforms every two years and pays integration tax every cycle — a cost that rarely appears in the technology budget, but always appears on the data team's calendar. That horizon math got more concrete after the March 2026 pricing overhaul — the [credit model and per-profile SKU](/blog/en/data-cloud-pricing-creditos-2026.html) for Data Cloud gives real numbers to weigh against an independent CDP's integration cost, instead of deciding purely on an ecosystem bet.
 
 ## Commoditization is good news
 

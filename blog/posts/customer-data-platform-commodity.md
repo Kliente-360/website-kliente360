@@ -53,7 +53,7 @@ Quatro perguntas que reformulam a decisão de forma útil.
 
 3. **O caso de uso primário é ativação de marketing ou contexto para agente?** Ativação de marketing em canais: CDP independente resolve bem. Contexto para agente em tempo real: precisa de arquitetura que CDP clássico não entrega por design. Data Cloud ou solução equivalente.
 
-4. **Qual o horizonte de dependência aceitável?** Comprar Data Cloud é apostar no ecossistema Salesforce por no mínimo 3–5 anos. Comprar Tealium é apostar que a categoria independente sobrevive consolidação. As duas apostas têm risco diferente. Empresa que não pensa nesse horizonte troca de plataforma de dados de cliente a cada dois anos e paga integration tax em todo ciclo — custo que raramente aparece no orçamento de tecnologia, mas aparece no calendário do time de dados.
+4. **Qual o horizonte de dependência aceitável?** Comprar Data Cloud é apostar no ecossistema Salesforce por no mínimo 3–5 anos. Comprar Tealium é apostar que a categoria independente sobrevive consolidação. As duas apostas têm risco diferente. Empresa que não pensa nesse horizonte troca de plataforma de dados de cliente a cada dois anos e paga integration tax em todo ciclo — custo que raramente aparece no orçamento de tecnologia, mas aparece no calendário do time de dados. Esse cálculo de horizonte ficou mais concreto depois da reforma de pricing de março de 2026 — o [modelo de créditos e SKU por perfil](/blog/data-cloud-pricing-creditos-2026.html) do Data Cloud dá números reais pra comparar contra o custo de integração de um CDP independente, em vez de decidir só pela aposta de ecossistema.
 
 ## A commoditização é boa notícia
 

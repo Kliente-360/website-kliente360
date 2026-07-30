@@ -25,7 +25,7 @@ Esse é o motivo técnico de fundo. Não é "ELT é mais moderno". É "o gargalo
 
 A consequência mais valiosa de ELT não está no E-L-T versus E-T-L. Está em quebrar a operação em dois projetos independentes.
 
-**Ingestão (EL).** Trazer dado de Salesforce, Stripe, Postgres, planilhas, APIs externas. Idealmente automatizado por ferramenta (Fivetran, Airbyte, Meltano). Schedule, schema, retry, monitoring. É commodity. Quem ainda escreve conector próprio em Python pra ingestão de SaaS está gastando dinheiro à toa.
+**Ingestão (EL).** Trazer dado de Salesforce, Stripe, Postgres, planilhas, APIs externas. Idealmente automatizado por ferramenta (Fivetran, Airbyte, Meltano). Schedule, schema, retry, monitoring. É commodity. Quem ainda escreve conector próprio em Python pra ingestão de SaaS está gastando dinheiro à toa. A onda mais recente empurra essa commoditização ainda mais longe: [zero-ETL substitui o conector gerenciado por replicação nativa](/blog/zero-etl-mito-ou-realidade.html) entre banco transacional e warehouse, direto do provedor de nuvem — sem eliminar o trabalho de modelagem que continua na etapa seguinte.
 
 **Modelagem (T).** Transformar dado bruto em modelo de negócio: staging → intermediate → marts. [Aqui dbt vira a peça central](/blog/dbt-na-pratica.html), com SQL versionado, testes, documentação, lineage.
 

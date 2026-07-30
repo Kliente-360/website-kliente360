@@ -55,7 +55,7 @@ Pontuação prática:
 
 ## Vetor 3 — Integração com ecossistema da cloud
 
-O lock-in mais subestimado: quanto o warehouse está costurado com outros serviços da mesma cloud.
+O lock-in mais subestimado: quanto o warehouse está costurado com outros serviços da mesma cloud. O zero-ETL é o exemplo mais recente desse padrão: [cada integração nativa entre banco e warehouse](/blog/zero-etl-mito-ou-realidade.html) aumenta o custo de trocar de provedor, porque só funciona dentro da fronteira de quem construiu as duas pontas.
 
 **BigQuery** vive dentro do Google Cloud. Integração nativa com Looker, Vertex AI, Pub/Sub, Dataflow, Cloud Storage. Migração reversa não é só warehouse — é renegociar todo o stack de dados que ficou em torno. Empresa com Looker + BigQuery + Vertex AI tem que migrar três produtos juntos. Custo de saída cresce exponencialmente com tempo dentro do GCP.
 

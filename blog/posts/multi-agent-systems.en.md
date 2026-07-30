@@ -35,7 +35,7 @@ The contexts where the architecture makes sense. All have something in common: c
 2. **Technical domains with heterogeneous expertise.** A system that needs legal reasoning + financial analysis + commercial writing. Each demands different prompt, knowledge base, tone. Single agent is mediocre at all; specialist agents shine each in their domain, orchestrator coordinates.
 3. **Workflows with human decision between steps.** Systems where a human approves between steps, or where different humans interact with different agents. Natural multi-agent structure reflects the human structure — doesn't try to hide it.
 
-Outside these three, multi-agent tends to be over-engineering. And over-engineering in AI costs more than in traditional systems, because latency compounds (each agent adds inference time) and cost multiplies (each agent runs an LLM, each coordination costs tokens).
+Outside these three, multi-agent tends to be over-engineering. And over-engineering in AI costs more than in traditional systems, because latency compounds (each agent adds inference time) and cost multiplies (each agent runs an LLM, each coordination costs tokens). One of the most direct ways to contain that multiplier is running [each agent with SLM by default](/blog/en/slm-pipeline-de-agentes.html) and reserving the frontier model only for the step that requires generalization — the multi-agent architecture gets cheaper without giving up the specialization that justifies it.
 
 ## The two most expensive antipatterns
 

@@ -35,7 +35,7 @@ Los contextos donde la arquitectura tiene sentido. Todos tienen algo en común: 
 2. **Dominios técnicos heterogéneos con expertise distinta.** Sistema que necesita razonamiento jurídico + análisis financiero + redacción comercial. Cada uno exige prompt, base de conocimiento y tono distintos. Agente único queda mediocre en todo; agentes especialistas brillan cada uno en su dominio, orquestador coordina.
 3. **Workflows con decisión humana entre etapas.** Sistemas donde el humano aprueba entre pasos, o donde diferentes humanos interactúan con diferentes agentes. Estructura natural multi-agent refleja la estructura humana — no intenta ocultarla.
 
-Fuera de esos tres, multi-agent tiende a ser sobre-ingeniería. Y sobre-ingeniería en IA cuesta más que en sistema tradicional, porque la latencia se compone (cada agente agrega tiempo de inferencia) y el costo se multiplica (cada agente corre LLM, cada coordinación cuesta tokens).
+Fuera de esos tres, multi-agent tiende a ser sobre-ingeniería. Y sobre-ingeniería en IA cuesta más que en sistema tradicional, porque la latencia se compone (cada agente agrega tiempo de inferencia) y el costo se multiplica (cada agente corre LLM, cada coordinación cuesta tokens). Una de las formas más directas de contener ese multiplicador es correr [cada agente con SLM por default](/blog/es/slm-pipeline-de-agentes.html) y reservar el modelo de frontera solo para la etapa que exige generalización — la arquitectura multi-agent queda más barata sin abandonar la especialización que la justifica.
 
 ## Los dos antipatrones más caros
 

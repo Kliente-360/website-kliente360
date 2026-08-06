@@ -77,7 +77,7 @@ Se sua empresa tem analistas usando ChatGPT/Claude pra gerar SQL sem governança
 
 **Treine o time pra desconfiar.** Sessão de 1 hora mostrando os três modos de falha (schema, definição, JOIN). Quando o time entende como o LLM erra, o uso fica mais cuidadoso.
 
-**Integre com camada semântica.** [dbt mart ou semantic layer](/blog/dbt-na-pratica.html) define métricas; LLM consulta a camada, não o warehouse cru. Reduz erro de definição em 80%.
+**Integre com camada semântica.** [dbt mart ou semantic layer](/blog/dbt-na-pratica.html) define métricas; LLM consulta a camada, não o warehouse cru. Reduz erro de definição em 80% — mas só resolve de verdade quando [a própria camada semântica tem definição única e governada](/blog/camada-semantica-agente-pergunta-certa.html), não uma versão por ferramenta.
 
 LLM em analytics em 2026 é uma das oportunidades mais claras de produtividade — e uma das mais perigosas sem disciplina. A diferença entre as duas posturas não está em qual modelo é escolhido. Está no pipeline construído em volta, com validação, contexto e log que tratam LLM como ferramenta crítica — não como assistente confiável por inércia.
 

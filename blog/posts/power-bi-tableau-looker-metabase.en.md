@@ -69,7 +69,7 @@ The real divergences are in three dimensions:
 
 ## The question that comes before the license contract
 
-The BI decision is, in practice, a data architecture decision with a visual interface. Whoever licenses the tool without solving what sits beneath — fragmented data, no semantic layer, no metric owner — will switch tools in two years and reproduce the same problem on a new stack.
+The BI decision is, in practice, a data architecture decision with a visual interface. Whoever licenses the tool without solving what sits beneath — fragmented data, no semantic layer, no metric owner — will switch tools in two years and reproduce the same problem on a new stack. That same semantic layer increasingly decides [whether the AI agent querying that data gets the question right or just invents an answer](/blog/en/camada-semantica-agente-pergunta-certa.html).
 
 The question a specialized consultancy asks before recommending any tool: "Is the data that will feed this BI modeled, governed, and with a clear owner?" If the answer is not yes, that conversation needs to happen before the conversation with the license vendor.
 

@@ -69,7 +69,7 @@ As divergências reais estão em três dimensões:
 
 ## A pergunta que vem antes do contrato de licença
 
-A decisão de BI é, na prática, uma decisão de arquitetura de dados com interface visual. Quem licencia a ferramenta sem resolver o que está abaixo — dado fragmentado, sem modelo semântico, sem dono de métricas — vai trocar de ferramenta em dois anos e reproduzir o mesmo problema num stack novo.
+A decisão de BI é, na prática, uma decisão de arquitetura de dados com interface visual. Quem licencia a ferramenta sem resolver o que está abaixo — dado fragmentado, sem modelo semântico, sem dono de métricas — vai trocar de ferramenta em dois anos e reproduzir o mesmo problema num stack novo. O mesmo modelo semântico decide, cada vez mais, [se o agente de IA que consulta esse dado acerta a pergunta ou inventa a resposta](/blog/camada-semantica-agente-pergunta-certa.html).
 
 A pergunta que uma consultoria especializada faz antes de recomendar qualquer ferramenta: "o dado que vai alimentar esse BI está modelado, governado e com dono claro?". Se a resposta não for sim, essa conversa precisa acontecer antes da conversa com o vendedor de licença.
 

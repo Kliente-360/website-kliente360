@@ -76,7 +76,7 @@ Quatro sinais que dizem se a governança está rendendo:
 
 Se sua empresa tem self-service BI implantado e os sintomas do "cada um com sua versão" apareceram, a saída não é cancelar o projeto. É implementar guardrails que devem ter sido pensados desde o início:
 
-**Defina a camada semântica.** As 20–30 métricas que importam. Como cada uma é calculada, dono nominal, fonte de dado. Antes de qualquer dashboard novo oficial.
+**Defina a camada semântica.** As 20–30 métricas que importam. Como cada uma é calculada, dono nominal, fonte de dado. Antes de qualquer dashboard novo oficial — e, cada vez mais, antes de [qualquer agente de IA consultar a mesma métrica sem definição única](/blog/camada-semantica-agente-pergunta-certa.html).
 
 **Crie a separação física entre exploração e oficial.** Tableau Sites, Power BI workspaces, Looker boards. Visibilidade clara pra usuário.
 

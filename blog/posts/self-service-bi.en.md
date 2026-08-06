@@ -76,7 +76,7 @@ Four signs telling whether the governance is paying off:
 
 If your company has self-service BI deployed and the "each one with their version" symptoms appeared, the way out isn't to cancel the project. It's to implement guardrails that should have been thought through from the start:
 
-**Define the semantic layer.** The 20–30 metrics that matter. How each is calculated, named owner, data source. Before any new official dashboard.
+**Define the semantic layer.** The 20–30 metrics that matter. How each is calculated, named owner, data source. Before any new official dashboard — and, increasingly, before [any AI agent queries that same metric without a single definition](/blog/en/camada-semantica-agente-pergunta-certa.html).
 
 **Create the physical separation between exploration and official.** Tableau Sites, Power BI workspaces, Looker boards. Clear visibility for the user.
 

@@ -35,7 +35,7 @@ Cuatro arquitecturas de cobro interno que vimos funcionar. Cada una es trade-off
 
 **Modelo 3 — Chargeback por costo real, con markup.** Cada llamada se loguea con modelo, input tokens, output tokens, y costo calculado en USD. El equipo es debitado por el costo real + markup de 10–20% para cubrir infra y gobierno (gateway, observabilidad, vault de claves). Es el modelo más justo y más caro de operar — exige gateway de inferencia centralizado con billing por requisición. Cuando funciona, premia al equipo que elige el modelo correcto, optimiza prompts y usa cache.
 
-**Modelo 4 — Budget asignado upfront por caso de uso.** Cada caso de uso aprobado recibe budget mensual de inferencia (ej.: USD 2.000/mes para el agente de atención, USD 800/mes para el asistente interno de ventas). Equipo consume libremente dentro del límite; superó, necesita aprobación o throttle automático. Funciona bien en empresas con cultura fuerte de presupuesto por iniciativa. Limitación: budget mal calibrado se vuelve o freno al crecimiento o cheque en blanco.
+**Modelo 4 — Budget asignado upfront por caso de uso.** Cada caso de uso aprobado recibe budget mensual de inferencia (ej.: USD 2.000/mes para el agente de atención, USD 800/mes para el asistente interno de ventas). Equipo consume libremente dentro del límite; superó, necesita aprobación o throttle automático. Funciona bien en empresas con cultura fuerte de presupuesto por iniciativa. Limitación: budget mal calibrado se vuelve o freno al crecimiento o cheque en blanco. Es la misma lógica presupuestaria que sostiene a un [dueño de agente con autoridad real](/blog/es/dono-do-agente-cargo-2026.html) — sin presupuesto nombrado por caso de uso, el nombramiento se vuelve cargo decorativo.
 
 ## Cómo elegir entre los cuatro
 

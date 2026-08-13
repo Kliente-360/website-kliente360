@@ -35,7 +35,7 @@ Four chargeback architectures we've seen work. Each is a trade-off between accou
 
 **Model 3 — Chargeback by real cost, with markup.** Each call is logged with model, input tokens, output tokens, and cost calculated in USD. The team is debited the real cost + a 10–20% markup to cover infra and governance (gateway, observability, key vault). It's the fairest and most expensive model to operate — requires a centralized inference gateway with per-request billing. When it works, it rewards teams that pick the right model, optimize prompts and use cache.
 
-**Model 4 — Upfront budget allocated per use case.** Each approved use case gets a monthly inference budget (e.g. USD 2,000/month for the customer service agent, USD 800/month for the internal sales assistant). The team consumes freely within the limit; exceeded, it needs approval or automatic throttle. Works well in companies with strong initiative-budget culture. Limitation: a poorly calibrated budget becomes either a growth brake or a blank check.
+**Model 4 — Upfront budget allocated per use case.** Each approved use case gets a monthly inference budget (e.g. USD 2,000/month for the customer service agent, USD 800/month for the internal sales assistant). The team consumes freely within the limit; exceeded, it needs approval or automatic throttle. Works well in companies with strong initiative-budget culture. Limitation: a poorly calibrated budget becomes either a growth brake or a blank check. It's the same budget logic behind [an agent owner with real authority](/blog/en/dono-do-agente-cargo-2026.html) — without funds named to a specific use case, the appointment turns into a decorative title.
 
 ## How to choose among the four
 

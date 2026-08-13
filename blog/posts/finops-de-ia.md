@@ -35,7 +35,7 @@ Quatro arquiteturas de cobrança interna que vimos funcionar. Cada uma é trade-
 
 **Modelo 3 — Chargeback por custo real, com markup.** Cada chamada é logada com modelo, input tokens, output tokens, e custo calculado em US$. Time é debitado pelo custo real + markup de 10–20% pra cobrir infra e governança (gateway, observabilidade, vault de chaves). É o modelo mais justo e mais caro de operar — exige gateway de inferência centralizado com billing por requisição. Quando funciona, premia time que escolhe modelo certo, otimiza prompts e usa cache.
 
-**Modelo 4 — Budget alocado upfront por caso de uso.** Cada caso de uso aprovado recebe budget mensal de inferência (ex: USD 2.000/mês pro agente de atendimento, USD 800/mês pro assistente interno de vendas). Time consome livremente dentro do limite; ultrapassou, precisa aprovação ou throttle automático. Funciona bem em empresas com cultura forte de orçamento por iniciativa. Limitação: budget mal calibrado vira ou freio ao crescimento ou cheque em branco.
+**Modelo 4 — Budget alocado upfront por caso de uso.** Cada caso de uso aprovado recebe budget mensal de inferência (ex: USD 2.000/mês pro agente de atendimento, USD 800/mês pro assistente interno de vendas). Time consome livremente dentro do limite; ultrapassou, precisa aprovação ou throttle automático. Funciona bem em empresas com cultura forte de orçamento por iniciativa. Limitação: budget mal calibrado vira ou freio ao crescimento ou cheque em branco. É a mesma lógica orçamentária que sustenta um [dono de agente com autoridade real](/blog/dono-do-agente-cargo-2026.html) — sem verba nomeada por caso de uso, a nomeação vira cargo decorativo.
 
 ## Como escolher entre os quatro
 

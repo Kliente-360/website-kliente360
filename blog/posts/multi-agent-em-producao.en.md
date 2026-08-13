@@ -85,7 +85,7 @@ If we went back to week 1 with the knowledge of 90 days, we'd do 5 things differ
 
 ## The question that unlocks
 
-Multi-agent works. But it works expensive, with real fragility, and demanding a team with continuous-operation muscle. Before proposing a multi-agent system to a client, the question that unlocks the decision is: do you have a team that will take care of this for 12 months without complaining? If the answer is no, the honest recommendation is to simplify — maybe a single well-designed agent delivers 70% of the value with 30% of the complexity.
+Multi-agent works. But it works expensive, with real fragility, and demanding a team with continuous-operation muscle. Before proposing a multi-agent system to a client, the question that unlocks the decision is: is there [a formally named agent owner](/blog/en/dono-do-agente-cargo-2026.html) — not a diffuse committee — to take care of this for 12 months without complaining? If the answer is no, the honest recommendation is to simplify — maybe a single well-designed agent delivers 70% of the value with 30% of the complexity.
 
 Cases where multi-agent pays off: high volume (> 5,000 interactions/month), high value per interaction (each error is expensive), and existence of dedicated technical team. Outside that, it's paper architecture — pretty, citable, and expensive to maintain.
 

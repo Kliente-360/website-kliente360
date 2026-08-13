@@ -85,7 +85,7 @@ Se voltássemos pra semana 1 com o conhecimento de 90 dias, fariam-se 5 coisas d
 
 ## A pergunta que destrava
 
-Multi-agent funciona. Mas funciona caro, com fragilidade real, e exigindo time com músculo de operação contínua. Antes de propor sistema multi-agent a um cliente, a pergunta que destrava a decisão é: você tem time que vai cuidar disso por 12 meses sem reclamar? Se a resposta é não, a recomendação honesta é simplificar — talvez um agente único bem desenhado entregue 70% do valor com 30% da complexidade.
+Multi-agent funciona. Mas funciona caro, com fragilidade real, e exigindo time com músculo de operação contínua. Antes de propor sistema multi-agent a um cliente, a pergunta que destrava a decisão é: existe [um dono do agente nomeado formalmente](/blog/dono-do-agente-cargo-2026.html) — não um comitê difuso — pra cuidar disso por 12 meses sem reclamar? Se a resposta é não, a recomendação honesta é simplificar — talvez um agente único bem desenhado entregue 70% do valor com 30% da complexidade.
 
 Casos onde multi-agent compensa: volume alto (> 5.000 interações/mês), valor por interação alto (cada erro é caro), e existência de equipe técnica dedicada. Fora disso, é arquitetura de paper — bonita, citável e cara de manter.
 

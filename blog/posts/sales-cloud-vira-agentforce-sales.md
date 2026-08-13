@@ -38,7 +38,7 @@ O padrão, porém, já apareceu antes. Data Cloud virou Data 360 na mesma leva d
 Sales Cloud → Agentforce Sales segue o mesmo roteiro até aqui: nome novo, licença antiga intacta. Mas os agentes que o nome novo carrega — Lead Qualification, Lead Nurturing, Account Management — exigem, dependendo da edição e do contrato, licença adicional de Agentforce. Isso não é mudança retroativa na licença que você já paga. É a mesma lógica de sempre, só que embutida num nome que agora sugere que o agente já vem incluído.
 
 1. **O rebranding em si não cobra nada extra.** Quem já é cliente de Sales Cloud continua sem custo adicional só por causa do nome novo.
-2. **Os agentes específicos do pacote costumam exigir licença separada.** Prospecção, qualificação e nutrição de lead via agente entram como add-on, não como parte automática do contrato vigente.
+2. **Os agentes específicos do pacote costumam exigir licença separada.** Prospecção, qualificação e nutrição de lead via agente entram como add-on, não como parte automática do contrato vigente — [ao contrário do que Salesforce Foundations libera de graça em Enterprise Edition](/blog/salesforce-foundations-o-que-cobre-de-verdade.html), onde uma fatia do Agentforce já vem incluída sem contrato novo.
 3. **O histórico recente do Data Cloud mostra que rename e reforma de preço podem vir em sequência**, não no mesmo anúncio — o que significa que "sem mudança de custo hoje" não é garantia de "sem mudança de custo em 2027".
 
 ## Três perguntas pra quem já tem Sales Cloud

@@ -19,7 +19,7 @@ In traditional architecture, data flows from source system (CRM, app, ERP) to th
 
 Data contract inverts that dynamic. The data team (consumer) explicitly declares *which fields it depends on, with what type, with what semantics*. The backend team (producer) commits to versioning changes, giving advance notice, and breaking the contract is a conscious decision — not an accident.
 
-In practice, the contract lives as code: YAML/JSON file in a shared repo, checked in CI, with semantic versioning. A breaking change requires major version + deprecation period. An additive change is trivial. Whoever tries to change without bumping the version has their PR blocked.
+In practice, the contract lives as code: YAML/JSON file in a shared repo, checked in CI, with semantic versioning. A breaking change requires major version + deprecation period. An additive change is trivial. Whoever tries to change without bumping the version has their PR blocked. The same logic of taking discipline out of someone's head and putting it into tested code applies beyond schema too, in [data governance as code](/blog/en/governanca-dados-como-codigo.html): compliance rules become automated tests, not just schema rules.
 
 > Data contract isn't new tech. It's the old discipline of API contract applied to data — where it always should have been, and never was due to organizational inertia.
 

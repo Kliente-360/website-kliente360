@@ -19,7 +19,7 @@ En arquitectura tradicional, el dato fluye del sistema fuente (CRM, app, ERP) al
 
 El data contract invierte esa dinámica. El equipo de datos (consumidor) declara explícitamente *de qué campos depende, con qué tipo, con qué semántica*. El equipo de backend (productor) se compromete a versionar cambios, dar aviso previo, y romper el contrato es una decisión consciente — no accidente.
 
-En la práctica, el contract vive en código: archivo YAML/JSON en un repositorio compartido, chequeado en CI, con versionado semántico. Cambio breaking exige major version + período de deprecation. Cambio aditivo es trivial. Quien intenta cambiar sin incrementar versión tiene el PR bloqueado.
+En la práctica, el contract vive en código: archivo YAML/JSON en un repositorio compartido, chequeado en CI, con versionado semántico. Cambio breaking exige major version + período de deprecation. Cambio aditivo es trivial. Quien intenta cambiar sin incrementar versión tiene el PR bloqueado. La misma lógica de sacar la disciplina de la cabeza de alguien y ponerla en código probado se aplica más allá del schema, en la [gobernanza de datos como código](/blog/es/governanca-dados-como-codigo.html): la regla de cumplimiento se vuelve prueba automatizada, no solo regla de schema.
 
 > El data contract no es tecnología nueva. Es la vieja disciplina de API contract aplicada al dato — donde siempre debería haber estado, y nunca estuvo por inercia organizacional.
 

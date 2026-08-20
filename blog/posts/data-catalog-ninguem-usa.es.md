@@ -39,7 +39,7 @@ No confundir el argumento. Hay contextos donde el catalog premium tiene valor re
 
 **Empresa grande con 5+ equipos de datos independientes.** Cuando el catálogo necesita atravesar fronteras organizacionales (varias áreas de negocio, varias subsidiarias, varias plataformas), el catalog enterprise ofrece gobernanza cruzada que una herramienta única no da.
 
-**Necesidad regulatoria explícita.** Empresa en sector regulado (financiero, salud) donde el auditor exige documentación centralizada con trazabilidad de aprobación. Acá el catalog es compliance, no productividad.
+**Necesidad regulatoria explícita.** Empresa en sector regulado (financiero, salud) donde el auditor exige documentación centralizada con trazabilidad de aprobación. Acá el catalog es compliance, no productividad. Buena parte de esa trazabilidad hoy puede nacer como [efecto colateral automático del propio pipeline](/blog/es/governanca-dados-como-codigo.html) en vez de depender solo del catalog centralizando documentación manual.
 
 **Lineage cross-stack.** Cuando el dato fluye entre 5+ sistemas distintos (Salesforce, ERP, warehouse, ML platform, BI), el catalog enterprise rastrea lineage de forma que dbt solo no rastrea.
 

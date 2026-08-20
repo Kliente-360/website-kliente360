@@ -39,7 +39,7 @@ Don't confuse the argument. There are contexts where a premium catalog has real 
 
 **Large company with 5+ independent data teams.** When the catalog has to cross organizational boundaries (multiple business areas, subsidiaries, platforms), enterprise catalog offers cross-cutting governance that a single tool doesn't.
 
-**Explicit regulatory need.** Company in a regulated sector (financial, healthcare) where auditors require centralized documentation with approval trail. Here catalog is compliance, not productivity.
+**Explicit regulatory need.** Company in a regulated sector (financial, healthcare) where auditors require centralized documentation with approval trail. Here catalog is compliance, not productivity. A good part of that trail today can be born as an [automatic side effect of the pipeline itself](/blog/en/governanca-dados-como-codigo.html) instead of depending only on the catalog centralizing manual documentation.
 
 **Cross-stack lineage.** When data flows across 5+ distinct systems (Salesforce, ERP, warehouse, ML platform, BI), enterprise catalog tracks lineage in a way dbt alone doesn't.
 

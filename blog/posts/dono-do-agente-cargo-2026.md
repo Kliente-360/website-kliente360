@@ -33,7 +33,7 @@ No Brasil, essa pressão regulatória já é concreta mesmo sem uma lei de IA ap
 
 O cargo não é sinônimo de "gerente de projeto de IA" nem de "product owner do agente" — ele carrega três funções específicas que, juntas, fecham o vácuo de responsabilidade:
 
-1. **Monitor.** Observa o comportamento do agente em produção continuamente — não em relatório mensal, em acompanhamento próximo o bastante pra pegar desvio antes dele compor.
+1. **Monitor.** Observa o comportamento do agente em produção continuamente — não em relatório mensal, em acompanhamento próximo o bastante pra pegar desvio antes dele compor. Sem [instrumentação estruturada de cada execução](/blog/observabilidade-de-agentes.html), esse monitoramento vira sensação, não dado — a maioria das empresas hoje só liga um painel de uptime e chama isso de observar o agente.
 2. **Aprovador.** Autoriza ações de alto impacto antes de o agente executá-las quando o nível de autonomia do agente exige checkpoint humano — estorno acima de um valor, mudança de contrato, decisão que afeta terceiro.
 3. **Dono do override.** Mantém a autoridade — e o acesso técnico — pra pausar ou reverter o agente quando o resultado desvia do esperado, sem precisar escalar por três níveis de aprovação primeiro.
 

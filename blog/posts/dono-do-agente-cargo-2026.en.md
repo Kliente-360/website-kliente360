@@ -33,7 +33,7 @@ In Brazil, this regulatory pressure is already concrete even without an approved
 
 The role isn't a synonym for "AI project manager" or "agent product owner" — it carries three specific functions that, together, close the responsibility vacuum:
 
-1. **Monitor.** Continuously observes the agent's behavior in production — not in a monthly report, but closely enough to catch drift before it compounds.
+1. **Monitor.** Continuously observes the agent's behavior in production — not in a monthly report, but closely enough to catch drift before it compounds. Without [structured instrumentation of every execution](/blog/en/observabilidade-de-agentes.html), that monitoring becomes a feeling, not data — most companies today just turn on an uptime panel and call it watching the agent.
 2. **Approver.** Authorizes high-impact actions before the agent executes them, whenever the agent's autonomy level requires a human checkpoint — a refund above a threshold, a contract change, a decision that affects a third party.
 3. **Override owner.** Keeps the authority — and the technical access — to pause or reverse the agent when the outcome drifts from what's expected, without needing to escalate through three approval layers first.
 

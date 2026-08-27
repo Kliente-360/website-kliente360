@@ -49,7 +49,7 @@ Para quien decide el presupuesto, la lección práctica es simple: no ates el ca
 
 Foundations es una herramienta de prueba barata, no de operación definitiva. Tres preguntas, en el orden que conviene revisar antes de tratarlo como estrategia de largo plazo:
 
-1. **¿El caso de uso cabe dentro de los límites, o ya nace más grande que ellos?** Si el volumen real de correo, segmentación o conversación de agente supera el techo en el primer mes, Foundations no es la base correcta —es solo el piloto que confirma que la inversión pagada es necesaria.
+1. **¿El caso de uso cabe dentro de los límites, o ya nace más grande que ellos?** Si el volumen real de correo, segmentación o conversación de agente supera el techo en el primer mes, Foundations no es la base correcta —es solo el piloto que confirma que la inversión pagada es necesaria, y la elección entre [conversación fija a US$ 2 y Flex Credits pagos](/blog/es/agentforce-pricing-seis-modelos.html) pasa a decidir el presupuesto de ahí en adelante.
 2. **¿La empresa ya está en Enterprise Edition, o tendría que subir de edición solo para calificar?** Subir de edición para acceder a un add-on gratuito es una decisión de costo real, no de costo cero —[la misma regla de ROI que decide cualquier inversión en Salesforce](/blog/es/salesforce-roi-matriz.html) se aplica igual aquí.
 3. **¿El módulo que interesa está disponible en la región de la empresa?** Antes de diseñar el piloto alrededor de Commerce, confirma la disponibilidad regional. Descubrir la restricción después de comprometer el roadmap del trimestre cuesta más caro que la licencia que la empresa intentaba evitar pagar.
 

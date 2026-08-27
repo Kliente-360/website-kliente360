@@ -49,7 +49,7 @@ For whoever owns the budget decision, the practical lesson is simple: don't lock
 
 Foundations is a cheap testing tool, not a permanent operating base. Three questions, in the order worth checking before treating it as long-term strategy:
 
-1. **Does the use case fit inside the limits, or is it already bigger than them?** If the real volume of email, segmentation or agent conversation blows past the cap in the first month, Foundations isn't the right base — it's just the pilot that confirms the paid investment is necessary.
+1. **Does the use case fit inside the limits, or is it already bigger than them?** If the real volume of email, segmentation or agent conversation blows past the cap in the first month, Foundations isn't the right base — it's just the pilot that confirms the paid investment is necessary, and the choice between [fixed $2 conversations and paid Flex Credits](/blog/en/agentforce-pricing-seis-modelos.html) starts deciding the budget from there.
 2. **Is the company already on Enterprise Edition, or would it need to upgrade edition just to qualify?** Upgrading edition to access a free add-on is a real cost decision, not a zero-cost one — [the same ROI ruler that decides any Salesforce investment](/blog/en/salesforce-roi-matriz.html) applies here just the same.
 3. **Is the module you care about available in the company's region?** Before designing the pilot around Commerce, confirm regional availability. Finding out about the restriction after committing the quarter's roadmap costs more than the license the company was trying to avoid paying for.
 

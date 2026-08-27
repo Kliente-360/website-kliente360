@@ -54,7 +54,7 @@ El protocolo en sí es simple. La superficie de riesgo viene de lo que automatiz
 
 Ninguno de estos riesgos es motivo para no publicar un servidor MCP. Son motivo para publicarlo con control. Seis puntos separan una implementación amateur de una lista para producción:
 
-1. **Alcance mínimo por tool, nunca el token completo del usuario.** Cada llamada debe llevar solo el permiso necesario para esa acción específica —nunca reenviar el token de sesión completo al sistema downstream.
+1. **Alcance mínimo por tool, nunca el token completo del usuario.** Cada llamada debe llevar solo el permiso necesario para esa acción específica —nunca reenviar el token de sesión completo al sistema downstream. Es el mismo diseño de [control de acceso que un agente autónomo exige](/blog/es/dado-pronto-para-ia-arquitetura-agente.html) del dato que consulta, solo que aplicado a la herramienta en vez de a la fuente.
 2. **Allow-list de clientes conocidos**, especialmente en servidor remoto multi-tenant. Un cliente nuevo entra en modo observación antes de ganar acceso a tools con efecto colateral real.
 3. **Log estructurado de cada llamada a tool** —argumento, cliente, timestamp, resultado. Sin eso, un incidente no es investigable después del hecho.
 4. **Revisión humana obligatoria en acciones destructivas o irreversibles** —borrar un registro, enviar una comunicación externa, mover dinero. Una acción reversible y de bajo impacto puede correr autónoma; el resto, no.

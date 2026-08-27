@@ -54,7 +54,7 @@ The protocol itself is simple. The risk surface comes from what it automates: dy
 
 None of these risks is a reason not to publish an MCP server. They're a reason to publish it with controls. Six items separate an amateur implementation from a production-ready one:
 
-1. **Minimum scope per tool, never the full user token.** Every call should carry only the permission needed for that specific action — never forward the entire session token to the downstream system.
+1. **Minimum scope per tool, never the full user token.** Every call should carry only the permission needed for that specific action — never forward the entire session token to the downstream system. It's the same access-control design [an autonomous agent demands](/blog/en/dado-pronto-para-ia-arquitetura-agente.html) of the data it queries, just applied to the tool instead of the source.
 2. **Allow-list of known clients**, especially on a remote multi-tenant server. A new client enters observation mode before gaining access to tools with real side effects.
 3. **Structured logging of every tool call** — argument, client, timestamp, result. Without it, an incident isn't investigable after the fact.
 4. **Mandatory human review for destructive or irreversible actions** — deleting a record, sending an external communication, moving money. Reversible, low-impact actions can run autonomously; the rest can't.

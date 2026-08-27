@@ -25,7 +25,7 @@ Observability is also not a one-time validation at project delivery. A team that
 
 The most widely adopted model, popularized by companies like Monte Carlo, organizes observability into five dimensions. These are independent axes, instrumented in increasing order of sophistication:
 
-1. **Freshness.** Did the data arrive when it should have? A table that normally updates at 6am and still hasn't changed at 9am has a freshness problem. It's the simplest axis to instrument and the one that catches the largest share of pipeline failures — estimates from teams with basic instrumentation indicate that 50–60% of incidents are latency or data absence issues, not incorrect data.
+1. **Freshness.** Did the data arrive when it should have? A table that normally updates at 6am and still hasn't changed at 9am has a freshness problem. It's the simplest axis to instrument and the one that catches the largest share of pipeline failures — estimates from teams with basic instrumentation indicate that 50–60% of incidents are latency or data absence issues, not incorrect data. It's also the first attribute separating a human-reviewed dashboard from [what an autonomous agent demands of freshness](/blog/en/dado-pronto-para-ia-arquitetura-agente.html) — the agent decides on whatever data it has, with no one around to notice the lag.
 
 2. **Volume.** Does the table have the expected number of records? A 40% drop in order volume could be a pipeline silently cutting data — not an actual drop in sales. This deviation rarely shows up in execution logs: the job finished, the table exists, but it's incomplete.
 

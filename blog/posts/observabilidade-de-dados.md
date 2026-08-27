@@ -25,7 +25,7 @@ Observabilidade também não é validação pontual em projeto. Time que sobe um
 
 O modelo mais disseminado, popularizado por empresas como Monte Carlo, organiza a observabilidade em cinco dimensões. São eixos independentes, instrumentados em ordem crescente de sofisticação:
 
-1. **Frescor (Freshness).** O dado chegou quando deveria? Uma tabela que normalmente atualiza às 6h da manhã e às 9h ainda não mudou tem problema de frescor. É o eixo mais simples de instrumentar e o que detecta a maior fatia de falhas de pipeline — estimativas de times com instrumentação básica indicam que 50–60% dos incidentes são de latência ou ausência de dado, não de dado incorreto.
+1. **Frescor (Freshness).** O dado chegou quando deveria? Uma tabela que normalmente atualiza às 6h da manhã e às 9h ainda não mudou tem problema de frescor. É o eixo mais simples de instrumentar e o que detecta a maior fatia de falhas de pipeline — estimativas de times com instrumentação básica indicam que 50–60% dos incidentes são de latência ou ausência de dado, não de dado incorreto. É também o primeiro atributo que separa dashboard revisado por humano de [o que um agente autônomo exige de frescor](/blog/dado-pronto-para-ia-arquitetura-agente.html) — o agente decide sobre o dado que tem, sem o filtro de quem percebe o atraso.
 
 2. **Volume.** A tabela tem o número esperado de registros? Queda de 40% no volume de pedidos pode ser sinal de pipeline silenciosamente cortando dado — não de queda real nas vendas. Esse desvio raramente aparece em logs de execução: o job terminou, a tabela existe, mas está incompleta.
 

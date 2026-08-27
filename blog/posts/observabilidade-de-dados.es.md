@@ -25,7 +25,7 @@ La observabilidad tampoco es una validación puntual al entregar el proyecto. Un
 
 El modelo más extendido, popularizado por empresas como Monte Carlo, organiza la observabilidad en cinco dimensiones. Son ejes independientes, instrumentados en orden creciente de sofisticación:
 
-1. **Frescura (Freshness).** ¿Los datos llegaron cuando debían? Una tabla que normalmente se actualiza a las 6am y que a las 9am aún no ha cambiado tiene un problema de frescura. Es el eje más simple de instrumentar y el que detecta la mayor proporción de fallos de pipeline — estimaciones de equipos con instrumentación básica indican que el 50–60% de los incidentes son de latencia o ausencia de dato, no de dato incorrecto.
+1. **Frescura (Freshness).** ¿Los datos llegaron cuando debían? Una tabla que normalmente se actualiza a las 6am y que a las 9am aún no ha cambiado tiene un problema de frescura. Es el eje más simple de instrumentar y el que detecta la mayor proporción de fallos de pipeline — estimaciones de equipos con instrumentación básica indican que el 50–60% de los incidentes son de latencia o ausencia de dato, no de dato incorrecto. Es también el primer atributo que separa el dashboard revisado por humano de [lo que un agente autónomo exige de frescura](/blog/es/dado-pronto-para-ia-arquitetura-agente.html) — el agente decide sobre el dato que tiene, sin nadie que note el atraso.
 
 2. **Volumen.** ¿La tabla tiene el número esperado de registros? Una caída del 40% en el volumen de pedidos puede ser una señal de que la pipeline está cortando datos silenciosamente — no una caída real en las ventas. Esta desviación rara vez aparece en los logs de ejecución: el job terminó, la tabla existe, pero está incompleta.
 

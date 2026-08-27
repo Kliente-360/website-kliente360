@@ -39,7 +39,7 @@ Sales Cloud → Agentforce Sales sigue el mismo guion hasta ahora: nombre nuevo,
 
 1. **El rebranding en sí no cobra nada extra.** Quien ya es cliente de Sales Cloud no paga más solo por el nombre nuevo.
 2. **Los agentes específicos del paquete suelen exigir licencia separada.** Prospección, calificación y nutrición de lead vía agente entran como add-on, no como parte automática del contrato vigente — [a diferencia de lo que Salesforce Foundations libera gratis en Enterprise Edition](/blog/es/salesforce-foundations-o-que-cobre-de-verdade.html), donde una porción de Agentforce ya viene incluida sin contrato nuevo.
-3. **El historial reciente de Data Cloud muestra que el cambio de nombre y la reforma de precio pueden llegar en secuencia**, no en el mismo anuncio — lo que significa que "sin cambio de costo hoy" no garantiza "sin cambio de costo en 2027".
+3. **El historial reciente de Data Cloud muestra que el cambio de nombre y la reforma de precio pueden llegar en secuencia**, no en el mismo anuncio — lo que significa que "sin cambio de costo hoy" no garantiza "sin cambio de costo en 2027". Cuando la licencia adicional llegue, caerá en alguno de los [seis modelos de pricing que ya coexisten en Agentforce](/blog/es/agentforce-pricing-seis-modelos.html).
 
 ## Tres preguntas para quien ya tiene Sales Cloud
 

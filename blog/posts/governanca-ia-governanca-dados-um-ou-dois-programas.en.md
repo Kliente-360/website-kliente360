@@ -34,7 +34,7 @@ At the Gartner Data & Analytics Summit 2026 — in Orlando, London, and Sydney �
 
 The same holds on the automation side. [Data governance as code already solves, automatically, the traceability attribute](/blog/en/governanca-dados-como-codigo.html) that any agent-incident investigation needs to check first — where the data came from, when it was updated, what business rule was applied. A company that treats this as the exclusive property of the data program, with no bridge to the AI committee, rebuilds from memory in every investigation a trail that already existed, automated, somewhere else in the same house.
 
-That doesn't mean AI governance is just data governance with a new name. Classification bias, prompt injection attacks, factual hallucination, and the decision of when an agent acts without human review are problems that traditional data instrumentation doesn't cover on its own — [the same gap that shows up when an agent pilot runs under conditions production doesn't reproduce](/blog/en/seguranca-de-agentes-piloto-nao-testa.html). The right question isn't "one program eliminates the other" — it's where the boundary between them sits, and who crosses it when an incident doesn't respect the org chart's division.
+That doesn't mean AI governance is just data governance with a new name. Classification bias, prompt injection attacks, factual hallucination, and the decision of when an agent acts without human review are problems that traditional data instrumentation doesn't cover on its own. The right question isn't "one program eliminates the other" — it's where the boundary between them sits, and who crosses it when an incident doesn't respect the org chart's division.
 
 ## One program, two layers: the design that closes the gap
 
@@ -46,7 +46,7 @@ The design that avoids the gray zone isn't merging both committees into a single
 4. **A named owner per use case, not just per committee.** [The agent-owner role already answers this at the operational level](/blog/en/dono-do-agente-cargo-2026.html) — the same named-accountability logic needs to exist one level up, in deciding which committee approves what before an agent goes live.
 5. **Shared audit trail, not duplicated.** The traceability that data governance as code already produces automatically becomes direct input for any AI investigation — without the AI committee having to rebuild the same information with its own tooling.
 
-Regulatory pressure pushes in the same direction. [Brazil's ANPD already named AI an enforcement axis even with the legal framework stalled in Congress](/blog/en/anpd-fiscalizacao-ia-brasil.html), and Gartner itself projects that, by 2030, half of companies will use autonomous agents to translate governance policy into machine-verifiable data contracts — the kind of automation that only works if both layers already speak the same language today.
+Regulatory pressure pushes in the same direction. Brazil's ANPD already named AI an enforcement axis even with the legal framework stalled in Congress, and Gartner itself projects that, by 2030, half of companies will use autonomous agents to translate governance policy into machine-verifiable data contracts — the kind of automation that only works if both layers already speak the same language today.
 
 ## The question isn't which committee wins — it's where the boundary sits
 

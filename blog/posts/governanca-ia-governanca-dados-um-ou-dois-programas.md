@@ -37,7 +37,7 @@ No Gartner Data & Analytics Summit 2026 — em Orlando, Londres e Sydney —, an
 
 O mesmo vale pro lado da automação. [Governança de dados como código já resolve, de forma automática, o atributo de rastreabilidade](/blog/governanca-dados-como-codigo.html) que toda investigação de incidente de agente precisa consultar primeiro — de onde veio o dado, quando foi atualizado, que regra foi aplicada. Empresa que trata isso como propriedade exclusiva do programa de dados, sem ponte com o comitê de IA, reconstrói de memória uma trilha que já existia automatizada em outro lugar da própria casa.
 
-Isso não significa que governança de IA seja só governança de dados com nome novo. Viés de classificação, prompt injection, alucinação factual e a decisão de quando um agente age sem revisão humana são problemas que a instrumentação tradicional de dado não cobre sozinha — [a mesma lacuna que aparece quando o piloto de agente roda em condições que a produção não reproduz](/blog/seguranca-de-agentes-piloto-nao-testa.html). A pergunta certa não é "um programa elimina o outro" — é onde a fronteira fica, e quem cruza ela quando um incidente não respeita a divisão do organograma.
+Isso não significa que governança de IA seja só governança de dados com nome novo. Viés de classificação, prompt injection, alucinação factual e a decisão de quando um agente age sem revisão humana são problemas que a instrumentação tradicional de dado não cobre sozinha. A pergunta certa não é "um programa elimina o outro" — é onde a fronteira fica, e quem cruza ela quando um incidente não respeita a divisão do organograma.
 
 ## Um programa, duas camadas: o desenho que fecha o buraco no meio
 
@@ -49,7 +49,7 @@ O desenho que evita a zona cinzenta não é fundir os dois comitês numa reuniã
 4. **Um responsável nomeado por caso de uso, não só por comitê.** [O papel de dono do agente já responde por isso no nível operacional](/blog/dono-do-agente-cargo-2026.html) — a mesma lógica de responsabilidade nomeada precisa existir um nível acima, na decisão de qual comitê aprova o quê antes do agente ir ao ar.
 5. **Trilha de auditoria compartilhada, não duplicada.** A rastreabilidade que a governança de dado como código já produz automaticamente vira insumo direto de qualquer investigação de IA — sem que o comitê de IA precise reconstruir a mesma informação com ferramenta própria.
 
-A pressão regulatória empurra na mesma direção. [A ANPD já elegeu IA como eixo de fiscalização mesmo com o marco legal travado no Congresso](/blog/anpd-fiscalizacao-ia-brasil.html), e a própria Gartner projeta que, até 2030, metade das empresas vai usar agente autônomo pra traduzir política de governança em contrato de dado verificável por máquina — o tipo de automação que só funciona se as duas camadas já falam a mesma linguagem hoje.
+A pressão regulatória empurra na mesma direção. A ANPD já elegeu IA como eixo de fiscalização mesmo com o marco legal travado no Congresso, e a própria Gartner projeta que, até 2030, metade das empresas vai usar agente autônomo pra traduzir política de governança em contrato de dado verificável por máquina — o tipo de automação que só funciona se as duas camadas já falam a mesma linguagem hoje.
 
 ## A pergunta não é qual comitê vence — é onde a fronteira fica
 

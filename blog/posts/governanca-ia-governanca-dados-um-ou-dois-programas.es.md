@@ -34,7 +34,7 @@ En el Gartner Data & Analytics Summit 2026 — en Orlando, Londres y Sídney —
 
 Lo mismo vale del lado de la automatización. [La gobernanza de datos como código ya resuelve, de forma automática, el atributo de trazabilidad](/blog/es/governanca-dados-como-codigo.html) que toda investigación de incidente de agente necesita consultar primero — de dónde vino el dato, cuándo se actualizó, qué regla de negocio se aplicó. Una empresa que trata esto como propiedad exclusiva del programa de datos, sin puente con el comité de IA, reconstruye de memoria en cada investigación una traza que ya existía, automatizada, en otra parte de la misma casa.
 
-Esto no significa que la gobernanza de IA sea solo gobernanza de datos con nombre nuevo. El sesgo de clasificación, los ataques de prompt injection, la alucinación factual y la decisión de cuándo un agente actúa sin revisión humana son problemas que la instrumentación tradicional de datos no cubre por sí sola — [la misma brecha que aparece cuando el piloto de un agente corre en condiciones que la producción no reproduce](/blog/es/seguranca-de-agentes-piloto-nao-testa.html). La pregunta correcta no es "un programa elimina al otro" — es dónde queda la frontera entre ambos, y quién la cruza cuando un incidente no respeta la división del organigrama.
+Esto no significa que la gobernanza de IA sea solo gobernanza de datos con nombre nuevo. El sesgo de clasificación, los ataques de prompt injection, la alucinación factual y la decisión de cuándo un agente actúa sin revisión humana son problemas que la instrumentación tradicional de datos no cubre por sí sola. La pregunta correcta no es "un programa elimina al otro" — es dónde queda la frontera entre ambos, y quién la cruza cuando un incidente no respeta la división del organigrama.
 
 ## Un programa, dos capas: el diseño que cierra el hueco del medio
 
@@ -46,7 +46,7 @@ El diseño que evita la zona gris no es fusionar los dos comités en una sola re
 4. **Un responsable nombrado por caso de uso, no solo por comité.** [El rol de dueño del agente ya responde por esto a nivel operativo](/blog/es/dono-do-agente-cargo-2026.html) — la misma lógica de responsabilidad nombrada necesita existir un nivel más arriba, en la decisión de qué comité aprueba qué antes de que el agente salga a producción.
 5. **Traza de auditoría compartida, no duplicada.** La trazabilidad que la gobernanza de datos como código ya produce automáticamente se convierte en insumo directo de cualquier investigación de IA — sin que el comité de IA necesite reconstruir la misma información con herramienta propia.
 
-La presión regulatoria empuja en la misma dirección. [La ANPD de Brasil ya eligió la IA como eje de fiscalización aun con el marco legal trabado en el Congreso](/blog/es/anpd-fiscalizacao-ia-brasil.html), y la propia Gartner proyecta que, para 2030, la mitad de las empresas usará agentes autónomos para traducir política de gobernanza en contratos de datos verificables por máquina — el tipo de automatización que solo funciona si ambas capas ya hablan el mismo idioma hoy.
+La presión regulatoria empuja en la misma dirección. La ANPD de Brasil ya eligió la IA como eje de fiscalización aun con el marco legal trabado en el Congreso, y la propia Gartner proyecta que, para 2030, la mitad de las empresas usará agentes autónomos para traducir política de gobernanza en contratos de datos verificables por máquina — el tipo de automatización que solo funciona si ambas capas ya hablan el mismo idioma hoy.
 
 ## La pregunta no es qué comité gana — es dónde queda la frontera
 

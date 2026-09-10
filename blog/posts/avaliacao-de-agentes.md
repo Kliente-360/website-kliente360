@@ -29,7 +29,7 @@ Métricas de agente se dividem em três famílias. Cada uma responde a uma pergu
 
 **Cobertura (resolution rate sem escalonamento).** Dos N casos que chegaram ao agente, em quantos ele resolveu sem precisar escalonar pra humano? Esse número é mais fácil de obter — sai do log do sistema. Mas isolado engana: o agente pode estar "resolvendo" respondendo errado e o usuário desistindo, o que conta como cobertura alta com acurácia baixa.
 
-**Custo por interação resolvida.** Custo total (inferência + infra + governança) dividido por interações com acurácia confirmada. Em projetos com volume, é o número que define se a unidade econômica fecha. [Sem essa métrica, dá pra escalar piloto que perde dinheiro a cada chamada](/blog/quando-agente-e-resposta.html) — comum quando o time só olha cobertura.
+**Custo por interação resolvida.** Custo total (inferência + infra + governança) dividido por interações com acurácia confirmada. Em projetos com volume, é o número que define se a unidade econômica fecha. [Sem essa métrica, dá pra escalar piloto que perde dinheiro a cada chamada](/blog/quando-agente-e-resposta.html) — comum quando o time só olha cobertura. É a mesma unidade econômica que [decide se o board aceita o ROI de um agente](/blog/roi-agente-ia-metricas-board.html) — sem ela, sobra métrica de vaidade disfarçada de resultado.
 
 Acurácia × cobertura × custo = projeto sustentável. Falta um dos três e o projeto vira hobby caro.
 

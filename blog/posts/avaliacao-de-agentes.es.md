@@ -29,7 +29,7 @@ Las métricas de agente se dividen en tres familias. Cada una responde a una pre
 
 **Cobertura (resolution rate sin escalamiento).** De los N casos que llegaron al agente, ¿en cuántos resolvió sin necesidad de escalar a humano? Ese número es más fácil de obtener — sale del log del sistema. Pero aislado engaña: el agente puede estar "resolviendo" respondiendo mal y el usuario desistiendo, lo cual cuenta como cobertura alta con baja acertividad.
 
-**Costo por interacción resuelta.** Costo total (inferencia + infra + gobernanza) dividido por interacciones con acertividad confirmada. En proyectos con volumen, es el número que define si la unidad económica cierra. [Sin esta métrica, se puede escalar un piloto que pierde plata en cada llamada](/blog/es/quando-agente-e-resposta.html) — común cuando el equipo solo mira cobertura.
+**Costo por interacción resuelta.** Costo total (inferencia + infra + gobernanza) dividido por interacciones con acertividad confirmada. En proyectos con volumen, es el número que define si la unidad económica cierra. [Sin esta métrica, se puede escalar un piloto que pierde plata en cada llamada](/blog/es/quando-agente-e-resposta.html) — común cuando el equipo solo mira cobertura. Es la misma unidad económica que [decide si la dirección acepta el ROI de un agente](/blog/es/roi-agente-ia-metricas-board.html) — sin ella, sobra métrica de vanidad disfrazada de resultado.
 
 Acertividad × cobertura × costo = proyecto sustentable. Falta uno de los tres y el proyecto se vuelve hobby caro.
 

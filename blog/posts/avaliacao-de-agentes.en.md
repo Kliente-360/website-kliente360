@@ -29,7 +29,7 @@ Agent metrics split into three families. Each answers a different question, and 
 
 **Coverage (resolution rate without escalation).** Of N cases that reached the agent, in how many did it resolve without escalating to a human? This number is easier to get — it comes out of system logs. But isolated it lies: the agent might be "resolving" by answering wrong and the user giving up, which counts as high coverage with low accuracy.
 
-**Cost per resolved interaction.** Total cost (inference + infra + governance) divided by interactions with confirmed accuracy. In high-volume projects, it's the number that defines whether unit economics close. [Without this metric, you can scale a pilot that loses money on every call](/blog/en/quando-agente-e-resposta.html) — common when the team only watches coverage.
+**Cost per resolved interaction.** Total cost (inference + infra + governance) divided by interactions with confirmed accuracy. In high-volume projects, it's the number that defines whether unit economics close. [Without this metric, you can scale a pilot that loses money on every call](/blog/en/quando-agente-e-resposta.html) — common when the team only watches coverage. It's the same unit economics that [decides whether the board accepts an agent's ROI](/blog/en/roi-agente-ia-metricas-board.html) — without it, all that's left is a vanity metric dressed up as a result.
 
 Accuracy × coverage × cost = sustainable project. Miss one of the three and the project becomes an expensive hobby.
 

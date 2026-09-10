@@ -16,7 +16,7 @@ Los tres agentes cubren roles distintos en la cadena de venta, y entender la div
 
 **Shopper Agent** lleva la conversación del comprador final de principio a fin — descubrimiento de producto, checkout y servicio postventa — manteniendo la voz de la marca en la tienda propia del cliente. Revisa inventario, plazo de transportista y opción de retiro en tienda dentro de la misma conversación, sin transferir al comprador entre sistemas.
 
-**Buyer Agent** ataca el otro lado del comercio: procurement B2B vía WhatsApp y SMS. El ejemplo que usa Salesforce es directo — un comprador escribe "necesito 40 cajas del tornillo de 16oz, igual al pedido de marzo", el agente devuelve una imagen del producto para confirmar el SKU, muestra el precio de contrato vigente y cierra el pedido, sin login en portal ni llamada telefónica.
+**Buyer Agent** ataca el otro lado del comercio: procurement B2B vía WhatsApp y SMS. El ejemplo que usa Salesforce es directo — un comprador escribe "necesito 40 cajas del tornillo de 16oz, igual al pedido de marzo", el agente devuelve una imagen del producto para confirmar el SKU, muestra el precio de contrato vigente y cierra el pedido, sin login en portal ni llamada telefónica. Desde octubre de 2026, [cada uno de esos intercambios de mensaje deja de ser gratis para quien opera en Brasil](/blog/es/whatsapp-salesforce-brasil.html) — el cobro por mensaje de servicio de Meta entra en la cuenta de cualquier conversación así de larga.
 
 **Merchant Agent** queda del lado de la operación: el equipo de catálogo organiza productos, crea reglas de "boost and bury" y ajusta el orden de exhibición describiendo lo que quiere, en vez de navegar un menú de administración.
 

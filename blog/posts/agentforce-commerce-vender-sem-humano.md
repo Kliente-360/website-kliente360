@@ -19,7 +19,7 @@ Os três agentes cobrem papéis diferentes na cadeia de venda, e entender a divi
 
 **Shopper Agent** conduz a conversa do comprador final do início ao fim — descoberta de produto, checkout, e serviço pós-compra — mantendo a voz da marca na loja própria do cliente. Ele checa estoque, prazo de transportadora e opção de retirada em loja dentro da mesma conversa, sem transferir o comprador entre sistemas.
 
-**Buyer Agent** ataca o outro lado do comércio: procurement B2B via WhatsApp e SMS. O exemplo que a Salesforce usa é direto — um comprador manda "preciso de 40 caixas do parafuso de 16oz, igual ao pedido de março", o agente devolve imagem do produto pra confirmar o SKU, mostra o preço de contrato vigente e fecha o pedido, sem login em portal nem ligação.
+**Buyer Agent** ataca o outro lado do comércio: procurement B2B via WhatsApp e SMS. O exemplo que a Salesforce usa é direto — um comprador manda "preciso de 40 caixas do parafuso de 16oz, igual ao pedido de março", o agente devolve imagem do produto pra confirmar o SKU, mostra o preço de contrato vigente e fecha o pedido, sem login em portal nem ligação. A partir de outubro de 2026, [cada uma dessas trocas de mensagem deixa de ser grátis pra quem opera no Brasil](/blog/whatsapp-salesforce-brasil.html) — a cobrança por mensagem de serviço da Meta entra na conta de qualquer conversa longa como essa.
 
 **Merchant Agent** fica do lado da operação: o time de catálogo organiza produtos, cria regra de "boost and bury" e ajusta ordem de exibição descrevendo o que quer, em vez de navegar menu de admin.
 

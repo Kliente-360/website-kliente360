@@ -65,7 +65,7 @@ Agent owner is the person formally responsible for a specific AI agent in produc
 
 ## Does an agent owner replace the AI governance team?
 
-No. AI governance sets the general rules — what data an agent can access, what risk level requires human approval, how auditing works. The agent owner applies those rules to a specific agent, day to day, with the immediate-action authority that a corporate governance committee doesn't have the time or mandate to exercise case by case. One depends on the other: without a governance policy, the agent owner decides in the dark; without a named owner, the governance policy never leaves the document.
+No. AI governance sets the general rules — what data an agent can access, what risk level requires human approval, how auditing works. The agent owner applies those rules to a specific agent, day to day, with the immediate-action authority that a corporate governance committee doesn't have the time or mandate to exercise case by case. One depends on the other: without a governance policy, the agent owner decides in the dark; without a named owner, the governance policy never leaves the document. That policy, in turn, also needs its own design — including [whether AI governance should live inside a single program with data governance, or run as two separate ones](/blog/en/governanca-ia-governanca-dados-um-ou-dois-programas.html), a decision that sits above any specific agent.
 
 ## Does a smaller company need this role full-time?
 

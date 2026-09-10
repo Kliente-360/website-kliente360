@@ -65,7 +65,7 @@ Dono do agente é a pessoa formalmente responsável por um agente de IA específ
 
 ## Dono do agente substitui o time de governança de IA?
 
-Não. Governança de IA define as regras gerais — quais dados um agente pode acessar, qual nível de risco exige aprovação humana, como auditoria funciona. O dono do agente aplica essas regras num agente específico, no dia a dia, com autoridade de ação imediata que um comitê de governança corporativa não tem tempo nem mandato pra exercer caso a caso. Uma coisa depende da outra: sem política de governança, o dono do agente decide no escuro; sem dono nomeado, a política de governança nunca sai do documento.
+Não. Governança de IA define as regras gerais — quais dados um agente pode acessar, qual nível de risco exige aprovação humana, como auditoria funciona. O dono do agente aplica essas regras num agente específico, no dia a dia, com autoridade de ação imediata que um comitê de governança corporativa não tem tempo nem mandato pra exercer caso a caso. Uma coisa depende da outra: sem política de governança, o dono do agente decide no escuro; sem dono nomeado, a política de governança nunca sai do documento. Essa política, por sua vez, também precisa de desenho — inclusive [a pergunta de se a governança de IA deveria viver dentro de um programa só com a governança de dados, ou como dois programas separados](/blog/governanca-ia-governanca-dados-um-ou-dois-programas.html), decisão que fica acima de qualquer agente específico.
 
 ## Empresa menor precisa desse cargo em tempo integral?
 

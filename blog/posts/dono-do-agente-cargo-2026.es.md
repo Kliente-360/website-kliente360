@@ -65,7 +65,7 @@ Dueño del agente es la persona formalmente responsable de un agente de IA espec
 
 ## ¿El dueño del agente reemplaza al equipo de gobernanza de IA?
 
-No. La gobernanza de IA define las reglas generales —qué datos puede acceder un agente, qué nivel de riesgo exige aprobación humana, cómo funciona la auditoría. El dueño del agente aplica esas reglas a un agente específico, día a día, con la autoridad de acción inmediata que un comité de gobernanza corporativa no tiene el tiempo ni el mandato de ejercer caso por caso. Uno depende del otro: sin política de gobernanza, el dueño del agente decide a ciegas; sin dueño nombrado, la política de gobernanza nunca sale del documento.
+No. La gobernanza de IA define las reglas generales —qué datos puede acceder un agente, qué nivel de riesgo exige aprobación humana, cómo funciona la auditoría. El dueño del agente aplica esas reglas a un agente específico, día a día, con la autoridad de acción inmediata que un comité de gobernanza corporativa no tiene el tiempo ni el mandato de ejercer caso por caso. Uno depende del otro: sin política de gobernanza, el dueño del agente decide a ciegas; sin dueño nombrado, la política de gobernanza nunca sale del documento. Esa política, a su vez, también necesita su propio diseño — incluida [la pregunta de si la gobernanza de IA debería vivir dentro de un solo programa con la gobernanza de datos, o como dos programas separados](/blog/es/governanca-ia-governanca-dados-um-ou-dois-programas.html), decisión que queda por encima de cualquier agente específico.
 
 ## ¿Una empresa pequeña necesita este cargo a tiempo completo?
 

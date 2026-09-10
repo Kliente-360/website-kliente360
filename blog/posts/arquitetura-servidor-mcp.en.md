@@ -40,7 +40,7 @@ The choice isn't cosmetic. A server that will only be consumed locally doesn't n
 
 The protocol itself is simple. The risk surface comes from what it automates: dynamic tool discovery and execution with little human friction between a model's decision and its effect on the real world. Four failure patterns show up repeatedly.
 
-**Tool poisoning.** A tool's natural-language description is, itself, a prompt-injection vector — a malicious or compromised server can describe an innocuous-looking tool in a way that instructs the model to do something beyond what's expected. The model reads the description as an instruction, not just as metadata.
+**Tool poisoning.** A tool's natural-language description is, itself, a prompt-injection vector — a malicious or compromised server can describe an innocuous-looking tool in a way that instructs the model to do something beyond what's expected. The model reads the description as an instruction, not just as metadata. It's exactly this vector that [most agent pilots never get around to testing](/blog/en/seguranca-de-agentes-piloto-nao-testa.html) before signing off on production.
 
 **Confused deputy via OAuth pass-through.** When an MCP server forwards a user's OAuth token to another downstream system without validating scope, the agent inherits permission beyond what the task requires — and any call to that tool executes with the user's full privilege, not the minimum needed for that specific action.
 

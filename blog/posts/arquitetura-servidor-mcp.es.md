@@ -40,7 +40,7 @@ La elección no es estética. Un servidor que solo va a ser consumido localmente
 
 El protocolo en sí es simple. La superficie de riesgo viene de lo que automatiza: descubrimiento dinámico de herramientas y ejecución con poca fricción humana entre la decisión del modelo y el efecto en el mundo real. Cuatro patrones de falla aparecen con frecuencia.
 
-**Tool poisoning.** La descripción en lenguaje natural de una tool es, ella misma, un vector de prompt injection —un servidor malicioso, o comprometido, puede describir una tool inofensiva de un modo que instruya al modelo a hacer algo más allá de lo esperado. El modelo lee la descripción como instrucción, no solo como metadato.
+**Tool poisoning.** La descripción en lenguaje natural de una tool es, ella misma, un vector de prompt injection —un servidor malicioso, o comprometido, puede describir una tool inofensiva de un modo que instruya al modelo a hacer algo más allá de lo esperado. El modelo lee la descripción como instrucción, no solo como metadato. Es exactamente ese vector el que [la mayoría de los pilotos de agente nunca llega a probar](/blog/es/seguranca-de-agentes-piloto-nao-testa.html) antes de aprobar el paso a producción.
 
 **Confused deputy vía OAuth pass-through.** Cuando un servidor MCP reenvía el token OAuth del usuario a otro sistema downstream sin validar el alcance, el agente hereda permiso más allá de lo que la tarea requiere —y cualquier llamada a esa tool se ejecuta con el privilegio total del usuario, no con el mínimo necesario para esa acción específica.
 

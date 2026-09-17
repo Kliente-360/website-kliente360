@@ -11,7 +11,7 @@ keywords: ["Agentforce pricing", "Flex Credits", "Agentforce conversas", "Agentf
 
 **Pricing** é a pergunta que todo decisor faz antes de aprovar um piloto de Agentforce — e é também a que a documentação oficial responde de forma mais fragmentada. Não existe "o preço do Agentforce". Existem seis modelos comerciais coexistindo no catálogo da Salesforce, cada um desenhado pra um padrão de uso diferente, e escolher o modelo errado custa tão caro quanto escolher a ferramenta errada.
 
-O problema não é falta de opção — é o oposto. Com seis caminhos e uma regra de exclusão mútua escondida no meio deles, a pergunta que decide o orçamento não é "quanto custa Agentforce", é "qual desses seis modelos combina com o padrão de uso que a empresa já tem".
+O problema não é falta de opção — é o oposto. Com seis caminhos e uma regra de exclusão mútua escondida no meio deles, a pergunta que decide o orçamento não é "quanto custa Agentforce", é "qual desses seis modelos combina com o padrão de uso que a empresa já tem". Essa pergunta de orçamento chega antes até da pergunta maior — [se aquele piloto vai de fato chegar à produção](/blog/piloto-agentforce-producao.html), etapa que hoje menos de 10% dos clientes da própria Salesforce completa.
 
 ## Seis modelos, uma decisão por org
 

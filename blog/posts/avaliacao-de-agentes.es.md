@@ -9,7 +9,7 @@ tldr: "La mayoría de los proyectos de agente que fallan en producción fallaron
 keywords: ["evaluación de agentes", "evals", "IA generativa", "agentes", "métricas de IA"]
 ---
 
-En casi todo proyecto de agente que veo trabado después del piloto, la historia es la misma: el equipo tiene satisfacción alta en las encuestas a usuarios, buenas métricas de uso, y ningún número sobre la tasa real de acierto. Pregunto "¿en qué porcentaje de interacciones el agente respondió correctamente?", y la respuesta es silencio, o una estimación suelta — "como 80%, creo". Y ahí el proyecto no escala. No porque la tecnología no dé — porque nadie sabe si está dando, y eso impide tomar decisión sobre expansión, gobernanza o precio.
+En casi todo proyecto de agente que veo trabado después del piloto, la historia es la misma: el equipo tiene satisfacción alta en las encuestas a usuarios, buenas métricas de uso, y ningún número sobre la tasa real de acierto. Pregunto "¿en qué porcentaje de interacciones el agente respondió correctamente?", y la respuesta es silencio, o una estimación suelta — "como 80%, creo". Y ahí el proyecto no escala. No porque la tecnología no dé — porque nadie sabe si está dando, y eso impide tomar decisión sobre expansión, gobernanza o precio. Es el mismo patrón que aparece, con números públicos, en [pilotos de Agentforce que nunca llegan a producción](/blog/es/piloto-agentforce-producao.html): menos del 10% de los clientes escala más allá de la fase de prueba, porque medir la tasa de acierto rara vez entra en el alcance original del piloto.
 
 La métrica que nadie quiere publicar es el porcentaje de acierto en casos reales. Este texto va sobre por qué desaparece, cómo construirla, y cómo convivir con el número que va a mostrar.
 

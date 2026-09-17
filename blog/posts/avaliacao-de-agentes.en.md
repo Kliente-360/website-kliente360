@@ -9,7 +9,7 @@ tldr: "Most agent projects that fail in production failed at evaluation long bef
 keywords: ["agent evaluation", "evals", "generative AI", "agents", "AI metrics"]
 ---
 
-In almost every agent project I see stuck after the pilot, the story is the same: the team has high satisfaction scores in user surveys, good usage metrics, and no number on the real accuracy rate. I ask "in what percentage of interactions did the agent answer correctly?", and the answer is silence, or a loose estimate — "around 80%, I think". Then the project doesn't scale. Not because the tech can't handle it — because nobody knows whether it's handling it, and that prevents decisions on expansion, governance or pricing.
+In almost every agent project I see stuck after the pilot, the story is the same: the team has high satisfaction scores in user surveys, good usage metrics, and no number on the real accuracy rate. I ask "in what percentage of interactions did the agent answer correctly?", and the answer is silence, or a loose estimate — "around 80%, I think". Then the project doesn't scale. Not because the tech can't handle it — because nobody knows whether it's handling it, and that prevents decisions on expansion, governance or pricing. The same pattern shows up, with public numbers, in [Agentforce pilots that never reach production](/blog/en/piloto-agentforce-producao.html): under 10% of customers scale past the test phase, because measuring accuracy rarely makes it into the pilot's original scope.
 
 The metric nobody wants to publish is the percentage of correct responses on real cases. This text is about why it disappears, how to build it, and how to live with the number it'll show.
 

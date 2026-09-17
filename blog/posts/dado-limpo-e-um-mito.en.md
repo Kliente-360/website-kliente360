@@ -45,7 +45,7 @@ Don't confuse the argument. There are cases where upfront cleansing is necessary
 
 **Customer identity.** When the problem is genuinely identity — "is this customer the same one from the other system?" — a serious master data project with matching rules, dedup, golden record pays off. Without it, every downstream use case suffers, from dashboard to agent. But this is an exception, not the rule. Most companies don't need full MDM; they need good matching rules across 3–5 critical entities.
 
-**Regulatory.** Financial services, healthcare, sensitive personal data. Here there's no choice — quality is compliance, and compliance doesn't negotiate. But the scope is narrow: the fields the regulator looks at. The rest of the base follows the "good enough" rule.
+**Regulatory.** Financial services, healthcare, sensitive personal data. Here there's no choice — quality is compliance, and compliance doesn't negotiate. But the scope is narrow: the fields the regulator looks at. The rest of the base follows the "good enough" rule. It's also where [synthetic data promises to speed up testing without touching real personal data — but only if the generator is audited against reversal, not just cleared by the standard privacy metric](/blog/en/dados-sinteticos-acelera-ou-engana.html).
 
 Outside those three contexts, a universal cleansing project is almost always an escape from the decision to ship.
 

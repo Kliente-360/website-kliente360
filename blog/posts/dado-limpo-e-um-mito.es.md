@@ -45,7 +45,7 @@ No confundir el argumento. Hay casos en los que la limpieza upfront es necesaria
 
 **Identidad de cliente.** Cuando el problema es genuinamente de identidad — "¿este cliente es el mismo del otro sistema?" — vale un proyecto serio de master data con reglas de matching, deduplicación, golden record. Sin eso, todo caso de uso downstream sufre, del dashboard al agente. Pero esto es excepción, no regla. La mayoría de las empresas no necesita MDM completo; necesita reglas de matching buenas en 3–5 entidades críticas.
 
-**Regulatorio.** Sector financiero, salud, dato personal sensible. Acá no hay opción — la calidad es compliance, y compliance no negocia. Pero el alcance es estrecho: los campos que el regulador mira. El resto de la base sigue la regla del "suficientemente bueno".
+**Regulatorio.** Sector financiero, salud, dato personal sensible. Acá no hay opción — la calidad es compliance, y compliance no negocia. Pero el alcance es estrecho: los campos que el regulador mira. El resto de la base sigue la regla del "suficientemente bueno". También es donde [el dato sintético promete acelerar la prueba sin tocar el dato personal real — pero solo si el generador fue auditado contra la reversión, no solo aprobado por la métrica de privacidad estándar](/blog/es/dados-sinteticos-acelera-ou-engana.html).
 
 Fuera de esos tres contextos, el proyecto de limpieza universal es casi siempre fuga de la decisión de hacer.
 

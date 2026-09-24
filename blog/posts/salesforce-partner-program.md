@@ -23,6 +23,8 @@ O programa Salesforce tem múltiplos eixos. Três importam pra cliente final:
 
 **Tipo de parceiro.** Consulting Partner (faz implementação), ISV (faz produto AppExchange), Reseller (vende licença), AppDev (constrói app customizado). Em 2026, muitos atuam em mais de uma categoria.
 
+Desde abril de 2026, esse selo de parceiro passou a valer também dentro do [AgentExchange, a fusão de AppExchange e vitrine de agentes](/blog/agentexchange-mcp-salesforce.html): ISV que publica app, agente autônomo ou servidor MCP carrega a mesma régua de tier de sempre.
+
 Pra cliente, o que importa: status alto = parceiro tem volume e maturidade operacional. Não diz nada sobre encaixe pra *seu* projeto específico.
 
 > Tier de parceiro Salesforce diz quanto a consultoria gera de receita pra Salesforce — não quanta qualidade entrega no seu projeto. Os dois costumam estar correlacionados, mas a correlação tem furos relevantes.

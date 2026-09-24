@@ -23,6 +23,8 @@ The Salesforce program has multiple axes. Three matter for the end client:
 
 **Partner type.** Consulting Partner (does implementation), ISV (makes AppExchange product), Reseller (sells license), AppDev (builds custom app). In 2026, many operate in more than one category.
 
+Since April 2026, that partner badge has also applied inside [AgentExchange, the merger of AppExchange and the agent showcase](/blog/en/agentexchange-mcp-salesforce.html): an ISV publishing an app, an autonomous agent, or an MCP server carries the same tier rule as always.
+
 For the client, what matters: high status = the consultancy has volume and operational maturity. It doesn't say anything about fit for *your* specific project.
 
 > Salesforce partner tier says how much revenue the consultancy generates for Salesforce — not how much quality it delivers on your project. The two are usually correlated, but the correlation has relevant holes.

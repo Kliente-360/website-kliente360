@@ -46,6 +46,8 @@ Pass all three, and the investment pays off. Fail two or more, and it's worth fi
 
 The adoption speed — from zero to 10,000 enterprise servers in a bit over a year — suggests MCP has become the common vocabulary between agent and tool, the same way REST became the common vocabulary between frontend and backend. Whoever decides to expose a system as an MCP server today is, in practice, deciding the contract that will govern agent integration for years to come. It deserves the same care any public API would — because, effectively, that's what's being published.
 
+That newly won portability in the connection between agent and tool doesn't eliminate lock-in — it just [shifts it to another floor of the harness](/blog/en/lock-in-plataforma-de-agentes.html), orchestration and context memory, which stay proprietary by design across every agent platform.
+
 ## Questions that keep coming back
 
 Three practical questions that show up in almost every MCP conversation — answered with what this piece already argued.

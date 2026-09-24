@@ -46,6 +46,8 @@ Si cumple los tres, la inversión vale la pena. Si falla en dos o más, conviene
 
 La velocidad de adopción —de cero a 10.000 servidores enterprise en poco más de un año— sugiere que MCP se volvió el vocabulario común entre agente y herramienta, del mismo modo que REST se volvió el vocabulario común entre frontend y backend. Quien decide exponer un sistema como servidor MCP hoy está, en la práctica, decidiendo el contrato que va a regir la integración de agentes durante los próximos años. Merece el mismo cuidado que cualquier API pública —porque, efectivamente, eso es lo que se está publicando.
 
+Esa portabilidad recién ganada en la conexión entre agente y herramienta no elimina el aprisionamiento —solo [desplaza el lock-in a otro piso del harness](/blog/es/lock-in-plataforma-de-agentes.html), la orquestación y la memoria de contexto, que siguen siendo propietarias por diseño en toda plataforma de agente.
+
 ## Preguntas que siempre vuelven
 
 Tres dudas prácticas que aparecen en casi toda conversación sobre MCP —respondidas con lo que este texto ya argumentó.

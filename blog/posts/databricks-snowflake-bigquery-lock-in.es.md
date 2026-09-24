@@ -13,6 +13,8 @@ keywords: ["Databricks", "Snowflake", "BigQuery", "lock-in", "data warehouse"]
 
 Este texto enumera los tres vectores de lock-in que importan, muestra cómo cada warehouse puntúa en cada uno, y explica por qué comparativo de partner oficial es, por definición, parcial. No porque el partner mienta — porque sólo logra ver bien la tecnología que entrega.
 
+Los mismos tres vectores, adaptados a otra capa de decisión, [reaparecen casi idénticos en la elección de plataforma de agente de IA](/blog/es/lock-in-plataforma-de-agentes.html) — cambia el producto, no la lógica de aprisionamiento.
+
 ## El sesgo estructural del partner oficial
 
 Antes de entrar a los vectores, vale entender por qué comparativos de partners son problemáticos. Partner Databricks Gold gana ingresos entrenando equipos en Spark, optimizando Delta Lake, vendiendo Unity Catalog. Partner Snowflake Premier gana ingresos estructurando warehouses Snowflake, optimizando warehouses de cluster, vendiendo Streamlit. Partner Google Cloud gana ingresos en BigQuery + Looker + Vertex AI.

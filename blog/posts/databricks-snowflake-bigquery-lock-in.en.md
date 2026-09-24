@@ -13,6 +13,8 @@ keywords: ["Databricks", "Snowflake", "BigQuery", "lock-in", "data warehouse"]
 
 This text enumerates the three lock-in vectors that matter, shows how each warehouse scores in each, and explains why an official partner's comparison is, by definition, partial. Not because the partner lies — because they can only see well the technology they deliver.
 
+The same three vectors, adapted to a different layer of decision, [reappear almost identically in the choice of AI agent platform](/blog/en/lock-in-plataforma-de-agentes.html) — the product changes, not the lock-in logic.
+
 ## The structural bias of the official partner
 
 Before we get into the vectors, it's worth understanding why partner comparisons are problematic. A Databricks Gold partner earns revenue training teams on Spark, optimizing Delta Lake, selling Unity Catalog. A Snowflake Premier partner earns revenue structuring Snowflake warehouses, optimizing cluster warehouses, selling Streamlit. A Google Cloud partner earns revenue in BigQuery + Looker + Vertex AI.

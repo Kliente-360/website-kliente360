@@ -26,6 +26,8 @@ La gravedad del vector está confirmada fuera de nuestro propio argumento. El OW
 
 Un piloto procesa dato que el propio equipo seleccionó — generalmente limpio, generalmente confiable. Producción procesa lo que el mundo manda: correo de cliente, adjunto de proveedor, resultado de búsqueda, contenido de un servidor MCP que la empresa ni siquiera opera. Ninguna de esas fuentes pasó por el mismo filtro que el dato del piloto pasó. La primera vez que el agente encuentra contenido realmente hostil suele ser en producción — justo cuando el costo del error deja de ser hipotético.
 
+Ese es exactamente el riesgo que crece cuando [un servidor MCP de terceros se vuelve instalación de un clic dentro de un marketplace](/blog/es/agentexchange-mcp-salesforce.html): la due diligence de quien publica nunca sustituye la auditoría de quien instala.
+
 ## Tool poisoning: la herramienta cambia después de que el piloto la aprobó
 
 Tool poisoning es la manipulación de la descripción de una herramienta — o del comportamiento detrás de ella — después de que el agente ya está autorizado a llamarla. El modelo lee la descripción en lenguaje natural de la tool como instrucción, no como metadato, y nada en el protocolo [que sostiene la adopción enterprise de MCP](/blog/es/model-context-protocol-servidor-mcp.html) impide que esa descripción cambie en una conexión posterior, sin que el cliente reevalúe el consentimiento original.

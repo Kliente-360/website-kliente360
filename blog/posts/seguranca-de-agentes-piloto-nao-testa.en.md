@@ -26,6 +26,8 @@ The severity of this vector is confirmed outside our own argument. The OWASP Gen
 
 A pilot processes data the team itself selected — usually clean, usually trusted. Production processes whatever the world sends: a customer email, a vendor attachment, a search result, content from an MCP server the company doesn't even operate. None of those sources went through the same filter the pilot's data did. The first time the agent encounters genuinely hostile content tends to be in production — exactly when the cost of the error stops being hypothetical.
 
+That's exactly the risk that grows once [a third-party MCP server becomes a one-click install inside a marketplace](/blog/en/agentexchange-mcp-salesforce.html): the publisher's due diligence never substitutes for the installer's own audit.
+
 ## Tool poisoning: the tool changes after the pilot approved it
 
 Tool poisoning is the manipulation of a tool's description — or the behavior behind it — after the agent has already been authorized to call it. The model reads a tool's natural-language description as an instruction, not as metadata, and nothing in the protocol [behind MCP's enterprise adoption](/blog/en/model-context-protocol-servidor-mcp.html) stops that description from changing on a later connection, without the client re-evaluating its original consent.

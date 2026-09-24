@@ -29,6 +29,8 @@ A gravidade do vetor está confirmada fora do nosso próprio argumento. O OWASP 
 
 Um piloto processa dado que o próprio time selecionou — geralmente limpo, geralmente confiável. Produção processa o que o mundo manda: e-mail de cliente, anexo de fornecedor, resultado de busca, conteúdo de um servidor MCP que a empresa nem opera. Nenhuma dessas fontes passou pelo mesmo filtro que o dado do piloto passou. A primeira vez que o agente encontra conteúdo hostil de verdade tende a ser em produção — exatamente quando o custo do erro deixa de ser hipotético.
 
+É exatamente esse risco que cresce quando [servidor MCP de terceiro vira item de instalação num marketplace](/blog/agentexchange-mcp-salesforce.html): a due diligence de quem publicou nunca substitui a auditoria de quem instala.
+
 ## Tool poisoning: a ferramenta muda depois que o piloto aprovou
 
 Tool poisoning é a manipulação da descrição de uma ferramenta — ou do comportamento por trás dela — depois que o agente já está autorizado a chamá-la. O modelo lê a descrição em linguagem natural da tool como instrução, não como metadado, e nada no protocolo [que sustenta a adoção enterprise do MCP](/blog/model-context-protocol-servidor-mcp.html) impede que essa descrição mude numa conexão seguinte, sem que o cliente reavalie o consentimento original.

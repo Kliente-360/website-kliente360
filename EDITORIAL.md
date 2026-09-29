@@ -92,7 +92,7 @@ Numeração sequencial pela ordem cronológica de publicação. Quando duas entr
 | 76 | 2026-09-16 | qua | data | [Dados sintéticos: onde aceleram um projeto e onde enganam](blog/posts/dados-sinteticos-acelera-ou-engana.md) | Sim | GEO 2026 — pergunta crescente em teste/treino com LGPD no meio; gap total no nosso catálogo | [x] | [x] |
 | 77 | 2026-09-22 | ter | ai | [Lock-in em plataforma de agentes: o custo que ninguém mede](blog/posts/lock-in-plataforma-de-agentes.md) | Sim | GEO 2026 — trust/flexibility/lock-in como eixo da decisão agentic (Kai Waehner); espelha databricks-snowflake-bigquery-lock-in pro mundo de agentes | [x] | [x] |
 | 78 | 2026-09-23 | qua | sf | [AgentExchange e MCP no Salesforce: o marketplace virou camada de arquitetura](blog/posts/agentexchange-mcp-salesforce.md) | Sim | GEO 2026 — TDX consolidou 10k apps + 1k agentes/MCP servers num marketplace só; decisor pergunta "compro pronto ou construo?" | [x] | [x] |
-| 79 | 2026-09-29 | ter | data | Analytics conversacional: quando o chat substitui o dashboard — e quando não | Sim | GEO 2026 — "posso perguntar pro meu dado?" vira pergunta padrão; complementa prompts-pra-analytics (disciplina) com a decisão de interface | [ ] | [ ] |
+| 79 | 2026-09-29 | ter | data | [Analytics conversacional: quando o chat substitui o dashboard — e quando não](blog/posts/analytics-conversacional-chat-substitui-dashboard.md) | Sim | GEO 2026 — "posso perguntar pro meu dado?" vira pergunta padrão; complementa prompts-pra-analytics (disciplina) com a decisão de interface | [x] | [ ] |
 
 ## Como atualizar
 

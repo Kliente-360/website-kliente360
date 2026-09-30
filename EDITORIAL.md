@@ -93,6 +93,7 @@ Numeração sequencial pela ordem cronológica de publicação. Quando duas entr
 | 77 | 2026-09-22 | ter | ai | [Lock-in em plataforma de agentes: o custo que ninguém mede](blog/posts/lock-in-plataforma-de-agentes.md) | Sim | GEO 2026 — trust/flexibility/lock-in como eixo da decisão agentic (Kai Waehner); espelha databricks-snowflake-bigquery-lock-in pro mundo de agentes | [x] | [x] |
 | 78 | 2026-09-23 | qua | sf | [AgentExchange e MCP no Salesforce: o marketplace virou camada de arquitetura](blog/posts/agentexchange-mcp-salesforce.md) | Sim | GEO 2026 — TDX consolidou 10k apps + 1k agentes/MCP servers num marketplace só; decisor pergunta "compro pronto ou construo?" | [x] | [x] |
 | 79 | 2026-09-29 | ter | data | [Analytics conversacional: quando o chat substitui o dashboard — e quando não](blog/posts/analytics-conversacional-chat-substitui-dashboard.md) | Sim | GEO 2026 — "posso perguntar pro meu dado?" vira pergunta padrão; complementa prompts-pra-analytics (disciplina) com a decisão de interface | [x] | [ ] |
+| 80 | 2026-09-30 | qua | ai | [Identidade de agente de IA: o login emprestado é o maior risco](blog/posts/identidade-agente-ia-credencial-propria.md) | Não | Descoberta — 71% das empresas têm IA em sistemas centrais e só 16% governam o acesso (CISO AI Risk Report 2026, Cybersecurity Insiders/Saviynt); Gravitee: 45,6% usam chave de API compartilhada | [x] | [ ] |
 
 ## Como atualizar
 
@@ -110,7 +111,7 @@ A coluna `Backlink pass` é controlada pela routine de backlink-pass (ver `blog/
 |---|---|---|---|
 | sf (Salesforce) | 23 | 3 | **26** |
 | data (Data & Analytics) | 23 | 4 | **27** |
-| ai (IA Aplicada) | 23 | 3 | **26** |
-| **Total** | 69 | 10 | **79** |
+| ai (IA Aplicada) | 23 | 4 | **27** |
+| **Total** | 69 | 11 | **80** |
 
 Publicados: 57. Back-catálogo recuperado de auto-branches: 2 (#53 observabilidade, #54 lakehouse). Pendentes do lote 3 — temas de mercado 2026, sem análise de concorrência, ver research de jul/2026 nesta conversa: 10 (#58 a #67).

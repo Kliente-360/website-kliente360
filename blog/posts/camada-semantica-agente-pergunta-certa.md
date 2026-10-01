@@ -46,7 +46,7 @@ O tamanho da adoção reforça que o mercado já tratou isso como decidido: 44% 
 Não é pergunta de "toda empresa precisa" — é sobre em que ponto do amadurecimento de agente sua operação está.
 
 1. **Mais de um sistema ou agente responde a mesma pergunta de negócio?** Se dashboard, agente de atendimento e agente de vendas puxam "receita" de lugares diferentes, cada um provavelmente tem sua própria definição implícita — e a divergência já existe, só ainda não foi flagrada.
-2. **O agente gera SQL direto no warehouse, sem passar por métrica governada?** Text-to-SQL sobre schema bruto é o cenário onde a inferência ad hoc acontece a cada consulta. Se a resposta muda de sessão pra sessão pra mesma pergunta, esse é o sintoma.
+2. **O agente gera SQL direto no warehouse, sem passar por métrica governada?** Text-to-SQL sobre schema bruto — a base do [analytics conversacional no lugar do dashboard](/blog/analytics-conversacional-chat-substitui-dashboard.html) — é o cenário onde a inferência ad hoc acontece a cada consulta. Se a resposta muda de sessão pra sessão pra mesma pergunta, esse é o sintoma.
 3. **A definição de métrica vive em conhecimento tribal — planilha, tribal knowledge do analista, comentário perdido num dashboard antigo — em vez de um lugar único?** Se a resposta certa depende de perguntar pra pessoa certa, não existe camada semântica — existe sorte de ter a pessoa certa por perto.
 4. **Você está saindo de um piloto de agente pra múltiplos casos de uso?** Um agente isolado, com escopo estreito, sobrevive sem camada semântica formal porque o erro fica contido. Escalar pra vários agentes multiplicando a superfície de inferência ad hoc é o ponto em que a ausência de camada semântica vira risco de negócio, não só de engenharia.
 

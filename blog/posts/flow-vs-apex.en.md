@@ -45,7 +45,7 @@ When Flow exceeds its natural scope, three problems show up. Worth cataloging.
 
 **Performance that degrades silently.** Flow is interpreted, not compiled. In a loop with 1,000 iterations, each element adds overhead that in Apex would be zero. An operation that ran in 2s now takes 12s, and nobody knows why. Diagnosing requires Flow Debug, which doesn't give comparable metrics.
 
-**Maintenance that becomes a maze.** A 5-element visual Flow is better than 50 lines of Apex. A 40-element visual Flow is worse than 200 lines of Apex. The tipping point sits between 15 and 20 elements. When Flow grows past that, maintaining becomes a nightmare — and the temptation to copy a whole Flow for a small variation accelerates the chaos.
+**Maintenance that becomes a maze.** A 5-element visual Flow is better than 50 lines of Apex. A 40-element visual Flow is worse than 200 lines of Apex. The tipping point sits between 15 and 20 elements. When Flow grows past that, maintaining becomes a nightmare — and the temptation to copy a whole Flow for a small variation accelerates the chaos, which is how [overlapping automation turns into technical debt](/blog/en/divida-tecnica-salesforce-automacao.html).
 
 > Flow is excellent at small and medium scale. At large scale, Apex is more readable, more performant and more auditable. The "Flow first" guideline shouldn't be "Flow always".
 

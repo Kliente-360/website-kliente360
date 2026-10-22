@@ -32,7 +32,7 @@ The number going around is "30 times faster". It helps to understand what it ref
 
 The practical consequence is that the gain grows with project size. In a 500-model project, parsing that takes a few seconds today becomes a fraction of a second: noticeable in development, irrelevant on the bill. That is our own estimate, not an independent measurement. In a project with thousands of models, with CI running on every pull request, the math changes: minutes of parsing per run, multiplied by dozens of runs a day, add up to hours of engineer waiting time.
 
-The other number that comes up, a 30% or greater reduction in compute cost, comes from **dbt State**, a paid caching layer that consolidates tests and avoids reprocessing; dbt Labs reports 64% savings in its own internal use. It works with dbt Core and Airflow from v1.7 with a plugin, and natively from v1.12. It is a v1.x feature too, so it is not an argument for moving to 2.0.
+The other number that comes up, a 30% or greater reduction in [data warehouse compute cost](/blog/en/custo-data-warehouse-finops-de-dados.html), comes from **dbt State**, a paid caching layer that consolidates tests and avoids reprocessing; dbt Labs reports 64% savings in its own internal use. It works with dbt Core and Airflow from v1.7 with a plugin, and natively from v1.12. It is a v1.x feature too, so it is not an argument for moving to 2.0.
 
 ## What breaks in the migration
 

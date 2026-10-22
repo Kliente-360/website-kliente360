@@ -32,7 +32,7 @@ El número que circula es "30 veces más rápido". Conviene entender a qué se r
 
 La consecuencia práctica es que la ganancia crece con el tamaño del proyecto. En un proyecto de 500 modelos, el parseo que hoy tarda unos segundos pasa a una fracción de segundo: perceptible en el desarrollo, irrelevante en la factura. Esta es una estimación nuestra, no una medición independiente. En un proyecto de miles de modelos, con CI corriendo en cada pull request, la cuenta cambia: minutos de parseo por ejecución, multiplicados por decenas de ejecuciones al día, suman horas de espera de ingeniero.
 
-El otro número que se menciona, una reducción de 30% o más en el costo de cómputo, viene de **dbt State**, una capa de caché paga que consolida pruebas y evita reprocesamiento; dbt Labs informa un ahorro de 64% en su uso interno. Funciona con dbt Core y Airflow desde v1.7 con plugin, y de forma nativa desde v1.12. Es un recurso de v1.x también, así que no es argumento para migrar a 2.0.
+El otro número que se menciona, una reducción de 30% o más en el [costo de cómputo del data warehouse](/blog/es/custo-data-warehouse-finops-de-dados.html), viene de **dbt State**, una capa de caché paga que consolida pruebas y evita reprocesamiento; dbt Labs informa un ahorro de 64% en su uso interno. Funciona con dbt Core y Airflow desde v1.7 con plugin, y de forma nativa desde v1.12. Es un recurso de v1.x también, así que no es argumento para migrar a 2.0.
 
 ## Qué se rompe en la migración
 

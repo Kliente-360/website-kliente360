@@ -29,7 +29,7 @@ A classic CDP solved five functions. Each went somewhere different in 2026.
 
 1. **First-party data collection** (web, mobile, backend events). Went to Segment, RudderStack, and direct warehouse ingest. Snowflake, BigQuery, and Databricks accept event streams natively. In 2026, you don't need a CDP to collect data — you need a decision about where that data lands.
 
-2. **Identity resolution** (unifying the same person across multiple systems). Went to Data Cloud (Salesforce ecosystem), Snowflake Horizon, and Databricks Unity Catalog. An old technical problem, now solved as a warehouse or platform layer — not a separate product.
+2. **Identity resolution** (unifying the same person across multiple systems). Went to Data Cloud (Salesforce ecosystem), Snowflake Horizon, and Databricks Unity Catalog. An old technical problem, now solved as a warehouse or platform layer — not a separate product. [Identity in Data Cloud does not replace MDM or the golden record](/blog/en/informatica-mdm-salesforce-data-cloud.html), which remains an organizational decision.
 
 3. **Behavioral segmentation** (segmenting by real-time behavior). Went to Data Cloud, Adobe Real-Time CDP, and any modern warehouse with fast enough SQL. dbt + Snowflake runs on-demand segmentation without a dedicated CDP. The criterion today is not the tool — it's acceptable latency.
 

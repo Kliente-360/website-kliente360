@@ -27,7 +27,7 @@ Os números do lançamento reforçam a narrativa de urgência: durante a última
 
 ## O que a cobertura de lançamento não menciona
 
-Nenhuma das fontes que cobriram o anúncio — press release, imprensa especializada, análise de mercado — trouxe uma linha sobre limite de aprovação, teto de valor de transação, ou o que acontece quando o Buyer Agent confirma um SKU errado antes do comprador perceber. A ênfase é 100% capacidade e adoção, 0% risco.
+Nenhuma das fontes que cobriram o anúncio — press release, imprensa especializada, análise de mercado — trouxe uma linha sobre limite de aprovação, teto de valor de transação, ou o que acontece quando o Buyer Agent confirma um SKU errado antes do comprador perceber. A ênfase é 100% capacidade e adoção, 0% risco. Antes de orçar qualquer um dos três agentes, vale [separar o que é GA, beta e piloto nos anúncios do Dreamforce 2026](/blog/dreamforce-2026-agentforce-ga-beta-piloto.html).
 
 Isso não significa que o risco não exista — significa que a Salesforce está vendendo a plataforma, e cabe ao cliente desenhar o controle. É o mesmo padrão que já discutimos [ao mapear onde MCP quebra](/blog/arquitetura-servidor-mcp.html): o protocolo em si não é o problema, é a distância que ele cria entre a decisão automatizada e a revisão humana — e essa distância é decisão de configuração, não de produto.
 

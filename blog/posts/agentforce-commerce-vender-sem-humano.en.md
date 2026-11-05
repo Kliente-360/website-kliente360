@@ -24,7 +24,7 @@ The launch numbers reinforce the sense of urgency: during last year's holiday se
 
 ## What the launch coverage doesn't mention
 
-None of the sources covering the announcement — press release, trade press, market analysis — included a line about approval limits, transaction value caps, or what happens when Buyer Agent confirms the wrong SKU before the buyer notices. The emphasis is 100% capability and adoption, 0% risk.
+None of the sources covering the announcement — press release, trade press, market analysis — included a line about approval limits, transaction value caps, or what happens when Buyer Agent confirms the wrong SKU before the buyer notices. The emphasis is 100% capability and adoption, 0% risk. Before budgeting any of the three agents, it is worth [separating what is GA, beta, and pilot in the Dreamforce 2026 announcements](/blog/en/dreamforce-2026-agentforce-ga-beta-piloto.html).
 
 That doesn't mean the risk isn't there — it means Salesforce is selling the platform, and it's on the customer to design the control. It's the same pattern we already covered [when mapping where MCP breaks](/blog/en/arquitetura-servidor-mcp.html): the protocol itself isn't the problem, it's the distance it creates between an automated decision and human review — and that distance is a configuration decision, not a product one.
 

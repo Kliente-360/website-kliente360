@@ -19,7 +19,7 @@ Quatro mudanças definem a versão, e só a primeira é aquela que aparece nos a
 
 1. **Motor em Rust.** O parse e a compilação, que eram o gargalo de projetos grandes, deixam de depender de Python. A instalação também simplifica: some a necessidade de gerenciar ambiente virtual.
 2. **Código compartilhado com o Fusion.** O Core 2.0 e o Fusion usam a mesma base. O Fusion é o superset: acrescenta, por exemplo, o parse nativo de SQL que habilita lineage em nível de coluna e recursos de editor. Segundo a dbt Labs, o Core 2.0 é "um upgrade estrito" sobre o v1.
-3. **Artefatos em Parquet.** Os arquivos JSON enormes de manifest e resultados dão lugar a Parquet, que pode ser consultado diretamente com DuckDB.
+3. **Artefatos em Parquet.** Os arquivos JSON enormes de manifest e resultados dão lugar a Parquet, que pode ser consultado diretamente com [DuckDB, o motor analítico embutido de um nó só](/blog/duckdb-ducklake-warehouse-de-um-no-so.html).
 4. **Adapters via ADBC.** Construir conectores para novos warehouses passa pelo ecossistema Arrow e ADBC, em vez de pacotes Python.
 
 Há ainda uma mudança de licença que pesa mais do que parece. O Core 2.0 é Apache 2.0 de ponta a ponta. O binário do Fusion fica sob uma licença mais permissiva que a ELv2 usada no início: uso gratuito local e em produção, com recursos premium liberados por login gratuito ou conta paga na plataforma dbt. A dbt Labs, que hoje opera junto com a Fivetran, afirma que o Core segue open source por tempo indeterminado e que os pacotes continuam públicos.

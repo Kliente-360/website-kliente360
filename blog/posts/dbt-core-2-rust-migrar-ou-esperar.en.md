@@ -19,7 +19,7 @@ Four changes define the release, and only the first one makes the headlines.
 
 1. **Rust engine.** Parsing and compilation, the bottleneck of large projects, no longer depend on Python. Installation also gets simpler: no more managing a virtual environment.
 2. **Code shared with Fusion.** Core 2.0 and Fusion use the same base. Fusion is the superset: it adds, for example, native SQL parsing, which enables column-level lineage and editor features. According to dbt Labs, Core 2.0 is "a strict upgrade" over v1.
-3. **Parquet artifacts.** The huge JSON manifest and results files give way to Parquet, which can be queried directly with DuckDB.
+3. **Parquet artifacts.** The huge JSON manifest and results files give way to Parquet, which can be queried directly with [DuckDB, the embedded single-node analytical engine](/blog/en/duckdb-ducklake-warehouse-de-um-no-so.html).
 4. **Adapters via ADBC.** Building connectors for new warehouses goes through the Arrow and ADBC ecosystem instead of Python packages.
 
 There is also a licensing change that matters more than it looks. Core 2.0 is Apache 2.0 end to end. The Fusion binary sits under a license more permissive than the ELv2 used at first: free to use locally and in production, with premium features unlocked by a free login or a paid dbt platform account. dbt Labs, which now operates together with Fivetran, states that Core stays open source indefinitely and that packages remain public.

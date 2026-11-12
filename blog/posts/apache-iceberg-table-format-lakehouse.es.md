@@ -20,7 +20,7 @@ La señal más clara de la victoria de Iceberg no es la adopción aislada de un 
 
 **BigQuery** entró por el camino más pragmático: soporta tablas Iceberg como tabla externa y como tabla gestionada vía BigLake, encajando el formato abierto dentro de la misma superficie de SQL que el cliente ya usa.
 
-El resto del ecosistema sigue el mismo movimiento. Spark, Trino, Presto, Flink, Hive, Impala, DuckDB, ClickHouse, StarRocks y Dremio tienen soporte nativo o casi nativo a Iceberg — lo que significa que la elección de motor de consulta dejó de trabar la elección de formato de tabla, y viceversa.
+El resto del ecosistema sigue el mismo movimiento. Spark, Trino, Presto, Flink, Hive, Impala, [DuckDB (que ahora tiene formato de tabla propio, DuckLake)](/blog/es/duckdb-ducklake-warehouse-de-um-no-so.html), ClickHouse, StarRocks y Dremio tienen soporte nativo o casi nativo a Iceberg — lo que significa que la elección de motor de consulta dejó de trabar la elección de formato de tabla, y viceversa.
 
 > La disputa que era "qué formato elegir" se convirtió en "qué catálogo opera ese formato mejor para tu caso". Es una pregunta más fácil de responder — y más fácil de errar sin darse cuenta.
 

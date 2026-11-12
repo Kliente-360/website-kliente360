@@ -23,7 +23,7 @@ A **Snowflake** respondeu de um jeito mais estrutural: criou o Polaris Catalog, 
 
 O **BigQuery** entrou pelo caminho mais pragmático: suporta tabela Iceberg como tabela externa e como tabela gerenciada via BigLake, encaixando o formato aberto dentro da mesma superfície de SQL que o cliente já usa.
 
-O resto do ecossistema segue o mesmo movimento. Spark, Trino, Presto, Flink, Hive, Impala, DuckDB, ClickHouse, StarRocks e Dremio têm suporte nativo ou quase-nativo a Iceberg — o que significa que a escolha de motor de query deixou de travar a escolha de formato de tabela, e vice-versa.
+O resto do ecossistema segue o mesmo movimento. Spark, Trino, Presto, Flink, Hive, Impala, [DuckDB (que agora tem formato de tabela próprio, o DuckLake)](/blog/duckdb-ducklake-warehouse-de-um-no-so.html), ClickHouse, StarRocks e Dremio têm suporte nativo ou quase-nativo a Iceberg — o que significa que a escolha de motor de query deixou de travar a escolha de formato de tabela, e vice-versa.
 
 > A disputa que era "qual formato escolher" virou "qual catálogo opera esse formato melhor pro seu caso". É uma pergunta mais fácil de responder — e mais fácil de errar sem perceber.
 

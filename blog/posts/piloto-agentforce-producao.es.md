@@ -28,7 +28,7 @@ La primera fuente de fricción es la distancia entre lo que promete la propuesta
 Esa distancia no es exageración de vendedor ni lentitud del cliente. Es el tiempo que el rediseño de proceso realmente consume — tiempo que la propuesta de tres a seis semanas nunca incluyó como etapa. [El mismo patrón ya apareció en la promesa de implementación de Salesforce en seis semanas](/blog/es/implementacao-salesforce-seis-semanas.html): el plazo corto cubre la configuración técnica, no el cambio de proceso que decide si el proyecto se sostiene.
 
 1. **Semanas 1 a 4 (lo que cubre la propuesta).** Configurar el agente, conectar la fuente de datos, validar en un entorno controlado con un caso de prueba curado.
-2. **Meses 2 a 6 (lo que la propuesta no cubre).** Rediseñar quién aprueba qué cuando el agente actúa solo, decidir dónde la revisión humana sigue siendo obligatoria, capacitar a quien va a operar el agente día a día — no solo a quien lo va a monitorear.
+2. **Meses 2 a 6 (lo que la propuesta no cubre).** Rediseñar quién aprueba qué cuando el agente actúa solo, decidir [dónde la revisión humana sigue siendo obligatoria](/blog/es/humano-no-loop-agentes-ia-aprovacao.html), capacitar a quien va a operar el agente día a día — no solo a quien lo va a monitorear.
 3. **Meses 6 a 11 (donde se estanca la mayoría).** Formalizar un dueño del agente, montar infraestructura de evaluación continua, aprobar presupuesto de mantenimiento recurrente — ninguna de estas tres etapas está en la propuesta original, y las tres son requisito para salir del piloto.
 
 ## Lo que se estanca no es el agente — es el proceso a su alrededor

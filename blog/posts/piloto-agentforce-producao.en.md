@@ -28,7 +28,7 @@ The first source of friction is the gap between what the sales proposal promises
 That gap isn't sales exaggeration or customer slowness. It's the time process redesign actually consumes — time the three-to-six-week proposal never included as a step. [The same pattern already showed up in the promise of a six-week Salesforce implementation](/blog/en/implementacao-salesforce-seis-semanas.html): the short timeline covers technical configuration, not the process change that decides whether the project sticks.
 
 1. **Weeks 1 to 4 (what the proposal covers).** Configure the agent, connect the data source, validate in a controlled environment with a curated test case.
-2. **Months 2 to 6 (what the proposal doesn't cover).** Redesign who approves what when the agent acts on its own, decide where human review stays mandatory, train whoever operates the agent day to day — not just whoever monitors it.
+2. **Months 2 to 6 (what the proposal doesn't cover).** Redesign who approves what when the agent acts on its own, decide [where human review stays mandatory](/blog/en/humano-no-loop-agentes-ia-aprovacao.html), train whoever operates the agent day to day — not just whoever monitors it.
 3. **Months 6 to 11 (where most stall).** Formalize an agent owner, build continuous evaluation infrastructure, approve a recurring maintenance budget — none of these three steps is in the original proposal, and all three are prerequisites to leaving the pilot.
 
 ## What stalls isn't the agent — it's the process around it

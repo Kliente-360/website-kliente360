@@ -28,7 +28,7 @@ A primeira fonte de atrito é a distância entre o que a proposta comercial prom
 Essa distância não é exagero de vendedor nem lentidão de cliente. É o tempo que o redesenho de processo de fato consome — e que a proposta de três a seis semanas nunca incluiu como etapa. [O mesmo padrão já apareceu na promessa de implementação de Salesforce em seis semanas](/blog/implementacao-salesforce-seis-semanas.html): o prazo curto cobre a configuração técnica, não a mudança de processo que decide se o projeto pega ou não.
 
 1. **Semanas 1 a 4 (o que a proposta cobre).** Configurar o agente, conectar a fonte de dado, validar em ambiente controlado com caso de teste curado.
-2. **Meses 2 a 6 (o que a proposta não cobre).** Redesenhar quem aprova o quê quando o agente age sozinho, decidir onde a revisão humana continua obrigatória, treinar quem vai operar o agente no dia a dia — não só quem vai monitorá-lo.
+2. **Meses 2 a 6 (o que a proposta não cobre).** Redesenhar quem aprova o quê quando o agente age sozinho, decidir [onde a revisão humana continua obrigatória](/blog/humano-no-loop-agentes-ia-aprovacao.html), treinar quem vai operar o agente no dia a dia — não só quem vai monitorá-lo.
 3. **Meses 6 a 11 (onde a maioria trava).** Formalizar dono do agente, montar infraestrutura de avaliação contínua, aprovar orçamento de manutenção recorrente — nenhuma dessas três etapas está na proposta original, e todas são pré-requisito pra sair do piloto.
 
 ## O que trava não é o agente — é o processo em volta dele

@@ -34,7 +34,7 @@ At the Gartner Data & Analytics Summit 2026 — in Orlando, London, and Sydney �
 
 The same holds on the automation side. [Data governance as code already solves, automatically, the traceability attribute](/blog/en/governanca-dados-como-codigo.html) that any agent-incident investigation needs to check first — where the data came from, when it was updated, what business rule was applied. A company that treats this as the exclusive property of the data program, with no bridge to the AI committee, rebuilds from memory in every investigation a trail that already existed, automated, somewhere else in the same house.
 
-That doesn't mean AI governance is just data governance with a new name. Classification bias, prompt injection attacks, factual hallucination, and the decision of when an agent acts without human review are problems that traditional data instrumentation doesn't cover on its own. The right question isn't "one program eliminates the other" — it's where the boundary between them sits, and who crosses it when an incident doesn't respect the org chart's division.
+That doesn't mean AI governance is just data governance with a new name. Classification bias, prompt injection attacks, factual hallucination, and the decision of [when an agent acts without human review](/blog/en/humano-no-loop-agentes-ia-aprovacao.html) are problems that traditional data instrumentation doesn't cover on its own. The right question isn't "one program eliminates the other" — it's where the boundary between them sits, and who crosses it when an incident doesn't respect the org chart's division.
 
 ## One program, two layers: the design that closes the gap
 

@@ -37,7 +37,7 @@ No Gartner Data & Analytics Summit 2026 — em Orlando, Londres e Sydney —, an
 
 O mesmo vale pro lado da automação. [Governança de dados como código já resolve, de forma automática, o atributo de rastreabilidade](/blog/governanca-dados-como-codigo.html) que toda investigação de incidente de agente precisa consultar primeiro — de onde veio o dado, quando foi atualizado, que regra foi aplicada. Empresa que trata isso como propriedade exclusiva do programa de dados, sem ponte com o comitê de IA, reconstrói de memória uma trilha que já existia automatizada em outro lugar da própria casa.
 
-Isso não significa que governança de IA seja só governança de dados com nome novo. Viés de classificação, prompt injection, alucinação factual e a decisão de quando um agente age sem revisão humana são problemas que a instrumentação tradicional de dado não cobre sozinha. A pergunta certa não é "um programa elimina o outro" — é onde a fronteira fica, e quem cruza ela quando um incidente não respeita a divisão do organograma.
+Isso não significa que governança de IA seja só governança de dados com nome novo. Viés de classificação, prompt injection, alucinação factual e a decisão de [quando um agente age sem revisão humana](/blog/humano-no-loop-agentes-ia-aprovacao.html) são problemas que a instrumentação tradicional de dado não cobre sozinha. A pergunta certa não é "um programa elimina o outro" — é onde a fronteira fica, e quem cruza ela quando um incidente não respeita a divisão do organograma.
 
 ## Um programa, duas camadas: o desenho que fecha o buraco no meio
 

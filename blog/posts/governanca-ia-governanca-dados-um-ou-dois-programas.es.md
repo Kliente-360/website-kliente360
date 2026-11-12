@@ -34,7 +34,7 @@ En el Gartner Data & Analytics Summit 2026 — en Orlando, Londres y Sídney —
 
 Lo mismo vale del lado de la automatización. [La gobernanza de datos como código ya resuelve, de forma automática, el atributo de trazabilidad](/blog/es/governanca-dados-como-codigo.html) que toda investigación de incidente de agente necesita consultar primero — de dónde vino el dato, cuándo se actualizó, qué regla de negocio se aplicó. Una empresa que trata esto como propiedad exclusiva del programa de datos, sin puente con el comité de IA, reconstruye de memoria en cada investigación una traza que ya existía, automatizada, en otra parte de la misma casa.
 
-Esto no significa que la gobernanza de IA sea solo gobernanza de datos con nombre nuevo. El sesgo de clasificación, los ataques de prompt injection, la alucinación factual y la decisión de cuándo un agente actúa sin revisión humana son problemas que la instrumentación tradicional de datos no cubre por sí sola. La pregunta correcta no es "un programa elimina al otro" — es dónde queda la frontera entre ambos, y quién la cruza cuando un incidente no respeta la división del organigrama.
+Esto no significa que la gobernanza de IA sea solo gobernanza de datos con nombre nuevo. El sesgo de clasificación, los ataques de prompt injection, la alucinación factual y la decisión de [cuándo un agente actúa sin revisión humana](/blog/es/humano-no-loop-agentes-ia-aprovacao.html) son problemas que la instrumentación tradicional de datos no cubre por sí sola. La pregunta correcta no es "un programa elimina al otro" — es dónde queda la frontera entre ambos, y quién la cruza cuando un incidente no respeta la división del organigrama.
 
 ## Un programa, dos capas: el diseño que cierra el hueco del medio
 

@@ -47,7 +47,7 @@ Consultoria especializada em agentes acaba repetindo o mesmo conjunto de regras.
 
 Há um caso legítimo em que o agente age *em nome de* uma pessoa: o assistente que resume os e-mails de um vendedor, por exemplo. A regra segura é que o agente atue com a **interseção** das duas permissões — o que o agente pode fazer e o que aquele usuário pode ver — e nunca com a soma. Delegação sem essa trava é o padrão que [descrevemos em servidores MCP como "confused deputy"](/blog/arquitetura-servidor-mcp.html): o agente herda permissões que o usuário nunca teria concedido a uma máquina.
 
-No ecossistema Salesforce, o ponto de atenção prático é o usuário de integração. Num projeto de agente, é tentador reaproveitar o usuário que já conecta o ERP ao CRM. Ele costuma acumular permission sets de anos de integrações, e o agente passa a herdar todos. Quanto mais antiga a org, maior a chance de o escopo real superar o necessário. Criar um usuário dedicado ao agente, com permission sets mínimos e revisáveis, custa um dia de trabalho; descobrir o excesso depois de um incidente custa bem mais.
+No ecossistema Salesforce, o ponto de atenção prático é o usuário de integração. Num projeto de agente, é tentador reaproveitar o usuário que já conecta o ERP ao CRM. Ele costuma acumular permission sets de anos de integrações, e o agente passa a herdar todos. Quanto mais antiga a org, maior a chance de o escopo real superar o necessário, e o mesmo vale para [os tokens OAuth de connected apps esquecidas](/blog/seguranca-connected-apps-salesforce.html). Criar um usuário dedicado ao agente, com permission sets mínimos e revisáveis, custa um dia de trabalho; descobrir o excesso depois de um incidente custa bem mais.
 
 ## Por onde começar em 30 dias
 

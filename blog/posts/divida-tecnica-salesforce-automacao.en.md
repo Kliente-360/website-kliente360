@@ -9,7 +9,7 @@ tldr: "Technical debt in Salesforce is the accumulation of configuration, automa
 keywords: ["Salesforce technical debt", "Workflow Rules Process Builder end of support", "migrate to Flow", "Salesforce org cleanup", "Salesforce automation", "Salesforce Flow"]
 ---
 
-**Technical debt in Salesforce** rarely shows up as a code problem. It shows up as a sentence repeated in the steering committee: "touching that is risky." A new required field breaks an integration nobody remembered. A change of opportunity stage fires three automations, two of them from 2019. The admin who knew how everything worked left, and the org is now run by trial and error.
+**Technical debt in Salesforce** rarely shows up as a code problem. It shows up as a sentence repeated in the steering committee: "touching that is risky." A new required field breaks an integration nobody remembered, one that may still hold [an OAuth token with open access to the org](/blog/en/seguranca-connected-apps-salesforce.html). A change of opportunity stage fires three automations, two of them from 2019. The admin who knew how everything worked left, and the org is now run by trial and error.
 
 The 2026 [SF Ben survey of more than 1,100 admins](https://www.salesforceben.com/top-10-insights-from-sf-bens-mega-2026-salesforce-admin-survey/) shows this is not an exception: 56.3% name technical debt as the hardest part of the job, about 31% rate their own debt as high or very high, and only 2% describe their org as clean and well maintained. What the survey does not say, and our project experience does, is where that debt usually sits.
 

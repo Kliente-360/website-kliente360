@@ -9,7 +9,7 @@ tldr: "Dívida técnica no Salesforce é o acúmulo de configuração, automaç�
 keywords: ["dívida técnica Salesforce", "Workflow Rules Process Builder fim de suporte", "migrar para Flow", "limpeza de org Salesforce", "automação Salesforce", "Salesforce Flow"]
 ---
 
-**Dívida técnica no Salesforce** quase nunca aparece como um problema de código. Aparece como uma frase repetida no comitê: "mexer nisso é arriscado". Um campo obrigatório novo quebra uma integração que ninguém lembrava existir. Uma mudança de fase da oportunidade dispara três automações, duas delas de 2019. O admin que sabia como tudo funcionava saiu, e a org passou a ser administrada por tentativa e erro.
+**Dívida técnica no Salesforce** quase nunca aparece como um problema de código. Aparece como uma frase repetida no comitê: "mexer nisso é arriscado". Um campo obrigatório novo quebra uma integração que ninguém lembrava existir, e que ainda pode guardar [um token OAuth com acesso aberto à org](/blog/seguranca-connected-apps-salesforce.html). Uma mudança de fase da oportunidade dispara três automações, duas delas de 2019. O admin que sabia como tudo funcionava saiu, e a org passou a ser administrada por tentativa e erro.
 
 A pesquisa de 2026 da [Salesforce Ben com mais de 1.100 admins](https://www.salesforceben.com/top-10-insights-from-sf-bens-mega-2026-salesforce-admin-survey/) mostra que isso não é exceção: 56,3% apontam a dívida técnica como a responsabilidade mais difícil do cargo, cerca de 31% classificam a própria dívida como alta ou muito alta, e só 2% descrevem a org como limpa e bem mantida. O que a pesquisa não diz, e nossa experiência em projetos diz, é onde essa dívida costuma estar.
 

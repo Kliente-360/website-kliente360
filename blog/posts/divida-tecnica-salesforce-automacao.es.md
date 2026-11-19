@@ -9,7 +9,7 @@ tldr: "La deuda técnica en Salesforce es la acumulación de configuración, aut
 keywords: ["deuda técnica Salesforce", "fin de soporte Workflow Rules Process Builder", "migrar a Flow", "limpieza de org Salesforce", "automatización Salesforce", "Salesforce Flow"]
 ---
 
-**La deuda técnica en Salesforce** casi nunca aparece como un problema de código. Aparece como una frase repetida en el comité: "tocar eso es arriesgado". Un campo obligatorio nuevo rompe una integración que nadie recordaba. Un cambio de etapa de la oportunidad dispara tres automatizaciones, dos de ellas de 2019. El admin que sabía cómo funcionaba todo se fue, y la org pasó a administrarse por prueba y error.
+**La deuda técnica en Salesforce** casi nunca aparece como un problema de código. Aparece como una frase repetida en el comité: "tocar eso es arriesgado". Un campo obligatorio nuevo rompe una integración que nadie recordaba, y que todavía puede guardar [un token OAuth con acceso abierto a la org](/blog/es/seguranca-connected-apps-salesforce.html). Un cambio de etapa de la oportunidad dispara tres automatizaciones, dos de ellas de 2019. El admin que sabía cómo funcionaba todo se fue, y la org pasó a administrarse por prueba y error.
 
 La [encuesta 2026 de Salesforce Ben con más de 1.100 admins](https://www.salesforceben.com/top-10-insights-from-sf-bens-mega-2026-salesforce-admin-survey/) muestra que no es una excepción: el 56,3% señala la deuda técnica como la responsabilidad más difícil del cargo, cerca del 31% clasifica su propia deuda como alta o muy alta, y solo el 2% describe su org como limpia y bien mantenida. Lo que la encuesta no dice, y nuestra experiencia en proyectos sí, es dónde suele estar esa deuda.
 

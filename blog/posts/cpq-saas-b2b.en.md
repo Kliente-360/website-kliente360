@@ -83,7 +83,7 @@ If your B2B SaaS company has CPQ running as a quoting machine, three moves:
 
 **Reorganize commercial bundles.** Reducing from 200 SKUs to 8–15 bundles covers 80% of deals. The remaining 20% can become custom configuration with approval.
 
-**Integrate proposal + contract.** Invest in Revenue Cloud or in serious CPQ + Conga/DocuSign integration. Without it, legal remains a permanent bottleneck.
+**Integrate proposal + contract.** Invest in Revenue Cloud or in serious CPQ + Conga/DocuSign integration. Without it, legal remains a permanent bottleneck. If you already run Salesforce CPQ, weigh this decision together with the [migration from Salesforce CPQ to Revenue Cloud](/blog/en/migrar-salesforce-cpq-revenue-cloud.html), since CPQ is now in end of sale.
 
 A well-deployed CPQ in B2B SaaS shortens sales cycle by 30–50%, reduces proposal errors by 80%, frees the rep to sell instead of operating a spreadsheet. Badly deployed, it's just a pretty calculator costing a premium Salesforce license. The difference isn't in the product — it's in four architectural decisions made before the first click in Setup.
 

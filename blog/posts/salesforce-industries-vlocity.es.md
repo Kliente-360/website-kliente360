@@ -99,7 +99,7 @@ Si tu empresa está siendo presentada a Salesforce Industries, tres movimientos 
 
 **Calculá TCO de 24 meses, incluyendo capacitación y operación.** Industries cuesta más en todos los ejes. La diferencia necesita ser justificada por la ganancia — no por el pitch.
 
-Salesforce Industries en 2026 es herramienta poderosa en los sectores donde encaja, complejidad adicional donde no encaja. Empresa brasileña de tamaño medio fuera de los 6 verticales foco casi siempre está mejor con Sales Cloud + CPQ + customización — más barato, comunidad local, partners disponibles. Aceptar Industries por pitch sin esa regla es la forma más elegante de pagar premium para tener el mismo resultado de la plataforma estándar.
+Salesforce Industries en 2026 es herramienta poderosa en los sectores donde encaja, complejidad adicional donde no encaja. Empresa brasileña de tamaño medio fuera de los 6 verticales foco casi siempre está mejor con Sales Cloud + CPQ + customización — más barato, comunidad local, partners disponibles (para cliente nuevo, con Revenue Cloud en lugar del [Salesforce CPQ en fin de venta](/blog/es/migrar-salesforce-cpq-revenue-cloud.html)). Aceptar Industries por pitch sin esa regla es la forma más elegante de pagar premium para tener el mismo resultado de la plataforma estándar.
 
 ## Preguntas que siempre vuelven
 
